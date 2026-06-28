@@ -1,0 +1,81 @@
+timezone: Asia/Shanghai
+
+limits:
+  rss_min_candidates: 6
+  rss_max_items_per_feed: 4
+  youtube_videos_per_channel: 5
+  github_per_query: 12
+  github_max_repos: 30
+  aihot_take: 50
+  aihot_verify_limit: 25
+  full_text_max_chars: 60000
+  transcript_max_chars: 180000
+  readme_max_chars: 90000
+  original_text_max_chars: 50000
+  brief_excerpt_chars: 2400
+
+rss:
+  feeds:
+    - name: OpenAI News
+      url: https://openai.com/news/rss.xml
+    - name: Anthropic News
+      url: https://www.anthropic.com/news/rss.xml
+    - name: Google DeepMind
+      url: https://blog.google/technology/google-deepmind/rss/
+    - name: Latent Space
+      url: https://www.latent.space/feed
+    - name: Interconnects
+      url: https://www.interconnects.ai/feed
+    - name: Simon Willison
+      url: https://simonwillison.net/atom/everything/
+    - name: Eugene Yan
+      url: https://eugeneyan.com/feed.xml
+    - name: The Gradient
+      url: https://thegradient.pub/rss/
+    - name: AI News
+      url: https://buttondown.com/ainews/rss
+    - name: SemiAnalysis
+      url: https://semianalysis.com/feed/
+    - name: Benedict Evans
+      url: https://www.ben-evans.com/benedictevans?format=rss
+    - name: a16z
+      url: https://a16z.com/feed/
+
+youtube:
+  channels:
+    - name: Lex Fridman
+      handle: "@lexfridman"
+      url: https://www.youtube.com/@lexfridman
+    - name: Lenny's Podcast
+      handle: "@LennysPodcast"
+      url: https://www.youtube.com/@LennysPodcast
+    - name: Dwarkesh Patel
+      handle: "@DwarkeshPatel"
+      url: https://www.youtube.com/@DwarkeshPatel
+    - name: Acquired
+      handle: "@AcquiredFM"
+      url: https://www.youtube.com/@AcquiredFM
+    - name: Tim Ferriss
+      handle: "@timferriss"
+      url: https://www.youtube.com/@timferriss
+    - name: 20VC
+      handle: "@20VCwithHarryStebbings"
+      url: https://www.youtube.com/@20VCwithHarryStebbings
+    - name: Invest Like the Best
+      handle: "@ILTB_Podcast"
+      url: https://www.youtube.com/@ILTB_Podcast
+    - name: All-In Podcast
+      handle: "@allin"
+      url: https://www.youtube.com/@allin
+
+github:
+  queries:
+    - topic:ai stars:20..5000 pushed:>{since}
+    - topic:agent stars:20..5000 pushed:>{since}
+    - topic:llm stars:20..5000 pushed:>{since}
+  supplements:
+    github_trending: https://github.com/trending?since=daily
+    trendshift: https://trendshift.io/repositories?since=daily
+
+aihot:
+  endpoint: https://aihot.virxact.com/api/public/items?mode=selected&take=50
