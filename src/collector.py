@@ -6,7 +6,6 @@ import json
 import os
 import re
 import tempfile
-from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
@@ -34,6 +33,18 @@ USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/126.0 Safari/537.36 AlphaMaoDaily/1.0"
 )
+
+
+class SilentYtdlpLogger:
+    def debug(self, msg: str) -> None:
+        pass
+
+    def warning(self, msg: str) -> None:
+        pass
+
+    def error(self, msg: str) -> None:
+        pass
+
 
 NOISE_TERMS = {
     "game",
@@ -305,6 +316,7 @@ class Collector:
         opts: dict[str, Any] = {
             "quiet": True,
             "no_warnings": True,
+            "logger": SilentYtdlpLogger(),
             "skip_download": True,
             "extract_flat": "in_playlist",
             "playlistend": max(limit, 5),
@@ -381,6 +393,7 @@ class Collector:
         opts: dict[str, Any] = {
             "quiet": True,
             "no_warnings": True,
+            "logger": SilentYtdlpLogger(),
             "skip_download": True,
             "writesubtitles": True,
             "writeautomaticsub": True,
