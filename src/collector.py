@@ -335,8 +335,7 @@ class Collector:
         if self.youtube_ytdlp_proxy_url:
             opts["proxy"] = self.youtube_ytdlp_proxy_url
 
-        with yt_dlp.YoutubeDL(opts) as ydl:
-            info = ydl.extract_info(url, download=False)
+        info = self.extract_with_ytdlp(yt_dlp, opts, url)
 
         videos = []
         for entry in (info or {}).get("entries") or []:
@@ -421,8 +420,7 @@ class Collector:
         if self.youtube_ytdlp_proxy_url:
             opts["proxy"] = self.youtube_ytdlp_proxy_url
 
-        with yt_dlp.YoutubeDL(opts) as ydl:
-            info = ydl.extract_info(video_url, download=False)
+        info = self.extract_with_ytdlp(yt_dlp, opts, video_url)
 
         subtitle = choose_subtitle(info.get("subtitles") or {}) or choose_subtitle(info.get("automatic_captions") or {})
         if not subtitle:
@@ -435,6 +433,18 @@ class Collector:
         if len(text) < 200:
             return {"ok": False, "text": "", "source": "", "reason": "subtitle_text_too_short"}
         return {"ok": True, "text": text, "source": f"yt_dlp_{subtitle.get('lang', 'subtitle')}", "reason": ""}
+
+    def extract_with_ytdlp(self, yt_dlp: Any, opts: dict[str, Any], url: str) -> dict[str, Any]:
+        try:
+            with yt_dlp.YoutubeDL(opts) as ydl:
+                return ydl.extract_info(url, download=False)
+        except Exception as exc:
+            if not opts.get("proxy") or not is_unsupported_proxy_error(exc):
+                raise
+            direct_opts = dict(opts)
+            direct_opts.pop("proxy", None)
+            with yt_dlp.YoutubeDL(direct_opts) as ydl:
+                return ydl.extract_info(url, download=False)
 
     def collect_github(self) -> dict[str, Any]:
         since = (self.now_utc - timedelta(days=7)).strftime("%Y-%m-%d")
@@ -814,6 +824,10 @@ def normalize_ytdlp_proxy_url(value: str | None) -> str | None:
     if value.lower().startswith("socks5h://"):
         return "socks5://" + value[len("socks5h://") :]
     return value
+
+
+def is_unsupported_proxy_error(exc: Exception) -> bool:
+    return "Unsupported proxy type" in str(exc)
 
 
 def extract_text_from_html(markup: str) -> str:
