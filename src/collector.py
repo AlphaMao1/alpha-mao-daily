@@ -814,7 +814,7 @@ def clean_text(value: Any) -> str:
 def normalize_secret(value: str | None) -> str | None:
     if value is None:
         return None
-    value = value.strip()
+    value = value.lstrip("\ufeff").strip()
     return value or None
 
 
