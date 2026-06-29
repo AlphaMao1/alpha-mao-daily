@@ -77,6 +77,7 @@ class Collector:
         self.session.headers.update({"User-Agent": USER_AGENT, "Accept": "*/*"})
         self.youtube_cookie_file: str | None = None
         self.youtube_proxy_url = normalize_secret(os.getenv("YOUTUBE_PROXY_URL"))
+        self.youtube_ytdlp_proxy_url = normalize_ytdlp_proxy_url(self.youtube_proxy_url)
         self.youtube_proxy_dict = self.build_youtube_proxy_dict(self.youtube_proxy_url)
 
     @staticmethod
@@ -331,8 +332,8 @@ class Collector:
         }
         if self.youtube_cookie_file:
             opts["cookiefile"] = self.youtube_cookie_file
-        if self.youtube_proxy_url:
-            opts["proxy"] = self.youtube_proxy_url
+        if self.youtube_ytdlp_proxy_url:
+            opts["proxy"] = self.youtube_ytdlp_proxy_url
 
         with yt_dlp.YoutubeDL(opts) as ydl:
             info = ydl.extract_info(url, download=False)
@@ -417,8 +418,8 @@ class Collector:
         }
         if self.youtube_cookie_file:
             opts["cookiefile"] = self.youtube_cookie_file
-        if self.youtube_proxy_url:
-            opts["proxy"] = self.youtube_proxy_url
+        if self.youtube_ytdlp_proxy_url:
+            opts["proxy"] = self.youtube_ytdlp_proxy_url
 
         with yt_dlp.YoutubeDL(opts) as ydl:
             info = ydl.extract_info(video_url, download=False)
@@ -805,6 +806,14 @@ def normalize_secret(value: str | None) -> str | None:
         return None
     value = value.strip()
     return value or None
+
+
+def normalize_ytdlp_proxy_url(value: str | None) -> str | None:
+    if not value:
+        return None
+    if value.lower().startswith("socks5h://"):
+        return "socks5://" + value[len("socks5h://") :]
+    return value
 
 
 def extract_text_from_html(markup: str) -> str:
