@@ -80,11 +80,13 @@ gh workflow run alpha-mao-daily.yml
 OPENAI_API_KEY
 OPENAI_MODEL
 YOUTUBE_COOKIES_B64
+YOUTUBE_PROXY_URL
 ```
 
 - `OPENAI_API_KEY`：用于 GitHub Actions 直接生成 `reports/latest.md`。
 - `OPENAI_MODEL`：用于指定日报生成模型；不设置时脚本会使用内置默认模型。
 - `YOUTUBE_COOKIES_B64`：可选，用于提高 YouTube transcript 抓取成功率。
+- `YOUTUBE_PROXY_URL`：可选，仅用于 YouTube 列表和 transcript 抓取；RSS、GitHub、AIHOT 不走这个代理。
 
 不要把真实 secret 写入 README、代码、`.env` 或终端日志。
 
@@ -99,6 +101,23 @@ gh secret set YOUTUBE_COOKIES_B64
 ```
 
 粘贴 base64 内容时不要把它提交进仓库。没有这个 secret 时，YouTube transcript 仍会尝试公开字幕；失败项会写入 JSON。
+
+## 配置 YouTube 住宅代理
+
+如果 GitHub Actions runner 被 YouTube 拦截，可以配置住宅代理：
+
+```bash
+gh secret set YOUTUBE_PROXY_URL
+```
+
+粘贴代理 URL，例如：
+
+```text
+http://user:password@host:port
+socks5h://user:password@host:port
+```
+
+不要把代理账号密码写进代码、README、`.env` 或日志。这个代理只会用于 YouTube 相关请求。
 
 ## 查看 latest.json
 

@@ -76,6 +76,8 @@ class Collector:
         self.session = requests.Session()
         self.session.headers.update({"User-Agent": USER_AGENT, "Accept": "*/*"})
         self.youtube_cookie_file: str | None = None
+        self.youtube_proxy_url = normalize_secret(os.getenv("YOUTUBE_PROXY_URL"))
+        self.youtube_proxy_dict = self.build_youtube_proxy_dict(self.youtube_proxy_url)
 
     @staticmethod
     def load_config() -> dict[str, Any]:
@@ -167,6 +169,12 @@ class Collector:
             Path(self.youtube_cookie_file).unlink(missing_ok=True)
         except Exception:
             pass
+
+    @staticmethod
+    def build_youtube_proxy_dict(proxy_url: str | None) -> dict[str, str] | None:
+        if not proxy_url:
+            return None
+        return {"http": proxy_url, "https": proxy_url}
 
     def collect_rss(self) -> dict[str, Any]:
         feeds = self.config.get("rss", {}).get("feeds", [])
@@ -323,6 +331,8 @@ class Collector:
         }
         if self.youtube_cookie_file:
             opts["cookiefile"] = self.youtube_cookie_file
+        if self.youtube_proxy_url:
+            opts["proxy"] = self.youtube_proxy_url
 
         with yt_dlp.YoutubeDL(opts) as ydl:
             info = ydl.extract_info(url, download=False)
@@ -371,10 +381,16 @@ class Collector:
 
     def fetch_transcript_with_api(self, video_id: str) -> dict[str, Any]:
         from youtube_transcript_api import YouTubeTranscriptApi
+        from youtube_transcript_api.proxies import GenericProxyConfig
 
         languages = ["en", "en-US", "en-GB", "zh-Hans", "zh-Hant"]
         try:
-            api = YouTubeTranscriptApi()
+            proxy_config = (
+                GenericProxyConfig(http_url=self.youtube_proxy_url, https_url=self.youtube_proxy_url)
+                if self.youtube_proxy_url
+                else None
+            )
+            api = YouTubeTranscriptApi(proxy_config=proxy_config)
             fetched = api.fetch(video_id, languages=languages)
             snippets = fetched.to_raw_data() if hasattr(fetched, "to_raw_data") else list(fetched)
         except TypeError:
@@ -401,6 +417,8 @@ class Collector:
         }
         if self.youtube_cookie_file:
             opts["cookiefile"] = self.youtube_cookie_file
+        if self.youtube_proxy_url:
+            opts["proxy"] = self.youtube_proxy_url
 
         with yt_dlp.YoutubeDL(opts) as ydl:
             info = ydl.extract_info(video_url, download=False)
@@ -409,7 +427,7 @@ class Collector:
         if not subtitle:
             return {"ok": False, "text": "", "source": "", "reason": "yt_dlp_no_subtitle_track"}
 
-        resp = self.session.get(subtitle["url"], timeout=30)
+        resp = self.session.get(subtitle["url"], timeout=30, proxies=self.youtube_proxy_dict)
         if resp.status_code >= 400:
             return {"ok": False, "text": "", "source": "", "reason": f"subtitle_fetch_http_{resp.status_code}"}
         text = parse_subtitle_payload(resp.text, subtitle.get("ext", ""))
@@ -780,6 +798,13 @@ def clean_text(value: Any) -> str:
     text = html.unescape(str(value or ""))
     text = re.sub(r"\s+", " ", text)
     return text.strip()
+
+
+def normalize_secret(value: str | None) -> str | None:
+    if value is None:
+        return None
+    value = value.strip()
+    return value or None
 
 
 def extract_text_from_html(markup: str) -> str:
