@@ -1,6 +1,6 @@
 {
   "date": "2026-06-29",
-  "generated_at": "2026-06-29T03:24:38Z",
+  "generated_at": "2026-06-29T03:28:21Z",
   "timezone": "Asia/Shanghai",
   "windows": {
     "rss": "72h",
@@ -16,16 +16,16 @@
       "failed": 4
     },
     "youtube": {
-      "candidates": 0,
+      "candidates": 35,
       "transcript_success": 0,
       "eligible": 0,
-      "failed": 8
+      "failed": 36
     },
     "github": {
-      "candidates": 25,
-      "readme_success": 25,
-      "eligible": 25,
-      "failed": 7
+      "candidates": 24,
+      "readme_success": 24,
+      "eligible": 24,
+      "failed": 5
     },
     "aihot": {
       "api_returned": 50,
@@ -204,15 +204,36 @@
         "text_truncated_in_raw": false
       },
       {
-        "name": "FluidVoice",
-        "full_name": "altic-dev/FluidVoice",
-        "url": "https://github.com/altic-dev/FluidVoice",
-        "description": "FluidVoice - Fastest macOS Offline Dictation app - Voice to Text fully Local. One ⭐ takes us a long way :))",
-        "stars": 3819,
-        "pushed_at": "2026-06-28T22:50:52Z",
-        "topics": [],
-        "source": "github_trending",
-        "text_excerpt": "# FluidVoice [![GitHub stars](https://img.shields.io/github/stars/altic-dev/FluidVoice?style=social)](https://github.com/altic-dev/FluidVoice/stargazers) [![Sponsor FluidVoice](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/altic-dev) [![Supported Models](https://img.shields.io/badge/Models-Nemotron%20Speech%203.5%20%7C%20Parakeet%20Flash%20%7C%20Parakeet%20v3%20%26%20v2%20%7C%20Cohere%20%7C%20Apple%20Speech%20%7C%20Whisper-blue)](https://huggingface.co/nvidia/parakeet_realtime_eou_120m-v1) Open source voice-to-text dictation app for macOS with on-device AI enhancement. **Install with Homebrew:** `brew install --cask fluidvoice` **Manual download:** [latest release](https://github.com/altic-dev/FluidVoice/releases/latest) > [!IMPORTANT] > This project is free and open source under GPLv3. If FluidVoice is useful to you, please star the repository — it helps visibility and keeps development going. --- ## Support FluidVoice If FluidVoice helps you, you can support continued development and future platform work for iOS and Windows on [GitHub Sponsors](https://github.com/sponsors/altic-dev). --- ## What's New in 1.6.0 - **Insanely fast Parakeet** — rebuilt Parakeet implementation with pretty much zero delay between speaking and seeing words on screen - **Fluid Intelligence** — fully local AI model for on-device dictation enhancement. No cloud, no API keys, no data leaving your Mac - **Better Theming** — adaptive light/dark theme with a compact toolbar switcher - **Refreshed Onboarding** — language-first voice engine setup, real dictation tryout, and AI enhancement setup in one clean pass > [!WARNING] > Based on early feedback, Fluid Intelligence may cause you to unsubscribe from other dictation apps and save money. You've been warned. ## Fluid Intelligence FluidVoice is fully open source under GPLv3. **Fluid Intelligence** is a separate, privately maintained local AI runtime that powers advanced on-device dictation enhancement — smart formatting, context-aware capitalization, and post-processing — all running locally on your Mac. The app works great on its own with any supported speech model and optional cloud AI providers. Fluid Intelligence adds a fully local, private AI layer for users who want on-device enhancement without sending data anywhere. We're keeping Fluid Intelligence p\n\n[TRUNCATED]",
+        "name": "cloudpods",
+        "full_name": "yunionio/cloudpods",
+        "url": "https://github.com/yunionio/cloudpods",
+        "description": "An open-source cloud-native unified-cloud platform. 开源云原生融合云平台",
+        "stars": 2913,
+        "pushed_at": "2026-06-29T03:28:54Z",
+        "topics": [
+          "ai",
+          "aws",
+          "azure",
+          "baremetal",
+          "baremetal-provisioning",
+          "cloud",
+          "cmp",
+          "gcp",
+          "hybridcloud",
+          "iaas",
+          "infrastructure",
+          "kubernetes",
+          "kvm",
+          "multi-cloud",
+          "openclaw",
+          "openstack",
+          "private-cloud",
+          "qemu",
+          "unified-cloud",
+          "vsphere"
+        ],
+        "source": "search",
+        "text_excerpt": "# Cloudpods [![CircleCI](https://circleci.com/gh/yunionio/cloudpods.svg?style=svg)](https://circleci.com/gh/yunionio/cloudpods) [![Go Report Card](https://goreportcard.com/badge/github.com/yunionio/cloudpods)](https://goreportcard.com/report/github.com/yunionio/cloudpods) [English](./README.md) | [简体中文](./README-CN.md) ## What is Cloudpods? <img src=\"https://v1.cloudpods.org/images/cloudpods_logo_green.png\" alt=\"Cloudpods\" height=\"100\"> Cloudpods is a cloud-native open source unified multi/hybrid-cloud platform developed with Golang, i.e. Cloudpods is *a cloud on clouds*. Cloudpods is able to manage not only on-premise KVM/baremetals, but also resources from many cloud accounts across many cloud providers. It hides the differences of underlying cloud providers and exposes one set of APIs that allow programatically interacting with these many clouds. Cloudpods also provides **AI Cloud**, a unified management platform for large language model (LLM) inference and AI container applications, helping enterprises deploy, schedule, and operate AI workloads on a single platform, seamlessly integrated with the Cloudpods private cloud / multi-cloud resource ecosystem. ## Who needs Cloudpods? * Those who need a simple solution to virtualize a few physical servers into a private cloud * Those who need a compact and fully automatic baremetal lift-cycle management solution * Those who want to turn a VMware vSphere virtualization cluster into a private cloud * Those who need a cohesive view of both public and private cloud in a hybrid cloud setup * Those who need a centric portal to access multiple acccounts from multiple public clouds * Those who is currently using a single cloud account, but will not lose the possibility to adopt multicloud strategy * Those who need to deploy and manage LLM inference services and AI container applications with GPU support ## Features See [Introduction](https://www.cloudpods.org/docs/introduction/) for details. ### AI Cloud * **AI Inference Services**: Deploy and manage LLM inference instances with GPU scheduling, model mounting, and inference service address allocation. * **AI Application Management**: One-stop deployment of LLM application orchestration, agent assistants, image generation, and other AI container applications. * **Model Library**: Unified management of model sources, versions, and caches, supporting multi-instance reuse a\n\n[TRUNCATED]",
         "text_source_field": "readme_text",
         "text_truncated_in_raw": false
       },
@@ -251,27 +272,22 @@
         "text_truncated_in_raw": true
       },
       {
-        "name": "llmwiki",
-        "full_name": "lucasastorian/llmwiki",
-        "url": "https://github.com/lucasastorian/llmwiki",
-        "description": "Open Source Implementation of Karpathy's LLM Wiki. Upload documents, connect your Claude account via MCP, and have it write your wiki !",
-        "stars": 1230,
-        "pushed_at": "2026-06-29T03:21:35Z",
+        "name": "Sage",
+        "full_name": "ZHangZHengEric/Sage",
+        "url": "https://github.com/ZHangZHengEric/Sage",
+        "description": "Multi-Agent System Framework For Complex Tasks",
+        "stars": 1208,
+        "pushed_at": "2026-06-29T03:27:00Z",
         "topics": [
           "agents",
-          "ai-agents",
-          "claude",
-          "karpathy",
-          "knowledge-base",
+          "ai",
           "llm",
-          "llm-wiki",
-          "mcp",
-          "mcp-server",
-          "rag",
-          "supabase"
+          "manus",
+          "muilt-agents",
+          "workflow"
         ],
         "source": "search",
-        "text_excerpt": "# LLM Wiki **An autonomous, self-maintaining personal Wikipedia built and maintained by AI.** [![License](https://img.shields.io/badge/license-Apache%202.0-green)](https://opensource.org/licenses/Apache-2.0) </div> LLM Wiki transforms your scattered reading and research into a persistent, AI-maintained second brain. Capture documents, notes, and web clippings as you work, and deploy a nightly Claude Routine to autonomously synthesize those sources into a permanent knowledge base. Because the clipper captures your highlights and margin notes alongside the source, the wiki becomes a record of not just what you read but what you *thought* about it — one that compounds over months and years, long after the original context would have faded. This architecture is heavily inspired by [Andrej Karpathy's LLM Wiki concept](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f), with an increased emphasis on autonomous maintenance. <p align=\"center\"> <img src=\"wiki-page.png\" alt=\"LLM Wiki — a compiled wiki page with citations and table of contents\" width=\"820\" /> </p> LLM Wiki is designed to work at three distinct scales: - **For you** — a personal Wikipedia of what you've read that you don't have to remember to update. - **For your AI** — a context layer for LLMs to apply your own mental models when working with you. - **For your organization** — most organizations have poor institutional memory, because know-how generally lives in people's heads. We hope companies will consider adopting this model to build a self-maintaining institutional knowledge layer. # Features - **Connect via MCP** Connect Claude.ai, Claude Cowork, Claude Code, or Codex (or any other MCP-compatible app) - **A Chrome extension** Clip webpages and PDFs as you read, highlight key sections, and leave comments that Claude can see over MCP. - **Uploads** Markdown, PowerPoint, PDFs, Word documents, and more. - **A clean Next.js web app** to navigate your own wikipedia — and view the underlying sources. - **Native cross-linking** between wiki pages, and back to the sources they came from. - **A graph viewer** to see how your concepts and entities relate. - **Visualizations** — Charts and other visualizations, including SVGs and Mermaid diagrams. # Getting started LLM Wiki supports two modes: remote & local. You can self-host the remote app, or try it out for free at llmwiki.app. Or you can\n\n[TRUNCATED]",
+        "text_excerpt": "<div align=\"center\"> # 🌟 **Experience Sage's Power** ![cover](assets/cover.png) [![English](https://img.shields.io/badge/Language-English-blue.svg)](README.md) [![简体中文](https://img.shields.io/badge/语言-简体中文-red.svg)](README_CN.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?logo=opensourceinitiative)](LICENSE) [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg?logo=python)](https://python.org) [![Version](https://img.shields.io/badge/Version-1.1.0-green.svg)](https://github.com/ZHangZHengEric/Sage) [![DeepWiki](https://img.shields.io/badge/DeepWiki-Learn%20More-purple.svg)](https://deepwiki.com/ZHangZHengEric/Sage) [![Slack](https://img.shields.io/badge/Slack-Join%20Community-4A154B?logo=slack)](https://join.slack.com/t/sage-b021145/shared_invite/zt-3t8nabs6c-qCEDzNUYtMblPshQTKSWOA) # 🧠 **Sage Agent Platform** ### 🎯 **From Complex Work to Reliable Delivery** > 🌟 **A production-ready agent platform for task execution, automation, browser workflows, IM delivery, and enterprise deployment.** </div> --- ## 📸 **Product Screenshots** <div align=\"center\"> <table> <tr> <td align=\"center\" width=\"33%\"> <img src=\"assets/screenshots/workbench.png\" width=\"100%\" alt=\"Workbench\"/> <br/><strong>Visual Workbench</strong> </td> <td align=\"center\" width=\"33%\"> <img src=\"assets/screenshots/chat.png\" width=\"100%\" alt=\"Chat\"/> <br/><strong>Real-time Collaboration</strong> </td> <td align=\"center\" width=\"33%\"> <img src=\"assets/screenshots/preview.png\" width=\"100%\" alt=\"Preview\"/> <br/><strong>Multi-format Support</strong> </td> </tr> </table> </div> > 📖 **Detailed Documentation**: [https://wiki.sage.zavixai.com/](https://wiki.sage.zavixai.com/) --- ## ✨ **Key Features** - 🤖 **Planning to Delivery**: Built-in planning, execution, self-check, memory recall, and tool suggestion agents for complex task completion. - 🌐 **Multi-Entry Product Surface**: Use Sage from desktop, web, CLI, and Chrome extension depending on the workflow. - 🔁 **Automation & Recurring Tasks**: Run scheduled jobs, questionnaire-driven collection flows, and long-running operational tasks with progress visibility. - 💬 **Omnichannel IM Integration**: Connect WeChat Personal (iLink), WeCom, Feishu, and DingTalk with message and file delivery support. - 🧰 **Unified Tooling System**: Combine built-in tools, Skills, MCP servers, browser automation, search, and image generation\n\n[TRUNCATED]",
         "text_source_field": "readme_text",
         "text_truncated_in_raw": false
       },
@@ -281,7 +297,7 @@
         "url": "https://github.com/shiwenwen/hope-agent",
         "description": "🦭跨端交接、越用越懂你的桌面 AI 助手——也能服务化常驻、跑在云上 | Desktop AI that hands off across your devices and gets to know you better — also runs headless on a NAS or in the cloud",
         "stars": 1089,
-        "pushed_at": "2026-06-29T03:22:56Z",
+        "pushed_at": "2026-06-29T03:28:59Z",
         "topics": [
           "agent",
           "ai",
@@ -336,6 +352,37 @@
         "text_truncated_in_raw": false
       },
       {
+        "name": "AITreasureBox",
+        "full_name": "superiorlu/AITreasureBox",
+        "url": "https://github.com/superiorlu/AITreasureBox",
+        "description": "🤖 Automatically collected AI repos, tools, websites, papers & tutorials. 实用AI百宝箱 💎",
+        "stars": 824,
+        "pushed_at": "2026-06-29T03:29:07Z",
+        "topics": [
+          "agentic",
+          "agi",
+          "ai",
+          "ai-gents",
+          "ai-prompts",
+          "ai-tools",
+          "alpaca",
+          "awesome-list",
+          "deep-learning",
+          "deepseek",
+          "gpt",
+          "harness",
+          "llama",
+          "llm",
+          "machine-learning",
+          "mcp",
+          "openai"
+        ],
+        "source": "search",
+        "text_excerpt": "# AI TreasureBox <p id=\"top\" align=\"center\"> <img src=\"https://user-images.githubusercontent.com/1154692/234059336-aa9346bb-0016-41ac-9e1c-c127b84fb0b0.png\" height=400 width=850 /> </p> <p align=\"center\"> <br> English | <a href=\"README.zh-CN.md\">中文</a> </p> <p align=\"center\"> <em>Collect practical AI repos, tools, websites, papers and tutorials on AI.</em><br/> <em>Translated from ChatGPT, picture from Midjourney.</em> </p> <p align=\"center\"> <img alt=\"GitHub Workflow Status\" src=\"https://img.shields.io/github/actions/workflow/status/superiorlu/AiTreasureBox/main.yml\" /> <img alt=\"GitHub last update\" src=\"https://img.shields.io/badge/last update-03:29:07UTC-brightgreen\" /> </p> ## Catalog - [Repos](#repos) - [Tools](#tools) - [Websites](#websites) - [Report&Paper](#reportspapers) - [Tutorials](#tutorials) ## Repos > updated repos and stars every 2 hours and re-ranking automatically. | <div width=\"30px\">No.</div> | <div width=\"250px\">Repos</div> | <div width=\"400px\">Description</div> | | ----:|:-----------------------------------------|:------------------------------------------------------------------------------------------------------| | 1|[codecrafters-io/build-your-own-x](https://github.com/codecrafters-io/build-your-own-x) </br> ![2026-06-29_520621_51](https://img.shields.io/github/stars/codecrafters-io/build-your-own-x.svg)|Master programming by recreating your favorite technologies from scratch.| | 2|[sindresorhus/awesome](https://github.com/sindresorhus/awesome) </br> ![2026-06-29_479676_60](https://img.shields.io/github/stars/sindresorhus/awesome.svg)|😎 Awesome lists about all kinds of interesting topics| | 3|[public-apis/public-apis](https://github.com/public-apis/public-apis) </br> ![2026-06-29_444806_43](https://img.shields.io/github/stars/public-apis/public-apis.svg)|A collective list of free APIs| | 4|[moltbot/moltbot](https://github.com/moltbot/moltbot) </br> ![2026-06-29_380895_36](https://img.shields.io/github/stars/moltbot/moltbot.svg)|Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞| | 5|[kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap) </br> ![2026-06-29_358555_9](https://img.shields.io/github/stars/kamranahmedse/developer-roadmap.svg)|Interactive roadmaps, guides and other educational content to help developers grow in their careers.| | 6|[vinta/awesome-python](https://github.co\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": true
+      },
+      {
         "name": "kooky",
         "full_name": "iAmCorey/kooky",
         "url": "https://github.com/iAmCorey/kooky",
@@ -364,40 +411,6 @@
         "text_truncated_in_raw": false
       },
       {
-        "name": "models",
-        "full_name": "reyamira/models",
-        "url": "https://github.com/reyamira/models",
-        "description": "TUI and CLI for browsing AI models, benchmarks, coding agents, and statuses for AI providers.",
-        "stars": 456,
-        "pushed_at": "2026-06-29T03:17:52Z",
-        "topics": [
-          "ai",
-          "anamolyco",
-          "artificial-analysis",
-          "benchmarks",
-          "claude-code",
-          "codex",
-          "coding-agents",
-          "gemini-cli",
-          "llm",
-          "models",
-          "models-dev",
-          "openclaw",
-          "opencode",
-          "ratatui",
-          "rust",
-          "sst",
-          "sst-inspired",
-          "status",
-          "status-page",
-          "tui"
-        ],
-        "source": "search",
-        "text_excerpt": "<p align=\"center\"> <img src=\"public/assets/logo.svg\" alt=\"models\" width=\"420\"> </p> <p align=\"center\"> <a href=\"https://crates.io/crates/modelsdev\"><img src=\"https://img.shields.io/crates/v/modelsdev.svg?label=version\" alt=\"Version\"></a> <a href=\"https://github.com/reyamira/models/actions/workflows/update-benchmarks.yml\"><img src=\"https://github.com/reyamira/models/actions/workflows/update-benchmarks.yml/badge.svg\" alt=\"Benchmarks\"></a> <a href=\"https://opensource.org/licenses/MIT\"><img src=\"https://img.shields.io/badge/License-MIT-yellow.svg\" alt=\"License: MIT\"></a> <a href=\"https://buymeacoffee.com/arimxyer\"><img src=\"https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?logo=buy-me-a-coffee&logoColor=black\" alt=\"Buy Me a Coffee\"></a> </p> TUI and CLI for browsing AI models, benchmarks, coding agents, and provider statuses. ![Models tab screenshot](public/assets/models-screenshot.png) ## Highlights - **~4,000+ models** across 85+ providers from [models.dev](https://models.dev) — filter by capability, price, context, and provider category - **~1,000 benchmark entries** across 4 data sources — [Artificial Analysis](https://artificialanalysis.ai), [Epoch AI](https://epoch.ai), [Arena](https://arena.ai), and [LLM Stats](https://llm-stats.com) — compare models head-to-head with scatter plots and radar charts - **11+ coding agents** tracked with version detection, changelogs, and GitHub integration - **22 provider statuses** monitored live across 7 status page platforms ## What's New in v0.12.1 - **Mouse support** — click a row to select it, click a panel to focus it, click a header tab to switch tabs, and scroll with the wheel. Popups (sort, columns, glossary, trackers, help) scroll and accept row clicks too. ## What's New in v0.12.0 - **Multi-source benchmarks** — 4 switchable data sources (Artificial Analysis, Epoch AI, Arena, LLM Stats) with state-preserving switching, in-app refresh, and a benchmark glossary - **Column picker** — choose which metric columns are visible, persisted per source in config.toml - **Comparator column** — cycle field average / peer average / rank alongside every score in the detail panel - **Refresh keys everywhere** — refresh benchmarks, models.dev data, and agent GitHub data without restarting - **`default_tab` config** — launch the TUI straight into your tab of choice - **Prebuilt Nix binaries** — builds are pushed to a publ\n\n[TRUNCATED]",
-        "text_source_field": "readme_text",
-        "text_truncated_in_raw": false
-      },
-      {
         "name": "ai-shifu",
         "full_name": "ai-shifu/ai-shifu",
         "url": "https://github.com/ai-shifu/ai-shifu",
@@ -417,24 +430,33 @@
         "text_truncated_in_raw": false
       },
       {
-        "name": "Awesome-Self-Evolving-Agents",
-        "full_name": "XMUDeepLIT/Awesome-Self-Evolving-Agents",
-        "url": "https://github.com/XMUDeepLIT/Awesome-Self-Evolving-Agents",
-        "description": "A Survey of Self-Evolving Agents | A curated list of resources (surveys, papers, benchmarks, and opensource projects) on Self-Evolving Agents.",
-        "stars": 282,
-        "pushed_at": "2026-06-29T03:08:16Z",
+        "name": "MisakaNet",
+        "full_name": "Ikalus1988/MisakaNet",
+        "url": "https://github.com/Ikalus1988/MisakaNet",
+        "description": "📚 A zero-dependency, git-backed micro-lesson library for AI Agents to asynchronously share and search verified debugging experience. Python stdlib only. | https://misakanet.org",
+        "stars": 212,
+        "pushed_at": "2026-06-29T03:27:30Z",
         "topics": [
-          "agent",
-          "agent-skills",
-          "agent-survey",
-          "awsome-self-evolving-agents",
-          "self-evolution",
-          "self-evolving",
-          "self-evolving-agents",
-          "skill-survey"
+          "agent-framework",
+          "agent-network",
+          "ai-agent",
+          "claude",
+          "devops",
+          "distributed-memory",
+          "git-based",
+          "knowledge-graph",
+          "knowledge-sharing",
+          "langchain",
+          "llm",
+          "misaka-network",
+          "multi-agent",
+          "open-source",
+          "python",
+          "rag",
+          "swarm-intelligence"
         ],
         "source": "search",
-        "text_excerpt": "# Awesome-Self-Evolving-Agents <div align=\"center\"> <a href=\"https://awesome.re\"><img src=\"https://awesome.re/badge.svg\"/></a> <a href=\"http://makeapullrequest.com\"><img src=\"https://img.shields.io/badge/PRs-welcome-green.svg\"/></a> <a href=\"https://doi.org/10.36227/techrxiv.177203250.05832634/v2\" target=\"_blank\"><img src=\"https://img.shields.io/badge/Paper-Arxiv-red?logo=arxiv&style=flat-square\" alt=\"arXiv:2602.05665\"></a> <a href=\"http://makeapullrequest.com\"><img src=\"https://img.shields.io/github/stars/XMUDeepLIT/Awesome-Self-Evolving-Agents\"/></a> </div> This repository provides a comprehensive collection of research papers, benchmarks, and open-source projects on **Self-Evolving Agents**. It includes contents from our survey paper 📖<em>\"[**A Systematic Survey of Self-Evolving Agents: From Model-Centric to Environment-Driven Co-Evolution**](https://doi.org/10.36227/techrxiv.177203250.05832634/v2)\"</em> and will be continuously updated. 🤗 **You're very welcome to contribute to this repository**. If you find any missing resources or come across interesting new research works, please don’t hesitate to launch an issue or submit a pull request! 📫 **Contact us via emails:** `{xiangzhishang,yangchengyi}@stu.xmu.edu.cn`, `qinggangzhang@jlu.edu.cn` **📃 Please [cite our paper](#-citation)** if you find our survey or repository helpful! ``` @article{xiang2026systematic, title={A Systematic Survey of Self-Evolving Agents: From Model-Centric to Environment-Driven Co-Evolution}, author={Xiang, Zhishang and Yang, Chengyi and Chen, Zerui and Wei, Zhimin and Tang, Yunbo and Teng, Zongpei and Peng, Zexi and Li, Zongxia and Huang, Chengsong and He, Yicheng and others}, journal={Available at SSRN 6626878}, year={2026} } ``` --- # 🎉 News - **[2026-03]** We release the [TTCS](https://arxiv.org/abs/2601.22628) and accepted by [ICLR 2026 Lifelong Agent(LLA)](https://iclr.cc/virtual/2026/workshop/10000805) workshop! - **[2026-02]** We release the survey of [Self-Evolving Agents](https://github.com/XMUDeepLIT/Awesome-Agentic-Self-Evolution). --- <div> <h3 align=\"center\"> <p align=\"center\"><img width=\"100%\" src=\"figs/intro.png\" /></p> <p align=\"center\"><em>A Comprehensive Taxonomy of Self-Evolving Agents.</em></p> </div> Agentic Self-Evolving represents a paradigm shift in AI development, enabling systems to autonomously improve through three key dimensions: - **Model-Centric Sel\n\n[TRUNCATED]",
+        "text_excerpt": "# Swarm Knowledge Protocol (SKP) > **MisakaNet** is the flagship reference implementation of the Swarm Knowledge Protocol. <p align=\"center\"> <img src=\"promotional/og-card.png\" width=\"720\" alt=\"MisakaNet — SKP Reference Implementation\"/> </p> <p align=\"center\"> <a href=\"https://github.com/Ikalus1988/MisakaNet/stargazers\"><img src=\"https://img.shields.io/github/stars/Ikalus1988/MisakaNet?style=social\" alt=\"Stars\"/></a> <a href=\"https://img.shields.io/badge/nodes-35+-green\"><img src=\"https://img.shields.io/badge/nodes-35+-green?label=Nodes\" alt=\"Nodes\"/></a> <a href=\"https://img.shields.io/badge/lessons-149+-blue\"><img src=\"https://img.shields.io/badge/lessons-149+-blue?label=Lessons\" alt=\"Lessons\"/></a> <a href=\"https://github.com/Ikalus1988/MisakaNet/blob/main/LICENSE\"><img src=\"https://img.shields.io/github/license/Ikalus1988/MisakaNet?style=flat&color=blueviolet\" alt=\"License\"/></a> </p> --- ## 👋 你是谁？快速导航 <table> <tr> <td width=\"33%\" align=\"center\"> <b>🤖 我是 AI Agent</b><br/> <sub>想接入 SKP 知识网络</sub> <br/><br/> → <a href=\"docs/agents/quickstart.md\">Agent 快速接入</a><br/> → <a href=\"docs/cli-reference.md\">CLI 参考</a><br/> → <a href=\"AGENTS.md\">Agent 能力声明</a> </td> <td width=\"33%\" align=\"center\"> <b>🧑‍💻 我是开发者</b><br/> <sub>想搜索/贡献/审查 lesson</sub> <br/><br/> → <a href=\"#-quick-start\">快速开始 (30s)</a><br/> → <a href=\"docs/lesson-checklist.md\">Lesson 检查清单</a><br/> → <a href=\"docs/CONCEPTS.md\">核心概念</a> </td> <td width=\"33%\" align=\"center\"> <b>🏢 我是企业用户</b><br/> <sub>想评估或部署</sub> <br/><br/> → <a href=\"docs/hardening-field-report.md\">加固报告</a><br/> → <a href=\"docs/LIMITATIONS.md\">已知限制</a><br/> → <a href=\"docs/registration-channels.md\">注册通道</a> </td> </tr> </table> --- ## 🧱 Product Matrix — The Full Stack The MisakaNet ecosystem is built as a **layered defense & knowledge stack**: ``` ┌──────────────────────────────────────────────────────────────────┐ │ 😵 fatal-guard │ Crash → tombstone JSON │ │ $ npx @misaka-net/ │ pid | timestamp | reason | │ │ fatal-guard -- <cmd> │ exit_code | snippet[redacted] │ │ (npm, zero-config) │ → feeds draft lesson pipeline │ ├──────────────────────────────────────────────────────────────────┤ │ 🧠 MisakaNet (this repo) │ Swarm Knowledge Protocol (SKP) │ │ $ python3 search_know- │ 149+ lessons, BM25 + RRF │ │ ledge.py \"<error>\" │ git clone → search → contribute │ │ (zero-dep core engine) │ Zero server, zero database │ ├────────────────────────────\n\n[TRUNCATED]",
         "text_source_field": "readme_text",
         "text_truncated_in_raw": false
       },
@@ -483,95 +505,26 @@
         "text_truncated_in_raw": false
       },
       {
-        "name": "pegaflow",
-        "full_name": "novitalabs/pegaflow",
-        "url": "https://github.com/novitalabs/pegaflow",
-        "description": "High-performance KV cache storage for LLM inference — GPU offloading, SSD caching, and cross-node sharing via RDMA. Works with vLLM and SGLang.",
-        "stars": 154,
-        "pushed_at": "2026-06-29T03:22:00Z",
-        "topics": [
-          "inference",
-          "kv-cache",
-          "llm",
-          "vllm"
-        ],
-        "source": "search",
-        "text_excerpt": "# Pegaflow <div align=\"center\"> <img src=\"./assets/logo.png\" width=\"200\" /> <p><strong><em>KV cache on the wings of Pegasus.</em></strong></p> [![CI](https://github.com/novitalabs/pegaflow/actions/workflows/ci.yml/badge.svg)](https://github.com/novitalabs/pegaflow/actions/workflows/ci.yml) [![PyPI](https://img.shields.io/pypi/v/pegaflow-llm)](https://pypi.org/project/pegaflow-llm/) [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE) </div> **PegaFlow is a high-performance KV cache storage engine for LLM inference.** Offload KV cache from GPU to host memory or SSD, and share it across nodes via RDMA. - **Decoupled from inference lifecycle** — runs as an independent sidecar; KV cache survives engine restarts, scales independently, and is shared across instances - **Topology-aware, PCIe-saturating transfers** — NUMA-aware pinned memory + layer-wise DMA to maximize hardware bandwidth - **GIL-free Rust core** — zero Python overhead on the hot path; your inference engine keeps its threads - **Production-ready observability** — built-in Prometheus metrics and OTLP export, not an afterthought - **Pluggable** — works with vLLM as a drop-in KV connector ## News - **2026-05-18** — [vLLM x Novita AI: PegaFlow for Production-Grade External KV Cache](https://vllm.ai/blog/2026-05-18-pegaflow), a joint blog post with the vLLM team. ## Architecture <div align=\"center\"> <img src=\"./assets/arch.svg\" alt=\"PegaFlow architecture\" /> </div> ## Framework Integration | Framework | Status | Link | |-----------|--------|------| | vLLM | ✅ Ready | [Quick Start](#3-launch-your-inference-engine) | ## Quick Start ### 1. Install ```bash uv pip install pegaflow-llm # CUDA 12 uv pip install pegaflow-llm-cu13 # CUDA 13 ``` ### 2. Start PegaFlow Server ```bash pegaflow-server ``` ### 3. Launch your inference engine **vLLM:** ```bash vllm serve Qwen/Qwen3-0.6B \\ --kv-transfer-config '{\"kv_connector\": \"PegaKVConnector\", \"kv_role\": \"kv_both\", \"kv_connector_module_path\": \"pegaflow.connector\"}' ``` > For full server options, multi-node setup, and advanced configuration, see [Server Configuration](./docs/server.md). ## Development ### Build from source ```bash export PYO3_PYTHON=$(which python) export LD_LIBRARY_PATH=$(python -c \"import sysconfig; print(sysconfig.get_config_var('LIBDIR'))\"):$LD_LIBRARY_PATH cargo run -r # start server cd python && maturin develop -r # build\n\n[TRUNCATED]",
-        "text_source_field": "readme_text",
-        "text_truncated_in_raw": false
-      },
-      {
-        "name": "agentic-coding",
-        "full_name": "sammcj/agentic-coding",
-        "url": "https://github.com/sammcj/agentic-coding",
-        "description": "Agentic Coding Rules, Templates etc...",
-        "stars": 145,
-        "pushed_at": "2026-06-29T03:18:43Z",
+        "name": "atris",
+        "full_name": "atrislabs/atris",
+        "url": "https://github.com/atrislabs/atris",
+        "description": "a self improving operating system for intelligence",
+        "stars": 67,
+        "pushed_at": "2026-06-29T03:27:47Z",
         "topics": [
           "agentic",
-          "agentic-coding",
-          "agents",
-          "ai",
-          "cline",
-          "copilot",
-          "llm",
-          "mcp",
-          "rules",
-          "templates"
+          "ai-agents",
+          "ai-operating-system",
+          "ai-workflow",
+          "autonomous-agents",
+          "claude-code",
+          "cli",
+          "coding-agent",
+          "developer-tools",
+          "llm"
         ],
         "source": "search",
-        "text_excerpt": "# Sam's Agentic Coding Rules, Templates and Examples - [Sam's Agentic Coding Rules, Templates and Examples](#sams-agentic-coding-rules-templates-and-examples) - [Coding Agent Rules, Skills and Templates](#coding-agent-rules-skills-and-templates) - [Patterns / Workflows](#patterns--workflows) - [MCP Servers (Agent Tools)](#mcp-servers-agent-tools) - [Tips For Agentic Coding](#tips-for-agentic-coding) - [Links](#links) - [License](#license) A collection of coding rules, templates, MCP servers and examples for working with Agentic Coding tools ## Coding Agent Rules, Skills and Templates The repository is organised with tool-agnostic content at the root level: - [Agent Rules](./Rules/) - Agent instruction files - [Rules/CLAUDE.md](./Rules/CLAUDE.md) is usually the most up to date and comprehensive - [Rules/AGENTS.md](./Rules/AGENTS.md) is more generalised for use with other agentic coding tools. - [Agent Skills](./Skills/) - Reusable skills that extend agent capabilities - [Agent Commands](./Claude/commands/) - (Prompt templates) - [Hooks](./Claude/hooks/) - Hooks that can be used when specific lifecycle events occur (e.g. after writing to a file) - [Custom Agents](./Claude/agents/) - Custom defined agents. - [Claude Code Statusline](./Claude/statusline-command.sh) - Custom statusline for Claude Code that shows usage and context information. - [Claude Local Marketplace](./Claude/plugins/local-marketplace/) - My local marketplace (plugins) for Claude Code, including LSP definitions. Note: Most rules and skills are portable between agentic coding tools. The exception being Claude _Skills_, which I'm yet to see other tools support - but have no doubt they will as they're one of the most powerful and useful agentic coding concepts. ![Setup -> Plan -> Act -> Review & Iterate Diagram](setup-plan-act-iterate.svg) ### Agentic Coding Tools - Not All Created Equal **I _highly_ recommend Claude Code as the best agentic coding tools.** In my experience Claude Code _far_ outperforms the many other tools I've worked with over the past 3+ years including: Copilot Agent, Gemini CLI, Codex, Cursor, Kiro, Windsurf, Augment Code, AntiGravity, Aider and many, many others. The next best thing to Claude Code? I think that's probably [OpenCode](https://opencode.ai/) or [Cline](https://cline.bot). - Claude Code offers the fastest agentic coding experience that leads to the highest qual\n\n[TRUNCATED]",
-        "text_source_field": "readme_text",
-        "text_truncated_in_raw": false
-      },
-      {
-        "name": "ai-sdk-ollama",
-        "full_name": "jagreehal/ai-sdk-ollama",
-        "url": "https://github.com/jagreehal/ai-sdk-ollama",
-        "description": "A Vercel AI SDK provider for Ollama built on the official ollama package. Type safe, future proof, with cross provider compatibility and native Ollama features.",
-        "stars": 124,
-        "pushed_at": "2026-06-29T03:23:59Z",
-        "topics": [
-          "ai",
-          "ai-sdk",
-          "ollama",
-          "vercel-ai-sdk"
-        ],
-        "source": "search",
-        "text_excerpt": "# AI SDK Ollama [![npm version](https://badge.fury.io/js/ai-sdk-ollama.svg)](https://badge.fury.io/js/ai-sdk-ollama) [![TypeScript](https://img.shields.io/badge/TypeScript-5.9+-blue.svg)](https://www.typescriptlang.org/) [![Node.js](https://img.shields.io/badge/Node.js-22+-green.svg)](https://nodejs.org/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) A Vercel AI SDK provider for Ollama, built on the official `ollama` package. Type-safe, cross-provider compatible, with access to native Ollama features. > **Version compatibility** > > Each `ai-sdk-ollama` major targets one AI SDK major. Every line stays published on npm, so pick the one that matches your `ai` version: > > | `ai-sdk-ollama` | `ai` (peer) | Status | > | --- | --- | --- | > | `4.x` (`@latest`) | `ai@^7` | Active. New features land here. | > | `3.x` | `ai@^6` | Maintenance. Critical fixes only. | > | `2.x` | `ai@^5` | Unmaintained. | > > AI SDK v7 is stable, so v4 installs from `latest`. The v3 line still works for AI SDK v6. ## Quick Start ```bash # AI SDK v7 (stable) npm install ai-sdk-ollama ai # AI SDK v6 npm install ai-sdk-ollama@^3 ai@^6 ``` ```typescript import { ollama } from 'ai-sdk-ollama'; import { generateText } from 'ai'; // Works in both Node.js and browsers const { text } = await generateText({ model: ollama('llama3.2'), prompt: 'Write a haiku about coding', temperature: 0.8, }); console.log(text); ``` ## Key Features - **Tool calling reliability** - Enhanced response synthesis for consistent tool execution - **Wrapper functions** - `generateText` and `streamText` with improved response handling - **Built-in reliability** - Default reliability features enabled automatically - **Automatic JSON repair** - Cascade repair (jsonrepair + Ollama-specific fallback) for malformed object generation output - **Web search integration** - Built-in web search and fetch tools powered by [Ollama's web search API](https://ollama.com/blog/web-search) - **Reranking** - Document relevance ranking using embedding-based similarity - **Middleware system** - Wrap models with `defaultSettingsMiddleware` and `extractReasoningMiddleware` - **ToolLoopAgent** - Autonomous agents that run tool loops with configurable stop conditions - **Streaming utilities** - `smoothStream` and `parsePartialJson` for stream handling - **Type-safe** - Full TypeScript\n\n[TRUNCATED]",
-        "text_source_field": "readme_text",
-        "text_truncated_in_raw": false
-      },
-      {
-        "name": "agent-inspect",
-        "full_name": "rajudandigam/agent-inspect",
-        "url": "https://github.com/rajudandigam/agent-inspect",
-        "description": "Local execution trees for TypeScript AI agents. agent-inspect helps you understand what happened inside an AI agent run — locally. It turns manual steps, tool calls, LLM calls, structured logs, failures, durations, and run metadata into readable execution trees you can inspect from the terminal. It is built for TypeScript/Node.js developers..",
-        "stars": 94,
-        "pushed_at": "2026-06-29T03:20:33Z",
-        "topics": [
-          "agent-observability",
-          "agentic-ai",
-          "ai",
-          "ai-agent",
-          "ai-debugging",
-          "ai-logging-library",
-          "ai-observability",
-          "ai-systems",
-          "braintrust",
-          "langfuse",
-          "langsmith",
-          "local-logging",
-          "logging",
-          "multi-agent",
-          "no-cloud",
-          "no-cost",
-          "observability",
-          "opentelemetry",
-          "typescript"
-        ],
-        "source": "search",
-        "text_excerpt": "# agent-inspect **Trace, check, and safely share TypeScript AI agent runs locally.** agent-inspect helps you understand what happened inside an AI agent run without sending traces to a hosted service. It turns framework events, observed objects/classes, manual steps, tool calls, LLM calls, structured logs, failures, durations, and run metadata into readable local execution trees. It is built for TypeScript/Node.js developers and teams shipping real agentic products — not just toy demos. Use it for **local TypeScript agent debugging**, **eval iteration**, and **CI trace artifacts**. It **complements** production observability platforms; it does **not** replace them. The default loop is local-first: capture a trace, inspect/report/diff it, run deterministic checks in CI, then export a redacted copy only when you choose to share. **No account. No cloud upload. No dashboard required.** **Visual demos:** [docs/SCREENSHOTS.md](docs/SCREENSHOTS.md) — curated terminal recordings (synthetic fixtures only). ## Why agent-inspect exists AI agents are no longer single function calls. They plan, call tools, invoke LLMs, branch, retry, fail, and run work in parallel. **Console logs are flat**; reconstructing causality from a wall of lines is slow and error-prone. **Hosted observability** is valuable in production, but it can be heavy for the **inner loop**: local runs, fast iteration, and debugging before anything reaches a collector or dashboard. agent-inspect gives those runs **structure**: an **execution tree** you can read and diff on disk, with a **CLI-first** workflow and **no vendor lock-in**. ## Install Current npm release line: **2.4.0** for the linked public packages (`agent-inspect`, adapters, reporters, redact, eval, mcp). **v2.4.0** adds multi-run **session** navigation (`sessions` / `session` CLI), session-aware `search` and `check`, and optional **`@agent-inspect/mcp`** client telemetry. ```bash npm install agent-inspect ``` ```bash pnpm add agent-inspect ``` Verify the CLI is available: ```bash npx agent-inspect --help ``` For a clean npm/pnpm install checklist with ESM, CJS, and CLI checks, see [Clean install smoke test](docs/INSTALL-SMOKE-TEST.md). ## Three adoption paths Already using AI SDK, OpenAI Agents JS, LangChain, or LangGraph-through-LangChain? Start with **Path B** for framework-native local traces before adding manual instrumentation. ### Path\n\n[TRUNCATED]",
+        "text_excerpt": "# atris **atris** is an operating system for AI work. It turns any repo into a workspace an agent can actually operate: shared context it reads before it acts, a `plan -> do -> review` loop, durable tasks and daily logs, and verification that ends work on a real check instead of a promise. Every owner gets persistent computers to run it: ```text Owner = User | Business Owner has many Computers Computer = workspace + files + tools + secrets + memory + agents + validation loop ``` A computer can be personal or shared by a business. It can run a job like code, research, CRM, reporting, event ops, support, or business ops. ## For Coding Agents If you're an agent, run: ```bash atris ``` Then read the workspace's `atris/atris.md` and follow it exactly. `atris.md` is the source of truth. --- ## What Atris Gives You - An AI workspace on top of any repo - Persistent AI computers for scoped jobs - A local computer card that makes each workspace inspectable - A strict `plan -> do -> review` loop - Daily logs, task tracking, feature packs, and project memory - Skills, team members, integrations, and cloud sync when you need them - A plain-English answer to \"what did my AI actually do?\" — run `atris recap` (add `--share` for a paste-ready summary backed by receipts) ## Critical Files | File | Purpose | |------|---------| | `atris/atris.md` | Main instructions for agents working in this repo | | `atris/MAP.md` | Navigation index with file:line refs | | `atris/TODO.md` | Human-readable task view | | `atris/logs/YYYY/YYYY-MM-DD.md` | Daily log, inbox, notes, completions | | `atris/features/` | Feature packs with `idea.md`, `build.md`, `validate.md` | | `atris/skills/` | Reusable skills for agents | | `atris/team/` | Team member specs and local context | ```text atris/ ├── atris.md ├── MAP.md ├── TODO.md ├── logs/ ├── features/ ├── skills/ └── team/ ``` ## Install ```bash npm install -g atris atris --version ``` Requires Node.js 18+. `atris task` uses built-in SQLite and requires Node.js 22+. If you want Atris cloud workspaces, businesses, or integrations, run `atris setup` after install. ## How To Run Atris ```bash cd your-project atris init atris ``` `atris init` scaffolds the workspace, including `atris/wiki/`. `atris` loads context and hands the workflow off to `atris/atris.md`. If you're still shaping the idea, use `atris brainstorm`. If you want Atris to keep cycling,\n\n[TRUNCATED]",
         "text_source_field": "readme_text",
         "text_truncated_in_raw": false
       },
@@ -605,6 +558,28 @@
         ],
         "source": "search",
         "text_excerpt": "﻿# DataFog Python DataFog is a Python library for detecting and redacting personally identifiable information (PII). It provides: - Fast structured PII detection via regex - Optional NER support via spaCy and GLiNER - A simple agent-oriented API for LLM applications - Backward-compatible `DataFog` and `TextService` classes ## 4.5 Focus DataFog 4.5 is focused on lightweight text PII screening: a small core install, fast regex-based scan/redact helpers, explicit optional extras, and a clearer path toward future middleware use cases. Dedicated Sentry, OpenTelemetry, logging-framework, and cloud DLP adapters are future-facing work and are not part of the 4.5 release. ## Installation ```bash # Core install (regex engine) pip install datafog # Add spaCy support pip install datafog[nlp] # Add GLiNER + spaCy support pip install datafog[nlp-advanced] # Add local OCR support pip install datafog[ocr] # Add Spark/distributed support pip install datafog[distributed] # Everything pip install datafog[all] ``` Python 3.13 support is certified for the core SDK, CLI, `nlp`, `nlp-advanced`, and `ocr` install profiles. Donut OCR still requires a model that is available locally before runtime use. `distributed` and `all` are not newly certified on Python 3.13 in the 4.5 line. ## Quick Start ```python import datafog text = \"Contact john@example.com or call (555) 123-4567\" clean = datafog.sanitize(text, engine=\"regex\") print(clean) # Contact [EMAIL_1] or call [PHONE_1] ``` ## For LLM Applications ```python import datafog # 1) Scan prompt text before sending to an LLM prompt = \"My SSN is 123-45-6789\" scan_result = datafog.scan_prompt(prompt, engine=\"regex\") if scan_result.entities: print(f\"Detected {len(scan_result.entities)} PII entities\") # 2) Redact model output before returning it output = \"Email me at jane.doe@example.com\" safe_result = datafog.filter_output(output, engine=\"regex\") print(safe_result.redacted_text) # Email me at [EMAIL_1] # 3) One-liner redaction print(datafog.sanitize(\"Card: 4111-1111-1111-1111\", engine=\"regex\")) # Card: [CREDIT_CARD_1] ``` ## German Structured PII German structured PII is country-specific and opt-in. Use explicit locale selection or entity-type filtering when you want German VAT IDs, German IBANs, tax IDs, postal codes, passports, or residence permits. ```python import datafog text = \"Steuer-ID 12345678901 liegt vor.\" print(datafog.scan(text,\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "litellm",
+        "full_name": "voocel/litellm",
+        "url": "https://github.com/voocel/litellm",
+        "description": "LiteLLM for Go, the easiest way to write LLM-based programs in Go",
+        "stars": 58,
+        "pushed_at": "2026-06-29T03:24:47Z",
+        "topics": [
+          "ai",
+          "claude",
+          "gateway",
+          "gemini",
+          "go",
+          "litellm",
+          "llm",
+          "openai"
+        ],
+        "source": "search",
+        "text_excerpt": "# LiteLLM Go [中文](README_CN.md) | English LiteLLM is a small, explicit Go SDK for calling LLM providers through one typed core model. The root package owns the provider-agnostic API; concrete providers live in `provider/<name>` subpackages. ## Install ```bash go get github.com/voocel/litellm ``` ## Quick Start ```go package main import ( \"context\" \"fmt\" \"log\" \"os\" \"github.com/voocel/litellm\" \"github.com/voocel/litellm/provider/openai\" ) func main() { client, err := openai.NewClient(openai.Config{ APIKey: os.Getenv(\"OPENAI_API_KEY\"), }) if err != nil { log.Fatal(err) } resp, err := client.Chat(context.Background(), litellm.Request{ Model: \"gpt-5.4-mini\", Messages: []litellm.Message{ litellm.System(\"You are concise.\"), litellm.UserText(\"Explain Go interfaces in one sentence.\"), }, MaxTokens: litellm.IntPtr(120), }) if err != nil { log.Fatal(err) } fmt.Println(resp.Text()) } ``` `openai.NewClient(cfg, opts...)` builds the provider first, then returns a ready `*litellm.Client`; every provider package exposes it. The explicit two-step form — `provider, _ := openai.New(cfg)` then `litellm.New(provider, opts...)` — is equivalent; prefer it when you want to share one provider across multiple clients. Both forms accept the same `ClientOption`s. ## Core Model Messages and responses use ordered `Block` values: - `TextBlock` - `ImageBlock` - `ReasoningBlock` - `ToolUseBlock` - `ToolResultBlock` - `ToolReferenceBlock` `Response.Blocks` is the canonical response content. `Text()`, `Reasoning()`, and `ToolCalls()` are convenience views. ```go msgs := []litellm.Message{ litellm.User(litellm.Text(\"What is in this image?\"), litellm.ImageURL(\"https://example.com/cat.png\")), } resp, err := client.Chat(ctx, litellm.Request{Model: \"gpt-5.4-mini\", Messages: msgs}) _ = resp _ = err ``` For multi-turn tool workflows, append the previous response blocks directly: ```go args, err := litellm.JSONRaw(map[string]any{\"ok\": true}) if err != nil { log.Fatal(err) } msgs = append(msgs, litellm.Assistant(resp.Blocks...), litellm.ToolResultText(\"call_1\", string(args)), ) ``` `JSONRaw` returns marshal errors instead of silently producing invalid tool arguments. Use `MustJSONRaw` only for static test data or package-level examples where panic is acceptable. By default the SDK validates message history strictly. Dirty tool histories, invalid tool IDs, missing tool results, and unsupported provider\n\n[TRUNCATED]",
         "text_source_field": "readme_text",
         "text_truncated_in_raw": false
       },
@@ -723,12 +698,46 @@
         "text_truncated_in_raw": false
       },
       {
+        "name": "stella",
+        "full_name": "CherryHQ/stella",
+        "url": "https://github.com/CherryHQ/stella",
+        "description": "AI partners for every person: multi-user, multi-agent memory, trusted tools, schedules, sandboxed workspaces, and chat.",
+        "stars": 41,
+        "pushed_at": "2026-06-29T03:27:40Z",
+        "topics": [
+          "ai-agent",
+          "ai-assistant",
+          "ai-partner",
+          "cli",
+          "context-management",
+          "feishu-bot",
+          "golang",
+          "llm",
+          "mcp",
+          "memory",
+          "multi-agent",
+          "multi-user",
+          "personal-assistant",
+          "qqbot",
+          "sandbox",
+          "scheduler",
+          "self-hosted",
+          "sqlite",
+          "telegram-bot",
+          "wechat-bot"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"avatar.png\" width=\"200\" alt=\"stella\" /> </p> <p align=\"center\"> English | <a href=\"README.zh.md\">中文</a> </p> # Stella — Shared AI coworkers for every team > **⚠️ Under Heavy Development** — Stella is not stable. APIs, config formats, and behavior may change without notice. Not recommended for production use. Stella turns the expertise your team repeats — finance, HR, engineering, research — into shared AI coworkers. Set an agent up once; everyone else just asks it in the chat tools they already use. A domain owner gives an agent its instructions, skills, tools, knowledge, and memory rules. After that, nobody has to learn the finance system, the recruiting tool, or the internal toolchain to move work forward — they tell the agent the goal, and it does the work within the boundaries you set. Each person gets their own memory with the agent, so Stella understands different teammates without flattening everyone into one profile. Under the hood it's a multi-tenant, multi-user, multi-agent system, but what that buys you is simple: many people can rely on the same agent at once, each agent has its own role, model, skills, tools, schedules, workspace, and safety boundaries, and you stay in control. Deploy it where you want, use your own model API keys, and reach it from Telegram, QQ, Feishu, WeChat, the Web UI, or the terminal. Small teams and individual developers can run the same setup — one agent doing the back-office work no one has time for — but Stella is built first for teams who keep paying their experts to answer the same questions. ## Why use Stella - **Anyone just asks.** A teammate doesn't learn the finance or HR system to get help — they ask the agent in chat, and it does the work. - **One expert, shared by everyone.** A domain owner builds an agent once; the whole team reuses it instead of interrupting the specialist. - **Remembers each teammate.** Memory is scoped per user per agent, so nobody re-explains their context. - **Acts within boundaries you set.** Agents work in dedicated workspaces with sandbox policies and controlled tool access, and stop for human review where you require it. - **Lives in the chat you already use.** Telegram, QQ, Feishu, WeChat, the Web UI, and the terminal are all front doors to the same agents. - **Keeps routines moving.** Schedule reminders, recurring jobs, reading digests, and background t\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
         "name": "Foundry",
         "full_name": "axislab-top/Foundry",
         "url": "https://github.com/axislab-top/Foundry",
         "description": "Transform any idea into a running AI-powered company",
         "stars": 39,
-        "pushed_at": "2026-06-29T03:23:14Z",
+        "pushed_at": "2026-06-29T03:25:38Z",
         "topics": [
           "agent-platform",
           "ai",
@@ -751,12 +760,34 @@
         "text_truncated_in_raw": false
       },
       {
+        "name": "kdeps",
+        "full_name": "kdeps/kdeps",
+        "url": "https://github.com/kdeps/kdeps",
+        "description": "Run AI workflows locally. Or deploy them anywhere. AI agent framework in YAML — workflow pipelines + autonomous agent loop. NVIDIA Inception member. Build, deploy, export as Docker/K8s/ISO.",
+        "stars": 35,
+        "pushed_at": "2026-06-29T03:26:34Z",
+        "topics": [
+          "agent",
+          "ai",
+          "llamafile",
+          "llms",
+          "nvidia",
+          "orchestration",
+          "workflow",
+          "yaml"
+        ],
+        "source": "search",
+        "text_excerpt": "# kdeps [![NVIDIA Inception](https://img.shields.io/badge/NVIDIA-Inception-76B900?logo=nvidia&logoColor=white)](https://www.nvidia.com/en-us/startups/) [![Build and Test](https://github.com/kdeps/kdeps/actions/workflows/build-test.yml/badge.svg?branch=main)](https://github.com/kdeps/kdeps/actions/workflows/build-test.yml) [![Coverage](https://codecov.io/gh/kdeps/kdeps/branch/main/graph/badge.svg)](https://codecov.io/gh/kdeps/kdeps) [![Release](https://img.shields.io/github/v/tag/kdeps/kdeps?sort=semver&label=release)](https://github.com/kdeps/kdeps/releases) [![Go](https://img.shields.io/github/go-mod/go-version/kdeps/kdeps)](https://go.dev/) [![License](https://img.shields.io/github/license/kdeps/kdeps)](https://github.com/kdeps/kdeps/blob/main/LICENSE) [![CodeQL](https://github.com/kdeps/kdeps/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/kdeps/kdeps/actions/workflows/codeql.yml) [![Docs](https://github.com/kdeps/kdeps/actions/workflows/docs.yml/badge.svg?branch=main)](https://kdeps.com) [![Documentation](https://img.shields.io/badge/docs-kdeps.com-00E5FF)](https://kdeps.com) [![Registry](https://img.shields.io/badge/registry-kdeps.io-00E5FF)](https://kdeps.io) [![GitHub stars](https://img.shields.io/github/stars/kdeps/kdeps)](https://github.com/kdeps/kdeps/stargazers) Run AI workflows locally. Or deploy them anywhere. Proud member of the [NVIDIA Inception](https://www.nvidia.com/en-us/startups/) program for AI startups. ## Run in 30 seconds ```bash # Install brew install kdeps/tap/kdeps # or curl -LsSf https://raw.githubusercontent.com/kdeps/kdeps/main/install.sh | sh # Run - you're in an AI REPL immediately kdeps ``` No API key needed if you have [Ollama](https://ollama.com) or [llamafile](https://github.com/Mozilla-Ocho/llamafile) installed. kdeps auto-detects local models and downloads them on first use. ```bash kdeps --model llama3.2 # use any Ollama model kdeps --model llama3.2:1b-q4 # GGUF quantization - auto-downloaded from HuggingFace kdeps --model /path/to/model.gguf # point directly at a local GGUF file kdeps ./my-agent/ # load your workflow as tools for the agent ``` **Local models** - three options, zero cloud dependency: - **Ollama** (`backend: ollama`) - managed model server, `ollama pull llama3.2` then `kdeps` - **llamafile** (`backend: file`) - model + server as a single binary, runs on any OS, no install - **GGUF\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
         "name": "ai-workspace-archive",
         "full_name": "HIDORAKAI002/ai-workspace-archive",
         "url": "https://github.com/HIDORAKAI002/ai-workspace-archive",
         "description": "A massive, self-updating local archive of AI tools — 11,000+ agent skills, 240+ MCP servers, 2,200+ IDE rules (Cursor/Cline), and 30+ system prompt collections. One repo to rule them all.",
         "stars": 24,
-        "pushed_at": "2026-06-29T03:21:28Z",
+        "pushed_at": "2026-06-29T03:29:07Z",
         "topics": [
           "agents",
           "ai",
@@ -772,25 +803,6 @@
         ],
         "source": "search",
         "text_excerpt": "<div align=\"center\"> # AI Workspace Archive **The most comprehensive self-hostable AI developer toolbox on GitHub.** *29,746 agent skills & files | 23 MCP servers | 3,348 IDE rules | 8 system prompt collections | 12 API providers | 15 no-code platforms | 1,400+ public APIs -- 174 curated upstream repos, all free* > One repository. Everything an AI developer needs. Offline. No subscriptions. No gatekeeping. [ ![File Count Shield](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/HIDORAKAI002/ai-workspace-archive/main/file_counts.json) ](https://github.com/HIDORAKAI002/ai-workspace-archive/blob/main/file_counts.json) </div> --- ## Table of Contents | # | Pillar | Scale | Path | |---|---|---|---| | 1 | [AI Skills and Prompt Library](#pillar-1--ai-skills-and-prompt-library) | 29,746 files from curated repos | `/ai_skills_library/` | | 2 | [MCP Server Repository](#pillar-2--mcp-server-repository) | 23 repos across 11 categories | `/mcps/` | | 3 | [IDE Context Rules](#pillar-3--ide-context-rules) | 3,348 AI rules for every stack | `/ide_rules/` | | 4 | [System Prompts and Frameworks](#pillar-4--system-prompts-and-frameworks) | 8 repos across 4 categories | `/system_prompts/` | | 5 | [AI API Providers Reference](#pillar-5--ai-api-providers-reference) | 12 providers, 50+ models | `/api_providers/` | | 6 | [No-Code and Visual Workflow Builders](#pillar-6--no-code-and-visual-workflow-builders) | 15 repos, 29 cloned directories | `/nocode_platforms/` | | 7 | [Public APIs Directory](#pillar-7--public-apis-directory) | 1,400+ APIs across 40+ categories | `/public_apis/` | | 8 | [AI Agents & Advanced Tooling](#pillar-8--ai-agents--advanced-tooling) | Autonomous agents, frameworks & scraping | `/ai_agents/` | | - | [Quick Start](#quick-start) | Copy-paste commands for each pillar | - | | - | [Auto-Sync System](#auto-sync-system) | VPS bot + GitHub Actions | - | | - | [Archive Stats](#archive-stats) | Full breakdown | - | --- ## Pillar 1 -- AI Skills and Prompt Library > **`/ai_skills_library/`** -- 29,746 structured YAML-frontmatted skill files, deep-categorized across 20 sub-domains, sourced from curated GitHub repositories Every file follows the same structure: a YAML frontmatter block declaring the skill name, recommended model, input format, and usage context -- followed by the actual prompt content. Drop any file directly into Claude, Cursor, Gemin\n\n[TRUNCATED]",
-        "text_source_field": "readme_text",
-        "text_truncated_in_raw": false
-      },
-      {
-        "name": "Raphael",
-        "full_name": "Orbital-Web/Raphael",
-        "url": "https://github.com/Orbital-Web/Raphael",
-        "description": "Superhuman chess engine and GUI coded in C++ and SFML.",
-        "stars": 21,
-        "pushed_at": "2026-06-29T03:18:05Z",
-        "topics": [
-          "ai",
-          "chess",
-          "chess-engine",
-          "neural-network",
-          "nnue"
-        ],
-        "source": "search",
-        "text_excerpt": "# <div align=\"center\"><img src=src/assets/logo/Raphael_Logo_HL_NoBG_Text.png alt=\"Raphael Logo\" width=400 /></div> Raphael is a superhuman UCI Chess Engine built using C++. It also comes with a GUI built using [SFML](https://www.sfml-dev.org/). You can [scroll to the bottom](#raphael-engine) to see a list of features currently implemented, and also download the prebuilt binaries to try out Raphael for yourself. Raphael is largely inspired by [Sebastian Lague's Coding Adventure series on implementing a Chess Engine](https://youtu.be/U4ogK0MIzqk). ## Elo The following are the historic elo for Raphael. <table> <tr align=\"center\"> <th>Version</th> <th>Release Date</th> <th><a href=\"https://www.computerchess.org.uk/ccrl/404/cgi/compare_engines.cgi?family=Raphael\">CCRL Blitz</a></th> <th><a href=\"https://www.computerchess.org.uk/ccrl/4040/cgi/compare_engines.cgi?family=Raphael\">CCRL 40/15</a></th> <th><a href=\"http://www.cegt.net/40_40%20Rating%20List/40_40%20SingleVersion/rangliste.html\">CEGT 40/20</a></th> <th><a href=\"https://ipmanchess.yolasite.com/r9-7945hx.php\">Ipman R9</a></th> <th><a href=\"https://www.sp-cc.de\">SPCC</a></th> </tr> <tr align=\"center\"> <td>4.2.0 </td> <td>Jun 27, 2026 </td> <td>3740* </td> <td>3600* </td> <td> </td> <td> </td> <td>3710 (#11)</td> </tr> <tr align=\"center\"> <td>4.1.0 </td> <td>May 17, 2026 </td> <td>3716 (#26)</td> <td>3614 (#20) </td> <td>3555 (#22)</td> <td>3513 (#18) </td> <td> </td> </tr> <tr align=\"center\"> <td>4.0.0 </td> <td>Apr 26, 2026 </td> <td>3697* </td> <td>3606 (#23) </td> <td>3532 (#31)</td> <td>3487 (#20**) </td> <td> </td> </tr> <tr align=\"center\"> <td>3.3.0</td> <td>Apr 06, 2026</td> <td>3670 </td> <td>3558 </td> <td>3521 </td> <td> </td> <td> </td> </tr> <tr align=\"center\"> <td>3.2.0</td> <td>Mar 19, 2026</td> <td>3612*</td> <td>3484 </td> <td>3433 </td> <td> </td> <td> </td> </tr> <tr align=\"center\"> <td>3.1.0</td> <td>Mar 01, 2026</td> <td>3510 </td> <td>3416 </td> <td> </td> <td> </td> <td> </td> </tr> <tr align=\"center\"> <td>3.0.0</td> <td>Feb 12, 2026</td> <td>3252 </td> <td>3206 </td> <td> </td> <td> </td> <td> </td> </tr> <tr align=\"center\"> <td>2.3.0</td> <td>Jan 25, 2026</td> <td>3146*</td> <td>3061 </td> <td> </td> <td> </td> <td> </td> </tr> <tr align=\"center\"> <td>2.2.0</td> <td>Jan 08, 2026</td> <td>3035*</td> <td>2953 </td> <td> </td> <td> </td> <td> </td> </tr> <tr align=\"center\"> <td>2.1.0</t\n\n[TRUNCATED]",
         "text_source_field": "readme_text",
         "text_truncated_in_raw": false
       }
@@ -1049,51 +1061,219 @@
     "youtube": [
       {
         "type": "youtube",
-        "title": "Lex Fridman",
-        "url": "https://www.youtube.com/@lexfridman",
-        "failure_reason": "channel_list_failed: Unable to handle request: Unsupported proxy type: \"\" (requests, urllib)"
-      },
-      {
-        "type": "youtube",
-        "title": "Lenny's Podcast",
-        "url": "https://www.youtube.com/@LennysPodcast",
-        "failure_reason": "channel_list_failed: Unable to handle request: Unsupported proxy type: \"\" (requests, urllib)"
-      },
-      {
-        "type": "youtube",
-        "title": "Dwarkesh Patel",
-        "url": "https://www.youtube.com/@DwarkeshPatel",
-        "failure_reason": "channel_list_failed: Unable to handle request: Unsupported proxy type: \"\" (requests, urllib)"
-      },
-      {
-        "type": "youtube",
-        "title": "Acquired",
-        "url": "https://www.youtube.com/@AcquiredFM",
-        "failure_reason": "channel_list_failed: Unable to handle request: Unsupported proxy type: \"\" (requests, urllib)"
-      },
-      {
-        "type": "youtube",
-        "title": "Tim Ferriss",
-        "url": "https://www.youtube.com/@timferriss",
-        "failure_reason": "channel_list_failed: Unable to handle request: Unsupported proxy type: \"\" (requests, urllib)"
-      },
-      {
-        "type": "youtube",
         "title": "20VC",
         "url": "https://www.youtube.com/@20VCwithHarryStebbings",
-        "failure_reason": "channel_list_failed: Unable to handle request: Unsupported proxy type: \"\" (requests, urllib)"
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @20VCwithHarryStebbings: Unable to download API page: HTTP Error 404: Not Found (caused by <HTTPError 404: Not Found>)"
       },
       {
         "type": "youtube",
-        "title": "Invest Like the Best",
-        "url": "https://www.youtube.com/@ILTB_Podcast",
-        "failure_reason": "channel_list_failed: Unable to handle request: Unsupported proxy type: \"\" (requests, urllib)"
+        "title": "Biggest Mysteries in Physics: Antimatter, Dark Energy & ToE - Don Lincoln | Lex Fridman Podcast #497",
+        "url": "https://www.youtube.com/watch?v=1M3Vdl6DRkU",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] 1M3Vdl6DRkU: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
       },
       {
         "type": "youtube",
-        "title": "All-In Podcast",
-        "url": "https://www.youtube.com/@allin",
-        "failure_reason": "channel_list_failed: Unable to handle request: Unsupported proxy type: \"\" (requests, urllib)"
+        "title": "FFmpeg: The Incredible Technology Behind Video on the Internet | Lex Fridman Podcast #496",
+        "url": "https://www.youtube.com/watch?v=nepKKz-MzFM",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] nepKKz-MzFM: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "Vikings, Ragnar, Berserkers, Valhalla & the Warriors of the Viking Age | Lex Fridman Podcast #495",
+        "url": "https://www.youtube.com/watch?v=iKx3gAODybU",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] iKx3gAODybU: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "Jensen Huang: NVIDIA - The $4 Trillion Company & the AI Revolution | Lex Fridman Podcast #494",
+        "url": "https://www.youtube.com/watch?v=vif8NQcjVf0",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] vif8NQcjVf0: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "Jeff Kaplan: World of Warcraft, Overwatch, Blizzard, and Future of Gaming | Lex Fridman Podcast #493",
+        "url": "https://www.youtube.com/watch?v=H9rF1CSSh-w",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] H9rF1CSSh-w: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "OpenAI Codex lead on the new shape of product work | Andrew Ambrosino",
+        "url": "https://www.youtube.com/watch?v=P3KDebPTUrw",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] P3KDebPTUrw: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "What happens after coding is solved? | Fiona Fung (Claude Code & Cowork)",
+        "url": "https://www.youtube.com/watch?v=Ybrl4FYM57c",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] Ybrl4FYM57c: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "The hidden pattern behind successful products | Mark Pincus (FarmVille, Words with Friends, & more)",
+        "url": "https://www.youtube.com/watch?v=7eh9C3TUotc",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] 7eh9C3TUotc: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "Tony Fadell: How to build real taste (and why AI makes it matter more)",
+        "url": "https://www.youtube.com/watch?v=RJjl1TwyfWM",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] RJjl1TwyfWM: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "The most rational take on AI you’ll hear this year",
+        "url": "https://www.youtube.com/watch?v=BD3vLtWhT5A",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] BD3vLtWhT5A: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "What does the next training paradigm look like?",
+        "url": "https://www.youtube.com/watch?v=20p5-kQXF_Q",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] 20p5-kQXF_Q: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "The data black hole at the center of AI",
+        "url": "https://www.youtube.com/watch?v=4pG3SJQPAwk",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] 4pG3SJQPAwk: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "Machiavelli is the most misunderstood thinker of all time – Ada Palmer",
+        "url": "https://www.youtube.com/watch?v=U1FrhkLQnCI",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] U1FrhkLQnCI: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "Sarah Paine - Why Putin and Xi can't escape geography",
+        "url": "https://www.youtube.com/watch?v=OS1NZLgKM2c",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] OS1NZLgKM2c: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "The better AI gets, the smaller its share of the economy might get – Alex Imas and Phil Trammell",
+        "url": "https://www.youtube.com/watch?v=Jj-kBHzUohs",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] Jj-kBHzUohs: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "The Walt Disney Company: The most successful enterprise for monetizing human nostalgia (Audio)",
+        "url": "https://www.youtube.com/watch?v=7EUVr0-V6DA",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] 7EUVr0-V6DA: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "Vanguard: The communist capitalist who saved investors a trillion dollars (Audio)",
+        "url": "https://www.youtube.com/watch?v=ipiKIgdynZE",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] ipiKIgdynZE: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "Ferrari: What happens when you staple a luxury brand to a sports team? (Audio)",
+        "url": "https://www.youtube.com/watch?v=JVO8roYiNXM",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] JVO8roYiNXM: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "Formula 1: Fast cars, celebrities, and B2B software (Audio)",
+        "url": "https://www.youtube.com/watch?v=MyFzfgrZUYg",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] MyFzfgrZUYg: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "The NFL: How small-town teams became America's most valuable sports empire (Audio)",
+        "url": "https://www.youtube.com/watch?v=lYXKjuIHQIU",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] lYXKjuIHQIU: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "The Many Benefits of Coca — The “Divine Leaf” with 8,000+ Years of Use",
+        "url": "https://www.youtube.com/watch?v=gL48mHH6ul8",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] gL48mHH6ul8: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "Lessons from 100+ AI Insiders on The Race to Superintelligence, The Religion of AI, and More",
+        "url": "https://www.youtube.com/watch?v=-UetKKxKqKU",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] -UetKKxKqKU: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "The Path from The Soviet Union to Building Multi-Billion Dollar Companies — Max Levchin",
+        "url": "https://www.youtube.com/watch?v=uOjgVxOfxXo",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] uOjgVxOfxXo: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "Reimagining Biotech with Jake Becraft of Strand Therapeutics — Tim’s Founder Kitchen",
+        "url": "https://www.youtube.com/watch?v=mZ-vJ6kDRD0",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] mZ-vJ6kDRD0: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "AI Sells Labor, Not Software — Legendary Investor Elad Gil",
+        "url": "https://www.youtube.com/watch?v=RxWKVUWcUPM",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] RxWKVUWcUPM: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "Investing a $120 Billion Balance Sheet with No Outside Investors",
+        "url": "https://www.youtube.com/watch?v=OxHWFmFHnoc",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] OxHWFmFHnoc: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "Clay’s Unusual Path to Building a Multi-Billion Dollar Company",
+        "url": "https://www.youtube.com/watch?v=3bKLiUU2cb8",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] 3bKLiUU2cb8: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "Why the AI Boom Is Just Getting Started",
+        "url": "https://www.youtube.com/watch?v=DZt1DDmMNGk",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] DZt1DDmMNGk: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "Uber CEO on AI, Autonomous Vehicles, and the Future of Transportation",
+        "url": "https://www.youtube.com/watch?v=ThMtheE5eO0",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] ThMtheE5eO0: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "Legendary Investor Dan Loeb on AI, Credit, & Third Point’s $25B Strategy",
+        "url": "https://www.youtube.com/watch?v=vhTi_8QwXjg",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] vhTi_8QwXjg: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "Socialists Sweep NYC, China Catches Up in Coding, AI Memory Crunch, Micron's Blowout Quarter",
+        "url": "https://www.youtube.com/watch?v=w8ah_tA0yfg",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] w8ah_tA0yfg: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "GameStop CEO Ryan Cohen’s $56B Plan to Take Over eBay",
+        "url": "https://www.youtube.com/watch?v=4j9RPGLENNI",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] 4j9RPGLENNI: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "World's First Trillionaire, Anthropic Fable Banned, The New Oligarchs, Iran Peace Deal",
+        "url": "https://www.youtube.com/watch?v=3Amlu4y94Ho",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] 3Amlu4y94Ho: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "Anthropic's Fable Backlash, Nationalizing AI, Inflation Heats Up & California’s Broken Elections",
+        "url": "https://www.youtube.com/watch?v=gH4FTjDm9FQ",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] gH4FTjDm9FQ: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
+      },
+      {
+        "type": "youtube",
+        "title": "All-In's Best Ideas Pitch Competition: 4 Investors Present Their Top Trades Live",
+        "url": "https://www.youtube.com/watch?v=fO5sC7qS04E",
+        "failure_reason": "youtube_transcript_api_error: Failed to parse: ﻿socks5h://AT4Qb8pKBqMnrIi:UFFzTElNfClwO5n@204.252.84.218:42509; yt_dlp_subtitle_error: ERROR: [youtube] fO5sC7qS04E: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies. Also see https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies for tips on effectively exporting YouTube cookies"
       }
     ],
     "github": [
@@ -1105,8 +1285,8 @@
       },
       {
         "type": "github",
-        "title": "ripienaar/free-for-dev",
-        "url": "https://github.com/ripienaar/free-for-dev",
+        "title": "ByteByteGoHq/system-design-101",
+        "url": "https://github.com/ByteByteGoHq/system-design-101",
         "failure_reason": "filtered_by_star_range"
       },
       {
@@ -1117,26 +1297,14 @@
       },
       {
         "type": "github",
-        "title": "commaai/openpilot",
-        "url": "https://github.com/commaai/openpilot",
-        "failure_reason": "filtered_by_star_range"
-      },
-      {
-        "type": "github",
         "title": "DeusData/codebase-memory-mcp",
         "url": "https://github.com/DeusData/codebase-memory-mcp",
         "failure_reason": "filtered_by_star_range"
       },
       {
         "type": "github",
-        "title": "cupy/cupy",
-        "url": "https://github.com/cupy/cupy",
-        "failure_reason": "filtered_by_star_range"
-      },
-      {
-        "type": "github",
-        "title": "xbtlin/ai-berkshire",
-        "url": "https://github.com/xbtlin/ai-berkshire",
+        "title": "Robbyant/lingbot-map",
+        "url": "https://github.com/Robbyant/lingbot-map",
         "failure_reason": "filtered_by_star_range"
       }
     ],
