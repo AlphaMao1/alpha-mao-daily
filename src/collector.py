@@ -6,6 +6,7 @@ import html
 import json
 import os
 import re
+import argparse
 import tempfile
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -27,6 +28,7 @@ except Exception:  # pragma: no cover - readability is a best-effort extractor.
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = ROOT / "config" / "sources.yaml"
 DATA_DIR = ROOT / "data"
+YOUTUBE_CACHE_DIR = DATA_DIR / "youtube_cache"
 
 UTC = timezone.utc
 DEFAULT_TZ = "Asia/Shanghai"
@@ -80,6 +82,7 @@ class Collector:
         self.youtube_proxy_url = normalize_secret(os.getenv("YOUTUBE_PROXY_URL"))
         self.youtube_ytdlp_proxy_url = normalize_ytdlp_proxy_url(self.youtube_proxy_url)
         self.youtube_proxy_dict = self.build_youtube_proxy_dict(self.youtube_proxy_url)
+        self.youtube_cookies_from_browser = parse_cookies_from_browser(os.getenv("YOUTUBE_COOKIES_FROM_BROWSER"))
 
     @staticmethod
     def load_config() -> dict[str, Any]:
@@ -113,7 +116,7 @@ class Collector:
                     "aihot": "selected latest",
                 },
                 "rss": self.collect_rss(),
-                "youtube": self.collect_youtube(),
+                "youtube": self.collect_youtube_for_full_run(),
                 "github": self.collect_github(),
                 "aihot": self.collect_aihot(),
             }
@@ -145,6 +148,82 @@ class Collector:
         print(f"Wrote {latest_path.relative_to(ROOT)}")
         print(f"Wrote {pointer_path.relative_to(ROOT)}")
         return brief
+
+    def run_youtube_cache_only(self) -> dict[str, Any]:
+        YOUTUBE_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        self.youtube_cookie_file = self.prepare_youtube_cookie_file()
+        try:
+            youtube = self.collect_youtube()
+        finally:
+            self.cleanup_youtube_cookie_file()
+
+        payload = {
+            "date": self.date,
+            "generated_at": isoformat(self.now_utc),
+            "timezone": self.timezone_name,
+            "source": "local_windows_task",
+            "youtube": youtube,
+        }
+        latest_path = YOUTUBE_CACHE_DIR / "latest.json"
+        dated_path = YOUTUBE_CACHE_DIR / f"{self.date}.json"
+        write_json(latest_path, payload)
+        write_json(dated_path, payload)
+
+        items = youtube.get("items", [])
+        successes = sum(1 for item in items if item.get("transcript_status") == "transcript_success")
+        failures = len(youtube.get("channel_failures", [])) + sum(
+            1 for item in items if item.get("transcript_status") != "transcript_success"
+        )
+        print(f"Wrote {latest_path.relative_to(ROOT)}")
+        print(f"Wrote {dated_path.relative_to(ROOT)}")
+        print(f"YouTube cache: candidates={len(items)} transcript_success={successes} failures={failures}")
+        return payload
+
+    def collect_youtube_for_full_run(self) -> dict[str, Any]:
+        cache = self.load_fresh_youtube_cache()
+        if cache:
+            youtube = dict(cache["youtube"])
+            youtube["cache_info"] = {
+                "status": "used",
+                "source": cache.get("source", "local_cache"),
+                "date": cache.get("date", ""),
+                "generated_at": cache.get("generated_at", ""),
+                "max_age_hours": self.youtube_cache_max_hours(),
+            }
+            return youtube
+        return self.collect_youtube()
+
+    def load_fresh_youtube_cache(self) -> dict[str, Any] | None:
+        if str(os.getenv("DISABLE_YOUTUBE_CACHE", "")).lower() in {"1", "true", "yes"}:
+            return None
+        path = YOUTUBE_CACHE_DIR / "latest.json"
+        if not path.exists():
+            return None
+        try:
+            cache = json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            return None
+        generated_at = parse_datetime(cache.get("generated_at"))
+        if not generated_at:
+            return None
+        age_hours = (self.now_utc - generated_at).total_seconds() / 3600
+        if age_hours < -0.25 or age_hours > self.youtube_cache_max_hours():
+            return None
+        youtube = cache.get("youtube")
+        if not isinstance(youtube, dict):
+            return None
+        if not isinstance(youtube.get("items"), list):
+            return None
+        return cache
+
+    def youtube_cache_max_hours(self) -> float:
+        value = os.getenv("YOUTUBE_CACHE_MAX_HOURS")
+        if not value:
+            return 18.0
+        try:
+            return max(1.0, float(value))
+        except ValueError:
+            return 18.0
 
     def prepare_youtube_cookie_file(self) -> str | None:
         cookie_b64 = os.getenv("YOUTUBE_COOKIES_B64")
@@ -331,7 +410,9 @@ class Collector:
             "extract_flat": "in_playlist",
             "playlistend": max(limit, 5),
         }
-        if self.youtube_cookie_file:
+        if self.youtube_cookies_from_browser:
+            opts["cookiesfrombrowser"] = self.youtube_cookies_from_browser
+        elif self.youtube_cookie_file:
             opts["cookiefile"] = self.youtube_cookie_file
         if self.youtube_ytdlp_proxy_url:
             opts["proxy"] = self.youtube_ytdlp_proxy_url
@@ -419,7 +500,9 @@ class Collector:
             "writeautomaticsub": True,
             "subtitleslangs": ["en.*", "en", "zh.*", "zh-Hans", "zh-Hant"],
         }
-        if self.youtube_cookie_file:
+        if self.youtube_cookies_from_browser:
+            opts["cookiesfrombrowser"] = self.youtube_cookies_from_browser
+        elif self.youtube_cookie_file:
             opts["cookiefile"] = self.youtube_cookie_file
         if self.youtube_ytdlp_proxy_url:
             opts["proxy"] = self.youtube_ytdlp_proxy_url
@@ -843,6 +926,21 @@ def normalize_ytdlp_proxy_url(value: str | None) -> str | None:
     return value
 
 
+def parse_cookies_from_browser(value: str | None) -> tuple[str, str | None, str | None, str | None] | None:
+    value = normalize_secret(value)
+    if not value:
+        return None
+    match = re.fullmatch(
+        r"(?P<name>[^+:]+)(?:\s*\+\s*(?P<keyring>[^:]+))?(?:\s*:\s*(?!:)(?P<profile>.+?))?(?:\s*::\s*(?P<container>.+))?",
+        value,
+    )
+    if not match:
+        return None
+    browser_name = match.group("name").lower()
+    keyring = match.group("keyring")
+    return (browser_name, match.group("profile"), keyring.upper() if keyring else None, match.group("container"))
+
+
 def is_unsupported_proxy_error(exc: Exception) -> bool:
     return "Unsupported proxy type" in str(exc)
 
@@ -1058,12 +1156,48 @@ def count_status(items: list[dict[str, Any]], field: str, success_value: str, fa
 def write_json(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="\n") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+        json.dump(redact_sensitive_data(data), f, ensure_ascii=False, indent=2)
         f.write("\n")
 
 
+def redact_sensitive_data(value: Any) -> Any:
+    if isinstance(value, dict):
+        return {k: redact_sensitive_data(v) for k, v in value.items()}
+    if isinstance(value, list):
+        return [redact_sensitive_data(item) for item in value]
+    if isinstance(value, str):
+        return redact_sensitive_text(value)
+    return value
+
+
+def redact_sensitive_text(text: str) -> str:
+    redacted = text
+    secrets = {
+        normalize_secret(os.getenv("YOUTUBE_PROXY_URL")),
+        normalize_ytdlp_proxy_url(normalize_secret(os.getenv("YOUTUBE_PROXY_URL"))),
+        normalize_secret(os.getenv("YOUTUBE_COOKIES_B64")),
+    }
+    for secret in secrets:
+        if secret and len(secret) >= 8:
+            redacted = redacted.replace(secret, "[REDACTED_SECRET]")
+    redacted = re.sub(r"(socks5h?|https?)://[^\s;,)]+:[^\s;,)]+@[^\s;,)]+", r"\1://[REDACTED_PROXY]", redacted)
+    return redacted
+
+
 def main() -> None:
-    Collector().run()
+    parser = argparse.ArgumentParser(description="Collect Alpha Mao Daily source artifacts.")
+    parser.add_argument(
+        "--youtube-cache-only",
+        action="store_true",
+        help="Collect YouTube transcripts only and write data/youtube_cache/latest.json.",
+    )
+    args = parser.parse_args()
+
+    collector = Collector()
+    if args.youtube_cache_only:
+        collector.run_youtube_cache_only()
+    else:
+        collector.run()
 
 
 if __name__ == "__main__":

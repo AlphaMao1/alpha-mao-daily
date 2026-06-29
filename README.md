@@ -119,6 +119,24 @@ socks5h://user:password@host:port
 
 不要把代理账号密码写进代码、README、`.env` 或日志。这个代理只会用于 YouTube 相关请求。
 
+## 本机 YouTube cache
+
+如果云端 runner 仍被 YouTube 拦截，可以让本机晚上只采集 YouTube transcript：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File D:\Project\alpha-mao-daily\scripts\run_local_youtube_cache.ps1
+```
+
+脚本会：
+
+- 使用 `D:\Secrets\alpha-mao-daily\youtube.cookies.txt`
+- 让 yt-dlp 读取 Firefox profile `2ykxqsfh.default-release` 的实时 cookies
+- 默认走本机链式代理 `http://127.0.0.1:7890`
+- 生成 `data/youtube_cache/latest.json`
+- 提交并推送 YouTube cache
+
+第二天早上 GitHub Actions full collector 会优先合并 18 小时内的新鲜 YouTube cache；如果 cache 不存在或过期，才回退到云端直接抓 YouTube。
+
 ## 查看 latest.json
 
 GitHub 仓库为 public 时，ChatGPT schedule 可读取：
