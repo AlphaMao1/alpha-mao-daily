@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import base64
+import http.cookiejar
 import html
 import json
 import os
@@ -390,7 +391,10 @@ class Collector:
                 if self.youtube_proxy_url
                 else None
             )
-            api = YouTubeTranscriptApi(proxy_config=proxy_config)
+            api = YouTubeTranscriptApi(
+                proxy_config=proxy_config,
+                http_client=self.build_youtube_transcript_http_client(),
+            )
             fetched = api.fetch(video_id, languages=languages)
             snippets = fetched.to_raw_data() if hasattr(fetched, "to_raw_data") else list(fetched)
         except TypeError:
@@ -445,6 +449,19 @@ class Collector:
             direct_opts.pop("proxy", None)
             with yt_dlp.YoutubeDL(direct_opts) as ydl:
                 return ydl.extract_info(url, download=False)
+
+    def build_youtube_transcript_http_client(self) -> requests.Session:
+        client = requests.Session()
+        client.headers.update({"User-Agent": USER_AGENT})
+        if not self.youtube_cookie_file:
+            return client
+        try:
+            jar = http.cookiejar.MozillaCookieJar(self.youtube_cookie_file)
+            jar.load(ignore_discard=True, ignore_expires=True)
+            client.cookies = jar
+        except Exception:
+            pass
+        return client
 
     def collect_github(self) -> dict[str, Any]:
         since = (self.now_utc - timedelta(days=7)).strftime("%Y-%m-%d")
