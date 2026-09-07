@@ -1,8 +1,8 @@
 {
-  "date": "2026-09-06",
-  "generated_at": "2026-09-06T01:12:29Z",
+  "date": "2026-09-07",
+  "generated_at": "2026-09-07T01:12:11Z",
   "timezone": "Asia/Shanghai",
-  "raw_json_path": "data/2026-09-06/alpha_mao_daily_raw.json",
-  "brief_json_path": "data/2026-09-06/alpha_mao_daily_brief.json",
+  "raw_json_path": "data/2026-09-07/alpha_mao_daily_raw.json",
+  "brief_json_path": "data/2026-09-07/alpha_mao_daily_brief.json",
   "latest_json_path": "data/latest.json"
 }
