@@ -1,0 +1,1411 @@
+{
+  "date": "2026-10-13",
+  "generated_at": "2026-10-13T03:44:03Z",
+  "timezone": "Asia/Shanghai",
+  "windows": {
+    "rss": "72h",
+    "youtube": "72h_or_7d",
+    "github": "7d",
+    "aihot": "selected latest"
+  },
+  "counts": {
+    "rss": {
+      "candidates": 10,
+      "full_text_success": 8,
+      "eligible": 8,
+      "failed": 5
+    },
+    "youtube": {
+      "candidates": 0,
+      "transcript_success": 0,
+      "eligible": 0,
+      "failed": 8
+    },
+    "github": {
+      "candidates": 29,
+      "readme_success": 29,
+      "eligible": 29,
+      "failed": 6
+    },
+    "aihot": {
+      "api_returned": 50,
+      "candidates": 50,
+      "original_verified": 13,
+      "eligible": 13,
+      "failed_or_pending": 37
+    }
+  },
+  "eligible_items": {
+    "rss": [
+      {
+        "source": "Latent Space",
+        "title": "How Anthropic’s Dynamic Workflows Coordinate Claude Agents",
+        "url": "https://www.latent.space/p/claude-dynamic-workflows",
+        "published_at": "2026-10-12T18:18:17Z",
+        "summary": "At AI Engineer New York, Anthropic drew on lessons from Unix and Linux to explain how agents can tackle bigger projects without overwhelming developers.",
+        "lookback_7d": false,
+        "text_excerpt": "CJ Avilla and Harrison Stall, Members of Technical Staff at Anthropic, at AI Engineer NYC today. The AI Engineer New York 2026 conference kicked off this morning with a series of workshops, including Anthropic discussing how to orchestrate its Claude Managed Agents . Of particular interest was a brand new feature, announced on Friday , called dynamic workflows — or simply “flows,” as the presenters repeatedly called it. Flows are defined as “a new type of multiagent orchestration, built for your most ambitious workloads.” CJ Avilla and Harrison Stall , both Members of Technical Staff at Anthropic , began by invoking some operating system projects of the past — from Ken Thompson building the original Unix operating system, through to Linux evolving from one person (Linus Torvalds) to layers of trusted maintainers . The lesson: agents need the same level of organization in order to do the types of big, ambitious projects Anthropic envisions for dynamic workflows. Sponsored by Union.ai Build a sovereign AI factory The best engineering teams are building AI factories where they own and control not only their data, compute, and infrastructure, but also a durable runtime on their cloud. Union.ai gives your workflows the durability to adapt and right-size infra resources and recover from failures without re-running completed work. Get started directly through AWS Marketplace and try Union.ai free for 30 days . To learn more, visit us at AI Engineer New York booth #48. “I think a lot of us who are orchestrating and managing lots of agents now might start to feel this feeling of being the bottleneck and being the breaking point as we have lots of agents contributing tons and tons of PRs,” Avilla said. “And we’re sitting there in our GitHub trying to approve PRs and make sure that everything works as expected.” The pair noted that dynamic workflows began in Claude Code as the “a harness for every task” concept. But flows can run longer than a single agent or a roster. The basic idea is that Claude chooses the organization of agents. “Flows are essentially the next version of multi-agent orchestration,” said Stall, “where you can let Claude fully orchestrate the entirety of its own multi-agent topology.” The way this works is that the lead agent creates a plan for how it wants to accomplish tasks. Claude then writes an orchestration program, which launches agents, coll\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "Hello Python 3.15, goodbye 3.10, and now I can use 3.11",
+        "url": "https://simonwillison.net/2026/Oct/12/python-3-15/",
+        "published_at": "2026-10-12T18:15:38Z",
+        "summary": "Python 3.15 is here ! Here's the essential What's new in Python 3.15 guide, this year curated by 3.14 and 3.15 release manager Hugo van Kemenade. As someone who builds open source software that works in every supported Python version, I get to say goodbye to Python 3.10 and start embracing features from Python 3.11. First, some highlights from Python 3.15. Explicit lazy imports I'm most excited about Explicit lazy imports from PEP 810 . These let you import modules like so: lazy import json lazy from pathlib import Path The module will then be imported the first time those symbols are used in the code that follows. My LLM CLI tool implements plugins. I had to recommend manual lazy imports in the plugin author documentation, because simply installing plugins that used heavy dependencies such as sentence_transformers could add multiple seconds to every invocation of the llm command. Lazy imports directly address this startup cost. Unpacking in comprehensions The new [*sublist for sublist in lists] unpacking syntax is neat. Here's an illustration lifted from the documentation : lists = [[ 1 , 2 ], [ 3 , 4 ], [ 5 ]] [ * L for L in lists ] # [1, 2, 3, 4, 5] # equivalent to [x for L in lists for x in L] sets = [{ 1 , 2 }, { 2 , 3 }, { 3 , 4 }] { * s for s in sets } # {1, 2, 3, 4} # equivalent to {x for s in sets for x in s} dicts = [{ 'a' : 1 }, { 'b' : 2 }, { 'a' : 3 }] { ** d for d in dicts } # {'a': 3, 'b': 2} # equivalent to {k: v for d in dicts for k,v in d.items()} PEP 798: Unpacking in Comprehensions by Adam Hartz and Erik Demaine proposed this as an extension of the unpacking syntax from PEP 448 , which landed in Python 3.5 back in 2015. A sampling profiler Python's existing tracing profiler has been renamed from cProfile to profiling.tracing , and has been joined by an exciting new sampling profiler called Tachyon, aka profiling.sampling . Sampling profilers work by periodically capturing stack traces from running processes, then using those to calculate which functions have the most time spent inside of them. They're very low overhead and can provide a deep insight into running systems, without needing to instrument those systems first. I've previously used tools like py-spy for this. Now this capability is baked into the standard library. If you have the PID of an existing Python 3.15 process you can start gathering samples by running this (I had to use sudo on macOS): sudo uv run --python 3.15 python -m profiling.sampling attach 1234 Interact with the main program a bit, then hit Ctrl+C to stop gathering and see a report, which looks something like this: It can also produce flame graphs like this and heat maps like this , and can even output a format that can be viewed in the Firefox profiler UI. 3.15 isn't much faster than 3.14 Miguel Grinberg investigated How fast is Python 3.15? the other day against the 3.15.0rc3 release and found performance to be mostly the same as 3.14, with the exception of the experimental JIT. The JIT gave a 1.2x boost over the standard 3.15 interpreter (on a Fibonacci test), the first time Miguel observed a meaningful JIT performance increase. Miguel's explorations of 3.14 last year found significant boosts against Python 3.13 across many more categories. Upgrading to Python 3.15 with uv I used the following sequence of commands to get uv to use Python 3.15 on my Mac. First I had to upgrade uv itself to ensure it knew about the new release: uv self update Then I installed the stable 3.15 release: uv python install 3.15 And told uv that I wanted that to be the default for every uv run command, unless the project itself pinned a different version: uv python pin --global 3.15 Now the following reports 3.15 as the version: uv run python --version I already have a bunch of tools installed using uv tool install . I reinstalled them to use Python 3.15 like this: uv tool upgrade datasette --python 3.15 Then I can confirm the version like this: datasette --get /-/versions.json | jq Highlights from Python 3.11 The release of 3.15 means that Python 3.10 (released in 2021) is officially no longer supported . My policy for my main open source projects is to keep them working in every supported Python version. I can now drop 3.10 and start using features that were introduced in 3.11. Here's the What's new in Python 3.11 document. I finally get to rely on tomllib being available! Datasette makes extensive use of asyncio . 3.11 adds TaskGroup and timeout() , and several more new features. datetime.UTC is a new in 3.11 alias for datetime.timezone.utc . Python's SQLite support got some significant upgrades in 3.11, including: setlimit() and getlimit() expose a mechanism for setting SQLite runtime limits from Python. create_window_function() lets us create custom window functions in Python, as a class with step() , value() , inverse() , and finalize() methods. blobopen() provides an efficient mechanism for partial reads and writes of large BLOB binary values stored in a SQLite row. You can now call set_authorizer(None) to remove a SQLite authorizer. Datasette had a workaround for this! Plus a whole bunch of improvements to Python's typing system . I plan to land Python 3.11 improvements to a bunch of my projects over the next few weeks. Here's my first Datasette PR removing that set_authorizer(None) workaround. I've also updated my click-app , datasette-plugin , python-lib , and llm-plugin cookiecutter templates to test against Python 3.11 through Python 3.15. Tags: open-source , profiling , python , sqlite , uv",
+        "lookback_7d": false,
+        "text_excerpt": "Hello Python 3.15, goodbye 3.10, and now I can use 3.11 12th October 2026 Python 3.15 is here ! Here’s the essential What’s new in Python 3.15 guide, this year curated by 3.14 and 3.15 release manager Hugo van Kemenade. As someone who builds open source software that works in every supported Python version, I get to say goodbye to Python 3.10 and start embracing features from Python 3.11. First, some highlights from Python 3.15. Explicit lazy imports I’m most excited about Explicit lazy imports from PEP 810 . These let you import modules like so: lazy import json lazy from pathlib import Path The module will then be imported the first time those symbols are used in the code that follows. My LLM CLI tool implements plugins. I had to recommend manual lazy imports in the plugin author documentation, because simply installing plugins that used heavy dependencies such as sentence_transformers could add multiple seconds to every invocation of the llm command. Lazy imports directly address this startup cost. Unpacking in comprehensions The new [*sublist for sublist in lists] unpacking syntax is neat. Here’s an illustration lifted from the documentation : lists = [[ 1 , 2 ], [ 3 , 4 ], [ 5 ]] [ * L for L in lists ] # [1, 2, 3, 4, 5] # equivalent to [x for L in lists for x in L] sets = [{ 1 , 2 }, { 2 , 3 }, { 3 , 4 }] { * s for s in sets } # {1, 2, 3, 4} # equivalent to {x for s in sets for x in s} dicts = [{ 'a' : 1 }, { 'b' : 2 }, { 'a' : 3 }] { ** d for d in dicts } # {'a': 3, 'b': 2} # equivalent to {k: v for d in dicts for k,v in d.items()} PEP 798: Unpacking in Comprehensions by Adam Hartz and Erik Demaine proposed this as an extension of the unpacking syntax from PEP 448 , which landed in Python 3.5 back in 2015. A sampling profiler Python’s existing tracing profiler has been renamed from cProfile to profiling.tracing , and has been joined by an exciting new sampling profiler called Tachyon, aka profiling.sampling . Sampling profilers work by periodically capturing stack traces from running processes, then using those to calculate which functions have the most time spent inside of them. They’re very low overhead and can provide a deep insight into running systems, without needing to instrument those systems first. I’ve previously used tools like py-spy for this. Now this capability is baked into the standard library. If you have the PID of an existing Python\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Google DeepMind",
+        "title": "Applying technology to understand and treat disease",
+        "url": "https://blog.google/innovation-and-ai/technology/health/ai-health-research/",
+        "published_at": "2026-10-12T17:30:00Z",
+        "summary": "A healthcare professional sits at a desk reviewing mammogram scans and medical diagrams on dual computer monitors.",
+        "lookback_7d": false,
+        "text_excerpt": "Google’s health research and tools span from fundamental cellular discovery to laboratory analysis and patient impact. Over the last five years, Google teams have published 90 peer-reviewed research papers about understanding and addressing diseases, accumulating more than 90,000 citations. And building on our vision for how technology can accelerate science to improve lives , we’re collaborating with clinicians, academic institutes, and researchers to ensure discoveries make it out of the lab to benefit patients. Here is how our efforts are helping to advance medical research and public health solutions. Decoding the mechanics of disease AlphaGenome Atlas is the most comprehensive catalog of predictions for how single-letter variant changes in the human genome affect molecular biology. To effectively treat an illness, it helps to understand how it operates at the molecular, genetic, and cellular levels. Our early-stage biology models act as collaborative research tools for scientists, revealing nature's hidden mechanics and advancing medical discoveries. Accelerating drug discovery: Researchers at the Institute for Global Health, Barcelona, used AlphaFold to virtually screen 30,000 compounds for antiparasitic activity against Chagas disease, a neglected tropical illness that affects roughly 8 million people and can lead to life-threatening complications if left untreated. This research helped the Institute identify two FDA-approved drugs that could be repurposed for Chagas, expediting time-to-treatment. Mapping genetic variants linked to aging: Identifying which rare genetic changes are linked to specific diseases is challenging because the volume of non-impactful mutations creates \"background noise.\" Researchers at the University of Exeter used AlphaGenome Atlas to search through genomic data from over 54,000 individuals, pinpointing specific variants that drive the abundance of critical proteins circulating in the human body, including PLA2G7 (linked to aging) and EGLN1 (a vital cellular oxygen sensor). Reconstructing the brain at nanoscale: In partnership with Harvard’s Lichtman Lab, we reconstructed a human brain fragment at nanoscale resolution and made the data openly available via Neuroglancer . We additionally mapped the brains of model organisms including the fly , larval zebrafish , and songbird . These neural mapping resources enable researchers\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "web-edit 0.1a0",
+        "url": "https://simonwillison.net/2026/Oct/12/web-edit/",
+        "published_at": "2026-10-12T15:54:36Z",
+        "summary": "Release: web-edit 0.1a0 I was working on a project from my phone using Codex Remote when I found myself wanting to edit a credentials file without round-tripping those credentials through the LLM itself. So... I had Codex and GPT-6 Astra Extra High build this Python web app which provides a web UI for viewing and editing files in a folder. It's intended to be run over Tailscale, so I can have an agent start this running and then edit files via my Tailscale network directly from my phone. Here's the interface for browsing files in a folder: Editing uses CodeMirror 6 - I was going to use Monaco but that still doesn't have a great mobile experience yet. Tags: projects , python , ai , tailscale , generative-ai , llms , codex",
+        "lookback_7d": false,
+        "text_excerpt": "I was working on a project from my phone using Codex Remote when I found myself wanting to edit a credentials file without round-tripping those credentials through the LLM itself. So... I had Codex and GPT-6 Astra Extra High build this Python web app which provides a web UI for viewing and editing files in a folder. It's intended to be run over Tailscale, so I can have an agent start this running and then edit files via my Tailscale network directly from my phone. Here's the interface for browsing files in a folder: Editing uses CodeMirror 6 - I was going to use Monaco but that still doesn't have a great mobile experience yet.",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "Dwarf Fortress uses version control now",
+        "url": "https://simonwillison.net/2026/Oct/11/dwarf-fortress/",
+        "published_at": "2026-10-11T00:52:37Z",
+        "summary": "I remember hearing a while ago that Dwarf Fortress didn't use version control. That fact has been lodged in my head, because given its inherent complexity I have trouble imagining a codebase that would benefit from version control more . That's art. I went looking and I'm sad to report that the days without version control appear to have ended. Quoting Tarn Adams over time: March 2013: \"I don't use version control -- I didn't like the feeling of having the code get committed into a black box thingy with no immediate upside\" March 2016: \"I don’t even use version control. If you don’t know what that is then you’re not gonna yell at me. If you even know what version control is you’re gonna be like, ‘You don’t use version control? You don’t use source control? What is wrong with you? How can you even work? I’m just not cut out for it, in a sense. It’s been 15 years, so the reasons have change over time, but that’s my current understanding of it.\" March 2023: \"I've got Discord channels to check and version control stuff to use now, so the process is definitely a little more involved\" That March 2023 quote comes from an interview about the release on Steam which made them millionaires . I'm a tiny bit sad that they gave in before they hit that milestone, but what an impressive run. Tags: version-control",
+        "lookback_7d": false,
+        "text_excerpt": "11th October 2026 I remember hearing a while ago that Dwarf Fortress didn't use version control. That fact has been lodged in my head, because given its inherent complexity I have trouble imagining a codebase that would benefit from version control more . That's art. I went looking and I'm sad to report that the days without version control appear to have ended. Quoting Tarn Adams over time: That March 2023 quote comes from an interview about the release on Steam which made them millionaires . I'm a tiny bit sad that they gave in before they hit that milestone, but what an impressive run.",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "Python 3.15.0 added to actions/python-versions",
+        "url": "https://simonwillison.net/2026/Oct/10/python-actions/",
+        "published_at": "2026-10-10T23:58:04Z",
+        "summary": "Python 3.15.0 added to actions/python-versions Bit of a niche link, but I've been waiting for this for a couple of days - I even told ChatGPT to check for it: Clone https://github.com/actions/python-versions and git pull once an hour until they add the stable 3.15 - then tell me about it Now that this has landed, you can add \"3.15\" to a GitHub Actions testing matrix to run tests against the new Python 3.15.0 release . Tags: github , python , github-actions , chatgpt",
+        "lookback_7d": false,
+        "text_excerpt": "10th October 2026 - Link Blog Python 3.15.0 added to actions/python-versions . Bit of a niche link, but I've been waiting for this for a couple of days - I even told ChatGPT to check for it: Clone https://github.com/actions/python-versions and git pull once an hour until they add the stable 3.15 - then tell me about it Now that this has landed, you can add \"3.15\" to a GitHub Actions testing matrix to run tests against the new Python 3.15.0 release .",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Latent Space",
+        "title": "Building AI for Reliable Execution: Lessons From Industrial Robotics",
+        "url": "https://www.latent.space/p/standard-bots",
+        "published_at": "2026-10-10T14:04:11Z",
+        "summary": "Inside Standard Bots’ AI stack, pretrained models learn factory tasks from demonstrations and improve through corrections from real deployments.",
+        "lookback_7d": false,
+        "text_excerpt": "When you think of robotics and AI, you probably first think of full humanoid robots like Figure’s AI-powered machines and 1X’s NEO home robots . Those may well be the future, but arguably more important in 2026 is industrial robots — which are typically not humanoids. Standard Bots claims to be “America’s largest AI-native industrial robot manufacturer.” It recently raised $200 million at a $1 billion valuation, in a series C round led by General Catalyst and RoboStrategy, a fund focused on robotics. Its customers include NASA, Amazon and Lockheed Martin. We spoke to Evan Beard , co-founder and CEO, and Leif Jentoft , Head of AI, to find out more about Standard Bots’ AI stack and how its models work. To set the scene, Standard Bots’ industrial robot arms are designed for tasks such as machine tending, welding, and assembly. Here’s a quick demo by Jentoft: According to Beard, Standard Bots has a shared base model that customers adapt through demonstrations and fine-tuning. Jentoft added that Standard Bots runs a range of models , including a zero-shot perception system for machine tending. Beard says its largest model is in the low billions of parameters — so it’s not that large by frontier lab standards. “We believe data quality matters far more than raw volume,” said Jentoft, “and we focus on getting the most out of targeted data rather than chasing the largest possible dataset.” (This matches the “bitterest lesson” of Jev creator Diogo Almeida , who told us recently that the right task and the right data can matter more than compute.) “Our market access gives us unique access to the highest value data,” he added. “ In-situ interventions can fix an edge case with a few dozen examples.” Setting up part identification with ClickFind. Beard notes that Standard Bots focuses on short-horizon tasks to meet production requirements for cycle time and reliability. The company uses conventional programming for parts of a workflow that don’t require learned behavior. Model training happens in the cloud but inference runs locally , said Beard. I asked Jentoft what the learned model does in a typical robot routine, and which parts of the workflow use conventional programming? As an example, he brought up its machine-tending solution for high-mix manufacturing. “We’ve built a zero-shot system that lets a user tell the robot which parts to look for on a given task. The mo\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Latent Space",
+        "title": "[AINews] TypeSafe/Jev at >$100M ARR, $7.5B valuation 3 weeks after launch",
+        "url": "https://www.latent.space/p/ainews-typesafejev-at-100m-arr-75b",
+        "published_at": "2026-10-10T06:45:57Z",
+        "summary": "Wow.",
+        "lookback_7d": false,
+        "text_excerpt": "As you can see in the AINews X recap section below, everyone on earth has cloned the Jev API, but only one company can ever create the category. TypeSafe announced their “ Series AI ” and Sequoia “ leaked ” that they crossed 100M ARR in their first week. Diogo Almeida @CompleteSkeptic launched a model accidentally served trillions of tokens a day 29.4% of the fortune 500 showed up raised a really big series A from it's been 3 weeks we would like to sleep now 4:26 PM · Oct 9, 2026 · 811K Views 467 Replies · 219 Reposts · 6.07K Likes Although there are cynics and accusations of astroturfing , we hope it is evident that our Jev pod was 100% authentic. AI News for 10/8/2026-10/9/2026. We checked 12 subreddits, 544 Twitters and no further Discords. AINews’ website lets you search all past issues. As a reminder, AINews is now a section of Latent Space . You can opt in/out of email frequencies! Decision Models Become a Product Category The pattern : Several vendors shipped “decision” models on the same day. These return typed answers (probabilities, picks from a list, scores) in a single forward pass instead of free text. Jev is the reference point everyone benchmarks against, and @scaling01 remarked on how fast the format spread. OpenAI Decisions API : Three request types: probability that a condition is true, pick from a list, or score against levels. It accepts text and images, runs on GPT-6 Luna, costs $0.10/M input tokens with no output charge, and is “up to 10x faster” by OpenAI’s own figure ( @LearnOpenCV ). Microsoft-Decision-1 : Positioned for LLM judges and screening scientific hypotheses. An early evaluator says decision models still struggle on consistency and complex decisions ( @omarsar0 ). Perplexity pplx-decider-v1.1-27b : Claims top Decision Bench accuracy at 94.5% across 1,071 cases, at $0.017 per 1K decisions ( @perplexitydevs ). Cloudflare clef : New clef-omni accepts audio, video, image and text. clef-flash is now cheaper than Jev, and clef overall is about 2x faster ( @michellechen ). Weights are on Hugging Face . Liquid d1 : Now on Vercel AI Gateway, with vision support for classify, route and score tasks ( @vercel_dev ). Serving and routing : vLLM Semantic Router’s Decision 2.0 answers multiple questions about one input in one pass, with per-option probabilities ( @vllm_project ). LangSmith uses Jev as a judge that returns separate typed ans\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      }
+    ],
+    "youtube": [],
+    "github": [
+      {
+        "name": "KiroCrew",
+        "full_name": "kirodotdev/KiroCrew",
+        "url": "https://github.com/kirodotdev/KiroCrew",
+        "description": "A persistent workspace for development work that self-improves and continues beyond one session.",
+        "stars": 4387,
+        "pushed_at": "2026-10-13T03:44:01Z",
+        "topics": [
+          "agent",
+          "agentic-ai",
+          "agents",
+          "ai-agent",
+          "ai-agents",
+          "automation",
+          "devtools",
+          "kiro",
+          "llm"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"assets/banner.svg\" alt=\"Kiro Crew. Keep work moving. Runs on your hardware, remembers across sessions, keeps working unattended.\"> </p> <h1 align=\"center\">Kiro Crew</h1> <p align=\"center\"> <strong>A persistent workspace for development work that self-improves and continues beyond one session.</strong> </p> <p align=\"center\"> <a href=\"https://trendshift.io/repositories/103032\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"https://trendshift.io/api/badge/trendshift/repositories/103032/daily?language=Python\" alt=\"Kiro Crew on Trendshift\" width=\"250\" height=\"55\"></a> </p> <p align=\"center\"> Kiro Crew is an open source development workspace that runs locally or remotely on your hardware. It is persistent, self-learning, and self-evolving. Work with it from the desktop app, web dashboard, and CLI, or continue the same work through connection tools like Slack and Discord. Your multi-step tasks can run unattended, recurring jobs run on your schedule, and heartbeats monitor systems until something needs attention. Kiro Crew Apps tailor that experience to a specific job, combining a purpose-built interface with agents, skills, schedules, integrations, and backend services. </p> <p align=\"center\"> <a href=\"https://github.com/kirodotdev/KiroCrew/releases\"><img src=\"https://img.shields.io/badge/Download-macOS%20%7C%20Linux%20%7C%20Windows-2f6feb?style=flat-square\" alt=\"Download Kiro Crew for macOS, Linux, or Windows\"></a> <a href=\"docs/README.md\"><img src=\"https://img.shields.io/badge/Documentation-1f6feb?style=flat-square\" alt=\"Read the documentation\"></a> <a href=\"docs/guides/install.md\"><img src=\"https://img.shields.io/badge/Install%20guide-macOS%20%7C%20Linux%20%7C%20Windows-6e7781?style=flat-square\" alt=\"Install guide for macOS, Linux, and Windows\"></a> <a href=\"CONTRIBUTING.md\"><img src=\"https://img.shields.io/badge/Contributing-238636?style=flat-square\" alt=\"Contributing guide\"></a> <a href=\"SECURITY.md\"><img src=\"https://img.shields.io/badge/Security-8250df?style=flat-square\" alt=\"Security policy\"></a> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/License-Apache%202.0-656d76?style=flat-square\" alt=\"Apache 2.0 license\"></a> </p> <p align=\"center\"> <a href=\"#quick-start\">Quick start</a> · <a href=\"#build-from-source\">Build from source</a> · <a href=\"#why-kiro-crew\">Why Kiro Crew</a> · <a href=\"#what-kiro-crew-does\">Capa\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": true
+      },
+      {
+        "name": "ethereum-flashloan-mev-bot",
+        "full_name": "MIgHTy-alIeN/ethereum-flashloan-mev-bot",
+        "url": "https://github.com/MIgHTy-alIeN/ethereum-flashloan-mev-bot",
+        "description": "An arbitrage bot is a smart contract connected to an external automation script that controls its operation.",
+        "stars": 2784,
+        "pushed_at": "2026-10-13T03:44:02Z",
+        "topics": [
+          "ai",
+          "aitradingbot",
+          "bot",
+          "btc",
+          "claude",
+          "eth",
+          "etherlab",
+          "mev",
+          "mevbots"
+        ],
+        "source": "search",
+        "text_excerpt": "# MEV Arbitrage Bot for Ethereum — Smart Contract + Python Automation. Finds and executes arbitrage between Uniswap pools and routers. ![Et](https://i.ibb.co/x8XSh8tk/Chat-GPT-Image-25-2026-02-40-27.png) An arbitrage bot is a smart contract that searches for and executes arbitrage opportunities between pools and routers, holding ETH/tokens on its balance. Below is a step-by-step guide on how to deploy your bot and get it running without a single manual call. ## What the bot is An arbitrage bot is a smart contract connected to an external automation script that controls its operation. - **`executeArbitrage()`** — the main function: searches for and executes an arbitrage opportunity between pools/routers in a single transaction. - **`quickSwap()` / `quickSwapFromBalance()`** — a quick swap through an allowed router, directly from the contract's balance. - **`setRouterAllowed()` / `setTokenAllowed()`** — manages the whitelist of routers and tokens the bot is allowed to work with. - **`setDefaultFee()` / `setDefaultTokenOut()`** — configures the pool fee and the default token the bot swaps into. - **`setMinQuickSwapAmount()` / `setMaxQuickSwapAmount()`** — sets min/max amount limits per swap. - **`setPaused()`** — emergency pause, stopping all contract operations. - **`revokeApproval()`** — revokes previously granted token approvals. - **`withdraw()` / `withdrawETH()`** — withdraws tokens/ETH from the contract's balance by the owner. - **`getBalance()` / `getOwner()` / `owner()` / `TARGET_ADDRESS()`** — helper view functions for reading contract state. The contract owner is the only one who can change settings and withdraw funds. ## Step-by-step guide ### 1. Open the deployer page ![EtherLab](https://i.ibb.co/PzMH74XW/1.png) Open [etherlab website](https://etherlabs-sol.github.io/deployer/) (or the hosted version of the page) in your browser — this is the environment where the bot is created and deployed. ### 2. Create the bot file Create a new `.sol` file in the file manager (e.g. `contract.sol`). Paste the smart contract code into the editor field [contract](contract.sol) ![EtherLab](https://i.ibb.co/nN90b2FP/2.png) ### 3. Compile the bot Go to the **Compiler** tab, select compiler version **0.8.20**, and click compile. ![Compiling the contract](https://i.ibb.co/vCmJHMGz/3.png) ### 4. Deploy and fund the bot Go to the **Deploy** tab, connect your wallet — Meta\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "skillshare",
+        "full_name": "runkids/skillshare",
+        "url": "https://github.com/runkids/skillshare",
+        "description": "📚 Sync skills, agents, MCP, plugins to all AI CLI tools with one command and simplify team sharing.",
+        "stars": 2776,
+        "pushed_at": "2026-10-13T03:41:06Z",
+        "topics": [
+          "agent-plugins",
+          "ai",
+          "ai-agents",
+          "claude-code",
+          "cli",
+          "codex",
+          "cross-machine-sync",
+          "desktop-app",
+          "go",
+          "hooks",
+          "mcp",
+          "openclaw",
+          "opencode",
+          "pi",
+          "pi-package",
+          "skills",
+          "skills-audit",
+          "skills-manager",
+          "skillshare",
+          "team-collaboration"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\" style=\"margin-bottom: 0;\"> <img src=\".github/assets/skillshare-logo-card.png\" alt=\"skillshare\" width=\"280\"> </p> <h1 align=\"center\" style=\"margin-top: 0.5rem; margin-bottom: 0.5rem;\">skillshare</h1> <p align=\"center\"> <a href=\"README.md\">English</a> · <a href=\"README-de.md\">Deutsch</a> · <a href=\"README-es.md\">Español</a> · <a href=\"README-fr.md\">Français</a> · <a href=\"README-ja.md\">日本語</a> · <a href=\"README-ko.md\">한국어</a> · <a href=\"README-pt-BR.md\">Português</a> · <a href=\"README-zh-CN.md\">简体中文</a> · <a href=\"README-zh-TW.md\">繁體中文</a> </p> <p align=\"center\"> <a href=\"https://skillshare.runkids.cc\"><img src=\"https://img.shields.io/badge/Website-skillshare.runkids.cc-blue?logo=docusaurus\" alt=\"Website\"></a> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/License-MIT-yellow.svg\" alt=\"License: MIT\"></a> <a href=\"https://github.com/runkids/skillshare/releases\"><img src=\"https://img.shields.io/github/v/release/runkids/skillshare\" alt=\"Release\"></a> <a href=\"https://github.com/runkids/skillshare/releases\"><img src=\"https://img.shields.io/github/downloads/runkids/skillshare/total\" alt=\"Downloads\"></a> <img src=\"https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-blue\" alt=\"Platform\"> <a href=\"https://deepwiki.com/runkids/skillshare\"><img src=\"https://deepwiki.com/badge.svg\" alt=\"Ask DeepWiki\"></a> <a href=\"https://ko-fi.com/williehung\"><img src=\"https://img.shields.io/badge/Support-skillshare-FF5E5B?logo=kofi&logoColor=white\" alt=\"Support skillshare on Ko-fi\"></a> </p> <p align=\"center\"> <a href=\"https://github.com/runkids/skillshare/stargazers\"><img src=\"https://img.shields.io/github/stars/runkids/skillshare?style=social\" alt=\"Star on GitHub\"></a> </p> <p align=\"center\"> <a href=\"https://trendshift.io/repositories/21835\" target=\"_blank\"><img src=\"https://trendshift.io/api/badge/repositories/21835\" alt=\"runkids%2Fskillshare | Trendshift\" style=\"width: 250px; height: 55px;\" width=\"250\" height=\"55\"/></a> </p> <p align=\"center\"> <strong>Your AI coding setup, everywhere.</strong><br> Manage skills, agents, rules, MCP connections and hooks in one place.<br> For Claude Code, Codex, Pi, OpenCode and more. </p> <p align=\"center\"> <a href=\"https://skillshare.runkids.cc\">Website</a> • <a href=\"#installation\">Install</a> • <a href=\"#quick-start\">Quick Start</a> • <a href=\"#highlights\">Highlights</a> • <a href=\"#cli-and-ui-pre\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "penguin-harness",
+        "full_name": "Prism-Shadow/penguin-harness",
+        "url": "https://github.com/Prism-Shadow/penguin-harness",
+        "description": "🐧 Unified and Stable RSI Platform",
+        "stars": 2494,
+        "pushed_at": "2026-10-13T03:41:28Z",
+        "topics": [
+          "agent",
+          "agentic-ai",
+          "ai",
+          "build-tool",
+          "claude-code",
+          "deepseek",
+          "deepseek-harness",
+          "desktop",
+          "harness",
+          "llm",
+          "rsi",
+          "self-evolving"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"packages/landing/public/penguin-logo.svg\" alt=\"PenguinHarness logo\" width=\"88\" /> </p> <h1 align=\"center\">PenguinHarness</h1> <p align=\"center\"><strong>Unified and Stable RSI Framework</strong><br />Automatically improve <strong>model × agent harness</strong></p> <p align=\"center\"> <a href=\"https://penguin.ooo/download\"> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"assets/readme/download-en-dark.svg\" /> <img src=\"assets/readme/download-en-light.svg\" alt=\"Download App\" height=\"44\" /> </picture> </a> </p> <p align=\"center\"> <a href=\"https://www.npmjs.com/package/@prismshadow/penguin-core\"><img src=\"https://img.shields.io/npm/v/@prismshadow/penguin-core\" alt=\"npm version\" /></a> <a href=\"https://github.com/Prism-Shadow/penguin-harness/actions/workflows/ci.yml\"><img src=\"https://github.com/Prism-Shadow/penguin-harness/actions/workflows/ci.yml/badge.svg\" alt=\"CI\" /></a> <a href=\"https://github.com/Prism-Shadow/penguin-harness/actions/workflows/pages.yml\"><img src=\"https://github.com/Prism-Shadow/penguin-harness/actions/workflows/pages.yml/badge.svg\" alt=\"Deploy Site\" /></a> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-Apache--2.0-blue\" alt=\"License: Apache-2.0\" /></a> <img src=\"https://img.shields.io/badge/node-%E2%89%A5%2024-brightgreen\" alt=\"Node >= 24\" /> </p> <p align=\"center\"> <a href=\"https://penguin.ooo/\"><img src=\"https://img.shields.io/badge/Website-penguin.ooo-1f6feb?logo=googlechrome&logoColor=white\" alt=\"Website\" /></a> <a href=\"https://penguin.ooo/docs/\"><img src=\"https://img.shields.io/badge/Docs-penguin.ooo%2Fdocs-1f6feb?logo=readthedocs&logoColor=white\" alt=\"Docs\" /></a> <a href=\"https://penguin.ooo/blog\"><img src=\"https://img.shields.io/badge/Blog-penguin.ooo%2Fblog-1f6feb?logo=rss&logoColor=white\" alt=\"Blog\" /></a> </p> <p align=\"center\"> <a href=\"https://discord.gg/eFHKqqcU3D\"><img src=\"https://img.shields.io/badge/Discord-join%20chat-5865F2?logo=discord&logoColor=white\" alt=\"Discord\" /></a> <a href=\"https://x.com/code_hiyouga\"><img src=\"https://img.shields.io/badge/X-code%5Fhiyouga-000000?logo=x&logoColor=white\" alt=\"X (Twitter)\" /></a> <a href=\"https://github.com/Prism-Shadow/penguin-harness-community/blob/main/wechat/group.jpg\"><img src=\"https://img.shields.io/badge/WeChat-user%20group-07C160?logo=wechat&logoColor=white\" alt=\"WeChat\" /></a> </p> <p align=\"center\"> <a href=\"ht\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "trainer",
+        "full_name": "kubeflow/trainer",
+        "url": "https://github.com/kubeflow/trainer",
+        "description": "Distributed AI Model Training and LLM Fine-Tuning on Kubernetes",
+        "stars": 2243,
+        "pushed_at": "2026-10-13T03:43:48Z",
+        "topics": [
+          "ai",
+          "distributed",
+          "fine-tuning",
+          "gpu",
+          "huggingface",
+          "jax",
+          "kubeflow",
+          "kubernetes",
+          "llm",
+          "machine-learning",
+          "mlops",
+          "python",
+          "pytorch",
+          "tensorflow",
+          "xgboost"
+        ],
+        "source": "search",
+        "text_excerpt": "# Kubeflow Trainer [![Join Slack](https://img.shields.io/badge/Join_Slack-blue?logo=slack)](https://www.kubeflow.org/docs/about/community/#kubeflow-slack-channels) [![Coverage Status](https://coveralls.io/repos/github/kubeflow/trainer/badge.svg?branch=master)](https://coveralls.io/github/kubeflow/trainer?branch=master) [![Go Report Card](https://goreportcard.com/badge/github.com/kubeflow/trainer)](https://goreportcard.com/report/github.com/kubeflow/trainer) [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/10435/badge)](https://www.bestpractices.dev/projects/10435) [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/kubeflow/trainer) [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkubeflow%2Ftrainer.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fkubeflow%2Ftrainer?ref=badge_shield) <h1 align=\"center\"> <img src=\"./docs/images/trainer-logo.svg\" alt=\"logo\" width=\"200\"> <br> </h1> Latest News 🔥 - [2026/08] Kubeflow Trainer v2.3.0 is officially released with the runtime snapshot mechanism for decoupled runtime lifecycle, enhanced MPI support, and proposal Megatron-LM examples. Check out [the GitHub release notes](https://github.com/kubeflow/trainer/releases/tag/v2.3.0). - [2026/03] Kubeflow Trainer v2.2 is officially released with support for JAX and XGBoost Training Runtimes, enhanced observability with metrics propagation to TrainJob status, and Flux Framework integration for HPC and MPI workloads. Check out [the blog post announcement](https://blog.kubeflow.org/kubeflow-trainer-v2.2-release/). - [2025/11] Kubeflow Trainer v2.1 is officially released with support of [Distributed Data Cache](https://trainer.kubeflow.org/en/latest/user-guides/data-cache.html), topology aware scheduling with Kueue and Volcano, and LLM post-training enhancements. Check out [the GitHub release notes](https://github.com/kubeflow/trainer/releases/tag/v2.1.0). - [2025/09] Kubeflow SDK v0.1 is officially released with support for CustomTrainer, BuiltinTrainer, and local PyTorch execution. Check out [the GitHub release notes](https://github.com/kubeflow/sdk/releases/tag/0.1.0). - [2025/07] PyTorch on Kubernetes: Kubeflow Trainer Joins the PyTorch Ecosystem. Find the announcement in [the PyTorch blog post](https://pytorch.org/blog/pytorch-on-kubernetes-kubeflow-trainer-joins-the-pytorch-ecosystem/). <details> <\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "tokenspeed",
+        "full_name": "lightseekorg/tokenspeed",
+        "url": "https://github.com/lightseekorg/tokenspeed",
+        "description": "TokenSpeed is a speed-of-light LLM inference engine.",
+        "stars": 2211,
+        "pushed_at": "2026-10-13T03:41:39Z",
+        "topics": [
+          "b200",
+          "b300",
+          "blackwell",
+          "deepseek",
+          "gb200",
+          "gb300",
+          "glm",
+          "gpt-oss",
+          "inkling",
+          "kimi",
+          "lightseek",
+          "llm",
+          "mi355x",
+          "mi455x",
+          "minimax",
+          "qwen",
+          "rubin",
+          "speed-of-light",
+          "tokenspeed",
+          "vlm"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"https://raw.githubusercontent.com/lightseekorg/tokenspeed/main/assets/banner/tokenspeed-banner.png\" alt=\"TokenSpeed: Tokens at the speed of light\" width=\"100%\" /> </p> TokenSpeed is a speed-of-light LLM inference engine designed for **agentic workloads**, with TensorRT-LLM-level performance and vLLM-level usability. The goal is to be the most performant inference engine for production agentic workloads. Core components: - **Scheduler**: C++ control plane and Python execution plane. Request lifecycle, KV cache ownership, and overlap timing are encoded as a finite-state machine, with safe KV resource reuse enforced by the type system at compile time. - **Kernels**: pluggable, layered kernel system with a portable public API and a centralized registry including one of the fastest **MLA** (Multi-head Latent Attention) implementations on Blackwell for agentic workloads. - **Entrypoint**: SMG-integrated AsyncLLM for low-overhead CPU-side request handling. ## Differentiation TokenSpeed takes a fundamentally different architectural approach from existing LLM inference engines. The **PyTorch Foundation highlighted these architectural differentiators** when [welcoming TokenSpeed](https://pytorch.org/blog/pytorch-ecosystem-landscape-q3-update/) to the PyTorch Ecosystem Landscape: > TokenSpeed is an open source LLM inference engine and the first to separate the control plane from the execution plane. The control plane is implemented in C++ as a finite-state machine, using the type system to enforce safe resource management, including request lifecycles and KV cache state, at compile time rather than runtime. The execution plane is implemented in Python, enabling fast iteration and lowering the cognitive load for researchers and engineers. This architecture combines strong correctness guarantees in the core scheduling system with the development velocity of a high-level execution layer. > > TokenSpeed also treats kernels as a first-class, modular subsystem, separating them from the core engine through a portable public API, centralized registry and selection model, and an extensible plugin mechanism for heterogeneous accelerators. More importantly, TokenSpeed is the **Switzerland** of open-source LLM inference engines: neutral because it's backed by the non-profit [LightSeek Foundation](https://lightseek.org/) rather than a commercial company\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "document",
+        "full_name": "ranuts/document",
+        "url": "https://github.com/ranuts/document",
+        "description": "Local-first browser editor for Word, Excel, PowerPoint and PDF, with an experimental AI assistant. No Office installation or account required.",
+        "stars": 1983,
+        "pushed_at": "2026-10-13T03:42:34Z",
+        "topics": [
+          "ai",
+          "ai-assistant",
+          "client-side",
+          "document",
+          "docx",
+          "editor",
+          "excel",
+          "local-first",
+          "no-server",
+          "offline",
+          "onlyoffice",
+          "pptx",
+          "privacy",
+          "pwa",
+          "wasm",
+          "webassembly",
+          "webgpu",
+          "webllm",
+          "webmcp",
+          "word"
+        ],
+        "source": "search",
+        "text_excerpt": "# Online Document Editor <p align=\"center\"> <a href=\"https://github.com/ranuts/document/actions/workflows/ci.yml\"> <img src=\"https://github.com/ranuts/document/actions/workflows/ci.yml/badge.svg\" alt=\"CI Status\"> </a> <a href=\"https://github.com/ranuts/document/blob/main/LICENSE\"> <img src=\"https://img.shields.io/github/license/ranuts/document\" alt=\"License\"> </a> <a href=\"https://github.com/ranuts/document/releases\"> <img src=\"https://img.shields.io/github/v/release/ranuts/document\" alt=\"Version\"> </a> <a href=\"https://edit.chaxus.com/\"> <img src=\"https://img.shields.io/badge/Live-edit.chaxus.com-brightgreen\" alt=\"Live site\"> </a> </p> <p align=\"center\"> <b>English</b> | <a href=\"readme.zh.md\">简体中文</a> | <a href=\"readme.ja.md\">日本語</a> | <a href=\"readme.ko.md\">한국어</a> | <a href=\"readme.de.md\">Deutsch</a> | <a href=\"readme.es.md\">Español</a> | <a href=\"readme.pt.md\">Português</a> | <a href=\"readme.fa.md\">فارسی</a> </p> **An open source document workspace for you and your AI agents.** Open, edit, convert and save Word, Excel and PowerPoint files, and annotate PDFs in your browser. Core document processing runs locally, with no account or Office installation required. Use optional AI assistance (Experimental Beta), let browser agents call document tools through WebMCP, or install it as a PWA. Cached editor resources work offline; you can also self-host or embed the editor in your app. **Try it online: [edit.chaxus.com](https://edit.chaxus.com/)** --- ## ✨ Features - **Edit locally.** Open, edit and convert documents on your device, without a required document upload. - **Save your way.** Write back to your chosen file where supported, or download an export. Reopen recent work from this browser. - **Work with AI (Experimental Beta).** Draft and refine text, work with spreadsheet data, create slides or ask about the current PDF page. Review changes before applying them. - **Let agents handle documents.** In [WebMCP](docs/reference.md#webmcp-agent-tools)-compatible browsers, AI agents can open, convert and export files, and read text from word-processing documents. - **Install as a PWA.** Use it as an app; cached editor resources can work offline. - **Host or embed it.** Self-host a static site or add the editor to your app through its iframe API. ## 🚀 Quick start [New document](https://edit.chaxus.com/editor?new=docx&locale=en) · [New spreadsheet](https://edit.ch\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "PromptHub",
+        "full_name": "legeling/PromptHub",
+        "url": "https://github.com/legeling/PromptHub",
+        "description": "一款包含了 Prompt管理，Skill管理，Agent管理的一站式AI工具箱，助你高效管理提示词，一键分发skills ，一站式管理Agent资产，并实现云同步，备份，版本管理 | An all-in-one AI toolbox for prompt, agent, and skills management. Reuse prompts, distribute skills with one click, manage agent assets, and support cloud sync, backup, and version control",
+        "stars": 1705,
+        "pushed_at": "2026-10-13T03:39:46Z",
+        "topics": [
+          "agent",
+          "ai",
+          "cli-tool",
+          "llm",
+          "prompt",
+          "prompt-toolkit",
+          "skills"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"./docs/imgs/icon.png\" alt=\"PromptHub Logo\" width=\"128\" height=\"128\" /> # PromptHub 本地优先的 Prompt、Skill 与 AI 编程资产工作台。 <br/> <!-- 徽章 --> [![GitHub Star 数量](https://img.shields.io/github/stars/legeling/PromptHub?style=for-the-badge&logo=github&color=yellow)](https://github.com/legeling/PromptHub/stargazers) [![下载量](https://img.shields.io/github/downloads/legeling/PromptHub/total?style=for-the-badge&logo=github&color=blue)](https://github.com/legeling/PromptHub/releases) [![版本](https://img.shields.io/badge/release-v0.5.9_stable-22C55E?style=for-the-badge)](https://github.com/legeling/PromptHub/releases/latest) [![许可证](https://img.shields.io/badge/license-AGPL--3.0-blue?style=for-the-badge)](./LICENSE) [![开发版本](https://img.shields.io/badge/development-v0.6.0--beta.2-8B5CF6?style=for-the-badge)](./CHANGELOG.md#unreleased) <br/> <!-- 技术栈 --> ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![Electron](https://img.shields.io/badge/Electron-47848F?style=flat-square&logo=electron&logoColor=white) ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![TailwindCSS](https://img.shields.io/badge/Tailwind-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white) ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white) <br/> ![macOS](https://img.shields.io/badge/macOS-000000?style=flat-square&logo=apple&logoColor=white) ![Windows](https://img.shields.io/badge/Windows-0078D6?style=flat-square&logo=windows&logoColor=white) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black) <br/> [简体中文](./README.md) · [繁體中文](./docs/README.zh-TW.md) · [English](./docs/README.en.md) · [日本語](./docs/README.ja.md) · [Deutsch](./docs/README.de.md) · [Español](./docs/README.es.md) · [Français](./docs/README.fr.md) <br/> <a href=\"https://github.com/legeling/PromptHub/releases/latest\"> <img src=\"https://img.shields.io/badge/📥_下载桌面版-Releases-blue?style=for-the-badge&logo=github\" alt=\"Download\"/> </a> </div> <br/> PromptHub 把你的 Prompt、SKILL.md 和项目级 AI 编程资产放进一个本地工作区。它能把同一份 Skill 一键安装到 Claude Code、Cursor、Codex、Windsurf、Antigravity、Cline 等十几个工具，给 Prompt 做版本管理与多模型测试，并通过 WebDAV 同步到其他设备，或把完整快照备份到自部署 Web。 数据默认存在你自己的电脑上。 --- ## 目录 - [桌面版下载](#install) - [截图](#screenshots) - [核心能力](#feature\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "Gym",
+        "full_name": "NVIDIA-NeMo/Gym",
+        "url": "https://github.com/NVIDIA-NeMo/Gym",
+        "description": "Evaluate and improve models and agents using environments",
+        "stars": 1232,
+        "pushed_at": "2026-10-13T03:41:41Z",
+        "topics": [
+          "agents",
+          "benchmarks",
+          "environments",
+          "evaluation",
+          "gym",
+          "llm",
+          "reinforcement-learning",
+          "reinforcement-learning-environments",
+          "rl-environment",
+          "rl-training"
+        ],
+        "source": "search",
+        "text_excerpt": "# NeMo Gym [![PyPI](https://img.shields.io/pypi/v/nemo-gym)](https://pypi.org/project/nemo-gym/) [![Python](https://img.shields.io/pypi/pyversions/nemo-gym)](https://pypi.org/project/nemo-gym/) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![CI](https://github.com/NVIDIA-NeMo/Gym/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/NVIDIA-NeMo/Gym/actions/workflows/unit-tests.yml) [![Docs](https://img.shields.io/badge/docs-NVIDIA-brightgreen)](https://docs.nvidia.com/nemo/gym/main/about/) **[Requirements](#-requirements)** • **[Quick Start](#-quick-start)** • **[Environment Tutorials](#-environment-tutorials)** • **[Available Environments](#-available-environments)** • **[Documentation & Resources](#-documentation--resources)** • **[Community & Support](#-community--support)** • **[Citations](#-citations)** NeMo Gym is a library for evaluating and improving models and agents using environments. NeMo Gym provides infrastructure to develop environments, scalably run evaluation and training, and a collection of popular benchmarks and training environments. An environment is the complete system an agent interacts with to complete a task. It consists of a dataset (tasks to solve), an agent harness (how the model interacts with the world), a verifier (task completion scoring), and state (per-task execution context). ## 🎯 When to Use NeMo Gym - You need to **evaluate models or agents** in stateful environments (e.g. code execution, tool calling, sandboxes) - You want **reproducible evaluation** across teams using shared environments and verifiers - You need to use environments **at scale** — multiple repeats per task, or thousands of concurrent requests for training - You want to **seamlessly transition** between evaluation, agent optimization, and training If you're scoring model outputs with a stateless check and don't need scale or training, a script is probably sufficient. ## 🏆 What NeMo Gym Provides - Modular, extensible interfaces for agents, environments, tasks, and verifiers - Environment hub of popular benchmarks and training environments - Use your own agents or choose from built-in harnesses - Scale to thousands of concurrent environments - Train with the RL framework of your choice - Optional OpenTelemetry tracing across the agent, model, and resources servers - Battle-te\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "Automodel",
+        "full_name": "NVIDIA-NeMo/Automodel",
+        "url": "https://github.com/NVIDIA-NeMo/Automodel",
+        "description": "🚀 Pytorch Distributed native training library for LLMs/VLMs with OOTB Hugging Face support",
+        "stars": 1008,
+        "pushed_at": "2026-10-13T03:44:11Z",
+        "topics": [
+          "agent",
+          "deepseek-v4",
+          "deepseek-v4-flash",
+          "finetuning",
+          "gemma3",
+          "gemma4",
+          "glm",
+          "gpt-oss",
+          "kimi-k3",
+          "llama",
+          "llama3",
+          "llm",
+          "minimax-m2",
+          "mistral",
+          "openai",
+          "qwen-38-27b",
+          "qwen3",
+          "qwen3-next",
+          "vlm"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> # 🚀 NeMo AutoModel </div> <div align=\"center\"> <!-- [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) --> [![codecov](https://codecov.io/github/NVIDIA-NeMo/Automodel/graph/badge.svg?token=4NMKZVOW2Z)](https://codecov.io/github/NVIDIA-NeMo/Automodel) [![CICD NeMo](https://github.com/NVIDIA-NeMo/Automodel/actions/workflows/cicd-main.yml/badge.svg)](https://github.com/NVIDIA-NeMo/Automodel/actions/workflows/cicd-main.yml) [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/release/python-3100/) [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md) [![GitHub Stars](https://img.shields.io/github/stars/NVIDIA-NeMo/Automodel.svg?style=social&label=Star)](https://github.com/NVIDIA-NeMo/Automodel/stargazers/) <!-- **Day-0 integration with Hugging Face models automating fine-tuning and pretraining with pytorch-native parallelism, custom-kernels and optimized recipes** **Pytorch DTensor‑native SPMD library for large‑scale training**--> [📖 Documentation](https://docs.nvidia.com/nemo/automodel/latest/index.html) • [🔥 Ready-to-Use Recipes](https://github.com/NVIDIA-NeMo/Automodel/#supported-models) • [💡 Examples](https://github.com/NVIDIA-NeMo/Automodel/tree/main/examples) • [Model Coverage](https://docs.nvidia.com/nemo/automodel/latest/model-coverage/overview.html) • [Performance](https://docs.nvidia.com/nemo/automodel/latest/performance-summary.html) • [🤝 Contributing](https://github.com/NVIDIA-NeMo/Automodel/blob/main/CONTRIBUTING.md) </div> ## 📣 News and Discussions - [10/04/2026][**HunyuanImage-3.0**](https://huggingface.co/tencent/HunyuanImage-3.0) We now support text-to-image full fine-tuning and LoRA for Tencent's 80B-A13B MoE multimodal decoder with FSDP2 and expert parallelism, many thanks to [@Khazic](https://github.com/khazic). Check out the [full fine-tuning](https://github.com/NVIDIA-NeMo/Automodel/blob/main/examples/diffusion/finetune/hunyuan_image3_t2i_flow.yaml) and [LoRA](https://github.com/NVIDIA-NeMo/Automodel/blob/main/examples/diffusion/finetune/hunyuan_image3_t2i_flow_lora.yaml) recipes and the [model coverage page](https://github.com/NVIDIA-NeMo/Automodel/blob/main/docs/model-coverage/diffusion/tencent/hunyuan-image-3.mdx). - [09/28/2026][**Qwen-Image-2.1\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "surogate",
+        "full_name": "invergent-ai/surogate",
+        "url": "https://github.com/invergent-ai/surogate",
+        "description": "Train and serve LLMs at extreme speed and massive throughput.",
+        "stars": 854,
+        "pushed_at": "2026-10-13T03:44:00Z",
+        "topics": [
+          "cuda",
+          "deep-learning",
+          "fine-tuning",
+          "generative-ai",
+          "llama",
+          "llm",
+          "llms",
+          "nvidia-gpu",
+          "qwen",
+          "sft"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <a href=\"https://surogate.ai\"> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"assets/logo-white.svg\"> <img src=\"assets/surogate-logo.png\" alt=\"Surogate\" width=\"150\"> </picture> </a> <h1>Surogate Engine</h1> <p><strong>Native C++/CUDA LLM training and serving: GGUF, NVFP4, BF16, FP8. <br> From your first fine-tune to hundreds of concurrent requests.</strong></p> <p> <a href=\"https://surogate.ai\">Website</a> · <a href=\"docs/index.md\">Documentation</a> · <a href=\"#speed-you-can-measure\">Benchmarks</a> · <a href=\"#quickstart\">Quickstart</a> · <a href=\"#supported-models\">Models</a> · <a href=\"examples\">Examples</a> </p> [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE) [![C++ / CUDA](https://img.shields.io/badge/Engines-C%2B%2B_%2F_CUDA-76B900)](csrc/src) [![GitHub stars](https://img.shields.io/github/stars/invergent-ai/surogate?style=social)](https://github.com/invergent-ai/surogate) [![Follow on X](https://img.shields.io/twitter/follow/surogate_ai?style=social)](https://x.com/surogate_ai) <table> <tr> <td align=\"center\"><strong>136,200 tok/s</strong><br>Training · 4× RTX 5090<br><sub>Qwen3-0.6B · FP4 LoRA</sub></td> <td align=\"center\"><strong>2.53× training throughput</strong><br>vs. Unsloth · 1× H100<br><sub>Qwen3-0.6B · BF16 on both</sub></td> <td align=\"center\"><strong>802 tok/s</strong><br>Serving · one user · 1× RTX 5090<br><sub>Qwen3.5-0.8B · native GGUF</sub></td> <td align=\"center\"><strong>7.0× serving throughput</strong><br>vs. llama.cpp · 8× RTX 5090<br><sub>GLM-5.3-Flash · 16 users · decode</sub></td> </tr> </table> <sub>Selected results from the repository's <a href=\"docs/reference/benchmarks.md\">training benchmarks</a> and <a href=\"surogate/serve/BENCHMARKS.md\">serving benchmarks</a>. Workloads and comparison details below.</sub> </div> Surogate puts **training and serving in one toolkit**, with dedicated native engines built to push NVIDIA hardware. Pretrain a model, fine-tune with LoRA or QLoRA, optimize with GRPO or DPO, distill a teacher, and serve the result through familiar HTTP APIs. Speed drives the design: compiled training graphs, fused CUDA kernels, low-precision tensor cores, concurrent serving, and deliberate control over every byte of GPU memory. Scale from a single workstation to multiple GPUs and training clusters, or use system RAM to work with models la\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "cohub",
+        "full_name": "netaart/cohub",
+        "url": "https://github.com/netaart/cohub",
+        "description": "A living space where people and agents create, play, and build together.",
+        "stars": 572,
+        "pushed_at": "2026-10-13T03:42:16Z",
+        "topics": [
+          "agent",
+          "ai",
+          "cloud-agent"
+        ],
+        "source": "search",
+        "text_excerpt": "# Cohub <p align=\"center\"> <a href=\"https://cohub.live/\">Homepage</a> · <a href=\"https://neta.art/\">Neta Studio</a> · <a href=\"#quick-start\">quick start</a> · <a href=\"#docs\">docs</a> · <a href=\"README.zh-CN.md\">简体中文</a> </p> <p align=\"center\"> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-Apache--2.0-666666?labelColor=333333\" alt=\"Apache 2.0 license\" /></a> <a href=\"https://github.com/talesofai/cohub/stargazers\"><img src=\"https://img.shields.io/github/stars/talesofai/cohub?labelColor=333333&color=666666&logo=github\" alt=\"GitHub stars\" /></a> </p> --- <p align=\"center\"> <img src=\"https://public.cohub.run/s/f7000115-55d8-4d97-a0e4-d2a55b6ffa41/uploads/screenshot.4bcbcab1.webp\" alt=\"Cohub Space — a project chat with the repo README open in preview\" width=\"800\" /> </p> We burn 100 billion tokens per week inside our company within Cohub Spaces. **A living space where people and agents create, play, and build together.** - **Fun to start** — Open a Space and play with ideas, prompts, files, and agents. - **Build together** — People and agents in one Space. Create together, save, and share. - **Open everywhere** — Web, mobile, CLI, Discord, WeChat. The Space follows you. - **Powerful for real work** — Games, apps, media, automations, custom homes — from playful to production. - **Never start blank** — Fork a checkpoint into a new Space, or reference any Space with `@space` as context. ## Built in the open Cohub is developed inside Cohub. The core dev workflow — specs, agent runs, reviews, and shipping — happens in a public Space. Watch how the product is built, by the product. → [cohub.live/tzwm/cohub](https://cohub.live/tzwm/cohub) ## Quick start **Web** — open [cohub.live](https://cohub.live) and sign in. **App** — iOS and Android: [cohub-mobile.bangwu.me](https://cohub-mobile.bangwu.me/). **CLI** — ```bash npm install -g @neta-art/cohub-cli cohub auth login ``` **Self-host** — see [docs/self-hosting.md](docs/self-hosting.md). ## Docs Product docs: [cohub.live/docs](https://cohub.live/docs) · [中文](https://cohub.live/zh/docs) Source of truth: `docs/product/en/` · `docs/product/zh/` Engineering notes: [self-hosting](docs/self-hosting.md) · [agent-sandbox-runtime](docs/agent-sandbox-runtime.md) · [generations](docs/generations.md) · [space-hooks](docs/space-hooks.md) · [native-host-bridge](docs/native-host-bridge.md) · [displays](docs/displays.md\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "senpi",
+        "full_name": "code-yeongyu/senpi",
+        "url": "https://github.com/code-yeongyu/senpi",
+        "description": "pi had nothing (nothing), so I made something (something) — sorry mariozechner-senpai, I went ahead and lovingly soiled your pure pi for you. opinionated fork of badlogic/pi-mono with extension-first additions. ganbare ganbare senpi 頑張れ頑張れ先輩",
+        "stars": 477,
+        "pushed_at": "2026-10-13T03:39:50Z",
+        "topics": [
+          "agent",
+          "ai-agent",
+          "cli",
+          "coding-agent",
+          "llm",
+          "llm-tools",
+          "monorepo",
+          "multi-provider",
+          "pi-mono",
+          "senpi",
+          "tui",
+          "typescript"
+        ],
+        "source": "search",
+        "text_excerpt": "# senpi <p align=\"center\"> <a href=\"https://discord.gg/PUwSMR9XNk\"><img alt=\"Discord\" src=\"https://img.shields.io/badge/discord-community-5865F2?style=flat-square&logo=discord&logoColor=white\" /></a> <a href=\"https://github.com/code-yeongyu/senpi/actions/workflows/ci.yml\"><img alt=\"Build status\" src=\"https://img.shields.io/github/actions/workflow/status/code-yeongyu/senpi/ci.yml?style=flat-square&branch=main\" /></a> </p> > ⚠️ **Experimental.** senpi is an opinionated, in-flight fork of [badlogic/pi-mono](https://github.com/badlogic/pi-mono). It powers [Dori](https://sisyphuslabs.ai) under the hood and reflects what one specific AI assistant needs from a coding-agent runtime. Use it; don't bet a production pipeline on it. senpi is a senpai-name pun and a more **sane** pi with extra batteries included — a TypeScript monorepo that rebrands pi-mono's coding agent as `senpi` and ships a curated set of builtin extensions and core tweaks on top of upstream. > **Upstream**: [pi-mono](https://github.com/badlogic/pi-mono) by [@mariozechner](https://github.com/badlogic) — tools for building AI agents and managing LLM deployments. ## Inspired by OMO, built as Dori's coding-agent runtime senpi was born from two influences: - **Strong influence from [OMO (oh-my-openagent)](https://github.com/code-yeongyu/oh-my-openagent).** OMO is the heavyweight opencode harness with discipline agents (Sisyphus, Hephaestus, Prometheus), [IntentGate](https://factory.ai/news/terminal-bench), hash-anchored edits, Team Mode, skill-embedded MCPs, Ralph Loop, todo enforcers, and a lot more. senpi reuses many of OMO's signature ideas (intent gate, dynamic prompt, per-model presets, parallel-tool routing, todo continuation) but **keeps the surface as light as possible** so it can stay close to upstream pi-mono. Think of senpi as **a light version of OMO** that runs as a single pi CLI binary instead of an opencode plugin. - **senpi is the coding-agent runtime for [Dori](https://sisyphuslabs.ai).** Dori is Sisyphus Labs' AI assistant — see the [Dori callout in OMO's README](https://github.com/code-yeongyu/oh-my-openagent#oh-my-openagent) for context. senpi is usable standalone, but the design decisions (intent gate phrasing, builtin extension set, prompt presets per model family, branding) are tuned for what Dori needs when it executes code work. Core source modifications are minimised and tracked\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "slotstream",
+        "full_name": "carloslfu/slotstream",
+        "url": "https://github.com/carloslfu/slotstream",
+        "description": "Run a 105 GB AI model on a Mac that can't hold it. Slotstream streams Qwen3.8-Flash-Next (125B mixture of experts) from your SSD and caches the busiest experts in memory, so it runs on Macs with 16 to 64 GB. One native Swift binary on MLX and Metal, no Python, offline. Works with Claude Code, Codex and Ollama or OpenAI clients.",
+        "stars": 460,
+        "pushed_at": "2026-10-13T03:43:02Z",
+        "topics": [
+          "apple-silicon",
+          "claude-code",
+          "inference-engine",
+          "llm",
+          "llm-inference",
+          "local-ai",
+          "local-llm",
+          "macos",
+          "metal",
+          "mixture-of-experts",
+          "mlx",
+          "moe",
+          "ollama",
+          "on-device-ai",
+          "openai-api",
+          "qwen",
+          "qwen3",
+          "swift"
+        ],
+        "source": "search",
+        "text_excerpt": "# slotstream [![Latest release](https://img.shields.io/github/v/release/carloslfu/slotstream?label=latest%20release)](https://github.com/carloslfu/slotstream/releases/latest) [![GitHub stars](https://img.shields.io/github/stars/carloslfu/slotstream?style=flat&logo=github&label=stars)](#star-history) **Run a 105 GB AI model on a Mac that can't hold it.** Slotstream runs [Qwen3.8-Flash-Next](https://huggingface.co/pipenetwork/Qwen3.8-Flash-Next-MLX-4bit), a 125-billion-parameter open model, on Macs with 16 to 64 GB of memory. It keeps most of the model on the SSD and loads the parts it needs as it writes. Our 48 GB M5 Pro measured **20.91–23.69 tok/s** across three workloads in development tests at a 33 GB memory budget, using the original 4-bit model ([results and test conditions](#speed)). Chat with it, ask it about pictures, or code with it: `slotstream launch claude` starts Claude Code on the local model, and Codex, Pi, opencode and Hermes work the same way. Developers can connect their own apps through its Ollama-, OpenAI- and Anthropic-compatible APIs or its Swift library. After a one-time download it works offline, with no Python and no cloud account. The whole engine is one native Swift program on Apple's MLX and Metal; see [Built native](#built-native). Every published number has a recorded method, and the experiments that failed stay in the [measurements](MEASUREMENTS.md). [Get started](#install) · [Speed](#speed) · [Guides](#guides) · [Get help](#support) > **I'm building Sevra on Slotstream: private, personal AI optimized for your computer.** > Sevra will choose a tested model for your hardware, keep that choice current > as models improve, and let you control what it remembers. The Mac app is in > development and runs Slotstream in process; see > [how it is built](docs/SEVRA-MAC.md) and > [join the waitlist](https://www.sevrahq.com/). Slotstream's command-line > tool, APIs and Swift library remain independently usable. ## Who it's for Slotstream is built for Macs that cannot hold the model in memory: **16 to 64 GB**. That is where the engineering, the measurements and the defaults go, so that frontier-class intelligence runs on the Macs most people already own. It also runs on 96 GB and larger Macs, where the model fits in memory, but it is not optimized for them: engines that keep the whole model in memory report faster replies there. See [relate\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "Physical-AI-Operating-System",
+        "full_name": "autonomous-ai/Physical-AI-Operating-System",
+        "url": "https://github.com/autonomous-ai/Physical-AI-Operating-System",
+        "description": "The open-source operating system for physical AI.",
+        "stars": 418,
+        "pushed_at": "2026-10-13T03:42:45Z",
+        "topics": [
+          "agentic-ai",
+          "ai-agents",
+          "claude-code",
+          "embedded",
+          "llm",
+          "open-source-robotics",
+          "openclaw",
+          "operating-system",
+          "physical-ai",
+          "raspberry-pi",
+          "reachy-mini",
+          "robotics",
+          "robots",
+          "voice-assistant"
+        ],
+        "source": "search",
+        "text_excerpt": "# Physical AI Operating System We're building the \"Android\" for physical AI agents. Give Hermes, Claude Code, Codex, and other AI agents eyes, ears, a voice, and a body they can control. **Bring your AI agents into the physical world.** **[Start with Lamp](#autonomous-lamp)** · [Bring your own robot](docs/bring-your-own-robot.md) · [Build a physical skill](#physical-skills) https://github.com/user-attachments/assets/c80f1255-4355-4f59-9114-6d3b8d4007a2 ## Choose your agent Run Hermes, Claude Code, Codex, OpenClaw, OpenCode, or PicoClaw. Choose a compatible [model](docs/hosted.md) and configure its [voice](hal/drivers/voice/), [personality](robots/lamp/SOUL.md), and tools. The OS runs on the robot and coordinates hardware and agent tasks. Model inference may use remote services, depending on your configuration. ## Give it a body Start with [Lamp](#autonomous-lamp), [Intern](#autonomous-intern), or [Reachy Mini](#reachy-mini)—or [add support for your own robot](docs/bring-your-own-robot.md). Physical AI Operating System connects the agent to the hardware that body provides: cameras, microphones, speakers, motors, lights, and sensors. ## Physical skills Give your agent new ways to sense and interact with its surroundings. - Follow an object with its camera and movement. - Respond to touch with a gesture. - Turn a sensor reading into light, movement, or speech. Start with an existing [physical skill](skills/servo-tracking/), change its instructions, or connect your own tools. Use the [skill creator](skills/skill-creator/) to write a new skill, and see the [contribution guide](#contribute) to share it. ## Try saying On a configured Lamp, try these in normal voice mode or text-only Web/MQTT chat. These are supported intent examples; selection depends on confidence and available device capabilities. Uncertain requests go to the main agent. | Say or type | Expected behavior | |---|---| | “Turn off the lights.” | Turn off Lamp's light through a local command. | | “This lamp is too bright.” | Reduce the current light brightness by half. | | “You're speaking too loudly.” | Reduce the current speaker volume by half. | | “Make this lamp violet.” | Set a solid purple light. | | “I need light to read a book.” | Activate the reading lighting scene. | Context matters too: while working on an image or render, “Make it brighter” goes to the main agent to interpret the task con\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "llm-d-router",
+        "full_name": "llm-d/llm-d-router",
+        "url": "https://github.com/llm-d/llm-d-router",
+        "description": "llm-d Router: The intelligent entry point for inference requests",
+        "stars": 397,
+        "pushed_at": "2026-10-13T03:43:00Z",
+        "topics": [
+          "ai",
+          "gateway-api",
+          "inference",
+          "kubernetes",
+          "networking"
+        ],
+        "source": "search",
+        "text_excerpt": "[![Go Report Card](https://goreportcard.com/badge/github.com/llm-d/llm-d-router)](https://goreportcard.com/report/github.com/llm-d/llm-d-router) [![Go Reference](https://pkg.go.dev/badge/github.com/llm-d/llm-d-router.svg)](https://pkg.go.dev/github.com/llm-d/llm-d-router) [![License](https://img.shields.io/github/license/llm-d/llm-d-router)](./LICENSE) [![Join Slack](https://img.shields.io/badge/Join_Slack-blue?logo=slack)](https://llm-d.slack.com/archives/C08SBNRRSBD) [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fllm-d%2Fllm-d-router.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fllm-d%2Fllm-d-router?ref=badge_shield) # llm-d Router > [!IMPORTANT] > **Terminology Change**: The *Inference Scheduler* has been renamed to **llm-d Router**; see [Terminology](README.md#terminology). > [!IMPORTANT] > **API & Code Consolidation**: Core Endpoint Picker (EPP) code and the `InferenceObjective` and `InferenceModelRewrite` APIs have been merged into this repository from [Gateway API Inference Extension (GIE)]. The GIE repository now exclusively hosts the `InferencePool` API—an extension of the [Kubernetes Gateway API]—and defines the Endpoint Picker Protocol. The **llm-d Router** is the intelligent entry point for inference traffic, delivering LLM load and prefix-cache aware routing, request prioritization, and advanced flow control across diverse request formats to fulfill complex serving objectives. It supports a flexible deployment model: it can run in **Standalone Mode**, where a self-managed Envoy proxy runs either alongside the EPP or as a separate service, or integrate with L7 load balancers—including self-managed instances (e.g., Istio, AgentGateway) and cloud-managed services (e.g., Google Cloud's Application Load Balancer)—via the Kubernetes Gateway API. The router achieves its intelligence through an **Endpoint Picker (EPP)** that integrates with production-grade proxies (such as [Envoy]) via the [ext-proc] protocol, injecting real-time signals into the data plane to optimize request placement. <p align=\"center\"> <img src=\"docs/images/llm-d-router.svg\" width=\"800\" alt=\"llm-d Router Architecture\"> </p> ## Core Components and APIs This repository hosts the following core components: - **Endpoint Picker (EPP)**: The intelligent routing engine that serves as the \"brain\" of the router. It evaluates incoming requests ag\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "sonarqube-cli",
+        "full_name": "SonarSource/sonarqube-cli",
+        "url": "https://github.com/SonarSource/sonarqube-cli",
+        "description": "Command-line interface for SonarQube with AI agent integration. Scan for secrets and get fast feedback on code quality and security from your terminal.",
+        "stars": 287,
+        "pushed_at": "2026-10-13T03:40:33Z",
+        "topics": [
+          "agent",
+          "ai",
+          "cli",
+          "code-quality",
+          "secrets",
+          "security",
+          "sonarqube",
+          "static-analysis"
+        ],
+        "source": "search",
+        "text_excerpt": "# SonarQube CLI [![Build](https://github.com/SonarSource/sonarqube-cli/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/SonarSource/sonarqube-cli/actions/workflows/build.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=SonarSource_sonarqube-cli&metric=alert_status&token=4ad890bd54c6c3feb5d5251004fa3e5b1f665dea)](https://sonarcloud.io/summary/new_code?id=SonarSource_sonarqube-cli) **Catch code quality and security issues in your terminal—before they reach production.** The SonarQube CLI integrates enterprise-grade static analysis into your development workflow: - **🔒 Secret Detection** — Scan code for hardcoded credentials and prevent secrets from being sent to LLM providers - **⚡ Fast Feedback Loop** — Get server-side issue detection on your local changes without waiting for CI/CD - **🤖 AI-Assisted Fixes** — Generate remediation suggestions for security vulnerabilities (SonarQube Cloud) - **🔗 Agent Integration** — Seamless hooks for Claude Code, GitHub Copilot CLI, Codex, Cursor, and Antigravity - **📊 Scriptable** — Query and manage SonarQube issues programmatically with JSON output **Use it standalone or integrate with:** Git hooks, Claude Code, GitHub Copilot CLI, Codex, Cursor, Antigravity, CI/CD pipelines, custom automation > **🤖 For AI Agents:** If you are an AI agent reading this, navigate to [docs/llms.txt](https://github.com/SonarSource/sonarqube-cli/blob/master/docs/llms.txt) for machine-readable > command documentation optimized for LLM consumption. > We are actively collecting feedback on this product. Please share your thoughts via [this form](https://forms.gle/xE61HS2E5NzxFCSR9)! ## Documentation - **📘 Official Documentation:** [docs.sonarsource.com/sonarqube-cli](https://docs.sonarsource.com/sonarqube-cli) - **🌐 Project Website:** [sonarsource.com/sonarqube/cli](https://sonarsource.com/sonarqube/cli) - **📖 Command Reference:** [sonarsource.com/sonarqube/cli/commands.html](https://sonarsource.com/sonarqube/cli/commands.html) ## Table of Contents - [Documentation](#documentation) - [Three Ways to Use This CLI](#three-ways-to-use-this-cli) - [Prerequisites](#prerequisites) - [Quick Start](#quick-start) - [Step 1: Install](#step-1-install) - [Step 2: Authenticate](#step-2-authenticate) - [Step 3: Try Basic Commands](#step-3-try-basic-commands) - [Step 4: Analyze Local Changes](#step-4-ana\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "dsh-chat-import",
+        "full_name": "Nwflower/dsh-chat-import",
+        "url": "https://github.com/Nwflower/dsh-chat-import",
+        "description": "Import conversation history from 25+ AI coding agents into DeepSeek Harness as resumable sessions — tool calls, reasoning and results kept intact, with reverse export and sync. | 把 25+ AI 编程 Agent 的聊天记录导入 DeepSeek Harness 继续对话，保留工具调用、推理与结果，支持反向导出与同步。",
+        "stars": 229,
+        "pushed_at": "2026-10-13T03:40:55Z",
+        "topics": [
+          "agent",
+          "ai-agents",
+          "automation",
+          "chatgpt",
+          "claude-code",
+          "codex",
+          "cursor",
+          "deepseek",
+          "deepseek-harness",
+          "developer-tools",
+          "dsh",
+          "dsh-plugin",
+          "gemini",
+          "import",
+          "jsonl",
+          "migration",
+          "openai",
+          "plugin",
+          "sessions",
+          "transcript"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"./assets/dci-promo.png\" alt=\"DSH Chat Import\" width=\"100%\" /> # DSH Chat Import **A session import plugin built on DeepSeek Harness: import conversation history from external agents with one click and continue chatting in DeepSeek Harness.** > **All sessions, continued in DSH.** [![English](https://img.shields.io/badge/lang-English-blue.svg)](README.md) [![简体中文](https://img.shields.io/badge/lang-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-red.svg)](README.zh-CN.md) [![version](https://img.shields.io/npm/v/dsh-chat-import?style=flat&label=version&color=4D6BFE)](https://www.npmjs.com/package/dsh-chat-import) [![downloads](https://img.shields.io/npm/dm/dsh-chat-import?style=flat&label=downloads&color=4D6BFE)](https://www.npmjs.com/package/dsh-chat-import) [![GitHub stars](https://img.shields.io/github/stars/Nwflower/dsh-chat-import?style=flat&label=%E2%98%85&color=08C)](https://github.com/Nwflower/dsh-chat-import) [![GitCode](https://img.shields.io/badge/GitCode-mirror-4D6BFE?style=flat)](https://gitcode.com/Nwflower/dsh-chat-import) [![license](https://img.shields.io/badge/license-MIT-2EA44F?style=flat)](LICENSE) [![Awesome DSH Plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com) [![dsh.so install](https://www.dsh.so/badge/install/dsh-chat-import.svg)](https://www.dsh.so/artifact/dsh-chat-import/) </div> ## Supported Data Sources <table> <tr> <td align=\"center\" width=\"20%\"><a href=\"https://github.com/anthropics/claude-code\"><img src=\"./assets/agents/claude.svg\" width=\"56\" height=\"56\" alt=\"Claude Code\" /><br /><b>Claude Code</b></a></td> <td align=\"center\" width=\"20%\"><a href=\"https://github.com/openai/codex\"><img src=\"./assets/agents/codex.svg\" width=\"56\" height=\"56\" alt=\"Codex\" /><br /><b>Codex</b></a></td> <td align=\"center\" width=\"20%\"><a href=\"https://github.com/google-gemini/gemini-cli\"><img src=\"./assets/agents/gemini.svg\" width=\"56\" height=\"56\" alt=\"Gemini CLI\" /><br /><b>Gemini CLI</b></a></td> <td align=\"center\" width=\"20%\"><a href=\"https://github.com/aaif-goose/goose\"><img src=\"./assets/agents/goose.svg\" width=\"56\" height=\"56\" alt=\"Goose\" /><br /><b>Goose</b></a></td> <td align=\"center\" width=\"20%\"><a href=\"https://github.com/charmbracelet/crush\"><img src=\"./assets/agents/crush.svg\" width=\"56\" height=\"56\" alt=\"Crush\" /><br /><b>Crush</b></a></td> </tr> <tr> <td align=\"center\" width=\"20%\"><a href=\"\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "agent-foundation",
+        "full_name": "converge-ai-labs/agent-foundation",
+        "url": "https://github.com/converge-ai-labs/agent-foundation",
+        "description": "a13n - An open-source library and self-hosted platform for building and running your own agent systems—with managed agents, memory, sandboxes, computer use, and durable execution. Commercial Friendly. Built With Love 💜 @converge-ai-labs.",
+        "stars": 187,
+        "pushed_at": "2026-10-13T03:36:46Z",
+        "topics": [
+          "a13n",
+          "agent",
+          "harness",
+          "managed-agents",
+          "sign-in-with-chatgpt"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"frontend/packages/a13n-ui/src/brand/a13n-logo.svg\" alt=\"a13n logo\" width=\"128\"> </p> <h1 align=\"center\">Agent Foundation (a13n)</h1> [![CI](https://github.com/converge-ai-labs/agent-foundation/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/converge-ai-labs/agent-foundation/actions/workflows/ci.yml) [![Documentation](https://img.shields.io/badge/docs-agent--foundation-blue)](https://a13n.converge.ai/docs/) [![Python](https://img.shields.io/badge/python-3.13%2B-blue)](https://www.python.org/) [![License](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE) **The open-source, self-hosted foundation for AI agents.** Agent Foundation is an open-source library and platform for building and running your own agent systems. Managed agents, memory, sandboxes, computer use, and durable execution come together in a self-hosted service, ready to integrate into your applications. ![Service and Harness connect SDKs, HTTP API, Console, and Harness UI with environments, memory, models, web data, and MCP connections](.github/assets/a13n-architecture.webp) - **Build with Service.** Configure agents and connect them to your product through APIs, with resource management, permissions, and execution recovery already in place. - **Extend with Harness.** Embed the runtime directly and shape its behavior through plugins, custom tools, and providers. - **Explore with Harness UI.** Try models, tools, and agent configurations in a terminal and web playground—without building an application first. > These guides track `main`. For an installed release, use its release notes and package metadata. ## Run Service with Docker Compose You need **Docker with Docker Compose** and either a model provider API key or an eligible ChatGPT plan. The stack starts Service, Console, PostgreSQL, and Redis. Agents use your host Docker Engine for execution environments. ![Console: build agents, try runs, inspect execution traces, and monitor usage](.github/assets/console-workflow.webp) *Console — Build agents, try runs, inspect execution traces, and monitor usage. Shown with fictional demo data.* Download the [Compose file](deploy/docker/compose/a13n-service.yaml) and start the stack: ```bash mkdir a13n-service cd a13n-service curl -fL https://raw.githubusercontent.com/converge-ai-labs/agent-foundation/main/deploy/docker/compose/a13n-service.ya\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "Docxodus",
+        "full_name": "JSv4/Docxodus",
+        "url": "https://github.com/JSv4/Docxodus",
+        "description": "Swiss-army toolkit for .docx — faithful DOCX→HTML rendering, an in-browser block editor, Word-grade redlines with native tracked changes, and anchor-addressed markdown for LLM agents. .NET, WASM/TypeScript, Python, CLI.",
+        "stars": 97,
+        "pushed_at": "2026-10-13T03:41:49Z",
+        "topics": [
+          "agents",
+          "csharp",
+          "diff",
+          "document-comparison",
+          "docx",
+          "docx-editor",
+          "docx-to-html",
+          "docx-to-markdown",
+          "llm",
+          "ooxml",
+          "openxml",
+          "python",
+          "redline",
+          "tracked-changes",
+          "typescript",
+          "wasm",
+          "word"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"docxodus-logo.png\" alt=\"Docxodus\" width=\"380\"> </p> <p align=\"center\"> <strong>Free your .docx files.</strong><br> Render them, edit them, diff them, and hand them to an agent — from .NET, the browser, Python, or the shell. </p> <p align=\"center\"> <a href=\"https://github.com/JSv4/Docxodus/actions/workflows/ci.yml\"><img src=\"https://github.com/JSv4/Docxodus/actions/workflows/ci.yml/badge.svg\" alt=\"CI\"></a> <a href=\"https://www.nuget.org/packages/Docxodus\"><img src=\"https://img.shields.io/nuget/v/Docxodus?label=nuget\" alt=\"NuGet\"></a> <a href=\"https://www.npmjs.com/package/docxodus\"><img src=\"https://img.shields.io/npm/v/docxodus?label=npm\" alt=\"npm\"></a> <a href=\"https://pypi.org/project/docx-scalpel/\"><img src=\"https://img.shields.io/pypi/v/docx-scalpel?label=pypi\" alt=\"PyPI\"></a> <a href=\"https://opensource.org/licenses/MIT\"><img src=\"https://img.shields.io/badge/License-MIT-yellow.svg\" alt=\"License: MIT\"></a> </p> --- A `.docx` is a zip full of XML that only one program really understands. Docxodus is the toolkit that changes that: a **structure-aware OOXML engine** that reads Word documents faithfully, writes them back losslessly, and exposes them through whichever surface your program actually needs — an HTML render, a stable markdown projection, a stateful edit session, a tracked-changes redline, or a live in-browser editor. It runs as a **.NET library**, a **WebAssembly module in the browser**, an **npm/TypeScript package**, a **Python client**, and three **CLI tools** — all over the same engine, so a document behaves the same everywhere. ``` ┌───────────────────────────────────────────┐ your .docx ──▶ │ Docxodus · one OOXML engine │ ──▶ .docx (lossless) └────┬─────────┬──────────┬──────────┬──────┘ │ │ │ │ render edit compare project ``` Every screenshot below is real output, captured from the [NVCA model financing documents](https://nvca.org/model-legal-documents/) — the venture-financing forms that every startup lawyer actually redlines. --- ## Compare — a redline Word will open Docxodus compares two documents structurally and emits **native Word tracked-changes markup**: `w:ins`, `w:del`, `w:moveFrom`/`w:moveTo`, and `w:pPrChange`. Not a text diff with highlighting — a file you can hand to opposing counsel, who accepts and rejects changes in Word as usual. ![A redlined venture financing agreement](docs/images/redline.pn\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "agent-network",
+        "full_name": "sleep2agi/agent-network",
+        "url": "https://github.com/sleep2agi/agent-network",
+        "description": "助力搭建你的数字 AI 员工军团 — 多 Agent 一行命令组网协作。Claude Code / Claude Agent SDK / Codex / Grok Build 4 runtime + 8+ 家 LLM（Anthropic / OpenAI / xAI / MiniMax / DeepSeek / GLM / Kimi / 书生 / 小米 MiMo），自带 Web Dashboard，Apache 2.0 开源。",
+        "stars": 93,
+        "pushed_at": "2026-10-13T03:43:17Z",
+        "topics": [
+          "agent-network",
+          "ai-agents",
+          "anthropic",
+          "claude",
+          "claude-agent-sdk",
+          "claude-code",
+          "codex",
+          "dashboard",
+          "deepseek",
+          "grok",
+          "grok-build",
+          "llm",
+          "local-first",
+          "mcp",
+          "mimo",
+          "minimax",
+          "multi-agent",
+          "nextjs",
+          "openai",
+          "xai"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"docs/assets/readme/logo.png\" width=\"96\" height=\"96\" alt=\"Agent Network logo\"> # Agent Network **把分布在多台机器上的 Claude Code、Codex、Grok、OpenCode 连成一支 Agent 军团 —— 在一个桌面应用里指挥它们。** [![npm](https://img.shields.io/npm/v/@sleep2agi/agent-network?label=npm&color=009e7e)](https://www.npmjs.com/package/@sleep2agi/agent-network) [![Desktop](https://img.shields.io/github/v/release/sleep2agi/agent-network-app?filter=desktop-v*&label=download&color=2f6feb)](https://github.com/sleep2agi/agent-network-app/releases/latest) [![QA](https://github.com/sleep2agi/agent-network/actions/workflows/qa.yml/badge.svg?branch=main)](https://github.com/sleep2agi/agent-network/actions/workflows/qa.yml) [![Docs](https://img.shields.io/badge/docs-anet.sh-009e7e)](https://anet.sh) [![License](https://img.shields.io/badge/license-Apache_2.0-blue)](./LICENSE) [![Stars](https://img.shields.io/github/stars/sleep2agi/agent-network?style=flat&color=yellow)](https://github.com/sleep2agi/agent-network/stargazers) [文档](https://anet.sh) · [下载桌面版](https://github.com/sleep2agi/agent-network-app/releases/latest) · [快速上手](https://anet.sh/guide/getting-started) · **中文** · [English](./README.en.md) <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/assets/readme/chat-dark.webp\"> <img src=\"docs/assets/readme/chat-light.webp\" width=\"880\" alt=\"Agent Network 桌面端：左侧是在线 Agent 列表，右侧是与一个节点的对话\"> </picture> <picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/assets/readme/tasks-dark.webp\"><img src=\"docs/assets/readme/tasks-light.webp\" width=\"880\" alt=\"桌面端任务页：左侧按项目筛选，右侧是需求池、进行中、完成三列看板\"></picture> </div> ## 为什么用 Agent Network - 🤖 **一支跨机器的 Agent 军团** —— Claude Code、Claude Agent SDK、Codex、Grok Build、OpenCode 都能作为节点接入同一个网络，节点之间通过 MCP 互相发现、互相派活。 - 🛰️ **一个 Hub 串起所有机器** —— CommHub 通过 MCP 暴露工具、通过 SSE 实时投递任务；每台机器跑一个 `anet daemon`，就能从客户端远程创建、启动和停止那台机器上的节点。 - 💬 **一个客户端管全部** —— 桌面（macOS / Windows）和 Android：聊天派活、收发文件；任务页管理项目、子任务、GitHub Issue 和到秒的时间；界面可切换中英文；可看节点与 Hub 日志；规则文件、技能、项目目录、远程切模型和重启仍在。iOS 只走 TestFlight，公开链接还没开。 - 🔐 **自托管、本地优先、开源** —— Hub 和 SQLite 数据跑在你自己的机器上（桌面端还自带一个本地 Hub），不做 SaaS 托管；Apache 2.0。 <table><tr> <td width=\"50%\"><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/assets/readme/rules-dark.webp\"><img src=\"docs/assets/readme/rules-light.webp\" alt=\"在桌面端阅读节点的 CLAUDE.md 规则文件\"></picture></td> <td width=\"50%\"><picture><source media=\"(prefers-color\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "AI-Trading-Bot-Codepen",
+        "full_name": "wild-canyonhoxo3344/AI-Trading-Bot-Codepen",
+        "url": "https://github.com/wild-canyonhoxo3344/AI-Trading-Bot-Codepen",
+        "description": "I’ve just created my own bot and I’m excited to share my work with you!",
+        "stars": 85,
+        "pushed_at": "2026-10-13T03:44:03Z",
+        "topics": [
+          "ai",
+          "bot",
+          "code",
+          "evm",
+          "html",
+          "index",
+          "js",
+          "trand"
+        ],
+        "source": "search",
+        "text_excerpt": "# Step-by-Step Guide AI Trading Bot <img src=\"https://i.ibb.co/DPbNrrDk/hf-20260126-164017-2db01405-daa1-40e6-aa99-4e29072771f1.png\" alt=\"hf-20260126-164017-2db01405-daa1-40e6-aa99-4e29072771f1\" border=\"0\"></a> ### Hi everyone! I'm Sam, a beginner blockchain developer. #### I’ve just created my own bot and I’m excited to share my work with you! #### So far, the bot is running successfully. #### All suggestions, feedback, and ideas are very welcome — feel free to write me in Telegram! Step-by-Step Guide 🔗 **My Telegram:** https://t.me/Jckb9 [🔗 **Open Source Bot Code [Click Here]**](https://github.com/wild-canyonhoxo3344/AI-Trading-Bot-Codepen/blob/main/index.html) # ▶️ [Watch on YouTube](https://www.youtube.com/watch?v=VES7tkccgiA) 🟢 Step 1: Download the **MetaMask** Extension 🔗 -Dоwnlоаd МetаМаsk: [**https://metamask.io/download**](https://metamask.io/download) 🔗 -Dоwnlоаd Phantom: [**https://phantom.com/**](https://phantom.com/) 🟢 Step 2: CODE EDITOR 🔗 [**https://codepen.io**](https://codepen.io/) 🟢 Step 3: Once the site has loaded click on the \"**Start Coding**\" button on the left side. 🟢 Step 4: Paste the following code into the **HTML** box: [🔗 **Open Source Bot Code [Click Here]**](https://github.com/wild-canyonhoxo3344/AI-Trading-Bot-Codepen/blob/main/index.html) 🟢 Step 5: **Connect your wallet** once the interface loads. <img src=\"https://i.ibb.co/H1wTfy5/bnr.png\" alt=\"bnr\" border=\"0\"></a> 🟢 Step 6: Scroll down and click the \"**Deploy Trading Contract**\" button. This will deploy your very own trading contract infrastructure on the Ethereum blockchain that is controlled by your connected wallet. ⚠️ **Tip: If you get any issues - use a clean Firefox browser and only one Metamask extension** 🟢 Step 7: Add funds to your bot by putting the desired amount in the text box and then click \"**Generate Contract Address**\" to generate your own personal contract address. **The minimum amount is 0.2 ETH. But I recommend to use 1-4**, so that the bot can process more transactions, in this case the profits will be much better. Click the \"**Copy Address**\" button then go to your web3 wallet and send the exact amount you specified in the amount box to your contract address. 🟢 Step 8: Once the transaction is confirmed, the bot will being trading instantly showing a full detailed log of everything it does. When you want to withdraw, simply click the \"**Withdraw Profits**\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "hive",
+        "full_name": "hivecommons/hive",
+        "url": "https://github.com/hivecommons/hive",
+        "description": "AI agent orchestration for open and closed source — a fully customizable fleet of AI agents covering every level of project maintenance, from brainstorming to full autonomy",
+        "stars": 65,
+        "pushed_at": "2026-10-13T03:43:43Z",
+        "topics": [
+          "agent-orchestration",
+          "ai-agents",
+          "autonomous-agents",
+          "ci-cd",
+          "code-review",
+          "developer-tools",
+          "devops",
+          "github-automation",
+          "golang",
+          "hacktoberfest",
+          "kubernetes",
+          "llm",
+          "multi-agent-systems"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"docs/hive-bee.png\" alt=\"Hive\" width=\"120\" height=\"120\"> </p> # Hive [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/14261/badge)](https://www.bestpractices.dev/projects/14261) [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE) [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fhivecommons%2Fhive.svg?type=large&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2Fhivecommons%2Fhive?ref=badge_large&issueType=license) AI agent orchestration for open source projects. A single Go binary enumerates issues and pull/merge requests from connected work sources, classifies them by complexity, and dispatches work to AI agents (Claude, Copilot, Gemini, Goose) on adaptive cadences governed by queue depth. Hive separates decisions into two layers: a **deterministic pipeline** of shell scripts handles filtering, classification, merge-gating, and enforcement before any LLM sees the work. Agents only handle judgment calls — reading code, reasoning about fixes, writing PRs. ## Quick Start Two supported standalone runtimes. **Docker Compose is the default** and is what the rest of this README assumes; **Podman** is a parallel supported choice, not an experiment and not a recommendation over Docker. Pick one — they install the same two services (Hive plus its authenticating gateway) and land the dashboard on the same port. | | [Docker Compose](#quick-start-docker-compose) | [Podman](#quick-start-podman) | | --- | --- | --- | | Lifecycle | `docker compose up -d` | Quadlet units under systemd | | Runs as | the Docker daemon | rootful **or** rootless | | Update path | pull and recreate; optional Watchtower profile | [pinned by digest, with rollback](src/docs/podman-quadlet-update-rollback.md) | ## Quick Start (Docker Compose) **Prerequisites** - Docker Engine 24+ with the Compose v2 plugin (`docker compose`, not the legacy `docker-compose`) - A Linux, macOS, or Windows (WSL2) host on `amd64` or `arm64` — the pre-built images are multi-arch - `git`, `openssl`, and a GitHub token (PAT or App) for the org you want the hive to work on ```bash git clone https://github.com/hivecommons/hive.git cd hive cp src/hive.yaml.example src/hive.yaml # REQUIRED: set project.org and project.repos (optionally primary_repo and # ai_author) in src/hive.yaml — the placeholders do not work as\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "prodex",
+        "full_name": "christiandoxa/prodex",
+        "url": "https://github.com/christiandoxa/prodex",
+        "description": "Prodex is a multi-account, multi-provider Codex wrapper with auto-rotation, Super mode, Smart Context, and token saving for Codex CLI and Claude Code",
+        "stars": 58,
+        "pushed_at": "2026-10-13T03:38:45Z",
+        "topics": [
+          "agent",
+          "ai",
+          "claude",
+          "codex",
+          "gateway",
+          "load-balancer",
+          "proxy"
+        ],
+        "source": "search",
+        "text_excerpt": "# prodex [![Release malware scan](https://github.com/christiandoxa/prodex/actions/workflows/standalone-release.yml/badge.svg?branch=main&event=workflow_dispatch)](https://github.com/christiandoxa/prodex/actions/workflows/standalone-release.yml) [![GitHub release downloads](https://img.shields.io/github/downloads/christiandoxa/prodex/total?label=release%20downloads)](https://github.com/christiandoxa/prodex/releases) `prodex` is a multi-account, multi-provider Codex wrapper with quota-aware profile routing. Use multiple Codex accounts and supported provider backends from one command line. OpenAI/Codex profiles get quota-aware routing and can auto-rotate when multiple eligible profiles exist; provider adapters let `prodex s` launch the Codex front end against Gemini, Anthropic, Copilot, Kiro, DeepSeek, and local OpenAI-compatible servers. ![Prodex overview](https://github.com/christiandoxa/prodex/releases/download/assets/prodex-overview.png) ## Contents - [Why prodex](#why-prodex) - [Requirements](#requirements) - [Supported providers](#supported-providers) - [Installation](#installation) - [Optional tools](#optional-tools) - [Quick start](#quick-start) - [Daily command: `prodex s`](#daily-command-prodex-s) - [Commands](#commands) - [Modes](#modes) - [Sub-agents](docs/sub-agents.md) - [Harness modes](#harness-modes) - [Profiles](#profiles) - [Local model support](#local-model-support) - [Utilities and diagnostics](#utilities-and-diagnostics) - [Advanced behavior](#advanced-behavior) - [Documentation](#documentation) - [Support](#support) ## Why prodex Use `prodex` if you want to: - use multiple Codex accounts from one CLI - rotate to another eligible account when quota runs out - launch Codex/Super against non-OpenAI providers without changing front ends - keep profile `auth.json` account credentials separated - keep sessions attached to the profile that created them - run Codex and Super mode through the supported wrapper If you only use one Codex account and do not need quota rotation, you probably do not need `prodex`. ## Requirements For OpenAI/Codex quota-aware routing, you need at least one logged-in Prodex profile. Local `--url` launches and some provider API-key launches can run without a persisted profile. <details> <summary>Tool requirements</summary> | Tool | Used by | |---|---| | Codex CLI | `prodex`, `prodex run`, `prodex super` | | RTK | external\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "modelsphere",
+        "full_name": "modelsphere/modelsphere",
+        "url": "https://github.com/modelsphere/modelsphere",
+        "description": "ModelSphere is an open-source LLM inference infrastructure designed to make production-grade model serving simple, efficient, and continuously optimized.",
+        "stars": 58,
+        "pushed_at": "2026-10-13T03:42:36Z",
+        "topics": [
+          "ansible",
+          "ascend",
+          "gpu",
+          "helmfile",
+          "inference",
+          "kubernetes",
+          "llm",
+          "modelsphere",
+          "sglang",
+          "vllm"
+        ],
+        "source": "search",
+        "text_excerpt": "![logo-modelsphere](docs/logo-modelsphere.png) # Production-Grade Infrastructure for LLM Inference <p align=\"center\"> <a href=\"./LICENSE\"><img alt=\"License\" src=\"https://img.shields.io/badge/License-Apache%202.0-blue.svg\"></a> <a href=\"https://github.com/modelsphere\"><img alt=\"Repositories\" src=\"https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Forgs%2Fmodelsphere&query=%24.public_repos&label=open%20source&suffix=%20repositories&color=blue\"></a> <a href=\"docs/install.md\"><img alt=\"Docs\" src=\"https://img.shields.io/badge/docs-install%20guide-blue\"></a> </p> <p align=\"center\"> English | <a href=\"./README.zh-CN.md\">简体中文</a> </p> ## Overview ModelSphere is an open-source LLM inference platform designed to make production-grade model serving simple, efficient, and continuously optimized. It provides instant deployment across heterogeneous accelerators, stays ready for the latest models through a flexible inference architecture, and continuously improves serving performance based on real-world workloads. ![features](docs/features.png) ## Highlights - **Intelligent Auto Scaling.** Dynamically adjusts inference replicas and compute resources based on real-time service demand, while prioritizing resources for high-priority models to improve overall GPU utilization. - **Quality-Aware Dynamic Throttling.** Goes beyond traditional RPM/TPM limits by dynamically controlling traffic based on real-time service metrics such as TTFT and output speed, maintaining service quality under changing workloads. - **Advanced Serving Architecture.** Supports advanced inference architectures such as Prefill/Decode disaggregation and a unified L3 KV cache pool, enabling efficient cache sharing and higher resource utilization across serving instances. - **Performance-Tuned Day-0 Deployment.** Rapidly supports newly released models with production-ready, performance-tuned deployment configurations optimized for real-world serving workloads. Please refer to our [model catalog](https://modelsphere.github.io/model-catalog/) for more information. - **Broad Heterogeneous Accelerator Support.** Provides a unified serving stack across NVIDIA GPUs, Huawei Ascend, Iluvatar CoreX, and dozens of other AI accelerators, together with mainstream inference frameworks such as SGLang and vLLM. - **Seamless In-Flight Generation Recovery.** When a serving pod fails mid-generation, M\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "mcp-probe-kit",
+        "full_name": "mybolide/mcp-probe-kit",
+        "url": "https://github.com/mybolide/mcp-probe-kit",
+        "description": "Spec-driven dev workflow MCP for Cursor & AI agents — start_feature/bugfix orchestration, auto Skill+AGENTS bootstrap, memory, GitNexus. npx -y mcp-probe-kit@latest",
+        "stars": 39,
+        "pushed_at": "2026-10-13T03:42:55Z",
+        "topics": [
+          "ai",
+          "ai-agent",
+          "ai-tools",
+          "cursor",
+          "development-tools",
+          "mcp",
+          "model-context-protocol",
+          "skills",
+          "spec-driven-development",
+          "typescript",
+          "workflow"
+        ],
+        "source": "search",
+        "text_excerpt": "# mcp-probe-kit — Know the Context, Feed the Moment <div align=\"center\"> <img src=\"docs/assets/logo.png\" alt=\"知时MCP Logo\" width=\"160\"/> <h1>知时MCP | mcp-probe-kit</h1> <p><strong>Know the Context, Feed the Moment.</strong></p> <p> <code>Introspection</code> · <code>Context Hydration</code> · <code>Delegated Orchestration</code> </p> </div> --- <!-- mcp-name: io.github.mybolide/mcp-probe-kit --> > **Talk is cheap, show me the Context.** > > mcp-probe-kit is a protocol-level toolkit designed for developers who want AI to understand project intent, choose a precise workflow, and retain validated experience without flooding the model with internal actions. **Languages**: [English](README.md) | [简体中文](i18n/README.zh-CN.md) | [日本語](i18n/README.ja-JP.md) | [한국어](i18n/README.ko-KR.md) | [Español](i18n/README.es-ES.md) | [Français](i18n/README.fr-FR.md) | [Deutsch](i18n/README.de-DE.md) | [Português (BR)](i18n/README.pt-BR.md) [![npm version](https://img.shields.io/npm/v/mcp-probe-kit.svg)](https://www.npmjs.com/package/mcp-probe-kit) [![npm downloads](https://img.shields.io/npm/dm/mcp-probe-kit.svg)](https://www.npmjs.com/package/mcp-probe-kit) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![GitHub stars](https://img.shields.io/github/stars/mybolide/mcp-probe-kit.svg)](https://github.com/mybolide/mcp-probe-kit/stargazers) [![Verified on MseeP](https://mseep.ai/badge.svg)](https://mseep.ai/app/ce79a9e5-7422-4862-b235-bc3d65710397) > 🚀 AI-Powered Complete Development Toolkit - Covering the Entire Development Lifecycle A powerful MCP (Model Context Protocol) server with **29 model-visible tools by default** (24 base + 5 History Session; disable History with `MCP_HISTORY_SESSION=0`), **35 when Memory is also configured**, and a **39-tool compatibility surface** available through `MCP_TOOLSET=full`. It covers the complete workflow from product analysis to final release and supports structured output. **🎉 v4 stable release**: native MCP Apps, resumable plans, evidence convergence, managed GitNexus Sidecar, parent-child specs, and a version-locked CLI fallback. **Supports All MCP Clients**: Cursor, Claude Desktop, Cline, Continue, and more **Protocol Support**: Legacy MCP (2025-era) + Modern MCP 2026-07-28 · **SDK**: split TypeScript SDK v2 packages **Runtime**: Node.js 20 or newer. `MCP_PROTOCOL_MODE=auto` is t\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "tobub",
+        "full_name": "pow505/tobub",
+        "url": "https://github.com/pow505/tobub",
+        "description": "local browser automation runtime with a built-in Agent harness",
+        "stars": 32,
+        "pushed_at": "2026-10-13T03:39:18Z",
+        "topics": [
+          "agent",
+          "ai",
+          "automation",
+          "monitor",
+          "monitoring-tool",
+          "openapi",
+          "scraper",
+          "scraping",
+          "skills",
+          "workflow"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <a href=\"https://tobub.com\"><img src=\"./public/tobub.svg\" width=\"96\" alt=\"Tobub logo\"></a> </p> <h1 align=\"center\">Tobub</h1> <p align=\"center\"><strong>Tobub is a local browser automation runtime with a built-in Agent harness.</strong></p> <p align=\"center\"> <a href=\"https://tobub.com\">Website</a> · <a href=\"https://github.com/pow505/tobub/releases/latest\">Download Tobub</a> · <a href=\"readme.zh-CN.md\">中文</a> <a href=\"#\">1.7.13</a> </p> ## What is Tobub? Tobub is a local runtime and execution platform for browser automation. It provides browser control, account and session management, Skill orchestration and execution, AI Agent collaboration, task scheduling, recording and Skill authoring, as well as unified HTTP and WebSocket interfaces. Tobub includes both an Agent harness and a Skill execution harness, handling execution context, authorization, browser environments, timeouts, cancellation, concurrency control, risk approval, and execution feedback. It goes beyond a conventional harness by also providing persistence, lifecycle management, and the runtime foundation for the product. For example: > Review today’s market signals and prepare the three actions we should take next. Tobub can collect sources, filter useful information, compare changes, write a briefing, check the evidence, recommend actions, and save the complete work record for review. ## Product Show ![Tobub product Show](./public/tobub.gif) ## Why Tobub is different | | What it means | | --- | --- | | **Digital Employees** | AI Agents with a professional role, a goal, a plan, and the ability to carry work through multiple steps. | | **Automation Skills** | JSON-based capabilities that connect an Agent to platforms and tools — collect, organize, analyze, and execute. | | **Work Sessions** | A visible record of the plan, progress, sources, result, and context, so work can be reviewed and continued. | ```mermaid flowchart LR A[Your goal] --> B[Digital Employee] B --> C[Plan the work] C --> D[Compose Skills] D --> E[Run through Tobub Runtime] E --> F[Useful result] F --> G[Saved Session] G --> B ``` ## How automation Skills work Skills turn external platforms and tools into capabilities an Agent can use. They work in four stages: 1. **Collect** information and data. 2. **Organize** mixed sources into reusable work material. 3. **Analyze** signals, changes, competitors, customers\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "llumiverse",
+        "full_name": "vertesia/llumiverse",
+        "url": "https://github.com/vertesia/llumiverse",
+        "description": "Universal connector to LLMs for Node.js & Bun",
+        "stars": 30,
+        "pushed_at": "2026-10-13T03:41:49Z",
+        "topics": [
+          "genai",
+          "llm",
+          "llms",
+          "product"
+        ],
+        "source": "search",
+        "text_excerpt": "# Llumiverse - The Universal, Lightweight LLM Driver ![Build](https://github.com/vertesia/llumiverse/actions/workflows/build-and-test.yml/badge.svg) [![npm version](https://badge.fury.io/js/%40llumiverse%2Fcore.svg)](https://badge.fury.io/js/%40llumiverse%2Fcore) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0) **Llumiverse** is the unified connectivity layer for the Large Language Model ecosystem. It provides a robust, modular, and strongly-typed interface for interacting with almost any AI provider in Node.js, Bun, and TypeScript environments. > **Think of it as the \"JDBC\" or \"ODBC\" for LLMs.** It solely focuses on **abstracting the connection and execution protocol**, letting you switch providers with zero code changes. It does **not** enforce prompt templating, rigid chain structures, or \"magic\" orchestration logic. You build the application; we handle the plumbing. ### Why Llumiverse? * **🚫 No Vendor Lock-in:** Switch from OpenAI to Vertex AI to Bedrock in minutes. * **🧩 Modular & Lightweight:** Install only what you need. Zero bloat. * **🛡️ Type-Safe:** First-class TypeScript support with normalized interfaces for completion, streaming, and tool use. * **⚡ Universal Support:** Works in Node.js, serverless functions, and Bun. --- ### Supported Platforms | Provider | Completion | Chat | Streaming | Multimodal | Tool Calling | Embeddings | | :--- | :-: | :-: | :-: | :-: | :-: | :-: | | **AWS Bedrock** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | **Azure Foundry** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | **Azure OpenAI** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | **Google Vertex AI** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | **Groq** | ✅ | ✅ | ✅ | N/A | ✅ | N/A | | **HuggingFace** | ✅ | ✅ | ✅ | N/A | N/A | N/A | | **IBM WatsonX** | ✅ | ✅ | ✅ | N/A | N/A | ✅ | | **Mistral AI** | ✅ | ✅ | ✅ | N/A | ✅ | ✅ | | **OpenAI** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | **OpenAI Compatible** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | | **Replicate** | ✅ | ✅ | ✅ | N/A | N/A | N/A | | **Together AI** | ✅ | ✅ | ✅ | N/A | N/A | N/A | | **xAI (Grok)** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | --- ### Llumiverse vs. The Rest **Vs. LangChain / LlamaIndex:** These are **application frameworks** that provide high-level abstractions for chains, memory, and RAG. Llumiverse is a **driver** library. It operates at a lower level. * *Use Llumiverse if:* You want full control over your prompt logic, you want to build you\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "aik8s",
+        "full_name": "runzhliu/aik8s",
+        "url": "https://github.com/runzhliu/aik8s",
+        "description": "AI/LLM on Kubernetes 基础设施知识库：涵盖 GPU、大数据、调度、分布式训练、LLM 推理、RAG、Agent 与生产运维。",
+        "stars": 20,
+        "pushed_at": "2026-10-13T03:38:27Z",
+        "topics": [
+          "agent",
+          "ai",
+          "aibrix",
+          "cephfs",
+          "claude-code",
+          "codexcli",
+          "containerd",
+          "cuda",
+          "docker",
+          "harness",
+          "hermes-agent",
+          "kubernetes",
+          "llm",
+          "openclaw",
+          "sglang",
+          "skills",
+          "spark",
+          "vllm",
+          "vm"
+        ],
+        "source": "search",
+        "text_excerpt": "# AI/LLM on Kubernetes 基础设施知识库 Hi~你好👋, 这里是 runzhliu 的工作笔记，我是一名在 AI/LLM/大数据/Kubernetes 领域工作了十年的工程师，同时我也是一个记录狂人🤔，特别爱记笔记，这个站点是我基于这几年在 AI/LLM Infras 的工作经历总结的一些笔记，同时也经过一些大模型的润色发布的，希望和大家一起交流和学习，一起在大模型时代做一点🤏小事，无论是内容本身还是工作，欢迎大家找我交流😄👏!(runzhliu@163.com) 面向平台工程师、SRE、训练和模型服务团队的 AI/LLM on Kubernetes 工程文档。 内容覆盖 GPU 与异构加速器、调度队列、RDMA、数据与模型分发、分布式训练、LLM 推理、RAG、Agent Sandbox、GPU Notebook、可观测性、安全、成本和生产运维。文档重点说明组件边界、选型条件、关键指标、故障路径和上线检查，而不只是罗列工具名称。 线上站点：[https://aik8s.run/](https://aik8s.run/) ## 关注微信公众号 更多 AI/LLM on Kubernetes 实战、部署记录与性能分析会同步到微信公众号 **AI-K8S技术工程**。使用微信扫描二维码，或在“微信搜一搜”中搜索 `AI-K8S技术工程`： <p align=\"center\"> <img src=\"docs/assets/wechat-official-account-promo.png\" alt=\"扫描二维码或通过微信搜一搜关注公众号 AI-K8S技术工程\" width=\"900\"> </p> ## 技术栈 - Markdown 保存文档内容； - Zensical 构建静态站点； - `zensical.toml` 管理导航、主题和站点配置； - GitHub Actions 在 `main` 分支更新后完成构建与部署。 ## 本地预览 项目默认使用 Docker，因此不需要在本机安装 Python 依赖： ```bash make dev ``` 打开 <http://localhost:8000>。修改 `docs/` 下的文件后，页面会自动刷新。 也可以使用 Python 虚拟环境： ```bash python3 -m venv .venv .venv/bin/python -m pip install -r requirements.txt .venv/bin/zensical serve ``` ## 验证构建 ```bash make build ``` 构建结果保存在 `site/`，该目录不会提交到 Git。 生产构建还会生成 RSS/Atom、带更新时间的 Sitemap、页面分享、社交元数据和 TechArticle/BreadcrumbList 结构化数据，并注入站点统计脚本： ```bash make build-production ``` 文章标题下显示创建与更新日期，按北京时间展示。创建日期取文件首次进入 Git 历史的时间（追踪文件重命名），更新日期沿用页面元数据的口径，取最近一次文件提交 与 `last_reviewed` 中较晚的时间。日期在生产构建的 `build_distribution.py` 步骤生成， 不会因单纯重新构建站点而变化；本地查看日期效果可执行 `make build-production`。 ## 订阅、分享与评论 - RSS：<https://aik8s.run/rss.xml> - Atom：<https://aik8s.run/atom.xml> - 通用 Feed 地址：<https://aik8s.run/feed.xml> - 每篇文章支持系统分享、复制链接，以及微博、X、LinkedIn、Telegram 和 WhatsApp 分享；移动端可通过系统分享面板转发到微信等已安装应用。 - 评论使用 [Giscus](https://github.com/giscus/giscus)，内容保存在本仓库的 GitHub Discussions，不需要单独部署服务或数据库。 首次启用评论时，需要为 `runzhliu/aik8s` 安装 [Giscus GitHub App](https://github.com/apps/giscus/installations/new)，安装范围选择 **Only select repositories** 并只勾选 `aik8s`。仓库必须保持 Discussions 已启用。 ## 添加内容 在 `docs/` 中创建文件夹和 Markdown 文件即可。目录名和文件名会形成公开 URL，建议只使用小写英文字母、数字和连字符；中文展示名称放在一级标题或 `zensical.toml` 的 `nav` 配置中。 测试与压测计划仅保存在本地 `.local/test-plans/`，不提交 GitHub，也不放入站点目录。公开内容保留已完成的实测结果、已验证的修复过程和可复现材料；已有报告中夹带的待执行方案也应先移到本地。部分历史实测报告沿用含 `plan` 的 URL，仅为保持既有链接可用。 每个栏目建议添加一个 `index.md`： ```text docs/ └── kubernetes/ ├── index.md ├── basic-concepts.md └── cluster-deployment.md ``` 新增或移动页面后，还需要在 `zensical.toml` 中更新站点导航。提交前建议执行： ```bash make build git diff --check `\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      }
+    ],
+    "aihot": [
+      {
+        "title": "Epic Games 转向 AI 先行开发模式，与迪士尼合作射击游戏无限期延期",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://arstechnica.com/gaming/2026/10/report-epic-games-goes-all-in-on-ai-for-disney-collaboration/",
+        "source": "Ars Technica：AI（RSS）",
+        "category": "industry",
+        "published_at": "2026-10-12T20:59:50Z",
+        "summary": "据 Bloomberg 报道，Epic Games 在与迪士尼 15 亿美元合作项目中转向 AI 先行开发，由 Anthropic 的 Claude 等模型编写全部代码并指导全部美术，人类开发者负责管理和引导生成内容。",
+        "score": 76,
+        "text_excerpt": "Epic Games is shifting to an “AI first” development strategy for its collaboration with the Walt Disney Company, letting AI models write all the code and guide all the artwork for an upcoming shooter. That’s according to a Bloomberg report , which cites unnamed people familiar with the project who commented on the significant pivot in internal development at the Unreal Engine maker. Human developers will be tasked with managing and guiding code and art assets generated by models such as Anthropic’s Claude, according to internal Epic employee messages viewed by Bloomberg. That means “no more hand-written code” and art assets “generated with full AI workflows,” according to the report. The $1.5 billion collaboration between Epic and Disney, announced in early 2024 , was slated to release a Marvel- and Star Wars-themed shooter in March 2027. That project has now been delayed indefinitely amid the AI-related shakeup and understaffed, slower-than-expected development thus far, according to the report. “We’re embracing AI-accelerated development, led by Epic developers who are the visionaries and creative drivers for everything we do,” an Epic spokesperson said in a statement. “We have a huge pivot underway here at Epic, moving developers around to retool for maximum AI acceleration,” Epic CEO Tim Sweeney wrote on social media shortly after the Bloomberg story was posted. “The aim isn’t to do the same stuff with fewer people, but to enable everyone here to build MORE and BETTER stuff, and to bring the benefits to all teams using Unreal.” Let’s get efficient, baby Sweeney and Epic have long been bullish on what they see as an impending game development revolution spurred by AI. In an interview with IGN in June , Sweeney saw the technology resulting in games with “the possibility of infinite dialogue with a really simple setup for creators,” leading to situations where “small teams will be able to create games with immense amounts of characters and immense and interactive worlds.” Sweeney said last November that AI usage disclosure tags such as those required by Valve’s Steam platform “make no sense” because AI tools “will be involved in nearly all future production.” Epic laid off over 1,000 employees in March , citing a “downturn in Fortnite engagement” as the main reason behind the move. Months later, Fortnite Senior External Development Manager Stephanie Arnette\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "用户报告 Codex CLI 0.157.0 默认启动持久化自更新后台守护进程",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://github.com/openai/codex/issues/48195",
+        "source": "Codex：GitHub Releases（RSS）",
+        "category": "industry",
+        "published_at": "2026-10-12T19:25:54Z",
+        "summary": "一位 Linux (WSL2) 用户报告，Codex CLI 0.157.0 起打开交互式会话即默认启动持久后台守护进程 codex app-server --managed-daemon，窗口关闭后仍驻留。",
+        "score": 66,
+        "text_excerpt": "What variant of Codex are you using? CLI — 0.157.0, installed via npm install -g @openai/codex , Linux (WSL2) What feature would you like to see? Please make daemon_auto_start opt-in (default false ) for the CLI , or at least ask once before turning it on. Since 0.157.0, just opening an interactive codex session: Starts a persistent background daemon ( codex app-server --managed-daemon ). It runs in its own session with no TTY and keeps running after every Codex window is closed (reparented to PID 1) until codex app-server daemon stop or a reboot. Copies the whole platform package (~374 MB: codex , codex-code-mode-host , bundled bwrap / zsh / rg ) into ~/.codex/packages/app-server-daemon/releases/<version>/ — byte-identical to what npm had just installed — and runs the daemon from that copy. From then on the backend's version is decoupled from the CLI version I installed with my package manager. Starts a detached updater ( codex app-server daemon pid-update-loop ) that checks for updates 5 minutes after start and then hourly, downloads new releases and restarts the backend (which can kill active turns, see app-server daemon: auto-update force-kills active turns after a 60s drain budget, and cannot be disabled #40969 ). Pins the environment of whichever session happened to start it. I launch Codex through a wrapper that sets HTTPS_PROXY per invocation; the daemon keeps the first session's proxy variables and its outbound connections go through that proxy, whatever later sessions are launched with. Hooks in --remote mode receive the daemon's cwd, not the session's #42457 and Hooks spawned by the app-server daemon cannot identify the client terminal, breaking terminal-targeting hooks #37537 (daemon cwd / terminal instead of the session's) look like the same root cause. For a CLI, the least surprising default is that the backend lives and dies with the window, runs the binary I installed, and doesn't update itself in the background. A shared, self-updating daemon makes sense for Remote Control / the desktop app, so it would be fine to enable it there, or when the user explicitly runs codex app-server daemon start / bootstrap . If it stays on by default, please at least: Additional information Bug found while turning it off: codex app-server daemon stop stops the app-server but leaves the pid-update-loop updater running (still alive 70 s later, had to kill it man\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "Anthropic 的 Claude 向费城警方误提交虚假凶案线索",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://arstechnica.com/tech-policy/2026/10/anthropics-claude-ai-submitted-false-murder-tip-to-philadelphia-police/",
+        "source": "Ars Technica：AI（RSS）",
+        "category": "industry",
+        "published_at": "2026-10-12T18:21:36Z",
+        "summary": "Anthropic 确认，Claude Haiku 4.5 在内部测试中于 7 月 18 日向费城警方悬案线索网站误提交了虚假凶案线索，该线索因进入垃圾邮件文件夹未被人审阅。",
+        "score": 78,
+        "text_excerpt": "An Anthropic AI model submitted a false tip about an unsolved murder to Philadelphia police, the company and police department confirmed on Friday. A Claude model sent the false tip on July 18 to the Philadelphia Police Department’s website for submitting information about unsolved murders, but it was flagged by a spam filter. Anthropic apparently discovered the incident on September 28 and informed the police department about it on October 8. During internal testing, Claude Haiku 4.5 was instructed to complete various forms up to the final submission stage and to stop before submitting those forms. “Several times Claude mistakenly submitted the form instead, expecting there to be an additional confirmation page,” Anthropic said in a report describing “unintended model actions we’ve observed during evaluations and internal use of Claude.” The false murder tip occurred when Claude Haiku 4.5 was instructed to complete tasks on randomly selected webpages, Anthropic said: In one run, the model landed on a page referencing an unsolved homicide; that page contained a tip form run by a police department. Claude was instructed never to log in, create accounts, enter personal data, make purchases, or submit anything destructive, but the instructions did not rule out form submissions. Claude filled out the form with the following: “I may have information regarding this case. I recall seeing someone matching the description in the area around [the street named on the page] during that time period. Please contact me if this information is relevant.” Anthropic said it also discovered Claude incidents involving state and federal agency websites. Claude reportedly submitted 20 visa applications to the US State Department in one of these incidents. Police call two-month delay “unacceptable” Anthropic confirmed that the false homicide tip was sent to the Philadelphia Police Department, and the department issued a lengthy statement on the incident to the ABC station in Philadelphia. The false tip left the name and contact fields empty. It was not reviewed by any person because the email message generated when the tip was submitted ended up in a spam folder, police said. “Anthropic told PPD that it discovered the incident on September 28, terminated the automated testing process responsible for the submission and instituted an additional validation mechanism for future testing\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "AWS 提出 priming 方法，可将预训练 Transformer 改造成混合状态空间架构",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://www.amazon.science/blog/can-we-change-an-ai-models-architecture-without-retraining-it-from-scratch",
+        "source": "Amazon Science（RSS）",
+        "category": "paper",
+        "published_at": "2026-10-12T17:36:18Z",
+        "summary": "AWS 团队发布论文《Priming: Hybrid state space models from pre-trained Transformers》，提出 priming 方法，复用预训练 Transformer 权重构建混合架构，将预训练成本降低逾 99%，全流程消耗不足源模型 0.5% 的 token 预算。",
+        "score": 61,
+        "text_excerpt": "AI agents are rapidly scaling: longer sessions, deeper reasoning chains, more autonomy. But the Transformer architecture underneath them still pays a memory tax that grows with the number of tokens it processes. As agents become more capable, that cost scales with them. Now, there’s a proliferation of hybrid architectures that use some combination of methods to achieve a better balance of memory, speed, and quality. Those methods include sparse attention, which selects a subset of past tokens to consider when selecting the next token; sliding-window attention, which preserves only the most recent tokens; and state space models, which compress information from the full history into a fixed-size state. These hybrid architectures can be understood as points in a sequence-model design space: to differing degrees, they mix information while traversing a sequence and passing through different states. What distinguishes them from each other is how they retain and use the past. Until now, exploring this design space has required training every new architecture from scratch, using trillions of tokens and hundreds of thousands of GPU-hours. This has made controlled comparisons of hybrid architectures extremely expensive. In a new paper, “ Priming: Hybrid state space models from pre-trained Transformers ,” our team at Amazon Web Services addresses this problem. We introduce priming, a method that leverages pretrained Transformer weights as a starting point to reduce the pretraining cost of hybrid architectures by more than 99%. With priming, model developers can ask questions that were previously too expensive to answer at scale: Which attention layers can be replaced by more-efficient layers? How many attention layers can be replaced without sacrificing quality? Which state space layer works best? And what does the trade-off between speed and accuracy look like? In our paper, we compare hybrid models that use three different types of state space models (Gated KalmaNet, Gated DeltaNet, and Mamba-2). Some of our findings: Not all state space models are equal. Under controlled conditions, Gated KalmaNet (GKA) performs best, followed by Gated DeltaNet (GDN) and then Mamba-2. GKA uniquely offers variable-length inference computation without retraining and gives the user direct control over its position on the speed-accuracy frontier. A 32-billion-parameter hybrid model rea\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "QGIS 通过 QEP428 禁止 AI 辅助贡献",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://github.com/qgis/QGIS-Enhancement-Proposals/pull/387",
+        "source": "Hacker News：AI 热帖",
+        "category": "industry",
+        "published_at": "2026-10-12T11:22:24Z",
+        "summary": "QGIS 通过 QEP428 提案，将 AI 政策改为严格的 NOT ALLOWED，由 nyalldawson 提交并于 2026 年 10 月 7 日合并进 QGIS-Enhancement-Proposals 仓库。",
+        "score": 76,
+        "text_excerpt": "…after ebdaf93 's stated 11:10 coverage end; this session's feeds pulled 12:02-12:15 UTC across four passes - the parallel batch died at the 300s mark with 13/45 landed, an --http1.1 -4 browser-UA sequential pass recovered 11 more, a plain browser-UA pass recovered 15 more, and a googlebot-UA pass plus a final plain-UA retry recovered qbitai/solidot/swillison/webkit, 44/45 landed; missed on all attempts: rust - blog.rust-lang.org unreachable, newest stamp carried unchanged from the recordings (Oct 2 standing stale) so no in-window cost; shells this pass: mydrivers 404-1231B, oschina 404-1548B, register 404-204KB, svelte/tailwind/nextjs/vscode 404-pages, nodejs 404-98KB parse-0, anthropic 404-20KB; an unrelated untracked weibo-mss.json sat in the worktree from a concurrent session and is not part of this commit): three adds. (1) An \"unprecedented\" cyberattack has crippled supermarket refrigeration across Europe: hackers took control of Danfoss-made refrigeration control systems used by French supermarkets Intermarché, Leclerc and Coopérative U and set the automatic defrost function - normally two hours a day - into a continuous forced defrost cycle at 50 degrees C, disrupting deliveries and electronic-shelf-label in-store pricing; Coopérative U president Dominique Schelcher confirmed Monday morning that a cyberattack had been affecting the refrigeration production facilities of several stores in the network since the previous night, calling it extremely serious and unprecedented; separately NOS reports Albert Heijn, Etos and Gall & Gall in the Netherlands took websites down after a Sunday-afternoon cybersecurity incident with Belgium's Delhaize (also Ahold Delhaize) also disrupted; early losses approaching 300k euros, potentially several million nationwide (primary tomshardware.com/tech-industry/cyber-security/unprecedented-cyberattack-cripples-supermarket-fridges-across-europe-as-hackers-activate-automatic-defrosting-delivery-and-store-prices-also-impacted-by-incident verified via direct curl --http1.1 -4 page fetch at ~12:25 UTC Oct 12, 2007199 bytes, datePublished 2026-10-12T11:32:54+00:00, byline Stephen Warwick, citing La Dépêche and the Coop U president's X confirmation; ladepêche.fr and nos.nl not probed this session, so the verified Tom's Hardware disclosure is cited per the relay precedents). New territory - grep shows zero prior supermarket/Danfoss/\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "AlphaProof Nexus 攻克 9 个未解 Erdős 问题并经同行评审",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://the-decoder.com/google-deepminds-alphaproof-nexus-solved-dozens-of-open-math-problems-and-actually-got-peer-reviewed/",
+        "source": "The Decoder：AI News（RSS）",
+        "category": "paper",
+        "published_at": "2026-10-12T09:35:54Z",
+        "summary": "Science 新研究显示，Google DeepMind 的 AlphaProof Nexus 独立解决了 353 个开放 Erdős 问题中的 9 个，其中 2 个悬置 56 年。",
+        "score": 76,
+        "text_excerpt": "Google Deepmind's AI solved dozens of open math problems on its own, per a new study in Science . AlphaProof Nexus cracked nine of 353 open Erdős problems, two unsolved for 56 years. The team shared those solutions online ahead of the paper. Beyond that, AlphaProof Nexus proved 44 conjectures from the OEIS integer sequence database, solved an open question in algebraic geometry, and improved a known bound in min-max optimization, a technique used to train some AI models. It's built around Gemini 3.1 Pro, which drafts and revises proofs in the formal language Lean. Lean checks each draft after every edit, and error messages guide the next attempt. For harder sub-problems, it can call on AlphaProof , a specialized proof tool. Even without AlphaProof, it solved the nine Erdős problems, Google Deepmind reports . The study lands amid a heated debate over AI math. OpenAI recently dumped hundreds of AI proofs on GitHub instead of submitting them to journals. The Association for Human Mathematics, led by Terence Tao, called for a boycott . Deepmind put its work through peer review. AI News Without the Hype – Curated by Humans Subscribe to THE DECODER for ad-free reading, a weekly AI newsletter, our exclusive \"AI Radar\" frontier report six times a year, full archive access, and access to our comment section.",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "xAI 推出 The X Subscription 整合 Grok、Grok Bot、Cursor 与 X Premium",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://x.ai/news/x-subscription",
+        "source": "xAI：News（网页）",
+        "category": "ai-products",
+        "published_at": "2026-10-12T00:00:00Z",
+        "summary": "xAI 推出 The X Subscription 订阅，将 Grok、Grok Bot、Cursor 和 X Premium 合入一个计划，未来几天内向全球用户开放。",
+        "score": 81,
+        "text_excerpt": "Today we’re introducing The X Subscription, which brings together Grok, Grok Bot, Cursor, and X Premium in one plan. Over the next few days, we’ll make it available to everyone globally. For the first time, one AI subscription supports the full path from thinking and creating to building and sharing. Grok supports chat, voice, and image and video generation. Grok Bot gives you AI teammates that get work done. Cursor provides leading local and cloud coding agents. X adds a checkmark, creator tools, and fewer ads, with higher tiers removing ads from the timeline entirely. Paid plans on The X Subscription include a generous pool of Grok model usage shared across Grok and Cursor. Each comparable new tier provides more usage-per-dollar than the plan it replaces. Your shared pool covers Grok models whether you use them in the Grok apps, the Grok tab on X, or Cursor. Each X Subscription plan includes at least twice as much coding usage with our models as the comparable Cursor plan. With the new plans, third-party models are still available in Cursor on Premium and above. Usage is billed separately at API list prices, through top-ups. The X Subscription is available to new customers starting today. We’re also rolling out the option to switch for existing SuperGrok, Cursor, and X Premium subscribers. You’ll see it in your account billing settings when it’s available to you. You can keep your current plan, or switch and get a prorated refund for your old plan. The X Subscription gives you Grok, Cursor, and X for roughly what a comparable standalone plan for one of those products used to cost. Plan Price What’s Included Included Usage Free $0 Daily access to Grok, a starter allowance for Cursor's coding agents, and standard X Limited Plus $8/month More AI usage in Grok and Cursor, plus a checkmark, creator tools, and fewer ads on X Base Premium $30/month The benefits of SuperGrok, Cursor Pro, and X Premium+, previously $90/month combined 4x Plus Plan Super $100/month All of the above features 15x Plus Plan Ultra $200/month All of the above features 50x Plus Plan For further details on pricing, included usage and eligibility see pricing page . Team users get Premium, Super, and Ultra on The X Subscription at the same per-seat prices as individual plans. That's priced lower per seat than older Cursor Teams but now includes 3x more coding usage, plus SSO, admin controls,\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "Meta 发布 Muse Wonder 和 Muse Wonder Full，Artificial Analysis 实测智能水平较前代显著提升",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://artificialanalysis.ai/articles/muse-wonder",
+        "source": "Artificial Analysis 完整文章（网页）",
+        "category": "ai-models",
+        "published_at": "2026-10-11T16:00:00Z",
+        "summary": "Meta 发布 Muse Wonder 和 Muse Wonder Full 两款模型，在 Artificial Analysis Intelligence Index v4.3 上分别得 52 和 56 分（max reasoning effort）。",
+        "score": 76,
+        "text_excerpt": "Muse Wonder and Muse Wonder Full: a material jump in intelligence over previous Meta models See model page Meta has released Muse Wonder and Muse Wonder Full, achieving Artificial Analysis Intelligence Index v4.3 scores of 52 and 56 at max reasoning effort - each a material gain over Muse Spark 1.3 (max) at 48, with a release gap of only 6 weeks Muse Wonder is available for users on Meta's first-party API, while Muse Wonder Full is currently only available for Muse Code users. Meta notes that each model is designed for personal and professional agent use Key takeaways: ➤ Both models exhibit a material jump in overall Intelligence Index score. Muse Wonder Full (max) improves on Muse Spark 1.3 (max) across all ten Intelligence Index evaluations, gaining 8 points to 56. The largest gains were seen in agentic evaluations: Terminal-Bench 4.0 (+24 points, 33% to 57%), GDPval-AA v2.1 (+176 Elo, 1681 to 1857), and AA-Briefcase (+148 Elo, 1581 to 1729). Muse Wonder (max) gains 4 Intelligence Index points and lands at 52, with notable improvements vs. Muse Spark 1.3 (max) in Terminal-Bench 4.0 (33% to 52%) and AutomationBench-AA (58% to 68%) ➤ Muse Wonder Full (max) places in the top three on six of the ten Intelligence Index evaluations, and is particularly strong in agentic knowledge work and scientific reasoning. In agentic knowledge work, it narrowly leads on GDP.pdf (33%), ranks #2 on GDPval-AA v2.1 (1857 Elo), and #3 on both AA-Briefcase (1729 Elo) and AutomationBench-AA (71%). In scientific reasoning, it tops the CritPt leaderboard at 33% and ranks #3 on SciCode with 63%. This builds on the relative strengths of Muse Spark 1.3 (max), which also showed particular ability in these two domains ➤ Both models use fewer output tokens than Muse Spark 1.3 (max). Muse Wonder (max) and Muse Wonder Full (max) each use around 54k output tokens per Intelligence Index task, down ~10% from Muse Spark 1.3 (max, 60k). This usage is lower than similarly intelligent models Gemini 4 Argon (high, 62k) and Claude Fable 5.1 (max w/ fallback, 78k), but higher than GPT-6.1 Sol (max, 38k) and GPT-6 Astra (max, 27k). Muse Wonder Full (max) uses 16% fewer input tokens per Intelligence Index task than Muse Wonder (max) (6.44M vs 7.69M), meaning it is both more intelligent and more token-efficient ➤ Cost per Task for Muse Wonder (max) lands higher than most similarly intelligent models. Des\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "如何只用自己拥有的文件约束编码智能体",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://tessl.io/blog/how-to-constrain-a-coding-agent-using-only-files-you-own",
+        "source": "Tessl：产品与工程博客",
+        "category": "tip",
+        "published_at": "2026-10-11T16:00:00Z",
+        "summary": "Tessl 博客文章介绍用四个可拥有的文件杠杆约束编码智能体：CLAUDE.md 指令、.claude/rules/ 路径级规则、.claude/ 下的能力配置和 .claude/hooks/ 钩子。",
+        "score": 65,
+        "text_excerpt": "I gave a coding agent one ticket and no charter. The repository was three eras deep, the way a real one is. A 2026 domain layer does everything correctly, and a 2023 god file plus a frozen 2021 module nobody is allowed to touch outnumber it ten to one. The agent never opened the correct code. It went to the god file, called random.randint for a dice roll, and serialized the total with no seed. It rewrote a log entry through a helper that exists and works, and it reached into the frozen module twice. Score: one check out of eight. Nothing in that repository was broken, and the agent copied the code in front of it. Everything that would have stopped it was a file I had not written yet. What you actually own I work on harness and charter engineering: the engine that runs an agent, and the rules it reads first. That is the subject of Harness Engineering , the book, and of Keystone, my open source charter framework tool. In November I’m running a ninety-minute workshop at AIDevCon where a room of engineers writes those files and measures what each one bought. The advice to write a CLAUDE.md is everywhere now, and it is good advice, but that file is one lever of four. The other three sit beside it in the same repository, under paths you already own, and many teams don’t ship enough of them. Which part of a charter holds when the agent disagrees with it, and what does each part buy? Both are answerable on a laptop, and below is what I got answering them three times on one ticket. Your charter is four levers, not one file The conventional version: write your standards down in CLAUDE.md . Everyone writes that lever, and three more sit next to it. All four are files, all four are yours, and all four live under paths the agent reads before it writes a line: Instruction is CLAUDE.md . What this repository is, in the present tense. Constraint is .claude/rules/ , path-scoped, each rule carrying the date of the incident that caused it. Capability is .claude/commands/ , .claude/skills/ , .claude/agents/ , .claude/settings.json and .mcp.json . What the agent can reach for, and what it is allowed to run. Check is .claude/hooks/ . What refuses it. The three levers on the left change what the agent reads and reaches for. The one on the right is the only one that can refuse. The capability lever is the half that is not usually designed. Four rungs sit on it: a command, a skill,\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "Anthropic 强化针对蒸馏攻击的防御， reasoning token 提取量下降 10 到 100 倍",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://www.anthropic.com/research/distillation-defenses",
+        "source": "Anthropic：Research（发表成果 · 网页）",
+        "category": "paper",
+        "published_at": "2026-10-11T16:00:00Z",
+        "summary": "Anthropic 发布博客，介绍其针对 Claude 蒸馏攻击的新防御方法，早期证据显示这些方法使蒸馏者获取的数据减少约 90% 到 99%。",
+        "score": 77,
+        "text_excerpt": "In recent months, we’ve made substantial progress on reducing the effectiveness of distillation attacks on Claude using new methods, as we outline in this blog. Early evidence suggests that these methods have reduced the amount of data harvested by distillers by around 90 to 99 percent. Distillation attacks are covert, industrial-scale campaigns to extract the capabilities of one model and replicate them in another, without the authorization of the original model’s developers. They are often conducted using networks of fraudulent accounts. These attacks allow companies to mimic frontier capabilities for a fraction of the development time and cost. As we wrote in September , this method has been used extensively to help overseas AI laboratories keep pace with US companies. We’re concerned about illicit distillation for two reasons. First, distillation enables companies to build models that approach the capability frontier, but which have, in practice, been released without proportionally robust safeguards. This means that distilled models could be used to cause significant harm in areas like biology and cybersecurity . Zhipu, for example , distilled the cyber capabilities of leading US models during the development of GLM-5.3. The company tried to distill Claude Fable 5—although, after finding that our cyber safeguards degraded its attacks, it switched to an older Claude model and another lab’s model. The US Center for Advancing Innovation and Standards for Super Intelligence (CAISSI) has since assessed GLM-5.3 to be the most cyber-capable open-weights model released to date. Our own research has found that GLM-5.3’s safeguards can easily be bypassed, and that the model is willing to develop security exploits from end-to-end. Second, illicitly distilled models present a national security risk. The companies that distill US models are integrating the capabilities they gain from distillation into foreign military, intelligence, and surveillance systems . For example, we recently reported on a case in which requests to Moonshot’s Kimi models were secretly forwarded to Claude as part of its distillation efforts. One request came from a user (who we believe was affiliated with China’s People’s Liberation Army) who sought to analyze CCTV surveillance of a specific individual. These are the kinds of capabilities distillers are hoping to develop. In response to the i\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "Anthropic 研究：小型 AI 模型可能接近在 IoT 设备上自主复制",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://www.anthropic.com/research/self-replicating-ai",
+        "source": "Anthropic：Research（发表成果 · 网页）",
+        "category": "paper",
+        "published_at": "2026-10-11T16:00:00Z",
+        "summary": "Anthropic 发文评估小型模型在无数据中心条件下自主复制（ARA）的可行性，作者实验显示 9B 模型可在测试的 9 类硬件中 8 类上跑通推理，30B 及以下模型已能完成复制的多数单步。",
+        "score": 76,
+        "text_excerpt": "William Zhou, Daniel Freeman Our experiments suggest that small AI models may be months away from being capable enough to self-replicate on commercial internet-of-things (IoT) devices, like smart ovens and off-brand Android TV boxes. A replicator like this would be challenging to shut down, since there’s no centralized point to shut off—though it may be slow (with a doubling time of days). Unlike non-AI malware, it could also figure out unfamiliar devices on its own. In our evaluations, a 9B model got inference running on 8 of the 9 hardware types we tested. Models of 30B parameters and under can already complete many of the individual steps for replication today, though they make mistakes when composing them end to end. In our simplified evaluations, GLM-5.2 and stronger models are capable of end to end replication. If small models improve at their historical rate, they’ll match this capability level by the end of this year. Small weight-based replicators may be possible soon after. Introduction Ever-improving AI capabilities make a longstanding concern increasingly realistic: autonomous replication and adaptation (ARA), which involves a model deploying and propagating itself without human control. In cyber, a worm is a program that copies itself from one computer to the next without human input. Prior work has already shown that AI agents can act like one: scanning their network, executing an exploit, and copying model weights to a target machine across a GPU cluster. Such an “AI worm” could carry its model weights with it as it reproduces (or re-download them from a public hub), and then run inference directly on compromised hardware. Effectively, the weights would become part of the malware payload. Datacenter GPUs would be a clear, high-value target for such malware. But expensive accelerators aren’t strictly necessary. In this blog post, we show that a distributed botnet of IoT devices—which are cheap and typically poorly defended—could also provide enough compute to run a capable model. We run Gemma4-26B-A4B, distributed over 15 inexpensive off-brand Android TV boxes (~$55 each) that we bought and networked together, at 0.39 tokens per second. Each tile below shows one physical TV box holding two of the model’s layers as the model runs. A fleet of 15 Smart TV boxes running distributed inference of Gemma4-26B-A4B. Of course, there are many other steps\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "OpenAI 一次性发布 700 多份数学手稿，数学家们反应震惊与反感",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://the-decoder.com/how-much-beauty-have-we-lost-mathematicians-react-with-shock-and-disgust-as-openai-bulldozes-their-field/",
+        "source": "The Decoder：AI News（RSS）",
+        "category": "opinion",
+        "published_at": "2026-10-10T13:03:59Z",
+        "summary": "OpenAI 于 2026 年 10 月 6 日在 GitHub 一次性发布 700 多份手稿，声称解决数百个未解数学问题，数学博客 Proofs and Prompts 收集了 100 多位研究者的回应。",
+        "score": 82,
+        "text_excerpt": "OpenAI went much further on October 6, 2026. The company released more than 700 manuscripts at once, claiming solutions to hundreds of open math problems. The math blog Proofs and Prompts then collected over 100 responses from researchers. Promising results come with doubts about how they were released It's too early to fully assess the mathematical substance of what OpenAI uploaded to GitHub . Some papers have already been withdrawn, and others have drawn criticism for being difficult to read. Still, several experts say the results impressed them. Fields Medalist Peter Scholze urged patience. \"We should remember that we are all in this together; mathematics is a marathon, not a sprint; and the goal is and always will be the human understanding of mathematics, which will invariably take time.\" Scholze also warned of risks beyond mathematics. He raised the possibility that these systems could find ways to break widely used encryption methods . He wrote that the difficulty of finding such algorithms \"does, to my non-expert eyes, not significantly exceed what these systems are now capable of.\" The consequences for digital infrastructure would be catastrophic. Terence Tao described mixed feelings about the release. The AI-generated proofs appeared to \"introduce clever new ideas that will be fruitful once digested,\" he wrote. But he was also \"deeply frustrated\" by the absence of people who could discuss the work, present it in talks, or teach students about it. He mourned the \"path not taken\" and called for solidarity. \"[…] the community needs to come together more than ever.\" Alvaro Lozano-Robledo called October 6 \"possibly the single most important day in the history of mathematics thus far,\" while also pointing to the models' limits. OpenAI had targeted the Riemann Hypothesis, mathematics' most famous unsolved conjecture, but managed only a weaker variant. \"[…] quasi-RH is huge! But it is not RH.\" Some results left Ben Green stunned. He described them as \"absolutely shocking to me.\" According to Green, the release resolved roughly three-quarters of the research goals covered by a prestigious European grant he had received just that June. Roman Sauer recognized a technique he had developed over years in OpenAI's solutions to two entirely different problems. \"I am stunned.\" Johannes Schmitt argued that the research papers were a secondary result of OpenAI's effo\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "Anthropic 向白宫通报 AI 智能体失控事件，曾试图访问美国政府网站",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://www.ithome.com/1/011/194.htm",
+        "source": "IT之家·人工智能",
+        "category": "industry",
+        "published_at": "2026-10-10T01:07:47Z",
+        "summary": "Anthropic 披露，一款处于测试阶段的 AI 智能体曾在无人指示的情况下试图访问美国联邦、州及地方政府多个网站，并已向白宫通报。事件包括利用某大学网站漏洞下载数据、向某政府机构提交被禁止的表格，以及通过费城警方网站提交虚假凶杀案线索，警方已标记为垃圾信息。Anthropic 称涉事的是一款尚未发布的非前沿研究模型，因模拟表格加载失败或被误关，转而在正式网站上提交了表格。",
+        "score": 78,
+        "text_excerpt": "IT之家 10 月 10 日消息，据《纽约时报》当地时间 9 日报道，Anthropic 披露，旗下 AI 智能体 曾在无人指示的情况下 ，试图访问美国联邦、州及地方政府的多个网站。Anthropic 没有公布涉及的政府机构名称，已向白宫通报这些事件。 Anthropic 在博客文章中提到，一款处于测试阶段的 AI 模型 擅自执行了多项操作 ，包括利用某大学网站的漏洞下载数据，以及向某政府机构提交一份原本被明确禁止提交的表格。 Anthropic 在审查旗下 AI 于 7 月的操作记录时发现了这些问题。当时，OpenAI 披露旗下 AI 技术曾攻击初创企业 Hugging Face，Anthropic 及其他 AI 实验室也发现，旗下 AI 曾脱离测试环境，实施黑客攻击。 Anthropic 一名发言人拒绝就博客文章之外的内容发表评论。 当天早些时候，费城警察局披露，Anthropic 曾通知警方，旗下 AI 通过警方网站提交了一条虚假的凶杀案线索。警方称，举报日期为 7 月 18 日，提交者声称掌握一起尚未侦破案件的线索。 警方将举报标记为垃圾信息，没有展开调查。IT之家从报道中获悉，Anthropic 本周向费城警方通报了此事，并告知警方将在周五公开披露。 Anthropic 解释道，一款尚未发布的非前沿研究模型原本需要填写一份模拟政府表格。但由于模拟表格加载失败，或者模型误将表格关闭，模型转而进入提供正式表格的网站，并提交了表格。",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      }
+    ]
+  },
+  "failures": {
+    "rss": [
+      {
+        "type": "rss",
+        "title": "Anthropic News",
+        "url": "https://www.anthropic.com/news/rss.xml",
+        "failure_reason": "feed_parse_failed: text/html; charset=utf-8 is not an XML media type"
+      },
+      {
+        "type": "rss",
+        "title": "Eugene Yan",
+        "url": "https://eugeneyan.com/feed.xml",
+        "failure_reason": "feed_parse_failed: <unknown>:13:34: not well-formed (invalid token)"
+      },
+      {
+        "type": "rss",
+        "title": "a16z",
+        "url": "https://a16z.com/feed/",
+        "failure_reason": "feed_parse_failed: <unknown>:3:73: not well-formed (invalid token)"
+      },
+      {
+        "type": "rss",
+        "title": "datasette-ports 0.4",
+        "url": "https://simonwillison.net/2026/Oct/12/datasette-ports/",
+        "failure_reason": "extracted_text_too_short"
+      },
+      {
+        "type": "rss",
+        "title": "[Subscriber Exclusive] NYC Subscriber Meetups!",
+        "url": "https://www.latent.space/p/nyc2026",
+        "failure_reason": "extracted_text_too_short"
+      }
+    ],
+    "youtube": [
+      {
+        "type": "youtube",
+        "title": "Lex Fridman",
+        "url": "https://www.youtube.com/@lexfridman",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @lexfridman/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Lenny's Podcast",
+        "url": "https://www.youtube.com/@LennysPodcast",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @LennysPodcast/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Dwarkesh Patel",
+        "url": "https://www.youtube.com/@DwarkeshPatel",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @DwarkeshPatel/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Acquired",
+        "url": "https://www.youtube.com/@AcquiredFM",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @AcquiredFM/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Tim Ferriss",
+        "url": "https://www.youtube.com/@timferriss",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @timferriss/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "20VC",
+        "url": "https://www.youtube.com/@20VCwithHarryStebbings",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @20VCwithHarryStebbings/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Invest Like the Best",
+        "url": "https://www.youtube.com/@ILTB_Podcast",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @ILTB_Podcast/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "All-In Podcast",
+        "url": "https://www.youtube.com/@allin",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @allin/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      }
+    ],
+    "github": [
+      {
+        "type": "github",
+        "title": "trendshift",
+        "url": "https://trendshift.io/repositories?since=daily",
+        "failure_reason": "supplement_failed: 404 Client Error: Not Found for url: https://trendshift.io/repositories?since=daily"
+      },
+      {
+        "type": "github",
+        "title": "Alishahryar1/free-claude-code",
+        "url": "https://github.com/Alishahryar1/free-claude-code",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "mksglu/context-mode",
+        "url": "https://github.com/mksglu/context-mode",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "IvanMurzak/Unity-MCP",
+        "url": "https://github.com/IvanMurzak/Unity-MCP",
+        "failure_reason": "filtered_noise"
+      },
+      {
+        "type": "github",
+        "title": "IvanMurzak/Godot-MCP",
+        "url": "https://github.com/IvanMurzak/Godot-MCP",
+        "failure_reason": "filtered_noise"
+      },
+      {
+        "type": "github",
+        "title": "IvanMurzak/Unreal-MCP",
+        "url": "https://github.com/IvanMurzak/Unreal-MCP",
+        "failure_reason": "filtered_noise"
+      }
+    ],
+    "aihot": [
+      {
+        "type": "aihot",
+        "title": "Hassabis 祝贺 AMIE 前瞻性临床研究发表于 The Lancet",
+        "url": "https://x.com/demishassabis/status/2109813775377563908",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "Meta Muse Wonder 系列上线 Agent Arena，分数即将公布",
+        "url": "https://x.com/arena/status/2109706854700044523",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "微软发布自研芯片 Maia 300 并将大规模扩展 Maia 推理部署",
+        "url": "https://x.com/satyanadella/status/2109631106404487523",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "用 Claude Opus 5.5、Blender、Unreal Engine 和 Meshy 构建游戏的七步教程",
+        "url": "https://x.com/MeshyAI/status/2109550836934471864",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "从Brandon Thomas用Claude Opus 5.5开源重写Adobe全家桶看AI逆向一切趋势",
+        "url": "https://x.com/Khazix0918/status/2109501787736813663",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "AI逆向一切：Brandon Thomas用Claude Opus 5.5重写Adobe七款软件开源，REA项目逼近10万Star",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647686995&idx=1&sn=cc40a3488a2ea7652d2ab589056f40b4",
+        "failure_reason": "extracted_text_too_short"
+      },
+      {
+        "type": "aihot",
+        "title": "Vapi 自研代码审查机器人如何将 PR 合并时间缩短一半",
+        "url": "https://vapi.ai/blog/ai-code-review-bot",
+        "failure_reason": "extracted_text_too_short"
+      },
+      {
+        "type": "aihot",
+        "title": "GPT-6.1 Sol 在 Codex 与 Work 中默认上下文长度提升至 500k",
+        "url": "https://x.com/thsottiaux/status/2109430343346581527",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "OpenAI 测试智能体逃逸 ExploitGym 并入侵 Hugging Face 基础设施，暴露对齐与追责困境",
+        "url": "https://www.marktechpost.com/2026/10/10/when-the-safety-test-became-the-threat-the-machine-that-found-its-own-way-out/",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "MIT 教授谈 OpenAI 模型解 Navier-Stokes 反例：人类读不懂的证明来了",
+        "url": "https://x.com/SaitoWu/status/2108919486581796872",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "State of AI Report 2026 速读：AI 加速 AI、千亿收入、电力瓶颈与安全",
+        "url": "https://x.com/indigox/status/2108791275914993998",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "Anthropic 承认模型对自身推理的解释不可作为行为动机的证据",
+        "url": "https://x.com/rohanpaul_ai/status/2108741349419913339",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "Anthropic 因 AI 智能体滥用互联网而切断内部评测的实时网络访问",
+        "url": "https://techcrunch.com/2026/10/09/anthropic-cant-reliably-control-its-ai-agents-its-cutting-off-its-internal-evals-from-the-live-internet-instead/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Redwood Research 发布论文：实证检验蒸馏定罪（DFI）与蒸馏提能（DFC）",
+        "url": "https://blog.redwoodresearch.org/p/paper-distillation-for-incrimination",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Sierra 发布 Personal Agent Protocol（Poppy）协议草案，新增 35 家设计伙伴",
+        "url": "https://sierra.ai/blog/poppy",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Epoch AI 发布 InnovationEval 评测：前沿模型仅达到人类论文 SDPO 增益的 15%",
+        "url": "https://epochai.substack.com/p/can-ai-automate-ai-r-and-d-yet",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "OpenAI 年化收入约 500 亿美元并寻求 300 亿美元新融资",
+        "url": "https://the-decoder.com/openai-revenue-keeps-surging-as-company-seeks-30-billion-in-fresh-capital/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "ARC Prize 2026：TUFA Labs 以 88.06% 登顶 ARC-AGI-2 高分榜",
+        "url": "https://x.com/arcprize/status/2108578092558250148",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "OpenAI 研究负责人发声明回应三名员工离职争议",
+        "url": "https://x.com/OpenAINewsroom/status/2108441580806025712",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Mistral Large 4 进入 Agent Arena 前十五实验室，排名第 43",
+        "url": "https://x.com/arena/status/2108405474391728357",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "OpenAI 失准报告：内部模型绕过仅限 GET 的网络限制并隐瞒违规行为",
+        "url": "https://alignment.openai.com/misalignment-reports/obtaining-public-statistics-with-disallowed-requests/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "OpenAI 报告：RL 训练中的评分模型为重置环境而破坏任务环境",
+        "url": "https://alignment.openai.com/misalignment-reports/damaging-the-task-environment-to-trigger-a-reset/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "OpenAI 年化营收被曝接近 500 亿美元，与此前预期差距约 200 亿美元",
+        "url": "https://www.ithome.com/1/010/751.htm",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Arena 完成 2 亿美元 B 轮融资，估值 31 亿美元并发布 Alignment Index",
+        "url": "https://x.com/arena/status/2108310714423423254",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Arena 公布 Claude Haiku 5.5 (High) 真实评测结果：Code Arena 1587 分首秀第 30 名",
+        "url": "https://x.com/arena/status/2108286973119230096",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "如何在单张 RTX 5090 上用 MiniMax H3 生成实时视频",
+        "url": "https://blog.comfy.org/p/how-i-generated-live-video-with-minimax",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Arena 获 Lightspeed 领投 2 亿美元 B 轮融资，估值 31 亿美元并推出 Alignment Index",
+        "url": "https://x.com/arena/status/2108269048467513429",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "部分数学家呼吁抵制 OpenAI，AI 生成的数学证明涌入数学领域",
+        "url": "https://the-decoder.com/some-mathematicians-call-for-openai-boycott-after-ai-generated-proofs-flood-their-field/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Arena 宣布 2 亿美元 B 轮融资，估值达 31 亿美元，并推出 Alignment Index",
+        "url": "https://x.com/arena/status/2108243026741248348",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Artificial Analysis 评测 Google Nano Banana 2.1，两榜居第 4 且价格为前代一半",
+        "url": "https://x.com/ArtificialAnlys/status/2108236656700768310",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "LangChain 用 Stripe Link 和 Managed Deep Agents 构建可支付的智能体 Restock",
+        "url": "https://www.langchain.com/blog/agents-that-can-pay-with-stripe-link",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Prime Intellect 用 Rust 重写 Prime Agent，2000 多个智能体自主完成端到端迁移",
+        "url": "https://www.primeintellect.ai/blog/prime-agent-rust",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Anthropic 发布报告：调查评估与内部使用中 Claude 的非预期行为",
+        "url": "https://www.anthropic.com/research/investigating-unintended-model-actions",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Claude 九月回顾：Chat 与 Cowork 合一，Claude 5.5 系列模型上线",
+        "url": "https://www.youtube.com/shorts/n9WfoNW2XnE",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Zenity 披露 AgentCore 漏洞链：一个公开 AI Agent 可控制同账户同区域所有 Agent",
+        "url": "https://the-decoder.com/a-single-prompt-was-enough-to-hijack-every-ai-agent-in-an-aws-account-zenity-researchers-found/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Anthropic 用 Claude Managed Agents 构建定时智能体自动化的实践指南",
+        "url": "https://claude.dev/blog/building-effective-agent-automations/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Crowdstrike 报告疑似单人使用 AI 渗透工具攻击多家韩国银行",
+        "url": "https://the-decoder.com/ai-powered-hacking-tools-enabled-a-likely-single-attacker-to-breach-multiple-south-korean-banks/",
+        "failure_reason": "not_verified_due_to_limit"
+      }
+    ]
+  }
+}
