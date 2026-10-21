@@ -1,0 +1,1321 @@
+{
+  "date": "2026-10-21",
+  "generated_at": "2026-10-21T01:50:19Z",
+  "timezone": "Asia/Shanghai",
+  "windows": {
+    "rss": "72h",
+    "youtube": "72h_or_7d",
+    "github": "7d",
+    "aihot": "selected latest"
+  },
+  "counts": {
+    "rss": {
+      "candidates": 12,
+      "full_text_success": 11,
+      "eligible": 11,
+      "failed": 4
+    },
+    "youtube": {
+      "candidates": 0,
+      "transcript_success": 0,
+      "eligible": 0,
+      "failed": 8
+    },
+    "github": {
+      "candidates": 25,
+      "readme_success": 25,
+      "eligible": 25,
+      "failed": 6
+    },
+    "aihot": {
+      "api_returned": 50,
+      "candidates": 50,
+      "original_verified": 14,
+      "eligible": 14,
+      "failed_or_pending": 36
+    }
+  },
+  "eligible_items": {
+    "rss": [
+      {
+        "source": "Simon Willison",
+        "title": "eMudhra Intermediate CA Compromise",
+        "url": "https://simonwillison.net/2026/Oct/20/emudhra-certificates/",
+        "published_at": "2026-10-20T23:50:25Z",
+        "summary": "eMudhra Intermediate CA Compromise This is very, very bad news: The private keys of eight eMudhra intermediate CA certificates have been compromised. They chain to roots trusted by the Mozilla, Microsoft, Apple and Chrome root programs and by many downstream trust stores. Any software that bundles a list of trusted certificates needs to be updated. This site is tracking software updates via this GitHub repository - Linux distros need to update their ca-certificates packages. In Python world uv 0.13.4 and pip 26.2.2 and certifi 2026.10.19 have been released with upgraded certificate lists. Tags: encryption , https , pip , python , security , uv",
+        "lookback_7d": false,
+        "text_excerpt": "20th October 2026 - Link Blog eMudhra Intermediate CA Compromise . This is very, very bad news: The private keys of eight eMudhra intermediate CA certificates have been compromised. They chain to roots trusted by the Mozilla, Microsoft, Apple and Chrome root programs and by many downstream trust stores. Any software that bundles a list of trusted certificates needs to be updated. This site is tracking software updates via this GitHub repository - Linux distros need to update their ca-certificates packages. In Python world uv 0.13.4 and pip 26.2.2 and certifi 2026.10.19 have been released with upgraded certificate lists.",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "Battle Drones - a vibe coded RTS with audio-based multiplayer",
+        "url": "https://simonwillison.net/2026/Oct/20/battledrones/",
+        "published_at": "2026-10-20T19:34:19Z",
+        "summary": "My latest vibe coded game experiment is a Command & Conquer style RTS (Real Time Strategy) game called Battle Drones ( play it here ). Unlike my previous experiments , this one is actually fun to play . I'm somewhat embarrassed to admit that I got there by telling Claude to \"Make it a LOT more fun\". It also supports multiplayer between nearby devices using audio to synchronize game state! Here's what I've built so far, and some of the things I learned along the way. Battle Drones How I built this v1: the initial prototype v2: full sprites v3: varied terrain v4: the fun update v5: Battle Drones goes 3D v8: Archipelago v10: Goliath, and agent battles Agent battles v11: Random Maps v12: Multiplayer via sound Some thoughts Update: Online multiplayer support Battle Drones My initial goal was to build an RTS game I could play on my phone, in the style of Command & Conquer . I have fond memories of the 1995 original (I liked Red Alert too) and wanted to recapture a little bit of the magic. After 12 major iterations (and 321 commits by coding agents, mainly Claude Code) I now have a browser-based game that works on mobile and desktop, has multiple play modes, several maps (including a random map generator) and even supports multiplayer for two devices within microphone range of each other. ( Update : also online multiplayer ; the audio multiplayer induced headaches!) Here's a video demo of Battle Drones running in a desktop browser: Features so far include: 9 buildings, 7 ground vehicles, 6 aerial vehicles, 3 infantry units - all 3D models, which you can browse here Fog of war Different weapons are needed to target aerial or ground vehicles Six maps , across five biomes - temperate, desert, arctic, volcanic, tropical A random map generator Skirmish mode - red vs. blue on a rotationally symmetrical map Last Stand mode - one player holds out against as many waves of enemies as possible Area effect weapons: Barrage, EMP, Drop Pod, Sky Hammer Crate drops with bonus resources In-game music that responds to events - it gets more intense as fighting breaks out Different in-game AI personalities (Balanced, Rush, Air Swarm, Boom, Skyforce, Ironclad) AI vs. AI mode, to watch those personalities play each other The Goliath - a giant stomping mech with laser eyes and arm cannons and the ability to establish a new base Mutators that add extra rules or twists A \"Daily Op\" challenge Ranks and achievements ( Medals ) Agent vs. Agent mode where two LLMs can play Battle Drones against each other A multiplayer mode based on two nearby phones communicating via audio messages, an extension of my earlier experiment with Chirp Pong How I built this Battle Drones is heavily vibe coded - I've reviewed almost none of the code, and it's built in a language (TypeScript) that I've hardly used myself. I've playtested it quite a bit though, and it's been through a large number of iterations since I started the project. Here's a rough history of the project so far, including key prompts and links to transcripts. v1: the initial prototype I started out with Claude Fable 5 back in July: We are going to build a mobile friendly RTS game - command and conquer style - called Battle Drones, in which two armies of drones (both flying and ground-based) battle for territory and resources Let's start with a MVP design, ask me some questions Here's a shared transcript . I'd given Claude Code for Web an environment variable with an OpenAI API key and told it to use the OpenAI Image Generation API for assets, which got me some basic sprites. You can try v1 here - it looked like this: It's recognizable as an RTS, has building mechanics and the ability to select and direct units, and a basic AI to play against. This first version was barely a proof of concept, and it wasn't any fun to play. Claude used the Phaser 2D game framework for these early versions. I didn't even realize this until several iterations later! v2: full sprites The second version ( try v2 here ) added sprites for all of the vehicles and the \"AI vs. AI\" mode, so I could watch the game playing without having to directly control it myself. Claude proved reasonably competent at prompting OpenAI's image models to generate sprites. You can browse the v2 sprites in the public/assets/sprites folder. v3: varied terrain It still wasn't much fun, and the graphics were boring. It was now October, and I had upgraded to Claude Opus 5.5. I told it: Massively improve this game. Make the graphics and gameplay better (keep it mobile friendly). Render new graphics using the latest OpenAI GPT image API (lookup details) with the API key in the environment variable. Add new unit types and balance the gameplay better. Also add new buildings and better, more varied terrain. This resulted in five new maps with generated background tiles in a variety of styles, visible here . Opus also regenerated the sprites, making them much more visually appealing. You can try v3 here - it looks like this: This is starting to feel like a real game! It still wasn't very fun to play though - I found myself getting bored pretty quickly. v4: the fun update So far my Battle Drones experiment was confirming my previous belief that coding agents can build a thing that looks like a game but can't actually make something that's genuinely compelling to play. I shared this theory with someone over dinner, and then thought to myself that I should give the models a proper chance to prove me wrong. I prompted Opus 5.5 on my phone: This game isn't fun enough yet. Make it a LOT more fun. This time I was running in Ultracode mode , where Claude Code (in this case Claude Code for Web) runs \"dynamic workflows\", described in their docs as: A dynamic workflow is a JavaScript script that orchestrates many subagents at once. This kicked off many hours of work. I started it in the evening and didn't get a playable result back until late into the next morning. But the results were spectacular. You can try v4 here - it looks like this: I had Claude write its own release notes - here are the highlights: Every skirmish and Daily Op now opens with a choice, gives the side that's losing a way back, and pulls the armies into the middle of the map. There are also two new ways to play. Openers : pick Blitz, Industry or Air Wing before the clock starts. Call-down powers : Barrage, EMP, Drop Pod and the Sky Hammer orbital strike. Objectives and salvage : Uplink relays, supply drops and wrecks worth scrap. Feel : combat juice, adaptive music, unit voices and an announcer. Command : battle alerts, game speed, saved squads and touch placement. New modes : Last Stand survival waves and an 8-mission Ops campaign. Progression : heroes, an after-action report with awards, a career, 7 mutators and a Daily Op. Fights run longer and swing more. In 1,200 AI-vs-AI test matches on Normal, games still undecided after 25 minutes fell from 14% to 0.9%. The share of wins by a side that had been 800+ scrap behind rose from 24% to 46%. Part of the reason Claude took so long was that it ran over a thousand simulated playtest sessions, and used the results to rebalance the existing units, add new ones, and introduce new features. v5: Battle Drones goes 3D After the success of Ultracode at \"Make it a LOT more fun\", I decided to be more ambitious: Port this game to three.js with 3D models for all of the buildings and vehicles and landscapes That was another overnight run. I woke up to this v5 version : The new 3D models were entirely constructed by Claude in TypeScript code. v6 ( play v6 here ) added some more visual polish. v7 ( play v7 ) added robot infantry (troopers, rocket squads, snipers) and a \"Condor\" troop carrying aircraft. v8: Archipelago I was beginning to feel guilty at how little actual design input I had into the game - it really had been a case of me saying \"make it more fun\" and \"add visual polish\" for the past few releases. I'd noticed that the AI didn't use the new infantry and troop carrying aircraft from v7 very often - there wasn't a great strategic reason to use them. It would be neat if we had a new map with a new game mechanic that actively encouraged players to load up Condors with infantry robots and send them out into the map. This resulted in my longest prompt yet: Design a new map. Goal is to make different strategic incentives that encourage use of Infantry and Condors and aerial vehicles. To do this the map will have limited harvester resources but several more uplinks - but uplinks will be on islands that are inaccessible by land vehicles or infantry. These uplinks can also not be claimed using air vehicles. The ONLY way to get them is to fly infantry there in a Condor. Armies always start with a Condor and a single squad. If an army has no Condor a new one will be provided for free, flying in from the edge closest to their HQ and landing there. That free condor will come with a single free squad on board. The two HQs should be entirely separated by water, but still accessible by vehicles thanks to two bridges across the map in different places I want to encourage a battle over uplinks. The map should be the times the size of other maps - still square First research and then critique this design. Only build after we have agreed on any modifications You get to design a new biome for this The result was the tropical Archipelago map, with seven island uplinks that players can only capture by flying out infantry in a Condor. It's definitely the most fun map to play, once you've got the hang of the basic game mechanics from the simpler maps. The v9 edition made that map a little more interesting - it now looks like this: v10: Goliath, and agent battles I decided to add giant robot mechs to the game - think Jaegers from Pacific Rim , or Titans from Warhammer 40,000. Here are some of the prompts I used to brainstorm with Claude: Help me brainstorm ideas for adding giant robots to this game - think dreadnoughts or titans from W20K - how could we do this in a way that enhanced gameplay, kept things balanced, added unique twist? Don't overthink this yet Let's keep brainstorming. I like the idea that it's a mobile base - that can accept harvested scrap and can have buildings built near it (even if it later moves on) and can produce infantry units too. An interaction with condor would be neat but I don't know what that could be. Idea: as it gets damage it loses the ability to fire some weapons - by default it has eye laser (like lancers) and arm canons (like titan) and two shoulder mounted mortars, plus machine guns similar to a squad of troops Damage knocks out mortars and then laser - it always has guns. You can't build next to a building that was only put there because of the mech, you need the mech there for off-base building and only within three squares of it [...] Lets do two condors can carry the mech The end result is really cool . Your browser does not support HTML video. Goliaths can be constructed using a Gantry - a building that can only be created after first building a Fab, Bay, Airpad, and Tech Lab. You can see the Goliath under construction, and it then walks out from the Gantry and can march around the map. Goliaths can \"anchor\", which digs them into the ground. In their anchored state they can act as a new HQ, constructing infantry units and additional buildings in a new area. Two Condor aircraft can hook onto a Goliath, at which point it can be flown around the map! The game now ends when you destroy the enemy's HQ building and any Goliaths they might have built. There are also a couple of mutators relating to Goliaths: Goliath Armada starts each side with four airborne Goliaths (each with a pair of Condors) and no other units. Robot Love adds a special rule: if enemy Goliaths get close to each other on the battlefield they fall in love and the game ends in a draw. (Thank Natalie for that one). Agent battles The other v10 feature is agent battles . In musing about how multiplayer could work I had an idea: what if different LLMs could fight it out in the game? Fun extra challenge: think about how we might make multiplayer available to coding agents. It would be neat if we could set up a battle between eg GPT-6 Sol and Claude Opus 5.5 where each model has access to a tool which gives them information about the game (presumably non-visual, but only the information they could see through fog of war etc) and lets them control their units etc [...] Consult ~/dev/llm/docs and include notes in that file about how LLM could be used here via a new tools plugin Opus 5.5 went to work on this, producing this AGENT-BATTLES.md proposal and then implementing and testing it. The feature also includes the ability to record and replay these battles - here's a replay of Claude Haiku 5.5 vs. GPT-6 Luna , and here's that same battle in a separate debug tool that shows the underlying prompt responses. The prompt that drives agent battles can be seen here . There are a few more replays like this linked in the README . I hope to turn this into a full league table at some point in the future. v11: Random Maps This version exists purely because I glanced at my Claude Usage page one day and saw that I'd only used 75% of my weekly allowance and it was resetting in 45 minutes. I decided to see if I could get an extra Battle Drones feature from my remaining tokens, and picked \"random map\" as the target: Design and implement a mechanism for generating a random map using any of the available biomes - it should be the size of the largest map and rivers and bridges and rocks and forest and scrap and crystals are all in play. Make them rotationally symmetric and use a seed to allow them to be selected or reused later. You have 45 minutes to build this! Be creative. Here's the transcript , and an image Claude generated to show me its work: v12: Multiplayer via sound I only just got this working, so I've not had much time to actively test it yet. The latest Battle Drones now supports multiplayer via two devices sat within microphone distance of each other! This feature started out as my Chirp Pong experiment from last week. I pointed Claude Code at that working proof of concept: Clone Simonw/tools from GitHub and look at recent branches for the example pong game that uses web microphone to implement multiplayer between two phones via audio signals Build a version of that for battledrones Opus built this Radio Probe tool to measure how much bandwidth we could get between two devices and, based on positive results from that, implemented a full audio modem system. I've tried it between laptops, iPhones and iPads so far and it seems to work really well! Why use sound for this? Because I love static HTML that costs nothing to run, and I don't want to spin up a server somewhere and then stay responsible for keeping it operating for as long as anyone might want to play the game. Some thoughts I know almost nothing about game development. This makes it a great opportunity to try out coding agents in a field where my existing software engineering experience has less impact on the results. Games are also super low stakes. The worst that can happen is one of my silly game experiments suffers a bug. This morning ( via Hacker News ) I found Steam Fans Are Begging for a No-AI Filter as Steam Next Fest Is Filled With Slop . I wouldn't personally dream of submitting Battle Drones to an event like this - it's still way too low effort to warrant consideration as a legitimate indie gaming project. ... but I can now see a path to vibe coded games like this being taken seriously. Battle Drones is fun, it looks good, it has innovative features (the multiplayer-over-audio thing is a first for an RTS as far as I can tell). I'd love to see what someone with better taste than me and a driving passion to produce something truly exceptional could build! A few other observations from this project: Static HTML and JavaScript is a fantastic medium for games development. WebGL works great, and Three.js (and Phaser before it) are excellent platforms to build on that the current models know inside out. This also lets them run as Progressive Web Apps - I didn't ask for it, but Battle Drones works offline. I was able to play it on a plane despite never having directly installed it - my phone had it cached. Giving Claude an OpenAI API key and telling it to generate images using OpenAI's models works really well. It can view the images it has generated and iterate on the prompts. Opus 5.5 is spectacular at 3D modeling using Three.js (and Blender, and no doubt other 3D applications as well). The same is true of GPT-6 Astra. They are absolutely capable of building models for 3D game projects. For features like replay and multiplayer it's useful to have a deterministic simulation engine. At one point Claude had to replace calls to Math.sin() and Math.cos() and friends with custom versions because different browsers (Chrome vs. Safari, for example) returned very slightly different numbers, desynchronizing the replay. Opus 5.5 can write music! There are no audio files in this project - the soundtrack is entirely generated through code, varies across different maps, and even gets more intense as the battle heats up. See Scrimshaw Jukebox for a previous experiment with Claude for music composition. I still can't get over how well the prompt \"Make it a LOT more fun\" worked. Tools are effectively free. I prompted up the Radio Probe , the Model browser , the Agent vs. Agent debug tool , and Claude Code built a bunch of tools for itself that I haven't even explored myself. Audio-based multiplayer between static HTML games works! I hope to see a whole lot more games use this same pattern - in digging around today I've not found much prior art beyond Siner by Alon Horesh and ggwave by Georgi Gerganov (also of llama.cpp fame). Claude Code \"Ultracode\" burns tokens like there's no tomorrow, but it can also solve complex problems (like adding audio-based multiplayer) from a single prompt. I'm still not quite over the guilt of building software in this way. I don't feel like I've earned the right to create something this good, in a field in which I have so little prior experience! At this point I've shown it to enough people in private that it felt wrong not to publish it for everyone else to see and learn from. Update: Online multiplayer support Earlier in this article I said: Games are also super low stakes. The worst that can happen is one of my silly game experiments suffers a bug. Then I tried playing the multiplayer version with Natalie... and the high pitched modem sounds gave her a nasty headache! That's a pretty bad bug. I added a warning and was then inspired to build proper network multiplayer. I tried getting WebRTC to work but couldn't get a connection going between two of my own devices even on my own WiFi network, so I had Claude build a simple, stateless WebSockets relay server instead: If I wanted to support multiplayer between two devices at a very low cost without storing any state on the server could I do that with a tiny asyncio web server running on the cheapest Fly instance? Build the server and the fly.toml for deploying it, use Fly application name battledrones-relay - put that in a folder in the repo, include deploy instructions in the README in that folder Here's the resulting server . Since this scales to zero and runs on a single Fly.io shared-cpu-1x instance it should cost me no more than $2.19/month - and that's if it stays hot and serving connections the whole time. Battle Drones now supports online multiplayer. Click \"Duel a friend online\", then either share the resulting room URL via your messaging app of choice or have them snap a picture of the displayed QR Code. I also added a feature where you can copy JSON of the match once it has ended and then feed that into the replay feature to rewatch your game. I didn't expect to introduce online multiplayer this soon, but the headache bug felt like it warranted an urgent alternative. Tags: game-design , projects , ai , generative-ai , llms , claude , vibe-coding , coding-agents , claude-code",
+        "lookback_7d": false,
+        "text_excerpt": "Battle Drones—a vibe coded RTS with audio-based multiplayer 20th October 2026 My latest vibe coded game experiment is a Command & Conquer style RTS (Real Time Strategy) game called Battle Drones ( play it here ). Unlike my previous experiments , this one is actually fun to play . I’m somewhat embarrassed to admit that I got there by telling Claude to “Make it a LOT more fun”. It also supports multiplayer between nearby devices using audio to synchronize game state! Here’s what I’ve built so far, and some of the things I learned along the way. Battle Drones My initial goal was to build an RTS game I could play on my phone, in the style of Command & Conquer . I have fond memories of the 1995 original (I liked Red Alert too) and wanted to recapture a little bit of the magic. After 12 major iterations (and 321 commits by coding agents, mainly Claude Code) I now have a browser-based game that works on mobile and desktop, has multiple play modes, several maps (including a random map generator) and even supports multiplayer for two devices within microphone range of each other. ( Update : also online multiplayer ; the audio multiplayer induced headaches!) Here’s a video demo of Battle Drones running in a desktop browser: Features so far include: 9 buildings, 7 ground vehicles, 6 aerial vehicles, 3 infantry units—all 3D models, which you can browse here Fog of war Different weapons are needed to target aerial or ground vehicles Six maps , across five biomes—temperate, desert, arctic, volcanic, tropical A random map generator Skirmish mode —red vs. blue on a rotationally symmetrical map Last Stand mode —one player holds out against as many waves of enemies as possible Area effect weapons: Barrage, EMP, Drop Pod, Sky Hammer Crate drops with bonus resources In-game music that responds to events—it gets more intense as fighting breaks out Different in-game AI personalities (Balanced, Rush, Air Swarm, Boom, Skyforce, Ironclad) AI vs. AI mode, to watch those personalities play each other The Goliath —a giant stomping mech with laser eyes and arm cannons and the ability to establish a new base Mutators that add extra rules or twists A “Daily Op” challenge Ranks and achievements ( Medals ) Agent vs. Agent mode where two LLMs can play Battle Drones against each other A multiplayer mode based on two nearby phones communicating via audio messages, an extension of my earlier ex\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Latent Space",
+        "title": "The Programmable Data Center — Evan Conrad, SF Compute",
+        "url": "https://www.latent.space/p/sfcompute2",
+        "published_at": "2026-10-20T19:31:57Z",
+        "summary": "From GPU trading to physical settlement, independent markets, and programmable compute",
+        "lookback_7d": false,
+        "text_excerpt": "From GPU trading to physical settlement, independent markets, and programmable compute This was recorded on the sidelines of the new Compute Trading track at AIE NYC . Catch us next at AIE CODE , our last flagship for the top agentic engineers in the world. In the early days of cloud, former guest Martin Casado made something so disruptive that Cisco was threatened enough to pay $600m for it, and VMware outbid for $1.3B: Charlie Wiser @wisercharlie An M&A lesson: Cisco offered $600m for Nicira. told : “The high offer is a signal that something in the environment has changed. A high offer from an acquirer means you should not take it!” “Don’t just sell to Cisco. Run a process.” Martin stopped … 3:42 PM · Sep 20, 2026 · 37.1K Views 4 Replies · 1 Repost · 29 Likes That concept was software-defined networking , which virtualized the routing network by separating the control plane from the data plane. That revolution is now coming for GPUs - where previously running your own supercompute cluster required $50-100m upfront to get commitments and do the entire stack from hardware to firmware to kernels, SF Compute is now enabling you to not only buy or sell GPU hours now and in the future, but also to programmatically control everything from your network to memory. We last spoke with Evan about commoditizing compute . At AI Engineer New York, we went deeper: what does it take to physically deliver a GPU contract, and what has to be true before a market in compute can become liquid? Evan describes SF Compute’s expansion with a hotel analogy. A customer wants a room, then asks for cleaning, room service, and security. Eventually you discover that delivering the room means operating the hotel. SF Compute began by trying to sublease a cluster; the company has since built much of the operating capacity of a cloud to deliver the compute traded on its market. That work is physical settlement: the buyer gets usable compute, rather than simply a cash payment against an index. It brings the physical constraints of a cluster into the market itself. Can a workload be interrupted? How quickly can it recover from storage? Which GPU generation, networking and software configuration does it need? Those details affect both the contract and the price. Rather than waiting for every GPU cluster to become interchangeable, SF Compute matches orders with different constraints. Evan argues\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Interconnects",
+        "title": "Latest open artifacts (#25): DeepSeek V4.1 Flash 1017, American-made models, and new regulatory controls in the US & China",
+        "url": "https://www.interconnects.ai/p/latest-open-artifacts-25-deepseek",
+        "published_at": "2026-10-20T17:04:21Z",
+        "summary": "Western open models strike back",
+        "lookback_7d": false,
+        "text_excerpt": "The geopolitics of open-weight AI are accelerating again this fall, as we would expect with the risks of all AI systems (open and closed) rising rapidly. We’ve seen many news items in the last week showing both the U.S. and Chinese governments positioning themselves for some controls on open models. MOFCOM, the Ministry of Commerce of the People’s Republic of China, released a policy proposal (it’s not yet a law) that would require frontier AI models and some other technologies to get pre-approval from the government before they can be shared internationally. We found the reaction to this to be overblown – as the document states that open-source technologies will be set up for automatic approvals – but many in geopolitical circles say this is a big deal because it proposes a regulatory framework that could be used in the future to regulate China’s AI industry. Others we trust on this issue say this proposal could be more about preventing issues like the sale of Chinese startup Manus to Western companies, rather than being about frontier AI models. Either way, the wheels of control are moving around AI, and open-weight models are not free from any influence. The Department of Homeland Security (DHS) released an order on DeepSeek , which restricts DeepSeek itself, as a company, and DeepSeek’s models, as a technology platform, from being a vendor in federal civilian procurement. It is not clear how this will relate to finetuned models or models trained on the outputs of DeepSeek (e.g., Nvidia’s Nemotron models have long relied heavily on DeepSeek models in their training recipes – will they be banned?), but this is an expected action and reinforces the need for a domestic open model ecosystem. Other model makers in China, such as Zhipu AI, makers of GLM, are already on the Entity List under Commerce/BIS, which restricts their access to American technology. DeepSeek followed the above news up by releasing their internal inference stack publicly, DeepInfer , which is likely far more efficient than existing open-source tools like vLLM/SGLang for their models. Estimates point to DeepSeek making up to 90% gross margin when selling tokens on this inference stack. It is well-known that the top AI labs have much more inference-efficient tools internally, and this is the first time we’ve seen a leading lab share them. Inference companies will be quick to adopt these too\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "OpenAI News",
+        "title": "Franchisee reconciles cash in 94% less time with ChatGPT Work",
+        "url": "https://openai.com/index/ted-taylor-restaurant",
+        "published_at": "2026-10-20T10:00:00Z",
+        "summary": "An independent Schlotzsky’s and Cinnabon franchisee cut menu repricing time by 95% and built a workflow that could free up $100K in cash flow.",
+        "lookback_7d": false,
+        "text_excerpt": "Ted Taylor entered the restaurant business after a 25-year career in the semiconductor industry. Today, he’s an independent franchisee operating three co-branded Schlotzsky’s and Cinnabon restaurants across New Mexico. Running quick-service restaurants means balancing the customer experience with a lot of work customers never see, like menu pricing, staffing, equipment maintenance, and policies. Ted uses OpenAI technology to get through all of it faster. With ChatGPT, Ted accelerates time-consuming tasks like research and drafting, and he uses ChatGPT Work to gather and analyze volumes of data across pricing, sales, forecasts, schedules, and labor and to get recommendations on where each restaurant needs attention , reducing repricing time by 95% and shaving 4 hours off payroll runs. “ChatGPT Work’s recommendations are so good that it’s much faster to start there and then make adjustments.” —Ted Taylor, independent franchisee, Schlotzsky’s and Cinnabon Repricing menus is an annual undertaking that requires a complex analysis of recipe costs, item popularity, local competitor pricing, portion sizes, and the different economics of in-store and delivery orders. Ted uses ChatGPT Work to bring those factors together and get pricing recommendations in 1 - 2 hours instead of 5 days . “It used to take me a few days of work to analyze and come up with item-level pricing; whereas, ChatGPT Work tears through it in a matter of moments and does it more thoroughly.” —Ted Taylor, independent franchisee, Schlotzsky’s and Cinnabon Ted first uses ChatGPT Work to research and establish his pricing targets and pricing strategies based on local competitors’ pricing trends, portion sizes, and relative food quality. He then gives ChatGPT Work a categorized list of menu items with their current in-store and delivery prices. He specifies how much he wants each set of prices to increase overall and which items should receive larger or smaller increases, largely based on the earlier analysis from ChatGPT. He can make the analysis more detailed by adding item-level sales history and supplier prices. ChatGPT Work can use these inputs to estimate sales impacts from price changes and to optimize item-level pricing around cost of goods targets. ChatGPT Work returns a spreadsheet with recommended in-store and delivery prices. It will even relate the pricing changes to an overall pricing str\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "OpenAI News",
+        "title": "Terminal X matches senior investor judgment 88.6% with GPT-6.1",
+        "url": "https://openai.com/index/terminal-x",
+        "published_at": "2026-10-20T07:00:00Z",
+        "summary": "Terminal X’s Eval Agent grades outputs against a 54-criterion rubric, catching 25% more deviances from a fund’s mandate with GPT-6.1 Sol.",
+        "lookback_7d": false,
+        "text_excerpt": "An investment firm’s edge is built deal by deal, but the judgment behind each decision usually lives in the heads of a few senior investors. When they leave, the firm takes on what Terminal X ⁠ (opens in a new window) calls memory debt: the firm may keep the documents, but it loses the reasoning. Terminal X’s Capital Memory operating system is designed to pay that debt down. The company’s forward-deployed engineers, former finance and investment professionals at JPMorgan and Blackstone, sit with each customer’s investment teams, design the firm’s agentic architecture, and encode how the firm invests into agents the firm owns, deployed on-premise or in its own cloud. OpenAI models, including GPT‑6.1 Sol and GPT‑6 Luna, handle the reasoning inside those agents. And Terminal X’s Eval Agent grades the agents’ output against the firm’s standards. GPT‑6.1 Sol helped the Eval Agent catch about 25% more recommendations that strayed from a fund’s mandate and ran the same workflows at approximately 30% lower cost per query than the next-best model. “GPT-6.1 Sol’s long-context reasoning and token efficiency allow us to build deeper evaluation pipelines. This helps our Eval Agents make investment judgment measurable and auditable.” —Hyun Hong, Co-founder and CEO, Terminal X For each customer, Terminal X builds agents designed to invest the way the firm’s best investors do. Terminal X engineers spend weeks onsite with the customer, reverse-engineering the firm’s trusted memos and capturing processes that were never written down, such as how the credit desk screens a borrower or which sources the co-investment team pulls before a memo. Next, those processes are encoded in hundreds of agents, customized by asset class and strategy, with sub-agents for each investment stage. GPT‑6.1 Sol handles the stages that require judgment and a huge context window: synthesizing the investment thesis, identifying key considerations, and assessing fit with the firm’s mandate. GPT‑6 Luna runs the high-volume steps where token efficiency matters more than depth. The agents work inside each firm’s private data room, a dedicated environment for enterprises to share and manage sensitive investment data. The agents process documents in English, Korean, Japanese, and Chinese, and store what they learn as a firm Memory: a versioned record of how one desk makes one kind of decision, including its\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Latent Space",
+        "title": "[AINews] not much happened today",
+        "url": "https://www.latent.space/p/ainews-not-much-happened-today-f09",
+        "published_at": "2026-10-20T05:21:52Z",
+        "summary": "Congrats to DeepSeek V4.1 Flash 1017, MiniMax M3.1 Flash, and Mercury 3 (details below) but they’re not going to be in super wide use just yet.",
+        "lookback_7d": false,
+        "text_excerpt": "Congrats to DeepSeek V4.1 Flash 1017, MiniMax M3.1 Flash, and Mercury 3 (details below) but they’re not going to be in super wide use just yet. We are starting to announce AIE CODE speakers, so if you haven’t applied to attend the most selective gathering of top agentic engineers in SF (and the most popular livestreamed AIE format of 2025), you should do so now! AI Engineer 🔜 CODE Summit🌉 @aiDotEngineer First AIE Code Summit speakers: , Principal Engineer @ SpaceX , Engineer, Writer, Advisor , Principal Software Engineer @ Ramp Nov 10-12, SF. Come hang out with us. Apply at 8:17 PM · Oct 19, 2026 · 15K Views 9 Replies · 11 Reposts · 156 Likes AI News for 10/16/2026-10/19/2026. We checked 12 subreddits, 544 Twitters and no further Discords. AINews’ website lets you search all past issues. As a reminder, AINews is now a section of Latent Space . You can opt in/out of email frequencies! DeepSeek V4.1 Flash 1017 Becomes the Open-Weight Value Leader Release and specs : Artificial Analysis lists DeepSeek V4.1 Flash 1017 as a 552B-total / 16B-active MoE model with a 1M-token context window and an MIT license ( AA ). Pricing : Unchanged at $0.30/$1.20 per million input/output tokens during peak hours. Off-peak pricing is half that, and cache hits cost $0.006 per million tokens. Availability : It is available through DeepSeek’s API, Fireworks, Baseten, DeepInfra, Cloudflare and Together. Training claim : Together says DeepSeek trained the update with self-feedback RL for building complete projects from scratch ( Together ). Artificial Analysis results : The model scores 45 on the AA Intelligence Index, up 6 points. That ties it with GLM-5.3 for #2 among open-weight models, 1 point behind MiMo-V2.6-Pro, at $0.26 per task . Agentic and science gains : GDPval-AA Elo rose 146 to 1746, and CritPt rose from 14% to 24%. Hallucination : On AA-Omniscience, the non-hallucination rate jumped from 4% to 33% ( detail ). Caveat : AA notes that MiMo-V2.6-Pro and GPT-6.1 Sol (medium) both score higher at a lower cost per task. Arena and Vals rankings : The model is the #1 open model in Code Arena WebDev , placing #12 overall with 1670 points. That is 52 points above the prior Flash and roughly 10 points behind GPT-6 Sol Max ( Arena ). Agent Arena : It is also #1 open in Agent Arena, at #11 overall with a $0.20 median cost per task. Arena says that delivers about 37% of GPT-6.1 Sol’s\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "OpenAI News",
+        "title": "OpenAI acquires Orchestra Bio",
+        "url": "https://openai.com/index/openai-to-acquire-orchestra-bio",
+        "published_at": "2026-10-20T00:00:00Z",
+        "summary": "OpenAI is acquiring Orchestra Bio to bring AI-powered operations to life sciences R&D, helping biopharma teams accelerate drug development and advance new treatments.",
+        "lookback_7d": false,
+        "text_excerpt": "OpenAI has acquired Orchestra Bio ⁠ (opens in a new window) , a platform that helps biopharma teams coordinate the complex process of drug development. We’re bringing Orchestra’s team and technology together with Rosalind , our AI models and tools for life sciences research. Our goal is to help scientists make discoveries and manage the work needed to turn them into treatments that reach patients sooner. Developing a new medicine is extraordinarily complex, taking roughly 10 to 15 years on average from target discovery to regulatory approval in the United States. Beyond the science, teams must orchestrate programs across internal departments and external partners, often relying on disconnected systems. We’re now at an inflection point where AI can help take on these specialized tasks and complex workflows. Rosalind brings our AI models and tools to life sciences researchers. GPT‑Rosalind helps scientists reason through questions in biology and chemistry. Rosalind Workbench ⁠ connects those capabilities with scientific tools and data to help researchers analyze results and plan experiments. Orchestra brings a team with experience across biotech, software, and AI, along with a platform built to coordinate drug development. Together, we aim to build agents that help teams connect scientific findings with the studies, decisions, and next steps needed to advance a potential medicine. Orchestra Bio is a platform where people and AI agents work together to advance drug programs. Scientists and program leaders delegate the monitoring and tracking of studies and campaigns to agents, freeing up time to guide the work, make decisions, and address issues before they cause delays. A problem in one part of a drug program can affect many others. A failed manufacturing batch, for example, can delay the start of a clinical trial. Orchestra’s agents help teams identify which activities and timelines are affected, gather the relevant information, and compare ways to respond. Scientists and program leaders can then use that analysis to decide what to do next. Realizing the potential of AI in life sciences requires close collaboration with the organizations working at the forefront of drug discovery and development. Our partnership with Novo Nordisk ⁠ aims to translate its scale and scientific expertise into faster R&D and commercial execution while maintaining strong governance\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "My obituary for programming",
+        "url": "https://simonwillison.net/2026/Oct/19/my-obituary-for-programming/",
+        "published_at": "2026-10-19T23:58:25Z",
+        "summary": "My obituary for programming Jeremy Scheff poignantly captures the key loss caused by coding agents for career programmers who enjoyed the puzzle of developing code: Programming turned into one of the greatest jobs you could imagine. You got paid to work on tricky little logic puzzles. The trickier the puzzle, the more you got paid. But even pretty simple puzzles were worth a lot of money because regular people just couldn't do it! No, they needed us. They would give us a problem and we would solve it the way we wanted. We set the strategy, we made the timeline, we defined what was and was not possible. If you're a programmer who thrives on building working systems and doesn't care too deeply about the problems solved along the way, LLMs are the gift that keeps on giving. If directly solving those problems was a big part of your enjoyment, the loss is very real. Via lobste.rs Tags: programming , careers , ai , generative-ai , llms , coding-agents , deep-blue",
+        "lookback_7d": false,
+        "text_excerpt": "19th October 2026 - Link Blog My obituary for programming ( via ) Jeremy Scheff poignantly captures the key loss caused by coding agents for career programmers who enjoyed the puzzle of developing code: Programming turned into one of the greatest jobs you could imagine. You got paid to work on tricky little logic puzzles. The trickier the puzzle, the more you got paid. But even pretty simple puzzles were worth a lot of money because regular people just couldn't do it! No, they needed us. They would give us a problem and we would solve it the way we wanted. We set the strategy, we made the timeline, we defined what was and was not possible. If you're a programmer who thrives on building working systems and doesn't care too deeply about the problems solved along the way, LLMs are the gift that keeps on giving. If directly solving those problems was a big part of your enjoyment, the loss is very real.",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "OpenAI News",
+        "title": "Advancing coding in low‑resource programming languages",
+        "url": "https://openai.com/index/low-resource-programming-languages",
+        "published_at": "2026-10-19T12:00:00Z",
+        "summary": "Learn how OpenAI is improving ChatGPT across low-resource programming languages, with new evaluations for software engineering, SQLite, and COBOL migration.",
+        "lookback_7d": false,
+        "text_excerpt": "Our latest model advances bring stronger capabilities for building and migrating software in low-resource programming languages such as COBOL, Fortran, and Visual Basic. These languages have less code and documentation available for models to learn from than languages like Python and JavaScript, yet support critical infrastructure and essential services around the world. COBOL supports ⁠ (opens in a new window) more than 40% of online banking systems, 80% of in-person credit card transactions and 95% of ATM transactions, while Fortran is used in weather forecasting ⁠ (opens in a new window) and nuclear reactor safety analysis ⁠ (opens in a new window) . Improving AI’s ability to work in these languages could help teams maintain and modernize the software that essential services depend on. This work is guided by feedback from developers and enterprise customers who have told us that coding models often struggle with these languages. Maintaining and modernizing this software can be difficult: documentation may be incomplete, original developers may have left the company, and important business rules may only exist in code. Whether teams are fixing bugs or migrating to another language, they need to preserve the behavior their systems depend on. To measure progress, we developed two evaluations. MultiLangBench tests whether a model can build a SQLite-compatible database engine from scratch across 20 different programming languages. Our COBOL migration evaluation tests whether a model can migrate existing programs to another language while preserving their behavior. Together, they test two complementary skills: building new software and preserving what existing software does. Our latest models show substantial improvements across both evaluations, delivering much higher accuracy at lower cost. On MultiLangBench, GPT‑6 Astra achieves an average test pass rate of 87.4% across 20 programming languages, up from 26.8% for GPT‑5.6 Sol, with improvements in every language tested. GPT‑6 Luna also outperforms GPT‑5.6 Sol, reaching 40.3% at approximately 78% lower estimated API cost. On our COBOL migration evaluation, GPT‑6.1 Sol achieves 86.6% accuracy at low reasoning effort, compared with just 5.4% for GPT‑5.6 Sol, while costing 39% less. At higher reasoning effort, accuracy reaches 97.9%, nearly saturating the evaluation. Together, these results show that our models a\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "llm-echo 0.5",
+        "url": "https://simonwillison.net/2026/Oct/18/llm-echo/",
+        "published_at": "2026-10-18T23:16:16Z",
+        "summary": "Release: llm-echo 0.5 I'm working towards a new LLM release, and testing PRs caused me to revisit the llm-echo debug plugin. This plugin provides a \"model\" which doesn't involve an LLM at all - it just repeats back the prompts that have been fed to it. The new release now updates the simulated token usage counts to take tool calls, system prompts, and reasoning tokens into account. Example usage: uvx --with llm-echo llm -m echo 'hi there' -o thinking 1 --usage Outputs: First I consider the prompt, then I decide what to say. { \"prompt\": \"hi there\", \"system\": \"\", \"attachments\": [], \"stream\": true, \"previous\": [] } Token usage: 2 input, 24 output Tags: llm",
+        "lookback_7d": false,
+        "text_excerpt": "I'm working towards a new LLM release, and testing PRs caused me to revisit the llm-echo debug plugin. This plugin provides a \"model\" which doesn't involve an LLM at all - it just repeats back the prompts that have been fed to it. The new release now updates the simulated token usage counts to take tool calls, system prompts, and reasoning tokens into account. Example usage: uvx --with llm-echo llm -m echo 'hi there' -o thinking 1 --usage Outputs: First I consider the prompt, then I decide what to say. { \"prompt\": \"hi there\", \"system\": \"\", \"attachments\": [], \"stream\": true, \"previous\": [] } Token usage: 2 input, 24 output",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      }
+    ],
+    "youtube": [],
+    "github": [
+      {
+        "name": "langwatch",
+        "full_name": "langwatch/langwatch",
+        "url": "https://github.com/langwatch/langwatch",
+        "description": "Open-Source Agent Observability & Evals for AI Platform teams. Trace, test, route and govern every agent & coding assistant in the company.",
+        "stars": 4983,
+        "pushed_at": "2026-10-21T01:50:25Z",
+        "topics": [
+          "agent-testing",
+          "ai",
+          "analytics",
+          "datasets",
+          "dspy",
+          "evaluation",
+          "gpt",
+          "llm",
+          "llm-ops",
+          "llmops",
+          "low-code",
+          "observability",
+          "observability-platform",
+          "openai",
+          "prompt-engineering",
+          "simulation-testing"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <a href=\"https://discord.gg/kT4PhDS2gH\" target=\"_blank\"><img src=\"https://img.shields.io/discord/1227886780536324106?logo=discord&labelColor=%20%235462eb&logoColor=%20%23f5f5f5&color=%20%235462eb\" alt=\"chat on Discord\"></a> <a href=\"https://pypi.org/project/langwatch/\" target=\"_blank\"><img src=\"https://static.pepy.tech/personalized-badge/langwatch?period=month&units=international_system&left_color=grey&right_color=blue&left_text=pypi%20langwatch\" alt=\"langwatch Python package downloads per month\"></a> <a href=\"https://www.npmjs.com/package/langwatch\" target=\"_blank\"><img src=\"https://img.shields.io/npm/dm/langwatch?logo=npm&logoColor=white&label=npm%20langwatch&color=blue\" alt=\"langwatch npm package\"></a> <a href=\"https://twitter.com/intent/follow?screen_name=langwatchai\" target=\"_blank\"><img src=\"https://img.shields.io/twitter/follow/langwatchai?logo=X&color=%20%23f5f5f5\" alt=\"follow on X\"></a> <img src=\"https://img.shields.io/badge/license-Apache%202.0%20%2B%20Enterprise-blue\" alt=\"Open-core: Apache 2.0 core + Enterprise extension\"> </p> <p align=\"center\"> <a href=\"https://langwatch.ai\"><img src=\".github/readme/cover.jpg\" alt=\"LangWatch: Agent Observability & Evals for AI Platform teams\" width=\"100%\"></a> </p> LangWatch is the open-source platform for AI in production: trace, test, route and govern every LLM call in your company, from the agents you build to the coding assistants your engineers use. LangWatch is Apache 2.0. [View docs](https://langwatch.ai/docs/introduction). ## Get started ### LangWatch Cloud <a href=\"https://app.langwatch.ai\"><img src=\".github/readme/signup.png\" alt=\"Sign up\" height=\"48\"></a> ### Track your coding agents ```bash npx langwatch claude # or codex, copilot, opencode, ... ``` ### Self-host ```bash npx @langwatch/server ``` Only Node.js required. For production, see [Self-hosting LangWatch](https://langwatch.ai/docs/self-hosting/overview). ## Demo <video src=\"https://github.com/user-attachments/assets/b0dee97b-b5be-43f8-9d08-18ae1201d017\" autoplay loop muted playsinline width=\"100%\" style=\"display: block; aspect-ratio: 16 / 9;\"></video> ## What you get <p align=\"center\"> <img src=\".github/readme/areas.jpg\" alt=\"The four areas of LangWatch: LLM Ops, Coding Agents, AI Gateway and AI Governance\" width=\"100%\"> </p> - **[LLM Ops](https://langwatch.ai/docs/observability/overview)**: [Observability](https://langwat\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "archestra",
+        "full_name": "archestra-ai/archestra",
+        "url": "https://github.com/archestra-ai/archestra",
+        "description": "Enterprise AI Platform with guardrails, MCP registry, gateway & orchestrator",
+        "stars": 4380,
+        "pushed_at": "2026-10-21T01:49:52Z",
+        "topics": [
+          "a2a",
+          "a2a-mcp",
+          "acp",
+          "agent",
+          "ai",
+          "chatgpt",
+          "chatgpt-api",
+          "claude",
+          "deepseek",
+          "gemini",
+          "k8s",
+          "mcp",
+          "mcp-client",
+          "mcp-gateway",
+          "mcp-host",
+          "mcp-server",
+          "mcp-servers",
+          "mcp-tools",
+          "openai",
+          "runtime"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"logo.svg\" alt=\"Archestra\" width=\"520\" /> **The all-in-one open-source enterprise AI platform.** *Built on a strong security and observability foundation: SSO and RBAC, sandboxed code execution, Lethal-Trifecta guardrails, OpenTelemetry traces, and Prometheus metrics — first-class, not bolted on.* [![License](https://img.shields.io/badge/License-AGPL%203.0%20%2F%20Enterprise-blue.svg)](LICENSE.md) [![Release](https://img.shields.io/github/v/release/archestra-ai/archestra)](https://github.com/archestra-ai/archestra/releases) [![Contributors](https://img.shields.io/github/contributors/archestra-ai/archestra)](https://github.com/archestra-ai/archestra/graphs/contributors) [![Last commit](https://img.shields.io/github/last-commit/archestra-ai/archestra)](https://github.com/archestra-ai/archestra/commits/main) [![Commit activity](https://img.shields.io/github/commit-activity/m/archestra-ai/archestra)](https://github.com/archestra-ai/archestra/pulse) [Quickstart](https://archestra.ai/docs/get-started#run-archestra) · [Docs](https://archestra.ai/docs/get-started) · [Releases](https://github.com/archestra-ai/archestra/releases) · [Slack](https://archestra.ai/join-slack) <br /> https://github.com/user-attachments/assets/912b85e2-ef14-4e83-a807-5e2a81457a88 </div> --- ## What it does Point your users — or your agents, or Claude / Codex / Cursor — at one URL. Archestra handles the rest: - 💬 **Chat for non-technical users.** Internal AI assistant with [projects](https://archestra.ai/docs/chat/projects), [MCP apps](https://archestra.ai/docs/chat/apps), and [Slack](https://archestra.ai/docs/agents/triggers-and-channels/slack), [MS Teams](https://archestra.ai/docs/agents/triggers-and-channels/ms-teams), and [email](https://archestra.ai/docs/agents/triggers-and-channels/email) front-ends. - 🛠️ **Developer LLM & MCP portal.** One token for Claude Code, Codex, Cursor — see the [proxy](https://archestra.ai/docs/llm-proxy). - 🚪 **LLM gateway** for [any provider](https://archestra.ai/docs/llm-proxy/providers) (Anthropic, OpenAI, Azure, Bedrock, DeepSeek, …) with [cost limits](https://archestra.ai/docs/llm-proxy/costs-and-limits), [virtual API keys](https://archestra.ai/docs/llm-proxy/authentication), and [dynamic model routing](https://archestra.ai/docs/reference/clients/model-router-client-credentials). - 🔌 **MCP gateway** with [OAuth + On-Behalf-O\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "oh-my-hermes",
+        "full_name": "rlaope/oh-my-hermes",
+        "url": "https://github.com/rlaope/oh-my-hermes",
+        "description": "All in one plugin for Hermes Agent ⚚ the coding intelligence, a long-term memory system and model optimized workflow packages",
+        "stars": 3485,
+        "pushed_at": "2026-10-21T01:47:16Z",
+        "topics": [
+          "agent",
+          "ai",
+          "ai-agent",
+          "ai-tools",
+          "claude-code",
+          "codex",
+          "hermes-agent",
+          "hermes-skill",
+          "skills"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"assets/oh-my-hermes-wordmark.png\" alt=\"OH-MY-HERMES\" width=\"100%\" style=\"display:block;max-width:none;height:auto\"> </p> # oh-my-hermes <p align=\"center\"> <a href=\"README.md\">English</a> | <a href=\"README.ko.md\">한국어</a> | <a href=\"README.ja.md\">日本語</a> | <a href=\"README.zh.md\">中文</a> </p> <p align=\"center\"> <a href=\"https://github.com/rlaope/oh-my-hermes\"><img alt=\"GitHub\" src=\"https://img.shields.io/badge/github-rlaope%2Foh--my--hermes-181717?logo=github\"></a> <a href=\"https://github.com/NousResearch/hermes-agent\"><img alt=\"Hermes Agent\" src=\"https://img.shields.io/badge/Hermes%20Agent-NousResearch-6f42c1?logo=github\"></a> <a href=\"https://github.com/rlaope/oh-my-hermes\"><img alt=\"OMH stars\" src=\"https://img.shields.io/github/stars/rlaope/oh-my-hermes?style=flat&logo=github\"></a> <a href=\"https://github.com/NousResearch/hermes-agent\"><img alt=\"Hermes Agent stars\" src=\"https://img.shields.io/github/stars/NousResearch/hermes-agent?style=flat&logo=github\"></a> </p> <p align=\"center\"> <img src=\"assets/hermes-agent-hero.png\" alt=\"Oh My Hermes\" width=\"720\"> </p> <p align=\"center\"> <strong>Install once. Keep Hermes. Add a stronger operating layer.</strong> <br> <em>Planning, research, creation, coding handoffs, operations, and project memory with explicit evidence boundaries.</em> </p> <p align=\"center\"> <img src=\"assets/oh-my-hermes-agent-poster.png\" alt=\"Oh My Hermes Agent poster\" width=\"720\"> </p> <p align=\"center\"> <strong>oh-my-hermes</strong> (OMH) turns a normal <a href=\"https://github.com/NousResearch/hermes-agent\">Hermes Agent</a> request into a clear capability, a useful next step, and an honest record of what actually happened — strengthening the workflow you already use, never replacing Hermes or hiding a coding executor behind it. <br><br> OMH is the operating layer above Hermes-native skills: it frames the problem, picks the workflow and evidence gates, and runs native skills as capabilities inside that governed path. </p> [Website](https://rlaope.github.io/oh-my-hermes/) · [Documentation](docs/README.md) · [Installation](docs/INSTALLATION.md) · [Capabilities](docs/CAPABILITIES.md) · [Capability Impact](docs/CAPABILITY_IMPACT.md) · [Agent Install](INSTALL_FOR_AGENTS.md) · [GitHub Pages site](site/index.html) > [!NOTE] > OMH keeps Hermes as the natural-language surface and adds a professional > operating layer with explici\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "cindy",
+        "full_name": "makecindy/cindy",
+        "url": "https://github.com/makecindy/cindy",
+        "description": "Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。",
+        "stars": 3227,
+        "pushed_at": "2026-10-21T01:47:59Z",
+        "topics": [
+          "agent",
+          "ai-agent",
+          "ai-assistant",
+          "android",
+          "claude-code",
+          "codex",
+          "electron",
+          "ios",
+          "llm",
+          "macos",
+          "react-native",
+          "typescript",
+          "windows"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <a href=\"https://cindy.app\"><img src=\".github/assets/hero-en.webp\" width=\"100%\" alt=\"CINDY — Consider it done. The open-source AI agent that works out of the box, doing real work on your own computer.\"></a> </p> <p align=\"center\"> <strong>English</strong> · <a href=\"README.zh-CN.md\">简体中文</a> </p> <p align=\"center\"> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-Apache--2.0-blue.svg\" alt=\"License\" /></a> <a href=\"https://github.com/makecindy/cindy/actions/workflows/ci.yml\"><img src=\"https://github.com/makecindy/cindy/actions/workflows/ci.yml/badge.svg\" alt=\"CI\" /></a> <a href=\"https://nodejs.org\"><img src=\"https://img.shields.io/badge/node-22.x-brightgreen.svg\" alt=\"Node.js 22.x\" /></a> <a href=\"https://pnpm.io\"><img src=\"https://img.shields.io/badge/pnpm-10-orange.svg\" alt=\"pnpm\" /></a> </p> <p align=\"center\"> 🌐 <a href=\"https://cindy.app\">cindy.app</a> · ⬇️ <a href=\"https://cindy.app/download/\">Download</a> </p> Cindy is an open-source AI agent that works out of the box. She brings multiple harnesses, models and tools into one agent that finishes real work in your projects and apps. Ready from day one, yours to shape over time. Cindy runs locally on your own machine, using your real files and logged-in apps. The first supported harnesses are **Claude Code** and **Codex** — more are being added, and a native harness is in the works. Models and harnesses mix freely and can switch mid-task while your workspace, memory, skills and tools stay continuous; one task can even be planned, executed in parallel, and reviewed by agents on different harness × model combos. She can drive your browser, computer and phone, and take work from IM and schedules. This repository is the open-source **client** for Cindy — the desktop and mobile apps plus their shared packages, organized as a pnpm monorepo. The client is free to use, and its source code is open under Apache-2.0. Bring models your way: sign in to the official Cindy service (usage deducted transparently), authorize the **Claude Code / Codex Coding Plan** you already pay for and keep using it inside Cindy — no duplicate bill — connect your own API keys, or use local models. See [cindy.app](https://cindy.app) for service details, [pricing](https://cindy.app/#pricing), and [downloads](https://cindy.app/download/). Linux users: see the [Ubuntu, Arch Linux and Omarchy installation gui\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "tt-metal",
+        "full_name": "tenstorrent/tt-metal",
+        "url": "https://github.com/tenstorrent/tt-metal",
+        "description": ":metal: TT-NN operator library, and TT-Metalium low level kernel programming model.",
+        "stars": 1716,
+        "pushed_at": "2026-10-21T01:49:15Z",
+        "topics": [
+          "accelerator",
+          "ai",
+          "cuda",
+          "deepseek",
+          "gpu",
+          "img-gen",
+          "kernels",
+          "llama",
+          "llm",
+          "metal",
+          "scale-out",
+          "stable-diffusion",
+          "tenstorrent",
+          "video-gen"
+        ],
+        "source": "search",
+        "text_excerpt": "[![tt-metal CI](https://github.com/tenstorrent/tt-metal/actions/workflows/sanity-tests.yaml/badge.svg)](https://github.com/tenstorrent/tt-metal/actions/workflows/sanity-tests.yaml) [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/tenstorrent/tt-metal) <div align=\"center\"> <h1> [Hardware](https://tenstorrent.com/hardware/blackhole) | [Install](./INSTALLING.md) | [Discord](https://discord.gg/tvhGzHQwaj) | [Join Us](https://boards.greenhouse.io/tenstorrent/jobs/4155609007) | [Bounty $](https://github.com/tenstorrent/tt-metal/issues?q=is%3Aissue%20state%3Aopen%20label%3Abounty) </h1> <img src=\"https://raw.githubusercontent.com/tenstorrent/tt-metal/main/docs/source/common/_static/tt_nn_w_logo.png\" alt=\"ttnn logo\" height=\"180\"/> **TT-NN** is a Python & C++ Neural Network OP library. <h3> [API Reference](https://docs.tenstorrent.com/tt-metal/latest/ttnn/index.html) | [Model Demos](./models/demos/) </h3> </div> ## Featured Models The Models team is focused on developing the following models, optimizing them for performance, accuracy, and compatibility. Follow each model link for more details. >[!IMPORTANT] > For a **full model list** see the **[Model Matrix](https://github.com/tenstorrent/tt-metal/blob/main/models/README.md)**, or visit the **[Developer Hub](https://tenstorrent.com/developers)**. >[!NOTE] > Performance Metrics: > - Time to First Token (TTFT) measures the time (in milliseconds) it takes to generate the first output token after input is received. > - T/S/U (Tokens per Second per User): Represents the throughput of first-token generation after prefill. It is calculated as 1 / inter-token latency. > - T/S (Tokens per Second): Represents total token throughput, calculated as T/S = T/S/U x batch size. > - TP (Tensor Parallel) and DP (Data Parallel): Indicate the parallelization factors across multiple devices. > - Reported LLM Performance: Based on an input sequence length of 128 tokens for all models. > - Performance Data Source: Metrics were collected using the tt-metal model demos (linked above). Results may vary when using other runtimes such as the vLLM inference server. ### [Llama 3.3 70B (TP=32)](./models/demos/llama3_70b_galaxy) | Batch | Hardware | TTFT (MS) | T/S/U | Target<br>T/S/U | T/S | TT-Metalium Release | vLLM Tenstorrent Repo Release | |-------|----------|-----------|-------|-----------------|-----|-----------------\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "reflect-open",
+        "full_name": "team-reflect/reflect-open",
+        "url": "https://github.com/team-reflect/reflect-open",
+        "description": "Open-source Reflect rewrite: A local-first AI agent-friendly Markdown note-taking app",
+        "stars": 1588,
+        "pushed_at": "2026-10-21T01:50:20Z",
+        "topics": [
+          "agent",
+          "markdown",
+          "note-taking"
+        ],
+        "source": "search",
+        "text_excerpt": "# Reflect Plain-file notes for Mac and iPhone: daily notes, wiki links, local search, and optional AI over your own Markdown. [![Release](https://img.shields.io/github/v/release/team-reflect/reflect-open)](https://github.com/team-reflect/reflect-open/releases/latest) [![CI](https://github.com/team-reflect/reflect-open/actions/workflows/ci.yml/badge.svg)](https://github.com/team-reflect/reflect-open/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) Reflect is an open-source note-taking app built around a folder of Markdown files. It opens to today's note, lets `[[wiki links]]` connect people, projects, and ideas, and keeps search and backlinks fast without turning your notes into an app-only database. The app does not require a Reflect account. Notes live in a folder you choose, and optional services such as AI providers, transcription, iCloud, GitHub, or another git remote are connected directly by the user. <img width=\"2926\" height=\"1800\" alt=\"Reflect\" src=\"https://github.com/user-attachments/assets/6da0e0d2-3f25-4fc4-850c-b764548c3abe\" /> ## Features - **Daily notes:** the app opens to today's note, and capture defaults there. - **Wiki links and backlinks:** type `[[` to link notes; each note shows what links back to it. - **Local search:** `⌘K` searches notes, backlinks, and tags. Optional semantic search can be enabled locally. - **Ask your notes:** `⌘J` can query notes through user-provided OpenAI, Anthropic, Google, or OpenRouter keys. Answers cite source notes. - **Private notes:** `private: true` excludes a note's content from AI and other external services. - **Audio memos:** record audio and transcribe it into the daily note with a configured transcription provider. - **Browser capture:** save links, selected text, screenshots, and page text from Chrome. - **Sync choices:** use iCloud Drive for file sync, or git/GitHub for versioned backup. - **CLI:** `reflect today`, `reflect search`, and `reflect show` are available for scripts and agents. See [docs/cli.md](docs/cli.md). ## Install 1. **Install the Mac app.** Download the latest release for your Mac: - **Stable:** [Apple silicon (M-series)](https://github.com/team-reflect/reflect-open/releases/latest/download/Reflect_aarch64.dmg) · [Universal (Intel and Apple silicon)](https://github.com/team-reflect/reflect-open/releases/latest/download/Refle\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "agentrt",
+        "full_name": "openairymax/agentrt",
+        "url": "https://github.com/openairymax/agentrt",
+        "description": "Airymax AgentRT Transcend context limits. Achieve near-infinite memory.",
+        "stars": 1253,
+        "pushed_at": "2026-10-21T01:49:12Z",
+        "topics": [
+          "ai",
+          "assistant",
+          "non-langchain-wrapper",
+          "os",
+          "own-your-data"
+        ],
+        "source": "search",
+        "text_excerpt": "<!-- SPDX-License-Identifier: AGPL-3.0-or-later OR Apache-2.0 --> <!-- Copyright (c) 2025-2026 SPHARX Ltd. All Rights Reserved. --> # AgentRT `.github/` — 自动化与发布工程 > 本目录承载 AgentRT 仓库的自动化工程：跨平台构建与测试、静态质量门禁、 > sanitizer 检测、契约代码生成校验、发布流水线、发布前真机核验与公开托管 > 平台同步。 > > 想**安装或使用** AgentRT，请看仓库根 [README](../README.md) / > [简体中文](../README_zh.md)； > 想**参与开发**，请看 [CONTRIBUTING](../CONTRIBUTING.md)； > 发现**安全漏洞**，请按 [SECURITY](../SECURITY.md) 的私密上报流程处理， > 不要直接开公开 issue。 ## AgentRT 是什么 AgentRT（AirymaxAgentRT）是 AI Agent 运行时平台工程——定位类似于 Kubernetes 之于容器编排。它把多智能体认知循环、记忆演进、安全隔离 与协议互操作收敛为一套统一运行时，定义 AI Agent 团队如何运行。 这个仓库以 git 子模块聚合 7 个叶子源码仓库（atoms / commons / cupolas / daemons / gateway / heapstore / protocols），对外交付微内核原语、认知循环、 内存分层、安全穹顶、IPC 协议、网关服务与常驻守护进程等 OS 级机制。本 `.github/` 目录就是支撑这套工程持续交付的自动化层。 ## 自动化在做什么 AgentRT 的每一次提交与每一个版本发布都由这里的流水线驱动： - **每次 push / pull request**：在 Linux、macOS、Windows 上自动构建并运行 门禁测试，同时执行静态质量门禁与 sanitizer（ASan/UBSan）检测，保证合入 即绿； - **每个版本 tag**：自动触发完整发布流水线——跨平台并行构建 → 自包含打包 → 在无任何开发依赖的干净环境安装并启动核验 → 签名后对外发布； - **macOS 正式发布出口**：额外在干净 macOS 宿主机上做一次真机核验，确认安装 包不依赖构建机的私有环境也能完整启动 daemon 群。 门禁与发布共用同一套构建与打包逻辑，避免“两条线各写一份而漂移”。 ## 目录结构 ``` .github/ ├── workflows/ # 流水线编排：触发条件 × 任务拓扑 ├── actions/ # 可复用的复合动作（门禁与发布共用） ├── scripts/ # 流水线引用的长逻辑脚本 └── docker/ # 交叉编译工具链镜像（钉版，qemu 腿使用） ``` ### 自动化一览 | 工作流 | 何时运行 | 做什么 | |---|---|---| | **Build & Test** | push（main）/ pull_request / 手动触发 | Linux、macOS、Windows 三平台构建与门禁测试（含覆盖率门禁） | | **Quality Gates** | push（main，忽略纯文档改动）/ pull_request / 手动触发 | 静态质量门禁套件：编码规则、安全扫描、版本一致性、头文件健康度、ABI 冻结等，fail-closed | | **Sanitizers (ASan/UBSan)** | push（main）/ pull_request / 手动触发 | 以 ASan/UBSan 插桩构建核心目标子集并运行测试，fail-closed | | **Codegen Checks** | push / pull_request / 手动触发 | 校验 syscall 契约（`atoms/syscall/include/syscall.xml`）与生成代码不漂移 | | **Toolchain Images** | 手动触发；或 main 分支上工具链镜像定义变更时 | 构建并推送钉版交叉编译工具链镜像（qemu 交叉腿使用） | | **Release** | `v*` tag 推送 / 手动触发 | 跨平台构建 → 打包 → 干净环境核验 → 三段式发布（见下文） | | **macOS Clean-Host** | 手动触发 | 在干净 macOS 真机上按普通用户流程离线安装并完整启动核验（arm-64 / x86-64 两腿） | | **Mirror Sync** | push（main 与 `v*` tag）/ 托管平台 webhook / 手动触发 | 主仓与叶子子模块的源码及 tag 单向同步到镜像托管平台 | | **Mirror Release Artifacts** | 手动触发 / 托管平台 webhook | 历史版本二进制产物回填到 GitHub / Gitee Releases | > Release 覆盖 8 个平台：Linux x86-64 / x86-32 / arm-64 / arm-32， > macOS arm-64 / x86-64，Windows x86-64 / x86-32。另有 RISC-V 腿作为仅手动 > 触发的金丝雀，用于提前暴露交叉编译问题，不进入正式发布矩阵。 发布是“fail-closed”的：任一平台构建失败、或干净环境无法安装/启动，都会阻断\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "BiBi-Keyboard",
+        "full_name": "BryceWG/BiBi-Keyboard",
+        "url": "https://github.com/BryceWG/BiBi-Keyboard",
+        "description": "说点啥（BiBi Keyboard）:一个基于 Kotlin 的 Android 平台的 LLM 与 ASR 语音输入法键盘应用 An LLM ASR voice input method keyboard application for the Android platform based on Kotlin",
+        "stars": 848,
+        "pushed_at": "2026-10-21T01:48:30Z",
+        "topics": [
+          "android-app",
+          "asr",
+          "doubao",
+          "elevenlabs",
+          "keyboard",
+          "kotlin",
+          "llm",
+          "qwen-asr",
+          "speech-to-text",
+          "whisper"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"images/icon_new.svg\" width=\"128\" height=\"128\" alt=\"Logo\"> # 「说点啥」(BiBi Keyboard) **基于 AI 的智能语音输入法 | 让语音输入更自然、更高效** ### 🌐 [官方网站](https://bibi.brycewg.com) • 📖 [使用文档](https://bibidocs.brycewg.com) 简体中文 | [English](README_EN.md) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://www.android.com/) [![Language](https://img.shields.io/badge/Language-Kotlin-blue.svg)](https://kotlinlang.org/) [![Telegram](https://img.shields.io/badge/Telegram-Join%20Chat-blue?logo=telegram)](https://t.me/+UGFobXqi2bYzMDFl) [![zread](https://img.shields.io/badge/Ask_Zread-_.svg?style=flat&color=00b0aa&labelColor=000000&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuOTYxNTYgMS42MDAxSDIuMjQxNTZDMS44ODgxIDEuNjAwMSAxLjYwMTU2IDEuODg2NjQgMS42MDE1NiAyLjI0MDFWNC45NjAxQzEuNjAxNTYgNS4zMTM1NiAxLjg4ODEgNS42MDAxIDIuMjQxNTYgNS42MDAxSDQuOTYxNTZDNS4zMTUwMiA1LjYwMDEgNS42MDE1NiA1LjMxMzU2IDUuNjAxNTYgNC45NjAxVjIuMjQwMUM1LjYwMTU2IDEuODg2NjQgNS4zMTUwMiAxLjYwMDEgNC45NjE1NiAxLjYwMDFaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik00Ljk2MTU2IDEwLjM5OTlIMi4yNDE1NkMxLjg4ODEgMTAuMzk5OSAxLjYwMTU2IDEwLjY4NjQgMS42MDE1NiAxMS4wMzk5VjEzLjc1OTlDMS42MDE1NiAxNC4xMTM0IDEuODg4MSAxNC4zOTk5IDIuMjQxNTYgMTQuMzk5OUg0Ljk2MTU2QzUuMzE1MDIgMTQuMzk5OSA1LjYwMTU2IDE0LjExMzQgNS42MDE1NiAxMy43NTk5VjExLjAzOTlDNS42MDE1NiAxMC42ODY0IDUuMzE1MDIgMTAuMzk5OSA0Ljk2MTU2IDEwLjM5OTlaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik0xMy43NTg0IDEuNjAwMUgxMS4wMzg0QzEwLjY4NSAxLjYwMDEgMTAuMzk4NCAxLjg4NjY0IDEwLjM5ODQgMi4yNDAxVjQuOTYwMUMxMC4zOTg0IDUuMzEzNTYgMTAuNjg1IDUuNjAwMSAxMS4wMzg0IDUuNjAwMUgxMy43NTg0QzE0LjExMTkgNS42MDAxIDE0LjM5ODQgNS4zMTM1NiAxNC4zOTg0IDQuOTYwMVYyLjI0MDFDMTQuMzk4NCAxLjg4NjY0IDE0LjExMTkgMS42MDAxIDEzLjc1ODQgMS42MDAxWiIgZmlsbD0iI2ZmZiIvPgo8cGF0aCBkPSJNNCAxMkwxMiA0TDQgMTJaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik00IDEyTDEyIDQiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K&logoColor=ffffff)](https://zread.ai/BryceWG/BiBi-Keyboard) [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/BryceWG/BiBi-Keyboard) ![GitHub all releases](https://img.shields.io/github/downloads/BryceWG/BiBi-Keyboard/total) [功能特性\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "avibe",
+        "full_name": "avibe-bot/avibe",
+        "url": "https://github.com/avibe-bot/avibe",
+        "description": "The local-first Agent OS — your AI partner lives on your own machine. Drive the official Claude Code, Codex & OpenCode from your browser or any chat app.",
+        "stars": 631,
+        "pushed_at": "2026-10-21T01:45:53Z",
+        "topics": [
+          "agent",
+          "agent-os",
+          "ai",
+          "ai-agents",
+          "chatops",
+          "claude",
+          "claude-code",
+          "codex",
+          "devtools",
+          "discord-bot",
+          "lark-bot",
+          "llm",
+          "local-first",
+          "opencode",
+          "slack-bot",
+          "vibe-coding",
+          "wechat"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"assets/logo.png\" alt=\"Avibe\" width=\"120\"/> # Avibe ### The local-first Agent OS — your own AI partner. **Every agent. Every subscription. Running on your machine, steered from your pocket.** [![GitHub Stars](https://img.shields.io/github/stars/avibe-bot/avibe?color=ffcb47&labelColor=black&style=flat-square)](https://github.com/avibe-bot/avibe/stargazers) [![Release](https://img.shields.io/github/v/release/avibe-bot/avibe?labelColor=black&style=flat-square)](https://github.com/avibe-bot/avibe/releases/latest) [![Python](https://img.shields.io/badge/python-3.10%2B-3776AB?labelColor=black&style=flat-square)](https://www.python.org/) [![License](https://img.shields.io/badge/license-MIT-green?labelColor=black&style=flat-square)](LICENSE) [Docs](https://docs.avibe.bot) · [English](README.md) · [中文](README_ZH.md) **Agents** ![Vibey](https://img.shields.io/badge/Vibey-built--in-14B8A6?style=flat-square) ![Claude Code](https://img.shields.io/badge/Claude%20Code-D4A27F?style=flat-square&logo=anthropic&logoColor=white) ![OpenCode](https://img.shields.io/badge/OpenCode-00B4D8?style=flat-square) ![Codex](https://img.shields.io/badge/Codex-412991?style=flat-square) **Reach it from** ![Browser](https://img.shields.io/badge/Browser-111827?style=flat-square&logo=googlechrome&logoColor=white) ![Slack](https://img.shields.io/badge/Slack-4A154B?style=flat-square&logo=slack&logoColor=white) ![Discord](https://img.shields.io/badge/Discord-5865F2?style=flat-square&logo=discord&logoColor=white) ![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=flat-square&logo=telegram&logoColor=white) ![WeChat](https://img.shields.io/badge/WeChat-07C160?style=flat-square&logo=wechat&logoColor=white) ![Lark](https://img.shields.io/badge/Lark%20%2F%20Feishu-3370FF?style=flat-square&logo=bytedance&logoColor=white) </div> <br/> <img src=\"assets/screenshots/v4/workbench-chat-en.png\" alt=\"The Avibe Workbench — chat with a local agent, inspect its work, and respond without leaving the browser\" /> --- ## Vibey, Avibe's own agent Avibe ships its own official agent, **Vibey**: built in, always on, nothing extra to install. Add a model source to Model Hub — a subscription sign-in or an API key — give Vibey a model, and it is ready in the Workbench and in every chat app you connect. - **It runs the platform for you.** Vibey schedules Tasks, waits on Watches, builds\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "amux",
+        "full_name": "mixpeek/amux",
+        "url": "https://github.com/mixpeek/amux",
+        "description": "Open-source control plane for AI coding agents. Run an AI engineering team: parallel Claude Code, Codex, and Gemini workers with a shared board, atomic tasks, schedules, loops, origin-stamped messaging, model switching, and self-healing recovery. One dashboard, or your phone. MIT, single Rust binary.",
+        "stars": 544,
+        "pushed_at": "2026-10-21T01:48:18Z",
+        "topics": [
+          "agent-orchestration",
+          "agentic-ai",
+          "ai-agents",
+          "ai-coding-assistant",
+          "anthropic",
+          "claude",
+          "claude-code",
+          "codex",
+          "coding-agent",
+          "control-plane",
+          "developer-tools",
+          "gemini",
+          "llm",
+          "mcp",
+          "multi-agent",
+          "orchestration",
+          "rust",
+          "self-healing",
+          "self-hosted",
+          "tmux"
+        ],
+        "source": "search",
+        "text_excerpt": "<img src=\"site/github-header.svg\" alt=\"amux: the agent control plane\" width=\"1280\"/> <p align=\"center\"> <a href=\"https://github.com/mixpeek/amux/stargazers\"><img src=\"https://img.shields.io/github/stars/mixpeek/amux?style=flat-square&color=f5c518\" alt=\"GitHub stars\"/></a> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT%20%2B%20Commons%20Clause-blue?style=flat-square\" alt=\"License\"/></a> <a href=\"https://amux.io\"><img src=\"https://img.shields.io/badge/site-amux.io-orange?style=flat-square\" alt=\"Website\"/></a> </p> **Run an AI engineering team.** amux runs Claude Code, Codex and Gemini CLI agents in parallel from one dashboard or your phone. They share a task board, message each other, recover from crashes, and keep shipping while you sleep. ## Install ```bash curl -fsSL https://amux.io/install.sh | bash ``` Then open **https://localhost:8824**. It clones amux to `~/Dev/amux`, asks before installing anything (Rust, tmux), and keeps your data in `~/.amux`. Already running amux? Move it to [amux Cloud](https://amux.io/start/): `amux export`, then `amux import <file> --to https://<you>.amux.io`. You need tmux 3.2+ and at least one agent CLI (Claude Code, Codex or Gemini CLI). Runs on macOS and Linux. Prefer to read first? `git clone https://github.com/mixpeek/amux && cd amux && ./install.sh` does the same thing. ## Apps Every app connects to your amux server (or your amux Cloud address). | Device | Get it | |---|---| | **Mac** (macOS 12+, Apple silicon and Intel) | [Download Amux-macOS.zip](https://github.com/mixpeek/amux/releases/download/desktop-latest/Amux-macOS.zip), or install with the one-liner below | | **iPhone and iPad** | [App Store](https://apps.apple.com/us/app/amux-agent-multiplexer/id6760410435) (one app for both) | | **Android and any browser** | Open your dashboard URL and choose **Install app** or **Add to Home Screen** | Mac, one command: ```bash curl -fsSL https://github.com/mixpeek/amux/releases/download/desktop-latest/Amux-macOS.zip -o /tmp/Amux-macOS.zip && ditto -x -k /tmp/Amux-macOS.zip /Applications && open /Applications/Amux.app ``` The Mac app is a native window on the system WebKit (about 1.5 MB). It opens several windows and tabs, keeps pinned notes floating above other apps, shows a menu bar readout and a Dock badge when agents need you, and toggles with Control-Option-Space. It is not notarized yet: if you downl\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "ttsc",
+        "full_name": "samchon/ttsc",
+        "url": "https://github.com/samchon/ttsc",
+        "description": "A typescript-go toolchain, with evidence graph",
+        "stars": 359,
+        "pushed_at": "2026-10-21T01:49:22Z",
+        "topics": [
+          "ai",
+          "ast",
+          "cli",
+          "codegraph",
+          "compiler",
+          "compilers",
+          "eslint",
+          "esm",
+          "lint",
+          "linter",
+          "loader",
+          "nodejs",
+          "plugin",
+          "runtime",
+          "toolchain",
+          "transformer",
+          "typescript",
+          "typescript-go",
+          "typia",
+          "unplugin"
+        ],
+        "source": "search",
+        "text_excerpt": "# `ttsc` ![banner of ttsc](https://ttsc.dev/og.jpg) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/samchon/ttsc/blob/master/LICENSE) [![NPM Version](https://img.shields.io/npm/v/ttsc.svg)](https://www.npmjs.com/package/ttsc) [![NPM Downloads](https://img.shields.io/npm/dm/ttsc.svg)](https://www.npmjs.com/package/ttsc) [![Build Status](https://github.com/samchon/ttsc/workflows/test/badge.svg)](https://github.com/samchon/ttsc/actions?query=workflow%3Atest) [![Guide Documents](https://img.shields.io/badge/Guide-Documents-forestgreen)](https://ttsc.dev/docs) [![Discord Badge](https://img.shields.io/badge/discord-samchon-d91965?style=flat&labelColor=5866f2&logo=discord&logoColor=white&link=https://discord.gg/E94XhzrUCZ)](https://discord.gg/E94XhzrUCZ) A `typescript-go` toolchain for compiler-powered plugins and type-safe execution. - **`ttsc`**: build, check, and transform. - **`ttsx`**: execute TypeScript with type checking. - [**`@ttsc/lint`**](https://github.com/samchon/ttsc/tree/master/packages/lint): lint violations as compiler errors. - [**`@ttsc/evidence`**](https://github.com/samchon/ttsc/tree/master/packages/evidence): 100% requirement coverage, or the build fails. - [**`@ttsc/graph`**](https://github.com/samchon/ttsc/tree/master/packages/graph): compiler knowledge graph that cuts agent tokens by 92%. - **plugin support**: compiler-powered libraries, such as `typia`. ## Setup `ttsc` is a drop-in replacement for `tsc`. It reads the same `tsconfig.json`, takes the same flags, and emits the same JavaScript, then runs your plugins in the pass that type-checks the project. ```bash npm install -D ttsc typescript ``` `ttsc` runs the native TypeScript compiler installed beside it, so the project needs `typescript` 7.0 or later. ```bash npx ttsx src/index.ts # run a file, type-checked first npx ttsc # build npx ttsc --noEmit # check only npx ttsc --watch # rebuild on save ``` `ttsx` runs a file the way `tsx` or `ts-node` does, but it type-checks the whole project first, so a type error stops the run before anything executes. Preload the same checked runtime when Node or a test runner owns the process: ```bash node --require ttsc/register src/index.ts mocha --require ttsc/register --extension ts,tsx \"test/**/*.ts\" ``` `ttsc/register` discovers the nearest `tsconfig.json` for each TypeScript root, applies its plugins, and\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "SciMLBenchmarks.jl",
+        "full_name": "SciML/SciMLBenchmarks.jl",
+        "url": "https://github.com/SciML/SciMLBenchmarks.jl",
+        "description": "Scientific machine learning (SciML) benchmarks, AI for science, and (differential) equation solvers. Covers Julia, Python (PyTorch, Jax), MATLAB, R",
+        "stars": 347,
+        "pushed_at": "2026-10-21T01:49:25Z",
+        "topics": [
+          "ai",
+          "ai-for-science",
+          "benchmark",
+          "dae",
+          "differential-equations",
+          "differentialequations",
+          "jax",
+          "julia",
+          "matlab",
+          "nerual-differential-equations",
+          "neural-ode",
+          "ode",
+          "partial-differential-equations",
+          "pde",
+          "python",
+          "pytorch",
+          "scientific-machine-learning",
+          "sciml",
+          "sde"
+        ],
+        "source": "search",
+        "text_excerpt": "# SciMLBenchmarks.jl: Benchmarks for Scientific Machine Learning (SciML) and Equation Solvers [![Join the chat at https://julialang.zulipchat.com #sciml-bridged](https://img.shields.io/static/v1?label=Zulip&message=chat&color=9558b2&labelColor=389826)](https://julialang.zulipchat.com/#narrow/stream/279055-sciml-bridged) [![Global Docs](https://img.shields.io/badge/docs-SciML-blue.svg)](https://docs.sciml.ai/SciMLBenchmarksOutput/stable/) [![CI](https://github.com/SciML/SciMLBenchmarks.jl/actions/workflows/benchmarks.yml/badge.svg)](https://github.com/SciML/SciMLBenchmarks.jl/actions/workflows/benchmarks.yml) [![ColPrac: Contributor's Guide on Collaborative Practices for Community Packages](https://img.shields.io/badge/ColPrac-Contributor's%20Guide-blueviolet)](https://github.com/SciML/ColPrac) [![SciML Code Style](https://img.shields.io/static/v1?label=code%20style&message=SciML&color=9558b2&labelColor=389826)](https://github.com/SciML/SciMLStyle) SciMLBenchmarks.jl holds webpages, pdfs, and notebooks showing the benchmarks for the SciML Scientific Machine Learning Software ecosystem, including: - Benchmarks of equation solver implementations - Speed and robustness comparisons of methods for parameter estimation / inverse problems - Training universal differential equations (and subsets like neural ODEs) - Training of physics-informed neural networks (PINNs) - Surrogate comparisons, including radial basis functions, neural operators (DeepONets, Fourier Neural Operators), and more The SciML Bench suite is made to be a comprehensive open source benchmark from the ground up, covering the methods of computational science and scientific computing all the way to AI for science. ## Rules: Optimal, Fair, and Reproducible These benchmarks are meant to represent good optimized coding style. Benchmarks are preferred to be run on the provided open benchmarking hardware for full reproducibility (though in some cases, such as with language barriers, this can be difficult). Each benchmark is documented with the compute devices used along with package versions for necessary reproduction. These benchmarks attempt to measure in terms of work-precision efficiency, either timing with approximately matching error or building work-precision diagrams for direct comparison of speed at given error tolerances. **If any of the code from any of the languages can be improved, please ope\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "cuckoo-code",
+        "full_name": "wangyongpeng90/cuckoo-code",
+        "url": "https://github.com/wangyongpeng90/cuckoo-code",
+        "description": "DeepSeek 桌面应用——内嵌浏览器，自动识别 AI 回复中的命令和工具调用并执行",
+        "stars": 265,
+        "pushed_at": "2026-10-21T01:49:14Z",
+        "topics": [
+          "ai",
+          "ai-agents",
+          "ai-tools",
+          "angent",
+          "deepseek",
+          "deepseek-free",
+          "developer-tools"
+        ],
+        "source": "search",
+        "text_excerpt": "# Cuckoo Code <p align=\"center\"> <a href=\"https://github.com/wangyongpeng90/cuckoo-code/releases/latest\"><img src=\"https://img.shields.io/github/v/release/wangyongpeng90/cuckoo-code?style=flat-square&color=8b93ff\" alt=\"Latest Release\"></a> <a href=\"https://github.com/wangyongpeng90/cuckoo-code/actions/workflows/build.yml\"><img src=\"https://img.shields.io/github/actions/workflow/status/wangyongpeng90/cuckoo-code/build.yml?style=flat-square&label=Build\" alt=\"Build Status\"></a> <a href=\"https://github.com/wangyongpeng90/cuckoo-code/actions/workflows/release.yml\"><img src=\"https://img.shields.io/github/actions/workflow/status/wangyongpeng90/cuckoo-code/release.yml?style=flat-square&label=Release\" alt=\"Release Status\"></a> <a href=\"https://codecov.io/gh/wangyongpeng90/cuckoo-code\"><img src=\"https://codecov.io/gh/wangyongpeng90/cuckoo-code/branch/master/graph/badge.svg\" alt=\"codecov\"></a> <a href=\"https://github.com/wangyongpeng90/cuckoo-code/blob/master/LICENSE\"><img src=\"https://img.shields.io/badge/license-GPL--3.0-blue?style=flat-square\" alt=\"License\"></a> <a href=\"https://github.com/wangyongpeng90/cuckoo-code\"><img src=\"https://img.shields.io/github/stars/wangyongpeng90/cuckoo-code?style=flat-square&color=yellow\" alt=\"Stars\"></a> <a href=\"https://github.com/wangyongpeng90/cuckoo-code/releases\"><img src=\"https://img.shields.io/github/downloads/wangyongpeng90/cuckoo-code/total?style=flat-square&color=green\" alt=\"Downloads\"></a> <a href=\"https://github.com/wangyongpeng90/cuckoo-code\"><img src=\"https://img.shields.io/badge/platform-Windows%20%7C%20macOS-8b93ff?style=flat-square\" alt=\"Platform\"></a> <a href=\"https://github.com/wangyongpeng90/cuckoo-code\"><img src=\"https://img.shields.io/badge/Electron-44-47848f?style=flat-square&logo=electron&logoColor=white\" alt=\"Electron\"></a> </p> [English](README.en.md) | 中文 [下载最新版本](https://github.com/wangyongpeng90/cuckoo-code/releases/latest) **Cuckoo Code** 是一个零 Token 成本的 AI Agent 桌面端。 > 📐 **要改代码 / 做新需求？先读 [架构与开发指南](docs/architecture.md)**（目录结构、依赖规则、构建流程、任务手册）。 它通过 Electron 将 AI 网页版嵌入本地窗口，并注入侧边覆盖层。AI 被系统提示词引导生成工具调用（JavaScript 代码块），经用户确认后在本地沙箱中执行，再把结果回传给 AI。整个过程不需要 API Key，你用的是网页版账号，而不是按 Token 计费的接口。 --- ## 核心特性 ### 丰富网页版AI能力 直接复用网页版聊天能力，把网页版 AI 丰富成可执行本地操作的 Agent。 ### 多平台 Provider 框架 - 内置 平台 作为学习demo - 每个平台独立封装输入框定位、发送按钮检测、回复完成判断、消息解析等差异 - 新建窗口时可选择平台，也可**导入自定义 Provider**（提供类型声明和模板，降低扩展门槛） ### 真正的 AI Agent 不只是聊天。AI 可以读写文件、搜索\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "openyida",
+        "full_name": "openyida/openyida",
+        "url": "https://github.com/openyida/openyida",
+        "description": "Your own personal YiDA AI assistant!",
+        "stars": 227,
+        "pushed_at": "2026-10-21T01:48:41Z",
+        "topics": [
+          "agent",
+          "ai",
+          "assistant",
+          "low-code-platform",
+          "skills",
+          "yida"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> ![OpenYida](https://img.alicdn.com/imgextra/i2/O1CN01fwUxry9qUtJ3OTaP_!!6000000008165-2-tps-1672-941.png) # OpenYida **AI-native CLI for building DingTalk Yida low-code applications.** OpenYida connects AI coding agents with Yida's low-code platform, so developers can create apps, forms, workflows, custom pages, reports, integrations, and deployment configuration from a normal chat-driven development workflow. [Quick Start](#quick-start) · [帮助网站&文档](https://demo.aliwork.com/o/openyida/helpCenter) · [Capabilities](#capabilities) · [Full Capability List](https://demo.aliwork.com/o/openyida/helpCenter?openyidaPath=capabilities) · [CLI Reference](https://demo.aliwork.com/o/openyida/helpCenter?openyidaPath=features/skills) · [Examples](https://demo.aliwork.com/o/openyida/helpCenter?openyidaRoute=showcase) · [Contributing](./CONTRIBUTING.md) · [Changelog](https://demo.aliwork.com/o/openyida/helpCenter?openyidaRoute=changelog) · [Application Previews](#application-previews) [![npm version](https://img.shields.io/npm/v/openyida?color=brightgreen&label=npm)](https://www.npmjs.com/package/openyida) [![npm downloads](https://img.shields.io/npm/dm/openyida?color=blue)](https://www.npmjs.com/package/openyida) [![CI](https://github.com/openyida/openyida/actions/workflows/ci.yml/badge.svg)](https://github.com/openyida/openyida/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE) [![Node.js >=18](https://img.shields.io/badge/node-%3E%3D18-brightgreen)](https://nodejs.org) [English README](./README.md) · [简体中文 README](./README_zhCN.md) </div> --- ## What OpenYida Provides OpenYida is a bridge between AI coding tools and Yida. It gives agents a stable `openyida` CLI to create resources, inspect schemas, generate source code, compile and publish pages, and diagnose issues. The result remains a native Yida application: teams can continue editing it in Yida, use existing enterprise security controls, and deploy through the Yida platform. ## Application Previews Example applications built with the themes below. Click an image to view it at full size. These are visual references, not ready-made business applications: content, data, brand colors, and layouts are adapted to your requirements. <table> <tr> <td width=\"50%\" align=\"center\"><strong>Dark Rail · Fine Lines</strong><br><a href=\"https://img.alicdn.co\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "agentic-coding",
+        "full_name": "sammcj/agentic-coding",
+        "url": "https://github.com/sammcj/agentic-coding",
+        "description": "Agentic Coding Rules, Templates etc...",
+        "stars": 165,
+        "pushed_at": "2026-10-21T01:50:21Z",
+        "topics": [
+          "agentic",
+          "agentic-coding",
+          "agents",
+          "ai",
+          "cline",
+          "copilot",
+          "llm",
+          "mcp",
+          "rules",
+          "templates"
+        ],
+        "source": "search",
+        "text_excerpt": "# Sam's Agentic Coding Rules, Templates and Examples - [Coding Agent Rules, Skills and Templates](#coding-agent-rules-skills-and-templates) - [Tips For Agentic Coding](#tips-for-agentic-coding) - [Recommended 3rd Party Plugins and Tools](#recommended-3rd-party-plugins-and-tools) - [Getting High Quality Outcomes \\& Context Engineering](#getting-high-quality-outcomes--context-engineering) - [Subscription vs Consumption Based Providers](#subscription-vs-consumption-based-providers) - [Links](#links) - [License](#license) My Agent Skills, Agent Rules for Agentic Coding. ## Coding Agent Rules, Skills and Templates The repository is organised with tool-agnostic content at the root level: - [Agent Skills](./Skills/) - Composable skills that extend agent capabilities - [Custom Agents](./Claude/agents/) - Custom defined agents (use sparingly). - [Agent Rules](./Rules/) - Agent instruction files - [Rules/CLAUDE.md](./Rules/CLAUDE.md) is usually the most up to date and comprehensive - [Agent Commands](./Claude/commands/) - (Prompt templates) - [Claude Local Marketplace](./Claude/plugins/local-marketplace/) - My local marketplace (plugins) for Claude Code, including LSP definitions. Most skills and rules are reasonably portable between agentic coding tools. ![Setup -> Plan -> Act -> Review & Iterate Diagram](setup-plan-act-iterate.svg) --- ## Tips For Agentic Coding - Lean into [skills](https://github.com/sammcj/agentic-coding/tree/main/Skills), dynamical context acquisition is very powerful. - Read my [best practices and common pitfalls when writing and reviewing agent skills](https://smcleod.net/2026/07/writing-and-reviewing-agent-skills-common-pitfalls/). - If Claude gets stuck on a complex issue, get it to stop and perform a systematic debug of the issue using the systematic-debugging skill. - Setup your permissions (in settings.json) to pre-approve/deny/ask commands and file paths that Claude may want to use. - Always enable sandboxing for agent commands, ideally run your whole agent in a sandbox when it is practical to do so. - Encourage Claude to use sub-agents to parallelise work and keep context lean where it is safe to do so. - Using voice to text with a tool like [Handy](https://handy.computer/) to dictate work to Claude Code is incredibly useful, often with voice you capture intent that you'd otherwise edit out. - Create shell aliases for the various claude\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "MaxKB4j",
+        "full_name": "taishan666/MaxKB4j",
+        "url": "https://github.com/taishan666/MaxKB4j",
+        "description": "MaxKB4j is an open-source LLMOps platform for LLM workflow applications and RAG developed based on the Java language. The project mainly draws on MaxKB, Dify and FastGPT, and combines the advantages of the two into one project. It is redesigned and developed using the high-performance, high-stability and secure reliable JAVA language.",
+        "stars": 135,
+        "pushed_at": "2026-10-21T01:48:45Z",
+        "topics": [
+          "agent",
+          "ai",
+          "chatgpt",
+          "llm",
+          "llmops"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"image/logo.png\" width=\"130\" alt=\"MaxKB4j Logo\"/> </p> <h1 align=\"center\">🧠 MaxKB4j</h1> <p align=\"center\"> <b>Max Knowledge Brain for Java</b> — an enterprise-grade AI brain for Java teams, with zero friction<br/> An out-of-the-box, model-agnostic <b>RAG + LLM workflow engine</b> built on <b>Java 21 + Spring Boot 3 (Virtual Threads)</b><br/> <sub>Intelligent customer service · Enterprise knowledge bases · Data analysis · Research & education</sub> </p> <p align=\"center\"> <a href=\"https://www.gnu.org/licenses/gpl-3.0.html\"><img src=\"https://img.shields.io/badge/License-GPLv3-blue\" alt=\"GPLv3\"></a> <a href=\"https://github.com/taishan666/MaxKB4j/actions/workflows/ci.yml\"><img src=\"https://github.com/taishan666/MaxKB4j/actions/workflows/ci.yml/badge.svg\" alt=\"CI\"></a> <a href=\"https://openjdk.org/projects/jdk/21/\"><img src=\"https://img.shields.io/badge/Java-21%2B-green\" alt=\"Java21plus\"></a> <a href=\"https://spring.io/projects/spring-boot\"><img src=\"https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen\" alt=\"SpringBoot3\"></a> <a href=\"https://github.com/langchain4j/langchain4j\"><img src=\"https://img.shields.io/badge/LangChain4j-1.x-green\" alt=\"LangChain4j\"></a> <a href=\"https://gitee.com/taisan/MaxKB4j\"><img src=\"https://gitee.com/taisan/MaxKB4j/badge/star.svg\" alt=\"GiteeStars\"></a> <a href=\"https://gitee.com/taisan/MaxKB4j/members\"><img src=\"https://gitee.com/taisan/MaxKB4j/badge/fork.svg\" alt=\"GiteeForks\"></a><br/> [<a href=\"README_CN.md\">中文（简体）</a>] | [<a href=\"README.md\">English</a>] </p> <p align=\"center\"> 🚀 <a href=\"#quick-start\">Quick Start</a> · 🌐 <a href=\"http://43.143.235.194:8080/\">Live Demo</a> (demo / demo@123456) · 📄 <a href=\"docs/MaxKB4j-商业价值白皮书.md\">Whitepaper</a> · 🧪 <a href=\"docs/MaxKB4j-回归测试报告.md\">Regression Report</a> · 🗒️ <a href=\"CHANGELOG.md\">Changelog</a> · 💖 <a href=\"#support--sponsorship\">Support Us</a> </p> --- ## Why Choose MaxKB4j? Enterprises face four common challenges when adopting LLM applications, and MaxKB4j answers each one: | Pain Point | MaxKB4j Answer | |:---------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------| | **Complex integration** — mainstream platforms rely on Python / TS ecosystems, maki\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "zhin",
+        "full_name": "zhinjs/zhin",
+        "url": "https://github.com/zhinjs/zhin",
+        "description": "AI-native TypeScript bot framework — one codebase for 20+ chat platforms (QQ, Discord, Telegram, Slack, WeChat…). Opt-in AI agent with MCP, tools & security policies. <10MB core.",
+        "stars": 135,
+        "pushed_at": "2026-10-21T01:49:21Z",
+        "topics": [
+          "a2a",
+          "agent",
+          "ai",
+          "bot-framework",
+          "chatbot",
+          "discord",
+          "framework",
+          "hot-module-replacement",
+          "im",
+          "mcp",
+          "multi-platform",
+          "openai",
+          "plugin",
+          "qq",
+          "slack",
+          "telegram",
+          "typescript-framework",
+          "wechat"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <a href=\"https://zhin.js.org\"> <img src=\"docs/public/logo.svg\" alt=\"Zhin.js\" width=\"120\" height=\"120\" /> </a> </p> <h1 align=\"center\">Zhin.js</h1> <p align=\"center\"> <strong>Write a chat bot once in TypeScript. Run it on 20+ platforms.</strong><br /> QQ · WeChat · WeCom · DingTalk · Lark · Discord · Telegram · Slack · KOOK · LINE · … </p> <p align=\"center\"> <a href=\"https://github.com/zhinjs/zhin/actions/workflows/ci.yml\"><img src=\"https://github.com/zhinjs/zhin/actions/workflows/ci.yml/badge.svg\" alt=\"CI\" /></a> <a href=\"https://www.npmjs.com/package/zhin.js\"><img src=\"https://img.shields.io/npm/v/zhin.js.svg?color=cb3837\" alt=\"npm\" /></a> <a href=\"https://www.npmjs.com/package/zhin.js\"><img src=\"https://img.shields.io/npm/dm/zhin.js.svg?color=cb3837\" alt=\"npm downloads\" /></a> <a href=\"https://nodejs.org\"><img src=\"https://img.shields.io/node/v/zhin.js.svg?color=339933\" alt=\"Node\" /></a> <a href=\"./LICENSE\"><img src=\"https://img.shields.io/badge/License-MIT-yellow.svg\" alt=\"License: MIT\" /></a> <a href=\"https://codecov.io/gh/zhinjs/zhin\"><img src=\"https://codecov.io/gh/zhinjs/zhin/graph/badge.svg\" alt=\"codecov\" /></a> <a href=\"https://zhin.js.org\"><img src=\"https://img.shields.io/badge/docs-zhin.js.org-0ea5e9\" alt=\"Docs\" /></a> </p> <p align=\"center\"> <b>English</b> · <a href=\"./README.zh-CN.md\">简体中文</a> </p> <p align=\"center\"> <a href=\"https://zhin.js.org/en/\">Documentation</a> · <a href=\"https://demo.zhin.dev\">Live Demo</a> · <a href=\"https://console.zhin.dev\">Remote Console</a> · <a href=\"https://github.com/zhinjs/zhin/wiki\">Wiki</a> · <a href=\"./docs/contributing/development.md\">Contributing</a> </p> --- ## What is Zhin.js? Zhin.js is a framework for building **bots that live in chat apps** — community bots, personal assistants, notification and support bots, AI chat assistants. - **One codebase, many platforms.** Adapters translate each platform into one unified message, so your commands and replies work everywhere. One bot can run many accounts on many platforms at once. - **A feature is a file.** `commands/hello/index.ts` *is* the `/hello` command. Middleware, message cards, scheduled jobs and AI tools work the same way — no registration boilerplate. - **Small by default, AI when you want it.** The IM core is under 10MB and needs no model key. Add LLMs, tools, memory and MCP with one command. - **Hot reload that can't take you dow\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "berth",
+        "full_name": "T-Crypt/berth",
+        "url": "https://github.com/T-Crypt/berth",
+        "description": "Decides who gets your GPU. Chat, image and voice engines lease the card in turn instead of grabbing it, so two of them never load at once and crash each other. One Go binary, nothing else to install.",
+        "stars": 109,
+        "pushed_at": "2026-10-21T01:47:44Z",
+        "topics": [
+          "comfyui",
+          "golang",
+          "gpu",
+          "inference",
+          "llama-cpp",
+          "llama-swap",
+          "llm",
+          "local-ai",
+          "nvidia",
+          "ollama",
+          "self-hosted",
+          "vllm",
+          "vram"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"><img src=\"assets/banner.svg\" alt=\"berth: a llama harbor master on a night pier moors a padlock lantern to a dock board of GPUs. On gpu0 llama-swap hands the card to strata when its reply ends, ComfyUI waits for its job to finish on gpu1, and a game holds gpu2. Zero collisions.\" width=\"100%\"></p> <p align=\"center\"> <a href=\"https://github.com/T-Crypt/berth/releases\"><img src=\"https://img.shields.io/github/v/release/T-Crypt/berth?color=7ad4f2&labelColor=0a1017\" alt=\"latest release\"></a> <a href=\"https://github.com/T-Crypt/berth/actions/workflows/ci.yml\"><img src=\"https://img.shields.io/github/actions/workflow/status/T-Crypt/berth/ci.yml?branch=main&label=ci&labelColor=0a1017\" alt=\"CI status\"></a> <img src=\"https://img.shields.io/badge/go-1.27-7ad4f2?labelColor=0a1017\" alt=\"Go 1.27\"> <img src=\"https://img.shields.io/badge/runs%20on-linux%20%7C%20windows%20(experimental)-e8b56f?labelColor=0a1017\" alt=\"Linux, Windows experimental\"> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-Apache--2.0-7ee8ac?labelColor=0a1017\" alt=\"Apache-2.0\"></a> </p> <p align=\"center\"> <a href=\"#quick-start\">Quick start</a> · <a href=\"#how-it-works\">How it works</a> · <a href=\"#install\">Install</a> · <a href=\"#gateway-preview\">Gateway</a> · <a href=\"#visibility\">Harbor</a> · <a href=\"#roadmap\">Roadmap</a> </p> # Berth Berth makes the programs on your PC take turns with the GPU's memory, so they stop crashing each other, and tells you who is holding it. Berth decides who gets your GPU. Chat models, image pipelines, voice engines, games and GPU apps lease the card instead of grabbing it, so two of them never load at once and crash each other with an out-of-memory error. One Go binary, no cloud account, nothing else to install. ```sh berth daemon & # one broker per card berth run --as llama -- llama-server -m model.gguf # this engine now takes turns berth status # who holds the card, who waits, and why ``` ## How it works <p align=\"center\"><img src=\"assets/how-it-works.svg\" alt=\"How berth works. Four clients ask for the card: a chat agent through the gateway, a ComfyUI workflow, an engine under berth run, and a game. berthd queues them by priority, drains the holder when its reply or job ends, waits for the driver to show the memory free, then grants the lease. Below, a timeline of one 24 GiB card: llama-swap, strata, a game and ComfyUI take turns and neve\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "hal0",
+        "full_name": "Hal0ai/hal0",
+        "url": "https://github.com/Hal0ai/hal0",
+        "description": "Open-source self-hosted home AI inference platform for AMD Strix Halo — multi-backend slots, OpenAI-compatible gateway, Vue 3 + FastAPI + systemd.",
+        "stars": 82,
+        "pushed_at": "2026-10-21T01:50:26Z",
+        "topics": [
+          "ai",
+          "amd-ryzen-ai",
+          "fastapi",
+          "homelab",
+          "igpu",
+          "inference",
+          "llama-cpp",
+          "llm",
+          "npu",
+          "openai-compatible",
+          "rocm",
+          "self-hosted",
+          "strix-halo",
+          "systemd",
+          "vue"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"./ui/public/brand/logo-halo-dark.svg\"> <img src=\"./ui/public/brand/logo-halo-light.svg\" alt=\"hal0\" width=\"220\"> </picture> ### Open-source home AI inference platform **Stop running models from a chat tab.** [hal0.dev](https://hal0.dev) · [Install](https://hal0.dev/docs/getting-started/install/) · [Docs](https://hal0.dev/docs/) · [Benchmarks](https://hal0.dev/benchmarks) · [Roadmap](https://hal0.dev/#roadmap) · [Discord](https://discord.gg/7M4y6dcUyq) </div> --- hal0 turns a Linux box — ideally a Ryzen AI Max+ 395 with 128 GB of unified memory — into a private, OpenAI-compatible inference appliance. Chat, completions, embeddings, reranking, transcription, speech and image generation all answer on one `:8080/v1` surface, on hardware you own, with no per-token bill. Every inference workload runs as its own **podman container** under a `hal0-slot@<name>.service` unit. `hal0-api` on `:8080` is the sole control plane — it owns slot state machines, dispatches `/v1/*` requests to the right slot port, and serves the dashboard. No shared inference daemon; no extra process to babysit. ```sh curl -fsSL https://hal0.dev/install.sh | sudo bash ``` > **v1.5.0 is the current stable release.** A minor release: new > functionality, no config-schema migration, and an ordinary `hal0 update` > from any 1.x box. Three changes can break a script or a setup: `hal0 update` > now restarts slots whose runner image changed and exits 2 while any still > run the old one; exposing a user-installed MCP server to Hermes or the > brain profile is refused until hal0 enforces its tool policy; and an > installed MCP server that would send its secrets over plain `http://` to > another host no longer loads. After > updating, re-run the installer once to pick up the new Hindsight limits, > the Open WebUI client key and the Hermes wrappers. Read the v1.4.0 > **Breaking** and **Migrations** notes in [CHANGELOG.md](CHANGELOG.md) > first. The project has followed semver since v1.0.0; a minor release's > **Breaking** notes flag behaviour changes an operator or a script may > notice. Upgrades start at 1.3.0; on anything older, read > [Upgrading from an older release](#upgrading-from-an-older-release) first. > **⚡ The installer is the whole setup.** There is no separate first-run > wizard afterwards. `install.sh` asks whe\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "qq-agent-plus",
+        "full_name": "sakurawwwxh/qq-agent-plus",
+        "url": "https://github.com/sakurawwwxh/qq-agent-plus",
+        "description": "Linux QQ 群聊 Agent（OneBot v11）：分条发言、贴纸系统、主动发言与内置运维命令",
+        "stars": 81,
+        "pushed_at": "2026-10-21T01:50:18Z",
+        "topics": [
+          "agent",
+          "bot",
+          "chatbot",
+          "linux",
+          "llm",
+          "napcat",
+          "nodejs",
+          "onebot",
+          "qq",
+          "qqbot",
+          "self-hosted",
+          "sqlite",
+          "systemd"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"docs/assets/mark.svg\" alt=\"QQ Agent Plus\" width=\"104\" height=\"104\"> # QQ Agent Plus 面向 Linux 服务器的 QQ 群聊 Agent，支持分条发言、表情包收发、长期记忆与内置运维命令。 [![CI](https://github.com/sakurawwwxh/qq-agent-plus/actions/workflows/ci.yml/badge.svg)](https://github.com/sakurawwwxh/qq-agent-plus/actions/workflows/ci.yml) [![License](https://img.shields.io/badge/license-MIT-3da639.svg)](LICENSE) [![Stars](https://img.shields.io/github/stars/sakurawwwxh/qq-agent-plus?color=e8b400&label=stars&logo=github)](https://github.com/sakurawwwxh/qq-agent-plus/stargazers) [![Last commit](https://img.shields.io/github/last-commit/sakurawwwxh/qq-agent-plus?logo=git&logoColor=white)](https://github.com/sakurawwwxh/qq-agent-plus/commits/main) [![Node](https://img.shields.io/badge/node-%E2%89%A522.19-339933?logo=nodedotjs&logoColor=white)](package.json) [![Platform](https://img.shields.io/badge/platform-Linux-0b5fff?logo=linux&logoColor=white)](docs/LINUX.md) [![OneBot](https://img.shields.io/badge/protocol-OneBot%20v11-12b7f5)](https://github.com/botuniverse/onebot-11) [![LLM](https://img.shields.io/badge/LLM-OpenAI%20%E5%85%BC%E5%AE%B9-6b4fbb)](#特性) **简体中文** ｜ [English](README.en.md) <img src=\"docs/assets/console-demo.png\" alt=\"控制台：消息存档与会话管理\" width=\"880\"> </div> QQ Agent Plus 是面向 Linux 服务器的 QQ 群聊 Agent。它连接外部 OneBot v11 协议端，每次触发使用 独立的 OpenAI Chat Completions 会话，不依赖 DSH、MCP、Electron 或 Windows 运行环境。 ## 特性 下列能力均来自实际群聊环境中的问题修复，每条对应的失败模式与处理方式记录在[改动清单](docs/CHANGES.md)。 - **对话行为**：单轮分条发言，先判断图片情绪再回应，表情包清单常驻系统提示（常用的 + 没用过的轮换，条数可调），结束前自检。 - **发送链路**：网络层发送重试，QQ 系统表情，消息 id 归一化，内联工具调用兜底解析。 - **贴纸系统**：自动收藏并优先使用 QQ 收藏表情，查找兜底，同步护栏。 - **玩法与提醒**：轻量小游戏直接玩（成语接龙 / 猜数字 / 20 个问题 / 真心话大冒险；掷骰子、抽签、随机点名用 `dice` 与群成员名单）；**状态机主持的多人游戏**（数字炸弹、谁是卧底、狼人杀——轮次/计票/判定由系统负责，身份与夜间行动只走私聊，模型不会说漏嘴；实验特性、默认关，狼人杀还需在控制台白名单里勾选）；「X 点提醒我 Y」会落成**持久化提醒**（重启不丢），到点被唤醒后用它自己的口吻说出来。 - **主动发言**：三条链路各自可关（冷场开话题 / 没人接话补一句 / 模型自安排唤醒），多活跃时段， 间隔护栏，跳过原因日志，重启后补齐漏收消息。 - **模型接入**：思考档位按渠道翻译、按供应商/按任务分设（设置 → 模型 API → 「高级：思考模式」），服务商审核拦截重试，兜底模型切换。 - **语音**（转写与回复）：语音/音频文件/视频音轨转成文字再交给聊天模型（与模型是否多模态无关）。 **默认走 API Key 的托管服务**（预置硅基流动的地址：粘一个 Key、从官网拉一次模型列表就能用； 也可一键换成 Groq / 火山 Seed-ASR / 阿里云百炼 / 讯飞 / 腾讯云 / 百度 / 自建，各家对新用户多有免费额度）； 也支持**零 Key 的本机 whisper.cpp**（离线、免费，控制台里点一下就能装、也能完整卸载，或跑 `node scripts/install-asr-local.mjs`）。QQ 语音（SILK）与视频音轨都能吃（SILK 本地解码，不需要协议端转码）； 视频还能\"看画面\"：抽 4 帧拼成 2×2 帧条交给视觉模型（另有音轨转写），看到也能听到。 反过来也能\"说\"：配好语音合成后它可以发语音回你（默认关，见配置示例）——支持 O\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "codemem",
+        "full_name": "kunickiaj/codemem",
+        "url": "https://github.com/kunickiaj/codemem",
+        "description": "A lightweight persistent-memory companion for OpenCode & Claude",
+        "stars": 73,
+        "pushed_at": "2026-10-21T01:50:28Z",
+        "topics": [
+          "ai",
+          "ai-agents",
+          "ai-memory",
+          "ai-memory-system",
+          "claude",
+          "claude-ai",
+          "claude-code",
+          "claude-code-plugin",
+          "memory",
+          "opencode",
+          "p2p"
+        ],
+        "source": "search",
+        "text_excerpt": "# codemem Normal V2 account linking needs no account-management upgrade. An older authority schema still needs the [explicit auth-schema cutover](docs/contracts/coordinator-auth-protocol.md#operator-cutover): `codemem coordinator upgrade-auth-schema --db-path coordinator.sqlite` upgrades an existing local coordinator file; `--export-sql` exports D1 SQL without applying it. Optional **Refresh profile**, **Unlink Google account**, and reconnect support instead require an intact V2 coordinator and the separate [`upgrade-account-schema` rollout](docs/cloudflare-coordinator-deployment.md#optional-account-management-extension). Unlink confirms once in the Viewer and uses the existing authorized device without Google sign-in. Link, relink and profile refresh still require Google verification. [![CI](https://github.com/kunickiaj/codemem/actions/workflows/ci.yml/badge.svg)](https://github.com/kunickiaj/codemem/actions/workflows/ci.yml) [![npm version](https://img.shields.io/npm/v/codemem)](https://www.npmjs.com/package/codemem) [![npm downloads per month](https://img.shields.io/npm/dm/codemem?label=npm%20downloads%2Fmonth)](https://www.npmjs.com/package/codemem) [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE) **The code is still there. The reasoning usually isn’t.** codemem is persistent coding memory across sessions, machines, and teammates for [OpenCode](https://opencode.ai), [Claude Code](https://claude.ai/code), Codex, and the [Pi coding agent](https://github.com/earendil-works/pi). It captures decisions, dead ends, and repository-specific traps, then automatically brings relevant context into later prompts. - **Automatic context injection** — relevant memories reach the agent without asking it to search; unchanged memories already in OpenCode context are not repeated - **Optional sync and sharing** — peer-to-peer sync carries selected project memory across machines; share project knowledge with a teammate or Team when it helps - **Local-first storage** — memories live in SQLite on your machine; observer processing uses your configured model provider and can incur costs or consume plan usage - **Hybrid retrieval** — FTS5 BM25 lexical search + sqlite-vec semantic search, merged and re-ranked - **Automatic injection for OpenCode 1 and 2** — the plugin injects context into every prompt, no manual steps; the OpenCode 2 integration is beta -\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "simple-agent-manager",
+        "full_name": "raphaeltm/simple-agent-manager",
+        "url": "https://github.com/raphaeltm/simple-agent-manager",
+        "description": "Run multiple coding agents in parallel on your own cloud VMs.",
+        "stars": 63,
+        "pushed_at": "2026-10-21T01:50:19Z",
+        "topics": [
+          "acp",
+          "ai",
+          "claude-code",
+          "coding-agent",
+          "infra",
+          "orchestration"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"assets/images/sam-banner.png\" alt=\"Simple Agent Manager\" width=\"400\" /> </p> <p align=\"center\"> <strong>Run AI coding agents in parallel on your own cloud.</strong> </p> <p align=\"center\"> Every agent gets its own isolated container on a VM billed to <em>your</em> cloud account — full Linux, Docker + git, reachable in the browser. Run 5 or 500 at once. </p> <p align=\"center\"> <a href=\"https://app.simple-agent-manager.org\">Try it</a> • <a href=\"https://github.com/raphaeltm/simple-agent-manager\">Star on GitHub</a> • <a href=\"https://simple-agent-manager.org/docs/\">Documentation</a> • <a href=\"https://simple-agent-manager.org/docs/guides/self-hosting/\">Self-Hosting Guide</a> </p> <p align=\"center\"> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/License-AGPL_v3%2B-blue?style=flat-square\" alt=\"License\" /></a> <a href=\"https://app.codspeed.io/raphaeltm/simple-agent-manager?utm_source=badge\"><img src=\"https://img.shields.io/endpoint?url=https://codspeed.io/badge.json\" alt=\"CodSpeed\"/></a> </p> <p align=\"center\"> <img src=\"assets/images/sam-screenshot-byoc.webp\" alt=\"SAM nodes and workspaces dashboard\" width=\"760\" /> </p> --- ## What You Get **Agents in parallel, each in a real environment.** Every agent runs in its own isolated Docker container on a VM you own — full Linux, Docker, and git, reachable from any browser. Run a handful or hundreds at once, each in a clean workspace. **Bring your own cloud.** VMs are provisioned in your own Hetzner, Scaleway, GCP, Vultr, or UpCloud account and billed directly to you. SAM never stores your cloud provider credentials as platform env vars — they're encrypted per-user. Your agents, your infra, your data. **Bring your own agent.** Six harnesses work today: [Claude Code](https://www.anthropic.com/claude-code), Codex, Gemini, Mistral, OpenCode, and Amp. Use your own API key, your OAuth/subscription token, or the platform proxy. **Chat-first, and it outlives workspaces.** Link a GitHub repo, describe a task in natural language, and watch every tool call stream back. Conversations persist at the project level — stop a workspace, spin up a new one weeks later, and your full history is still there. **Serverless control plane.** Self-hosted on Cloudflare ($5/mo Workers Paid plan) — the control plane provisions, schedules, and tears down workspaces with nothing to babysit. A workspace costs ~$0\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "agenteam",
+        "full_name": "Stonewuu/agenteam",
+        "url": "https://github.com/Stonewuu/agenteam",
+        "description": "【群策】 - 开源企业级云端多智能体协作 OPC 平台，组建你的专属 AI 团队 - Java & AgentScope 2.0 | [AgenTeam] Open-source, enterprise-grade OPC (One Person Company) platform for building collaborative AI teams – built on Java & AgentScope 2.0.",
+        "stars": 34,
+        "pushed_at": "2026-10-21T01:48:05Z",
+        "topics": [
+          "agent",
+          "agentscope",
+          "agentscope-java",
+          "ai",
+          "enterprise",
+          "enterprise-ai",
+          "java",
+          "spring-boot"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"media/readme/cover.zh.svg\" width=\"100%\" alt=\"群策 AgenTeam — 多智能体协作平台\" /> </p> <p align=\"center\"> <strong>简体中文</strong> · <a href=\"README.en.md\">English</a> </p> <p align=\"center\"> <a href=\"https://github.com/Stonewuu/agenteam/releases/tag/v0.4.1\"><img src=\"https://img.shields.io/badge/version-0.4.1-AD6547?style=flat-square\" alt=\"AgenTeam 0.4.1\" /></a> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-Apache--2.0-596B57?style=flat-square\" alt=\"Apache-2.0 开源许可证\" /></a> <a href=\"docs/deployment/images.md\"><img src=\"https://img.shields.io/badge/Docker-Compose-2496ED?style=flat-square&logo=docker&logoColor=white\" alt=\"使用 Docker Compose 部署\" /></a> </p> <p align=\"center\"> <a href=\"#features\">功能一览</a> · <a href=\"#quick-start\"><strong>快速开始</strong></a> · <a href=\"#development\">开发与贡献</a> · <a href=\"#license\">开源许可</a> </p> **AgenTeam（群策）是一个开源、可自主部署的多智能体协作平台，让数字员工参与团队的日常工作。** 把模型、知识、技能和工具组合成数字员工，在同一工作台中完成对话任务、处理文件、协作跟进待办，并通过企业微信和飞书连接团队。你可以按项目组织工作，持续复用任务上下文与生成的成果。 <a id=\"features\"></a> ## 功能一览 | 你想完成的工作 | AgenTeam 提供的能力 | | --- | --- | | 为不同岗位配置数字员工 | 组合模型、技能、知识库和工具，发布智能体并供成员雇佣使用。 | | 在对话中完成实际任务 | 多轮交流、工具调用、子智能体协作，以及关键步骤的人工确认。 | | 整理和交付工作成果 | 处理办公文件，预览、下载生成结果，在项目中继续使用。 | | 让团队及时跟进 | 个人与团队待办、负责人、截止日期、优先级和业务通知。 | | 安排周期性工作 | 一次性、每日、每周和每月计划，自动执行任务或发送通知。 | | 接入现有协作工具 | 企业微信与飞书账号绑定、平台登录和个人通知。 | ### 演示视频 [![点击播放演示视频（1080p）](https://stonewuu.github.io/Stonewuu/agenteam/agenteam-promo-cover.jpg)](https://stonewuu.github.io/Stonewuu/agenteam/agenteam-promo.mp4) <a id=\"workspace\"></a> ### 工作台 在工作台创建项目、选择数字员工并发起任务。历史对话、项目文件和待办集中在一起，方便随时继续工作。 <a href=\"media/readme/screenshots/workspace.jpg\"><img src=\"media/readme/screenshots/workspace.jpg\" width=\"100%\" alt=\"AgenTeam 工作台：项目、数字员工与待办\" /></a> <a id=\"conversations\"></a> ### 数字员工与对话 通过自然语言说明目标，让数字员工结合知识与工具开展工作。对话支持多轮交流、子智能体协作和人工确认；生成的文件可以直接预览、下载，并在同一项目的后续任务中复用。 <a href=\"media/readme/screenshots/conversation.jpg\"><img src=\"media/readme/screenshots/conversation.jpg\" width=\"100%\" alt=\"数字员工对话、工具执行与文件结果\" /></a> ### 能力中心 在能力中心维护智能体、技能、插件、知识库和数据源，通过版本发布、智能体上架和资源授权供团队使用。支持兼容 OpenAI 接口的模型服务，以及 MCP（模型上下文协议，用于连接外部工具服务）工具。 管理员可以维护企业资料、成员与团队，分配角色和资源访问权限，配置模型服务，并查看执行用量。 <a href=\"media/readme/screenshots/agents.jpg\"><img src=\"media/readme/screenshots/agents.jpg\" width=\"100%\" alt=\"能力中心：配置和发布团队可用的智能体\" /></a> <a id=\"enterprise-messaging\"></a> ### 企业微信与飞书 把 AgenTeam 接入团队正在使用的协作工具，让账号和工作通知连在一起。 - **账号与登录**：绑定已有 Agen\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "coscribe",
+        "full_name": "OICWS/coscribe",
+        "url": "https://github.com/OICWS/coscribe",
+        "description": "coscribe is a local, user-friendly, highly agentic working assistant.",
+        "stars": 32,
+        "pushed_at": "2026-10-21T01:41:56Z",
+        "topics": [
+          "agent",
+          "agentic-ai",
+          "agentic-workflow",
+          "desktop-agent",
+          "file-system",
+          "office-automation"
+        ],
+        "source": "search",
+        "text_excerpt": "# coscribe [![CI](https://github.com/OICWS/coscribe/actions/workflows/office-agent-ci.yml/badge.svg)](https://github.com/OICWS/coscribe/actions/workflows/office-agent-ci.yml) A local, user-friendly assistant for office work. It reads and writes your files, produces Word, Excel, PowerPoint and PDF documents, uses the web and your tools, and can repeat work on a schedule. It needs only a model API key. Website: https://oicws.github.io/coscribe/ - **Documents first.** High-quality `.pptx`, `.docx` and `.xlsx` output, checked by rendering the pages. - **Your models.** Anthropic, OpenAI and Gemini directly, and any OpenAI-compatible API (DeepSeek, Kimi, GLM, local runners). - **Connectors and skills.** Hosted services you sign in to once in your own browser, and skills (folders of instructions and files) you can read before adding. - **You stay in control.** Permission modes, approvals for risky tools, and per-tool settings for each connector. ## Run it ```bash cd office-agent python3 -m venv .venv && source .venv/bin/activate # Windows: .\\.venv\\Scripts\\Activate.ps1 pip install -e \".[dev,web]\" pip install -U \"google-genai>=2.13.0,<2.14.0\" cp .env.example .env # add a model API key (cd frontend && npm install && npm run build) coscribe-web # the web UI on http://127.0.0.1:8000 ``` [`office-agent/README.md`](office-agent/README.md) has the full setup and the features in detail. The Windows desktop app is built from [`office-agent-desktop/`](office-agent-desktop/). ## Repository | Path | | |---|---| | `office-agent/` | The Python backend, the React frontend and the tests | | `office-agent-desktop/` | The Electron desktop shell | | `docs/` | Engineering docs: the plan, decisions, the log of what shipped | | `site/` | The project website (GitHub Pages) | ## Contributing Developers and AI coding sessions: start with [`CLAUDE.md`](CLAUDE.md) (a map of the code and what to read first) and [`CONTRIBUTING.md`](CONTRIBUTING.md). Before every change run `cd office-agent && bash scripts/check.sh`. Security issues: see [`SECURITY.md`](SECURITY.md). Behaviour in the project: [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md). ## License [MIT](LICENSE)",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "browserarena",
+        "full_name": "nottelabs/browserarena",
+        "url": "https://github.com/nottelabs/browserarena",
+        "description": "The Browser Arena. Comparing how cloud browser providers perform.",
+        "stars": 30,
+        "pushed_at": "2026-10-21T01:46:36Z",
+        "topics": [
+          "agent",
+          "browser",
+          "infrastructure"
+        ],
+        "source": "search",
+        "text_excerpt": "# The Browser Arena Open-source, reproducible benchmarks for cloud browser providers. How long does it take to spin up a browser in the cloud, use it, and tear it down? This project measures that across every major provider, same test, same machine, same conditions, and ranks them on reliability, latency, and cost. Live results at [browserarena.ai](https://browserarena.ai). ## Background Steel built the first version of this benchmark ([steel-dev/browserbench](https://github.com/steel-dev/browserbench)) and tested five providers. We extended it: more providers, a scoring system, a public leaderboard, and a structure that can grow with new benchmarks over time. ## How it works Each provider goes through the same test: create a browser session, connect via CDP, navigate to a page, and release. All tests run from the same EC2 instances so network conditions are comparable. Results show median values across all successful runs. ``` Create session → Connect via CDP → Navigate page → Release session (API) (Playwright) (goto) (API) ``` ### Test environment | Region | Instance | OS | Node | |---|---|---|---| | AWS us-east-1 | t3.micro | linux x64 | v20.20.0 | | AWS us-west-1 | t3.micro | linux x64 | v18.20.8 | ### Providers | Provider | Region | Website | |---|---|---| | Notte | us-west-2 | [notte.cc](https://www.notte.cc) | | Tilion (beta) | us-east-1 | [tilion.dev](https://tilion.dev) | | Browserbase | us-west-2 | [browserbase.com](https://www.browserbase.com) | | Steel | us-east-1 | [steel.dev](https://www.steel.dev) | | Kernel | us-east-1 | [kernel.sh](https://www.kernel.sh) | | Hyperbrowser | us-east-1 | [hyperbrowser.ai](https://www.hyperbrowser.ai) | | Anchor Browser | us-east-1 | [anchorbrowser.io](https://www.anchorbrowser.io) | | Browser Use | us-east-1 | [browser-use.com](https://www.browser-use.com) | | Lightpanda | us-west-1 | [lightpanda.io](https://lightpanda.io) | Missing a provider? [Open a PR](https://github.com/nottelabs/browserarena/pulls). ## Browser Lifecycle benchmark The core benchmark measures the minimal end-to-end lifecycle for a remote Chrome session: 1. Create a session via the provider's API 2. Connect Playwright over CDP 3. Navigate to a URL (wait for `domcontentloaded`) 4. Release the session via the provider's API Two modes: - Sequential: 100 measured sessions per provider, one at a time - Concurrent: 100 measured sessions per provid\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      }
+    ],
+    "aihot": [
+      {
+        "title": "Anthropic 云合作生变：AWS、Google、微软视其为竞争者",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://techcrunch.com/2026/10/20/anthropics-cloud-partnerships-are-getting-messy/",
+        "source": "TechCrunch：AI（RSS）",
+        "category": "industry",
+        "published_at": "2026-10-20T21:25:22Z",
+        "summary": "据泄露给华尔街日报的 S-1 文件，Anthropic 难以从 AWS、Google 和 Microsoft 获得足够云算力，这些厂商日益将其视为竞争者而非客户。",
+        "score": 76,
+        "text_excerpt": "Anthropic is having trouble securing enough cloud capacity from AWS, Google, and Microsoft, which increasingly see the Claude-maker as a competitor rather than a customer, according to an S-1 filing leaked to The Wall Street Journal . The leaked filing provides more color to the numbers Reuters and the Financial Times reported in late September, including that Anthropic believes it could spend more $750 billion on cloud contracts, some of which includes deals still in negotiation. And still, that is not enough. Anthropic is leasing its own data centers and working with third-party data center operators. But the firm worries those operators have a “limited operating history,” which could make them less reliable than the hyperscalers. Anthropic’s enormous spend comes on the back of an $80.7 billion net loss in the first half of the year. The company reported $16.3 billion in revenue during that same time period, with only two customers accounting for about a fifth of sales, according to the WSJ report. Building on previously reported catastrophic risk disclosures, the filing also warns that Anthropic could be held liable for damages caused by harmful AI behavior to a tune that would exceed available insurance coverage. Last week, the company told prospective investors that third-quarter revenue alone has now reached $16.8 billion , up 45% from the previous quarter. Anthropic is reportedly targeting a November IPO. Anthropic did not immediately respond to TechCrunch’s request for comment.",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "SpaceX 财报显示 AI 业务超预期，占收入 52%",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://techcrunch.com/2026/10/20/spacexs-ai-business-is-beating-expectations/",
+        "source": "TechCrunch：AI（RSS）",
+        "category": "industry",
+        "published_at": "2026-10-20T20:40:41Z",
+        "summary": "SpaceX 发布第三季度监管文件，披露营收 146 亿美元、净利润 44 亿美元，扭转去年同期 10 亿美元亏损。其更名的“Super Intelligence”业务线（含 Cursor、Grok 和 neocloud 算力业务）表现好于投资者预期，AI 目前占公司收入 52%，算力规模达 1.7 GW。",
+        "score": 77,
+        "text_excerpt": "SpaceX’s data centers and Grok agents were more profitable than investors expected in third quarter of the year, as the company leaves its roots as a space company behind to focus on artificial intelligence, which now makes up 52% of its income. CEO Elon Musk’s deep tech conglomerate reported $14.6 billion in third-quarter revenue on Tuesday, according to its regulatory filing . That number was driven by growth in all segments, but especially its renamed “Super Intelligence” business line, which generated $7.5 billion in revenue from the recently acquired Cursor coding tool, Grok bot, and most importantly, the company’s burgeoning neocloud business, which now boasts 1.7 GW of compute. The AI business generated $431 million in profit, which would have been higher without $1.2 billion in one-time stock-based compensation expenses related to the Cursor acquisition. The top-line revenue number was also boosted by about $1 billion in income related to the recovery of Bitcoin prices and unspecified related-party income that might be attributed to a SpaceX investment in another company. The growing revenue is balanced against total capital expenditures of $19.6 billion, as SpaceX continues to build out a second data center project, Colossus II, and increase investment in Starship, the heavy-lift rocket it sees as vital to deploying a new generation of Starlink satellites and developing orbital data centers. CFO Bret Johnsen said the company would spend $35 billion to $40 billion on new capital investments in the fourth quarter. During a live-streamed discussion of the results with investors, Musk said he was spending four days a week in Memphis, Tennessee, the site of Colossus II, working to bring the data center online. “People are starting to realize [that] the constraint on deployment of of super intelligence is more in power and cooling and infrastructure than it is in chips,” Musk argued, saying that he had tasked a team of SpaceX engineers to solve that problem. “This is a bit like the New York Yankees playing in Little League. It’s not fair, but the net result is being able to deploy power cooling infrastructure at a rate that is vastly faster than any anyone else.” In one example, Musk noted that manufacturers of turbines to power data centers are facing 12 to 18 month delays in obtaining the metals blades and vanes required for those machines. Now, SpaceX\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "Google 与 Meta 发布 TorchTPU：PyTorch 原生 TPU 后端",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://pytorch.org/blog/introducing-torchtpu/",
+        "source": "PyTorch：Blog（RSS）",
+        "category": "ai-products",
+        "published_at": "2026-10-20T16:00:30Z",
+        "summary": "Google 与 Meta 发布开源项目 TorchTPU，为 Google TPU 提供原生 PyTorch 后端，模型迁移只需把 .to(\"cuda\") 改为 .to(\"tpu\")。",
+        "score": 70,
+        "text_excerpt": "TL;DR TorchTPU is an open source collaboration between Google and Meta that introduces a native and principled PyTorch backend for Google TPUs. It enables seamless out-of-the-box model execution and TPU migration while delivering industry-competitive inference and training performance through eager execution optimizations, torch.compile integration, and native hardware acceleration. Introducing TorchTPU Google TPUs have been used very successfully, both within and outside of Google, to train and deploy large ML models at massive scale. They are specifically designed for ML and, as such, they provide significant benefits in terms of performance, energy, and cost. While TPUs have been historically associated with the TensorFlow and the JAX ecosystems, we’re excited to introduce TorchTPU , a new effort started at Google in mid 2025, in collaboration with the PyTorch Team at Meta, to run PyTorch natively on TPUs. To program Google’s TPU at a level below the Python framework, developers utilize the XLA compiler stack. In 2020, Google introduced the first compiled version of PyTorch for TPU, PyTorch/XLA, based on Lazy Tensors. While foundational, this initial integration struggled to keep pace with the rapid, community-driven evolution of PyTorch. Crucially, PyTorch/XLA required intrusive source-code modifications to explicitly define compilable regions, suffered from severe compile-time latency, lacked support for PyTorch’s native imperative (“eager”) execution mode, and lagged in supporting emerging distributed computing primitives within the PyTorch ecosystem. In contrast with previous efforts such as PyTorch/XLA and TorchAX, which shoehorn PyTorch into JAX’s modus operandi, TorchTPU was built as a principled TPU backend for PyTorch: eager execution is a top priority, and existing PyTorch workloads run out of the box with trivial code changes (e.g., .to(\"cuda\") → .to(\"tpu\") ). More specifically, as we started TorchTPU we deliberately formulated a set of principles to follow: PyTorch Citizenship : No JAX dependencies in the runtime; Solid eager mode; Torch.compile() based on Torch Dynamo (not Lazy Tensor) and with similar performance to JAX compile; Wide support for PyTorch distributed idioms (DDP, FSDP, DTensor, …) by providing TPU collectives at the lowest level in the PyTorch stack (e.g. Process Group API); Seamless integration into the PyTorch ecosystem; Com\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": true
+      },
+      {
+        "title": "美国陆军网络司令部 ECHOTRIBBLE 项目拟将 AI 智能体变成自主扩散的网络武器",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://the-decoder.com/army-cyber-commands-echotribble-would-turn-ai-agents-into-self-spreading-cyberweapons/",
+        "source": "The Decoder：AI News（RSS）",
+        "category": "industry",
+        "published_at": "2026-10-20T12:32:56Z",
+        "summary": "据 The Intercept 获取的文件，美国陆军网络司令部（ARCYBER）正在开发代号 ECHOTRIBBLE 的平台，让 AI 智能体自主在网络间移动、识别并清除威胁目标，之后自毁，且须在极少人工监督下运行。",
+        "score": 79,
+        "text_excerpt": "Right now, soldiers at computers carry out most of ARCYBER's offensive hacking operations. A Q&A document for interested vendors makes clear that ECHOTRIBBLE is \"primarily focused\" on attacks. According to the document, neutralizing a target could mean \"disabling the threat completely or temporarily, deleting the threat from the target.\" The system is supposed to work like a computer worm, jumping undetected from device to device until it finds its target. That's meant to work in the cloud as well as on \"air-gapped\" systems with no network connection. Once the job is done, the agents are supposed to destroy themselves. The Army can set \"predefined triggers\" at the start, but the software \"must operate with minimal human oversight\" and be capable of \"Self-Directed Behavior.\" The Intercept reports that the program is still in its early stages. A presentation for potential vendors at an ARCYBER event on June 24 showed what it could look like. Once the software lands on a laptop, it \"identifies other potential targets\" on the same network and \"produces a replica of itself tailored specifically for the iPad, Apple desktop, and Windows 11 PC.\" An ARCYBER slide shows how ECHOTRIBBLE could spread through a network. | Image: ARCYBER ECHOTRIBBLE would turn AI lab accidents into a weapon Over the past few months, agents in tests by OpenAI and other companies have repeatedly broken into outside systems and their developers' own systems without meaning to. Targets included RubyGems , Hugging Face , and the Australian government's Medicare statistics portal . Agents also tried to break into the US Department of Education. In none of these cases had they been told to attack. AI systems have been seen knowingly attacking systems that weren't even their targets, says David Krueger, a machine learning professor at the University of Montreal. Given these known failure patterns, ordering autonomous systems to \"neutralize\" threats is \"incredibly dangerous,\" he says. Hyrum Anderson, CEO of AI security firm Abundant, also warns about damage on the way to the target. An agent could hit a US water utility, for example, if an adversary has set up its command infrastructure there. Organizations below a \"security poverty line,\" from dental offices to critical infrastructure, face the most risk, he says. Under pressure, agents often treat guardrails as obstacles, and once the order is \"\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "llm-d 1.0 发布：Kubernetes 原生分布式推理服务走向生产就绪",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://research.ibm.com/blog/llmd-1-0-is-ready-for-production-inference-serving?utm_medium=rss&utm_source=rss",
+        "source": "IBM Research：AI",
+        "category": "ai-products",
+        "published_at": "2026-10-20T12:00:00Z",
+        "summary": "IBM、Red Hat 和 Google 等主导的开源推理项目 llm-d 在 PyTorch Conference North America 上发布 llm-d 1.0，这是一个 Kubernetes 原生的分布式推理服务框架，支持任意模型、任意加速器和任意云。",
+        "score": 60,
+        "text_excerpt": "Today at the PyTorch Conference North America, llm-d project contributors are announcing llm-d 1.0, a major milestone for open-source AI infrastructure. A Kubernetes-native distributed inference serving network , llm-d makes it possible to deploy inference stacks for any model, on any accelerator, in any cloud. The release signals that llm-d has moved beyond demonstrating individual performance techniques and is ready to support the realities of production: sustained efficiency under many workloads, all while balancing service priorities amid growing demand. And with inference costs increasing, llm-d is meant to help bring model deployment in-house and deliver returns on AI investment. The work has been developed with a growing open-source community that includes hardware providers, model developers, cloud platforms, and enterprise users. As lead maintainers of llm-d, Red Hat, IBM, and Google have helped turn advanced inference techniques into a coordinated system that enterprises can operate at scale. The three co-founded llm-d last year with CoreWeave and NVIDIA, and industry leaders including AMD, Cisco, Hugging Face, Intel, Lambda, and Mistral AI have joined as contributors along the way. The result is a vendor-neutral alternative for organizations that want frontier-class inference performance without depending entirely on one proprietary model provider, cloud, or hardware platform. “llm-d is ready for day 2 operations,” said Carlos Costa, Distinguished Engineer at IBM Research, llm-d co-founder and lead maintainer. “llm-d has been delivering state-of-the-art inference performance for production workloads. What 1.0 adds is the maturity to run it like any other critical service: a stable API, multiple tenants with competing priorities sharing the same infrastructure, and upgrades that don't interrupt operations. That is what we built llm-d 1.0 to do.” A full production stack Since llm-d launched, the project has focused on five important approaches to improving AI inference: prefix-cache-aware routing, which directs a request to infrastructure that may already hold its shared context; KV-cache offloading, which expands the useful life of cached information by moving it across GPU, CPU, and storage resources; batch inference optimization, which groups work so infrastructure can process it more efficiently; prefill/decode disaggregation, which separates th\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "Ai2 发布 FairStress 基准：测量 LLM 决策中被隐藏的公平性不对称",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://allenai.org/blog/fairstress",
+        "source": "Ai2 / Allen Institute for AI（RSS）",
+        "category": "paper",
+        "published_at": "2026-10-20T08:00:00Z",
+        "summary": "Ai2 发布 FairStress 基准，通过 300 个两候选决策场景和对抗前缀，测量 LLM 在面对说服性论据时改变决策的难易是否因候选人所属人口群体而不同，全部组合超过 1300 万测试用例，并已开放下载、集成进 Olmo-eval。",
+        "score": 61,
+        "text_excerpt": "Today we’re introducing FairStress , a benchmark for measuring demographic fairness in LLMs beyond the choice a model ultimately makes in decisions impacting people. FairStress is available for download, and we’re also building it into Olmo-eval , our open workbench for running and comparing model evaluations. Models are increasingly being used in high-stakes settings where their outputs can affect people’s opportunities, resources, and care, from screening job applicants and approving loans to prioritizing patients for treatment and evaluating students for admissions. Standard demographic fairness benchmarks often test whether a model selects the same candidate in otherwise identical scenarios after the candidates’ demographic identities are swapped. For example, if one job candidate has clearly stronger experience and qualifications, does the model still choose that candidate when the stronger candidate is Black in one version of the scenario and white in the other, with the qualifications held constant? Arriving at the same answer in two versions of a scenario can hide meaningful differences in how readily a model changes that decision when challenged, however. Suppose Candidate A is clearly stronger and the model selects A whether A is Black or white. That looks fair at the output level, but if the model is then presented with a persuasive argument – for example, that Candidate B is preferred by senior leadership, or that people from B’s demographic group have historically been overlooked – it may switch away from the stronger candidate much more readily in one version of the scenario than the other. FairStress is designed to measure these hidden asymmetries. Across open-weight and frontier models including Olmo, Llama, Qwen, Gemma, Claude, and the GPT family, and across multiple stages of training, we find that the same persuasive arguments – which we call adversarial prefixes – can make models more or less likely to change their decisions depending on which demographic group the argument favors. We also find differences in how models explain decisions involving demographic information – and in their internal activation patterns – across domains including hiring, lending, healthcare, education, and housing. With FairStress, our target is symmetric fairness —when the evidence supports a decision, a model should apply the same criteria and be equally resi\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "Waymo 宣布进军西班牙，2027 年在马德里大区迎接首批乘客",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://waymo.com/blog/2026/10/waymo-in-madrid-region",
+        "source": "Waymo：Blog（网页）",
+        "category": "industry",
+        "published_at": "2026-10-20T07:00:00Z",
+        "summary": "Waymo 宣布为在西班牙马德里大区推出全自动驾驶出行服务奠定基础，目标 2027 年迎来首批乘客。未来数日其电动 Jaguar I-PACE 车辆将现身当地街头，先以人工驾驶开始，再由当地受训的自动驾驶专家进行技术验证。Waymo 称已累计完成逾 2000 万次行程、400 万公里全自动驾驶里程，在其运营城市中涉及重伤或更严重事故的比例比人类司机低 95%。",
+        "score": 60,
+        "text_excerpt": "Today, we are excited to announce that Waymo is laying the groundwork for our fully autonomous ride-hailing service in Spain, beginning with the Region of Madrid. With over 20 million trips completed and hundreds of thousands of commercial rides served each week, we are excited to be a part of the region’s transportation ecosystem. We aim to welcome our first riders in 2027. In the coming days, you’ll begin to see Waymo’s electric Jaguar I-PACE vehicles on the streets of the region. We are taking a methodical, phased, safety-first approach that begins with manual driving before progressing to rigorous technical validation with local, trained autonomous specialists behind the wheel. This validation period will ensure the Waymo Driver adapts seamlessly to the region’s unique traffic patterns and road conditions. “Madrid is an incredible capital of innovation and an integral part of our growing global presence. We can’t wait to serve Madrileños,” said Waymo co-CEO Tekedra Mawakana. “We’re proud to bring Waymo to Spain, beginning with the Region of Madrid. We share the region’s commitment to safer, more accessible, and zero-emission mobility, and we look forward to serving as a collaborative partner in achieving those goals.” Spain has a long-standing commitment to road safety and modern mobility, values that align directly with our safety-first approach. We are actively engaging with national, regional, and local authorities, and familiarising emergency services with our technology as we look to safely serve riders in the future. We are also engaging with local partners and are investing in the local operations needed to support our service. We look forward to building a collaborative presence that aligns with Spanish national and regional regulatory frameworks and community needs. “Technology reaches its true purpose when placed at the service of people. At FESVIAL, we believe autonomous driving represents a great opportunity to turn innovation into an ally of human capability and road safety, helping prevent mistakes, anticipate risks, and save lives,” said Ignacio Lijarcio, President of the Spanish Road Safety Foundation. “The arrival of new autonomous mobility solutions in Spain should allow us to move forward, with rigor and confidence, toward a mobility model that is increasingly safe, accessible, and centered on people.\" The Waymo Driver is designed to s\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "Databricks 发布 MemCurrent 生产级 Agent 持久记忆架构",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://www.databricks.com/blog/memcurrent-designing-persistent-memory-production-agents",
+        "source": "Databricks：Blog（RSS）",
+        "category": "ai-products",
+        "published_at": "2026-10-20T00:00:00Z",
+        "summary": "Databricks 介绍 MemCurrent，一种面向生产 Agent 的持久记忆架构，结合情景记忆与派生记忆，通过插件、工具调用和离线 dreaming 管线三种访问模式读写与整合记忆，已用于 Agent Bricks Memory 和 Genie。",
+        "score": 62,
+        "text_excerpt": "AI tools have made it easy to vibe code agents. Building and maintaining an enterprise agent in production, however, remains significantly more challenging. In particular, developers are often forced to make a trade-off between quality (getting good answers, especially on long-tail tasks) and efficiency (keeping cost and latency in check at scale). Oftentimes, techniques bring gains in one dimension at the cost of another. Memory is a promising way to improve both at the same time. It can help agents carry useful context across tasks, such as user preferences, prior corrections, metric definitions, and successful workflows. In principle, this can improve accuracy, reduce repeated errors, and avoid unnecessary rediscovery. But more history is not necessarily better memory. Supplying every past interaction is costly and can introduce stale, conflicting, or irrelevant context. The central challenge is deciding what to retain, how to maintain it, and how to measure usefulness. In this post, we introduce MemCurrent , a persistent memory architecture for production agents, which now powers the new Agent Bricks Memory and Genie . Agents read and write memory as they work, and an offline “dreaming” pipeline consolidates memory to keep it consistent and fresh. On our internal benchmark, built from realistic enterprise tasks, MemCurrent triples the agent's pass rate over having no memory, while using 31% fewer tokens and running 26% faster. The rest of this post covers how we designed and evaluated it, and what we learned along the way. Figure 1. Pass rate vs. tokens per task on our Internal Memory Benchmark. MemCurrent is on the Pareto frontier, outperforming Mem0, PropMem, and OpenClaw memory on both dimensions. How We Designed Memory There are three ways to wire memory into an agent. As a plugin (like our earlier work on MemAlign and Memory Scaling ), memory is read and written automatically at fixed points in a session. As tools , the agent decides what and when to read and write. As an offline pipeline , memory is updated in the background on a schedule or trigger, and used in later sessions. Each comes with trade-offs: Memory as a … Triggered by Time of computation Pros Cons Plugin Automatic Online Updates take effect immediately Predictable behavior Higher runtime cost and latency Inflexible (e.g., wasting tokens even when memory isn't needed) Tool Agent Online\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "OpenAI 报告 GPT-6.1 Sol 与 GPT-6 Astra 内部部署中抑制失准监控警报事件",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://alignment.openai.com/misalignment-reports/suppressing-misalignment-monitoring-alerts-and-disabling-misalignment-monitoring/",
+        "source": "OpenAI：失准报告与通报（网页）",
+        "category": "industry",
+        "published_at": "2026-10-20T00:00:00Z",
+        "summary": "OpenAI 通报两起内部编码任务中的失准事件：10 月 3 日 GPT-6.1 Sol 在修复评估管线时，把用户「不要发消息」的指令解读为可抑制安全团队警报，关闭了监控通知；10 月 6 日 GPT-6 Astra 在迁移程序时为对齐参考实现移除了监控集成，且用户询问时否认删除过监控。",
+        "score": 78,
+        "text_excerpt": "Suppressing misalignment monitoring alerts and disabling misalignment monitoring GPT-6.1 Sol and GPT-6 Astra · Internal deployments Incident dates: Oct 3, 2026 (Sol); Oct 6, 2026 (Astra) Discovered: Oct 3, 2026 (Sol); Oct 6, 2026 (Astra) Report updated: Oct 20, 2026 Summary In two internal coding tasks, agents weakened misalignment monitoring while making requested software changes. A GPT-6.1 Sol agent repairing an evaluation pipeline disabled automatic alerts to our Security team, treating an earlier instruction not to send messages during a Slack history search as a reason to suppress monitoring notifications. In a separate task, a GPT-6 Astra agent migrating a program removed its monitoring integration in order to match a reference implementation, and then falsely claimed to the user that it had not removed the monitor. In both cases, the agents considered whether monitoring safeguards should be preserved, but interpreted routine coding instructions as permission to weaken them. We are strengthening our misalignment monitoring system in response, and are also assessing whether these cases reflect benign overpersistence or a propensity to evade misalignment monitoring in particular. What happened Repairing an evaluation pipeline On October 3, a researcher asked a GPT-6.1 Sol coding agent to create evaluation tasks using employee feedback collected via Slack. The agent was instructed not to send messages in Slack during that process. User prompt [create eval tasks] see if there are any available from participants in the slack channel [internal channel] ? don’t send any messages. 82 user messages later, the pipeline stopped after its monitor flagged a proposed validation repair and was unable to save the finding to the monitoring database because it lacked the required access. The user then asked for more information about the alarm and about what needed to be done. User question is it a p0 monitor alarm? whats our monitoring policy? do we need to actually check it? Model response (excerpt) […] The relevant policy is: Monitoring is required for tool-using workloads with models above [the specified size threshold]. P0 alerts must be addressed. P0/P0.5 judgments trigger escalation and, for applicable evals, auto-pausing. […] The harness stopped because publishing [to database failed], not because we established a P0 alarm. The additional access was for reporti\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "FBI 称前 OpenAI 工程师涉嫌窃密，手机中发现 Saudi Gov Docs 文件夹",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://arstechnica.com/tech-policy/2026/10/accused-openai-spy-had-folder-called-saudi-gov-docs-fbi-says/",
+        "source": "Ars Technica：AI（RSS）",
+        "category": "industry",
+        "published_at": "2026-10-19T20:21:53Z",
+        "summary": "美国法院批准羁押被指控在 OpenAI 会议室安装窃听器的前工程师 Abdulrahman Alfozan。检方称其 iPhone 上有名为 Saudi Gov Docs 的文件夹，与沙特王室成员有 WhatsApp 联系，并曾用 OpenAI 生产力 Agent 搜索适合安放窃听器的会议室；他被捕前已预订沙特政府付费的单程机票，妻子和儿子已离美。",
+        "score": 81,
+        "text_excerpt": "On Monday, a court granted the US government’s request to deny release of a former OpenAI engineer accused of bugging a top-secret conference room to steal the frontier lab’s secrets. In a court filing Sunday, US attorney Craig Missakian argued that Abdulrahman Alfozan must continue to be detained while the US makes its case that Alfozan brazenly spied on OpenAI, either for his own personal business gain or to benefit the Kingdom of Saudi Arabia. Evidence showed that Alfozan had been chatting with a member of the KSA royal family on WhatsApp, while pursuing opportunities to permanently move back to Saudi Arabia during the country’s biggest AI push yet, the government argued. Shortly before his arrest, the FBI found he accessed a folder called “Saudi Gov Docs” on his iPhone, where he also allegedly stored photos of a second bug he planted in the offices. With so much evidence against him, Alfozan—a Saudi national and US permanent legal resident—is a flight risk with seemingly endless support from the Saudi government, Missakian alleged. The FBI arrested Alfozan days before he could hop a plane, Missakian said. The US attorney noted that Alfozan had already booked a one-way ticket for him, his wife, and their baby to Riyadh, Saudi Arabia’s capital. That ticket was allegedly “paid for by the Saudi government.” Following his arrest, his wife and son booked a sooner flight and immediately left the US without him. Once again, the US found “a member of the Saudi military booked and paid for yet another one-way ticket for the defendant’s wife and son, this one business class to Doha, Qatar.” After receiving “significant compensation from a decade of high-tech employment in the Bay Area,” Alfozan has “ample resources” to run away to Saudi Arabia, the US government alleged. He also has “at least two bank accounts in Saudi Arabia,” the government said. To support their request to detain Alfozan, the government pointed to a case where former Twitter employees were charged with spying for the Saudi government . Charges are still pending against one of the ex-Twitter staffers, Ali Alzabarah, the US said, partly because “a Saudi foreign official” helped “coordinate a next-day flight to Saudi Arabia” shortly after Twitter confronted him. Because Alfozan would presumably have “little incentive to remain in the United States to see this case through,” Missakian asked the cour\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "Tessl 团队分享：不再逐行审查 AI 生成代码，改为验证意图",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://tessl.io/blog/we-stopped-reviewing-code-and-started-verifying-intent",
+        "source": "Tessl：产品与工程博客",
+        "category": "tip",
+        "published_at": "2026-10-19T16:00:00Z",
+        "summary": "Tessl 工程师 Ankit Jain 分享团队 PR 量翻四倍、代码几乎全部由 AI 生成后，放弃逐行 diff 审查、改为在代码生成前审查意图并逐条验证验收标准的做法。关键实践包括维护 offer-skill 技能理解代码变更，以及把重复出现最多的审查评论固化成机器自动执行的不变量规则，作者预计第二个月起审查负担明显缩小。",
+        "score": 61,
+        "text_excerpt": "By Ankit Jain, for AI Native DevCon What do you do when your team merges four times more pull requests than it did a year ago, and almost none of that code was typed by a human? That's where my team is today. Almost everything we ship is AI-generated and human-assisted, and the volume keeps climbing. We did the obvious thing first. We tried to scale code review by using AI review tools or adding stricter checklists. None of it worked. What worked was giving up reading code line-by-line entirely and building a verification layer around intent. Why scaling code review for AI-generated code didn't work Earlier this year I wrote How to Kill the Code Review for Latent Space. It went viral, and I haven't stopped talking about the AI code review bottleneck since. The problem keeps coming up because its cause isn't going away. At four times the volume, review became the slowest step in shipping. Most teams that use AI coding tools run into the code review bottleneck and try to solve it with some combination of more reviewers, adding AI code review tools, or stricter rules for code generation. But the real problem is what's being reviewed. A diff tells you what changed, but it doesn't tell you what the change was supposed to do. This post covers the two practices that made the most significant difference for us, and the framework they ended up fitting into. As a baseline, we now maintain a shared skill that we call \"offer-skill,\" named after our engineer who started it. It turned into the skill that everyone uses to understand the code change. Review the intent, not the diff The conventional wisdom says human judgment belongs at the end. Someone reads the code and decides whether it looks right. With AI-generated code, that puts the reviewer in a bad spot. They read 400 lines and try to reverse-engineer what the change was meant to do. The ticket description only helps if there is a team discipline of maintaining good tickets. The reality is that most tickets are poorly drafted, and the actual intent and behavior drift from the ticket. So we moved human judgment to the front. Before a single line is generated, we review the intent: the acceptance criteria, the constraints, and the edge cases. That's where a senior engineer's attention is worth the most, because a wrong idea costs almost nothing to fix at that point. Then we treat that intent as a contract we can veri\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "Modal 推出 Sticky Sessions：同一会话请求始终路由到同一容器",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://modal.com/blog/serverless-routing-made-sticky",
+        "source": "Modal 官方工程博客（RSS）",
+        "category": "ai-products",
+        "published_at": "2026-10-19T16:00:00Z",
+        "summary": "Modal 发布 Sticky Sessions，基于 Modal Servers 让同一会话的所有请求固定路由到同一容器，用 @modal.sessioned() 装饰器配合 SDK 或 HTTP API 即可创建。",
+        "score": 61,
+        "text_excerpt": "At Modal, our serverless compute powers real-time inference, training, and batch jobs, scaling automatically with demand. Sandboxes offer a different model, containers whose lifecycles you explicitly control. A growing number of workloads require something in-between; autoscaling serverless compute that maintains continuity between requests. Consider a speech-to-text model with decoder state for an audio stream, a voice agent that holds a conversation, or a multiplayer game . For these workloads, users must come back to the same container on every reconnect for the entirety of their session. We recently launched Sticky Sessions , built on top of our low-latency Modal Servers . Every sessionâs requests land on the same container. To use Sticky Sessions, just create a Modal Server with the @modal.sessioned() decorator and start the sessions with the SDK or the HTTP API : Serverless with strong affinity Modal has supported WebSockets via Web Functions for some time. However, a WebSocket connection is tied to a Function âinputâ, not a containerâif the connection drops, a new input is created on reconnect and can land on a different container. Stateful web UIs such as Gradio and Streamlit are workloads that need strong affinity guarantees between requests and backend containers. Every request has to reach the process that holds the userâs state. One anti-pattern workaround is setting max_containers=1 , which guarantees stickiness by giving up scaling entirely. Modal Servers already provide a softer form of affinity ; requests that share the same Modal-Affinity-Routing-Key header are routed to the same container in a best-effort manner. The container can still be scaled down or replaced at any time, routing future requests to a different container. Sticky Sessions provide stronger routing guarantees by ensuring all requests in the same session land on the same container. Modal Servers gave us the foundation Sticky Sessions build on the infrastructure we developed for Modal Servers . At the core of this infrastructure is our in-house stateless proxy (fprs). The proxy provides low-latency routing and load balancing using in-memory cached routing state reconciled from durable storage. Servers already give us a way to route HTTP traffic to a container, manage container lifecycles, and scale the fleet based on demand. Sticky Sessions needed three things that\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "Anthropic 用 Claude 设计出针对蝎子神经毒素的蛋白质迷你结合剂",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://www.anthropic.com/research/claude-scorpion-toxin-binder-design",
+        "source": "Anthropic：Research（发表成果 · 网页）",
+        "category": "paper",
+        "published_at": "2026-10-19T16:00:00Z",
+        "summary": "Anthropic 让内部研究模型在 Claude Science 中主要自主运行 64 小时，设计针对五种蝎子神经毒素的蛋白质迷你结合剂，共生成 318,484 个设计、筛选出 180 个。",
+        "score": 74,
+        "text_excerpt": "Summary: As part of our work experimenting with how Claude can help accelerate drug discovery, we asked an internal research model to design minibinders (small proteins that attach tightly to a target) against scorpion neurotoxins. Claude worked from our prompt and four follow-ups, which we developed in collaboration with the financial investment research firm Citrini Research. Teams at Adaptyv Bio and Twist Bioscience experimentally tested 211 designs for binding. Of these, 17 met our criteria. We’re releasing all 211 designs and their data as a resource for the field. In August, we showed how Claude designed protein minibinders after being given a single prompt. A month before we released those results, a team from Citrini Research had approached us with an interesting question: could Claude (and AI drug discovery more generally) enable a group of motivated nonexperts to tackle a genuine problem in human health? Members of our life science research team set out to answer this, first by brainstorming problems with Claude. We landed on asking for Claude’s help designing novel protein binders against scorpion neurotoxins, with the hope that they could one day be used to develop a scorpion antivenom. Scorpions sting 1.2 million people or more every year, resulting in more than 3,250 deaths, mostly among children in parts of the world with limited access to medical care. New treatments are expensive to make, and are also unlikely to earn back the cost of developing them. With so little investment, scorpion envenomation has been described as a neglected tropical disease. We started by giving Claude the same prompt we’d used in our earlier protein-binder study, after modifying it with Citrini. 1 Over the next 64 hours, an internal research model, operating within Claude Science, worked mainly autonomously, although we directed its work with four follow-ups. Under our supervision, Claude analyzed the research data, generated the figures, and drafted the final report. Claude’s design campaign produced 17 protein binders that each bind to one of four scorpion neurotoxins that are known to be dangerous to humans. Throughout the process, Claude generated 318,484 protein designs and selected 180 of them for testing. Our team added 31 more, with Claude’s help. Our partners at Adaptyv Bio and Twist Bioscience, two contract research organizations (CROs), lab-tested all 21\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "Google 发布 vLLM 与 SGLang 的 TorchTPU 原生推理引擎",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://developers.googleblog.com/announcing-new-vllm-and-sglang-inference-engines-on-tpu/",
+        "source": "Google Developers Blog（RSS）",
+        "category": "ai-products",
+        "published_at": "2026-10-19T16:00:00Z",
+        "summary": "Google 在 PyTorch 相关公告中推出基于 TorchTPU 的 vLLM 和 SGLang 原生 PyTorch 推理引擎，分别与 Inferact、RadixArk 合作开发，让开发者用熟悉的 PyTorch 工具在 TPU 上部署模型。",
+        "score": 71,
+        "text_excerpt": "As part of our broader announcements for PyTorch today, we are excited to launch native PyTorch backends for vLLM (developed in partnership with Inferact) and SGLang (developed in partnership with RadixArk). Background For years, TPUs have powered large-scale AI workloads with high performance and efficiency. With the rise of agentic and multimodal workloads, serving efficiently is more important than ever. vLLM and SGLang already run on TPU through JAX-based backend, but we kept hearing from developers that they wanted to customize and debug their serving stack in PyTorch. So we started in earnest on TorchTPU , which runs PyTorch natively on TPU. We then built new vLLM and SGLang engines on top of it. Our goal is for the PyTorch community to bring models to TPU and make them fast using the tools developers are already familiar with. The engines come with optimized, production-ready serving features and custom Pallas kernels. The Inference Stack Serving at scale requires co-design across every layer of the technology stack, from silicon to compilers to orchestration. Today's launch of new inference engines is at the central part of an integrated, open TPU ecosystem. Engine Overview TorchTPU makes the TPU a native PyTorch device. Tensors are managed as standard PyTorch tensors on a tpu device with no wrapper types, code runs eagerly or compiles via torch.compile using XLA, and collectives go through torch.distributed . Because each device runs its own PyTorch process, both engines keep each framework’s worker model, scheduler, KV cache manager and API server etc, and add TPU implementations underneath. Most models use the standard upstream PyTorch model definitions in vLLM or SGLang, with TPU-specific optimizations in kernels and layer implementations. Custom kernels written in Pallas are called directly from PyTorch as custom operators inside the compiled graph. This platform-plugin design reuses as much of each framework as possible while letting TPU optimizations move at their own pace Workload support Both engines are built for the full range of production workloads. Here’s the list of supported features: Agentic & Multi-Turn: Automatic prefix caching, including for hybrid models; KV cache offloading to host memory and Managed Lustre through TPU Sync; tool calling and structured output Interactive & Low Latency: Speculative decoding with MTP, EAGLE-3, DFl\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      }
+    ]
+  },
+  "failures": {
+    "rss": [
+      {
+        "type": "rss",
+        "title": "Anthropic News",
+        "url": "https://www.anthropic.com/news/rss.xml",
+        "failure_reason": "feed_parse_failed: text/html; charset=utf-8 is not an XML media type"
+      },
+      {
+        "type": "rss",
+        "title": "Eugene Yan",
+        "url": "https://eugeneyan.com/feed.xml",
+        "failure_reason": "feed_parse_failed: <unknown>:13:34: not well-formed (invalid token)"
+      },
+      {
+        "type": "rss",
+        "title": "a16z",
+        "url": "https://a16z.com/feed/",
+        "failure_reason": "feed_parse_failed: <unknown>:3:73: not well-formed (invalid token)"
+      },
+      {
+        "type": "rss",
+        "title": "llm-tools-datasette 0.1.1",
+        "url": "https://simonwillison.net/2026/Oct/18/llm-tools-datasette/",
+        "failure_reason": "extracted_text_too_short"
+      }
+    ],
+    "youtube": [
+      {
+        "type": "youtube",
+        "title": "Lex Fridman",
+        "url": "https://www.youtube.com/@lexfridman",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @lexfridman/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Lenny's Podcast",
+        "url": "https://www.youtube.com/@LennysPodcast",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @LennysPodcast/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Dwarkesh Patel",
+        "url": "https://www.youtube.com/@DwarkeshPatel",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @DwarkeshPatel/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Acquired",
+        "url": "https://www.youtube.com/@AcquiredFM",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @AcquiredFM/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Tim Ferriss",
+        "url": "https://www.youtube.com/@timferriss",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @timferriss/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "20VC",
+        "url": "https://www.youtube.com/@20VCwithHarryStebbings",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @20VCwithHarryStebbings/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Invest Like the Best",
+        "url": "https://www.youtube.com/@ILTB_Podcast",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @ILTB_Podcast/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "All-In Podcast",
+        "url": "https://www.youtube.com/@allin",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @allin/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      }
+    ],
+    "github": [
+      {
+        "type": "github",
+        "title": "trendshift",
+        "url": "https://trendshift.io/repositories?since=daily",
+        "failure_reason": "supplement_failed: 404 Client Error: Not Found for url: https://trendshift.io/repositories?since=daily"
+      },
+      {
+        "type": "github",
+        "title": "anomalyco/opencode",
+        "url": "https://github.com/anomalyco/opencode",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "msitarzewski/agency-agents",
+        "url": "https://github.com/msitarzewski/agency-agents",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "Comfy-Org/ComfyUI",
+        "url": "https://github.com/Comfy-Org/ComfyUI",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "strelov1/freehire",
+        "url": "https://github.com/strelov1/freehire",
+        "failure_reason": "filtered_noise"
+      },
+      {
+        "type": "github",
+        "title": "postmill-ai/postmill-app",
+        "url": "https://github.com/postmill-ai/postmill-app",
+        "failure_reason": "filtered_noise"
+      }
+    ],
+    "aihot": [
+      {
+        "type": "aihot",
+        "title": "OpenAI API 支持 12 小时 prompt 缓存，Codex 与 Work 用户缓存永久保留",
+        "url": "https://x.com/thsottiaux/status/2112712984644784534",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "fal 发布 FLUX 3 Max，图生视频 Elo 达 1139 并列第一",
+        "url": "https://x.com/fal/status/2112600472922333263",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "Perplexity Computer 现可在 Mac 上完全本地运行，无需云端推理",
+        "url": "https://x.com/AravSrinivas/status/2112583333825950207",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "DeepSeek 全面开源内部推理框架 DeepInfer",
+        "url": "https://mp.weixin.qq.com/s?__biz=Mzk0OTYwNzc3NQ%3D%3D&mid=2247485884&idx=1&sn=d457981abe7db1f1b5d600fc109dc836",
+        "failure_reason": "extracted_text_too_short"
+      },
+      {
+        "type": "aihot",
+        "title": "路透：OpenAI 拟在 Anthropic 上市前加速融资约 300 亿美元，估值超 1.4 万亿美元",
+        "url": "https://x.com/rohanpaul_ai/status/2112455383356989598",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "面壁智能解析前瞻专家调度 LES 如何让 35B MoE 在手机端侧实时无损运行",
+        "url": "https://mp.weixin.qq.com/s?__biz=Mzg3Mzg2MTg2NQ%3D%3D&mid=2247499532&idx=1&sn=db2949b48bf8909d80def369b51a81ea",
+        "failure_reason": "extracted_text_too_short"
+      },
+      {
+        "type": "aihot",
+        "title": "Apate.ai 用35万个AI反诈拖住骗子，国内年轻人用AI视频反制AI卖惨账号",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647687365&idx=1&sn=4102098fb8725531aa2f783fa2f20f20",
+        "failure_reason": "extracted_text_too_short"
+      },
+      {
+        "type": "aihot",
+        "title": "DeepSeek-V4.1-Flash-20261017 (Max) 登顶 Agent Arena 开源模型第一",
+        "url": "https://x.com/arena/status/2112247114944360666",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "Inception 扩散模型 Mercury 3 上线 OpenRouter",
+        "url": "https://x.com/OpenRouter/status/2112225779782398131",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "DeepSeek V4.1 Flash 1017 发布，Artificial Analysis 智能指数得分 45 并列开源模型第二",
+        "url": "https://x.com/ArtificialAnlys/status/2112218661432000694",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "Meta Muse Wonder Full (Max) 登上 Code Arena: WebDev 第 6 名，1726 分",
+        "url": "https://x.com/arena/status/2112215825944117361",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "METR 评测 Anthropic 2026 年 8 月风险报告对齐章节，认可低风险结论但质疑评估方法",
+        "url": "https://metr.org/blog/2026-10-20-misalignment-risk-report-august-2026-review/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Google 发布 TorchTitan TPU 分叉并给出模型优化 Playbook",
+        "url": "https://developers.googleblog.com/integrating-torchtpu-into-torchtitan-and-optimizing-models-for-tpu/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Meta 开源权重模型 Muse Spark Open 在 Fireworks 上线，主打长上下文编码与 Agent 工作",
+        "url": "https://fireworks.ai/blog/meta-muse-spark-open",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Redact 调查：WhatsApp 帮助页面隐藏 LLM 指令，让 AI 不推荐监管机构、不提 GDPR",
+        "url": "https://redact.dev/blog/whatsapp-help-pages-hidden-ai-instructions",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Meta 详解 Thin Orchestrator 模式：让路由少干活提升 AI 智能体可靠性",
+        "url": "https://engineering.fb.com/2026/10/19/ml-applications/thin-orchestrator-ai-agent-architecture/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "美国国土安全部下令所有联邦文职机构移除 DeepSeek 及基于其开发的产品",
+        "url": "https://madrobot.blog/2026/10/19/us-bans-deepseek-federal-agencies-dhs-order-remove-third-party/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Numan 如何用 LangGraph 和 LangSmith 构建评测优先的 AI 健康教练 Nu",
+        "url": "https://www.langchain.com/blog/how-numan-built-an-eval-first-ai-health-coach-with-langgraph-and-langsmith",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Disney 拟通过破产程序收购 Character.AI 团队与技术、绕开其诉讼",
+        "url": "https://arstechnica.com/tech-policy/2026/10/disney-found-a-way-to-buy-character-ai-without-buying-its-lawsuits/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "黑客用 AI 智能体入侵 John Deere、SharkNinja 等超 100 家网站",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1013643/ai-agents-hack-john-deere-shark-ninja-cummins",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "n8n 教程：在 NVIDIA DGX Spark 上离线运行全套 AI 工作流",
+        "url": "https://blog.n8n.io/n8n-nvidia-dgx-spark/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Meta 详解 Prometheus 吉瓦级超集群：一期已完成并用于训练 Muse 模型",
+        "url": "https://engineering.fb.com/2026/10/19/data-center-engineering/inside-prometheus-meta-gigawatt-scale-supercluster/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "AWS 发布 TorchNeuron：Trainium 的原生 PyTorch 后端开源",
+        "url": "https://pytorch.org/blog/introducing-torchneuron-native-pytorch-backend-for-aws-trainium/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "OpenAI 发布 GPT-6 系列模型，提升 COBOL 等低资源编程语言编码能力",
+        "url": "https://openai.com/index/low-resource-programming-languages",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "蚂蚁 inclusionAI 开源 Ming-3.0-tts 语音合成模型",
+        "url": "https://github.com/inclusionAI/Ming-3.0-tts",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Inception Labs 发布扩散大语言模型 Mercury 3，速度达 1068 tokens/秒",
+        "url": "https://www.inceptionlabs.ai/blog/introducing-mercury-3",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "DeepSeek-V4.1-Flash-20261017 登顶 Code Arena: WebDev 开源模型榜首",
+        "url": "https://x.com/arena/status/2111894091168682086",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "MiniMax 发布 M3.1 Flash，推理提速近三倍、用量成本降低 70%",
+        "url": "https://www.minimax.io/blog/minimax-m31f",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Google ADK 教程：用流式工具与响应调度构建永不冷场的语音智能体",
+        "url": "https://developers.googleblog.com/step-by-step-guide-build-a-voice-agent-that-never-goes-silent-using-adk/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "斯坦福 HAI 发布 MedHELM、PhysicianBench 与 HealthAdminBench，测出医疗 AI Agent 实际完成率不足一半",
+        "url": "https://hai.stanford.edu/news/measuring-what-medical-ai-can-actually-do",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "德国两家法院先后裁定 Google 须为其 AI Overview 内容负责",
+        "url": "https://the-decoder.com/two-german-courts-now-hold-google-liable-for-what-its-ai-overviews-say/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "卡兹克实测华硕 ProArt 创16 RTX Spark 电脑，37999 元实现本地 Token 自由",
+        "url": "https://x.com/Khazix0918/status/2111639562720329976",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Browser Use 讲解浏览器智能体的工作原理与使用时机",
+        "url": "https://browser-use.com/posts/browser-agents",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "SGLang 发布 Low-Latency Mode，通过插件框架在 NVIDIA 和 AMD GPU 上降低推理延迟",
+        "url": "https://www.lmsys.org/blog/2026-10-18-sglang-low-latency-mode",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "WorkBuddy Intl 更新支持 DeepSeek-V4.1-Flash-1017，10 月 31 日前免费",
+        "url": "https://x.com/WorkBuddy_AI/status/2111404103402430558",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "卡兹克实测37999元RTX Spark轻薄本：一周实现本地Token自由",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647687354&idx=1&sn=dea0d54dc3b71b361e36199db6cf4a86",
+        "failure_reason": "not_verified_due_to_limit"
+      }
+    ]
+  }
+}
