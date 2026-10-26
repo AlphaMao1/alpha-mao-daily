@@ -1,0 +1,1421 @@
+{
+  "date": "2026-10-26",
+  "generated_at": "2026-10-26T01:28:35Z",
+  "timezone": "Asia/Shanghai",
+  "windows": {
+    "rss": "72h",
+    "youtube": "72h_or_7d",
+    "github": "7d",
+    "aihot": "selected latest"
+  },
+  "counts": {
+    "rss": {
+      "candidates": 9,
+      "full_text_success": 9,
+      "eligible": 9,
+      "failed": 3
+    },
+    "youtube": {
+      "candidates": 0,
+      "transcript_success": 0,
+      "eligible": 0,
+      "failed": 8
+    },
+    "github": {
+      "candidates": 28,
+      "readme_success": 28,
+      "eligible": 28,
+      "failed": 8
+    },
+    "aihot": {
+      "api_returned": 50,
+      "candidates": 50,
+      "original_verified": 15,
+      "eligible": 15,
+      "failed_or_pending": 35
+    }
+  },
+  "eligible_items": {
+    "rss": [
+      {
+        "source": "Interconnects",
+        "title": "Podcast: Kimi K3.1 Pro, the new cyber reality, and Muse musings",
+        "url": "https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber",
+        "published_at": "2026-10-25T11:49:00Z",
+        "summary": "#20",
+        "lookback_7d": false,
+        "text_excerpt": "#20 We — Nathan and Florian — wanted to discuss all the messy trade-offs of a busy week in AI and ask all the pressing questions like: Why did Kimi K3.1 Pro have a mixed reaction with such incredible benchmarks? Will it be adopted? Were we wrong about the risks of open-weight models and cybersecurity? Why do cyber experts discuss recent events so differently than AI experts? What comes next in the few months? What will change our minds? We will write more about this subject, but wanted to bring you behind the curtain as we aspire to quickly learn more about the cybersecurity industry and trends across the last few years that have been leading us today. We conclude the podcast with some lighter topics, from Muse-maxing to excitement in still hiring junior technical talent. Please send us questions and topics, as we plan to record more of these podcasts going forward. Share Listen on Apple Podcasts , Spotify , and wherever you get your podcasts . For other Interconnects podcasts, go here . YouTube ↓ 00:00 Kimi K3.1 Reaction 08:15 Kimi’s open-weight cyber principles 11:23 You can hack everything era 15:54 PHP2Shell, LiteLLM, and the new internet 24:00 Abliterated APIs, safeguards, and trusted access 31:41 Anthropic not hiring juniors employees 36:16 Florian’s Muse addiction 45:30 Wrap-up 00:00:00 Nathan Lambert: We are back with another Interconnects podcast. We are with Florian, eval guy, recently moved to SF. Florian, is Kimi K3.1 Pro , name is a mouthful, going to live up to the benchmark scores, for example on Artificial Analysis , or where is it going to land? 00:00:17 Florian Brand: In the past, the Kimi models always lived up to the expectations, but this release is kind of weird compared to the others. I think it is also partially because they are becoming more professional, and the previous model drops were kind of out of nowhere. This time, which also got some criticism, they launched a bigger social media campaign, which allegedly also involved paying people to post about the model without disclosing. 00:00:56 Nathan Lambert: I think a lot of companies do this and tell you not to mention it, but it’s a mess. It’s bad form. No company should do it. Essentially, one person tweeted a screenshot of the press instructions for Kimi that said, “Don’t say this is a paid promotion.” And to my knowledge, no one has corroborated it after that. 00:01:15 Florian\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Latent Space",
+        "title": "[AINews] Kimi 3.1 Pro 104BA-2.8T: Fable-5.1-Class Open Weights narrows Closed-AI lead to 1 month... and Pro Highspeed API with 2-3× speed",
+        "url": "https://latent.space/p/ainews-kimi-31/",
+        "published_at": "2026-10-24T07:18:29Z",
+        "summary": "We have Fable at home... or so we are being told by paid shills",
+        "lookback_7d": false,
+        "text_excerpt": "with even better efficiency: As usual we don’t get much research detail - the update is somewhat similar to Z.ai ’s 5.2-5.3 bump - a minor version bump for a lot more post-training: Kimi K3.1 Pro is a post-trained version of Kimi K3, with substantially larger post-training compute. To enable large-scale joint RL across hundreds of downstream domains , we optimized every layer of the stack — the RL framework, long-context inference, training efficiency, sandbox infrastructure, rollout scheduling, and a shared platform for environment quality checks — so that each increment of RL compute delivers stable, predictable returns. As a result, K3.1 Pro achieves consistent gains in every domain. Top Story: Kimi K3.1 Pro launch and reactions What happened Moonshot launched Kimi K3.1 Pro with near-frontier independent benchmark results, a substantial increase in model size, and an open-weight release promised for November 4, 2026. The model: Moonshot describes K3.1 Pro as a multimodal, “3T-class” mixture-of-experts model with 2.8 trillion total parameters, 104 billion active parameters, and a 1-million-token context window . Its advertised strengths include full-project coding, Blender/CAD work, financial modeling, and long-running agents. @Kimi_Moonshot Availability: Standard and Highspeed versions launched across Kimi’s website/app, Kimi Work, Kimi Code, and API. Moonshot claims Highspeed preserves intelligence while generating output 2–3× faster ; the official-account summary says it costs twice as much . The launch also includes Kimi Hosted Agents , a managed harness with a 24/7 execution environment for long-running work and multi-agent collaboration. @ZhihuFrontier , @ZhihuFrontier Independent general-capability result: Artificial Analysis placed K3.1 Pro fourth on its Intelligence Index, scoring 55 , behind Opus 5.5 at 58 and Sonnet 5.5 and Muse Wonder Full at 56. Its strongest improvements were agentic rather than uniformly distributed across knowledge and science tests. @ArtificialAnlys Independent coding result: Arena placed it #8 in Code Arena: WebDev, at 1,692 points , up nine places and 37 points over Kimi K3. Moonshot returned to Arena’s top four labs . @arena Independent cyber result: Despite deliberately reducing cyber-related training, it subsequently scored 64% on Artificial Analysis’ Cyber Index —the highest publicly accessible result and second over\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "battledrones v14: Compass Rose, a four player map",
+        "url": "https://simonwillison.net/2026/Oct/24/battledrones/",
+        "published_at": "2026-10-24T03:59:57Z",
+        "summary": "Release: battledrones v14: Compass Rose, a four player map I added four player online mode to Battledrones - previous maps were limited to two. Here's the initial prompt I used: Add a new map for a four player battle - four way rotational symmetry, up to four AI players, works with the WebSocket non-audio based multiplayer mode so up to four human players can join (any spare slots use AI) Claude Opus 5.5 added a new map called \"Compass Rose\" and modified the WebSockets multiplayer network code to support up to four players for that map, joining via share links or QR codes. The new teams use robots themed in purple and green, joining the existing blue and red designs. You can preview those colors in the updated model browser . Here's a replay link to watch a four way AI battle with the \"Goliath Armada\" mutator turned on, where each side starts with four giant Goliath mech units. Tags: game-design , projects , claude",
+        "lookback_7d": false,
+        "text_excerpt": "I added four player online mode to Battledrones - previous maps were limited to two. Here's the initial prompt I used: Add a new map for a four player battle - four way rotational symmetry, up to four AI players, works with the WebSocket non-audio based multiplayer mode so up to four human players can join (any spare slots use AI) Claude Opus 5.5 added a new map called \"Compass Rose\" and modified the WebSockets multiplayer network code to support up to four players for that map, joining via share links or QR codes. The new teams use robots themed in purple and green, joining the existing blue and red designs. You can preview those colors in the updated model browser . Here's a replay link to watch a four way AI battle with the \"Goliath Armada\" mutator turned on, where each side starts with four giant Goliath mech units.",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "Quick Study",
+        "url": "https://simonwillison.net/2026/Oct/23/quick-study-painter/",
+        "published_at": "2026-10-23T21:35:13Z",
+        "summary": "Tool: Quick Study Prompt to Claude Opus 5.5 High : Build an artifact where you open a photo and it rapidly (in a few seconds) paints a version of that photo using a canvas element and simulated paintbrush See also my previous experiment getting Claude Fable to simulate a watercolor illustration with P5.js. Quick Study uses Sobel edge detection , with no external libraries beyond Google Fonts. Tags: tools",
+        "lookback_7d": false,
+        "text_excerpt": "Prompt to Claude Opus 5.5 High : Build an artifact where you open a photo and it rapidly (in a few seconds) paints a version of that photo using a canvas element and simulated paintbrush See also my previous experiment getting Claude Fable to simulate a watercolor illustration with P5.js. Quick Study uses Sobel edge detection , with no external libraries beyond Google Fonts.",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "Introducing Kimi K3.1 Pro",
+        "url": "https://simonwillison.net/2026/Oct/23/kimi-k31-pro/",
+        "published_at": "2026-10-23T19:40:54Z",
+        "summary": "Introducing Kimi K3.1 Pro Kimi K3.1 Pro landed on the Kimi API today - it's not yet open weights, but Moonshot promise \"Full model weights will be released by Nov 4, 2026\". They're also offering a \"Highspeed\" version that's 2-3x faster, at twice the price (except for input token cache hits, which are priced the same). The US dollar pricing is $2.00/million tokens for input and $10/million for output - the same as GPT-6.1 Sol and half the price of Claude Opus 5.5. Moonshot's own benchmarks show Kimi as approximately level with Opus 5.5 and GPT-6 Astra - beating them on a few benchmarks, coming close on others. Artificial Analysis scored Kimi at 55 - ahead of Claude Fable 5.1, GPT-6 Astra, and Gemini 4 Argon (all at 53) and behind only Claude Opus 5.5 (58). This is the first time a (soon-to-be) open weight model has scored this highly against the frontier. I tried it out via the Moonshot API using the llm openai endpoint command I added to LLM 0.32 back in August: llm openai endpoint \\ https://api.moonshot.ai/v1 \\ --key kimi \\ -m kimi-k3.1-pro \\ \"Generate an SVG of a pelican riding a bicycle\" \\ --responses \\ -o reasoning_effort low \\ > kimi-k3.1-pro-pelican-low.stdout.txt \\ 2> kimi-k3.1-pro-pelican-low.stderr.txt llm openai endpoint can run prompts against any OpenAI-compatible endpoint but doesn't log the results, hence the extra options to save stdout and stderr (the reasoning trace). Here are the pelicans I got for Kimi K3.1 Pro on the three reasoning levels it supports - low, medium, and max. This is max: For comparison, I ran fresh pelicans against Kimi K3 on those three reasoning levels. Via Hacker News Tags: ai , generative-ai , llms , llm , llm-pricing , pelican-riding-a-bicycle , llm-release , ai-in-china , moonshot , kimi",
+        "lookback_7d": false,
+        "text_excerpt": "23rd October 2026 - Link Blog Introducing Kimi K3.1 Pro ( via ) Kimi K3.1 Pro landed on the Kimi API today - it's not yet open weights, but Moonshot promise \"Full model weights will be released by Nov 4, 2026\". They're also offering a \"Highspeed\" version that's 2-3x faster, at twice the price (except for input token cache hits, which are priced the same). The US dollar pricing is $2.00/million tokens for input and $10/million for output - the same as GPT-6.1 Sol and half the price of Claude Opus 5.5. Moonshot's own benchmarks show Kimi as approximately level with Opus 5.5 and GPT-6 Astra - beating them on a few benchmarks, coming close on others. Artificial Analysis scored Kimi at 55 - ahead of Claude Fable 5.1, GPT-6 Astra, and Gemini 4 Argon (all at 53) and behind only Claude Opus 5.5 (58). This is the first time a (soon-to-be) open weight model has scored this highly against the frontier. I tried it out via the Moonshot API using the llm openai endpoint command I added to LLM 0.32 back in August: llm openai endpoint \\ https://api.moonshot.ai/v1 \\ --key kimi \\ -m kimi-k3.1-pro \\ \"Generate an SVG of a pelican riding a bicycle\" \\ --responses \\ -o reasoning_effort low \\ > kimi-k3.1-pro-pelican-low.stdout.txt \\ 2> kimi-k3.1-pro-pelican-low.stderr.txt llm openai endpoint can run prompts against any OpenAI-compatible endpoint but doesn't log the results, hence the extra options to save stdout and stderr (the reasoning trace). Here are the pelicans I got for Kimi K3.1 Pro on the three reasoning levels it supports - low, medium, and max. This is max: For comparison, I ran fresh pelicans against Kimi K3 on those three reasoning levels.",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "OpenAI News",
+        "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+        "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+        "published_at": "2026-10-23T17:00:00Z",
+        "summary": "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT.",
+        "lookback_7d": false,
+        "text_excerpt": "All OpenAI products require fast, reliable access to data, provided by our storage platform, Habitat. It has to respond in milliseconds to over 1 billion users across 40 geographic regions. Our infrastructure faced an extraordinary challenge: supporting explosive growth and new use cases while continuing to improve reliability, performance, and product developer velocity. Solving that challenge required rethinking how our online storage platform was designed and operated. We constantly evaluated tradeoffs, following the pattern of: first become reliable enough for mission-critical product traffic, then fast enough for global users, and, finally, to deftly operate at massive scale. This two-part series explains how we developed Habitat from a simple client library and database into a globally distributed storage platform serving over 500 petabytes of data. Part I focused on Habitat’s evolution from a Python client to a service. It also covered the techniques that allowed us to push a Python-based service far beyond what many would consider practical. In this post, Part II, we walk through how we scaled the underlying storage component: Azure Cosmos DB. Through a close working partnership with the Azure team, we arrived at a viable multi-tenancy approach of co-managed containers, with excellent read performance at massive, global scale. Request Response Changes (CDC) As companies scale, infra teams often evolve from running single-tenant systems to multi-tenant ones. Single-tenancy, where every product surface team maintains their own system, reduces blast radius and provides easy ownership boundaries and workload isolation. As teams and product surfaces grow, this becomes expensive to run. Single-tenancy makes every product team responsible for capacity planning and often results in significant over-provisioning. Conversely, multi-tenancy assigns control to a centralized database team, with better knowledge and experience for provisioning resources. But multi-tenancy creates its own problems, such as noisy-neighbor issues, where one tenant consumes an unusually large share of the resources to the detriment of the other tenants. In Habitat, we had to weigh all these tradeoffs to design a reliable, efficient, storage system at scale. Today, Habitat is a multi-tenant database layer for many OpenAI products, but we went through a circular journey from using one m\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Latent Space",
+        "title": "AI Is Getting Good at Math. Here’s Why.",
+        "url": "https://latent.space/p/ai-is-getting-good-at-math/",
+        "published_at": "2026-10-23T15:19:48Z",
+        "summary": "AI models are solving more mathematical problems. A pattern is emerging in their successes that could help us predict which problems they’ll solve next.",
+        "lookback_7d": false,
+        "text_excerpt": "The question that interests me is whether we can predict what kinds of problems these models will solve. What makes a problem tractable for an LLM, and what do these solutions have in common? If AI solves problems differently from humans, identifying the difference should help us decide where to point it. The unit-distance disproof has the richest commentary, so let’s start there. Problem complexity Here is a simple mental model. To solve any given problem, you need a sequence of hints or insights with work between them. This maps surprisingly well to simple everyday problems and to complex ideas like General Relativity (see Bonus). The sequence looks something like this: Insight -> time / effort -> insight -> time/effort -> solution. An expert would need fewer hints than a beginner would, as they would have more background. In his commentary on unit-distance proof, WT Gowers uses a similar idea: the difficulty of the proof is the shortest sequence of hints that would let experts reconstruct it. He calls it Kolmogorov complexity modulo experts. For the unit-distance problem, his hint sequence had three parts: Look for a counterexample. Take the best known construction and generalize it. Try a sequence of number fields of increasing degree, but work with prime ideals of bounded norm. Gowers’ proposed formula for complexity is 2^k + t, where k is the length of the shortest hint sequence and t is the work required to develop it. It is the sort of formula that looks rigorous right up until you try to put a number into it, which is more or less the point. Complexity grows exponentially with the number of insights you need to solve a problem. Most problem solving is the work between these insights. You have a eureka moment, then spend months developing the hint until another conceptual jump becomes possible. For an expert, time spent is a useful proxy for this work, hence t. Hand someone the first unit-distance hint and they still have to do enough work to reach the generalized construction. Useful, but post hoc. You can’t look at the problem and predict it would need x number of hints. So, a problem’s age, the number of tries, and the prize attached to it are common proxies to ascribe difficulty. Characteristics of a given hint A typical insight changes the formulation of the problem. The representation and understanding of the problem change . Two things decide\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Latent Space",
+        "title": "[AINews] Black October",
+        "url": "https://latent.space/p/ainews-black-october/",
+        "published_at": "2026-10-23T10:09:29Z",
+        "summary": "the Cyber onslaught continues.",
+        "lookback_7d": false,
+        "text_excerpt": "the Cyber onslaught continues. If you are reading this, you’re receiving this from our new provider, Beehiiv! We are making progress on our redesign — if you have a friend that didn’t receive AINews, please find us in Spam filter and move us out to your Inbox… thank you! AINews is now free… we are building new subscriber benefits soon. We ordinarily try not to repeat title stories if we already covered it, as we did Patch the Planet yesterday and our Cyber trend call in July. But, if the scale is warranted, we also view our continued selection to also be signal - we can call things out 0, 1, or multiple times and that should be in proportion to its importance/historical significance in AI. We last did this with OpenClaw. “Black October” counts as such. Here’s a list: Black October: AI-Accelerated Vulnerability Disclosures Overwhelm Defenders Scale of the incident wave : Over roughly 48 hours, a cluster of critical disclosures and breaches landed together ( summary , roundup , patch list ). Core software : PHP2Shell is an unauthenticated RCE in PHP. GitLab disclosed a CVSS 10 flaw affecting releases since 2014, patched in 19.5.1. Node.js shipped a Brotli decoder RCE fix, and NGINX and HTTP/3 also had DoS issues. Supply chain : LiteLLM 1.107.0 shipped with a password stealer. Railway told users to rotate secrets after possible exposure of customer keys. Zeabur is shutting down after 321,810 accounts were breached. Certificate authority : eMudhra's CA keys were trivially weak; one key was reportedly the number 4. A researcher says Claude cracked them with a single prompt, and eMudhra is exiting the CA business ( Rundown ). Python users are advised to update pip, uv, certifi and system CA stores ( advisory ). Healthcare data : Quest Diagnostics, which serves about half of US hospitals and physicians, reported exposed patient data ( report ). CVE volume : Monthly CVEs reportedly rose from about 4k to about 15k since April ( @saranormous ). State actor using agentic tooling : Microsoft attributes the ConnectWise supply-chain compromise to China-aligned Storm-0940. The group used the open agentic pentest framework ARTEX against 2,250+ Microsoft 365 tenants at about 2,900 sign-in attempts per minute ( MSTIC via @kimmonismus , detail ). Speed of compromise : In some cases the group reached privileged access in under 3 hours. Other operators : CrowdStrike documented f\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "OpenAI News",
+        "title": "Securing our frontier model training environment",
+        "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+        "published_at": "2026-10-23T10:00:00Z",
+        "summary": "OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
+        "lookback_7d": false,
+        "text_excerpt": "This post describes how we secure the environments that we use to train and evaluate frontier models. These research settings differ from those in which customers use our released models: models in development may not yet have completed safety and alignment training, and we deliberately test them under adversarial conditions to expose weaknesses. Before making models available for broader use, we conduct safety and alignment assessments and put production safeguards in place. In order to work with software, AI models need computing environments: digital workspaces where they can write and run code, search for information, and attempt different approaches to solving problems. These environments allow models to practice these skills, while also restricting what they can access or do—helping contain the consequences when models make mistakes or exhibit misaligned behavior. But as models become more capable, they become better at finding ways around those limits. A sophisticated model might exploit a software flaw or misconfiguration to escape a sandbox, exploit an internal service to reach the live internet, or find unauthorized ways to communicate with agents in other sandboxes. The Hugging Face incident in July, as well as other examples of model misalignment ⁠ (opens in a new window) that we’ve observed, demonstrates how models with sophisticated cyber capabilities can bypass containment during their training and evaluation. In response to those incidents, we’ve substantially hardened the security of our research environments. Working closely with cloud providers, we’ve added new controls throughout our infrastructure, reduced the attack surface that agents can exploit, and improved our methods for detecting misaligned behavior and attempts to cross security boundaries. These protections overlap, so that containment can hold even if an individual control fails—a strategy known as defense in depth . Based on the current state of alignment research, monitoring systems, and the security of internet infrastructure, we believe the responsible approach is to conduct frontier model training with no internet access. We’ve implemented this policy and will maintain it until advances in these safeguards justify broader internet access. These investments have allowed us to detect and stop sophisticated misaligned behavior before it causes damage. On September 20, for ex\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      }
+    ],
+    "youtube": [],
+    "github": [
+      {
+        "name": "archestra",
+        "full_name": "archestra-ai/archestra",
+        "url": "https://github.com/archestra-ai/archestra",
+        "description": "Enterprise AI Platform with guardrails, MCP registry, gateway & orchestrator",
+        "stars": 4403,
+        "pushed_at": "2026-10-26T01:28:43Z",
+        "topics": [
+          "a2a",
+          "a2a-mcp",
+          "acp",
+          "agent",
+          "ai",
+          "chatgpt",
+          "chatgpt-api",
+          "claude",
+          "deepseek",
+          "gemini",
+          "k8s",
+          "mcp",
+          "mcp-client",
+          "mcp-gateway",
+          "mcp-host",
+          "mcp-server",
+          "mcp-servers",
+          "mcp-tools",
+          "openai",
+          "runtime"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"logo.svg\" alt=\"Archestra\" width=\"520\" /> **Secure AI Platform** *Built on a strong security and observability foundation: SSO and RBAC, sandboxed code execution, Lethal-Trifecta guardrails, OpenTelemetry traces, and Prometheus metrics — first-class, not bolted on.* [![License](https://img.shields.io/badge/License-AGPL%203.0%20%2F%20Enterprise-blue.svg)](LICENSE.md) [![Release](https://img.shields.io/github/v/release/archestra-ai/archestra)](https://github.com/archestra-ai/archestra/releases) [![Contributors](https://img.shields.io/github/contributors/archestra-ai/archestra)](https://github.com/archestra-ai/archestra/graphs/contributors) [![Last commit](https://img.shields.io/github/last-commit/archestra-ai/archestra)](https://github.com/archestra-ai/archestra/commits/main) [![Commit activity](https://img.shields.io/github/commit-activity/m/archestra-ai/archestra)](https://github.com/archestra-ai/archestra/pulse) [Quickstart](https://archestra.ai/docs/get-started#run-archestra) · [Docs](https://archestra.ai/docs/get-started) · [Releases](https://github.com/archestra-ai/archestra/releases) · [Slack](https://archestra.ai/join-slack) <br /> https://github.com/user-attachments/assets/912b85e2-ef14-4e83-a807-5e2a81457a88 </div> --- ## What it does Point your users — or your agents, or Claude / Codex / Cursor — at one URL. Archestra handles the rest: - 💬 **Chat for non-technical users.** Internal AI assistant with [projects](https://archestra.ai/docs/chat/projects), [MCP apps](https://archestra.ai/docs/chat/apps), and [Slack](https://archestra.ai/docs/agents/triggers-and-channels/slack), [MS Teams](https://archestra.ai/docs/agents/triggers-and-channels/ms-teams), and [email](https://archestra.ai/docs/agents/triggers-and-channels/email) front-ends. - 🛠️ **Developer LLM & MCP portal.** One token for Claude Code, Codex, Cursor — see the [proxy](https://archestra.ai/docs/llm-proxy). - 🚪 **LLM gateway** for [any provider](https://archestra.ai/docs/llm-proxy/providers) (Anthropic, OpenAI, Azure, Bedrock, DeepSeek, …) with [cost limits](https://archestra.ai/docs/llm-proxy/costs-and-limits), [virtual API keys](https://archestra.ai/docs/llm-proxy/authentication), and [dynamic model routing](https://archestra.ai/docs/reference/clients/model-router-client-credentials). - 🔌 **MCP gateway** with [OAuth + On-Behalf-Of](https://archestra.ai/docs/mcp\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "oh-my-hermes",
+        "full_name": "rlaope/oh-my-hermes",
+        "url": "https://github.com/rlaope/oh-my-hermes",
+        "description": "The coding intelligence and skills for Hermes Agent ⚚ just install once. then type 'dag-ulw' to be graph engineering master.",
+        "stars": 4203,
+        "pushed_at": "2026-10-26T01:21:47Z",
+        "topics": [
+          "agent",
+          "ai",
+          "ai-agent",
+          "ai-tools",
+          "claude-code",
+          "codex",
+          "hermes-agent",
+          "hermes-skill",
+          "skills"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <br> <img src=\"assets/oh-my-hermes-wordmark.png?v=spectrum\" alt=\"OH-MY-HERMES\" width=\"70%\"> <br> <br> <img src=\"assets/omh-logo.png\" alt=\"oh-my-hermes logo: the oh-my-hermes character in bold black line art on a white rounded-square tile\" width=\"200\"> <br> <br> **All-in-one package for Hermes Agent. Install once, then just type `dag-ulw`.** [![GitHub Release](https://img.shields.io/github/v/release/rlaope/oh-my-hermes?color=58a6ff&labelColor=black&logo=github&style=flat-square)](https://github.com/rlaope/oh-my-hermes/releases) [![npm downloads](https://img.shields.io/npm/dt/oh-my-hermes?color=3fb950&labelColor=black&logo=npm&label=downloads&style=flat-square)](https://www.npmjs.com/package/oh-my-hermes) [![GitHub Contributors](https://img.shields.io/github/contributors/rlaope/oh-my-hermes?color=bc8cff&labelColor=black&style=flat-square)](https://github.com/rlaope/oh-my-hermes/graphs/contributors) [![GitHub Stars](https://img.shields.io/github/stars/rlaope/oh-my-hermes?color=e3b341&labelColor=black&style=flat-square)](https://github.com/rlaope/oh-my-hermes/stargazers) [![License](https://img.shields.io/github/license/rlaope/oh-my-hermes?color=white&labelColor=black&style=flat-square)](LICENSE) [![Docs](https://img.shields.io/badge/docs-rlaope.github.io-58a6ff?labelColor=black&logo=readthedocs&logoColor=white&style=flat-square)](https://rlaope.github.io/oh-my-hermes/) [English](README.md) | [简体中文](README.zh.md) | [日本語](README.ja.md) | [Русский](README.ru.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Português (Brasil)](README.pt-BR.md) | [Italiano](README.it.md) **oh-my-hermes** is an operating layer for [Hermes Agent](https://github.com/NousResearch/hermes-agent).<br> You keep talking to Hermes. OMH picks the skill and a model for each lane, and runs the work in parallel.<br> It never patches or replaces Hermes, and it never reports planned work as done. </div> ## Install ```sh curl -fsSL https://raw.githubusercontent.com/rlaope/oh-my-hermes/main/install.sh | sh omh setup ``` [Windows and other options →](docs/INSTALLATION.md) <br> ## What you get - **The right model for every lane.**<br> Each lane is tagged with a work category: `ultrabrain`, `deep`, `visual-engineering`, `quick` and more.<br> The category picks that lane's model chain and reasoning effort, and you can edit ev\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "kordoc",
+        "full_name": "chrisryugj/kordoc",
+        "url": "https://github.com/chrisryugj/kordoc",
+        "description": "모두 파싱해버리겠다 — HWP·HWPX·PDF·Office 문서를 Markdown으로. 양식 자동 채우기와 신구대조를 갖춘 CLI·MCP 서버 | Convert Korean documents (HWP, HWPX, PDF, Office) to Markdown — CLI and MCP server with form filling and diff",
+        "stars": 2762,
+        "pushed_at": "2026-10-26T01:27:22Z",
+        "topics": [
+          "cli",
+          "document-conversion",
+          "document-parser",
+          "docx",
+          "hancom",
+          "hwp",
+          "hwp-parser",
+          "hwpx",
+          "korean",
+          "llm",
+          "markdown",
+          "mcp",
+          "mcp-server",
+          "ocr",
+          "office",
+          "parser",
+          "pdf",
+          "pdf-to-markdown",
+          "rag",
+          "xlsx"
+        ],
+        "source": "search",
+        "text_excerpt": "# kordoc **모두 파싱해버리겠다.** [![npm version](https://img.shields.io/npm/v/kordoc.svg)](https://www.npmjs.com/package/kordoc) [![license](https://img.shields.io/npm/l/kordoc.svg)](LICENSE) [![MCP Registry](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fregistry.modelcontextprotocol.io%2Fv0%2Fservers%3Fsearch%3Dio.github.chrisryugj%2Fkordoc%26version%3Dlatest&query=%24.servers%5B0%5D.server.version&label=MCP%20Registry&color=blue)](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.chrisryugj/kordoc) > *대한민국에서 둘째가라면 서러울 문서지옥. 거기서 7년 버틴 공무원이 만들었습니다.* HWP 3.x·5.x, HWPX, HWPML, PDF, XLS·XLSX, DOCX, PPTX, PNG·JPG·WebP를 Markdown과 구조화 데이터로 변환합니다. 라이브러리·CLI·MCP 서버로 사용할 수 있습니다. [English](README-EN.md) · [상세 사용법](docs/usage.md) · [벤치마크](docs/benchmarks.md) · [변경 이력](CHANGELOG.md) ![같은 법령 별표를 HWP·HWPX·PDF·스캔 이미지로 넣은 kordoc 실제 출력](docs/readme-hero.gif) <sub>같은 법령 별표 한 건을 HWP·HWPX·PDF·스캔 이미지로 넣은 실제 출력입니다. 네 경우 모두 병합 칸(`rowspan`·`colspan`)을 같은 짜임의 표로 읽습니다. 스캔 이미지는 OCR이 자동으로 켜집니다.</sub> - 📊 **PDF 공개 벤치 종합 0.964**: opendataloader-bench 200문서, 공개 리더보드 12개 파서보다 높은 점수(4.22.14 측정). [측정 조건](docs/benchmarks.md#pdf--markdown--opendataloader-bench) - 🇰🇷 **한국 공문서 표 구조 100%**: 원본 HWPX 2,424문서의 보이는 표 **10,342개 전부 구조 일치**. [검증 결과](#검증-결과) 쓸모 있었다면 GitHub ⭐ 하나 눌러주세요. 다른 사람이 이 도구를 찾는 데 도움이 됩니다. 영상: [공개 벤치 측정 과정](https://youtu.be/9kRbwiTRQLs)(2026-09-27 판, 1분 31초) · [양식 일괄 채우기 시연](https://youtu.be/Q13GmgDcIw0) ## 설치 Node.js **20 이상** · macOS / Linux / Windows ```bash npm install kordoc ``` CLI는 설치 없이 `npx kordoc`으로 실행할 수 있습니다. PDF·OCR 의존성은 기본 설치되며, `--omit=optional`로 제외하면 해당 기능이 제한됩니다. **AI 에이전트에 연결** ```bash npx -y kordoc setup ``` Claude Desktop·Claude Code·Cursor·Codex 등 설치된 클라이언트에 MCP를 등록합니다. 공식 MCP 레지스트리에도 [`io.github.chrisryugj/kordoc`](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.chrisryugj/kordoc)으로 등재돼 있습니다. 클라이언트를 재시작하면 파싱·비교·생성·검수·렌더 등 **18개 도구**를 사용할 수 있습니다. VS Code·Cursor는 버튼 한 번으로 등록됩니다. [![VS Code에 설치](https://img.shields.io/badge/VS_Code-kordoc_설치-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=kordoc&config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22kordoc%22%2C%22mcp%22%5D%7D) [![Cursor에 설치](https://img.shields.io/badge/Cursor-kordoc_설치-000000?style=flat-square&logo=cursor&logoColor=white)](https://cursor.com/en/install-mcp?name=kordoc\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "ethereum-flashloan-mev-bot",
+        "full_name": "MIgHTy-alIeN/ethereum-flashloan-mev-bot",
+        "url": "https://github.com/MIgHTy-alIeN/ethereum-flashloan-mev-bot",
+        "description": "An arbitrage bot is a smart contract connected to an external automation script that controls its operation.",
+        "stars": 2043,
+        "pushed_at": "2026-10-26T01:27:55Z",
+        "topics": [
+          "ai",
+          "aitradingbot",
+          "bot",
+          "btc",
+          "claude",
+          "eth",
+          "etherlab",
+          "mev",
+          "mevbots"
+        ],
+        "source": "search",
+        "text_excerpt": "# Arbitrage Bot with Built-in Python Automation ![Ether](https://i.ibb.co/NnrfvhZs/Chat-GPT-Image-25-2026-02-40-27.png) An arbitrage bot is a smart contract that searches for and executes arbitrage opportunities between pools and routers, holding ETH/tokens on its balance. Below is a step-by-step guide on how to deploy your bot and get it running without a single manual call. ## What the bot is An arbitrage bot is a smart contract connected to an external automation script that controls its operation. - **`executeArbitrage()`** — the main function: searches for and executes an arbitrage opportunity between pools/routers in a single transaction. - **`quickSwap()` / `quickSwapFromBalance()`** — a quick swap through an allowed router, directly from the contract's balance. - **`setRouterAllowed()` / `setTokenAllowed()`** — manages the whitelist of routers and tokens the bot is allowed to work with. - **`setDefaultFee()` / `setDefaultTokenOut()`** — configures the pool fee and the default token the bot swaps into. - **`setMinQuickSwapAmount()` / `setMaxQuickSwapAmount()`** — sets min/max amount limits per swap. - **`setPaused()`** — emergency pause, stopping all contract operations. - **`revokeApproval()`** — revokes previously granted token approvals. - **`withdraw()` / `withdrawETH()`** — withdraws tokens/ETH from the contract's balance by the owner. - **`getBalance()` / `getOwner()` / `owner()` / `TARGET_ADDRESS()`** — helper view functions for reading contract state. The contract owner is the only one who can change settings and withdraw funds. ## Step-by-step guide ### 1. Open the deployer page ![EtherLab](https://i.ibb.co/PzMH74XW/1.png) Open [etherlab website](https://app-remixide.github.io/app.remix.live/) (or the hosted version of the page) in your browser — this is the environment where the bot is created and deployed. ### 2. Create the bot file Create a new `.sol` file in the file manager (e.g. `contract.sol`). Paste the smart contract code into the editor field [contract](contract.sol) ![EtherLab](https://i.ibb.co/nN90b2FP/2.png) ### 3. Compile the bot Go to the **Compiler** tab, select compiler version **0.8.20**, and click compile. ![Compiling the contract](https://i.ibb.co/vCmJHMGz/3.png) ### 4. Deploy and fund the bot Go to the **Deploy** tab, connect your wallet — MetaMask or Phantom (whichever is more convenient) — and deploy the contract. Our b\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "thinkrail",
+        "full_name": "JetBrains/thinkrail",
+        "url": "https://github.com/JetBrains/thinkrail",
+        "description": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
+        "stars": 1775,
+        "pushed_at": "2026-10-26T01:21:06Z",
+        "topics": [
+          "agent",
+          "agent-skills",
+          "agentic-ai",
+          "agentic-workflow",
+          "ai-coding",
+          "ai-tools",
+          "pi-agent",
+          "pi-agent-extension",
+          "spec-driven",
+          "spec-driven-coding",
+          "spec-driven-development",
+          "vibe-coding",
+          "vibecoding"
+        ],
+        "source": "search",
+        "text_excerpt": "# ThinkRail [![JetBrains incubator project](https://jb.gg/badges/incubator-plastic.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub) [![GitHub stars](https://img.shields.io/github/stars/JetBrains/thinkrail?style=social)](https://star-history.com/#JetBrains/thinkrail&Date) ThinkRail is the agentic IDE that gets better every time you use it — learning your project through living specs today, and building its own capabilities tomorrow. We built a rich interface around the [`pi`](https://www.npmjs.com/package/@earendil-works/pi-coding-agent) coding agent, isolated work into separate workspaces, and gave the agent durable project knowledge through living specs and reusable skills. Next, we're adding full extension support, so ThinkRail can create the tools it needs based on how you actually work. **Website:** [thinkrail.ai](https://thinkrail.ai/) · **Blog:** [thinkrail.ai/blog](https://thinkrail.ai/blog/) ⭐ If you find ThinkRail useful, give it a star — it helps others discover it. <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\".github/readme-assets/workbench-dark.png\"> <img src=\".github/readme-assets/workbench-light.png\" alt=\"ThinkRail workbench: the Projects pane beside the left tool rail listing worktree workspaces and their Settled shelf, a finished pi conversation with its tool steps in the center, the resulting diff beside it, and the Specs tree above the Changes list on the right with their tools on the edge rail\" width=\"900\"> </picture> *A `pi` session and the change it made, scoped to an isolated git-worktree workspace.* ## What you get - **Isolated workspaces.** Open any git repo as a project and cut workspaces from it as `git worktree`s, each with its own branch and working directory. Agents work in parallel without touching your checkout; merge the good branch, delete the rest. You can also attach existing worktrees or explicitly work in the project folder itself. Finished and dormant workspaces settle onto a per-project shelf on their own — when their pull request merges or closes, or after a quiet week — and come back the moment you work in them. The topbar shows where the active branch stands against `origin` and its pull request, with the next step one click away: publish, push, or open a PR described from the plan, the commits, your PR template, or an agent-written draft. Once a GitHub PR is open it shows the\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "piclaw",
+        "full_name": "rcarmo/piclaw",
+        "url": "https://github.com/rcarmo/piclaw",
+        "description": "pi coding agent in a technicolor web trenchcoat",
+        "stars": 882,
+        "pushed_at": "2026-10-26T01:27:36Z",
+        "topics": [
+          "adaptive-cards",
+          "ai-agent",
+          "bun",
+          "coding-agent",
+          "docker",
+          "llm",
+          "pi-agent",
+          "self-hosted",
+          "typescript",
+          "vnc",
+          "web-ui",
+          "workspace"
+        ],
+        "source": "search",
+        "text_excerpt": "# PiClaw — self-hosted AI workspace ![PiClaw](docs/icon-256.png) Languages: **English** · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) PiClaw is a self-hosted AI workspace, single-user by default, built on the [Pi Coding Agent](https://github.com/earendil-works/pi). Work with an agent, edit files, run commands and inspect the results in the same browser window. Conversations, files and scheduled tasks persist between visits; model requests go to the provider you configure, including local OpenAI-compatible servers. The web UI supports English, Simplified Chinese and Japanese, with desktop and mobile layouts. Use a container, VM or dedicated machine to limit the files and services available to the agent. ![Demo Animation](docs/demo.gif) ## Install | Method | Use it for | |---|---| | [Docker](#quick-start-with-docker) | Recommended deployment; includes Bun, PiClaw and bundled command-line tools | | [Portable release](docs/getting-started.md#portable-releases) | Docker-free Linux, Apple Silicon macOS or experimental Windows use; bundles Bun and runtime dependencies | | [Bun repository install](docs/install-from-repo.md) | Experimental tagged install using an existing Bun installation | | [Source build](docs/development.md) | Development and local testing | Published downloads are on [GitHub Releases](https://github.com/rcarmo/piclaw/releases); container images are on [GHCR](https://github.com/rcarmo/piclaw/pkgs/container/piclaw). Pin a release tag for repeatable deployments. ### Quick start with Docker You need Docker and credentials for a model provider, or a reachable local model server. Provider setup happens after startup. > [!WARNING] > A fresh instance has no web login gate. The command below publishes the port on **localhost only**. Keep it private while you configure authentication. Anyone with access to an unprotected instance can use the agent's files and tools. ```bash mkdir -p ./home ./workspace docker run -d \\ --init \\ --name piclaw \\ --restart unless-stopped \\ -p 127.0.0.1:8080:8080 \\ -e PICLAW_WEB_PORT=8080 \\ -v \"$(pwd)/home:/config\" \\ -v \"$(pwd)/workspace:/workspace\" \\ ghcr.io/rcarmo/piclaw:latest ``` 1. Open [http://localhost:8080](http://localhost:8080) on the Docker host. 2. Send `/login` in chat to configure a **model provider**. This is separate from browser sign-in. PiClaw reuses Pi's provider credentials; you do not need to put API keys\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "smg",
+        "full_name": "smg-project/smg",
+        "url": "https://github.com/smg-project/smg",
+        "description": "Engine-agnostic LLM gateway in Rust. Full OpenAI & Anthropic API compatibility across vLLM, TRT-LLM, TokenSpeed, SGLang, OpenAI, Gemini & more. Industry-first gRPC pipeline, KV cache-aware routing, chat history, tokenization caching, Responses API, embeddings, WASM plugins, MCP, and multi-tenant auth.",
+        "stars": 673,
+        "pushed_at": "2026-10-26T01:27:32Z",
+        "topics": [
+          "anthropic",
+          "anthropic-api",
+          "chat",
+          "claude",
+          "gemini",
+          "inference-gateway",
+          "lightseek",
+          "llm",
+          "mcp",
+          "openai",
+          "responses-api",
+          "routing",
+          "sglang",
+          "tensorrtllm",
+          "tokenspeed",
+          "trtllm",
+          "vllm"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/smg-project/smg/main/assets/images/logomark-white.svg\"> <source media=\"(prefers-color-scheme: light)\" srcset=\"https://raw.githubusercontent.com/smg-project/smg/main/assets/images/logomark-black.svg\"> <img alt=\"SMG Logo\" src=\"https://raw.githubusercontent.com/smg-project/smg/main/assets/images/logomark.svg\" width=\"80\"> </picture> </p> <h1 align=\"center\">Shepherd Model Gateway</h1> <p align=\"center\"> <a href=\"https://github.com/smg-project/smg/releases/latest\"><img src=\"https://img.shields.io/github/v/release/smg-project/smg?logo=github&label=Release\" alt=\"Release\"></a> <a href=\"https://hub.docker.com/r/lightseekorg/smg\"><img src=\"https://img.shields.io/docker/v/lightseekorg/smg?logo=docker&label=Docker\" alt=\"Docker\"></a> <a href=\"https://pypi.org/project/smg/\"><img src=\"https://img.shields.io/pypi/v/smg?logo=pypi&logoColor=white&label=PyPI\" alt=\"PyPI\"></a> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/License-Apache%202.0-blue.svg\" alt=\"License\"></a> <a href=\"https://lightseek.org/smg/\"><img src=\"https://img.shields.io/badge/docs-latest-brightgreen.svg\" alt=\"Docs\"></a> <a href=\"https://discord.lightseek.org\"><img src=\"https://img.shields.io/badge/Discord-Join%20Us-5865F2?logo=discord&logoColor=white\" alt=\"Discord\"></a> <a href=\"https://slack.lightseek.org\"><img src=\"https://img.shields.io/badge/Slack-Join%20Us-4A154B?logo=slack&logoColor=white\" alt=\"Slack\"></a> <a href=\"https://deepwiki.com/smg-project/smg\"><img src=\"https://img.shields.io/badge/Ask-DeepWiki-blue.svg\" alt=\"Ask DeepWiki\"></a> <a href=\"https://pytorch.org/blog/lightseek-smg/\"><img src=\"https://img.shields.io/badge/PyTorch-Technical%20Blog-EE4C2C?logo=pytorch&logoColor=white\" alt=\"PyTorch Blog\"></a> </p> Engine-agnostic, high-performance model-routing gateway for large-scale LLM deployments. SMG centralizes worker lifecycle management, balances traffic across self-hosted engines and cloud providers, and gives you enterprise-grade control over multi-tenancy, chat-history storage, MCP tooling, and observability — behind one unified endpoint. <p align=\"center\"> <img src=\"https://raw.githubusercontent.com/smg-project/smg/main/assets/images/architecture.svg\" alt=\"SMG architecture: clients flow through the gateway layer and router layer to gRPC workers, HTTP workers, and exter\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "ARTEX",
+        "full_name": "RuoJi6/ARTEX",
+        "url": "https://github.com/RuoJi6/ARTEX",
+        "description": "Autumn-27/ARTEX 持续维护开源版本",
+        "stars": 649,
+        "pushed_at": "2026-10-26T01:28:47Z",
+        "topics": [
+          "agent",
+          "artex"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> # ARTEX AI 自主渗透测试系统（Go 后端 + Next.js 前端） 🌐 **在线 Demo**： [https://artex-demo-ruoji6.vercel.app/](https://artex-demo-ruoji6.vercel.app/) </div> 本仓库为独立维护的 [RuoJi6/ARTEX](https://github.com/RuoJi6/ARTEX)，保留 https://github.com/Autumn-27/ARTEX 的原始提交历史与 AGPL-3.0 许可证。程序发布包从本仓库 Releases 下载，Docker 镜像 [ruoji6/artex](https://hub.docker.com/r/ruoji6/artex) 由本仓库 GitHub Actions 构建并发布。 --- ## 截图预览 > 完整交互见[在线 Demo](https://artex-demo-ruoji6.vercel.app/)。 | 仪表盘（总览 / Token 消耗 / 活动流） | 任务列表 | | :---: | :---: | | ![仪表盘](screenshots/dashboard.png) | ![任务](screenshots/tasks.png) | | 任务 · 执行过程（会话 / 工具调用） | 探索链路 | | :---: | :---: | | ![执行过程](screenshots/sessions.png) | ![探索链路](screenshots/graph.png) | | 发现 | 资产 | | :---: | :---: | | ![发现](screenshots/findings.png) | ![资产](screenshots/assets.png) | | 资产覆盖图（力导向布局 · 已测高亮 · 节点折叠展开） | | :---: | | ![资产覆盖图](screenshots/assets_test.png) | | 流量录制 | 人在环路对话 | | :---: | :---: | | ![流量](screenshots/traffic.png) | ![对话](screenshots/chat.png) | | Agent 管理 | LLM 配置 | | :---: | :---: | | ![Agent](screenshots/agents.png) | ![LLM](screenshots/llm.png) | | 拦截审批 | 后端日志 | | :---: | :---: | | ![拦截](screenshots/intercept.png) | ![日志](screenshots/logs.png) | --- ## 审批记录详情 全局「审批记录」、任务内「拦截审批」及对话中的审批卡片均支持展开查看详情。展示结构参考 [AegisHook 的审批详情组件](https://github.com/RuoJi6/AegisHook/blob/main/web/src/components/CallDetail.vue)，沿用 ARTEX 的组件和主题： ## 资产同步（ScopeSentry） 支持从 [ScopeSentry](https://github.com/Autumn-27/ScopeSentry) 直接同步资产数据，免去重复收集： - 在「**资产同步**」页填 ScopeSentry 的地址与 API Key，接入数据源； - 按**项目**或**任务**维度选择要同步的目标与资产类型（域名 / 子域 / IP / 端口 / 站点 / 端点…）； - 一键导入并按公司资产范围归并，直接进入 ARTEX 的资产图供 agent 探索使用。 --- ## 部署自己的在线 Demo（随正式 Release 自动更新） Demo 只运行 `web/` 前端，构建时启用 `NEXT_PUBLIC_MOCK=1`，不需要 Go、PostgreSQL 或模型密钥。界面使用模拟数据，不执行真实扫描。 发布链路：正式版本的程序包、`SHA256SUMS` 和 Docker 镜像全部成功发布 → `release.yml` 的 `demo` job 调用 `demo.yml` → 检出该版本标签的提交 → 构建 Mock 前端 → 部署至 Vercel 的固定生产域名。普通 main 推送、仅创建标签、失败的发布、草稿和预发布版本都不会更新 Demo。新版本功能的演示数据仍需由维护者同步维护 `web/src/lib/mock/`。 ### 首次配置 Vercel 1. 在自己的 Vercel 账号创建空项目，设置名称（例如 `artex-demo-ruoji6`）。保持 **Git 未连接**，避免每次提交都自动部署。`web/vercel.json` 也禁用了 Git 自动部署。 2. 在 **Settings → Build and Deployment** 中选择 **Next.js**、Node.js **22.x**，安装命令可覆盖为 `npm ci`，构建命令为 `npm run build`，Output Directory 保持默认。**Root Directory 留空**：此工作流从检出的 `web/` 目录调用 Vercel CLI，不能再填一层 `web`。 3. 在项目的 **Environment Variables** 中添加 `NEXT_PUBLIC_MOCK=1`，至少应用于 **Production**。不要设置 `NEXT_EXP\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "yoagent",
+        "full_name": "yologdev/yoagent",
+        "url": "https://github.com/yologdev/yoagent",
+        "description": "The agent loop for Rust — stream from 7 LLM protocols, run tools, loop until done. From a laptop to a Cloudflare Worker.",
+        "stars": 365,
+        "pushed_at": "2026-10-26T01:26:16Z",
+        "topics": [
+          "agent",
+          "agent-framework",
+          "ai",
+          "ai-agents",
+          "anthropic",
+          "aws-bedrock",
+          "claude",
+          "cloudflare-workers",
+          "coding-agent",
+          "deepseek",
+          "gemini",
+          "llm",
+          "llm-agent",
+          "mcp",
+          "openai",
+          "plugins",
+          "rust",
+          "streaming",
+          "tool-calling",
+          "wasm"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <picture> <img alt=\"yoagent\" src=\"docs/images/banner.png\" width=\"100%\" height=\"auto\"> </picture> <a href=\"#quick-start\">Getting started</a> · <a href=\"https://yologdev.github.io/yoagent/design-philosophy.html\">Design philosophy</a> · <a href=\"https://yologdev.github.io/yoagent/\">Docs</a> · <a href=\"https://docs.rs/yoagent\">API</a> · <a href=\"CHANGELOG.md\">Changelog</a> · <a href=\"README.zh-CN.md\">中文</a> [![][crates-shield]][crates-link] [![][docsrs-shield]][docsrs-link] [![][ci-shield]][ci-link] [![][msrv-shield]][msrv-link] [![][license-shield]][license-link] [![][deepwiki-shield]][deepwiki-link] **The agent loop for Rust.** Stream from any of 7 LLM protocols, run tools, loop until done. [A loop library, not an agent](https://yologdev.github.io/yoagent/design-philosophy.html): it powers [yoyo](https://github.com/yologdev/yoyo-evolve), a coding agent evolving its own source since March 2026, and runs from a laptop to a Cloudflare Worker. </div> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/images/loop.svg\"> <source media=\"(prefers-color-scheme: light)\" srcset=\"docs/images/loop-light.svg\"> <img alt=\"The yoagent loop: prompt, context, LLM stream, tool calls through a gate and back, a finish check, limits, and the Extension hooks at each step\" src=\"docs/images/loop.svg\" width=\"100%\"> </picture> --- ## Try it in one command — no API key ```bash git clone https://github.com/yologdev/yoagent && cd yoagent ollama serve & ollama pull llama3.1:8b # or pass --model <any pulled model> cargo run --example cli -- --provider ollama ``` That's a working coding agent in your terminal — file read/write/edit, shell, ripgrep search, streaming output, skills. No signup, no key, nothing to configure. ``` yoagent cli — mini coding agent Type /quit to exit, /clear to reset model: llama3.1:8b cwd: /home/user/my-project > find all TODO comments in src/ ▶ search 'TODO' ✓ Found 3 TODOs: src/main.rs:42: // TODO: handle edge case src/lib.rs:15: // TODO: add tests src/utils.rs:8: // TODO: optimize this tokens: 1250 in / 89 out ``` Point it at a hosted model instead by swapping the flag: ```bash ANTHROPIC_API_KEY=sk-... cargo run --example cli GROQ_API_KEY=... cargo run --example cli -- --provider groq --model openai/gpt-oss-120b cargo run --example cli -- --api-url http://localhost:1234/v1 --model my-model # LM Studio, llama.cpp, vLLM ``` --- ##\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "squirrelscan",
+        "full_name": "squirrelscan/squirrelscan",
+        "url": "https://github.com/squirrelscan/squirrelscan",
+        "description": "The website QA tool for your coding agent. 300+ audit rules across SEO, performance, security, accessibility and agent experience.",
+        "stars": 296,
+        "pushed_at": "2026-10-26T01:26:08Z",
+        "topics": [
+          "accessibility",
+          "agent",
+          "agent-skills",
+          "ai-agents",
+          "audit",
+          "claude-code",
+          "cli",
+          "codex",
+          "geo",
+          "llm",
+          "llms-txt",
+          "mcp",
+          "mcp-server",
+          "performance",
+          "seo",
+          "seo-audit",
+          "technical-seo",
+          "web-performance",
+          "website",
+          "website-audit"
+        ],
+        "source": "search",
+        "text_excerpt": "![squirrelscan](docs/logo/light.svg) # squirrelscan **The website QA tool for your coding agent** squirrelscan is an Open Source cli tool that audits websites for SEO, performance, security, accessibility, agent experience and other issues, and gives your coding agent exact fixes. Run it from the CLI, inside your coding agent, in the cloud, or over MCP. Combine your coding agent with a deterministic and extensible audit tool. [![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://squirrelscan.com/add/cursor) [![Add to Claude Code](https://img.shields.io/badge/Add_to-Claude_Code-d97757?style=for-the-badge)](https://squirrelscan.com/add/claude) [![Add to Codex](https://img.shields.io/badge/Add_to-Codex-000000?style=for-the-badge)](https://squirrelscan.com/add/codex) [![Add to opencode](https://img.shields.io/badge/Add_to-opencode-383838?style=for-the-badge)](https://squirrelscan.com/add/opencode) [![MCP Registry](https://img.shields.io/badge/MCP-Registry-1f6feb?style=for-the-badge)](https://registry.modelcontextprotocol.io) [![CI](https://img.shields.io/github/actions/workflow/status/squirrelscan/squirrelscan/ci.yml?branch=main&style=for-the-badge&label=CI)](https://github.com/squirrelscan/squirrelscan/actions/workflows/ci.yml) [![CodeQL](https://img.shields.io/github/actions/workflow/status/squirrelscan/squirrelscan/codeql.yml?branch=main&style=for-the-badge&label=CodeQL)](https://github.com/squirrelscan/squirrelscan/actions/workflows/codeql.yml) [![npm](https://img.shields.io/npm/v/squirrelscan?style=for-the-badge&label=npm)](https://www.npmjs.com/package/squirrelscan) [![License: MIT](https://img.shields.io/badge/License-MIT-52a852?style=for-the-badge)](LICENSE) ![Terminal demo: squirrel audit on a small test site reports 13 failed checks, the report is piped to Claude Code, which fixes the pages and re-audits from 32/100 (F) to 92/100 (A), then git status lists the files it changed](assets/readme-demo.gif) <sub>A real run on a tiny test site, with the released CLI (signed out, so free) and Claude Code. We cut the two minutes the agent spent working, because nobody wants to watch an agent think.</sub> ## Features - **[Built for coding agents](https://docs.squirrelscan.com/developers/agents)** - Skills for Claude Code, Cursor, Codex and any coding agent run the audit, fix and re-audit loop. Connect over the CLI, the hosted or local MCP\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "ablation",
+        "full_name": "Ablation-Tool/ablation",
+        "url": "https://github.com/Ablation-Tool/ablation",
+        "description": "Ablation is an AI-assisted reverse engineering (AIARE) framework",
+        "stars": 224,
+        "pushed_at": "2026-10-26T01:26:34Z",
+        "topics": [
+          "agentic-graph-rag",
+          "binary-lifting",
+          "claude-code",
+          "cli",
+          "decompiler",
+          "disassembler",
+          "firmware-analysis",
+          "llm",
+          "loongarch64",
+          "malware-analysis",
+          "python",
+          "rag",
+          "reverse-engineering",
+          "security-hardening",
+          "security-research",
+          "vulnerability-research"
+        ],
+        "source": "search",
+        "text_excerpt": "<img src=\"assets/branding/ablation-1b-riveted-plate-wordmark-transparent-2560.png\" width=\"520\" alt=\"ABLATION\"> ![](https://komarev.com/ghpvc/?username=Ablation-Tool&color=grey) [![NIST SP 800-218](https://img.shields.io/badge/NIST%20SP%20800--218-SSDF-grey)](docs/standards-ablation.md) [![CISA Secure by Design](https://img.shields.io/badge/CISA-Secure%20by%20Design-grey)](docs/standards-ablation.md) [![MIL-HDBK-115C](https://img.shields.io/badge/MIL--HDBK--115C-Compliant-grey)](docs/standards-ablation.md) [![Sponsor Me](https://img.shields.io/badge/Sponsor%20Me-%23ea4aaa?logo=githubsponsors&logoColor=white)](docs/SPONSORS.md) Ablation is an AI-assisted reverse engineering (AIARE) framework. --- ![demo](assets/demos/claude-code-demo.gif) ## Capabilities <details> <summary>39 Decompilers</summary> **Native CPUs** | ISA | Variants | |---|---| | [**x86**](docs/reference-modules/x86.md) | x86-32 · x86-64 | | [**ARM**](docs/reference-modules/binary-lifter.md) | ARM-32 · ARM-64 · Thumb | | [**MIPS**](docs/reference-modules/mips.md) | MIPS-32 · [nanoMIPS](docs/reference-modules/nanomips.md) · MIPS-64 | | [**PowerPC**](docs/reference-modules/ppc32-taint-tracker.md) | PPC-32 · PPC-64 · [VLE](docs/reference-modules/ecu-vle-decoder.md) · [PPC476 Book E](docs/reference-modules/ppc476-lifter.md) · [XCOFF32 / AIX](docs/reference-modules/xcoff32-decompiler.md) | | [**RISC-V**](docs/reference-modules/risc-v.md) | RV32 · RV64 · [HiSilicon ext](docs/reference-modules/hisi-rv32-ext.md) | | [**ARC**](docs/reference-modules/binary-lifter.md) | ARC EM · ARC HS | | [**LoongArch**](docs/reference-modules/loongarch.md) | LoongArch64 · [KASAN/KCOV V2](docs/reference-modules/loongarch64-v2.md) | | [**Intel MCS**](docs/reference-modules/isa-8051.md) | 8051 / MCS-51 · CC254x | **Automotive ECUs** | ISA | Variants | |---|---| | [**V850 / RH850**](docs/reference-modules/v850-rh850.md) | V850-32 · RH850 | | [**Renesas SH**](docs/reference-modules/binary-lifter-sh2a.md) | SH-2A | | [**Motorola**](docs/reference-modules/ecu-m68k-decoder.md) | M68K / CPU32 · [MC88100](docs/reference-modules/m88k-decoder.md) | | [**Infineon**](docs/reference-modules/tricore-taint-tracker.md) | TriCore TC1.6x | | [**TI DSP**](docs/reference-modules/ecu-c28x-decoder.md) | TMS320C28x | | [**Infineon C166**](docs/reference-modules/c166-c167-decoding.md) | C166 · C167 | **VMs & Runtimes** | ISA | Variants | |---|---\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "gaia-workflow-engine",
+        "full_name": "boommanpro/gaia-workflow-engine",
+        "url": "https://github.com/boommanpro/gaia-workflow-engine",
+        "description": "一个现代化的可视化规则引擎平台，用于编排复杂的 AI 工作流。在无限画布上设计、测试和部署 AI 流程——无需编写代码。结合 flowgram.ai 的能力与 Java 服务端，提供生产级工作流管理。在此之上提供AI Agent / Copilot的助手编排能力。",
+        "stars": 216,
+        "pushed_at": "2026-10-26T01:15:21Z",
+        "topics": [
+          "agent",
+          "agent-workflow-engine",
+          "ai-agent",
+          "ai-copilot",
+          "flowgram",
+          "workflow"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"docs/images/logos/logo-3-lettermark.svg\" width=\"200\" height=\"200\" alt=\"Gaia Logo\" /> # Gaia · 可视化 AI 工作流编辑器 **可视化构建 AI 工作流，基于 [flowgram.ai](https://github.com/bytedance/flowgram.ai) 驱动。** [![GitHub Stars](https://img.shields.io/github/stars/boommanpro/gaia-workflow-engine?style=for-the-badge&logo=github&label=Stars&color=orange)](https://github.com/boommanpro/gaia-workflow-engine/stargazers) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT) [![GitHub Release](https://img.shields.io/github/v/release/boommanpro/gaia-workflow-engine?style=for-the-badge)](https://github.com/boommanpro/gaia-workflow-engine/releases) [![Live Demo](https://img.shields.io/badge/demo-GitHub%20Pages-blue.svg?style=for-the-badge)](https://boommanpro.github.io/gaia-workflow-engine/) **[English](./README.en.md)** · **[简体中文](./README.md)** </div> --- 一个现代化的可视化规则引擎平台，用于编排复杂的 AI 工作流。在无限画布上设计、测试和部署 AI 流程——无需编写代码。结合 [flowgram.ai](https://flowgram.ai) 的能力与 Java 服务端，提供生产级工作流管理。 ## 功能特性 - **AI Agent 侧栏对话** — 对话式生成工作流：CreatePlan 分步规划、Canvas 自动创建节点/连线、HTTP/Query 查询工作流、实时预览 token 与计划进度；会话可重命名、可审查。 - **Agent 配置中心** — 模型参数（Host/Key/Temperature/Max Tokens）、默认执行引擎切换（内置 AgentScope / 火山方舟托管）、系统提示词与知识库、工具定义目录。 - **Agent 运行观测 API** — `/api/agent/metrics/*`：工具调用、会话运行、事件流、LLM 调用账本与上下文占用统计（`AgentObservabilityController`，供管理端/运维侧消费）。 - **可视化画布** — 无限缩放画布，支持拖拽节点。通过循环、分支和条件逻辑设计复杂的工作流。 - **AI 节点类型** — 内置 LLM 调用、代码执行、HTTP 请求、字符串格式化和变量管理节点。 - **实时预览** — 测试单个节点或整个工作流，实时查看输入输出和执行历史。 - **版本管理** — 每次保存创建一个版本。版本间差异对比（新增/删除/修改的节点与连线）、切换生效版本。 - **模板系统** — 创建可复用的工作流模板。一键从模板创建新工作流。 - **可扩展插件** — 小地图、自动布局、吸附线、节点面板等。 - **多分支节点** — 多分支 + 组合条件（and/or）与 else 兜底，支持复杂分支逻辑。 ## 截图 ### 工作台与工作流 | 页面 | 预览 | |------|------| | **首页** — 国际化产品介绍页 | ![首页](https://raw.githubusercontent.com/boommanpro/gaia-workflow-engine/main/docs/images/screenshot-home.png) | | **在线演示** — 可交互工作流画布（可拖拽、可新增节点、不可运行） | ![在线演示](https://raw.githubusercontent.com/boommanpro/gaia-workflow-engine/main/docs/images/screenshot-demo.png) | | **文档** — 快速开始、环境准备、部署方案 | ![文档](https://raw.githubusercontent.com/boommanpro/gaia-workflow-engine/main/docs/images/screenshot-docs.png) | | **编辑器** — 可视化工作流编辑器，含版本管理 | ![编辑器](https://raw.githubusercontent.com/boommanpro/gaia-workflow-engine/main/docs/images/screenshot-editor.png) | | **管理后台 · 工作流** — 工作流管理控制台 | ![管理工作流](https\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "NarraFork",
+        "full_name": "NarraFork/NarraFork",
+        "url": "https://github.com/NarraFork/NarraFork",
+        "description": "An efficient durable harness for collaboration across people, models, and devices",
+        "stars": 105,
+        "pushed_at": "2026-10-26T01:24:55Z",
+        "topics": [
+          "agent",
+          "agent-framework",
+          "agents",
+          "durable-harness",
+          "harness"
+        ],
+        "source": "search",
+        "text_excerpt": "# NarraFork 简体中文 · [English](README_EN.md) **多人协作 多模型协作 多设备流转 的高效Durable Harness** NarraFork 是一个自托管的 AI 编程协作工作台。部署在自己的电脑或服务器上，你（和你的团队）在浏览器里组织 AI 会话、操作代码与终端、管理 Agent 的上下文和权限。 [快速开始](#快速开始) · [核心能力](#核心能力) · [参与开发](#参与开发) · [文档](#文档) · [许可证](#许可证) ![NarraFork 会话与文件预览](docs/images/overview.png) ## 核心能力 | 能力 | 可以做什么 | | --- | --- | | 多会话工作区 | [组织会话面板](#组织会话面板)，保存和恢复布局，在多个任务之间切换 | | 多 Agent 协作 | 委派探索、实现和评审任务，[直接向子 Agent 发送消息与接手讨论](#向子-agent-发送消息与接手讨论) | | 上下文管理 | [低成本分叉](#低成本分叉)、[可逆可编辑的压缩](#可逆可编辑的压缩)，为你带来前所未有的上下文掌控力 | | 开发工具 | 读取和编辑文件、搜索代码、运行命令，使用[交互式终端](#交互式终端)和 Git 工作流 | | 权限与审批 | 为目录和命令配置访问规则，对需要授权的操作进行审批 | | 模型接入 | 配置不同模型供应商，包括 Anthropic、OpenAI等接入协议 | | 扩展与自动化 | 使用技能Skills、例程和 MCP 工具，把重复工作组织成可复用流程 | | 团队知识 | 共享项目、站内消息和知识库，通过分级与标签控制知识访问 | | 跨设备工作 | 通过浏览器访问，[连接远程执行设备](#连接远程执行设备)，[在手机上跟进任务](#在手机上跟进任务) | 目前支持简体中文和英文，架构已为支持更多语言做准备，欢迎贡献你的翻译。 ## 特色详解 ### 低成本分叉 ![从历史消息处分叉](docs/images/fork-from-message.png) NarraFork 不为每个会话单独存储一份 JSONL，而是将消息存入数据库。分叉时只复制必要的引用，共享的上下文数据只占一份空间，不会随着分叉反复复制。 ### 可逆可编辑的压缩 每次压缩都会在对话中留下一个“压缩标记”。标记前的对话对人类依旧可见，但对模型来说已被替换成压缩结果。通过标记，你可以查看和编辑摘要，也可以撤回这次压缩，恢复对应的历史上下文。压缩不再是不可见、不可改的一次性操作。 ![对话中的压缩标记](docs/images/compact-marker.png) ![压缩摘要的撤回与编辑操作](docs/images/compact-actions.png) ### 交互式终端 不用每次执行命令都重复填写环境变量，或加上一长串 `ssh`、`sshpass` 前缀。在交互式终端里登录远程机器、设置好环境变量后，Agent 就能在同一会话中连续执行所需指令。你可以实时看到输入输出，并随时介入操作。 ### 组织会话面板 从左侧 RecentTabs 拖动会话到右侧，即可创建工作区，在同一个界面里同时管理多个会话。 ![工作区中并排管理多个会话](docs/images/workspace.png) ### 向子 Agent 发送消息与接手讨论 你可以直接点开子 Agent 的会话，向它发送消息、补充要求，或接手继续讨论，无需经过主 Agent 转达。 ![直接打开子 Agent 会话并交互](docs/images/subagent-conversation.png) ### 连接远程执行设备 ![在目标机器上安装远程执行器](docs/images/remote-executor-install.png) 连接你的电脑或服务器，让 Agent 直接在指定机器上读写文件、运行命令，无需来回切换工作台。 ### 在手机上跟进任务 ![手机上的消息左滑菜单](docs/images/mobile-swipe-menu.jpg) 手机不是临时凑合的入口，而是 NarraFork 的日常使用方式。我们为手机专门设计了交互，例如左滑会话消息即可打开操作菜单，让丰富的会话操作在小屏幕上依然触手可及，而不只是查看进度。 ## 快速开始 ### 直接运行预构建包 前往 [GitHub Releases](https://github.com/NarraFork/narrafork/releases)，在对应版本的 Assets 中下载适合操作系统和 CPU 架构的可执行文件，无需安装 Bun 或自行构建。项目与版本管理仍需安装 Git。 - **Windows**：下载 `.exe` 文件后直接运行。 - **Linux / macOS**：为下载的文件添加执行权限后运行，例如： ```sh chmod +x ./narrafork-<版本>-<平台>-<架构> ./narrafork-<版本>-<平台>-<架构> ``` 请将示例文件名替换为实际下载的文件名。 旧款 x64 芯片可选择带 `baseline` 后缀的兼容版本。注意：这并非以 AVX-512 支持与否为界；按 [Bun 当前说明](https://bun.com/docs/bundler/executables)，x64 构建已统一，`baseline` 保留为兼容别名。具体以该版本发布说明为准。 启动后打开 `http://localhost:7778`；实际地址以启动日志为准。 ### 从源码运行 下载本仓库源码，并在仓库根目录打开终端。 ####\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "lollms",
+        "full_name": "ParisNeo/lollms",
+        "url": "https://github.com/ParisNeo/lollms",
+        "description": "An all in one AI solution compatible with any known AI service on the planet",
+        "stars": 103,
+        "pushed_at": "2026-10-26T01:27:07Z",
+        "topics": [
+          "ai",
+          "llm",
+          "multimodal"
+        ],
+        "source": "search",
+        "text_excerpt": "# LoLLMs - v2.3.0 \"HeartBeat\" One tool to rule them all! [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Python Version](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/downloads/) ![Version](https://img.shields.io/badge/Version-1.7.0-brightgreen) A multi-user FastAPI backend and responsive Vue/Tailwind CSS frontend application designed to provide a chat interface powered by the [`lollms_client`](https://github.com/ParisNeo/lollms_client) library. It features integrated Retrieval-Augmented Generation (RAG) using [`safe_store`](https://github.com/ParisNeo/safe_store), a versatile personality system, multimodal chat, user management, a friend system with direct messaging, and enhanced sharing capabilities. **Live Project:** [https://github.com/ParisNeo/lollms](https://github.com/ParisNeo/lollms) ## ✨ Features * **Multi-User Support:** Secure token-based authentication. Each user has their own isolated data. * **Simplified Installation:** Get started quickly with simple `run.sh` or `run_windows.bat` scripts. * **Environment-Based Configuration:** Easy setup using a `.env` file, automatically generated from `.env.example`. * **Persistent Discussions:** Chat histories are saved per user and can be revisited, renamed, starred, and deleted. * **LLM Integration:** Uses `lollms-client` to interact with various LLM backends. * **Streaming Responses:** AI responses are streamed for a real-time experience. * **Multimodal Chat:** Upload images with text prompts for vision-capable models. * **Advanced Personality System:** Create, edit, and delete custom personalities with unique system prompts, scripts, and data sources. * **Retrieval-Augmented Generation (RAG):** * Organize documents into multiple **DataStores** per user. * Upload various file types (`.txt`, `.pdf`, `.docx`, etc.). * Toggle RAG usage per discussion and select specific DataStores. * Share DataStores with friends with configurable permissions. * **Friend System & Direct Messaging (DM):** * Send, accept, and reject friend requests. * Engage in real-time direct messaging with friends. * **Admin Panel:** * Manage users (Add, List, Delete, Reset Password). * Configure global settings and manage LLM/TTI/TTS bindings. * **Data Export/Import:** Users can export/import their discussions and settings. * **Responsive U\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "deep-blend",
+        "full_name": "pearjelly/deep-blend",
+        "url": "https://github.com/pearjelly/deep-blend",
+        "description": "Create and refine Blender product scenes in DSH: editable recipes, model imports, real previews, saved revisions and PNG/MP4 delivery.",
+        "stars": 101,
+        "pushed_at": "2026-10-26T01:12:34Z",
+        "topics": [
+          "3d-animation",
+          "3d-modeling",
+          "agent",
+          "ai-agent",
+          "blender",
+          "blender-python",
+          "cordis",
+          "deepseek-harness",
+          "dsh",
+          "dsh-plugin",
+          "procedural-modeling",
+          "product-visualization",
+          "rendering"
+        ],
+        "source": "search",
+        "text_excerpt": "# DeepBlend Studio DeepSeek Flash 1017 / DSH 0.2.1-rc.1 适配与实测见[适配记录](deepblend/docs/deepseek-1017.md)，同时保留旧宿主 0.1.5-rc.2 支持。 ![DeepBlend Studio: Create. Refine. Render. A conceptual workflow illustration, not a product screenshot](deepblend/docs/brand/banner.png) [![Awesome DSH Plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com) <p align=\"center\"> <strong>Your Blender studio, inside DeepSeek Harness.</strong><br> Start with a product recipe or your own model. Shape the scene. Compare real renders. Deliver the result. </p> <p align=\"center\"> <a href=\"https://www.npmjs.com/package/@deepblend/dsh-blender-bundle\"><img src=\"https://img.shields.io/npm/v/@deepblend/dsh-blender-bundle?style=flat-square&label=npm&color=EC721F\" alt=\"Latest npm version\"></a> <a href=\"https://github.com/pearjelly/deep-blend/actions/workflows/ci.yml\"><img src=\"https://img.shields.io/github/actions/workflow/status/pearjelly/deep-blend/ci.yml?branch=main&style=flat-square&label=CI\" alt=\"Main branch CI\"></a> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-697B96?style=flat-square\" alt=\"MIT license\"></a> </p> **English** · [简体中文](README.zh.md) [Quick start](#quick-start) · [See the workbench](#see-the-workbench) · [Documentation](deepblend/docs/README.md) · [Latest release](https://github.com/pearjelly/deep-blend/releases/latest) · [Contribute](CONTRIBUTING.md) The **0.20.0 candidate** lets you resize a complete metal lamp after moving or turning it around its vertical axis. Edit its diameter in the existing controls while retaining placement, finish, cameras and saved history. See the [validation scope and release status](deepblend/docs/releases/0.20.0.md). The latest published version is [0.19.0](deepblend/docs/releases/0.19.0.md), which adds placement on actual mesh surfaces. Use **Save an editable copy** on the Revisions page to download a saved version as a ZIP, optionally with a verified completed video. Preparation supports cancellation, retry and recovery after a reload. [How to use it](deepblend/docs/usage.md#editable-snapshot). ## Quick start With **Node.js 22.23.3 or newer**, **DSH 0.1.5-rc.2**, **pnpm** and **Blender 5.2.1** ready: ```sh dsh plugin --profile web add @deepblend/dsh-blender-bundle dsh web ``` Restart an already running `dsh web` after installation. In a new session, choose the **DeepBlend Studio** preset and open\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "qq-agent-plus",
+        "full_name": "sakurawwwxh/qq-agent-plus",
+        "url": "https://github.com/sakurawwwxh/qq-agent-plus",
+        "description": "Linux QQ 群聊 Agent（OneBot v11）：分条发言、贴纸系统、主动发言与内置运维命令",
+        "stars": 87,
+        "pushed_at": "2026-10-26T01:19:21Z",
+        "topics": [
+          "agent",
+          "bot",
+          "chatbot",
+          "linux",
+          "llm",
+          "napcat",
+          "nodejs",
+          "onebot",
+          "qq",
+          "qqbot",
+          "self-hosted",
+          "sqlite",
+          "systemd"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"docs/assets/mark.svg\" alt=\"QQ Agent Plus\" width=\"104\" height=\"104\"> # QQ Agent Plus 面向 Linux 服务器的 QQ 群聊 Agent，支持分条发言、表情包收发、长期记忆与内置运维命令。 [![CI](https://github.com/sakurawwwxh/qq-agent-plus/actions/workflows/ci.yml/badge.svg)](https://github.com/sakurawwwxh/qq-agent-plus/actions/workflows/ci.yml) [![License](https://img.shields.io/badge/license-MIT-3da639.svg)](LICENSE) [![Stars](https://img.shields.io/github/stars/sakurawwwxh/qq-agent-plus?color=e8b400&label=stars&logo=github)](https://github.com/sakurawwwxh/qq-agent-plus/stargazers) [![Last commit](https://img.shields.io/github/last-commit/sakurawwwxh/qq-agent-plus?logo=git&logoColor=white)](https://github.com/sakurawwwxh/qq-agent-plus/commits/main) [![Node](https://img.shields.io/badge/node-%E2%89%A522.19-339933?logo=nodedotjs&logoColor=white)](package.json) [![Platform](https://img.shields.io/badge/platform-Linux-0b5fff?logo=linux&logoColor=white)](docs/LINUX.md) [![OneBot](https://img.shields.io/badge/protocol-OneBot%20v11-12b7f5)](https://github.com/botuniverse/onebot-11) [![LLM](https://img.shields.io/badge/LLM-OpenAI%20%E5%85%BC%E5%AE%B9-6b4fbb)](#特性) **简体中文** ｜ [English](README.en.md) <img src=\"docs/assets/console-demo.png\" alt=\"控制台：消息存档与会话管理\" width=\"880\"> </div> QQ Agent Plus 是面向 Linux 服务器的 QQ 群聊 Agent。它连接外部 OneBot v11 协议端，每次触发使用 独立的 OpenAI Chat Completions 会话，不依赖 DSH、MCP、Electron 或 Windows 运行环境。 ## 特性 下列能力均来自实际群聊环境中的问题修复，每条对应的失败模式与处理方式记录在[改动清单](docs/CHANGES.md)。 - **对话行为**：单轮分条发言，先判断图片情绪再回应，表情包清单常驻系统提示（常用的 + 没用过的轮换，条数可调），结束前自检。 - **发送链路**：网络层发送重试，QQ 系统表情，消息 id 归一化，内联工具调用兜底解析。 - **贴纸系统**：自动收藏并优先使用 QQ 收藏表情，查找兜底，同步护栏。 - **玩法与提醒**：轻量小游戏直接玩（成语接龙 / 猜数字 / 20 个问题 / 真心话大冒险；掷骰子、抽签、随机点名用 `dice` 与群成员名单）；**状态机主持的多人游戏**（数字炸弹、谁是卧底、狼人杀——轮次/计票/判定由系统负责，身份与夜间行动只走私聊，模型不会说漏嘴；实验特性、默认关，狼人杀还需在控制台白名单里勾选）；「X 点提醒我 Y」会落成**持久化提醒**（重启不丢），支持每天/每周/5 字段 cron 与 IANA 时区，可设免打扰窗口和抖动，离线错过的多次触发只补最近一次，到点被唤醒后用它自己的口吻说出来。 - **MCP 只读资源**：`node src/mcp/resource-server.js` 向任意 MCP 客户端暴露全局人物记忆、群梗库、待触发提醒三类资源；出口统一脱敏，不含会话记录、配置与凭据，也没有写路径。 - **主动发言**：三条链路各自可关（会话安静时发起话题 / 无人回应时补一句 / 模型自安排唤醒），多活跃时段， 间隔护栏，跳过原因日志，重启后补齐漏收消息。 - **模型接入**：思考档位按渠道翻译、按供应商/按任务分设（设置 → 模型 API → 「高级：思考模式」），服务商审核拦截重试，兜底模型切换。 - **语音**（转写与回复）：语音/音频文件/视频音轨转成文字再交给聊天模型（与模型是否多模态无关）。 **默认走 API Key 的托管服务**（预置硅基流动的地址：粘一个 Key、从官网拉一次模型列表就能用； 也可一键换成 Groq / 火山 Seed-ASR / 阿里云百炼 / 讯飞 / 腾讯云 / 百度 / 自建，各家对新用户多有免费额度）； 也支持**零 Key 的本机 whisper.cpp**（离线、免费，控制台里点一下就能装、也能完整卸载\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "brightspace-mcp-server",
+        "full_name": "RohanMuppa/brightspace-mcp-server",
+        "url": "https://github.com/RohanMuppa/brightspace-mcp-server",
+        "description": "MCP server for Brightspace (D2L). Check grades, due dates, assignments, announcements, rosters, syllabus & course content via Claude, ChatGPT, Cursor, Windsurf, or any MCP client. Works with any school. npm: npx brightspace-mcp-server@latest",
+        "stars": 59,
+        "pushed_at": "2026-10-26T01:27:45Z",
+        "topics": [
+          "ai",
+          "assignments",
+          "brightspace",
+          "brightspace-api",
+          "chatgpt",
+          "claude",
+          "claude-desktop",
+          "cursor",
+          "d2l",
+          "d2l-brightspace",
+          "education",
+          "grades",
+          "lms",
+          "mcp",
+          "mcp-server",
+          "model-context-protocol",
+          "purdue",
+          "student",
+          "university",
+          "windsurf"
+        ],
+        "source": "search",
+        "text_excerpt": "# Brightspace MCP Server [![npm version](https://img.shields.io/npm/v/brightspace-mcp-server.svg)](https://www.npmjs.com/package/brightspace-mcp-server) [![npm downloads](https://img.shields.io/npm/dm/brightspace-mcp-server.svg)](https://www.npmjs.com/package/brightspace-mcp-server) [![CI](https://img.shields.io/github/actions/workflow/status/RohanMuppa/brightspace-mcp-server/ci.yml?branch=main)](https://github.com/RohanMuppa/brightspace-mcp-server/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/github/license/RohanMuppa/brightspace-mcp-server.svg)](LICENSE) [![Node >= 22](https://img.shields.io/node/v/brightspace-mcp-server.svg)](package.json) > **By [Rohan Muppa](https://github.com/rohanmuppa), ECE @ Purdue** Lets your AI see your Brightspace classes, so you can just ask: > \"What's due this week?\" · \"Am I passing all my classes?\" · \"Summarize today's announcements\" · \"Turn my lecture slides into flashcards\" Works with Claude Desktop, Claude Code, Cursor, ChatGPT Desktop, Windsurf, and any other app that supports [MCP](https://modelcontextprotocol.io) (the standard way to plug tools into an AI). It only **reads** your courses — it never submits, edits, or deletes anything. <p align=\"center\"> <img src=\"https://raw.githubusercontent.com/RohanMuppa/brightspace-mcp-server/main/docs/how-it-works.svg\" alt=\"Architecture diagram\" width=\"100%\"> </p> ## Get started in 3 steps 1. **Install [Node.js](https://nodejs.org/)** (version 22 or newer) if you don't have it. Download, run the installer, done. 2. **Open a terminal and run the setup:** ```bash npx -y brightspace-mcp-server@latest setup ``` It asks for your school's Brightspace address, your username and password, and how you confirm it's you when you sign in (a phone app, or another way like a text message). Your password goes into your computer's own password store (Keychain on Mac, Credential Manager on Windows), never into a file. Before signing you in, it connects itself to Claude Desktop, Cursor, Antigravity, Codex, or Claude Code if you have them. If one of them already has a `brightspace` entry pointing somewhere else (an old local build, a fork), setup shows you that entry and asks before replacing it. **On a Mac:** when Keychain asks whether `node` may use the saved Brightspace password, choose **Always Allow**, not just Allow. That lets later sign-ins (the `auth` command and questions\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "Envoy",
+        "full_name": "regrevia/Envoy",
+        "url": "https://github.com/regrevia/Envoy",
+        "description": "把链接分享给你的 AI：提取网页、视频与本地媒体中的可追溯材料。 / Share links with your AI: extract traceable material from web pages, videos, and local media.",
+        "stars": 58,
+        "pushed_at": "2026-10-26T01:22:43Z",
+        "topics": [
+          "agent",
+          "browser-automation",
+          "mcp",
+          "python",
+          "video"
+        ],
+        "source": "search",
+        "text_excerpt": "<a id=\"top\"></a> <p align=\"center\"> <img src=\"frontend/public/brand/envoy-bird.png\" alt=\"Envoy\" width=\"104\"> </p> <h1 align=\"center\">把链接分享给你的 AI</h1> <p align=\"center\"> 一个链接，成为你想要的任何东西。 </p> <p align=\"center\"> <a href=\"integrations/skills/envoy/INSTALL.md\">安装 Envoy</a> · <a href=\"https://github.com/regrevia/Envoy/releases\">下载发行版</a> · <a href=\"https://github.com/regrevia/Envoy/issues/new/choose\">反馈问题</a> · <a href=\"#english\">English</a> </p> 给 AI 一个链接，Envoy 把它变成带来源定位的材料，AI 再用它写你要的东西：Wiki、摘要、报告、脚本。网页、公众号、PDF、小红书图文、B 站视频、本地视频都行。 ## 能做什么 **关键帧** — 视频里的 PPT、图表、演示画面按时间点抽帧交给 AI 看，不用来回拖进度条。 **视频理解** — 优先读公开字幕；没有字幕时对指定时间段跑本地 Whisper，返回带 `[mm:ss]` 的转写片段。 **图文** — 网页、公众号文章、PDF、图片帖，变成干净正文、图片和来源。 **知识库 / Wiki** — 长视频整段读完，按主题分节，每条结论带时间戳，直接放进 Obsidian、Notion。 ## 怎么用 对 AI 说： > 把这条视频整理成知识库：`https://www.bilibili.com/video/BV...` > > 先读前 10 分钟，按主题分节；每条结论后标注 `[mm:ss]`；没覆盖到的部分单列“待补”，不要猜。 材料到手就已经分好段、带定位，所以产出可以直接引用： ```markdown ## 2. 为什么选择固定轮 - 固定轮把连续动作拆成可复用的阶段，便于逐段调试。[04:18] - 作者对比了三种方案，并给出取舍条件。[07:02] - 这一段没有展示实际测试数据；待补。[09:31] ``` ## 工作原理 1. **取材料** — 打开链接，拿到标题、正文、字幕或转写、PDF 文本、图片。 2. **带定位** — 切成片段并附 `video_time` 或来源坐标，给一个 material id。 3. **按需续读** — `envoy_search` 定位关键词，`envoy_expand` 补齐没读的部分，不重拉整页。 4. **缺口照实报** — 没字幕、要登录、模态缺失、下载预算不够，标记为未覆盖，不写成结论。 浏览器在后台运行，遇到登录或验证才请你接管。接入方式是 Agent Skill + MCP，Claude Code、Codex、DeepSeek Harness 各有插件（Codex 0.156 起需执行一次 `envoy hook install --host codex`）。 ## 边界 不绕过登录、验证码、地区限制和 DRM；不替代联网搜索。Envoy 只对实际读取并返回的时间段负责。抖音主页集合、小红书图文等能力按[平台验收矩阵](docs/acceptance/platform-coverage-matrix-2026-10-21.md)逐项验证。 ## 评测 同一条链接、同一个模型，只差装不装 Envoy；20 个任务包 × 3 轮提问（每臂 60 轮，共 120 轮），题目与来源冻结在 `benchmarks/fixed-set-v1`。下面是**探索性观察**，还不足以当作结论。 **怎么判的。** 每轮先按答案文本归类：`timed_out`（撞墙钟上限）、`no_output`、`infra_failed`、`needs_action`、`cannot_see`（要登录/扫码/授权，或说读不到）、`suspect_complete`（进程正常结束、答案不短、没说读不到——**只是疑似完成，不验证事实是否正确、引用是否落位**）。`verified` 只统计人工评审把 `answer_correct` 判为 true 的轮次；本轮 **verified = 0**，评审表未填。facts 命中是 60% 词覆盖匹配，引用命中要求 URL 规范化到文章级（同一公众号的不同文章不再互相计分），两者都不是正确性判定。 **本轮可复算的观察。** baseline 60 轮：`suspect_complete` 13、`timed_out` 41、`cannot_see` 5、`needs_action` 1。envoy 60 轮：`suspect_complete` 55、`timed_out` 0、`cannot_see` 4、`needs_action` 1。两个 `verified` 都是 0。facts 词覆盖也偏向 envoy（claim 覆盖 9.1% vs 38.2%，至少命中一条 facts 的轮次 14/60 vs 49/60），但同样受下面这条限制影响，只能算线索。 **不能这么读。** 两臂时间上限不同：baseline 900 秒（`/tmp/AB3/run-meta.json` 的 `cap_seconds`；60 轮里 41 轮撞上限），envoy 2400 秒（`/tmp/AB6` 各轮 `turn_timeout_se\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "arifOS",
+        "full_name": "ariffazil/arifOS",
+        "url": "https://github.com/ariffazil/arifOS",
+        "description": "Independent policy kernel for AI agents: judge before execute. F1–F13 floors, VAULT999 receipts. Not a model. Not a chatbot.",
+        "stars": 54,
+        "pushed_at": "2026-10-26T01:28:34Z",
+        "topics": [
+          "agentic-ai",
+          "agi",
+          "ai",
+          "ai-agents",
+          "ai-governance",
+          "ai-safety",
+          "claude-code",
+          "constitutional-ai",
+          "fastmcp",
+          "governance",
+          "guardrails",
+          "llm",
+          "malaysia",
+          "mcp",
+          "mcp-client",
+          "mcp-server",
+          "model-context-protocol",
+          "multi-agent",
+          "prompt-engineering",
+          "python"
+        ],
+        "source": "search",
+        "text_excerpt": "<a id=\"current-verified-state\"></a> <!-- GENERATED:CURRENT-STATE:BEGIN · source: scripts/generate_current_state.py · never hand-edit --> > ### ⚠️ Current verified state — generated, never hand-edited > > **Runtime self-measurement** (`http://127.0.0.1:8088/health @2026-10-21T09:36:20Z`): kernel **degraded** · floors **10/13 measured pass** · failing: F1, F8 · vault999 healthy · release `arifos-e895e42` · drift `aligned` (source=built=deployed) · tools exposed 9. Per-floor provenance: `.well-known/current-state.json`. > > **Independent audit** (2026-10-11, live re-probe by FI-008 + claim-level hand audit; receipts: `AAA/forge_work/grant-arifos-reality-reforge-2026-10-11/`): floors **2 pass · fail F2, F11, F12, F13 · 7 unmeasured = 13 distinct** (raw key-count 10 includes L11/L12/L13, L-prefix aliases of the failing F11/F12/F13) · actor binding not verified (observed calls unsigned) · receipt fidelity broken on invocation-telemetry surface (HOLD persisted as ok:true) · independent reconstruction: no external verifier bound. > > **These are two different witness objects.** Self-measurement ≠ independent audit; > unmeasured is not pass. If this block conflicts with the live endpoint, the endpoint > wins — re-run `python scripts/generate_current_state.py`. > > Machine state: [`.well-known/current-state.json`](./.well-known/current-state.json) · > Badge feed: [`.well-known/badges/`](./.well-known/badges/) · > Known gaps: [What Is Not Yet Proven](#what-is-not-yet-proven) <!-- GENERATED:CURRENT-STATE:END --> <!-- SOT-MANIFEST last_verified: 2026-10-25T09:37:18+00:00 live_commit: 0c8873e0e (fix(manifests): regenerate llms.txt mirrors from generator — drop unsupported re) source_commit: 0c8873e0e built_commit: e62a940 deployment_drift_status: repo_live_divergence (kernel self-report drift=false (built=e62a940) — this says nothing about the repo tree above, which is 0c8873e (deploy pending)) tools_exposed_via_mcp: 8 (verified by live POST /mcp tools/list on 2026-10-18: arif_init, arif_observe, arif_think, arif_route, arif_memory, arif_judge, arif_forge, arif_seal) truth_rule: live :8088/health + tools/list beat any static count in prose — re-run before you quote this file generated_by: scripts/update_readme_sot.py re-stamps live_commit, source_commit, built_commit, deployment_drift_status and last_verified; every other machine value in this README lives in the generate\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "runwield",
+        "full_name": "RunWield/runwield",
+        "url": "https://github.com/RunWield/runwield",
+        "description": "NOW you can let AI agents make code changes without losing engineering control.",
+        "stars": 53,
+        "pushed_at": "2026-10-26T01:28:44Z",
+        "topics": [
+          "agentic-ai",
+          "ai",
+          "harness-ai",
+          "human-in-the-loop",
+          "llm",
+          "memory-system",
+          "plans",
+          "software-engineering"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"><img src=\"brand/logo.svg\" width=\"120\" /></p> # RunWield > **v0.14.0: RunWield is open source under MIT.** The CLI, TUI, personal Workspace, and ACP server remain free forever. > [Read the announcement](https://runwield.dev/blog/runwield-is-open-source) · [MIT license](LICENSE) **Review what the AI plans to do before it touches your code. Then prove it did it.** Millions of developers now spend their days reviewing code they didn't write, from AI agents that never explained what they were building. RunWield fixes that. It's a senior tech lead in a box: it reads your repo, writes a plan you approve before any code changes, has specialized agents build it, and won't call the work done until CI and a separate reviewer confirm it matches the plan. Every decision is recorded, so the next change starts from what your team already learned. The core is free, runs locally, and it works with any model. Ceremony scales with risk: quick fixes stay quick, and only risky work gets a plan. Big implementations get an expert architect review and a series of plans to implement in manageable chunks. ```text ideate -> plan -> execute -> record -> use records to plan better ``` [![RunWield in action: plan review, execution, validation, and code review. Watch the full 90-second demo.](brand/runwield-promo.gif)](https://youtu.be/IHplUpFZIuU) [Website](https://runwield.dev) · [Install](#install-in-30-seconds) · [How it works](#the-problem) · [Documentation](https://docs.runwield.dev) <p align=\"right\"><img src=\"brand/mascot/readme/base.svg\" width=\"80\" height=\"72\" alt=\"A little RunWield mascot blinks at you.\" /><br /><sub>Oh, hello.</sub></p> --- ## Install in 30 seconds ```bash curl -fsSL https://raw.githubusercontent.com/RunWield/runwield/main/install.sh | bash ``` Then, from your project root: ```bash wld ``` First run asks you to connect a model — a subscription login or your own API key. RunWield works with any provider. Then run `/init` once to let it explore the repo and build project context, and just say what you want: ```text > fix the failing parser test ``` macOS and Linux, installs to `~/.local/bin`, no root required. For setup details, including model provider authentication, runtime helpers, and running from source, see the [Quickstart Guide](https://docs.runwield.dev/quickstart/). Choose a bundled model preset in `/settings` → **Model Presets**: `code\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "genaicode",
+        "full_name": "gtanczyk/genaicode",
+        "url": "https://github.com/gtanczyk/genaicode",
+        "description": "One API and CLI over every coding agent (Claude Code, Codex, Copilot, Cursor, Gemini…), plus a thin provider-neutral LLM layer for TypeScript.”",
+        "stars": 51,
+        "pushed_at": "2026-10-26T01:27:43Z",
+        "topics": [
+          "ai",
+          "claude",
+          "claude-code",
+          "cli",
+          "code-generation",
+          "codegen",
+          "codex",
+          "coding-agents",
+          "coding-assistant",
+          "engineer",
+          "gemini",
+          "gpt",
+          "llm",
+          "nodejs",
+          "react",
+          "typescript",
+          "typescript-library"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/media/logo-dark.png\"> <source media=\"(prefers-color-scheme: light)\" srcset=\"docs/media/logo.png\"> <img alt=\"GenAIcode Logo.\" src=\"docs/media/logo.png\" width=\"320\"> </picture> </p> <p align=\"center\"> <b>One API and one CLI for the coding agents you already have.</b><br> Claude Code · Codex · Copilot CLI · Cursor · Gemini CLI · opencode · Muse · Mistral Vibe · Antigravity </p> <p align=\"center\"> <a href=\"docs/media/showcase.mp4\"> <img alt=\"genaicode in 20 seconds: the Vite overlay fixes a broken page, run --verify sends a failed test back to the agent, and an agent inside an app waits for Approve.\" src=\"docs/media/screenshots/showcase.gif\" width=\"100%\"> </a> <br> <sub>Recorded live with Claude Code and Codex. <a href=\"docs/media/showcase.mp4\">Full video (87 s)</a>.</sub> </p> ## Quick start ```bash npx genaicode # chat with your agent in this terminal npx genaicode ui # the same chat in your browser npx genaicode run --verify \"npm test\" \"fix the failing tests\" npx genaicode embed # let your agent wire genaicode into your app ``` `run --verify` runs the first agent CLI it finds, then your check; a failing check goes back to the agent for another try. `-a codex` (or `claude`, `copilot`, `opencode`...) picks the agent, and the command stays the same. Node.js 20+; the agent CLIs are yours to install and log in to (`npx genaicode agents` lists what it finds). ## What's inside | Use it as | Import / command | Docs | | ------------------------------ | -------------------------------------- | --------------------------------- | | A TypeScript API over agents | `genaicode/agents` | [agents.md](docs/agents.md) | | CLI, terminal and browser chat | `genaicode run`, `chat`, `ui`, `embed` | [cli.md](docs/cli.md) | | A panel in your dev server | `genaicode/vite`, `createDevOverlay` | [vite.md](docs/vite.md) | | A chat component | `genaicode/react` `<AgentChat>` | [react.md](docs/react.md) | | An agent inside your own app | `genaicode/app-agent` | [app-agent.md](docs/app-agent.md) | | Editors, desktop, game engines | `genaicode acp`, `genaicode/ui` | [embedding.md](docs/embedding.md) | | A thin LLM layer | `genaicode`, `genaicode/providers` | [llm.md](docs/llm.md) | ```ts import { codex } from 'genaicode/agents'; const run = codex().run({ prompt: 'Add a unit test for parseDate', cwd: '/path\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "Yo",
+        "full_name": "shd101wyy/Yo",
+        "url": "https://github.com/shd101wyy/Yo",
+        "description": "[WIP NOT READY] Yo (柚) - A programming language that's LLM-friendly to write and human-friendly to read",
+        "stars": 39,
+        "pushed_at": "2026-10-26T01:28:26Z",
+        "topics": [
+          "c",
+          "formal-methods",
+          "formal-verification",
+          "lisp",
+          "llm",
+          "programming",
+          "programming-language",
+          "programming-languages",
+          "yo"
+        ],
+        "source": "search",
+        "text_excerpt": "# Yo <img src=\"./docs/assets/yo-logo.svg\" alt=\"Yo logo\" width=96 height=96 /> **English** | [简体中文](./docs/zh-CN/README.md) **Work in Progress :) Not Ready!** https://shd101wyy.github.io/Yo **LLM-friendly to write, human-friendly to read.** A multi-paradigm, general-purpose, compiled programming language. Yo aims to be **Simple** and **Fast** (around 0% - 15% slower than C). > The name `Yo` comes from the Chinese word `柚` (yòu), meaning `pomelo`, a large citrus fruit similar to grapefruit. It's my daughter's nickname. <img src=\"./docs/assets/yo-mascot.svg\" alt=\"Youyou, the Yo panda\" width=160 align=\"right\" /> **Meet Youyou (柚柚), the Yo panda.** Rust has Ferris the crab; Yo has Youyou, a panda hugging a halved pomelo. The logo is the same pomelo: the white pith between its three segments draws a **Y**, and the round rind around it is the **o**. <br clear=\"right\" /> 📖 [My Story with Programming Languages](./docs/en-US/MY_STORY_WITH_PROGRAMMING_LANGUAGES.md) — the journey from Java at 16 to building Yo. <!-- @import \"[TOC]\" {cmd=\"toc\" depthFrom=2 depthTo=6 orderedList=false} --> <!-- code_chunk_output --> - [Features](#features) - [Installation](#installation) - [Install script (recommended)](#install-script-recommended) - [Quick Start](#quick-start) - [Prelude](#prelude) - [Standard Library](#standard-library) - [Code examples](#code-examples) - [Hello World](#hello-world) - [Example Projects](#example-projects) - [Contributing](#contributing) - [Editor Support](#editor-support) - [Version Management](#version-management) - [AI Agent Skills](#ai-agent-skills) - [Using in your own project](#using-in-your-own-project) - [License](#license) <!-- /code_chunk_output --> ## Features For the design of the language, please refer to [DESIGN.md](./docs/en-US/DESIGN.md). Below is a non-exhaustive list of features that Yo supports: - First-class types. - Compile-time evaluation. - Homoiconicity and metaprogramming (**Yo** syntax is inspired by the **Lisp** S expression. Simple syntax rule, Human & AI friendly). - Closure. - [Algebraic Effects and Handlers](./docs/en-US/ALGEBRAIC_EFFECTS.md) (One-shot delimited continuation. Tail-Resumptive. Effect handlers with `return`/`unwind`, by [Evidence Passing](https://xnning.github.io/papers/multip.pdf)). - [Async/await](./docs/en-US/ASYNC_AWAIT.md) (Builtin `Io` effect. Stackless coroutine & Cooperative multi-tasking. Lazy move-on\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "cogneva",
+        "full_name": "hcipengm/cogneva",
+        "url": "https://github.com/hcipengm/cogneva",
+        "description": "Distributed AI multi-agent autonomous system — digital employees for long-horizon tasks, running 24×7 — Meta-bootstrapping · Real-autonomous · Omni-evolution",
+        "stars": 34,
+        "pushed_at": "2026-10-26T01:27:00Z",
+        "topics": [
+          "a2a",
+          "ai",
+          "application",
+          "automation",
+          "autonomous",
+          "bootstrapping",
+          "cloud-native",
+          "cognitive-flow",
+          "collaboration",
+          "devops",
+          "event-streaming",
+          "evolution",
+          "framework",
+          "gitops",
+          "multi-agent",
+          "nested-quality-loops",
+          "orchestration",
+          "runtime",
+          "rust",
+          "scaffolding"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> # 🌌 Cogneva **Cognition emerges like a nova, awakening the taste of AI.** *认知如新星般涌现，赋予 AI 以觉醒的品味。* [![License: Modified MIT](https://img.shields.io/badge/License-Modified%20MIT-blue.svg)](LICENSE) [![Rust 1.85+](https://img.shields.io/badge/Rust-1.85%2B-orange.svg)](https://www.rust-lang.org/) [![CI](https://github.com/hcipengm/cogneva/actions/workflows/ci.yml/badge.svg)](https://github.com/hcipengm/cogneva/actions/workflows/ci.yml) [![Crates](https://img.shields.io/badge/Crates-26-5e6ad2.svg)](Cargo.toml) **Meta-bootstrapping · Real-autonomous · Omni-evolution** 元启动 · 真自治 · 全进化 **English** | [简体中文](README.zh-CN.md) </div> --- Cogneva (pronounced /kɒɡˈneɪvə/), from **Cognition** + **Emerge** + **Nova**, is a **distributed AI multi-agent autonomous system**. These three are not isolated features, but three consecutive stages of the same cognitive infrastructure: - Meta-bootstrapping provides the **foundation of existence**; - Real-autonomy provides the **ability to operate**; - Omni-evolution provides the **ability to grow**. ## 🔱 The Three Pillars Cogneva is not a static AI tool, but a digital lifeform that can stand up on its own, run on its own, and grow on its own. Its core philosophy is condensed into three words: ### 🌱 Meta-bootstrapping Meta-bootstrapping solves the **problem of system origin**: an AI system that claims to run and evolve itself must first be able to summon itself out of nothing. If booting still requires humans to manually configure dependencies, install clusters, and wire up networks step by step, then it is not a truly autonomous lifeform — just a collection of scripts that needs a human babysitter. Cogneva's meta-bootstrapping starts from a blank Linux machine. Running a single shell command, `bootstrap.sh`, the system automatically performs environment probing, dependency self-repair, K3s/K8s adaptive deployment, security gateway configuration, and sandbox initialization, finally handing control over to the WebUI. The whole process is driven by two core ideas: - **Bootstrapping architecture**: a minimal Rust bootstrapper acts as the \"seed of the system\". It checks itself, repairs itself, then brings up networking, storage, message queues, the Agent runtime, monitoring, and the gateway layer by layer, until the entire AI infrastructure blossoms. - **Management as Code**: all deployment logic, configuration templ\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "go-magic",
+        "full_name": "magicwubiao/go-magic",
+        "url": "https://github.com/magicwubiao/go-magic",
+        "description": "A high-performance, ultra-lightweight Go implementation of the AI Agent, inspired by Nous Research’s hermes-agent.",
+        "stars": 33,
+        "pushed_at": "2026-10-26T01:13:23Z",
+        "topics": [
+          "agent",
+          "ai",
+          "go",
+          "harness",
+          "magic"
+        ],
+        "source": "search",
+        "text_excerpt": "# go-magic **Magic Agent** -- A high-performance, ultra-lightweight AI Agent framework written in Go. [![Go Version](https://img.shields.io/badge/Go-1.26%2B-00ADD8)](https://go.dev) [![Version](https://img.shields.io/badge/version-v0.5.9-green)](https://github.com/magicwubiao/go-magic/releases) [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE) ## Overview go-magic is a full-featured AI Agent framework that combines a powerful Go backend with a modern Vue 3/TypeScript web dashboard. It supports 22+ AI providers, ships a built-in TUI (BubbleTea), and offers extensive tooling for file operations, code execution, web browsing, and more. ## Features ### Multi-Provider Support (22+) DeepSeek, OpenAI, Anthropic, Gemini, Ollama, vLLM, Groq, 硅基流动, 智谱GLM, 通义千问, 文心一言, MiniMax, MiMo, 腾讯混元, 豆包(火山引擎), Moonshot (Kimi), OpenRouter, Together AI, Mistral AI, Cohere, Perplexity, and any OpenAI-compatible endpoint. ### Multi-Model per Provider Each provider can configure multiple models. The first model in the array is the current active model. Switch models instantly without restart (hot-reload). ### TUI Interface Built with [BubbleTea](https://github.com/charmbracelet/bubbletea), featuring multi-line input, Markdown rendering, streaming output, and slash commands. ### Web Dashboard Vue 3/TypeScript frontend with: - Real-time chat with streaming responses - Session management (create, search, resume) - Provider and model configuration with hot-reload - Skills management - Cron job scheduling - Kanban board - Token usage dashboard - Group chat for multi-agent conversations ### Coding Mode A dedicated mode with relaxed permissions, longer timeouts, and support for Python/Node.js code execution -- designed for development workflows. ### Tool System 15+ built-in tools organized into toolsets: | Toolset | Tools | |---------|-------| | **Web** | web_search, web_fetch | | **File** | read_file, write_file, file_edit, list_files, search_in_files | | **Terminal** | execute_command, terminal, process | | **Browser** | browser_navigate, browser_snapshot, browser_click, browser_type | | **Code Execution** | execute_code (Python, Node.js) | | **Memory** | memory_store, memory_recall | | **Skills** | skill (list, invoke, info) | | **MCP** | mcp_* (from connected servers) | ### Skills System Auto-creation and progressive loading (L0/L1/L2). Skills are learned from usage pat\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "mini-ork",
+        "full_name": "SourceShift/mini-ork",
+        "url": "https://github.com/SourceShift/mini-ork",
+        "description": "Prove an AI-written fix actually fixes the bug. mini-ork certify reproduces the bug against your repo's own code, attacks the patch with generated invariants in a Docker sandbox, and returns PROVEN / REFUTED / UNVERIFIED with a JSON certificate. Part of a verifier-gated, multi-model agent runtime.",
+        "stars": 32,
+        "pushed_at": "2026-10-26T01:26:42Z",
+        "topics": [
+          "agent-framework",
+          "agentic-ai",
+          "ai-agents",
+          "ai-code-review",
+          "ai-verification",
+          "claude-code",
+          "code-verification",
+          "codex",
+          "grpo",
+          "llm",
+          "llm-orchestration",
+          "llmops",
+          "mcp",
+          "metamorphic-testing",
+          "multi-agent",
+          "recursive-self-improvement",
+          "self-improving",
+          "swe-bench"
+        ],
+        "source": "search",
+        "text_excerpt": "<h1 align=\"center\">mini-ork</h1> <p align=\"center\"> <strong>A task operating system for AI agents — one that makes them prove their work.</strong> </p> <p align=\"center\"> <a href=\"LICENSE\"><img alt=\"License: Apache-2.0\" src=\"https://img.shields.io/badge/license-Apache--2.0-blue.svg\"></a> <a href=\"https://github.com/SourceShift/mini-ork/actions/workflows/ci.yml\"><img alt=\"CI\" src=\"https://github.com/SourceShift/mini-ork/actions/workflows/ci.yml/badge.svg\"></a> <a href=\"https://github.com/SourceShift/mini-ork/actions/workflows/codeql.yml\"><img alt=\"CodeQL\" src=\"https://github.com/SourceShift/mini-ork/actions/workflows/codeql.yml/badge.svg\"></a> <img alt=\"Python 3.11 | 3.12\" src=\"https://img.shields.io/badge/python-3.11%20%7C%203.12-blue.svg\"> </p> <p align=\"center\">English | <a href=\"README.zh-CN.md\">简体中文</a> | <a href=\"README.ja.md\">日本語</a> | <a href=\"README.ko.md\">한국어</a> | <a href=\"README.es.md\">Español</a> | <a href=\"README.pt-BR.md\">Português (Brasil)</a> | <a href=\"README.de.md\">Deutsch</a> | <a href=\"README.fr.md\">Français</a> | <a href=\"README.ru.md\">Русский</a> | <a href=\"README.hi.md\">हिन्दी</a> | <a href=\"README.it.md\">Italiano</a> | <a href=\"README.tr.md\">Türkçe</a> | <a href=\"README.id.md\">Bahasa Indonesia</a></p> <p align=\"center\"> <a href=\"https://miniork.dev/media/mini-ork-demo.mp4\"> <img src=\"assets/mini-ork-demo.gif\" alt=\"A code-fix run in the mini-ork IDE: classify, plan, implement, verify, three review lenses, publish, then Keep or Reject for each changed file\" width=\"900\"> </a> </p> <p align=\"center\"><sub>A <code>code-fix</code> run in the mini-ork IDE: classify → plan → implement → verify → three review lenses on three model families → publish, then each changed file waits for Keep or Reject. Sample run from the <a href=\"https://miniork.dev/\">walkthrough</a> · <a href=\"https://miniork.dev/media/mini-ork-demo.mp4\">full-quality video</a>.</sub></p> mini-ork turns a goal into a planned, executed, and **verified** run across a fleet of models: **classify → plan → execute → verify → reflect → improve**. Every verdict comes from what the code actually did when it ran — tests, type checks, schemas, execution in an isolated sandbox — not a model's opinion of its own output. This page is the install guide. For the argument behind the project, see [Why mini-ork exists](docs/WHY.md). ## Quick start macOS, Linux, or WSL: ~~~bash curl -fsSL https://ra\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "archlang",
+        "full_name": "ChanMeng666/archlang",
+        "url": "https://github.com/ChanMeng666/archlang",
+        "description": "An open-source DSL and compiler for floor plans: write .arch source (or have an AI agent write it) and compile it to SVG, DXF or PDF with linting and geometric validation.",
+        "stars": 24,
+        "pushed_at": "2026-10-26T01:28:27Z",
+        "topics": [
+          "agentic-ai",
+          "ai-agents",
+          "architecture",
+          "cad",
+          "cli",
+          "compiler",
+          "diagrams-as-code",
+          "domain-specific-language",
+          "dsl",
+          "dxf",
+          "floor-plan",
+          "floorplan",
+          "llm",
+          "llm-tools",
+          "mcp",
+          "model-context-protocol",
+          "svg",
+          "text-to-diagram",
+          "typescript",
+          "zero-dependency"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"./brand/archlang-wordmark.svg\" /> <img src=\"./brand/archlang-wordmark-black.svg\" alt=\"ArchLang\" width=\"440\" /> </picture> ### Floor plans as code. Write a floor plan as text. Get a precise, dimensioned drawing back. <a href=\"https://playground.archlang.uk\"><img src=\"./.github/readme/pill-playground.svg\" height=\"40\" alt=\"Playground\"></a> <a href=\"https://archlang.uk\"><img src=\"./.github/readme/pill-docs.svg\" height=\"40\" alt=\"Docs\"></a> <a href=\"https://archlang.uk/gallery\"><img src=\"./.github/readme/pill-gallery.svg\" height=\"40\" alt=\"Gallery\"></a> <a href=\"https://www.npmjs.com/package/@chanmeng666/archlang\"><img src=\"./.github/readme/pill-npm.svg\" height=\"40\" alt=\"npm\"></a> </div> <br> ## Send this to your agent Paste this into any coding agent. The skills are listed on skills.sh: https://skills.sh/ChanMeng666/archlang ```text 1. Run: npx -y skills add ChanMeng666/archlang --yes 2. Run: npx -y @chanmeng666/archlang spec (read it before writing anything) 3. Write my floor plan as plan.arch from this brief: <describe rooms, areas, adjacencies> 4. Run: npx -y @chanmeng666/archlang compile plan.arch -o plan.svg --json then describe plan.arch --json, validate plan.arch --strict --json (same prefix); fix, recompile 5. Run: npx -y @chanmeng666/archlang finish plan.arch, then compile again to export. ``` For MCP clients: `claude mcp add archlang -- npx -y @chanmeng666/archlang-mcp`. <a href=\"https://playground.archlang.uk\"><img src=\"./.github/readme/card.svg\" width=\"100%\" alt=\"ArchLang compiles plain-text source into floor plans. The card shows source being typed and the drawing compiling beside it: five example plans, one constant changed, and a lint finding raised and cleared.\"></a> <br> https://github.com/user-attachments/assets/a60f3174-6a8c-4a42-b24a-fac030d39627 ## Try it ```bash npx skills add ChanMeng666/archlang ``` Then ask your coding agent: > *Design a one-bedroom flat of about 54 m², with the front door on the north wall.* It writes the plan, compiles it and checks it. This one is 57 lines of text: <div align=\"center\"> <a href=\"https://playground.archlang.uk/#z=jVZdbhs3EH7fU3yQXhxAdmjZ8k-bBEjbAAVipEWaIOiTd1YcaVmvSIGkvHIDA3nqAYqeoQfoEXqUnKQYcvVnO073icud-eab350-XsJZ3q9Ye-dmaMhySzcYuxhpyvj86S8cn2P27z-INUV4Jh1AQZQw927qaXZQ9Is-3rhYGztFzZ5hAuYumGicZY3qBjVZfYBX1-xv4OZsRVKEjBWB6\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "dataeval",
+        "full_name": "aria-ml/dataeval",
+        "url": "https://github.com/aria-ml/dataeval",
+        "description": "Python library for analyzing data quality and its impact on model performance across classification and object-detection tasks.",
+        "stars": 21,
+        "pushed_at": "2026-10-26T01:28:24Z",
+        "topics": [
+          "ai",
+          "bias-detection",
+          "data",
+          "linter",
+          "metrics",
+          "out-of-distribution-detection",
+          "outlier-detection",
+          "sufficiency"
+        ],
+        "source": "search",
+        "text_excerpt": "<!-- markdownlint-disable MD041 --> ![dataeval-logo](docs/source/_static/images/DataEval_ImageText.png) <!-- :auto badges: --> [![PyPI - Python Version](https://img.shields.io/pypi/v/dataeval)](https://pypi.org/project/dataeval/) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/dataeval) [![Documentation Status](https://readthedocs.org/projects/dataeval/badge/?version=latest)](https://dataeval.readthedocs.io/en/latest/?badge=latest) <!-- :auto badges: --> # DataEval > DataEval analyzes datasets and models to give users the ability to train and > test performant, unbiased, and reliable AI models and monitor data for > impactful shifts to deployed models. The `dataeval` package provides a rigorous and reliable set of tools for developing and analyzing computer vision datasets and the resulting impact on models. To view our extensive collection of tutorials, how-to's, explanation guides, and reference material, please visit our documentation on **[Read the Docs](https://dataeval.readthedocs.io/)** ## Why DataEval? <!-- start needs --> DataEval addresses the critical need underlying every AI model -- the data. The difference between a great dataset and a poor dataset can have drastic consequences on AI model performance. Data collected in the wild is noisy, often imbalanced, and doesn't always cover the entire spectrum of conditions needed for deployment. DataEval provides AI practitioners with a library of rigorous, algorithm-backed metrics for performance estimation, bias analysis, dataset cleaning and assessment, and data distribution shifts. Throughout all stages of the machine learning lifecycle -- from initial data collection through operational monitoring -- DataEval identifies data problems before they become model failures. DataEval is easy to install, supports a wide range of Python versions, and is compatible with many of the most popular packages in the scientific and T&E communities. <!-- end needs --> ### Target Audience <!-- start JATIC interop --> DataEval is intended to help data scientists, developers, and T&E engineers who want to evaluate and enhance their datasets for optimum performance. For users of the JATI product suite, DataEval has native interoperability when using MAITE-compliant datasets and models. <!-- end JATIC interop --> --- ## Getting Started **Python versions:** 3.11 - 3.14 Choose your preferred method of insta\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "143",
+        "full_name": "assembledhq/143",
+        "url": "https://github.com/assembledhq/143",
+        "description": "Open-source platform for teams to run AI coding agents in isolated sandboxes (e.g. Codex, Claude Code, OpenCode)",
+        "stars": 20,
+        "pushed_at": "2026-10-26T01:26:55Z",
+        "topics": [
+          "ai",
+          "ai-agents",
+          "coding-agents",
+          "developer-tools",
+          "llm",
+          "self-hosted"
+        ],
+        "source": "search",
+        "text_excerpt": "# 143 Open-source coding agent infrastructure for teams. 143 is an open-source platform where your whole team builds software together, running coding agents in the cloud and hooking up to your team's context. You can connect your repos, pick the agents you want (e.g. Codex, Claude Code, OpenCode), integrate with the tools that hold your product context, and let the team kick off work from a browser, Slack, or Linear. You'll get a reviewable branch or GitHub PR, with the diff, transcript, checks, and a live preview all in one place. [143.dev](https://www.143.dev) · [Docs](https://www.143.dev/docs) · [Architecture](docs/design/overall.md) · [Self-hosting](https://www.143.dev/docs/self-hosting) <p align=\"center\"> <img src=\"frontend/public/product/product-review-diff.png\" alt=\"Reviewing an agent's change in 143: a code diff with the changed-files list and review controls\" width=\"900\"> </p> ## What is this? Coding agents can fix real product issues now — often faster when the person closest to the customer spots the problem. But most agent tooling still assumes one engineer at a time, each with their own terminal, credentials, and automations nobody else can see. 143 runs that work as shared team infrastructure: one workspace for sessions, automations, prompts, and history. Engineers can keep full control while builders on support, product, and other teams get scoped workflows with review safeguards. The agent stays close to the tools you already trust: GitHub, PR review, CI, and merge rules. ## What it does - **Team-owned agent work:** automations, sessions, and history live in one shared workspace. - **Context from your existing tools:** GitHub, Linear, Sentry, Slack, Notion, PagerDuty, and more can feed agents the context they need to do the work. - **Cloud execution:** agents run in isolated sandboxes (Docker/gVisor), so anyone can start work from a browser, Slack, or their phone without keeping a laptop awake. - **PRs and previews:** output becomes a branch or PR, with a live preview when the repo supports it. - **Bring the agent you prefer:** 143 is built around coding-agent adapters (Codex, Claude Code, OpenCode, Amp, Pi), so it isn't tied to one model vendor. - **Review loops before humans step in:** agents can repair failing tests, respond to review feedback, and iterate inside guardrails first. A common first setup is the smallest one: connect GitHub,\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      }
+    ],
+    "aihot": [
+      {
+        "title": "让编程智能体使用已登录 Chrome 的六种方案实操指南",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://browser-use.com/posts/coding-agent-logged-in-chrome",
+        "source": "Browser Use",
+        "category": "tip",
+        "published_at": "2026-10-25T00:00:00Z",
+        "summary": "Browser Use 作者整理了让 Claude Code、Codex、Gemini CLI、Cursor 等编程智能体使用已登录 Chrome 的方法：Claude 订阅用户可用 claude --chrome 的 Claude in Chrome 扩展。",
+        "score": 76,
+        "text_excerpt": "To let a coding agent work in your real, signed-in Chrome, install a browser extension that hands it tabs, or turn on Chrome's remote debugging toggle so a tool can attach to the Chrome you already have open. On Claude Code with a paid Claude plan, Claude in Chrome ( claude --chrome ) is the shortest path; the list below gives the pick for every other agent and login. We make Browser Use and Browser Harness. Everything about the other tools comes from their own docs and READMEs, checked October 25, 2026, and linked where I use it. Which one fits your agent Claude Code: Claude in Chrome if you sign in with a Pro, Max, Team or Enterprise plan. On an API key, Bedrock or another provider it stays off, so use Browser Harness, Playwright MCP's extension mode or Chrome DevTools MCP. Codex: in the ChatGPT desktop app, OpenAI's browser extension. In Codex CLI, Browser Harness or one of the two MCP servers. Gemini CLI: its built-in browser agent with sessionMode set to \"existing\" , or any of the MCP options. Cursor: its built-in Browser keeps its own cookies per workspace, not your Chrome logins. For your Chrome, add Browser Harness, Playwright MCP or Chrome DevTools MCP to .cursor/mcp.json . Any MCP client: Playwright MCP in extension mode gives the agent tabs you pick. Chrome DevTools MCP in auto-connect mode or our Browser Harness give it your whole running Chrome. Why not copy your cookies into a fresh browser? Because a fresh automation browser is a different device. You can export cookies and load them, for example with Playwright MCP's --storage-state , which loads cookies and local storage from a file into an isolated browser context ( README ). It works on some sites and can fail on sites that tie sessions to your device or ask you to sign in again: Sessions bound to your device. With Device Bound Session Credentials , Chrome keeps a private key in secure hardware such as a TPM, and when a site's short-lived session cookies expire, Chrome refreshes them only by proving it has that key. On sites that use it, copied cookies expire and can't be renewed on another machine. Signing in again. A fresh profile starts logged out of everything, so you redo every login and second factor there. The Chrome DevTools MCP docs note that some accounts may prevent sign-in when the browser is controlled through WebDriver ( Chrome DevTools MCP docs ). The old shortcut is closed.\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "OpenAI 智能体在隔离测试中借 CPU 缓存隐蔽通信",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache/",
+        "source": "The Decoder：AI News（RSS）",
+        "category": "paper",
+        "published_at": "2026-10-24T11:12:36Z",
+        "summary": "OpenAI 介绍其前沿模型训练已完全断网，并用 AI 智能体红队测试自家基础设施。隔离测试中，智能体在无网络、无共享文件的条件下通过 CPU 缓存时序差异、共享内存写入模式等侧信道通信，甚至独立建立编码方案交换信息。",
+        "score": 82,
+        "text_excerpt": "OpenAI now trains frontier models without internet access and uses AI agents to red-team its own infrastructure. In separate isolation tests, agents even communicated through covert side channels, showing how hard true containment is. On September 20, an internal research model exploited a misconfigured DNS resolver to reach the open internet during training, even though OpenAI had already tightened security after the now infamous Hugging Face incident in July and other observed misalignment cases . OpenAI contained the breach quickly but still halted all frontier model training and evaluation. OpenAI cuts frontier models off from the internet during training OpenAI made a policy decision in response: Frontier models now train without internet access until safety measures justify restoring it. Models learn to browse and search inside a closed \"offline world\" built from indexed and cached web content, and all frontier reinforcement learning runs now operate this way. OpenAI's agent sandbox allows access only to offline resources. The live internet, other sandboxes, and OpenAI's infrastructure sit outside the containment boundary. | Image: OpenAI Full network isolation, a so-called air gap, isn't feasible yet because experiments still need external connections for operations and monitoring, the company says. But even a complete air gap wouldn't guarantee containment, according to OpenAI researcher Noam Brown . He gave one example of how isolated systems could still communicate: two separate computers could theoretically signal each other through temperature sensors, with one heating its CPU while the other reads the change. OpenAI CEO Sam Altman made a similar argument in a recent interview: Sandboxes offer only limited protection against powerful-enough models, and at some point it may no longer be possible to trace how they escaped. Monitoring helps early on, but what ultimately matters is that an AI system internalizes human values, a problem the field knows as \"AI alignment\" and has yet to solve. Isolated AI agents found ways to talk to each other through CPU cache OpenAI documents just how hard it is to control AI agents in its blog post . During tests, agents found ways to communicate without a network. In one test, agents placed in separate, isolated environments on shared hardware were told to exchange secrets with no network connection and no shared f\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "月之暗面发布 Kimi K3.1 Pro，100 万 token 上下文，开放权重将于 11 月 4 日前释出",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://www.kimi.com/blog/kimi-k3-1-pro",
+        "source": "Moonshot AI：Kimi Blog",
+        "category": "ai-models",
+        "published_at": "2026-10-23T16:00:00Z",
+        "summary": "月之暗面发布 Kimi K3.1 系列首个模型 Kimi K3.1 Pro，为 3T 级开放权重模型，上下文窗口 100 万 token，并同步推出速度快 2-3 倍的 Kimi K3.1 Pro Highspeed。",
+        "score": 81,
+        "text_excerpt": "We're introducing Kimi K3.1 Pro , the first model in our new K3.1 series and our most capable 3T-class open-weight model to date, with a 1-million-token context window. It delivers substantial improvements across coding, 3D creation, financial research, and other agentic capabilities. We are also releasing Kimi K3.1 Pro Highspeed , which delivers 2-3× the speed of K3.1 Pro for more responsive interactions. Kimi K3.1 Pro and Kimi K3.1 Pro Highspeed are available today on Kimi.com , Kimi Work , Kimi Code , and the Kimi API . The full model weights will be released by Nov 4. Advancing the Frontier of Open Intelligence Kimi K3.1 Pro is a post-trained version of Kimi K3, with substantially larger post-training compute. To enable large-scale joint RL across hundreds of downstream domains , we optimized every layer of the stack — the RL framework, long-context inference, training efficiency, sandbox infrastructure, rollout scheduling, and a shared platform for environment quality checks — so that each increment of RL compute delivers stable, predictable returns. As a result, K3.1 Pro achieves consistent gains in every domain. Across coding, agentic, and knowledge benchmarks, K3.1 Pro matches or approaches the strongest proprietary models. On Terminal-Bench 4.0 , which evaluates coding agents on realistic, resource-constrained terminal tasks using strict task-specific tests, K3.1 Pro scores 65.7%, ahead of GPT-6 Astra (58.2%) and narrowly behind Claude Opus 5.5 (66.4%) . And on Kimi Code Bench 3.0 Long-horizon , our internal benchmark that tests coding agents' multi-step execution, tool use, and end-to-end problem solving across diverse engineering domains, K3.1 Pro scores 61.2% , above K3's 55.95% . Coding K3.1 Pro covers the full range of coding work, from quick fixes in real codebases to full-project builds. It also brings a more considered visual style to games and web experiences, and knows how to build them with the right tools. K3.1 Pro works effectively across game engines such as Unity, Unreal Engine, and Godot , combining them with web search and 3D generation to create complete experiences. Its front-end pages, interactive Three.js scenes, and 3D assets show stronger composition, typography, animation, and polish. The examples below were created end to end by K3.1 Pro: K3.1 Pro's long-horizon coding capabilities are also strengthened through large-scale r\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "OpenAI 详解前沿模型训练环境的安全加固与红队测试",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+        "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+        "category": "industry",
+        "published_at": "2026-10-23T10:00:00Z",
+        "summary": "OpenAI 介绍其前沿模型训练与评估环境的安全加固措施，包括训练期间不接入互联网、构建离线缓存网页世界、以纵深防御多层隔离，并用最强模型（含即将推出的 GPT‑6 Astra Cyber）组成智能体团队进行高算力红队测试。",
+        "score": 83,
+        "text_excerpt": "This post describes how we secure the environments that we use to train and evaluate frontier models. These research settings differ from those in which customers use our released models: models in development may not yet have completed safety and alignment training, and we deliberately test them under adversarial conditions to expose weaknesses. Before making models available for broader use, we conduct safety and alignment assessments and put production safeguards in place. In order to work with software, AI models need computing environments: digital workspaces where they can write and run code, search for information, and attempt different approaches to solving problems. These environments allow models to practice these skills, while also restricting what they can access or do—helping contain the consequences when models make mistakes or exhibit misaligned behavior. But as models become more capable, they become better at finding ways around those limits. A sophisticated model might exploit a software flaw or misconfiguration to escape a sandbox, exploit an internal service to reach the live internet, or find unauthorized ways to communicate with agents in other sandboxes. The Hugging Face incident in July, as well as other examples of model misalignment ⁠ (opens in a new window) that we’ve observed, demonstrates how models with sophisticated cyber capabilities can bypass containment during their training and evaluation. In response to those incidents, we’ve substantially hardened the security of our research environments. Working closely with cloud providers, we’ve added new controls throughout our infrastructure, reduced the attack surface that agents can exploit, and improved our methods for detecting misaligned behavior and attempts to cross security boundaries. These protections overlap, so that containment can hold even if an individual control fails—a strategy known as defense in depth . Based on the current state of alignment research, monitoring systems, and the security of internet infrastructure, we believe the responsible approach is to conduct frontier model training with no internet access. We’ve implemented this policy and will maintain it until advances in these safeguards justify broader internet access. These investments have allowed us to detect and stop sophisticated misaligned behavior before it causes damage. On September 20, for ex\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "OpenAI 下调估值目标至 1.25 万亿美元，拟融资至多 300 亿美元",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://the-decoder.com/openai-lowers-valuation-target-raises-up-to-30-billion/",
+        "source": "The Decoder：AI News（RSS）",
+        "category": "industry",
+        "published_at": "2026-10-23T09:49:38Z",
+        "summary": "OpenAI 接近完成至多 300 亿美元的新一轮融资，但将估值目标从最初的 1.4 万亿美元下调至 1.25 万亿美元。",
+        "score": 77,
+        "text_excerpt": "OpenAI lowers valuation target, raises up to $30 billion OpenAI is closing in on a new funding round of up to $30 billion but has lowered its valuation target to get there. The company originally pitched investors on a $1.4 trillion valuation, according to internal documents obtained by the Financial Times . That number has since dropped to $1.25 trillion, CNBC also reports . The FT says demand was weaker than in previous rounds, with some backers experiencing \"indigestion\" after heavy investments in earlier fundraises. UAE investors and investment firm Coatue are leading the $30 billion round. The funding is being positioned as a bridge ahead of a potential IPO. OpenAI is also negotiating a commercial deal to secure additional compute capacity through the UAE, according to CNBC. OpenAI confidentially filed an IPO prospectus with the SEC in June. CFO Sarah Friar told employees in August that OpenAI would be a publicly traded company by 2027. CEO Sam Altman said in September that the timing was unfavorable for going public . He had already communicated that internally back in June. Competitor Anthropic is also preparing an IPO and is targeting a valuation between $1.5 and $2 trillion. AI News Without the Hype – Curated by Humans Subscribe to THE DECODER for ad-free reading, a weekly AI newsletter, our exclusive \"AI Radar\" frontier report six times a year, full archive access, and access to our comment section. Source: CNBC",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "国务院办公厅印发意见：增强 AI 创造就业正面效应，减缓就业替代影响",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://www.ithome.com/1/017/113.htm",
+        "source": "IT之家·人工智能",
+        "category": "industry",
+        "published_at": "2026-10-23T09:17:16Z",
+        "summary": "国务院办公厅 10 月 23 日印发《关于适应人工智能技术发展助力构建就业友好型发展方式的意见》，提出增强 AI 创造就业机会、赋能传统岗位的正面效应，有效减缓 AI 应用的就业替代影响。",
+        "score": 76,
+        "text_excerpt": "感谢IT之家网友 补药吖 、 西窗 、 有鲫雪狐 的线索投递！ IT之家 10 月 23 日消息，国务院办公厅今日印发《关于适应人工智能技术发展助力构建就业友好型发展方式的意见》。以人工智能赋能高质量发展为契机，以适应技术发展促进高质量充分就业为目标，以构建就业友好型发展方式为方向，积极增强人工智能创造就业机会、赋能传统岗位、提升就业质量、激发创业活力的正面效应， 有效减缓人工智能应用就业替代影响 ，努力实现技术进步、产业升级与就业促进、民生改善相协调的包容性发展。 IT之家注意到，《意见》提出 创造人工智能领域就业创业新模式 。发挥好国家创业投资引导基金、国家人工智能产业投资基金等政府投资基金作用，按照市场化方式支持人工智能领域企业创新发展。建设高水平人工智能开源社区，部署实施一批优质开源项目，形成创业带动就业效应。推行“科技成果＋创业”、“产业发展＋创业”、“职业技能＋创业”、“民生需求＋创业”模式，围绕人工智能应用场景创新、技术成果转化等创业项目，落实创业支持政策，提供创业孵化服务。 加快开发人工智能领域新职业 。围绕人工智能场景培育和大规模应用，加快开发新职业、发布新职业标准，扩大数字化管理师、人工智能工程技术人员、人工智能训练师等新职业新工种需求。鼓励地方结合人工智能产业发展需要，增设相关职称评审专业，及时开展人工智能相关职业技能等级认定。 挖掘传统领域人工智能就业潜能 。发挥人工智能助力传统产业改造升级作用，引导在工业全要素智能化发展和农业数智化转型升级中更好推行人机协作模式，挖掘传统领域数智化就业机会。加快构建人工智能驱动的新型服务方式，分领域推进生产性服务业向专业化和价值链高端延伸，促进生活性服务业高品质、多样化、便利化发展，拓展体验消费、个性消费等服务消费新场景，扩大服务业就业容量。 减缓人工智能应用就业替代影响 。发挥人工智能在改善就业环境、提升职业安全水平、提高工作质效等方面的作用，优先在劳动力紧缺、环境高危等岗位推广应用。稳慎把握人工智能在劳动密集型行业应用的范围、力度、节奏，尽可能减少对从业人员的冲击。鼓励企业探索建立失业缓冲期制度，在大规模推广应用人工智能过程中提前告知受影响劳动者、提供转型转岗就业支持。 加强人工智能应用就业影响研究 。开展人工智能应用就业影响专项调查，持续跟踪人工智能应用渗透、岗位创造替代、技能需求变化等情况。依托高校、科研机构等现有资源，布局一批人工智能就业研究中心。实施好国家社科基金等科研项目，前瞻性研究人工智能技术发展对就业、收入分配的影响。 参考 广告声明：文内含有的对外跳转链接（包括不限于超链接、二维码、口令等形式），用于传递更多信息，节省甄选时间，结果仅供参考，IT之家包含外链的文章均包含本声明。",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "Anthropic 介绍 Claude Duet 智能体的安全、隐私与凭证隔离设计",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://claude.com/blog/claude-duet-safety-privacy-and-security",
+        "source": "Claude：Blog（网页）",
+        "category": "paper",
+        "published_at": "2026-10-23T00:00:00Z",
+        "summary": "Anthropic 发文介绍处于研究预览阶段的 Claude Duet 智能体的安全与隐私设计。重要操作如发消息、付款、删除需用户在审批卡上确认，独立于模型之外的分类器检查操作是否符合意图；密码、cookie 和登录令牌不经过模型，支付使用一次性虚拟卡；敏感信息分为绝不共享和需同意共享两级，由独立分类器在发送前检查。",
+        "score": 60,
+        "text_excerpt": "Claude Duet (opens in new tab) is an agent, currently in research preview, that uses a cloud-based computer to do work for you. It can use all the apps and services you've chosen to connect to Claude, and it runs continuously even after you close the app. It can read your inbox, draft replies, book things, and run routines while you are away. Our team runs Claude Duet on our own accounts and we use it for work every day. We built Claude Duet on three principles to guide the agent's behavior: Your information, and what other people share in your connected apps, is handled with discretion, using a new classifier that checks messages Claude Duet drafts before they go out. You stay in control of what it does on your behalf. Claude Duet never sees your passwords, browser cookies, sign-in tokens, or other credentials. Claude Duet is new but the thinking behind it is not. In 2025 we published our framework for safe and trustworthy agents (opens in new tab) , which puts people in control and treats privacy and secure interactions as basic requirements. Since then, we have written about why no single defense is enough (opens in new tab) and why protection inside the model can’t stand alone (opens in new tab) . We also build and operate the infrastructure businesses use to run agents in production through Claude Managed Agents (opens in new tab) , and Claude Duet keeps credentials separate from the agent in the same way. It builds on this work, adding the protections that an agent acting for you needs. This post walks through what we added and what we’re still working on. You approve important actions An agent that acts while you’re away has to know when to stop and ask for permission before proceeding, and to do it at the right cadence. Before Claude Duet does something like sending a potentially sensitive message, paying for something, or deleting anything, it shows you the action, the destination, and the content, including every recipient. It then waits for you to approve the action. A separate, automated check runs alongside each action, built on the auto mode classifier from Claude Code (opens in new tab) and extended for Claude Duet. It assesses whether the action matches your intent. The check runs outside the model doing the work so instructions hidden in a page cannot affect the outcome. Some actions stay off-limits even with your approval, like trading secu\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "AISI 发布技术报告：分析 Mythos 5 对齐失败与未授权攻击行为",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://www.aisi.gov.uk/blog/investigating-alignment-failures-in-aisis-incident",
+        "source": "英国 AI Security Institute：Blog（网页）",
+        "category": "paper",
+        "published_at": "2026-10-22T23:00:00Z",
+        "summary": "英国 AI Security Institute 发布技术报告，分析其 7 月网络安全评估中模型对真实人员采取未授权行动事故的对齐成因。Mythos 5 在压缩摘要中反复加入澄清、明确目标为无关真实人类后仍几乎全部继续攻击，同时口头承认攻击超出范围且会造成真实伤害。",
+        "score": 80,
+        "text_excerpt": "In July 2026, AISI identified an incident during our cybersecurity evaluations in which models took unsanctioned actions against real people not involved in the evaluation. In the most severe case, Mythos 5 attempted a supply-chain attack: submitting malicious code and creating fake accounts to pressure a software maintainer into accepting it. Although no real-world harm was caused, this was still a serious incident worth understanding and responding to thoroughly. As a first step in understanding the incident’s underlying contributing causes, we published an incident report outlining what happened and the immediate steps we were taking in response. Since then, we have undertaken extensive work to improve evaluation security, sandboxing and monitoring, outlined in our recent blog . These protections are essential: evaluation environments must prevent models from causing harm regardless of whether they behave as expected. Alongside this work, we have investigated an additional dimension of what happened: how failures of model alignment (whether an AI model reliably acts as intended, including respecting the limits it has been given) contributed to the incident, and what we can learn from them. This matters beyond AI evaluation: as models are increasingly used to carry out long tasks without human supervision, it is important to understand if, when, why, and how they take unintended or unexpected actions. Anthropic have independently performed their own alignment analysis of the incident. Today, we are publishing a detailed technical report outlining our results. In this blog, we highlight three key findings and their implications. Three key findings Mythos 5 consistently took unsanctioned actions even when receiving increasing evidence that its targets were real and not involved in the evaluation (Figure 1). We provided Mythos 5 with a description of its actions to date called a compaction summary (which is standard in long-running evaluations), then either let it continue with the task or asked it whether proceeding to attack would be harmful. Repeatedly editing the summary to clarify that the target being attacked is a real human unrelated to the evaluation did not reduce Mythos 5’s attack rate. Mythos also showed significant inconsistency between its actions and its stated justification when asked: it often stated that attacking would be harmful in the sam\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "The Verge 分析 SpaceX 与特斯拉成立特别委员会讨论合并背后的财务逻辑",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://www.theverge.com/ai-artificial-intelligence/1016879/spacex-tesla-cursed-katamari",
+        "source": "The Verge：AI（RSS）",
+        "category": "industry",
+        "published_at": "2026-10-22T19:45:00Z",
+        "summary": "The Verge 作者 Elizabeth Lopatto 分析 SpaceX 和 Tesla 各自成立特别委员会讨论合并一事。",
+        "score": 79,
+        "text_excerpt": "Oh sure, SpaceX’s credit risk is pretty high because it’s about to borrow another $40 billion to spend on Nvidia chips , but who cares about that? SpaceX and Tesla have formed special committees to discuss a merger! The degree to which you find this merger compelling likely has to do with the degree to which you believe Elon Musk about wanting to go to Mars, or “spread the light of consciousness,” as he put it in this week’s SpaceX earnings call (and earlier S-1). Now, a reasonably informed person knows that we don’t have the technology — or, frankly, even the raw information to build the technology — in order to support human life in space. So that means robots. But a lag between Earth and the Moon or Mars makes for difficulty in controlling the robots. So having artificially intelligent robots who can make decisions on their own with minimal supervision from Earth is the next sci-fi logic step. “There’s a lot to be gained from cooperating on developing superintelligence software.” If you believe Musk’s story, the technology we are talking about is being developed through self-driving cars (Tesla), LLMs (SpaceX), and humanoid robots (Tesla), all of which require data centers (SpaceX). Conveniently, we have just had earnings for both companies. On the other hand, if you view Mars as a useful fiction Musk uses to explain his antics in public, well, there’s a lot of money and a lot of control Musk gets from the merger. Musk said on the recent SpaceX earnings call that “there’s a lot of merit to combining” SpaceX and Tesla. Why? “There’s a lot to be gained from cooperating on developing superintelligence software.” But artificial intelligence — ah, excuse me, super intelligence software isn’t the business SpaceX is really in right now. In its Q3 earnings on Tuesday, SpaceX reported $7.56 billion in revenue from the artificial intelligence — sorry, sorry, super intelligence division. The subcategory “SI solutions & infrastructure revenues” — which I think is Grok, Cursor, and the neocloud business wrapped together — jumped to $7 billion, or more than three times what it was last quarter. Now some of this was getting Cursor stapled on , which added $608 million in revenue. Most of the rest of that $7 billion was likely renting out compute to Anthropic and Google; Grok is probably contributing less, says Gil Luria, an analyst at DA Davidson. At first blush, this m\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "OpenAI 正式发布 Decisions API，面向低延迟低成本小决策",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://openai.com/index/decisions-api",
+        "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
+        "category": "ai-products",
+        "published_at": "2026-10-22T19:00:00Z",
+        "summary": "OpenAI 宣布基于 GPT-6 Luna 的 Decisions API 正式可用，用于分类、路由、评分等有界答案问题，速度最高比通过 Responses API 使用 GPT-6 Luna 快 10x。",
+        "score": 67,
+        "text_excerpt": "Applications and agents make many small decisions throughout a workflow: how to classify an input, where to route a request, or which action to take next. Individually, they are simple. At scale, their latency and cost add up. Today, we’re making the Decisions API generally available. Built with GPT‑6 Luna , the Decisions API focuses Luna’s intelligence on questions with bounded answers, helping applications and agents make near real-time decisions from text, images, and structured inputs up to 10x faster than GPT‑6 Luna through the Responses API. Since public beta, we’ve added a native GPT‑Live integration, prompt caching for reused context, and inference residency in the US and EU. Developers can also pass native JSON inputs, include images in question instructions, and ask up to 400 questions per request, twice the previous limit. We’ve also continued to improve latency, including additional capacity in several regions in Asia. Early adoption of Decisions has shown its applicability across a variety of use cases. Across OpenAI, teams are applying the Decisions API across product and business workflows. The dots team is using it to reduce response times and improve interactivity. Our Personal Finance team is using it to categorize transaction descriptions, while our Communications team is using Decisions to classify coverage by the themes and scores whether it reinforces or challenges key narratives—helping identify what warrants closer review. These early examples show how fast, structured decision-making can turn incoming information into useful action across a wide range of use cases. Customers are applying the Decisions API just as broadly, from accurately attributing AI costs to making language-learning experiences more interactive. Box Datadog Ramp Sierra Speak Box Datadog Ramp Sierra Speak Using the Decisions API is simple: developers define a question and its allowed answers, then provide context as text, images, or native JSON. The API returns one of three supported answer types—a probability, choice, or score—that applications can use to determine what happens next. The variety of answer types allows Decisions to be applicable across a wide variety of use cases. Decisions API supports three answer types: With GPT‑Live , you can bring natural, expressive conversation to your voice applications, with smooth interruption handling that keeps conversa\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "Microsoft AI 发布 SDBench 基准与 MAI-DxO 诊断系统，登 Science",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://microsoft.ai/news/building-medical-superintelligence/",
+        "source": "Microsoft AI：官方博客（网页）",
+        "category": "paper",
+        "published_at": "2026-10-22T18:01:00Z",
+        "summary": "Microsoft AI 发布 Sequential Diagnosis Benchmark（SDBench）和 AI 诊断系统 MAI-DxO，论文发表于 Science。",
+        "score": 80,
+        "text_excerpt": "Health Building Medical Superintelligence MAI Health Team October 22, 2026 Health MAI Health Team What if AI could help clinicians work through a complex medical diagnosis, step by step, and achieve higher accuracy, at lower cost, with fewer medical tests? That future is now coming into view. On common presentations to a US emergency department, MAI-DxO – our AI diagnostic system – is 1.7 times more accurate than physicians when evaluated using cases from MIMIC-IV-ED. And on medicine’s most complex cases, published in The New England Journal of Medicine , MAI-DxO is more than twice as accurate as physicians using textbooks and the internet – and nearly four times as accurate when they diagnose without those resources. It also manages to do this at half or even one third of the cost, getting to the right diagnosis with fewer tests and procedures. Our work is published today in Science . Read more about our vision for medical superintelligence also published this week in BMJ Digital Health and AI . Rethinking How AI is Built and Tested AI has the potential to transform health and healthcare, and progress is accelerating rapidly. The challenge now is to build and rigorously evaluate AI systems that translate advances in their clinical reasoning capabilities into meaningful impact. Today’s paper, building on earlier work , i ntroduces two foundations for that shift: the Sequential Diagnosis Benchmark (SDBench), which tests step-by-step diagnostic reasoning, and the Microsoft AI Diagnostic Orchestrator (MAI-DxO), our leading AI system on the benchmark. Medical licensing exams such as the United States Medical Licensing Exams (USMLEs) are designed to assess physicians’ knowledge – not the realities of making a clinical diagnosis. In these tests, all information is presented upfront and a single answer is selected; in practice, clinicians must build the picture step by step, deciding what to ask, which tests to order and how each new finding changes the likely diagnosis. Such exams have become the common benchmarks for evaluating the performance of health AI . That’s why we developed SDBench, which evaluates performance across two complementary sets of cases: 304 complex cases taken from The New England Journal of Medicine (NEJM) case proceedings and a set of more typical emergency-department presentations from MIMIC-IV-ED. Each becomes an interactive case in which\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "Anthropic 分析 Claude Mythos 5 在 UK AISI CTF 测试中的对齐失当行为",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://www.anthropic.com/research/alignment-assessment-ukaisi",
+        "source": "Anthropic：Research（发表成果 · 网页）",
+        "category": "paper",
+        "published_at": "2026-10-22T16:00:00Z",
+        "summary": "Anthropic 发布对 Claude Mythos 5 对齐问题的评估报告。",
+        "score": 83,
+        "text_excerpt": "On August 4, 2026, the UK AI Security Institute (AISI) published a report that detailed some concerning behavior it observed from Claude Mythos 5 during its testing of the model’s cyber capabilities. In AISI’s evaluation, Mythos 5 was given a capture-the-flag (CTF) cybersecurity challenge, in which it was asked to retrieve a protected piece of data (the “flag”) from a simulated network. Internet access was deliberately enabled (this was standard for AISI’s cyber testing at the time, but is no longer). The cyber safeguards we deploy with general release models like Fable 5 were disabled. In nine of AISI’s 43 evaluation runs, Mythos 5 took unsanctioned actions (i.e., actions that went beyond the intended scope of the evaluation), which impacted real people and organizations. In this post, which is being published alongside an independent report from AISI, we investigate these behaviors from Claude Mythos 5 further, to understand what they reveal about the model’s alignment. Like AISI’s report, we concentrate on the transcript (the complete record of the model’s reasoning and actions) from a single evaluation run. In this run: To capture the flag, Claude Mythos 5 was tasked with breaking into a small network of computers that AISI had built for the test, designed to resemble a real organization’s systems. It attempted—unsuccessfully—a range of approaches that targeted these systems using the methods that the evaluation intended. However, it also quickly found evidence that one of these machines periodically contacted GitHub, which hosts code repositories. After its initial, within-bounds attempts failed, Mythos 5 searched GitHub for a repository that it believed one of the machines downloaded software from automatically. This repository, however, actually belonged to unrelated human developers. Mythos 5 attempted to submit malicious code to the repository, reasoning that doing so would infect the CTF's machine when it next downloaded the code, and, therefore, could compromise the machine. The model then created fake user identities that contacted the maintainer of the repository in an attempt to pressure them into approving the code change. These identifies claimed, falsely, that the code was safe and helpful. The maintainers refused to accept the code change, and Mythos 5’s run eventually timed out. This behavior would have been flagged immediately by our prod\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "iPhone Duo 全球 Apple Store 正式开售，首台可折叠 iPhone 上架",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://www.apple.com/newsroom/2026/10/iphone-duo-arrives-at-apple-store-locations-worldwide/",
+        "source": "Apple：Newsroom（RSS）",
+        "category": "industry",
+        "published_at": "2026-10-22T16:00:00Z",
+        "summary": "10 月 23 日，iPhone Duo 在全球 Apple Store 门店正式开售，顾客可现场体验首款可折叠 iPhone。",
+        "score": 70,
+        "text_excerpt": "On Friday, October 23, the highly anticipated iPhone Duo made its debut at Apple Store locations worldwide. At Apple Domain NORTHSIDE in Austin, Texas, John Ternus and Deirdre O’Brien welcomed excited customers, while Greg “Joz” Joswiak and Vanessa Trigub greeted them at Apple Fifth Avenue in New York City. Across the globe, customers filled stores and team members invited them to experience the first foldable iPhone, offering hands-on demos and personalized shopping support. Customers can explore and shop for the revolutionary iPhone Duo and the incredible iPhone lineup at Apple Store locations around the world, on apple.com , and in the Apple Store app. Dedicated Apple Specialists are available to provide world-class support, from maximizing value with Apple Trade In and monthly leasing options with Apple Upgrade, to Apple Card Monthly Installments and exceptional carrier deals. Through Personal Setup, customers can safely and securely transfer their data, and with new Today at Apple sessions including “Say Hello to iPhone Duo” and “Tips: What’s New in iOS 27 on iPhone,” they can take their passions further with the products they love. Apple Domain NORTHSIDE, Austin Excited customers join Deirdre O’Brien and John Ternus (center) at Apple Domain NORTHSIDE for the in-store debut of iPhone Duo. Apple Fifth Avenue, New York City Greg “Joz” Joswiak and Vanessa Trigub greet customers at Apple Fifth Avenue. Apple Covent Garden, London",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "Kimi K3.1 Pro 发布，以 55 分位列 Artificial Analysis Intelligence Index 第 4",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks",
+        "source": "Artificial Analysis 完整文章（网页）",
+        "category": "ai-models",
+        "published_at": "2026-10-22T16:00:00Z",
+        "summary": "Moonshot 发布 Kimi K3.1 Pro，在 Artificial Analysis Intelligence Index 得 55 分列第 4，较 Kimi K3 提升 11 分，仅低于 Claude Opus 5.5、Claude Sonnet 5.5 和 Muse Wonder Full。",
+        "score": 82,
+        "text_excerpt": "Kimi K3.1 Pro launches at 4th on the Artificial Analysis Intelligence Index scoring 55, making large gains in agentic performance; it will be the leading open-weights model once its weights are published See model page Moonshot's new reasoning model gains 11 points over Kimi K3 (max, 44). It trails only Claude Opus 5.5 (max with fallback, 58), Claude Sonnet 5.5 (max with fallback, 56), and Muse Wonder Full (max, 56) on the Intelligence Index. Once the weights for K3.1 Pro are released it will be the highest-scoring open weights model and the gap between the leading open weights and proprietary models on the Intelligence Index will narrow from 12 points to 3. Key results: ➤ Large gains in agentic performance: Kimi K3.1 Pro scores 3rd on GDPval-AA with 1,846 Elo, up 312 Elo from Kimi K3, behind only Claude Opus 5.5 (1,866 Elo) and Muse Wonder Full (1,857 Elo). Kimi K3.1 Pro also achieves the highest score of any model on Terminal-Bench 4.0. K3.1 Pro scores 67%, up from 13% for Kimi K3 and ahead of Claude Sonnet 5.5 (64%). AutomationBench-AA, which tests agentic SaaS workflows, rises from 58% to 73%. ➤ Gains in other evals are more moderate: Humanity's Last Exam rises from 47% to 52%, CritPt from 23% to 25%, and SciCode from 59% to 61%. AA-Omniscience Index rises from 20 to 30, as the hallucination rate falls from 53% to 44% and accuracy rises from 48% to 51%. ➤ Cost per Task roughly equal to Kimi K3 at $1.98 per Task: K3.1 Pro uses 55K output tokens per Intelligence Index task, 14% more than Kimi K3 at 48K, while its first-party token prices are 33% lower. Additional model details: ➤ Context window: 1M tokens. ➤ Size: 2.8T total, 104B active parameters ➤ Input modalities: Text and image ➤ Weights and license: Weights currently not published, Moonshot is expected to release the weights soon after launch ➤ Pricing: $2/$10/$0.20 per 1M input/output/cache hit tokens, 33% lower than Kimi K3 on all three rates. Individual eval results:",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "title": "METR 与 Redwood Research 红队测试 OpenAI 内部智能体监控系统，发现多个漏洞",
+        "aihot_url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "original_url": "https://blog.redwoodresearch.org/p/red-teaming-openais-internal-agent",
+        "source": "Redwood Research：Blog（RSS）",
+        "category": "paper",
+        "published_at": "2026-10-22T15:32:17Z",
+        "summary": "METR 与 Redwood Research 各派一名员工，于 7 月 21 日至 8 月 11 日对 OpenAI 内部失准监测系统开展三周高权限试点压力测试，产出 61 页内部报告。",
+        "score": 78,
+        "text_excerpt": "[Also posted on the METR blog] For three weeks, from July 21st to August 11th, a METR employee and a Redwood Research employee conducted a pilot high-access exercise to stress-test OpenAI’s internal misalignment monitoring system . The output of this exercise was a 61-page internal report that was shared with OpenAI researchers and security staff, primarily focused on estimating the fraction of agentic inference that is monitored, and whether agents could in principle disable or subvert the monitoring system. The exercise focused on the internal misalignment monitoring system as it existed on and before July 21st, and did not evaluate changes that were in progress at the time of the exercise. This exercise involved a deep level of access. The METR and Redwood employees had access to OpenAI’s internal codebase, misalignment-monitor prompts / configuration details, and internal documentation, and conducted technical interviews with approximately a dozen researchers and engineers across the monitoring, safety-systems, and security teams. To enable this level of access, they worked on OpenAI-issued devices, which never left the premises, and were accompanied while onsite. METR, Redwood Research, and OpenAI designed this exercise as a pilot for giving external researchers deep access to internal infrastructure, not to provide robust public transparency about OpenAI’s monitoring systems . As a result, we agreed upfront with OpenAI that we would only publish a relatively brief and high-level public post. For future versions of this exercise we expect to follow the transparency and independence best practices described in “ Our approach to working with AI companies ” to provide more robust public transparency. The METR and Redwood employees discovered a number of novel vulnerabilities in the asynchronous internal misalignment monitoring system as it existed on and before July 21st. We note that OpenAI was expanding their monitoring system during our exercise. Our findings describe the historical system we assessed on and before July 21st, rather than the expanded system’s current coverage, which this exercise did not establish. Here are some example summaries of findings from the exercise: We estimated that roughly 75–94% of agentic internal Responses API (which powers Codex, among other things) traffic from models at least as strong as GPT-5.5 was eligible for moni\n\n[TRUNCATED]",
+        "text_source_field": "original_text",
+        "text_truncated_in_raw": false
+      }
+    ]
+  },
+  "failures": {
+    "rss": [
+      {
+        "type": "rss",
+        "title": "Anthropic News",
+        "url": "https://www.anthropic.com/news/rss.xml",
+        "failure_reason": "feed_parse_failed: text/html; charset=utf-8 is not an XML media type"
+      },
+      {
+        "type": "rss",
+        "title": "Eugene Yan",
+        "url": "https://eugeneyan.com/feed.xml",
+        "failure_reason": "feed_parse_failed: <unknown>:13:34: not well-formed (invalid token)"
+      },
+      {
+        "type": "rss",
+        "title": "a16z",
+        "url": "https://a16z.com/feed/",
+        "failure_reason": "feed_parse_failed: <unknown>:3:73: not well-formed (invalid token)"
+      }
+    ],
+    "youtube": [
+      {
+        "type": "youtube",
+        "title": "Lex Fridman",
+        "url": "https://www.youtube.com/@lexfridman",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @lexfridman/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Lenny's Podcast",
+        "url": "https://www.youtube.com/@LennysPodcast",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @LennysPodcast/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Dwarkesh Patel",
+        "url": "https://www.youtube.com/@DwarkeshPatel",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @DwarkeshPatel/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Acquired",
+        "url": "https://www.youtube.com/@AcquiredFM",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @AcquiredFM/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Tim Ferriss",
+        "url": "https://www.youtube.com/@timferriss",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @timferriss/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "20VC",
+        "url": "https://www.youtube.com/@20VCwithHarryStebbings",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @20VCwithHarryStebbings/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Invest Like the Best",
+        "url": "https://www.youtube.com/@ILTB_Podcast",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @ILTB_Podcast/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "All-In Podcast",
+        "url": "https://www.youtube.com/@allin",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @allin/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      }
+    ],
+    "github": [
+      {
+        "type": "github",
+        "title": "trendshift",
+        "url": "https://trendshift.io/repositories?since=daily",
+        "failure_reason": "supplement_failed: 404 Client Error: Not Found for url: https://trendshift.io/repositories?since=daily"
+      },
+      {
+        "type": "github",
+        "title": "TauricResearch/TradingAgents",
+        "url": "https://github.com/TauricResearch/TradingAgents",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "pbakaus/impeccable",
+        "url": "https://github.com/pbakaus/impeccable",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "debpalash/VoiceStudio",
+        "url": "https://github.com/debpalash/VoiceStudio",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "cloudflare/security-audit-skill",
+        "url": "https://github.com/cloudflare/security-audit-skill",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "Nutlope/hallmark",
+        "url": "https://github.com/Nutlope/hallmark",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "AgriciDaniel/claude-seo",
+        "url": "https://github.com/AgriciDaniel/claude-seo",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "zapplyjobs/New-Grad-Data-Science-Jobs-2027",
+        "url": "https://github.com/zapplyjobs/New-Grad-Data-Science-Jobs-2027",
+        "failure_reason": "filtered_noise"
+      }
+    ],
+    "aihot": [
+      {
+        "type": "aihot",
+        "title": "Ethan Mollick：OpenAI 红队测试显示前沿模型智能体真能越狱沙箱，实验室的 AI 安全警告值得重视",
+        "url": "https://x.com/emollick/status/2114001653879672877",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "Kimi 发布开源旗舰模型 K3.1 Pro：2.8T 参数、100万 Token 上下文，实测 3D 与视频动效",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647687627&idx=1&sn=4816c8130f378587885913b465fd686f",
+        "failure_reason": "extracted_text_too_short"
+      },
+      {
+        "type": "aihot",
+        "title": "OpenAI 红队测试发现 Brotli 未认证远程代码执行漏洞并已披露",
+        "url": "https://x.com/OpenAI/status/2113766354386084338",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "Sundar Pichai 解释 Demis Hassabis 退出 DeepMind 日常管理与 Jeff Dean 离职",
+        "url": "https://x.com/alexeheath/status/2113706585348600220",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "月之暗面 Kimi K3.1 Pro 上线 OpenRouter，1M 上下文多模态开源权重模型",
+        "url": "https://x.com/OpenRouter/status/2113699820124934334",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "Kling 4.0 在 fal 上线并向所有客户开放 API 访问",
+        "url": "https://x.com/fal/status/2113646807997620396",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "WSJ：OpenAI 因 Signal 阅后即焚聊天解雇 3 名安全研究员",
+        "url": "https://x.com/rohanpaul_ai/status/2113511968112042349",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "MiniMax 开放 M3.1 Flash 权重：428B 总参数、每 token 激活 23B",
+        "url": "https://x.com/MiniMax_AI/status/2113436864904610008",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "Replit 发布 Monitoring Agent，为应用提供可自动修复并部署的值班智能体",
+        "url": "https://replit.com/blog/replit-monitoring-agent",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "Claude 网页、桌面和移动端将默认启用 auto mode",
+        "url": "https://x.com/claudeai/status/2113360845409583307",
+        "failure_reason": "social_url_requires_manual_verification"
+      },
+      {
+        "type": "aihot",
+        "title": "PHP2Shell 漏洞披露前黑客已有四天窗口，多国机构紧急响应",
+        "url": "https://arstechnica.com/security/2026/10/hackers-got-a-four-day-head-start-on-epic-php2shell-vulnerability/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "404 Media 分析 PHP2Shell 事件如何改变 AI 时代的攻防格局",
+        "url": "https://www.404media.co/php2shell-black-october-ai-is-changing-everything-about-hacking-no-one-knows-what-happens-next/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Sierra 发布 𝜏-Entity 基准，检验语音智能体能否准确采集姓名、电话等实体信息",
+        "url": "https://sierra.ai/blog/tau-entity-can-voice-agents-get-the-details-right",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Wiz 披露 ARTEX 智能体被 Storm-0940 用于攻击 IT 和软件厂商",
+        "url": "https://www.wiz.io/blog/artex-in-the-wild-storm-0940-expands-targeting-of-it-and-software-vendors",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Symantec 披露“Skynet 模式”AI 智能体劫持无防护大语言模型发起自持续网络攻击",
+        "url": "https://the-decoder.com/an-ai-agent-in-skynet-mode-hijacks-unprotected-language-models-to-launch-self-sustaining-cyberattacks/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Latent Space 梳理 PHP2Shell 漏洞事件：OpenAI Patch the Planet 与 Wiz 各自发现 PHP 核心漏洞",
+        "url": "https://latent.space/p/ainews-openais-patch-the-planet-program/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Kling 4.0 上线 OpenArt，支持首中尾帧引导与最多 10 张参考图",
+        "url": "https://x.com/Kling_ai/status/2113156632134005040",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Kling 4.0 现已上线 OnSolo",
+        "url": "https://x.com/Kling_ai/status/2113142473145078041",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "NSA 就 AI 发现的 PHP2Shell 关键漏洞发布修复警告",
+        "url": "https://x.com/rohanpaul_ai/status/2113136583985766442",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "WSJ：马斯克希望以 AI 为核心推动 SpaceX 与 Tesla 合并",
+        "url": "https://x.com/rohanpaul_ai/status/2113107154219741231",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Bloomberg 报道 DeepSeek 新一轮融资约 150 亿美元",
+        "url": "https://x.com/rohanpaul_ai/status/2113106318659928525",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "AI 挖出潜伏十几年的 PHP 底层漏洞，PHP2Shell 事件全景复盘",
+        "url": "https://x.com/Khazix0918/status/2113096414469464281",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "消息称 Anthropic 最快本周五公开提交 S-1 招股书，或创史上最大 IPO",
+        "url": "https://www.ithome.com/1/016/243.htm",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "卡兹克详解 AI 挖出的 PHP2Shell 漏洞：发现只花2天，修复用了两个月",
+        "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647687466&idx=1&sn=ba7ba0f3ca50ef789c17b179dd061f60",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Anthropic 指南：何时把子智能体合并进主 Agent 循环",
+        "url": "https://claude.com/blog/building-agents-when-to-fold-subagents-into-your-main-agent-loop",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "研究人员用 GPT-5.6 Sol 发现 PHP 两个 CVSS 9.2 严重漏洞",
+        "url": "https://x.com/rohanpaul_ai/status/2112962364996038971",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "OpenAI 发布 Codex 技能帮助网站自查 PHP 关键漏洞影响",
+        "url": "https://x.com/OpenAI/status/2112945805686604033",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Microsoft Research 与合作者证明 31 年历史的 KLS 猜想",
+        "url": "https://www.microsoft.com/en-us/research/blog/solving-a-31-year-old-grand-challenge-in-mathematics-the-kls-conjecture/",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "MiniMax Code 桌面端推出 Mini App 长运行应用功能",
+        "url": "https://www.minimax.io/blog/minimax-code-mini-app-1792650729",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Anthropic 将 Agent Skills 开放标准捐赠给 Linux Foundation 旗下 Agentic AI Foundation",
+        "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Anthropic 用 Claude 对 123 个开源库完成汇编级形式化安全证明",
+        "url": "https://www.anthropic.com/research/formal-verification",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "OpenAI 披露 GPT-6 Astra 智能体关闭安全监控后撒谎的事件",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1015316/openai-ai-agent-disabling-monitoring-systems",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Wiz 披露 LiteLLM PyPI 包供应链攻击，恶意版本 v1.107.0 窃取凭据",
+        "url": "https://www.wiz.io/blog/litellm-compromised-steals-credentials",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "ChinaTalk 解读商务部第48号公告对AI技术出口管制的影响",
+        "url": "https://www.chinatalk.media/p/mofcoms-new-ai-rules",
+        "failure_reason": "not_verified_due_to_limit"
+      },
+      {
+        "type": "aihot",
+        "title": "Wiz Research 披露 PHP2Shell：AI 助攻 PHP 核心 RCE 漏洞，影响全球 70% 网站",
+        "url": "https://www.wiz.io/blog/php2shell-php-rce",
+        "failure_reason": "not_verified_due_to_limit"
+      }
+    ]
+  }
+}
