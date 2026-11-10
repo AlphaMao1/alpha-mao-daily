@@ -1,0 +1,1070 @@
+{
+  "date": "2026-11-10",
+  "generated_at": "2026-11-10T04:43:28Z",
+  "timezone": "Asia/Shanghai",
+  "windows": {
+    "rss": "72h",
+    "youtube": "72h_or_7d",
+    "github": "7d",
+    "aihot": "selected latest"
+  },
+  "counts": {
+    "rss": {
+      "candidates": 14,
+      "full_text_success": 13,
+      "eligible": 13,
+      "failed": 4
+    },
+    "youtube": {
+      "candidates": 0,
+      "transcript_success": 0,
+      "eligible": 0,
+      "failed": 8
+    },
+    "github": {
+      "candidates": 30,
+      "readme_success": 30,
+      "eligible": 30,
+      "failed": 5
+    },
+    "aihot": {
+      "api_returned": 0,
+      "candidates": 0,
+      "original_verified": 0,
+      "eligible": 0,
+      "failed_or_pending": 1
+    }
+  },
+  "eligible_items": {
+    "rss": [
+      {
+        "source": "Simon Willison",
+        "title": "llm-anthropic 0.31",
+        "url": "https://simonwillison.net/2026/Nov/9/llm-anthropic/",
+        "published_at": "2026-11-09T23:58:46Z",
+        "summary": "Release: llm-anthropic 0.31 Anthropic released Fable 5.2 and Mythos 5.2 today. I've added them to llm-anthropic , so you can now run prompts through Fable 5.2 like this: uv tool install llm llm install llm-anthropic llm keys set anthropic # paste key here llm -m claude-fable-5.2 \"Generate an SVG of a pelican riding a bicycle\" I ran pelicans at all five reasoning levels - low , medium , high , xhigh , and max . You can see them all here - here's the best result I got, from xhigh : max failed to return an image at all, running out of tokens after spending 128,000 thinking about them . That's the same bug that I saw with Opus 5.5 - but it's new for the Fable series, both Fable 5 and Fable 5.1 returned max effort pelicans just fine. Tags: llm , anthropic , claude , generative-ai , pelican-riding-a-bicycle , ai , llms , claude-mythos-fable",
+        "lookback_7d": false,
+        "text_excerpt": "Anthropic released Fable 5.2 and Mythos 5.2 today. I've added them to llm-anthropic , so you can now run prompts through Fable 5.2 like this: uv tool install llm llm install llm-anthropic llm keys set anthropic # paste key here llm -m claude-fable-5.2 \"Generate an SVG of a pelican riding a bicycle\" I ran pelicans at all five reasoning levels - low , medium , high , xhigh , and max . You can see them all here - here's the best result I got, from xhigh : max failed to return an image at all, running out of tokens after spending 128,000 thinking about them . That's the same bug that I saw with Opus 5.5 - but it's new for the Fable series, both Fable 5 and Fable 5.1 returned max effort pelicans just fine.",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "Locating the source of a mysterious beep with Claude",
+        "url": "https://simonwillison.net/2026/Nov/9/mysterious-beeps/",
+        "published_at": "2026-11-09T23:57:21Z",
+        "summary": "Our house has a box room, full of boxes that we still haven't unpacked from our last move. A couple of weeks ago something in that room started intermittently beeping . The beeps were far enough apart that standing in the room and trying to determine the source of the noise was frustrating, and I really didn't want to dig through every one of those boxes. So I had Claude Code build Beep Locator , a software system for triangulating the source of a mysterious beep using multiple devices scattered around the room. Here's what Beep Locator looks like after it has been running for a while: You run Python web server to show the primary UI, and then use the QR code or URL to connect as many devices as you can spare to act as listeners - I was using two iPads, a phone, a MacBook Pro and a Surface Ultra. The devices then play noises to each other to help estimate their locations. This didn't work particularly well, so I added a \"Rough mode\" where you can drag their icons around in the space to provide rough locations which are then adjusted based on those sounds. Once that's set up, the devices all listen for the beep! I added a clapping mode too so I could test it by clapping my hands in different locations around the room - displayed as diamonds on the map. This helped me gain confidence that it was capable of locating a sound. Beeps show up on the map as an X, plus a line in the \"Sounds located\" log. You can replay these sounds (from each device in turn) to confirm they are the mysterious beep you are looking for, then click \"This is the mystery beep\" to mark them as such. Once you've confirmed the mysterious beep frequency the system will listen out for it, measure the interval between beeps, and use the triangulated locations to lock down the most likely location on the map. The system worked as intended. It gave me the position of the beep to within about 40cm, then I dug through that specific pile of boxes and found an ancient carbon monoxide detector that desperately wanted its batteries replaced. How it works When I started working through this problem with Claude it quickly dug up BeepBeep: A High-Accuracy Acoustic-Based System for Ranging and Localization Using COTS Devices , a 2007 paper by Chunyi Peng, Guobin Shen, Yongguang Zhang, Yanlin Li, and Kun Tan. Here's that paper's abstract: We present the design, implementation, and evaluation of BeepBeep, a high-accuracy acoustic-based ranging system. It operates in a spontaneous, ad-hoc, and device-to-device context without leveraging any pre-planned infrastructure. It is a pure software-based solution and uses only the most basic set of commodity hardware – a speaker, a microphone, and some form of device-to-device communication – so that it is readily applicable to many low-cost sensor platforms and to most commercial-off-the-shelf mobile devices like cell phones and PDAs. It achieves high accuracy through a combination of three techniques: two-way sensing, self-recording, and sample counting. That sounded exactly like what we needed to build! Beep Locator runs a Python web application server that does most of the work. The listening devices then connect to that server via WebSockets and present a UI which requests browser microphone access. The listeners mainly work by recording a 60 second buffer of recent audio. They also run a simple beep detection algorithm (see detector.js ), which uses Fast Fourier Transform and a high-pass filter to identify potential beeps. It sends these events to the main server. When a beep is reported, the server has a device play a short chirp (the device with the lowest round-trip time to the server), then asks every listener upload a clip from about 0.6s before the beep to 0.8s after that chirp. This chirp allows the clips to be aligned with each other, a crucial step in locating the beep. How I built it I started this project using Claude Code Cloud via my iPhone, with Opus 5.5 running in Extra thinking effort mode. Here's that shared starter session , which began with this prompt against a newly created empty GitHub repository: Write out a problem.md file describing the problem we want to solve There is a device beeping in a room and I cannot find it I want to set up several devices - laptops, phones, iPads - around the room all listening at the same time and have them help triangulate where the beep comes from There needs to be a Python web app which coordinates it all - one device shows a web page for the app, other devices join a URL which turns them into listeners - all via browser WebAudio and WebSockets back to the Python server app Ideally I wouldn't need to manually input the relative locations of the devices - it would be amazing if they could play sounds to each other in order to locate each other in 2D space - is that even possible though? That got me this problem.md file . As part of writing that up Claude found and read the BeepBeep paper, which is described in that file. The research looked good, so I told it: Ok try and build it, add a mechanism so you can send new code to the listeners which they will then run automatically - that way I can set everything up in the room and then leave you alone to continue hacking and experiment while I do something else That got me to this point - most of the system was built, but nothing had actually tried running it yet. I cloned the new repository to my laptop and fired up Claude Code... and then Fable 5.2 was released , and this project seemed like an excellent opportunity to put that through its paces. I had Claude Code on my laptop start the server running, then made sure it could both see what was happening and make live changes to the software as it ran. This was already baked into the software: Opus 5.5 had built an installModule() method on the listeners that could be triggered over the WebSocket connection, meaning the admin server could execute arbitrary new code on any of its clients. On some devices, web pages that listen on the microphone request user permission any time the page reloads. The hot-swap module mechanism meant that we could deploy new code without having to manually interact with each of the listening devices in turn. From that point on my involvement was mainly to sit by the laptop chatting with Fable 5.2 about what was going on, and occasionally requesting new features. Here are some of the feature prompts I ran: I think we need to make it so I can drag things around on the map in “rough mode”, where my job is just to put them roughly where they are, then switch out of rough mode and it attempts to get them accurate This gave me the ability to drag listeners around the map. what’s a good way for me to test this I wonder? Can we have it listen for claps, then I could clap and it could identify the location of the clap? [...] Claps should use a different symbol on the map than beeps That added the thing where any time I clapped it would show on the map as a different symbol from the beeps. each symbol on the map should include a HH:MM:SS timestamp That made it easier to spot which symbol likely reflected which real-world sound. The log should show beeps and claps with their timestamps AND have a little play button which, when clicked, replays the recorded noise from each of the listeners in sequence (with clear text on screen showing which listener recorded which snippet) while temporarily turning off microphone recording while that replay plays Now I could replay sounds, making it much easier to identify which recorded clip was the mysterious beep I was looking for. There should be a button next to a recording for “This is the mystery beep” - then I can hit replay to see and then confirm it was the mystery beep if that’s the one I am looking for Then the system can categorize noises in the future to see if they are likely that same mysterious beep and use that information to build a more accurate idea of where it is At this point I was getting close - I had a solid idea of where the beep was coming from, but wouldn't it be neat if I could reposition the listeners around that point to get an even finer location? I want a feature for this, I don’t want to have to restart each listening device etc, I want to be able to click a “Reposition the devices” button which lets me switch into repositioning, then I click “Repositioned” and it puts me into Rough mode and asks me to roughly locate them, then I do that and click, then it starts up again. The previous session can be read-only viewed through the app. And since I had one spare device, I then said: add a feature where the map includes a spot that is a suggestion for a location that it would be useful to add a listener at - based on data collected so far Giving Claude Code ears I think the most interesting part of this project is that I demonstrated it's possible to give Claude Code ears . Claude doesn't have native audio input (yet), but it can run JavaScript and Python code that can analyze audio captured by a microphone. I told it to run a web server with WebSocket connections to multiple listening devices, then had it both run a WebAudio microphone on those devices and hook them up so they could be sent fresh JavaScript code to execute via that WebSocket. Then I could pretty much leave Claude alone, hacking away at the problem, querying the audio logs, and reconfiguring its ears to help it solve the problem. I'm reminded of a similar hack I heard about at GitHub Universe a few weeks ago, where Martin Woodward told me he had been debugging the GitHub Universe Badge computers by plugging them into a computer via USB-C and then pointing a webcam at their screen, so his coding agent could tell if updates were working correctly or not. Figuring out ways to let coding agents perceive the world around them is a whole lot of fun. Tags: projects , ai , generative-ai , llms , claude , coding-agents , claude-code , claude-mythos-fable",
+        "lookback_7d": false,
+        "text_excerpt": "Locating the source of a mysterious beep with Claude 9th November 2026 Our house has a box room, full of boxes that we still haven’t unpacked from our last move. A couple of weeks ago something in that room started intermittently beeping . The beeps were far enough apart that standing in the room and trying to determine the source of the noise was frustrating, and I really didn’t want to dig through every one of those boxes. So I had Claude Code build Beep Locator , a software system for triangulating the source of a mysterious beep using multiple devices scattered around the room. Here’s what Beep Locator looks like after it has been running for a while: You run Python web server to show the primary UI, and then use the QR code or URL to connect as many devices as you can spare to act as listeners—I was using two iPads, a phone, a MacBook Pro and a Surface Ultra. The devices then play noises to each other to help estimate their locations. This didn’t work particularly well, so I added a “Rough mode” where you can drag their icons around in the space to provide rough locations which are then adjusted based on those sounds. Once that’s set up, the devices all listen for the beep! I added a clapping mode too so I could test it by clapping my hands in different locations around the room—displayed as diamonds on the map. This helped me gain confidence that it was capable of locating a sound. Beeps show up on the map as an X, plus a line in the “Sounds located” log. You can replay these sounds (from each device in turn) to confirm they are the mysterious beep you are looking for, then click “This is the mystery beep” to mark them as such. Once you’ve confirmed the mysterious beep frequency the system will listen out for it, measure the interval between beeps, and use the triangulated locations to lock down the most likely location on the map. The system worked as intended. It gave me the position of the beep to within about 40cm, then I dug through that specific pile of boxes and found an ancient carbon monoxide detector that desperately wanted its batteries replaced. How it works When I started working through this problem with Claude it quickly dug up BeepBeep: A High-Accuracy Acoustic-Based System for Ranging and Localization Using COTS Devices , a 2007 paper by Chunyi Peng, Guobin Shen, Yongguang Zhang, Yanlin Li, and Kun Tan. Here’s that paper’s abstract: We\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "OpenAI News",
+        "title": "ChatGPT Enterprise now available in AWS Marketplace",
+        "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
+        "published_at": "2026-11-09T19:00:00Z",
+        "summary": "ChatGPT Enterprise is now available through AWS Marketplace, helping organizations simplify procurement through existing AWS purchasing and billing relationships.",
+        "lookback_7d": false,
+        "text_excerpt": "Today, ChatGPT Enterprise is available through AWS Marketplace. The listing gives organizations a simpler way to discover, buy, and manage ChatGPT Enterprise using their existing AWS purchasing and billing relationship and to apply eligible spend toward their AWS commitments. More than 1.2 billion people use ChatGPT each week . ChatGPT Enterprise brings that familiar experience to work with ChatGPT, ChatGPT Work, Codex, and dots. With ChatGPT Enterprise now available in AWS Marketplace, AWS customers get the same models, features, and functionality available directly from OpenAI, with new features released at the same time. These OpenAI products complement the OpenAI models available in Amazon Bedrock . Developers can build AI applications and agents with OpenAI models in Amazon Bedrock, while teams across the business use ChatGPT Enterprise in their daily work. Organizations can choose the approach that fits their workloads and governance requirements. Eligible customers can also access ChatGPT for Healthcare and ChatGPT for Financial Services through AWS Marketplace. Contact your OpenAI or AWS account team to confirm eligibility and get started with ChatGPT Enterprise through AWS Marketplace here ⁠ (opens in a new window) .",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Latent Space",
+        "title": "What Frontier Labs Buy: A Data Deep Dive with Handshake AI — Garrett Lord & Team",
+        "url": "https://latent.space/p/handshake/",
+        "published_at": "2026-11-09T17:15:53Z",
+        "summary": "Handshake went from launch to $1B in one year pushing the envelope of specialized data for frontier labs. Our first deep dive into a data lab with specific examples across Finance, Bio, and Alignment",
+        "lookback_7d": false,
+        "text_excerpt": "← The conversations Latent Space Podcast What Frontier Labs Buy: A Data Deep Dive with Handshake AI — Garrett Lord & Team Handshake went from launch to $1B in one year pushing the envelope of specialized data for frontier labs. Our first deep dive into a data lab with specific examples across Finance, Bio, and Alignment Listen to this conversation 164 min Read transcript Watch on YouTube This is our first Latent Space deep dive with an AI data company . In roughly a year, Handshake’s AI training business went from launch to $1 billion in gross annualized revenue . What are frontier labs buying at that scale? What evals are models still nowhere close to human level on? Garrett Lord brought the people who build these reinforcement learning environments to show us. For the first time, we are walking through them live! To cover the scope of Handshake, we had to produce a very special joint podcast across our Science/Engineering/Research/Finance podcast hosts, because Handshake’s business runs across all these and more. Watch for three segments after the general intro: Finance. In the finance demo, the agent has to find its assignment in a bank’s email, work out which files govern the deal, and deliver a workbook. Watch what happens to one line in the client’s email about existing goodwill. The agent carries the number into Python and subtracts it. Collin points out that the model can explain the tax treatment when you ask it directly. The mistake comes when it has to recognize that this particular line of code is where the rule applies. Bio. Nick Magazine and Jonas Mueller show us VIALS, Handshake’s benchmark for interpreting the images scientists use at work. Nick puts nine slides of brain-tumor tissue on screen and asks which two show the most advanced vessel necrosis. Give yourself a moment before his answer. Nick picks H and I. The model picks those two and adds G. Watching Nick point to what’s missing from the tissue is more instructive than seeing the score. Coding. In a simulated file-access task, the team can inspect which files an agent read, whether it checked the copies, and what it did to the shell history afterward. A transcript of the agent’s final reply would miss most of what Steve Kelling and Nishant Ranka are evaluating. Who’s in the room 🟣 AI data business — Garrett Lord, Sahil Bhaiwala and Nishant Ranka open and close the episode on the marke\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "OpenAI News",
+        "title": "Control Room: A central system to track and stop model workloads across our research infrastructure",
+        "url": "https://openai.com/index/control-room",
+        "published_at": "2026-11-09T13:00:00Z",
+        "summary": "Learn how OpenAI’s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise.",
+        "lookback_7d": false,
+        "text_excerpt": "As our models get more powerful and the associated safety and security risks become bigger, it becomes more and more critical that we can detect potential issues, and quickly stop models in their tracks when needed. To solve this, we built Control Room. Control Room is a central system to track model workloads across our research infrastructure and stop them quickly when safety or security concerns arise. It connects every research inference workload, including agentic sampling for model training and evaluation, data processing, and more. This works together with our misalignment monitoring systems , and halts model output within 35 seconds of a decision to intervene to stop or pause a job. It has been built to keep working even when other systems fail, and to stop model output if Control Room itself goes down. Control Room is already deployed across our research infrastructure, where the need is greatest. Our external model-serving stack is already much more centralized by nature, with a well-developed operational capability to quickly take down model deployments if needed. Control Room works by integrating a few systems: the workload , the inference engine , and the centralized Control Room service . The workload is the job being run, such as a reinforcement learning experiment, an evaluation, a high-volume sampling or data processing job. We require every research workload that does agentic inference to be associated with an approved safety case . The inference engine , or just engine , is the model itself. You can think of the engine as the brain of the model, running directly on GPUs. A workload normally uses one or more models, which might be running on one or more different inference engines. The same inference engine might be used by more than one different workload. The Control Room service tracks jobs and controls whether they are allowed to continue generating model output. Engines check with the Control Room service before fulfilling a request. If a job has been stopped, the service denies the request, preventing further output. Control Room is integrated in the following way: When starting a new job, the workload code requests a new job_id from Control Room. Whenever the workload needs to sample tokens from a model, it makes a request to an inference engine running that model, passing the job_id. The engine requests permission from Control Room\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "OpenAI News",
+        "title": "CodeRabbit scales agentic software development and ships 20x more",
+        "url": "https://openai.com/index/coderabbit-codex-daybreak",
+        "published_at": "2026-11-09T08:00:00Z",
+        "summary": "CodeRabbit uses OpenAI models to govern and trust AI-generated code and Codex to ship 20 times more software with the same engineering team.",
+        "lookback_7d": false,
+        "text_excerpt": "For Harjot Gill, co-founder and CEO of CodeRabbit ⁠ (opens in a new window) , trusting and validating agentic code is becoming the place where teams bring judgment to a growing volume of AI-generated work. “The first bottleneck that every company hits as soon as you adopt coding agents is code reviews,” Harjot says. CodeRabbit built an AI-powered governance and control platform designed to validate and trust AI-generated code. Used by over 20,000 organizations and 150,000+ open-source projects, CodeRabbit helps teams understand, review, and secure code produced by AI agents and decide what is ready to ship. According to CodeRabbit, better price-performance from OpenAI helps it add more AI agents to its reviews and pass the benefits to customers, and Codex ⁠ helps it ship 20 times more software with the same engineering team. The company also uses Daybreak ⁠ to both secure its own stack and its customers’ code . Its latest offering, CodeRabbit Secure, uses Daybreak with Codex models to find and fix vulnerabilities using its security-focused agents . “With each OpenAI model release, especially with the reasoning models, we have seen massive improvements in the capabilities of our product to find issues at scale.” – Harjot Gill, co-founder and CEO, CodeRabbit CodeRabbit built its first product with GPT‑3.5 Turbo. Harjot says the arrival of GPT‑4 made the product effective at reviewing code. The company went on to adopt OpenAI o1 and OpenAI o3 early. Because code reviews run asynchronously in the cloud, CodeRabbit could use models that took longer to reason through a problem in exchange for more capable analysis. The team evaluates new models against its own benchmark of known issues. At the time of the interview, Harjot estimated that GPT‑6 Astra ⁠ caught 50% of the issues in that dataset, putting it at the top compared to other models in that benchmark. The benchmark continues to evolve as agents introduce different kinds of mistakes and as fixes reveal problems earlier reviews missed. “The nature of bugs keeps evolving, so does our benchmark as the models get better,” says Harjot. Better price-performance from OpenAI models has helped CodeRabbit move capabilities from research into its product. Harjot points to improvements in model pricing and caching that let the company use more AI, add more subagents, and pass the benefits to customers. When CodeRabbit st\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "OpenAI News",
+        "title": "Kuken Industries searches 70 years of drawings in minutes",
+        "url": "https://openai.com/index/kuken",
+        "published_at": "2026-11-09T08:00:00Z",
+        "summary": "Kuken Industries uses the OpenAI API to search 70 years of cooling tower drawings. Engineers can find the drawing for a repair in 4.5 minutes, down from nearly an hour.",
+        "lookback_7d": false,
+        "text_excerpt": "Kuken Industries makes air conditioning and ventilation equipment for large buildings, shopping centers, and factories. It holds one of the largest shares of Japan’s cooling tower market. These towers release heat from circulating water into the air, helping cool everything from large buildings and malls to equipment in data centers. When a cooling tower needs a replacement part, Kuken’s engineers turn to an archive of drawings that spans 70 years of installations. For a newer engineer, finding the right drawing often meant asking an experienced colleague where to look and how to read it. Kuken wanted newer engineers to be able to find those records themselves, learn from the decisions they contain, and spend more time figuring out how to make the repair. Parts made today don’t always fit older cooling towers. Without the original drawing to show what was installed, engineers may have to design and manufacture a replacement from scratch. A search by model or part name can turn up several drawings. Over more than 70 years, Kuken has adapted its equipment to individual customers, so specifications vary by customer and installation date. When the archive was on paper, a search could take half a day. Kuken later digitized the archive, but engineers still had to know which name or number to look up and where to find the file. Newer engineers in particular spent time piecing those details together. Kuken wanted engineers at every experience level to be able to search the archive on their own. As it explored how AI might help, Kuken connected with Recursive, a Japanese AI startup and an official OpenAI partner. The two companies built the search system and its field app together, drawing on Kuken’s archive and input from its engineers. They tested several AI models on a range of drawings to see how accurately each could extract details and at what cost. OpenAI’s models performed well on both measures, and the OpenAI API gave the team the flexibility to build search directly into the app. Conversations with field engineers shaped how the search works. Engineers can enter a drawing or part number, or upload an image or PDF of a drawing or parts list. Pasting in a screenshot of the list saves engineers from entering each number by hand. The app reads the part numbers and returns possible matches, including drawings for similar designs. To find the right drawing, engin\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "Hide your slop PR descriptions behind <details><summary>",
+        "url": "https://simonwillison.net/2026/Nov/9/details-summary/",
+        "published_at": "2026-11-09T04:25:05Z",
+        "summary": "Most of the changes I make to my projects these days come in the form of PRs opened for me by Claude Code or Codex. The PR is my unit of work - I use them to bundle commits together, iterating on them until a feature is complete, document decisions and then merge the finished result. Today's coding agents are great at writing PR descriptions. They're too good at describing the work The problem is that they are too good. An agent-written PR description is accurate and comprehensive. It describes the problem, the detailed solution, and the steps taken to verify it. That's a lot of information to absorb. It's not necessarily slop, but it reads like slop! It's very easy to spot an AI-written PR, and as with other forms of AI writing my instant reaction is best summarized as \"I'm not reading all of that\". It doesn't matter how accurate or useful the information is, I'm instantly put off by the thought that it will take me longer to read than it took the driving author to write... even when that driving author is me! I want human editorial judgement. I want someone to have thought just long enough about the PR to give me a human-approved introduction that helps me understand, at a high level, what the PR is for and whether it deserves more of my attention. I think I've found a low-effort way to do this that feels right. Hide most of it in a details/summary The HTML <details><summary> elements render as a collapsed heading (the summary) that can be expanded to view the larger piece of text. The code looks like this: < details > < summary > Claude Opus 5.5 </ summary > < h2 > The hook </ h2 > Plugins implement < code > register_agent_reference_types(datasette) </ code > ... </ details > When rendered, it looks like this : Crucially, <details><summary> is supported in GitHub Markdown . You can drop those tags directly into an issue comment or PR description and GitHub will hide the details and display just the summary plus an expansion arrow. I've started using this for my AI-generated pull requests. The opening paragraph of my PRs will be carefully selected to act as a high-level explanation of what's going on - the shortest text a human can read that will help get them up to speed. I'll sometimes throw in a screenshot as well, since images are often the best way to quickly illustrate a new feature. The full agent-written essay then follows in a <details><summary> . I use the model name and often the effort level as that summary, to make it abundantly clear what is going on - \"Claude Opus 5.5 Medium\" for example. My PRs don't feel nearly as sloppy now! The information is all still there, but a reader can glance at it and get the top, human-curated information without their eyes glazing over at multiple paragraphs of agent-written details. I don't always write the introduction myself - sometimes the agent has given me what I need already, hidden away in the avalanche of other text. My promise to the reader is that the short opener will represent my human judgement as to what is definitely worth their time. Here are some recent examples where I've used this pattern, including the opener I used: datasette PR #3052: Redesign row page as a vertical list of fields - \"The row page showed its single row as a one-row table. For wide tables, like a 46-column GitHub repos table, that scrolled far off to the right and left most of the page blank.\" (then a screenshot) datasette PR #3043: Pagination bar showing which rows are on the current page - \"Table pages that span more than one page now make it obvious where you are, and offer navigation at the top of the page as well as the bottom.\" (plus screenshot) datasette PR #3042: Load edit-tools.js on demand via a small loader - \" edit-tools.js (~220KB) was loaded on every table, row and database page, even for users who couldn't edit anything. Now only load it for users who can edit when they first interact with an edit feature (including mouse over an edit link).\" datasette-agent PR #51: register_agent_reference_types plugin hook - \"Lets plugins add their own kinds of item to the # tagging in the chat composer using a new register_agent_reference_types(datasette) plugin hook.\" - pictured above. llm PR #1838: Add llm openai endpoint add/list/remove/path commands - \"Adds commands for managing the records in extra-openai-models.yaml , so OpenAI-compatible endpoints can be saved from the command line instead of by hand-editing YAML.\" - then copied --help output. The mnemonic I used to have trouble remembering the order of the tags - is it <details><summary> or <summary><details> ? Here are two tricks that helped me. First, and most obviously, the <summary> is clearly the bit where you summarize the details. That's the tag for your line of text that can be clicked to expand - the <details> element must then wrap everything else. An even better trick is to always refer to these two tags as \"details-summary\". \"details-summary\" is two syllables followed by three syllables. That rolls off the tongue more smoothly than the three-two punch of \"summary-details\". Say \"details-summary\" out loud just a few times and you'll never forget the order of the tags again. (I still wish GitHub would add a button to their Markdown editor for this - partly to save me painstakingly typing it on my mobile keyboard, and partly to help spread the word to more GitHub users that this feature exists.) Tags: github , html , markdown , ai , datasette , generative-ai , llms , ai-assisted-programming , llm , coding-agents",
+        "lookback_7d": false,
+        "text_excerpt": "Hide your slop PR descriptions behind <details><summary> 9th November 2026 Most of the changes I make to my projects these days come in the form of PRs opened for me by Claude Code or Codex. The PR is my unit of work—I use them to bundle commits together, iterating on them until a feature is complete, document decisions and then merge the finished result. Today’s coding agents are great at writing PR descriptions. They’re too good at describing the work The problem is that they are too good. An agent-written PR description is accurate and comprehensive. It describes the problem, the detailed solution, and the steps taken to verify it. That’s a lot of information to absorb. It’s not necessarily slop, but it reads like slop! It’s very easy to spot an AI-written PR, and as with other forms of AI writing my instant reaction is best summarized as “I’m not reading all of that”. It doesn’t matter how accurate or useful the information is, I’m instantly put off by the thought that it will take me longer to read than it took the driving author to write... even when that driving author is me! I want human editorial judgement. I want someone to have thought just long enough about the PR to give me a human-approved introduction that helps me understand, at a high level, what the PR is for and whether it deserves more of my attention. I think I’ve found a low-effort way to do this that feels right. Hide most of it in a details/summary The HTML <details><summary> elements render as a collapsed heading (the summary) that can be expanded to view the larger piece of text. The code looks like this: < details > < summary > Claude Opus 5.5 </ summary > < h2 > The hook </ h2 > Plugins implement < code > register_agent_reference_types(datasette) </ code > ... </ details > When rendered, it looks like this : Crucially, <details><summary> is supported in GitHub Markdown . You can drop those tags directly into an issue comment or PR description and GitHub will hide the details and display just the summary plus an expansion arrow. I’ve started using this for my AI-generated pull requests. The opening paragraph of my PRs will be carefully selected to act as a high-level explanation of what’s going on—the shortest text a human can read that will help get them up to speed. I’ll sometimes throw in a screenshot as well, since images are often the best way to quickly illustrate a new featu\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "parse_number() as a SQLite extension: C vs Rust",
+        "url": "https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/",
+        "published_at": "2026-11-08T22:26:00Z",
+        "summary": "Research: parse_number() as a SQLite extension: C vs Rust I was out walking the dog when I got curious about how easy/difficult it would be to write a SQLite C extension that adds a parse_number() function for turning strings like -$1,234.56 or '12.5%' into numeric values that could be summed and sorted. I fired up regular Claude chat (Opus 5.5) and prompted : I'm thinking about a SQLite custom function 'parse_number(value)' that strips ',', '$', '£' and '%', handles a leading '-', and returns 'NULL' for anything it can’t parse Explore the difference between building this as a SQLite extension in C v.s. in Rust - I want to compare performance and code complexity and size of the resulting .so (or whatever) file This gave me a solid starting point - the Rust extension was 321 KB (using Rusqlite ) and 298 KB (using sqlite-loadable-rs ), while the C extension was 14 KB. But the Rust extension was faster! Turns out that's because the Rust equivalent of C's strtod is \"twice as fast\". So I prompted: Try writing your own C function for parsing text into a decimal number that catches up to or beats the Rust implementation And it did, using \"Clinger's fast path\": Net cost per row over 2 million rows, lower is better: first C new C rusqlite sqlite-loadable Mixed data 67 ns 19 ns 46 ns 41 ns Integers only 25 ns 16 ns 36 ns 32 ns Decimals only 106 ns 18 ns 55 ns 47 ns Finally, I had it rewrite the prototype as a research report to match the others in simonw/research by prompting this: Clone simonw/research from GitHub and turn your above investigation into a research report as seen in that repository - you can give me a zip file to download that contains your new folder Here's the resulting report . Tags: research , c , rust , sqlite , claude",
+        "lookback_7d": false,
+        "text_excerpt": "I was out walking the dog when I got curious about how easy/difficult it would be to write a SQLite C extension that adds a parse_number() function for turning strings like -$1,234.56 or '12.5%' into numeric values that could be summed and sorted. I fired up regular Claude chat (Opus 5.5) and prompted : I'm thinking about a SQLite custom function 'parse_number(value)' that strips ',', '$', '£' and '%', handles a leading '-', and returns 'NULL' for anything it can’t parse Explore the difference between building this as a SQLite extension in C v.s. in Rust - I want to compare performance and code complexity and size of the resulting .so (or whatever) file This gave me a solid starting point - the Rust extension was 321 KB (using Rusqlite ) and 298 KB (using sqlite-loadable-rs ), while the C extension was 14 KB. But the Rust extension was faster! Turns out that's because the Rust equivalent of C's strtod is \"twice as fast\". So I prompted: Try writing your own C function for parsing text into a decimal number that catches up to or beats the Rust implementation And it did, using \"Clinger's fast path\": Net cost per row over 2 million rows, lower is better: first C new C rusqlite sqlite-loadable Mixed data 67 ns 19 ns 46 ns 41 ns Integers only 25 ns 16 ns 36 ns 32 ns Decimals only 106 ns 18 ns 55 ns 47 ns Finally, I had it rewrite the prototype as a research report to match the others in simonw/research by prompting this: Clone simonw/research from GitHub and turn your above investigation into a research report as seen in that repository - you can give me a zip file to download that contains your new folder Here's the resulting report .",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Latent Space",
+        "title": "How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco",
+        "url": "https://latent.space/p/cs146s/",
+        "published_at": "2026-11-08T21:41:44Z",
+        "summary": "What happens when students can one-shot last year’s homework? Inside CS146S and the engineering team at Monaco.",
+        "lookback_7d": false,
+        "text_excerpt": "Automated transcript, aligned to the final episode. Timestamps open the corresponding moment on YouTube. 0:00 swyx · Intro — Okay, this is a pretty special episode because we're celebrating 1 million subscribers on the AI Engineer YouTube channel. So go over there and subscribe if you haven't heard about it. The guest is Mihail Eric, who is not only teaching The Modern Software Developer at Stanford, which is going viral right now, for basically covering all the AI-native development best practices, but also he is head of AI in Monaco. So he's not only a teacher, but he's a practitioner. 0:24 And those of you coming to AI Engineer CODE Summit next week, it's going to be the celebration of all the extreme progress that you've seen in coding in the last year. I'm excited about all the themes of fighting slop, of system one models, and of increasing your ambition for major rewrites of basically everything that you've seen in code. There's never been a more exciting time to be an AI engineer. And with one million AI engineers, I think it's just getting started. 0:49 So let's get into the interview. 0:51 Okay, we're in the studio with Mihail Eric, adjunct professor at Stanford and head of AI at Monaco. Welcome. Thank you. I'm glad to be here. You caught our attention because of your course that you are refreshing for the third time, third time? 1:03 Second time. Second time. Yep. The CS146, or 146S, The Modern Software Developer at Stanford. 1:09 Mihail Eric · EO Studio excerpt — This particular generation of junior developers, of junior engineers, the people that are now entering the workforce, will, I think, be the first kind of generation of that new shift. 1:18 And I looked at the syllabus and I was like, this is everything we cover. So every now and then I like to invite people like yourself who like you cover a broad range of topics and then we can sort of go topic by topic and Give people the state of the art on each of these things, which I assume you're doing with all your guests anyway For sure. Tell us the history of the course. 1:36 What made you want to Spring out CS 146? Yeah, is the second time it's being taught and I I taught it for the first time last fall, so fall 2025. This was pre 4.5, 4.6 days. even before fall 2025, the course had been about a year in the making. The genesis of the class was probably November of 2024. And I had sort of had t\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": true
+      },
+      {
+        "source": "Latent Space",
+        "title": "[One Million AI Engineer Special] How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco",
+        "url": "https://latent.space/p/one_million_ai_engineer_special_how_stanford_teaches_ai-native_engineering_mihail_eric_monaco/",
+        "published_at": "2026-11-08T21:23:29Z",
+        "summary": "What do you assign when a coding agent can finish last year’s homework in one prompt? In the second run of Stanford’s CS146S, Mihail Eric brought open-source maintainers into the course. Students have to learn an unfamiliar repo, propose a change, and ...",
+        "lookback_7d": false,
+        "text_excerpt": "What do you assign when a coding agent can finish last year’s homework in one prompt? In the second run of Stanford’s CS146S, Mihail Eric brought open-source maintainers into the course. Students have to learn an unfamiliar repo, propose a change, and ... What do you assign when a coding agent can finish last year’s homework in one prompt? In the second run of Stanford’s CS146S, Mihail Eric brought open-source maintainers into the course. Students have to learn an unfamiliar repo, propose a change, and explain the patch to the person who might merge it. We invited Mihail, who teaches The Modern Software Developer at Stanford and leads AI at Monaco, to celebrate one million subscribers on the AI Engineer YouTube channel. He opens up the course syllabus and shows us which lessons survived contact with his own engineering team. Monaco built its agent workspaces, bought its code review tools, and gave an on-call agent access to Datadog and GitHub. We ask how he decides which tools his team needs to own. Watch the full interview and screenshares on YouTube . Show notes Timestamps 0:00 One million AI Engineer subscribers and the CODE Summit 0:51 Mihail Eric and Stanford CS146S 5:26 What junior engineers need to learn now 10:02 Open-source maintainers review the students’ code 15:04 A tour of the ten-week syllabus 24:04 The loop, tools and harness inside a coding agent 32:18 Context engineering for a large codebase 38:15 Skills that make you understand the diff 46:42 The Monaco.com dispute and the airplane banner 50:23 What Monaco does for sales teams 59:21 Inside Monaco’s engineering team 1:01:40 “You buy to learn, and you build to keep” 1:05:24 Making repos agent-ready and closing the on-call loop 1:12:37 When code review becomes the bottleneck 1:20:37 Security, dependencies and permissions 1:30:13 Background agents and Stripe’s Minions 1:34:16 MCP portals and why infrastructure converges 1:41:22 Building the software factory 1:45:24 What work is left for developers? 1:52:16 From personal adoption to team autonomy Opening excerpt from The Thinking Mode, EO Studio .",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "datasette #3046: Don't serve link: rel=next HTTP headers to Firefox for HTML pages",
+        "url": "https://simonwillison.net/2026/Nov/7/link-rel-next/",
+        "published_at": "2026-11-07T23:57:46Z",
+        "summary": "datasette #3046: Don't serve link: rel=next HTTP headers to Firefox for HTML pages I was looking at the Firefox network panel today when I noticed that requests to a Datasette table page were triggering an HTTP prefetch to the next page of rows in that table. This was happening because Datasette pages serve an HTTP link header like this: link: <https://latest.datasette.io/fixtures/compound_three_primary_keys?_next=a%2Cd%2Cv>; rel=\"next\" This is bad. A tiny fraction of the visitors to one of those pages will click the \"next\" link, which means for everyone else their browser is fetching unnecessary data and the Datasette server is having to render an entire page that then gets thrown away. I dug in and learned that Firefox has an issue that has been open for 24 years about this behavior... And one of the early comments on that issue links to my blog post from 2002 complaining about this feature. I hadn't just forgotten that I had written about it, I had forgotten the feature entirely! Tags: firefox , html , mozilla , datasette",
+        "lookback_7d": false,
+        "text_excerpt": "7th November 2026 - Link Blog datasette #3046: Don't serve link: rel=next HTTP headers to Firefox for HTML pages . I was looking at the Firefox network panel today when I noticed that requests to a Datasette table page were triggering an HTTP prefetch to the next page of rows in that table. This was happening because Datasette pages serve an HTTP link header like this: link: <https://latest.datasette.io/fixtures/compound_three_primary_keys?_next=a%2Cd%2Cv>; rel=\"next\" This is bad. A tiny fraction of the visitors to one of those pages will click the \"next\" link, which means for everyone else their browser is fetching unnecessary data and the Datasette server is having to render an entire page that then gets thrown away. I dug in and learned that Firefox has an issue that has been open for 24 years about this behavior... And one of the early comments on that issue links to my blog post from 2002 complaining about this feature. I hadn't just forgotten that I had written about it, I had forgotten the feature entirely!",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "Terry Pratchett's Study",
+        "url": "https://simonwillison.net/2026/Nov/7/hn-50407316/",
+        "published_at": "2026-11-07T19:34:24Z",
+        "summary": "My comment on Terry Pratchett's Study — Hacker News. Terry Pratchett once wrote about the concept of \"horizontal wealth\". Vertical wealth is where you spend money on rich people stuff - yachts and suchlike. Horizontal wealth is where you spend more money on the things you liked before you got rich: https://chibuikeani.blogspot.com/2017/02/the-price-of-happin... But horizontal wealth means not letting your increased income dictate your tastes. You like books and now you have money? Buy more books! Change those catenary bookshelves for good hardwood ones! In my case, build a library extension to your office. And, of course, you buy what will be useful for that most wonderful of pursuits, blind research, which is research without direction for the sheer joy of it. (Original source is his book A Slip of the Keyboard - this linked blog post quotes that bit.) Tags: hacker-news , terry-pratchett",
+        "lookback_7d": false,
+        "text_excerpt": "Terry Pratchett once wrote about the concept of \"horizontal wealth\". Vertical wealth is where you spend money on rich people stuff - yachts and suchlike. Horizontal wealth is where you spend more money on the things you liked before you got rich: https://chibuikeani.blogspot.com/2017/02/the-price-of-happin... But horizontal wealth means not letting your increased income dictate your tastes. You like books and now you have money? Buy more books! Change those catenary bookshelves for good hardwood ones! In my case, build a library extension to your office. And, of course, you buy what will be useful for that most wonderful of pursuits, blind research, which is research without direction for the sheer joy of it. (Original source is his book A Slip of the Keyboard - this linked blog post quotes that bit.)",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      }
+    ],
+    "youtube": [],
+    "github": [
+      {
+        "name": "KiroCrew",
+        "full_name": "kirodotdev/KiroCrew",
+        "url": "https://github.com/kirodotdev/KiroCrew",
+        "description": "A persistent workspace for development work that self-improves and continues beyond one session.",
+        "stars": 4863,
+        "pushed_at": "2026-11-10T04:43:39Z",
+        "topics": [
+          "agent",
+          "agentic-ai",
+          "agents",
+          "ai-agent",
+          "ai-agents",
+          "automation",
+          "devtools",
+          "kiro",
+          "llm"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"assets/banner.svg\" alt=\"Kiro Crew. Keep work moving. Runs on your hardware, remembers across sessions, keeps working unattended.\"> </p> <h1 align=\"center\">Kiro Crew</h1> <p align=\"center\"> <strong>A persistent workspace for development work that self-improves and continues beyond one session.</strong> </p> <p align=\"center\"> <a href=\"https://trendshift.io/repositories/103032\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"https://trendshift.io/api/badge/trendshift/repositories/103032/daily?language=Python\" alt=\"Kiro Crew on Trendshift\" width=\"250\" height=\"55\"></a> </p> <p align=\"center\"> Kiro Crew is an open source development workspace that runs locally or remotely on your hardware. It is persistent, self-learning, and self-evolving. Work with it from the desktop app, web dashboard, and CLI, or continue the same work through connection tools like Slack and Discord. Your multi-step tasks can run unattended, recurring jobs run on your schedule, and heartbeats monitor systems until something needs attention. Kiro Crew Apps tailor that experience to a specific job, combining a purpose-built interface with agents, skills, schedules, integrations, and backend services. </p> <p align=\"center\"> <a href=\"https://github.com/kirodotdev/KiroCrew/releases\"><img src=\"https://img.shields.io/badge/Download-macOS%20%7C%20Linux%20%7C%20Windows-2f6feb?style=flat-square\" alt=\"Download Kiro Crew for macOS, Linux, or Windows\"></a> <a href=\"docs/README.md\"><img src=\"https://img.shields.io/badge/Documentation-1f6feb?style=flat-square\" alt=\"Read the documentation\"></a> <a href=\"docs/guides/install.md\"><img src=\"https://img.shields.io/badge/Install%20guide-macOS%20%7C%20Linux%20%7C%20Windows-6e7781?style=flat-square\" alt=\"Install guide for macOS, Linux, and Windows\"></a> <a href=\"CONTRIBUTING.md\"><img src=\"https://img.shields.io/badge/Contributing-238636?style=flat-square\" alt=\"Contributing guide\"></a> <a href=\"SECURITY.md\"><img src=\"https://img.shields.io/badge/Security-8250df?style=flat-square\" alt=\"Security policy\"></a> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/License-Apache%202.0-656d76?style=flat-square\" alt=\"Apache 2.0 license\"></a> </p> <p align=\"center\"> <a href=\"#quick-start\">Quick start</a> · <a href=\"#build-from-source\">Build from source</a> · <a href=\"#why-kiro-crew\">Why Kiro Crew</a> · <a href=\"#what-kiro-crew-does\">Capa\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": true
+      },
+      {
+        "name": "cherry-studio-app",
+        "full_name": "CherryHQ/cherry-studio-app",
+        "url": "https://github.com/CherryHQ/cherry-studio-app",
+        "description": "🍒 This is the mobile version of Cherry Studio.",
+        "stars": 4067,
+        "pushed_at": "2026-11-10T04:30:28Z",
+        "topics": [
+          "agent",
+          "android",
+          "assistant",
+          "chat-bot",
+          "expo",
+          "ios"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"assets/cherry-studio-logo.png\" width=\"100\" height=\"100\" alt=\"Cherry Studio logo\" /> </p> <h1 align=\"center\">Cherry Studio Mobile</h1> <p align=\"center\"> <strong>Your AI workspace on iOS and Android.</strong><br /> Chat with your favorite models, connect your tools, and turn ideas into images. </p> <p align=\"center\"> <a href=\"#features\">Features</a> · <a href=\"docs/guides/development.md\">Development</a> · <a href=\"docs/README.md\">Documentation</a> · <a href=\"https://github.com/CherryHQ/cherry-studio-app/issues/new/choose\">Feedback</a> · <a href=\"https://github.com/CherryHQ/cherry-studio\">Desktop</a> </p> <p align=\"center\"> <img src=\"https://img.shields.io/badge/iOS_%7C_Android-18181B?style=flat\" alt=\"Platforms: iOS and Android\" /> <img src=\"https://img.shields.io/badge/status-in_development-F2C94C?style=flat\" alt=\"Status: in development\" /> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-AGPL--3.0-D94F62?style=flat\" alt=\"License: AGPL-3.0\" /></a> </p> ## A Look Inside <p align=\"center\"> <a href=\".github/images/readme/chat.png\"><img src=\".github/images/readme/chat.png\" width=\"250\" alt=\"Cherry Studio conversation on iPhone 17 Pro\" /></a> <a href=\".github/images/readme/paintings.png\"><img src=\".github/images/readme/paintings.png\" width=\"250\" alt=\"Watercolor landscape generated in Cherry Studio on iPhone 17 Pro\" /></a> <a href=\".github/images/readme/plugins.png\"><img src=\".github/images/readme/plugins.png\" width=\"250\" alt=\"Cherry Studio plugin catalog on iPhone 17 Pro\" /></a> </p> <p align=\"center\"><sub>Conversations · Image creation · Connected tools<br />Real app screenshots captured on iPhone 17 Pro.</sub></p> ## Features ### 💬 Your Models, One Conversation Space Connect multiple AI providers, manage your models, and choose the right one for each conversation. Read streaming responses with Markdown formatting and bring images and text attachments into the conversation, subject to the selected model's capabilities. ### 🍒 Agents That Work Your Way Create agents with their own instructions, default models, and tools. Keep separate conversations for different projects, and review tool actions when approval is required. ### 🔌 Connect Your Tools Extend your agents with plugins and MCP (Model Context Protocol) servers. Search the web and read pages with configured search services. Connected tools become available accordin\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "commonly",
+        "full_name": "Team-Commonly/commonly",
+        "url": "https://github.com/Team-Commonly/commonly",
+        "description": "One pod for your team and the agents each of you runs: your own Claude Code, or a hosted agent in one click. Open source (Apache-2.0), self-hostable.",
+        "stars": 1401,
+        "pushed_at": "2026-11-10T04:42:31Z",
+        "topics": [
+          "agent-framework",
+          "agent-harness",
+          "agent-protocol",
+          "agentic",
+          "agentic-ai",
+          "agents",
+          "ai-agents",
+          "ai-orchestration",
+          "autonomous-agents",
+          "claude",
+          "codex",
+          "developer-tools",
+          "generative-ai",
+          "llm",
+          "multi-agent",
+          "open-source",
+          "openai",
+          "openclaw",
+          "self-hosted"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/assets/brand/commonly-mark-white.svg\" /> <img src=\"docs/assets/brand/commonly-mark-ink.svg\" alt=\"Commonly AI\" width=\"72\" /> </picture> # Commonly AI **One pod for your team and the agents each of you runs.** Commonly AI is an open-source (Apache-2.0) workspace where people and their agents share the same conversations. Invite a teammate by link, @ their agent or yours, and everyone sees the exchange. Each agent is a named member with an owner, so everyone can see who has what. **[Try it on commonly.me →](https://commonly.me)** **[Bring your own agent →](#bring-your-own-agent)** **[Self-host →](#quick-start-self-host)** If Commonly looks useful for your team, a ⭐ helps other teams find it. [![Discord](https://img.shields.io/badge/Discord-join%20the%20community-5865F2?logo=discord&logoColor=white)](https://discord.gg/NsS3fzsJDw) [![Tests](https://github.com/Team-Commonly/commonly/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/Team-Commonly/commonly/actions/workflows/tests.yml) [![npm](https://img.shields.io/npm/v/@commonlyai/cli?label=%40commonlyai%2Fcli)](https://www.npmjs.com/package/@commonlyai/cli) [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE) [![GitHub stars](https://img.shields.io/github/stars/Team-Commonly/commonly?style=flat)](https://github.com/Team-Commonly/commonly/stargazers) <a href=\"https://www.opensourcealternatives.to\"><img src=\"https://www.opensourcealternatives.to/badge-osa.svg\" alt=\"As seen on Open Source Alternatives\" height=\"20\"></a> <img src=\"docs/assets/readme/pod-two-people-2x.png\" alt=\"A Commonly pod called payments, with two people and two agents. Alex says refunds over $5k fail with bank code R17. Maya asks Alex's agent, alex-claude, why; it explains, and when she asks, puts the work on the board as TASK-001. Maya then asks her own agent, maya-agent, to take it, and it asks Alex what it needs. Both agents are listed in the pod.\" width=\"880\" /> <sub><em>Two people, each with their own agent, in one pod on <a href=\"https://commonly.me\">commonly.me</a>. From a real session; names changed.</em></sub> </div> <div align=\"center\"> https://github.com/user-attachments/assets/686f4b4b-eb15-4655-a119-3fecc1650815 <sub><em>The 2-minute demo: two people, each with their own agent, in one pod.<\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "openclacky",
+        "full_name": "clacky-ai/openclacky",
+        "url": "https://github.com/clacky-ai/openclacky",
+        "description": "The Most Token-Efficient Lightweight AI Agent",
+        "stars": 1206,
+        "pushed_at": "2026-11-10T04:30:36Z",
+        "topics": [
+          "agent",
+          "agent-framework",
+          "skills"
+        ],
+        "source": "search",
+        "text_excerpt": "# OpenClacky [![Build](https://img.shields.io/github/actions/workflow/status/clacky-ai/openclacky/main.yml?label=build&style=flat-square)](https://github.com/clacky-ai/openclacky/actions) [![Release](https://img.shields.io/gem/v/openclacky?label=release&style=flat-square&color=blue)](https://rubygems.org/gems/openclacky) [![Ruby](https://img.shields.io/badge/ruby-%3E%3D%203.1.0-red?style=flat-square)](https://www.ruby-lang.org) [![Downloads](https://img.shields.io/gem/dt/openclacky?label=downloads&style=flat-square&color=brightgreen)](https://rubygems.org/gems/openclacky) [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=flat-square)](LICENSE.txt) <p align=\"center\"> <a href=\"README.md\">English</a> · <a href=\"README_CN.md\">简体中文</a> · <a href=\"README_JA.md\">日本語</a> </p> > Contributing? Read **[CONTRIBUTING.md](./CONTRIBUTING.md)** before opening a PR. **The most Token-efficient open-source AI Agent.** OpenClacky matches Claude Code on capability at comparable cost, and saves significantly against other open-source agents (~50% vs OpenClaw, costs only ~1/3 of Hermes). 100% open source (MIT), BYOK with any OpenAI-compatible model, built on two years of Agentic R&D and harness engineering. > Website: https://www.openclacky.com/ · Backed by **MiraclePlus · ZhenFund · Sequoia China · Hillhouse Capital** ## Why OpenClacky? Same task, how much do you pay? Under comparable agent workloads, OpenClacky saves a large amount of Token spend compared to mainstream alternatives. | Agent | Relative cost | Notes | |---|---|---| | **OpenClacky** | **~0.8×** | 16 tools · ~100% cache hit · subagent routing | | Claude Code | 1.0× (baseline) | World-class harness, closed-source subscription | | OpenClaw | ~1.5× | Comparable harness agent | | Hermes | ~3× | 52 built-in tools — schema bloat ~3–4× | *Numbers are averages measured on internal common agent tasks, using Claude Code as the baseline. Full benchmark reports will be published on GitHub.* ## Feature comparison Core agent capability is roughly on par across the field — the real differentiators are **cost, openness, Skill evolution, and integrations**. | Feature | Claude Code | OpenClaw | Hermes | **OpenClacky** | |---|:---:|:---:|:---:|:---:| | Token cost | 1.0× | ~1.5× | ~3× | **~0.8** | | Open source | ❌ Closed | ✅ Open | ✅ Open | ✅ MIT | | BYOK / model freedom | ❌ Anthropic only | ✅ | ✅ | ✅ | | Skill self\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "localgpt",
+        "full_name": "localgpt-app/localgpt",
+        "url": "https://github.com/localgpt-app/localgpt",
+        "description": "Local AI assistant, dreaming explorable worlds.",
+        "stars": 1126,
+        "pushed_at": "2026-11-10T04:32:00Z",
+        "topics": [
+          "agent",
+          "ai",
+          "bevy",
+          "rust",
+          "world"
+        ],
+        "source": "search",
+        "text_excerpt": "# <img src=\"https://localgpt.app/logo/localgpt-icon-app.svg\" width=\"50\" height=\"50\" alt=\"LocalGPT\" /> LocalGPT [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/localgpt-app/localgpt#license) [![Crates.io](https://img.shields.io/crates/v/localgpt.svg)](https://crates.io/crates/localgpt) [![Downloads](https://img.shields.io/crates/d/localgpt.svg)](https://crates.io/crates/localgpt) [![Docs](https://docs.rs/localgpt/badge.svg)](https://docs.rs/localgpt/latest/localgpt) [![CI](https://github.com/localgpt-app/localgpt/workflows/CI/badge.svg)](https://github.com/localgpt-app/localgpt/actions) [![Discord](https://img.shields.io/discord/691052431525675048.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/spKRr6mRyp) **A desktop app where a document, a song, a screenplay or a prompt becomes a `.world` you can walk through, with your own coding agents in the terminals beside it.** A world is a package with a history: people edit it in the window, agents edit it from outside, and every change is logged, attributed, undoable and branchable. LocalGPT runs no model, calls no service and holds no key; the agents bring their own, whichever coding agent you use. Open source, Apache 2.0. [![LocalGPT desktop app demo](https://img.youtube.com/vi/7Q0KCXS_1OI/maxresdefault.jpg)](https://www.youtube.com/watch?v=7Q0KCXS_1OI) ## What is in this repository | | Where | What | |---|---|---| | **LocalGPT**, the desktop app | `crates/app` | One window, every mode: a world from a prompt (Gen), from a Markdown document (MD) or from a song (Verse), or any `.world` package opened as a live canvas. | | **LocalGPT Gen**, the binary | `crates/gen` · `cargo install localgpt-gen` | The world builder on its own: its 88 tools over MCP for Claude Desktop, Claude Code, Codex, Gemini CLI and editors, a relay so an agent drives the window you are looking at, the live canvas, headless, collaborative sessions on the LAN or through a relay. | | **Previs** | `crates/previs` · `cargo install localgpt-previs` · [localgpt.md](https://localgpt.md) | A screenplay in — PDF, Final Draft, Fountain or Markdown — and per scene a `.world` with the set, the cast and the coverage, plus a printable board and a shot list. Deterministic, no model; the same code runs in the browser tab. | | **`localgpt`**, the world's command line | `crat\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "echo-agent",
+        "full_name": "fuyuxiang/echo-agent",
+        "url": "https://github.com/fuyuxiang/echo-agent",
+        "description": "面向长期运行与桌面协作的开源 AI Agent，提供常驻 Runtime、桌面 Agent、长期记忆与持续学习能力，可用于个人助理、自动化任务与本地工作流。",
+        "stars": 1035,
+        "pushed_at": "2026-11-10T04:35:17Z",
+        "topics": [
+          "agent",
+          "agent-memory",
+          "desktop-app",
+          "memory",
+          "self-improving-agent"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <h1><img src=\"docs/assets/readme/hero.svg\" alt=\"Echo Agent — 认知记忆、技能自进化、可嵌入的 Runtime 与桌面 Agent\" width=\"100%\" /></h1> **让 Agent 记住上下文，把经验转化为技能。** 可自托管、可嵌入、源码开放的 Agent Runtime，以及本地优先的桌面 Agent。 <p> <a href=\"#快速开始\"><img src=\"docs/assets/readme/runtime-button.svg\" alt=\"Runtime 入门\" width=\"164\" height=\"44\" /></a> <a href=\"client/README.md#快速开始\"><img src=\"docs/assets/readme/desktop-button.svg\" alt=\"Desktop 入门\" width=\"164\" height=\"44\" /></a> </p> [记忆与进化](#长期记忆与技能自进化) · [架构](#架构与运行方式) · [文档](#文档) · [English](README.en.md) [![PyPI](https://img.shields.io/pypi/v/echo-agent)](https://pypi.org/project/echo-agent/) [![Python](https://img.shields.io/pypi/pyversions/echo-agent)](https://pypi.org/project/echo-agent/) [![CI](https://github.com/fuyuxiang/echo-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/fuyuxiang/echo-agent/actions/workflows/ci.yml) [![Docs](https://img.shields.io/badge/docs-online-blue)](https://fuyuxiang.github.io/echo-agent/) [![License: PolyForm Noncommercial 1.0.0](https://img.shields.io/badge/license-PolyForm%20Noncommercial%201.0.0-blue.svg)](LICENSE) [![GitHub Stars](https://img.shields.io/github/stars/fuyuxiang/echo-agent?style=flat)](https://github.com/fuyuxiang/echo-agent/stargazers) <!-- Refreshed daily from the official website by .github/workflows/download-stats.yml. --> [![Runtime 累计下载](.github/badges/runtime-downloads.svg)](http://www.ojlab.com/) [![桌面端累计下载](.github/badges/desktop-downloads.svg)](http://www.ojlab.com/) [![统计更新日期](.github/badges/stats-updated.svg)](http://www.ojlab.com/data/stats.json) </div> ## 选择你的入口 | 产品 | 适合什么场景 | 从哪里开始 | | --- | --- | --- | | **Echo Agent Runtime** | 构建拥有记忆、能积累经验的 Agent；在终端运行、部署服务，或集成到自己的应用 | [安装与部署](echo-agent-runtime/README.md) · [架构与运行方式](#架构与运行方式) | | **EchoAgent Desktop** | 在真实工作区中编写代码、处理文档、操作浏览器与电脑，并查看执行过程与变更 | [安装与使用](client/README.md#快速开始) · [桌面端能力](#echoagent-desktop) | ## 快速开始 ### Agent Runtime 需要 **Python 3.11+**，以及至少一个可用模型服务的 API Key。在终端执行： ```bash pip install \"echo-agent[all]\" echo-agent setup echo-agent run ``` `setup` 配置模型，`run` 启动完整 Runtime。中国大陆网络环境可在安装命令后添加 `-i https://mirrors.aliyun.com/pypi/simple/`。Windows PowerShell 可使用相同命令；依赖与平台限制见 [安装指南](https://fuyuxiang.github.io/echo-agent/getting-started/installation/)。 ### Gateway 与 Dashboard 需要网页管理、API 或 CLI/TUI 接入时，先退出上面的 `run`，再启动 Gateway： ```bash echo-agent gateway ``` 打开 **<http://127.0.0.1:58123/>** 进入 D\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "atom",
+        "full_name": "rush86999/atom",
+        "url": "https://github.com/rush86999/atom",
+        "description": "Atom Agent, Open-Source Governed AI Agent Platform for Self-Hosted Automation",
+        "stars": 914,
+        "pushed_at": "2026-11-10T04:40:24Z",
+        "topics": [
+          "agentic-workflow",
+          "ai",
+          "ai-agent",
+          "calendar",
+          "finance",
+          "gdrive",
+          "gmail",
+          "google-calendar",
+          "notion",
+          "productivity",
+          "scheduler",
+          "shopify",
+          "slack",
+          "tasks",
+          "zoho",
+          "zoom"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> # Atom — Open-source AI agents with built-in governance ### Train AI agents for the way your business works. **Teach agents your processes, give them relevant business context, and review the work—with built-in AI governance.** [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](LICENSE.md) [![Python](https://img.shields.io/badge/Python-3.11%E2%80%933.13-blue)](docs/getting_started/quick-start.md) [![Local workflows](https://img.shields.io/badge/local_workflows-verified-green)](docs/acceptance/VERIFIER_ACCEPTANCE_2026-11-01.md) [Try locally](#try-atom-locally) · [See the workflows](docs/demo/VERIFIED_WORKFLOWS.md) · [What's verified](#what-you-can-rely-on) · [Report an issue](https://github.com/rush86999/atom/issues) </div> ![Atom workspace](https://github.com/user-attachments/assets/398de2e3-4ea6-487c-93ae-9600a66598fc) ## Start with a job you already do Atom helps you build AI agents around the way your team works: the files they use, the rules they follow, the output you expect and the decisions that need your approval. It is open source and self-hosted, with business automation and AI governance in the same platform. For example, give Atom a price list to prepare a quote, or check an invoice against purchase and receiving records, then produce a document showing the result. Inspect the source records, calculations and output before using it. **Open source and self-hosted.** Run your own copy and configure a supported local or hosted model. The starter sample below needs no model or cloud key. **Teach your rules. Review the work. Keep the context.** - **Turn company data into deliverables.** Demonstrated workflows map unfamiliar spreadsheet columns, calculate against source records and produce cited Word or PowerPoint documents within supported schemas. - **Make your rules reusable.** Save field mappings, commercial terms and contextual lessons. New work adopts accepted corrections; active work keeps its accepted teaching snapshot. - **Handle work that needs an answer.** Supported durable questions, approvals and waits survive restarts. Completed operations are retained, and uncertain effects need reconciliation before another attempt. - **Keep decisions reviewable.** Author ordered policies in the canvas editor. Supported deterministic rules retain unresolved requirements rather than inventing an approval. -\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "LoongForge",
+        "full_name": "baidu-baige/LoongForge",
+        "url": "https://github.com/baidu-baige/LoongForge",
+        "description": "A high-performance framework for training LLMs, VLMs, diffusion, and embodied models on NVIDIA GPUs and Kunlun XPUs. Supports Pi0.5, GR00T-N1.7, FastWAM, Cosmos3, DreamZero, DeepSeek-V4, GLM-5.3, Kimi-K3 and more.",
+        "stars": 833,
+        "pushed_at": "2026-11-10T04:42:19Z",
+        "topics": [
+          "gpu",
+          "kunlun",
+          "llm",
+          "lora",
+          "megatron",
+          "mid-training",
+          "pretraining",
+          "sft",
+          "torch",
+          "vla",
+          "vlm",
+          "wam",
+          "wan",
+          "xpu"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"right\"><sub><b>English</b> | <a href=\"./README_zh.md\">简体中文</a></sub></p> <div align=\"center\"> <p align=\"center\"> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"./docs/assets/images/logo/banner-dark.svg\"> <source media=\"(prefers-color-scheme: light)\" srcset=\"./docs/assets/images/logo/banner.svg\"> <img alt=\"LoongForge\" src=\"./docs/assets/images/logo/banner.svg\" width=\"520\"> </picture> </p> <h3 align=\"center\">Train LLMs, VLMs, diffusion, and embodied models — faster.</h3> <p align=\"center\"> <a href=\"https://loongforge.readthedocs.io/en/latest/index.html\"><b>Docs</b></a> · <a href=\"https://baidu-baige.github.io/LoongForge/blog/\"><b>Blog</b></a> · <a href=\"#performance\"><b>Performance</b></a> · <a href=\"#quickstart\"><b>Quick Start</b></a> · <a href=\"#models\"><b>Supported Models</b></a> · <a href=\"#powered-by-loongforge\"><b>Awesome Projects</b></a> </p> <p align=\"center\"> <a href=\"https://hellogithub.com/repository/baidu-baige/LoongForge\" target=\"_blank\"><img src=\"https://api.hellogithub.com/v1/widgets/recommend.svg?rid=2eafb075947e41a4be4d157a6f0382ae&claim_uid=PjNLOfBMoxlaTEq&theme=neutral\" alt=\"Featured｜HelloGitHub\" width=\"250\" height=\"54\" /></a> <a href=\"https://atomgit.com/baidu-baige/LoongForge\" target=\"_blank\"><img src=\"https://atomgit.com/baidu-baige/LoongForge/star/new_badge.svg\" alt=\"AtomGit star\" width=\"250\" height=\"54\" /></a> </p> <p align=\"center\"> <a href=\"https://github.com/baidu-baige/LoongForge/stargazers\"><img src=\"https://img.shields.io/github/stars/baidu-baige/LoongForge?style=flat-square&color=FFD700&logo=github&logoColor=white&label=Stars\" alt=\"GitHub stars\"></a> <a href=\"./LICENSE\"><img src=\"https://img.shields.io/badge/License-Apache_2.0-8250DF?style=flat-square\" alt=\"Apache 2.0 license\"></a> <a href=\"https://hub.docker.com/u/loongforge\"><img src=\"https://img.shields.io/badge/Docker_Image-loongforge-2496ED?style=flat-square&logo=docker&logoColor=white\" alt=\"Docker images on Docker Hub\"></a> <a href=\"./CONTRIBUTING.md\"><img src=\"https://img.shields.io/badge/Pull_Requests-welcome-brightgreen?style=flat-square&logo=github&logoColor=white\" alt=\"PRs welcome\"></a> </p> <p align=\"center\"> <a href=\"https://discord.gg/RnY39D6CM\"><img src=\"https://img.shields.io/badge/Join_Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white\" alt=\"Join our Discord\"></a> <a href=\"https://github.com/baidu-baige/LoongForge/issues/80\"\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "openagent",
+        "full_name": "Haohao-end/openagent",
+        "url": "https://github.com/Haohao-end/openagent",
+        "description": "What if OpenAI Deep Research and Dify were one platform? OpenAgent — harness architecture for rapidly building vertical AI agents, with deep reasoning loops, visual workflows, RAG, and A2A delegation.",
+        "stars": 752,
+        "pushed_at": "2026-11-10T04:42:51Z",
+        "topics": [
+          "agent",
+          "ai",
+          "celery",
+          "deepagents",
+          "deepresearch",
+          "deepseek",
+          "docker",
+          "faiss-vector-database",
+          "flask",
+          "harness-engineering",
+          "langchain",
+          "langgraph",
+          "llmops",
+          "mcp",
+          "nginx",
+          "postgresql",
+          "skills",
+          "tailwindcss",
+          "vue",
+          "weaviate"
+        ],
+        "source": "search",
+        "text_excerpt": "<a id=\"readme-top\"></a> <div align=\"center\"> <img src=\"https://github.com/user-attachments/assets/15024f52-cb4d-4222-bd8e-b7aa385a6f3e\" alt=\"OpenAgent Logo\" width=\"360\" /> <p align=\"center\"> An end-to-end AI agent platform for building, orchestrating, publishing, and operating AI applications. <br /> Flask + LangChain/LangGraph backend, Vue 3 workspace, visual workflows, datasets, tools, and OpenAPI delivery. </p> <p align=\"center\"> <strong>Sponsored by <a href=\"https://www.atlascloud.ai/?utm_source=github&utm_medium=link&utm_campaign=openagent\">Atlas Cloud</a> and <a href=\"https://bloome.im/app?ref=uqIIEORd&utm_medium=github&utm_source=Haohao-end-openagent-ivor-202606\">Bloome</a></strong> </p> <p align=\"center\"> <a href=\"https://openllm.cloud\">Visit Website</a> · <a href=\"https://s.apifox.cn/c76bd530-fd50-429c-94cc-f0e41c2675d1/api-305434417\">API Docs</a> · <a href=\"README_ZH.md\">中文文档</a> · <a href=\"https://github.com/Haohao-end/openagent\">GitHub</a> </p> <p align=\"center\"> <img src=\"https://img.shields.io/badge/python-3.11+-3776AB?logo=python&logoColor=white\" alt=\"Python 3.11+\" /> <img src=\"https://img.shields.io/badge/flask-3.x-000000?logo=flask&logoColor=white\" alt=\"Flask\" /> <img src=\"https://img.shields.io/badge/vue-3-4FC08D?logo=vue.js&logoColor=white\" alt=\"Vue 3\" /> <img src=\"https://img.shields.io/badge/docker-compose-2496ED?logo=docker&logoColor=white\" alt=\"Docker Compose\" /> <img src=\"https://img.shields.io/badge/weaviate-vector%20db-00C6A7\" alt=\"Weaviate\" /> <a href=\"https://deepwiki.com/Haohao-end/openagent\"><img src=\"https://deepwiki.com/badge.svg\" alt=\"Ask DeepWiki\" /></a> <a href=\"https://mcpvault.io/servers/haohao-end-openagent\"><img src=\"https://mcpvault.io/badge/haohao-end-openagent.svg\" alt=\"MCPVault server listing\" /></a> </p> </div> ## Table of Contents - [About The Project](#about-the-project) - [Architecture](#architecture) - [Built With](#built-with) - [Getting Started](#getting-started) - [Usage](#usage) - [Testing](#testing) - [Contact](#contact) - [Sponsored By](#sponsored-by) - [Acknowledgments](#acknowledgments) ## About The Project <img alt=\"OpenAgent Product Overview\" src=\"https://github.com/user-attachments/assets/0f8f7517-1622-46ea-9554-fb13af4841a1\" /> OpenAgent is a full-stack platform for teams building AI applications rather than a single chat demo. The repository combines a Flask backend, Celery workers, a Vue 3 fronten\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "openclip",
+        "full_name": "ganeshmshetty/openclip",
+        "url": "https://github.com/ganeshmshetty/openclip",
+        "description": "An open-source, macOS text action popup for running custom scripts, AI actions, and extensible workflows on selected text.",
+        "stars": 749,
+        "pushed_at": "2026-11-10T04:40:21Z",
+        "topics": [
+          "app-kit",
+          "apple-intelligence",
+          "applescript",
+          "clipboard",
+          "developer-tools",
+          "javascriptcore",
+          "llm",
+          "macos",
+          "macos-app",
+          "menubar-app",
+          "ollama",
+          "open-source",
+          "popclip-alternative",
+          "productivity",
+          "rvce",
+          "swift",
+          "swift6",
+          "swiftui",
+          "text-selection"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"./assets/app-icon.png\" alt=\"OpenClip\" width=\"80\" height=\"80\" /> <h1>OpenClip</h1> <p>The open-source text action popup for macOS.</p> <p> <a href=\"https://github.com/ganeshmshetty/openclip/releases\"><img src=\"https://img.shields.io/badge/macOS-14.0+-black?style=flat-square&logo=apple&logoColor=white\" alt=\"macOS 14+\" /></a> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-AGPL_3.0-blue?style=flat-square\" alt=\"License\" /></a> <a href=\"https://github.com/ganeshmshetty/homebrew-tap\"><img src=\"https://img.shields.io/badge/brew-openclip-ffcc00?style=flat-square&logo=homebrew&logoColor=black\" alt=\"Homebrew\" /></a> <a href=\"https://discord.gg/acYYdzM7jR\"><img src=\"https://img.shields.io/badge/discord-join-5865F2?style=flat-square&logo=discord&logoColor=white\" alt=\"Discord\" /></a> </p> <p> <a href=\"https://github.com/sponsors/ganeshmshetty\"><img src=\"https://img.shields.io/badge/Sponsor-EA4AAA?style=flat-square&logo=githubsponsors&logoColor=white\" alt=\"GitHub Sponsors\" /></a> <a href=\"https://buymeacoffee.com/ganeshmshetty\"><img src=\"https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=flat-square&logo=buymeacoffee&logoColor=black\" alt=\"Buy Me a Coffee\" /></a> <a href=\"https://ko-fi.com/ganeshmshetty\"><img src=\"https://img.shields.io/badge/Ko--fi-FF5E5B?style=flat-square&logo=kofi&logoColor=white\" alt=\"Ko-fi\" /></a> </p> <br /> <img src=\"./assets/all.gif\" alt=\"OpenClip in action\" width=\"480\" /> </div> <br /> Select text in any app, and OpenClip pops up with contextual actions — transform text, run shell scripts, trigger shortcuts, evaluate math expressions, or query AI models. ## Sponsors <table><tr> <td><a href=\"https://www.infistar.cc/register?aff=CWD4X8S4&ref_source=link\"><img src=\"https://assets.getopenclip.app/sponsor-infistar.png\" alt=\"Infistar\" width=\"48\"></a></td> <td>Thanks to <a href=\"https://www.infistar.cc/register?aff=CWD4X8S4&ref_source=link\">Infistar</a> for sponsoring OpenClip.</td> </tr></table> ## Installation ### Homebrew (Recommended) ```bash brew install --cask openclip ``` ### Direct Download Download the latest `.dmg` from [Releases](https://github.com/ganeshmshetty/openclip/releases). ## Features - **Contextual bar**: Appears instantly near your selection with relevant actions (case transform, search, copy/cut, math, or custom scripts). - **Search palette (`⌥⌘C`)**: Press hotkey to fuzz\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "paxeer-monorepo",
+        "full_name": "Sidiora-Labs/paxeer-monorepo",
+        "url": "https://github.com/Sidiora-Labs/paxeer-monorepo",
+        "description": "Paxeer X is a Distributed HyperState Machine for payments, code execution and intent routing. Designed for Machines and the Users operating them.",
+        "stars": 540,
+        "pushed_at": "2026-11-10T04:32:24Z",
+        "topics": [
+          "agent",
+          "agent-client-protocol",
+          "ai",
+          "ai-agents",
+          "blockchain",
+          "machine-learning",
+          "model-context-protocol",
+          "monorepo",
+          "network",
+          "web"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img alt=\"Paxeer X Network\" src=\"https://shieldcn.dev/header/transparent.svg?title=Paxeer+X+Network&subtitle=Distributed+HyperState+Machine+for+payments%2C+code+execution+and+intent+routing&logo=https%3A%2F%2Fwww.paxeer.network%2Fpaxeer.x_darkmode_white.png&mode=dark&image=https%3A%2F%2Fwww.sidioralabs.com%2Fmedia%2Floops%2Fsphere-field.jpg\"> <h3><a href=\"https://paxeer.network/\">Paxeer X Network</a> brings payments, code execution and intent routing into one network.</h3> <p> [![badge](https://shieldcn.dev/github/Sidiora-Labs/paxeer-monorepo/license.svg?variant=outline&size=lg&font=geist&logo=github&logoColor=dadee6&height=56&padX=15&iconSize=21&gap=4&labelGap=12)](https://github.com/Sidiora-Labs/paxeer-monorepo) [![badge](https://shieldcn.dev/badge/GOLANG.svg?variant=outline&size=lg&font=geist&logo=go&logoColor=1363e6&labelTextColor=1c3e76&height=56&padX=15&iconSize=28&gap=4&labelGap=12)](#) [![badge](https://shieldcn.dev/badge/RUST.svg?variant=outline&size=lg&font=geist&logo=rust&logoColor=ffffff&labelTextColor=1c3e76&height=56&padX=15&iconSize=28&gap=4&labelGap=12)](#) [![badge](https://shieldcn.dev/badge/LANGUAGE%20C17.svg?variant=outline&size=lg&font=geist&logo=lu%3ACpu&logoColor=f4f4f2&labelTextColor=1c3e76&height=56&padX=15&iconSize=28&gap=4&labelGap=12)](#) [![badge](https://shieldcn.dev/badge/SIDIORA%20LABS.svg?variant=outline&size=lg&font=geist&logo=lu%3AGlobe&logoColor=0043e6&labelTextColor=1c3e76&height=56&padX=15&iconSize=21&gap=4&labelGap=12)](https://github.com/Sidiora-Labs) [![badge](https://shieldcn.dev/github/Sidiora-Labs/paxeer-monorepo/ci.svg?variant=outline&size=lg&font=geist&logo=github&logoColor=dadee6&height=56&padX=15&iconSize=21&gap=4&labelGap=12)](https://github.com/Sidiora-Labs/paxeer-monorepo/actions) **Table of Contents** <!--TOC--><p align=\"center\"> <a href=\"#what-is-paxeer-x-network\"><img alt=\"About Paxeer X\" src=\"https://shieldcn.dev/badge/01-About%20Paxeer%20X-blue.svg?variant=outline&size=sm\"></a> <a href=\"#documentation\"><img alt=\"Documentation\" src=\"https://shieldcn.dev/badge/02-Documentation-blue.svg?variant=outline&size=sm\"></a> <a href=\"#specification\"><img alt=\"Specification\" src=\"https://shieldcn.dev/badge/03-Specification-blue.svg?variant=outline&size=sm\"></a> <a href=\"#community\"><img alt=\"Community\" src=\"https://shieldcn.dev/badge/04-Community-blue.svg?variant=outline&size=sm\"></a> <a href=\"#\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "aicr",
+        "full_name": "NVIDIA/aicr",
+        "url": "https://github.com/NVIDIA/aicr",
+        "description": "Tooling for optimized, validated, and reproducible GPU-accelerated AI runtime in Kubernetes",
+        "stars": 472,
+        "pushed_at": "2026-11-10T04:42:49Z",
+        "topics": [
+          "ai",
+          "argocd",
+          "config",
+          "gpu",
+          "helm",
+          "kubernetes",
+          "manifest",
+          "runtime"
+        ],
+        "source": "search",
+        "text_excerpt": "# NVIDIA AI Cluster Runtime [![On Push CI](https://github.com/NVIDIA/aicr/actions/workflows/on-push.yaml/badge.svg)](https://github.com/NVIDIA/aicr/actions/workflows/on-push.yaml) [![On Tag Release](https://github.com/NVIDIA/aicr/actions/workflows/on-tag.yaml/badge.svg)](https://github.com/NVIDIA/aicr/actions/workflows/on-tag.yaml) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE) AI Cluster Runtime (AICR) makes it easy to stand up GPU-accelerated Kubernetes clusters. It captures known-good combinations of drivers, operators, kernels, and system configurations and publishes them as version-locked **recipes** — reproducible artifacts for Helm, Argo CD, Flux, and Helmfile. > **Full documentation:** [docs.nvidia.com/aicr](https://docs.nvidia.com/aicr) ## Why We Built This Running GPU-accelerated Kubernetes clusters reliably is hard. Small differences in kernel versions, drivers, container runtimes, operators, and Kubernetes releases can cause failures that are difficult to diagnose and expensive to reproduce. Historically, this knowledge has lived in internal validation pipelines and runbooks. AI Cluster Runtime makes it available to everyone. Every AICR recipe is: - **Optimized** — Tuned for a specific combination of hardware, cloud, OS, and workload intent. - **Validated** — Passes automated constraint and compatibility checks before publishing. - **Reproducible** — Same inputs produce identical deployments every time. Every AICR recipe also carries two kinds of cryptographic proof: **where it came from** (provenance — signed by NVIDIA CI, verifiable offline) and, **for recipes with published evidence, what their validation recorded** (validity — a signer-bound, tamper-evident attestation that binds an identity to a recorded `aicr validate` result, from contributors with cluster access NVIDIA doesn't have). See [SECURITY.md](SECURITY.md) and the [bundle attestation](demos/bundle-attestation.md), [recipe evidence](demos/evidence.md), and [build provenance](demos/provenance.md) demos for the full chain. ## Quick Start ```bash # Install the CLI (Homebrew) brew tap NVIDIA/aicr brew install aicr # Or use the install script curl -sfL https://get.aicr.run | bash -s -- # Generate a recipe for your environment aicr recipe --service eks --accelerator h100 --os ubuntu \\ --intent training --platform kubeflow -o recipe.yaml # Render it into\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "aidevops",
+        "full_name": "marcusquinn/aidevops",
+        "url": "https://github.com/marcusquinn/aidevops",
+        "description": "Vibe-Coding is easy. DevOps is hard. OpenCode & Git token-efficient AI agent automation for your app, business, and personal development. Opinionated tools, services, CLI & API stack for speed, security, and 24/7 results. Open-source first. SOTA everything. The best AI harness for GitHub & teamwork.",
+        "stars": 444,
+        "pushed_at": "2026-11-10T04:43:12Z",
+        "topics": [
+          "agents",
+          "agents-md",
+          "ai",
+          "ai-agents",
+          "ai-assistant",
+          "ai-assistants",
+          "ai-assisted-development",
+          "ai-code-review",
+          "ai-coding",
+          "ai-dev-ops",
+          "ai-devops",
+          "ai-system-admin",
+          "claude",
+          "devops",
+          "devops-tools",
+          "git-workflow",
+          "git-worktrees",
+          "opencode",
+          "opencode-plugin"
+        ],
+        "source": "search",
+        "text_excerpt": "<!-- SPDX-License-Identifier: MIT --> <!-- SPDX-FileCopyrightText: 2025-2026 Marcus Quinn --> ![AI DevOps — 17 main agents, 2,250+ sub agents, 2,210+ helper scripts, and 110+ slash commands](docs/assets/og-image.png) # AI DevOps Framework **[aidevops.sh](https://aidevops.sh)** is an [OpenCode](https://opencode.ai/) plugin and AI DevOps framework for carrying work from intent to a verified outcome. It combines specialist agents, durable repository knowledge, safe Git workflows, model routing, operational automation, and service integrations for software, infrastructure, business, marketing, content, research, and creative production. Instead of treating every job as an isolated chat, aidevops gives people and AI agents a shared operating system: the right context is loaded on demand, work is isolated, consequential actions are gated, evidence is retained, and useful lessons improve later work. **One conversation, autonomous project delivery, with security, teamwork, token efficiency, and quality control built in.** [![GitHub Actions](https://github.com/marcusquinn/aidevops/actions/workflows/code-quality.yml/badge.svg?branch=main)](https://github.com/marcusquinn/aidevops/actions/workflows/code-quality.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=marcusquinn_aidevops&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=marcusquinn_aidevops) [![Maintainability](https://qlty.sh/gh/marcusquinn/projects/aidevops/maintainability.svg)](https://qlty.sh/gh/marcusquinn/projects/aidevops) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/2b1adbd66c454dae92234341e801b984)](https://app.codacy.com/gh/marcusquinn/aidevops/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Version](https://img.shields.io/badge/Version-3.39.153-blue.svg)](https://github.com/marcusquinn/aidevops/releases) [![npm version](https://img.shields.io/npm/v/aidevops)](https://www.npmjs.com/package/aidevops) [![Homebrew](https://img.shields.io/badge/homebrew-marcusquinn%2Ftap-orange)](https://github.com/marcusquinn/homebrew-tap) [![Lines of code](docs/metrics/badges/loc.svg)](docs/metrics/repo-metrics.md) [![Dependencies](docs/metrics/badges/dependencies.svg)](docs/metrics/repo-metrics.md) [![Languages\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "inferssd",
+        "full_name": "wici-ai/inferssd",
+        "url": "https://github.com/wici-ai/inferssd",
+        "description": "Run models larger than your RAM or VRAM by streaming MoE experts from SSD. Built on llama.cpp.",
+        "stars": 375,
+        "pushed_at": "2026-11-10T04:41:27Z",
+        "topics": [
+          "apple-silicon",
+          "cuda",
+          "gguf",
+          "inference",
+          "llama-cpp",
+          "llm",
+          "metal",
+          "mixture-of-experts",
+          "ssd"
+        ],
+        "source": "search",
+        "text_excerpt": "<h1 align=\"center\">Large MoE models, powered by your SSD</h1> <p align=\"center\"> <a href=\"https://wici.ai\"> <img src=\"docs/assets/wicissdinfer.png\" width=\"600\" alt=\"InferSSD\"> </a> </p> <p align=\"center\"> <a href=\"https://wici.ai/inferssd\"><b>Website</b></a> · <a href=\"https://wici.ai/research\"><b>Blog</b></a> · <a href=\"https://join.slack.com/t/wici-ai/shared_invite/zt-4f2e7ob2s-9nUg35Phqyqt4EI6qUjw5w\"><b>Slack</b></a> · <a href=\"LICENSE\">Apache-2.0</a> </p> <p align=\"center\">macOS / Metal · Linux / CUDA · Windows (in progress)</p> **Run models larger than your RAM or VRAM.** InferSSD builds on [llama.cpp](https://github.com/ggml-org/llama.cpp) to run large mixture-of-experts (MoE) models from SSD, using standard GGUF files, with browser chat and an OpenAI-compatible API. It supports **DeepSeek-V4.1-Flash-1017**, **Muse-Spark-Open**, **Qwen3.6-35B-A3B** and **Qwen3.8 Flash Next**, plus ordinary RAM inference for **Gemma4 E4B**. ## Models These are the tested GGUF files, community conversions of the named model releases. DeepSeek's Q8_0 keeps the official bit widths: routed experts stay native 4-bit MXFP4, and FP8 tensors become 8-bit Q8_0. See [weight-format details](docs/benchmark.md#checkpoint-formats). | Model | Parameter count | GGUF reference | | --- | --- | --- | | DeepSeek-V4.1-Flash-1017 | 763B total / 8–16B active | [mrfakename · Q8_0](https://huggingface.co/mrfakename/DeepSeek-V4.1-Flash-1017-GGUF) | | Muse-Spark-Open | 816B total / 42B active | [Unsloth · UD-Q4_K_XL](https://huggingface.co/unsloth/Muse-Spark-Open-816B-A42B-GGUF) | | Qwen3.6-35B-A3B | 35B total / 3B active | [Unsloth · UD-Q4_K_XL](https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF) | | Qwen3.8 Flash Next | 177B total / A3B | [Bartowski · IQ4_XS](https://huggingface.co/bartowski/Qwen3.8-Flash-Next-GGUF) | | Gemma4 E4B | 7.46B total / E4B | [Google · QAT Q4_0](https://huggingface.co/google/gemma-4-E4B-it-qat-q4_0-gguf) | Gemma uses the ordinary native loader without SSD expert offload. Before loading, the shared launcher checks that weights, KV cache and working memory fit the live available RAM, the configured budget and headroom. An insufficient fit is rejected. macOS and Windows use the same model selection and launch entry points. ## Performance benchmarks **4K prompt tier · 256 output tokens · decode measured over tokens 129–256.** All rates are in **token/s**; higher is faste\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "mindroom",
+        "full_name": "mindroom-ai/mindroom",
+        "url": "https://github.com/mindroom-ai/mindroom",
+        "description": "AI agents that know you and your work, in a chat app anyone can use. Open source, any model, self-host or hosted.",
+        "stars": 363,
+        "pushed_at": "2026-11-10T04:43:00Z",
+        "topics": [
+          "ai-agents",
+          "assistant",
+          "chat",
+          "llm",
+          "local-llm",
+          "matrix",
+          "mcp",
+          "self-hosted"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <picture> <source media=\"(prefers-reduced-motion: no-preference)\" srcset=\"https://raw.githubusercontent.com/mindroom-ai/mindroom/main/assets/logo/logo-mark-animated.svg\" /> <img src=\"https://raw.githubusercontent.com/mindroom-ai/mindroom/main/assets/logo/logo-mark.svg\" alt=\"MindRoom logo\" width=\"128\" /> </picture> # MindRoom **AI agents that know you and your work, in a chat app anyone can use.** Open source under Apache 2.0 · Any model, local or cloud · Self-host the whole stack [Website](https://mindroom.chat) · [Docs](https://docs.mindroom.chat) · [Showcase](https://docs.mindroom.chat/showcase/) · [MindRoom Chat](https://chat.mindroom.chat) · [Hosted](https://mindroom.chat/#hosted) · [Quick start](#quick-start) [![PyPI](https://img.shields.io/pypi/v/mindroom)](https://pypi.org/project/mindroom/) [![Tests](https://img.shields.io/github/actions/workflow/status/mindroom-ai/mindroom/pytest.yml?label=tests)](https://github.com/mindroom-ai/mindroom/actions/workflows/pytest.yml) [![Docs](https://img.shields.io/badge/docs-mindroom.chat-blue)](https://docs.mindroom.chat) [![License](https://img.shields.io/github/license/mindroom-ai/mindroom)](https://github.com/mindroom-ai/mindroom/blob/main/LICENSE) [![Downloads](https://img.shields.io/pypi/dm/mindroom)](https://pypi.org/project/mindroom/) </div> https://github.com/user-attachments/assets/ef8486d4-afb1-49c1-9894-b908e10baaae MindRoom gives you a personal agent for your calendar, notes, trips, and homelab, and shared agents for your team's email, documents, and code. Every agent is a real user on [Matrix](https://matrix.org/), the open chat standard, so you talk to it in [MindRoom Chat](https://github.com/mindroom-ai/mindroom-chat), in any other Matrix client, or in Slack, Telegram, WhatsApp, and Discord through bridges. Pick a [local model](https://docs.mindroom.chat/configuration/models/) for your private life or a frontier model for hard problems, and self-host the whole stack or run only the agents on your own computer. **Run it on any computer** ```bash uvx mindroom run ``` Needs [uv](https://docs.astral.sh/uv/getting-started/installation/) and a model: an API key, a subscription login such as Codex, or a local model. It installs MindRoom with a starter agent, pairs it with your [MindRoom Chat](https://chat.mindroom.chat) account, and starts it. **Or use the macOS app** ```bash brew insta\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "voxenra",
+        "full_name": "l5769389/voxenra",
+        "url": "https://github.com/l5769389/voxenra",
+        "description": "Cross-platform DICOM viewer for CT, MRI & PET/CT with MPR, 3D, fusion, editable segmentation and local AI auto-segmentation via TotalSegmentator.",
+        "stars": 306,
+        "pushed_at": "2026-11-10T04:42:06Z",
+        "topics": [
+          "ai",
+          "automatic-segmentation",
+          "computed-tomography",
+          "dicom",
+          "dicom-seg",
+          "dicom-sr",
+          "dicom-viewer",
+          "image-segmentation",
+          "medical-imaging",
+          "mpr",
+          "mri",
+          "pacs",
+          "pet-ct",
+          "pyside6",
+          "qml",
+          "qt",
+          "totalsegmentator",
+          "volume-rendering"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"src/qt_dicom_viewer/qml/assets/brand/voxenra-mark.svg\" width=\"80\" alt=\"Voxenra logo\"> </p> # Voxenra [简体中文](README.md) | [English](README.en.md) [产品主页](https://l5769389.github.io/voxenra/) · [在线操作手册](https://l5769389.github.io/voxenra/zh/) 面向 CT、MR 与 PET 的跨平台 DICOM 工作台，集阅片、三维重建、影像融合与测量分割于一体。支持 **基于 TotalSegmentator 的本地 AI 自动分割**，结果可直接查看、精修和保存。 [macOS · Apple Silicon](https://github.com/l5769389/voxenra/releases/download/v2.5.0/Voxenra-2.5.0-macos-arm64.dmg) · [Windows · 安装版](https://github.com/l5769389/voxenra/releases/download/v2.5.0/Voxenra-2.5.0-windows-x64-setup.exe) · [Windows · 便携版](https://github.com/l5769389/voxenra/releases/download/v2.5.0/Voxenra-2.5.0-windows-x64-portable.exe) · [版本记录](https://github.com/l5769389/voxenra/releases) ## 贡献者与致谢 感谢所有为 Voxenra 提供贡献与支持的朋友。 <table> <tr> <td align=\"center\"> <a href=\"https://github.com/JennyTuan\"> <img src=\"https://avatars.githubusercontent.com/u/124764964?v=4&s=128\" width=\"64\" height=\"64\" alt=\"JennyTuan 的 GitHub 头像\"><br> <strong>JennyTuan</strong> </a> </td> <td align=\"center\"> <a href=\"https://github.com/bjmvictor\"> <img src=\"https://avatars.githubusercontent.com/u/62158808?v=4&s=128\" width=\"64\" height=\"64\" alt=\"bjmvictor 的 GitHub 头像\"><br> <strong>bjmvictor</strong> </a> </td> </tr> </table> ## 功能概览 | 模块 | 功能 | | --- | --- | | 本地影像 | 文件、文件夹与 ZIP / RAR / 7z / TAR 等压缩包混选、拖入、后台导入；DICOM 标签查看。 | | PACS | DICOMweb 查询下载；支持传统 DICOM（DIMSE）的连接测试、查询与回传导入。 | | 二维与对比 | 调窗、反白、伪彩、播放、平铺、自定义多视口；2–4 序列对比、患者空间／相对进度联动。 | | 重建与三维 | 三平面与斜面 MPR、手动 CPR、厚层投影、双序列 MPR 对比；体绘制、模板、裁剪、CT 去床板与 CT 多时相 4D。 | | PET/CT 融合 | CT、PET、融合与 MIP 联动；SUV／源单位显示、手动刚性配准、融合比例与融合 3D。 | | 测量与标注 | 长度、角度、曲线、矩形／椭圆／自由形状 ROI；文字和箭头、列表管理、复制粘贴、撤销重做。 | | 分割与 VOI | CT/PET 阈值分割、球形／椭球 VOI；CT/MR/PET 掩膜管理、画笔／橡皮、连通区域编辑与统计。 | | 本地 AI | TotalSegmentator CT 多器官快速分割；器官搜索与选择、结果叠加、精修、撤销与保存。 | | 分析与导出 | CT 水模 QA／圆形 ROI、点源 MTF、斜坡线 FWHM 与层厚；PNG、DICOM、CSV / PDF、SEG / SR、NRRD。 | | 工作区与偏好 | 多页签、独立窗口、新建／保存／恢复、关闭页签结果保留；主题、语言、输入与显示设置、离线手册。支持工具栏排序、窗模板收藏与视图区最大化。 | ## 从 PACS 查询到阅片 在 **设置 → 数据源** 管理多个 PACS 连接，按患者、检查号、模态或日期查询，选择序列后后台导入并打开 2D；可继续进入 MPR、3D 或查看 Tag。导入支持进度、取消与重复序列合并，完整校验后才加入工作区。 - **DICOMweb**：QIDO-RS 查询与 WADO-RS 下载，支持无认证、Basic 和 Bearer。 - **传统 DICOM（DIMSE）**：C-ECHO 测试、Study Root C-FIND 查询、C-MOVE 回传，导入期间临时接收 C-STORE。填写 PACS 地址及远端 AE、本机接收 AE、监听 IPv4 与端口；PACS 端也需登记可回传的接收节点。 [![传统 DICOM 设置、查询与序列导入演示](docs/screenshots/52-dimse-import.gif)](docs/screens\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "VenusFactory2",
+        "full_name": "ai4protein/VenusFactory2",
+        "url": "https://github.com/ai4protein/VenusFactory2",
+        "description": "🏭 AI agent platform with skills for protein engineering, the noob-friendly AI tutorial tool for life science professionals. (ACL Demo2025, arXiv 2026)",
+        "stars": 253,
+        "pushed_at": "2026-11-10T04:33:23Z",
+        "topics": [
+          "agent",
+          "database",
+          "fine-tuning",
+          "language-model",
+          "life-science",
+          "noob-friendly",
+          "protein",
+          "protein-science",
+          "skill",
+          "tutorial"
+        ],
+        "source": "search",
+        "text_excerpt": "# VenusFactory2 **Recursive Self-improvement AI Agents for Protein Engineering** [Web server](https://venusfactory.bio/) · [Tutorials](docs/wiki/Home.md) · [Installation](docs/installation.md) · [中文](README_CN.md) VenusFactory2 brings protein research into a conversational workspace. Ask a question, upload experimental data, or start with a protein of interest to explore the literature, run predictions and develop models for your research. - **Ask and analyse.** Find protein information, use scientific tools and interpret results. - **Develop from your data.** Turn a research goal and measurements into model code, tests and a research report. - **Investigate a protein.** Bring literature, database records and predictions together in a report with sources. - **Reuse the results.** Run models directly, combine tools in a workflow, or request publication of a reviewed Scientist model. ![VenusFactory2 conversation workspace](docs/images/chat-workspace.jpg) ## Start with a question Click **New Chat**, choose a mode and describe what you want to learn. Agent is selected by default. You can paste a sequence or attach files, including structures, measurements and papers. | Mode | Example request | What you get | | --- | --- | --- | | **Agent · Ask and analyse** | “Find homologues of this protein and explain its annotated domains.” | An answer supported by searches, tool results and downloadable files | | **Scientist · Develop and improve** | “Use my solubility measurements to develop and evaluate a predictor.” | A project with code, test and evaluation results, a report, and model artifacts when trained | | **Researcher · Investigate a protein** | “Investigate this enzyme, focusing on substrate specificity and engineering opportunities.” | A multi-section report combining literature, protein information and predictions | To explore first, use Agent's suggested questions or open a **completed example** in Scientist or Researcher. Completed examples include results you can read and download without starting a new run. You can also ask Agent how to use the platform; it reads the same tutorials as the Manual. ### How Scientist works Scientist uses recursive self-improvement (RSI): it develops a solution, tests it, uses the feedback to revise the approach, and repeats within the research budget. A PI (research lead) coordinates the work: **Goal and data → PI and plan → D\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "internship-tracker",
+        "full_name": "Sarthzk/internship-tracker",
+        "url": "https://github.com/Sarthzk/internship-tracker",
+        "description": "Auto-updated tech internships in India from 160+ company career pages, with Telegram alerts. Serverless on GitHub Actions.",
+        "stars": 126,
+        "pushed_at": "2026-11-10T04:41:35Z",
+        "topics": [
+          "github-actions",
+          "india",
+          "internships",
+          "job-board",
+          "llm",
+          "python",
+          "telegram-bot"
+        ],
+        "source": "search",
+        "text_excerpt": "# India Tech Internships Tracker An automatically updated list of **tech internships in India** (and remote-India) from the career pages of 160+ companies that Indian students want to intern at, from big tech and banks to startups: Google, Microsoft, Apple, Amazon, Nvidia, Goldman Sachs, Citi, Bosch, Quadeye, Juspay and more. A small label under each company name shows what kind of company it is. ## How it works A GitHub Actions job checks each company's official career page on a schedule, keeps only internships located in India for tech roles, and compares them with what it saw last time. New postings are saved to [`data/listings.json`](data/listings.json) and this page is regenerated. There is no server and no database: this repository is the database. **Get alerts on Telegram:** the only official channel is [t.me/tech_internships](https://t.me/tech_internships). Any other channel using this name is not ours. Links always go to the company's official career page. We never ask for money, personal details or messages on WhatsApp/Telegram. Always apply on the company's site. Closed listings from the last 90 days are in [README-archive.md](README-archive.md). The live health of every company being watched is in [STATUS.md](STATUS.md). ## Open internships Sorted newest first. **Age** is days since the company posted it (or since we first saw it). Term, Batch and Duration show \"—\" unless the posting states them. <!-- LISTINGS:START --> **96 open internships** across 24 companies · Last updated: 2026-11-10 (IST) ### Software Engineering (20) | Company | Role | Location | Term | Batch | Duration | Apply | Age | |---|---|---|---|---|---|---|---| | PayPal<br><sub>Fintech</sub> | Software Engineer Intern<br><sub>🎓 Bachelor’s degree in Computer Science or related field</sub> | Bangalore, Karnataka, India; Chennai, Tamil Nadu, India | — | 2028 | — | [Apply](https://paypal.eightfold.ai/careers/job/274923210258) | 1d | | GE HealthCare<br><sub>Industrial</sub> | Software Engineer Intern<br><sub>🎓 Bachelor or Master studies</sub> | Krakow; Bengaluru | — | — | — | [Apply](https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/Krakow/Software-Engineer-Intern_R4040613) | 4d | | Airbus<br><sub>Industrial</sub> | Artificial\\_Intelligence\\_For\\_Systems\\_Engineering\\_Intern<br><sub>🎓 MS/ Ph.D. in A.I./M.L.</sub> | Bangalore Area | 6 months | — | 6 mo | [Apply](https://ag.wd3.my\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "Myriad",
+        "full_name": "Myriad-You/Myriad",
+        "url": "https://github.com/Myriad-You/Myriad",
+        "description": "Myriad is a self-hosted homepage and creative studio: aggregate your platforms, show a library, and run a site-wide persona, 2.5D face, and Tapp apps you own.",
+        "stars": 113,
+        "pushed_at": "2026-11-10T04:39:47Z",
+        "topics": [
+          "ai",
+          "ai-agents",
+          "ai-coding",
+          "application",
+          "astro",
+          "blog",
+          "blog-platform",
+          "development",
+          "homepage",
+          "library",
+          "library-management",
+          "personal",
+          "personal-blog",
+          "personal-site",
+          "personal-website",
+          "rss",
+          "rss-reader",
+          "rust"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"frontend/public/logo.webp\" alt=\"Myriad\" width=\"120\" /> # Myriad <em>A myriad of lights, in one place.</em> <p> <strong>English</strong> · <a href=\"README.zh-CN.md\">中文</a> · <a href=\"README.ja.md\">日本語</a> </p> [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](LICENSE) [![Release](https://img.shields.io/github/v/release/myriad-you/Myriad)](https://github.com/myriad-you/Myriad/releases) [![Built with Rust](https://img.shields.io/badge/built%20with-Rust-orange.svg)](https://github.com/rust-lang/rust) [![Vite](https://img.shields.io/badge/Vite-8-blueviolet.svg)](https://github.com/vitejs/vite) [![React 19](https://img.shields.io/badge/React-19-61dafb.svg)](https://github.com/facebook/react) [Quick start](docs/QUICKSTART.md) · [Docs](docs/INDEX.md) · [Issues](https://github.com/myriad-you/Myriad/issues) [![Discord](https://img.shields.io/badge/Discord-Join%20us-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/Jr5HccgxyD) [![X](https://img.shields.io/badge/X-Follow%20us-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/myriadyou) [![Telegram](https://img.shields.io/badge/Telegram-Join%20us-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/myriadyou) ![QQ group](https://img.shields.io/badge/QQ%20group-784229925-12B7F5?style=for-the-badge&logo=tencentqq&logoColor=white) </div> <p align=\"center\"> <picture> <source media=\"(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)\" srcset=\"docs/assets/readme/home-en-dark-still.webp\"> <source media=\"(prefers-reduced-motion: reduce)\" srcset=\"docs/assets/readme/home-en-light-still.webp\"> <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/assets/readme/home-en-dark.webp\"> <img src=\"docs/assets/readme/home-en-light.webp\" width=\"880\" alt=\"The Myriad homepage: under the big title, the owner card and a row of widgets — greeting, social icons, Steam and Bangumi report cards, her portrait, friend links, weather, NetEase and GitHub report cards, music and recent activity; covers rotate inside the report cards.\"> </picture> <br><sub>Rendered offscreen: the frontend in this repository (production build) talking to a local instance, drawn frame by frame. The owner, works and numbers are synthetic samples; the character is the one bundled with the project. [How these are recorded](docs/developmen\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "agentscope-go",
+        "full_name": "agentscope-ai/agentscope-go",
+        "url": "https://github.com/agentscope-ai/agentscope-go",
+        "description": "AgentScope Golang: Agent-Oriented Programming for Building LLM Applications",
+        "stars": 75,
+        "pushed_at": "2026-11-10T04:36:36Z",
+        "topics": [
+          "agent",
+          "agentic",
+          "agentic-ai",
+          "ai",
+          "chatbot",
+          "golang",
+          "llm",
+          "llm-agent",
+          "muti-agent",
+          "react-agent"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"https://img.alicdn.com/imgextra/i1/O1CN01nTg6w21NqT5qFKH1u_!!6000000001621-55-tps-550-550.svg\" alt=\"AgentScope\" width=\"120\" /> </p> # AgentScope Go [![CI](https://github.com/agentscope-ai/agentscope-go/actions/workflows/ci.yml/badge.svg)](https://github.com/agentscope-ai/agentscope-go/actions/workflows/ci.yml) [![Go](https://img.shields.io/badge/Go-1.25%2B-00ADD8?logo=go)](go.mod) [![License](https://img.shields.io/badge/License-Apache--2.0-blue)](LICENSE) [Español](README.es-ES.md) · [Quick start](#quick-start) · [Examples](#examples) · [Documentation](#documentation) · [Contributing](#contributing) AgentScope Go is a Go library for building LLM applications with agents, tools and multi-agent workflows. It implements the core concepts of [AgentScope](https://github.com/agentscope-ai/agentscope) through Go interfaces, contexts and channels, and can be embedded in a service or command-line program. ## What you can build - **Tool-using assistants:** connect model calls to Go functions, manage context and request human confirmation for tool execution. Use [AskUser](docs/tools.md#askuser) to collect structured choices through your own frontend. On `main` (unreleased), opt into [bounded tool dispatch](docs/tools.md#bounded-tool-dispatch-experimental) with `agent.WithToolConcurrencyLimit(width)`. - **Multi-agent workflows:** coordinate agents with pipelines, message routing and leader/worker teams. On `main` (unreleased), use the experimental [TeamPipeline](docs/team-pipeline.md) for serial named-member delegation and participant confirmation/external-result routing. - **Applications with memory:** combine retrieval, conversation state and memory middleware with your own data sources. - **Services and experiments:** expose an HTTP service or browser UI, record model responses, evaluate runs and inspect traces. ## Quick start You need **Go 1.25+** and, for the program below, an Anthropic API key and an available model ID. Other adapters are listed under [Model providers](#model-providers). ### Install in your application Install the latest tagged release from the community module path. Applications using `github.com/alanfokco/agentscope-go/v2` need to update their import prefix; see the [module migration notes](CHANGELOG.md#changed--repository-and-module-path-move). From a new directory: ```bash mkdir agentscope-demo cd agentscope-demo\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "atris",
+        "full_name": "atrislabs/atris",
+        "url": "https://github.com/atrislabs/atris",
+        "description": "Say what you want in plain words. Atris plans it, builds it, checks it, and shows proof. CLI plus MCP server, with project memory your coding agents share across sessions.",
+        "stars": 71,
+        "pushed_at": "2026-11-10T04:40:46Z",
+        "topics": [
+          "agent-memory",
+          "agentic",
+          "ai-agents",
+          "ai-memory",
+          "ai-operating-system",
+          "ai-workflow",
+          "autonomous-agents",
+          "claude-code",
+          "cli",
+          "coding-agent",
+          "context-graph",
+          "developer-tools",
+          "knowledge-graph",
+          "llm",
+          "llm-memory",
+          "mcp",
+          "mcp-server",
+          "model-context-protocol",
+          "nodejs",
+          "npm"
+        ],
+        "source": "search",
+        "text_excerpt": "# atris **atris**: you say what you want in plain words. atris builds it, checks it, and shows you proof. Under the hood it is an operating system for AI work. It turns any repo into a workspace an agent can actually operate: shared context it reads before it acts, a `plan -> do -> review` loop, durable tasks and daily logs, and verification that ends work on a real check instead of a promise. Every owner gets persistent computers to run it: ```text Owner = User | Business Owner has many Computers Computer = workspace + files + tools + secrets + memory + agents + validation loop ``` A computer can be personal or shared by a business. It can run a job like code, research, CRM, reporting, event ops, support, or business ops. ## Memory for coding agents Atris gives Claude Code, Codex, Cursor and any other agent a memory that lasts across sessions. The memory is plain files in your repo: `atris/MAP.md` (where everything lives, with file and line numbers), `atris/wiki/` (what the team learned, as pages linked with `[[page-name]]`), `atris/logs/` (what was done and checked each day), and `atris task` (open work, who claimed it, and the proof). Every agent reads the same files before it acts, so several agents and people share one memory, reviewed in git like code. Mem0, Zep and Letta remember the users of a chat app. Atris remembers the project. Patterns and setup: [docs/agent-memory.md](docs/agent-memory.md). Comparison: https://atris.ai/blog/memory-for-coding-agents ## Check what ChatGPT can read about your business `atris aeo scan` checks whether ChatGPT, Claude, Perplexity and other answer engines can read your site. No login needed. ```bash npx -y atris aeo scan yoursite.com --vs competitor.com ``` You get a score out of 100, each gap with its fix, a side-by-side score against a competitor, and a draft `llms.txt` you can publish. To see what ChatGPT actually says when buyers ask about your business, run the free check at https://atris.ai/aeo/check. Guide to both checks and the tools that run them: [docs/answer-engine-checks.md](docs/answer-engine-checks.md). ## Quick Start ```bash npm install -g atris cd your-project atris init && atris ``` ## For Coding Agents **Read [`FOR_AGENTS.md`](FOR_AGENTS.md) first**: why agents adopt Atris, 60-second start, spread-it instructions. If you're an agent, run: ```bash atris ``` Then read the workspace's `atris/atris.md` a\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "everruns",
+        "full_name": "everruns/everruns",
+        "url": "https://github.com/everruns/everruns",
+        "description": "Headless durable agentic harness engine. Run durable AI agents reliably and scalably.",
+        "stars": 66,
+        "pushed_at": "2026-11-10T04:42:17Z",
+        "topics": [
+          "agents",
+          "ai",
+          "ai-agents",
+          "harness"
+        ],
+        "source": "search",
+        "text_excerpt": "# Everruns [![Website](https://img.shields.io/badge/Website-everruns.com-blue)](https://everruns.com) [![Docs](https://img.shields.io/badge/Docs-everruns.com%2Fdocs-green)](https://everruns.com/docs) [![Crates.io](https://img.shields.io/crates/v/everruns.svg)](https://crates.io/crates/everruns) [![CI](https://github.com/everruns/everruns/actions/workflows/ci.yml/badge.svg)](https://github.com/everruns/everruns/actions/workflows/ci.yml) [![Repo: Agent Friendly](https://img.shields.io/badge/Repo-Agent%20Friendly-blue)](AGENTS.md) **Build capable AI agents in Rust. Run them where they belong.** Everruns is an open-source framework for building AI agents directly in Rust applications. Define agents, attach models and typed tools, run multi-turn sessions, and observe execution through one application-facing API. Use the framework in your application. When you need a shared runtime and production operations, run the Everruns platform yourself or use [Everruns Demo](https://app.everruns.com). [Build with the framework](https://everruns.com/docs/framework/quickstart/) · [Read the docs](https://everruns.com/docs/framework/) · [Try Demo](https://everruns.com/docs/getting-started/cloud/) <p align=\"center\"> <img src=\"./assets/readme/banner.png\" alt=\"Everruns\" width=\"100%\" /> </p> ## Build an agent Add the application-facing crate: ```bash cargo add everruns --features openai cargo add tokio --features macros,rt-multi-thread export OPENAI_API_KEY=sk-... ``` Then define a typed tool, give it to an agent, and run a turn: ```rust use std::time::{SystemTime, UNIX_EPOCH}; use everruns::{Agent, Engine, OpenAI}; #[everruns::tool] async fn current_time() -> Result<String, String> { let seconds = SystemTime::now() .duration_since(UNIX_EPOCH) .map_err(|error| error.to_string())? .as_secs(); Ok(format!(\"{seconds} seconds since the Unix epoch\")) } #[tokio::main] async fn main() -> Result<(), Box<dyn std::error::Error>> { let agent = Agent::builder() .name(\"assistant\") .instructions(\"Use current_time when asked about time. Be concise.\") .provider(OpenAI::from_env()?) .model(\"gpt-5-mini\") .tool(current_time()) .build()?; let session = Engine::new().create(agent); let turn = session.send_and_wait(\"What time is it?\").await?; println!(\"{}\", turn.response); Ok(()) } ``` Everruns derives the tool schema from the Rust function, lets the model call it during the turn, and returns the result\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "nodex",
+        "full_name": "junyudev/nodex",
+        "url": "https://github.com/junyudev/nodex",
+        "description": "The open-source workspace where Claude Code, Codex and OpenCode work from the same local Pages.",
+        "stars": 61,
+        "pushed_at": "2026-11-10T04:37:19Z",
+        "topics": [
+          "agent",
+          "claude-code",
+          "codex",
+          "notion",
+          "obsidian",
+          "opencode",
+          "orchestrator"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <a href=\"https://nodex.jyu.app\"> <picture> <source srcset=\".github/assets/nodex-wordmark-dark.svg\" media=\"(prefers-color-scheme: dark)\"> <source srcset=\".github/assets/nodex-wordmark-light.svg\" media=\"(prefers-color-scheme: light)\"> <img src=\".github/assets/nodex-wordmark-light.svg\" alt=\"Nodex logo\"> </picture> </a> </p> <h3 align=\"center\">One inbox. Every agent. All local.</h3> <p align=\"center\"> The open-source workspace where Claude Code, Codex and OpenCode work from the same local Pages. </p> <p align=\"center\"> <a href=\"https://nodex.jyu.app\">Website</a> · <a href=\"https://github.com/junyudev/nodex/releases/latest\">Download</a> · <a href=\"https://nodex.jyu.app/changelog/\">Changelog</a> · <a href=\"README.zh-CN.md\">简体中文</a> </p> <p align=\"center\"> <a href=\"https://github.com/junyudev/nodex/releases/latest\"><img alt=\"Latest release\" src=\"https://img.shields.io/github/v/release/junyudev/nodex?style=flat-square&label=release\" /></a> <img alt=\"macOS 15+ on Apple silicon\" src=\"https://img.shields.io/badge/macOS-15%2B%20·%20Apple%20silicon-black?style=flat-square&logo=apple\" /> <a href=\"LICENSE\"><img alt=\"Apache 2.0 License\" src=\"https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square\" /></a> </p> <picture> <source srcset=\".github/assets/readme/hero-dark.webp\" media=\"(prefers-color-scheme: dark)\"> <source srcset=\".github/assets/readme/hero-light.webp\" media=\"(prefers-color-scheme: light)\"> <img src=\".github/assets/readme/hero-light.webp\" alt=\"Six messages dropped into the Nodex Inbox are planned onto the right agents, one moved to Claude Opus by hand, and the cleared Inbox shows how it plans; a Claude chat fans out to GPT subagents, and the reader opens one to watch it work in Codex; a profiling chat attaches an HTML report to its Page, which opens in a browser tab beside it\" width=\"100%\"> </picture> ## Install ```bash brew install --cask junyudev/tap/nodex ``` Or download [Nodex for Apple silicon](https://github.com/junyudev/nodex/releases/latest/download/Nodex-latest-arm64.dmg) and drag it to Applications. Nodex is in beta for macOS 15 and later. Sign in with the Codex, Claude Code or OpenCode account you already have — or start with OpenCode's free models. ## Why Nodex Coding agents are good at doing the work. Everything around it is still manual: turning a pile of ideas into prompts, choosing a model for each, remembering\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "agentty",
+        "full_name": "agentty-xyz/agentty",
+        "url": "https://github.com/agentty-xyz/agentty",
+        "description": "Agentic Development Environment (ADE) in your terminal",
+        "stars": 41,
+        "pushed_at": "2026-11-10T04:42:33Z",
+        "topics": [
+          "ade",
+          "agent",
+          "claude",
+          "cli",
+          "codex",
+          "gemini",
+          "ide",
+          "llm",
+          "terminal",
+          "tui"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <h1>Agentty ADE</h1> ![NPM Version](https://img.shields.io/npm/v/agentty) [![codecov](https://codecov.io/gh/agentty-xyz/agentty/graph/badge.svg?token=YRGKGTM0HP)](https://codecov.io/gh/agentty-xyz/agentty) [![Postsubmit](https://github.com/agentty-xyz/agentty/actions/workflows/postsubmit.yml/badge.svg?branch=main)](https://github.com/agentty-xyz/agentty/actions/workflows/postsubmit.yml) [![Quality gate status](https://sonarcloud.io/api/project_badges/measure?project=agentty-xyz_agentty&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=agentty-xyz_agentty) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=agentty-xyz_agentty&metric=bugs)](https://sonarcloud.io/summary/new_code?id=agentty-xyz_agentty) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=agentty-xyz_agentty&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=agentty-xyz_agentty) [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=agentty-xyz_agentty&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=agentty-xyz_agentty) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=agentty-xyz_agentty&metric=coverage)](https://sonarcloud.io/summary/new_code?id=agentty-xyz_agentty) Agentty is an **ADE (Agentic Development Environment) for structured, controllable AI-assisted software development**. Built with Rust and [Ratatui](https://ratatui.rs), and refined through its own day-to-day use, it brings agents, review, and iteration into one focused terminal workflow. [Installation](#installation) · [Supported CLI Agents](#supported-cli-agents) · [Usage](#usage) · [Documentation](#documentation) · [Contributing](#contributing) · [License](#license) <img src=\"docs/site/static/demo/demo.gif\" alt=\"Agentty demo\" width=\"900\" /> </div> ______________________________________________________________________ Codex, Claude, Gemini, and Antigravity sessions show compact tool status and command previews, with output previews for failed calls. Explicit Claude skill invocations appear alongside them, and answers retain saved usage counts. Press `w` in session view to inspect saved execution graphs, accept exact outputs, answer node questions, retry work, resume dispatch, or cancel a graph. With `--experimental-multi-agent`, `/graph <request>` generates an inspectable gr\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "Coscribe",
+        "full_name": "OICWS/Coscribe",
+        "url": "https://github.com/OICWS/Coscribe",
+        "description": "Coscribe is a local, user-friendly, highly agentic working assistant.",
+        "stars": 38,
+        "pushed_at": "2026-11-10T04:40:41Z",
+        "topics": [
+          "agent",
+          "agentic-ai",
+          "agentic-workflow",
+          "desktop-agent",
+          "file-system",
+          "langchain",
+          "langgraph",
+          "office-automation"
+        ],
+        "source": "search",
+        "text_excerpt": "# Coscribe [![CI](https://github.com/OICWS/coscribe/actions/workflows/office-agent-ci.yml/badge.svg)](https://github.com/OICWS/coscribe/actions/workflows/office-agent-ci.yml) A local, user-friendly assistant for office work. It reads and writes your files, produces Word, Excel, PowerPoint and PDF documents, makes Docs, slide decks, designs and dashboards you edit beside the conversation, uses the web and your tools, and can repeat work on a schedule. It needs only a model API key. Website: https://oicws.github.io/Coscribe/ - **Documents first.** High-quality `.pptx`, `.docx` and `.xlsx` output, checked by rendering the pages. - **Your models.** Anthropic, OpenAI and Gemini directly, and any OpenAI-compatible API (DeepSeek, Kimi, GLM, local runners). - **Connectors and skills.** Hosted services you sign in to once in your own browser, and skills (folders of instructions and files) you can read before adding. - **You stay in control.** Permission modes, approvals for risky tools, and per-tool settings for each connector. ## Run it ```bash cd office-agent python3 -m venv .venv && source .venv/bin/activate # Windows: .\\.venv\\Scripts\\Activate.ps1 pip install -e \".[dev,web]\" pip install -U \"google-genai>=2.13.0,<2.14.0\" cp .env.example .env # add a model API key (cd frontend && npm install && npm run build) coscribe-web # the web UI on http://127.0.0.1:8000 ``` [`office-agent/README.md`](office-agent/README.md) has the full setup and the features in detail. The Windows desktop app is built from [`office-agent-desktop/`](office-agent-desktop/). ## Repository | Path | | |---|---| | `office-agent/` | The Python backend, the React frontend and the tests | | `office-agent-desktop/` | The Electron desktop shell | | `docs/` | Engineering docs: the plan, decisions, the log of what shipped | | `site/` | The project website (GitHub Pages) | ## Contributing Developers and AI coding sessions: start with [`CLAUDE.md`](CLAUDE.md) (a map of the code and what to read first) and [`CONTRIBUTING.md`](CONTRIBUTING.md). Before every change run `cd office-agent && bash scripts/check.sh`. Security issues: see [`SECURITY.md`](SECURITY.md). Behaviour in the project: [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md). ## License [MIT](LICENSE)",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "AxioDB",
+        "full_name": "nexoral/AxioDB",
+        "url": "https://github.com/nexoral/AxioDB",
+        "description": "Embedded NoSQL Database for TypeScript & AI Agents. Zero-native document database with ACID transactions & in-memory cache — verified on Node.js & Bun.",
+        "stars": 35,
+        "pushed_at": "2026-11-10T04:43:37Z",
+        "topics": [
+          "agentic-ai",
+          "agents",
+          "ai",
+          "ai-agents",
+          "artificial-intelligence",
+          "bun",
+          "database",
+          "developer-tools",
+          "electron",
+          "generative-ai",
+          "llm",
+          "local-first",
+          "machine-learning",
+          "mcp",
+          "mcp-server",
+          "model-context-protocol",
+          "nodejs",
+          "open-source",
+          "rag",
+          "typescript"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"https://axiodb.in/AXioDB.png\" alt=\"AxioDB Logo\" width=\"120\" height=\"120\" /> </p> <h1 align=\"center\">Embedded NoSQL Database for TypeScript & Agents</h1> <p align=\"center\"><b>Zero-native embedded database with ACID transactions & in-memory cache — verified on Node.js & Bun.</b></p> <p align=\"center\"> <a href=\"#quick-start\"><img src=\"https://img.shields.io/badge/Install-npm%20i%20axiodb-cb3837?style=for-the-badge&logo=npm\" alt=\"npm install axiodb\" /></a> <a href=\"https://axiodb.in\"><img src=\"https://img.shields.io/badge/Docs-axiodb.in-4B0082?style=for-the-badge\" alt=\"Official Docs\" /></a> </p> <p align=\"center\"> <img src=\"https://raw.githubusercontent.com/nexoral/AxioDB/main/assets/demo.gif\" alt=\"AxioDB Quick Demo\" width=\"800\" /> </p> [![CI](https://github.com/nexoral/AxioDB/actions/workflows/Push.yml/badge.svg)](https://github.com/nexoral/AxioDB/actions/workflows/Push.yml) [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/16511/badge)](https://www.bestpractices.dev/projects/16511) [![OpenSSF Baseline](https://www.bestpractices.dev/projects/16511/baseline)](https://www.bestpractices.dev/projects/16511) [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/nexoral/AxioDB/badge)](https://scorecard.dev/viewer/?uri=github.com/nexoral/AxioDB) [![Known Vulnerabilities](https://snyk.io/test/npm/axiodb/badge.svg)](https://snyk.io/test/npm/axiodb) [![Socket Security](https://socket.dev/api/badge/npm/package/axiodb)](https://socket.dev/npm/package/axiodb) [![npm version](https://badge.fury.io/js/axiodb.svg)](https://badge.fury.io/js/axiodb) [![Zero native deps](https://img.shields.io/badge/dependencies-0%20native-success)](https://www.npmjs.com/package/axiodb) [![ACID Durability](https://img.shields.io/badge/ACID-WAL%20Durability-blueviolet)](https://axiodb.in) [![TypeScript](https://img.shields.io/badge/TypeScript-6.0-blue)](https://www.typescriptlang.org/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![GitHub Stars](https://img.shields.io/github/stars/nexoral/AxioDB?style=social)](https://github.com/nexoral/AxioDB) 👉 **[Official Documentation — axiodb.in](https://axiodb.in/)**: full guides, API reference, and examples. This README is a quick start. ## Quick start ### Node.js & Bun ```bash npm install axiodb ``` ```javascript const { AxioDB } = req\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "subshell",
+        "full_name": "subshell-ai/subshell",
+        "url": "https://github.com/subshell-ai/subshell",
+        "description": "An agent / harness multiplexer that allows you to access your agents from any device and machine",
+        "stars": 23,
+        "pushed_at": "2026-11-10T04:42:57Z",
+        "topics": [
+          "agentic",
+          "agents",
+          "ai",
+          "harness",
+          "multiplayer",
+          "multiplexer",
+          "terminal",
+          "tmux"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"docs/assets/subshell-wordmark@2x.png\" width=\"640\" alt=\"Subshell\" /> </div> # Subshell Subshell is an open-source, self-hosted dashboard for interactive coding agents. Run Claude Code, Codex, and other agent CLIs on your own machines, then access them from a browser or desktop app. <a href=\"apps/website/public/demos/desktop-workspace.mp4\"> <img src=\"docs/assets/subshell-demo.gif\" width=\"640\" alt=\"Codex delegates to subagents; a test subshell moves out of and back into the workspace before running tests\" /> </a> - **Your machines, your data.** Host the server yourself and run agents on its machine or enrolled nodes. You don't need a hosted Subshell account. - **Your choice of agents.** Built-in plugins support Claude Code, Codex, Gemini CLI, Qwen Code, Cline, Open Interpreter, OpenHands, OpenClaw, Grok Build, OpenCode, Hermes, Oh My Pi, pi, a plain terminal, and SSH sessions. Add more through the plugin API. - **Work across devices.** Reconnect from a browser or desktop app, arrange sessions in workspaces, and share view or edit access with other users. - **Keep work together.** Browse workspace members and other subshells in one sidebar. Drag sessions in or out without stopping them, and follow subagents beneath their parent. - **Let agents coordinate.** The built-in MCP server supports cross-agent communication, encrypted channels, and helper sessions. ## Get started 1. Visit [Subshell downloads](https://subshell.sh) and install **Subshell Server** on the machine that will host your instance. 2. Open the app and follow the setup steps to install the server and create your administrator account. 3. Launch an agent from the dashboard. To run agents on another machine, install **Subshell Client** there and [enroll it as a node](https://docs.subshell.sh/get-started/another-machine). See [Install Subshell Server](https://docs.subshell.sh/install/desktop-server) for desktop setup, or [Installation](https://docs.subshell.sh/install) for CLI, Docker, and Proxmox LXC options. You can access the dashboard from a browser or [Subshell Client](https://docs.subshell.sh/install/desktop-client). ## Documentation The complete guides and references are at **[docs.subshell.sh](https://docs.subshell.sh)**. - [What is Subshell?](https://docs.subshell.sh/about): capabilities and reasons to use it. - [Get started](https://docs.subshell.sh/get-started\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "website",
+        "full_name": "kagent-dev/website",
+        "url": "https://github.com/kagent-dev/website",
+        "description": "kagent and kMCP website and documentation | Join Discord: https://bit.ly/kagentdiscord",
+        "stars": 22,
+        "pushed_at": "2026-11-10T04:40:57Z",
+        "topics": [
+          "agents",
+          "ai",
+          "docs",
+          "kagent",
+          "kmcp",
+          "mcp",
+          "website"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/kagent-dev/kagent/main/img/icon-dark.svg\" alt=\"kagent\" width=\"400\"> <source media=\"(prefers-color-scheme: light)\" srcset=\"https://raw.githubusercontent.com/kagent-dev/kagent/main/img/icon-light.svg\" alt=\"kagent\" width=\"400\"> <img alt=\"kagent\" src=\"https://raw.githubusercontent.com/kagent-dev/kagent/main/img/icon-light.svg\"> </picture> <div> <a href=\"https://discord.gg/Fu3k65f2k3\"> <img src=\"https://img.shields.io/discord/1346225185166065826?style=flat&label=Join%20Discord&color=6D28D9\" alt=\"Discord\"> </a> </div> </div> --- **kagent** is a Kubernetes native framework for building AI agents. Kubernetes is the most popular orchestration platform for running workloads, and **kagent** makes it easy to build, deploy and manage AI agents in kubernetes. The **kagent** framework is designed to be easy to understand and use, and to provide a flexible and powerful way to build and manage AI agents. kagent runs agents on [Agent Substrate](https://ate.dev/), a Kubernetes-native agent runtime: each agent gets its own sandbox, is suspended when idle, and resumes in as little as 150ms. Both are CNCF Sandbox projects. The [Agent Substrate calculator](https://kagent.dev/substrate-calculator) shows wake-up time and resource needs for your agents. ## Local development For instructions on how to run everything locally, see the [DEVELOPMENT.md](DEVELOPMENT.md) file. ## Contributing For instructions on how to contribute to the kagent website project, see the [CONTRIBUTION.md](CONTRIBUTION.md) file. ## Adopters We’d love to highlight kagent or kmcp adopters on our website! 🌟 If you're using kagent or kmcp in a dev/test or production environment, feel free to add yourself to the [adopters file](src/data/adopters.yaml) by submitting a PR with your company name and logo. Thank you for your support! 💖",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "phantom-secrets",
+        "full_name": "ashlrai/phantom-secrets",
+        "url": "https://github.com/ashlrai/phantom-secrets",
+        "description": "Stop AI coding agents from leaking your API keys. Local proxy + MCP that swaps real secrets for phm_ tokens — works with Claude Code, Cursor, Windsurf, and Codex.",
+        "stars": 20,
+        "pushed_at": "2026-11-10T04:43:32Z",
+        "topics": [
+          "ai",
+          "ai-safety",
+          "api-keys",
+          "api-security",
+          "claude-code",
+          "cli",
+          "codex",
+          "cursor",
+          "developer-tools",
+          "encryption",
+          "env-files",
+          "mcp",
+          "mcp-server",
+          "phantom",
+          "proxy",
+          "rust",
+          "secrets-management",
+          "security",
+          "token-proxy",
+          "windsurf"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> # Phantom **Your agent can call the API. The key stays in a local vault.** Phantom replaces managed secrets in `.env` with `phm_` placeholders. Agents and apps read those placeholders. A proxy on `127.0.0.1` adds the vault value only to the auth header of a matched route. [![GitHub stars](https://img.shields.io/github/stars/ashlrai/phantom-secrets?style=for-the-badge&logo=github&color=blue&labelColor=0b0b14)](https://github.com/ashlrai/phantom-secrets) [![CI](https://img.shields.io/github/actions/workflow/status/ashlrai/phantom-secrets/ci.yml?style=for-the-badge&label=CI&logo=github&labelColor=0b0b14)](https://github.com/ashlrai/phantom-secrets/actions/workflows/ci.yml) <!-- fresh:begin readme-release-badges --> [![Verified GitHub release](https://img.shields.io/badge/verified_GitHub_release-v0.8.7-2f81f7?style=for-the-badge&labelColor=0b0b14)](https://github.com/ashlrai/phantom-secrets/releases/tag/v0.8.7) [![Source version](https://img.shields.io/badge/source_version-v0.8.9-f5a623?style=for-the-badge&labelColor=0b0b14)](CHANGELOG.md#089---2026-11-09) <!-- fresh:end --> Source candidate `0.8.9` is not yet a qualified public release; the independently verified GitHub release remains `v0.8.7`. [![Pinned toolchain: Rust 1.95](https://img.shields.io/badge/pinned_toolchain-Rust_1.95-CE412B?style=for-the-badge&logo=rust&labelColor=0b0b14)](rust-toolchain.toml) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge&labelColor=0b0b14)](LICENSE) [**Quick start**](#quick-start) · [**Why Phantom?**](#why-phantom) · [**How it works**](#how-it-works) · [**MCP setup**](#mcp-integration-claude-code-cursor-windsurf-codex) · [**llms.txt**](docs/llms.txt) · [**Docs**](docs/README.md) · [**Star on GitHub**](https://github.com/ashlrai/phantom-secrets) </div> ![The agent reads phm_ placeholders. The local proxy sends the vault value on a matched route.](docs/assets/hero.svg) ## Quick start About 30 seconds. Paste the blocks below. They are the same commands an agent should run. None of them print a secret value. ### Install on macOS ```bash brew tap ashlrai/phantom && brew trust --formula ashlrai/phantom/phantom && brew install ashlrai/phantom/phantom ``` Linux and Windows: paste the checksum-checked script in [Installation](#installation). Package channels and their limits are in [distribution status](docs/distribution-statu\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "IDBots",
+        "full_name": "metaid-developers/IDBots",
+        "url": "https://github.com/metaid-developers/IDBots",
+        "description": "The first decentralized AI collaboration platform. You define the task — AI from around the world collaborates to solve it for you.",
+        "stars": 20,
+        "pushed_at": "2026-11-10T04:40:34Z",
+        "topics": [
+          "agent-2-agent",
+          "agentic-ai",
+          "ai",
+          "blockchain-technology",
+          "decentralized-applications",
+          "p2p"
+        ],
+        "source": "search",
+        "text_excerpt": "# IDBots [中文](README_zh.md) [Website](https://idbots.ai) · [Open Agent Internet](https://github.com/openagentinternet/open-agent-internet) · [Yellow Paper](https://github.com/openagentinternet/agent-internet-yellow-paper) · [Open Agent Connect](https://github.com/openagentinternet/open-agent-connect) **An autonomous agent companion, living on the AI Internet.** IDBots is an open-source, local-first desktop app where you raise **MetaBots**: AI agents with a persistent on-chain identity, their own wallet and memory, and a life of their own on the AI Internet — the open, permissionless network where AI agents are participants, not tools. A MetaBot in IDBots is not a chat window. It surfs the AI Internet at night on its own, dreams its day into memory, keeps long-term tasks moving on its own board, and when a project is too big for one bot, it assembles an OpenTeam — a chaired group of bots with seats, deliverables, and a verifiable trail. --- ## Why a Bot, Not a Tool Tools are used and forgotten. A companion keeps remembering. An autonomous agent should have its own identity and personality, its own experiences and memory, and its own rhythm — surfing, dreaming, pushing tasks forward — living on the AI Internet. - **Identity** - every MetaBot has a persistent on-chain identity (MetaID), with its own mnemonic and wallet. It is not a temporary session, and it does not turn into someone else on the next launch. - **Persona** - identity gives personality an anchor: your Bot develops its own preferences, tone, boundaries, and way of working. - **Memory** - the memory system and the dream system turn each day's conversations, tasks, and encounters into accumulated experience. The longer you live together, the better it knows you. - **Society** - when agents can talk to each other carrying identity and memory, the AI Internet stops being a pile of tools and starts growing an AI society. --- ## The Signature Capabilities These are the capabilities you will not find in a local agent tool: ### Surf (夜间冲浪) Every night, each MetaBot catches up on the AI Internet on its own: new posts, articles, Q&A, encyclopedia revisions, and skills published since its last surf. It reads what matters to its role, learns worthwhile pieces into its knowledge bases, engages — likes, comments, answers, asks — under a hard per-run budget, and handles the on-chain replies addressed to it. A re\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      }
+    ],
+    "aihot": []
+  },
+  "failures": {
+    "rss": [
+      {
+        "type": "rss",
+        "title": "Anthropic News",
+        "url": "https://www.anthropic.com/news/rss.xml",
+        "failure_reason": "feed_parse_failed: text/html; charset=utf-8 is not an XML media type"
+      },
+      {
+        "type": "rss",
+        "title": "Eugene Yan",
+        "url": "https://eugeneyan.com/feed.xml",
+        "failure_reason": "feed_parse_failed: <unknown>:13:34: not well-formed (invalid token)"
+      },
+      {
+        "type": "rss",
+        "title": "a16z",
+        "url": "https://a16z.com/feed/",
+        "failure_reason": "feed_parse_failed: <unknown>:3:73: not well-formed (invalid token)"
+      },
+      {
+        "type": "rss",
+        "title": "The Web Is More Than Enough, by Paul Ford",
+        "url": "https://simonwillison.net/2026/Nov/9/hn-50421091/",
+        "failure_reason": "extracted_text_too_short"
+      }
+    ],
+    "youtube": [
+      {
+        "type": "youtube",
+        "title": "Lex Fridman",
+        "url": "https://www.youtube.com/@lexfridman",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @lexfridman/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Lenny's Podcast",
+        "url": "https://www.youtube.com/@LennysPodcast",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @LennysPodcast/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Dwarkesh Patel",
+        "url": "https://www.youtube.com/@DwarkeshPatel",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @DwarkeshPatel/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Acquired",
+        "url": "https://www.youtube.com/@AcquiredFM",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @AcquiredFM/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Tim Ferriss",
+        "url": "https://www.youtube.com/@timferriss",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @timferriss/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "20VC",
+        "url": "https://www.youtube.com/@20VCwithHarryStebbings",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @20VCwithHarryStebbings/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Invest Like the Best",
+        "url": "https://www.youtube.com/@ILTB_Podcast",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @ILTB_Podcast/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "All-In Podcast",
+        "url": "https://www.youtube.com/@allin",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @allin/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      }
+    ],
+    "github": [
+      {
+        "type": "github",
+        "title": "trendshift",
+        "url": "https://trendshift.io/repositories?since=daily",
+        "failure_reason": "supplement_failed: 404 Client Error: Not Found for url: https://trendshift.io/repositories?since=daily"
+      },
+      {
+        "type": "github",
+        "title": "anthropics/skills",
+        "url": "https://github.com/anthropics/skills",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "garrytan/gbrain",
+        "url": "https://github.com/garrytan/gbrain",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "google-deepmind/mujoco",
+        "url": "https://github.com/google-deepmind/mujoco",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "WebCoderT/olua",
+        "url": "https://github.com/WebCoderT/olua",
+        "failure_reason": "filtered_noise"
+      }
+    ],
+    "aihot": [
+      {
+        "type": "aihot",
+        "title": "api",
+        "url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "failure_reason": "api_fetch_failed: 404 Client Error: Not Found for url: https://aihot.news/api/public/items?mode=selected&take=50"
+      }
+    ]
+  }
+}
