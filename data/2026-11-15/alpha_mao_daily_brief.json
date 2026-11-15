@@ -1,0 +1,967 @@
+{
+  "date": "2026-11-15",
+  "generated_at": "2026-11-15T02:56:26Z",
+  "timezone": "Asia/Shanghai",
+  "windows": {
+    "rss": "72h",
+    "youtube": "72h_or_7d",
+    "github": "7d",
+    "aihot": "selected latest"
+  },
+  "counts": {
+    "rss": {
+      "candidates": 16,
+      "full_text_success": 11,
+      "eligible": 11,
+      "failed": 7
+    },
+    "youtube": {
+      "candidates": 0,
+      "transcript_success": 0,
+      "eligible": 0,
+      "failed": 8
+    },
+    "github": {
+      "candidates": 25,
+      "readme_success": 25,
+      "eligible": 25,
+      "failed": 10
+    },
+    "aihot": {
+      "api_returned": 0,
+      "candidates": 0,
+      "original_verified": 0,
+      "eligible": 0,
+      "failed_or_pending": 1
+    }
+  },
+  "eligible_items": {
+    "rss": [
+      {
+        "source": "Simon Willison",
+        "title": "datasette-llm 0.1a11",
+        "url": "https://simonwillison.net/2026/Nov/14/datasette-llm/",
+        "published_at": "2026-11-14T23:59:28Z",
+        "summary": "Release: datasette-llm 0.1a11 datasette-llm is the intermediate plugin for Datasette that supports configuring LLMs for use with other Datasette plugins. This release adds support for OpenAI-compatible endpoints, so you can configure Datasette to use an LLM hosted anywhere that talks the OpenAI pseudo-standard web protocol. This means that if you're running local models with LM Studio or Ollama or llama.cpp (which just hit v1.0.0 ) you can run Datasette via uvx like this: wget https://datasette.io/content.db uvx --with datasette-agent datasette \\ --root --secret 1 \\ -s plugins.datasette-llm.default_model ' { \"model\": \"lmstudio-qwen\", \"model_name\": \"qwen/qwen3.8-27b\", \"api_base\": \"http://localhost:1234/v1\" } ' content.db And you'll get a local server running a Datasette Agent instance powered by your local model! Tags: uv , datasette-agent , llm , datasette , llms , ai , generative-ai",
+        "lookback_7d": false,
+        "text_excerpt": "datasette-llm is the intermediate plugin for Datasette that supports configuring LLMs for use with other Datasette plugins. This release adds support for OpenAI-compatible endpoints, so you can configure Datasette to use an LLM hosted anywhere that talks the OpenAI pseudo-standard web protocol. This means that if you're running local models with LM Studio or Ollama or llama.cpp (which just hit v1.0.0 ) you can run Datasette via uvx like this: wget https://datasette.io/content.db uvx --with datasette-agent datasette \\ --root --secret 1 \\ -s plugins.datasette-llm.default_model ' { \"model\": \"lmstudio-qwen\", \"model_name\": \"qwen/qwen3.8-27b\", \"api_base\": \"http://localhost:1234/v1\" } ' content.db And you'll get a local server running a Datasette Agent instance powered by your local model!",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "datasette-vega 0.7",
+        "url": "https://simonwillison.net/2026/Nov/14/datasette-vega/",
+        "published_at": "2026-11-14T17:09:09Z",
+        "summary": "Release: datasette-vega 0.7 A new release of Datasette's longest untouched plugin, for rendering charts (using Vega-Lite ) against data in a table or custom query. The last release was in July 2018! I finally bumped it for compatibility with the latest Datasette alphas, plus some cosmetic tweaks to make it work better with Datasette Lite . (Datasette Lite just gained the ability to run JavaScript plugins like this! I'll write more about that soon.) Since it works with Datasette Lite, the live demo in the README now links to this demo on Datasette Lite . Tags: datasette , visualisation , datasette-lite",
+        "lookback_7d": false,
+        "text_excerpt": "A new release of Datasette's longest untouched plugin, for rendering charts (using Vega-Lite ) against data in a table or custom query. The last release was in July 2018! I finally bumped it for compatibility with the latest Datasette alphas, plus some cosmetic tweaks to make it work better with Datasette Lite . (Datasette Lite just gained the ability to run JavaScript plugins like this! I'll write more about that soon.) Since it works with Datasette Lite, the live demo in the README now links to this demo on Datasette Lite .",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Interconnects",
+        "title": "Open-source AI without Jensen",
+        "url": "https://www.interconnects.ai/p/open-source-ai-without-jensen",
+        "published_at": "2026-11-14T12:23:15Z",
+        "summary": "A decapitation. It’s time to rebuild.",
+        "lookback_7d": false,
+        "text_excerpt": "The resignation of Nvidia CEO Jensen Huang is a major setback for the US development of an open model ecosystem. Nvidia still has the financial interests in supporting open models, which are to avoid concentration in power among a few customers who would develop their own chips and reduce Nvidia’s profits, but supporting the open ecosystem is a tricky puzzle more than an engineering problem to grind out a solution on. Nvidia’s business operations are famously extremely dependent on Jensen as an operator, so it is a consensus opinion that there are challenges ahead (or even more high-profile departures through chip-smuggling investigations or plain-old sharks circling more poachable talent). Nvidia’s number one goal is to stabilize the ship, deliver to customers in the next 24 months, and prevent implosion. Open models have been one of Jensen’s more ambitious, founder-style bets. He has been flooding the zone with funding in a way that will very likely dry up. In this period, the open model economy is in its nascency. These are crucial years for establishing use-cases, revenue flow, and motives to continue training the next generation models. I discussed the sensitivity of these early years in my recent talk at Fireworks Forge ( slides , recording ). The core of the argument is one upside for open models, a reason to be optimistic, and one downside. The positive case is that the open model economy has correctly latched onto “ownership of intelligence” and enterprise post-training as a crucial lane. What is to be determined is exactly how big the downstream market is. The downside is that the true long-term benefit of open models, as truly commoditized intelligence, is very far from realization with compute in such short supply. In the near term, where inference startups are also struggling to get enough chips (because Anthropic and OpenAI are buying so much capacity), there’s little margin competition on open-weight models. If open-source models are also served at giant inference margins, as we learned with DeepSeek’s DeepInfer release, they’re far from a commodity. In this paradigm, the closed labs with better economies of scale and integration from model to datacenter and chips will win. I expanded on this challenge in my recent piece on the open model economy . Together, a lot still needs to go right for open models to be a meaningful economic engine. Jens\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Latent Space",
+        "title": "[AINews] The No AI Slop Manifesto",
+        "url": "https://latent.space/p/ainews-the-no-ai-slop-manifesto/",
+        "published_at": "2026-11-14T08:31:02Z",
+        "summary": "November 13, 2026 — AIE speakers unite to lay out how to fight slop.",
+        "lookback_7d": false,
+        "text_excerpt": "November 13, 2026 — What 1.0 changes for apps that run models locally. Plus, LangChain raises $300M at a $3B valuation. It seems Hacker News also liked it , voting it up to the front page today. We started this manifesto to offer a useful tool for discussion at work, and hope it gets used that way. Sponsored by Deepgram Deepgram is the voice AI infrastructure behind natural conversation—bringing speech-to-text, text-to-speech, voice-focused LLMs, and agents to teams building with voice AI. For any stack and any tools you already love building with, Deepgram slots in as your foundational voice AI technology. So you have control. And we have the context to listen, understand, and speak like a human. Learn more about the Real-time Context Standard . Sponsored by Backblaze B2 Growth shouldn’t make you sweat. Backblaze B2 delivers capacity storage that scales with your business and keeps flash and GPUs fed with terabit-scale throughput. Put B2 to the test ! contact business@latent.space for further enquiries. Thank to Deepgram and Backblaze for supporting AINews! Local inference and agent infrastructure llama.cpp 1.0. Users running mixture-of-experts models larger than their GPU memory can now set aside a cache for frequently used experts. Georgi Gerganov · Daniel Han Chen’s example LangChain’s Series C. CapitalG led the round. LangSmith lets teams trace and evaluate production agents across frameworks. The company plans to announce new LangSmith features on November 20. LangChain · CapitalG Frontier and Open Model Launches Gemini 4 Hydrogen in GitHub Copilot. GitHub made the model generally available in Copilot across its app, CLI and VS Code. GitHub Independent checks : Roboflow's vision bench shows high effort at 29.3s per image, against 51.4s for Argon and 132.3s for Carbon, though Carbon has better detection accuracy ( @skalskip92 ). One 3D-modeling test found Hydrogen more expensive than Argon because it loops on over-verification ( @dzhng ). Google's week : Google also shipped two 8th-gen TPUs, Gemini 4 Carbon, Gemini Robotics 2.5, AlphaGenome 2 and a Decisions API ( @sundarpichai ). MathArena : Gemini 4 Carbon took #1, displacing GPT-6.1 Sol ( @j_dekoninck ). Claude Fable 5.2 in Agent Arena. Arena published new results for long coding sessions. Pricing : API pricing fell from $10/$50 to $8/$40 per 1M input/output tokens ( @arena ). Agent Arena : The model\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "datasette-cluster-map 0.19",
+        "url": "https://simonwillison.net/2026/Nov/13/datasette-cluster-map/",
+        "published_at": "2026-11-13T23:02:45Z",
+        "summary": "Release: datasette-cluster-map 0.19 One of the oldest Datasette plugins, and still one of my favorites. It now works with Datasette 1.0a42, and depends on the new datasette-leaflet to ensure OpenStreetMap tiles are requested with a referrer header. Here's a map of power plants owned by California's PG&E , also demonstrating Datasette's recently redesigned facets : Tags: datasette , geospatial , openstreetmap",
+        "lookback_7d": false,
+        "text_excerpt": "One of the oldest Datasette plugins, and still one of my favorites. It now works with Datasette 1.0a42, and depends on the new datasette-leaflet to ensure OpenStreetMap tiles are requested with a referrer header. Here's a map of power plants owned by California's PG&E , also demonstrating Datasette's recently redesigned facets :",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "datasette-leaflet 0.3",
+        "url": "https://simonwillison.net/2026/Nov/13/datasette-leaflet/",
+        "published_at": "2026-11-13T22:30:54Z",
+        "summary": "Release: datasette-leaflet 0.3 OpenStreetMap have a very reasonable policy that hits to their hosted tile server should send a referrer header . Datasette table pages used the Referrer-Policy: no-referrer HTTP header, causing plugins that loaded tiles from OpenStreetMap to violate that policy. datasette-leaflet is the plugin that loads a bundled Leaflet so other Datasette plugins can depend on it. It now sets the referrer policy on the tile requests themselves to strict-origin-when-cross-origin , passing the host but not the full path to the page. Tags: leaflet , datasette , openstreetmap",
+        "lookback_7d": false,
+        "text_excerpt": "OpenStreetMap have a very reasonable policy that hits to their hosted tile server should send a referrer header . Datasette table pages used the Referrer-Policy: no-referrer HTTP header, causing plugins that loaded tiles from OpenStreetMap to violate that policy. datasette-leaflet is the plugin that loads a bundled Leaflet so other Datasette plugins can depend on it. It now sets the referrer policy on the tile requests themselves to strict-origin-when-cross-origin , passing the host but not the full path to the page.",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Latent Space",
+        "title": "[AINews] Jensen Huang resigns after 33 years leading NVIDIA",
+        "url": "https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia/",
+        "published_at": "2026-11-13T09:04:13Z",
+        "summary": "November 12, 2026 — Colette Kress takes over as interim CEO. What happens to open source/American AI leadership?",
+        "lookback_7d": false,
+        "text_excerpt": "November 12, 2026 — Colette Kress takes over as interim CEO. What happens to open source/American AI leadership? Gemini 4 Hydrogen: Google's Fast Gemini 4 Tier Ships Broadly Launch : Google DeepMind released Gemini 4 Hydrogen, a speed-first model positioned alongside Carbon and Argon. Google says it completes tasks 2.5x faster than Gemini 3.8 Flash and edges Argon on the Artificial Analysis Intelligence Index, 51 vs 50 at default thinking and 54 at the new xhigh level ( DeepMind , Koray Kavukcuoglu ). Specs and pricing : The model offers four thinking levels (low, medium, high and xhigh) and a 1M context window. It costs $1.50/$7.50 per million input/output tokens, with a 95% discount on cached input ( Phil Schmid , Artificial Analysis ). Official claims : Google reports 57% on Terminal-Bench 4.0 and more than 3x Gemini 3.8 Flash on Terminal-Bench 4.1. It also claims more than 5x fewer fabricated claims, #1 on Vals Tax Agent Bench and leading results on AutomationBench-AA and Agents' Last Exam ( Google ). Availability : Hydrogen is available on all Gemini API tiers, including a free tier in AI Studio. It is the default model in Search AI Mode, and free Gemini app users get it through auto-selection. Paid Pro and Ultra subscribers can use it in Antigravity ( Sundar Pichai , GeminiApp , Search ). Orchestrator multi-model mode : In Antigravity, Carbon plans while Hydrogen writes and tests code. Google says this reaches near-Carbon success on Terminal-Bench 4.0 with 24% less quota and 19% faster completion. It is rolling out to Ultra subscribers ( Google , Mohan ). Artificial Analysis measurements : The independent results show a mixed profile. Intelligence and cost : At xhigh, Hydrogen scores 54, one point behind Claude Sonnet 5.5 (max) and GPT-6.1 Sol (max). Its cost is about 32% of Sonnet's but about 2.5x Sol's. Cost per task is $3.16 at xhigh and $1.87 at high. Output speed is about 200 tok/s ( AA ). Strengths : Hydrogen has an 8% hallucination rate on AA-Omniscience, versus 43% for Sonnet and 52% for Sol. It also shares the #1 score on GDP.pdf visual reasoning. Weaknesses : It scores 54% on Terminal-Bench 4.0 at both high and xhigh, below Sonnet at 64% and Sol at 56%. Third-party leaderboards : Agent Arena : Hydrogen debuts at #5 with +14.8% net improvement across 6.5k sessions. It is the fastest model in the top 10 at 5.3 minutes per task median, with a me\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Latent Space",
+        "title": "AI Ambition: ArtCraft Cloned Photoshop and Now Wants to \"Rebuild Everything\"",
+        "url": "https://latent.space/p/artcraft/",
+        "published_at": "2026-11-13T04:17:25Z",
+        "summary": "ArtCraft used AI to rewrite Photoshop as open source software. For CEO Brandon Thomas, the vision is even bigger: to take back the internet!",
+        "lookback_7d": false,
+        "text_excerpt": "The theme of day two of the AI Engineer Code Summit in San Francisco was increasing ambition using AI . And there have been few projects as ambitious as ArtCraft in the AI era. So far the fledgling company has released 17 open source versions of popular software tools , starting with a Photoshop alternative built from scratch in Rust called PhotoCraft . You could feel the excitement in the room this morning when ArtCraft founder and CEO Brandon Thomas presented a kind of manifesto for AI-based open source at AIE Code. When he mentioned that ArtCraft had cloned Adobe’s Acrobat, with a product called PdfCraft, it got a round of applause from the audience. In wrapping up, his rallying cries of “let's take back the entire internet” and “let's rebuild everything” were greeted with whoops and cheers. Thomas began his presentation by reliving the internet’s early history. In his view, the web started out with the right intentions, but things got screwed up once Web 2.0 hit the mainstream. “We had a bunch of chat applications that were completely open,” he said, regarding the 1990s internet. “So, IRC is like Discord, but you can spin up your own servers that you actually own. You can use whatever programs to automate them and interrogate them without rules.” His point wasn’t necessarily that everything was open source, but that web users could freely build things. With Flash, for example — a commercial animation tool eventually acquired by Adobe — “kids were making all kinds of animations.” When Web 2.0 came along, with its superior broadband and smartphones, “it brought everybody into the fold.” Thomas acknowledged that this widened the scope of internet software, but at the cost of that freedom to build with leading apps. “The diffuse, experimental, early web started to disappear,” he said. “The APIs got taken away from us, and then we started seeing distribution being gatekept by the big providers.” It seems Adobe in particular annoyed Thomas. He described getting billed with an unexpected fee when he cancelled a monthly plan. “It's really frustrating that the web — that was once really, really promising and open and free — has turned into this extractive, owned, rent-seeking world.” This inspired him to start ArtCraft, “with the ethos of ‘let's build everything open source.’” A message even anti-AI people have gotten behind, according to Thomas. In addition to P\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "llm-gemini 0.37",
+        "url": "https://simonwillison.net/2026/Nov/12/llm-gemini/",
+        "published_at": "2026-11-12T22:55:19Z",
+        "summary": "Release: llm-gemini 0.37 Google launched Gemini 4 Hydrogen today - the lowest cost member of the Gemini 4 family. It's actually not too far off the price of its much bigger siblings, Carbon and Argon. I'm finding Gemini 4's pricing really confusing. Here's the pricing scheme: Model Dates Input ($/M) Cached input Output Gemini 4 Carbon Through Nov 30, 2026 $2.00 $0.10 $10.00 From Dec 1, 2026 $4.00 $0.20 $20.00 Gemini 4 Argon Through Nov 30, 2026 $2.00 $0.10 $10.00 From Dec 1, 2026 $4.00 $0.20 $20.00 Gemini 4 Hydrogen $1.50 $0.075 $7.50 Carbon and Argon are the same price , and both are scheduled to double in price on December 1st. If they're the same price, why have two different models? Google says that Argon \"delivers Gemini 4 intelligence with faster responses and lower token spend per turn compared to Gemini 4 Carbon\" - so it may be priced the same, but it will use less tokens per task. Hydrogen, supposedly the cheap model, is currently only a 25% discount on its more capable peers. The Hydrogen price will make more sense after December 1st, when it will represent a 75% discount. It's still considerably more expensive than Claude Haiku 5.5 and GPT-6 Luna - they're both $0.10/$0.50, so Hydrogen is 15x that. I had Hydrogen generate some pelicans . Here's a full comparison grid showing the pelicans for all three members of the Gemini 4 family at their three supported effort levels: Considering how close they are in price, the difference in pelican quality for Hydrogen is quite stark. Here's how Google describe Hydrogen's intended position in their mix of models: In real-world software development, while teams rely on frontier models like Carbon and Argon for deep architectural judgment when designing systems or untangling subtle bugs, they still need a fast, disciplined execution model for writing code, running tests, and verifying changes. Hydrogen is built to stand on its own as a model for everyday work — or to pair with Carbon and Argon as the high-efficiency execution engine in multi-model workflows. Most notably, Hydrogen is the new free tier model, and is the model that will power AI features in Google Search. Tags: gemini , llm , google , pelican-riding-a-bicycle , llm-pricing , ai , llms",
+        "lookback_7d": false,
+        "text_excerpt": "Google launched Gemini 4 Hydrogen today - the lowest cost member of the Gemini 4 family. It's actually not too far off the price of its much bigger siblings, Carbon and Argon. I'm finding Gemini 4's pricing really confusing. Here's the pricing scheme: Model Dates Input ($/M) Cached input Output Gemini 4 Carbon Through Nov 30, 2026 $2.00 $0.10 $10.00 From Dec 1, 2026 $4.00 $0.20 $20.00 Gemini 4 Argon Through Nov 30, 2026 $2.00 $0.10 $10.00 From Dec 1, 2026 $4.00 $0.20 $20.00 Gemini 4 Hydrogen $1.50 $0.075 $7.50 Carbon and Argon are the same price , and both are scheduled to double in price on December 1st. If they're the same price, why have two different models? Google says that Argon \"delivers Gemini 4 intelligence with faster responses and lower token spend per turn compared to Gemini 4 Carbon\" - so it may be priced the same, but it will use less tokens per task. Hydrogen, supposedly the cheap model, is currently only a 25% discount on its more capable peers. The Hydrogen price will make more sense after December 1st, when it will represent a 75% discount. It's still considerably more expensive than Claude Haiku 5.5 and GPT-6 Luna - they're both $0.10/$0.50, so Hydrogen is 15x that. I had Hydrogen generate some pelicans . Here's a full comparison grid showing the pelicans for all three members of the Gemini 4 family at their three supported effort levels: Considering how close they are in price, the difference in pelican quality for Hydrogen is quite stark. Here's how Google describe Hydrogen's intended position in their mix of models: In real-world software development, while teams rely on frontier models like Carbon and Argon for deep architectural judgment when designing systems or untangling subtle bugs, they still need a fast, disciplined execution model for writing code, running tests, and verifying changes. Hydrogen is built to stand on its own as a model for everyday work — or to pair with Carbon and Argon as the high-efficiency execution engine in multi-model workflows. Most notably, Hydrogen is the new free tier model, and is the model that will power AI features in Google Search.",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Latent Space",
+        "title": "[AINews] D-Day (Decision Models Day)",
+        "url": "https://latent.space/p/ainews-d-day-decision-models-day/",
+        "published_at": "2026-11-12T05:26:54Z",
+        "summary": "November 11, 2026 — Google enters the decision model market. At AI Engineer, Cloudflare showed which parts of a build failure a classifier could handle. TypeSafe AI showed off their production customers.",
+        "lookback_7d": false,
+        "text_excerpt": "November 11, 2026 — Google enters the decision model market. At AI Engineer, Cloudflare showed which parts of a build failure a classifier could handle. TypeSafe AI showed off their production customers. And you can hear all this and more on today’s System One track. Sponsored by SerpApi Give Your AI Agents the Full Page, Not Just the Link Retrieve public web pages by URL as clean Markdown, structured JSON, or raw HTML with SerpApi’s Extract API . Extract a single page, map a site’s URLs, or run a bounded same-site crawl. Simply set engine=extract with a URL, and add output=md for Markdown. Pair it with 100+ SerpApi search APIs to go from query to page content with one provider. Thanks to SerpApi for working with business@latent.space! Google Launches Gemini Decision 1 for Single-Pass Classification Gemini Decisions API : Google introduced a new API backed by Gemini Decision 1 . The model handles closed-set decisions, so it scores choices in a single pass instead of generating text token by token ( Sundar Pichai , Logan Kilpatrick , Google ). Specs : It supports yes/no, multiple-choice and rubric scoring, with up to 255 multiple-choice options. It accepts text, image, audio, video and PDF inputs, handles up to 1,000 questions per request, has 256K context, returns answers in 150–250 ms end to end, and attaches a confidence score to every answer ( @_philschmid ). Pricing : $0.10 per 1M input tokens, with $0 billed for output. Google says that is about 5x cheaper than Flash-Lite ( Sundar ). Origin : The project started as an internal Google DeepMind prototype. A small team shipped the model and API about six weeks later ( @_philschmid ). Google's comparison with TypeSafe's Jev : Google's own tests show Decision 1 beating Jev 1.14 on 5 of 7 shared benchmarks, including 92.2% vs 90.0% on JevBench. Jev costs $0.042 per 1M input tokens ( @kimmonismus ). Artificial Analysis evaluation : Independent results are more mixed ( Artificial Analysis ). Overall score : Decision 1 scores 66 on the Decision Index. That ties Elephant 9B and Jev 1.14, and sits 7 points behind Drex Max v1.1 and GLiDE v1.2. Strengths and weaknesses : It leads AA-Omniscience-Decision (66) and HLE-MultiChoice (49). On AA-Paperclip, it answers every question correctly on only 33% of documents, versus 63% for Drex Max. Cost and latency : It costs $345 per 1M tasks, versus $103 for Drex Max and $156\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Latent Space",
+        "title": "The Jev Revolution: What Engineers Are Already Building with System One Models",
+        "url": "https://latent.space/p/jev-revolution/",
+        "published_at": "2026-11-12T05:08:20Z",
+        "summary": "At AI Engineer Code Summit, lead Jev creator Diogo Almeida called on developers to automate everything. Also, Glean and others showed how they’re using Jev.",
+        "lookback_7d": false,
+        "text_excerpt": "At AI Engineer Code Summit, lead Jev creator Diogo Almeida called on developers to automate everything. Also, Glean and others showed how they’re using Jev. Today at the AI Engineer Code Summit , the main theme was system one models — non-generative models that return structured choices, scores, or probabilities. They’re also typically much faster and cheaper than reasoning LLMs (a.k.a. system two models). And who better to give an inspirational rallying cry for system one models than Diogo Almeida , co-founder and CEO of TypeSafe AI . Almeida was lead creator of Jev , the product that kicked off this trend less than two months ago. Jev was an instant revelation for AI engineers when it was released in September. In a podcast with Latent Space on launch (which quickly became our most popular episode of the year), Almeida explained the core problem with making LLMs the heart of software: reliability . In his keynote at AIE Code today, he took it a step further by claiming that Jev is “reliable intelligence” that should be used for “just automating everything.” Integrating system one models into code Of particular interest to AI engineers is Almeida’s point that system one models should become integrated with code. As he put it in his keynote, “code is the language of automation , therefore you need to integrate with code.” Latent Space founder swyx interprets this as a call to “liberally sprinkle ‘System One’ model calls everywhere INSIDE application code to make smarter software instead of increasingly convoluted forms of ‘concat strings together and hope for the best\" AI engineering.’” The term “smart software” was used throughout Almeida’s presentation. It sounds like the kind of term used by companies like Microsoft or IBM during Web 2.0, but in the AI era it does actually signify a harsh reality about LLM-driven software: sometimes it’s just not very smart. As Almeida quipped during his presentation, “you get Einstein 95% of the time, but Mr. Bean 5% of the time.” “And if you can't tell which is which, how the fuck are you going to automate anything,” he added. Almeida ended with an impassioned plea to “automate everything.” Like an AI-pilled, pink-haired Steve Jobs, he called out to “the dreamers and the people who don't want to be limited by everything that has happened so far,” promising that TypeSafe AI wants to “really fight for you, and we want thi\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      }
+    ],
+    "youtube": [],
+    "github": [
+      {
+        "name": "KiroCrew",
+        "full_name": "kirodotdev/KiroCrew",
+        "url": "https://github.com/kirodotdev/KiroCrew",
+        "description": "A persistent workspace for development work that self-improves and continues beyond one session.",
+        "stars": 4943,
+        "pushed_at": "2026-11-15T02:56:17Z",
+        "topics": [
+          "agent",
+          "agentic-ai",
+          "agents",
+          "ai-agent",
+          "ai-agents",
+          "automation",
+          "devtools",
+          "kiro",
+          "llm"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"assets/banner.svg\" alt=\"Kiro Crew. Keep work moving. Runs on your hardware, remembers across sessions, keeps working unattended.\"> </p> <h1 align=\"center\">Kiro Crew</h1> <p align=\"center\"> <strong>A persistent workspace for development work that self-improves and continues beyond one session.</strong> </p> <p align=\"center\"> <a href=\"https://trendshift.io/repositories/103032\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"https://trendshift.io/api/badge/trendshift/repositories/103032/daily?language=Python\" alt=\"Kiro Crew on Trendshift\" width=\"250\" height=\"55\"></a> </p> <p align=\"center\"> Kiro Crew is an open source development workspace that runs locally or remotely on your hardware. It is persistent, self-learning, and self-evolving. Work with it from the desktop app, web dashboard, and CLI, or continue the same work through connection tools like Slack and Discord. Your multi-step tasks can run unattended, recurring jobs run on your schedule, and heartbeats monitor systems until something needs attention. Kiro Crew Apps tailor that experience to a specific job, combining a purpose-built interface with agents, skills, schedules, integrations, and backend services. </p> <p align=\"center\"> <a href=\"https://github.com/kirodotdev/KiroCrew/releases\"><img src=\"https://img.shields.io/badge/Download-macOS%20%7C%20Linux%20%7C%20Windows-2f6feb?style=flat-square\" alt=\"Download Kiro Crew for macOS, Linux, or Windows\"></a> <a href=\"docs/README.md\"><img src=\"https://img.shields.io/badge/Documentation-1f6feb?style=flat-square\" alt=\"Read the documentation\"></a> <a href=\"docs/guides/install.md\"><img src=\"https://img.shields.io/badge/Install%20guide-macOS%20%7C%20Linux%20%7C%20Windows-6e7781?style=flat-square\" alt=\"Install guide for macOS, Linux, and Windows\"></a> <a href=\"CONTRIBUTING.md\"><img src=\"https://img.shields.io/badge/Contributing-238636?style=flat-square\" alt=\"Contributing guide\"></a> <a href=\"SECURITY.md\"><img src=\"https://img.shields.io/badge/Security-8250df?style=flat-square\" alt=\"Security policy\"></a> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/License-Apache%202.0-656d76?style=flat-square\" alt=\"Apache 2.0 license\"></a> </p> <p align=\"center\"> <a href=\"#quick-start\">Quick start</a> · <a href=\"#build-from-source\">Build from source</a> · <a href=\"#why-kiro-crew\">Why Kiro Crew</a> · <a href=\"#what-kiro-crew-does\">Capa\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": true
+      },
+      {
+        "name": "archestra",
+        "full_name": "archestra-ai/archestra",
+        "url": "https://github.com/archestra-ai/archestra",
+        "description": "Enterprise AI Platform with guardrails, MCP registry, gateway & orchestrator",
+        "stars": 4444,
+        "pushed_at": "2026-11-15T02:50:08Z",
+        "topics": [
+          "a2a",
+          "a2a-mcp",
+          "acp",
+          "agent",
+          "ai",
+          "chatgpt",
+          "chatgpt-api",
+          "claude",
+          "deepseek",
+          "gemini",
+          "k8s",
+          "mcp",
+          "mcp-client",
+          "mcp-gateway",
+          "mcp-host",
+          "mcp-server",
+          "mcp-servers",
+          "mcp-tools",
+          "openai",
+          "runtime"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"logo.svg\" alt=\"Archestra\" width=\"520\" /> **Secure AI Platform** *Built on a strong security and observability foundation: SSO and RBAC, sandboxed code execution, Lethal-Trifecta guardrails, OpenTelemetry traces, and Prometheus metrics — first-class, not bolted on.* [![License](https://img.shields.io/badge/License-AGPL%203.0%20%2F%20Enterprise-blue.svg)](LICENSE.md) [![Release](https://img.shields.io/github/v/release/archestra-ai/archestra)](https://github.com/archestra-ai/archestra/releases) [![Contributors](https://img.shields.io/github/contributors/archestra-ai/archestra)](https://github.com/archestra-ai/archestra/graphs/contributors) [![Last commit](https://img.shields.io/github/last-commit/archestra-ai/archestra)](https://github.com/archestra-ai/archestra/commits/main) [![Commit activity](https://img.shields.io/github/commit-activity/m/archestra-ai/archestra)](https://github.com/archestra-ai/archestra/pulse) [Quickstart](https://archestra.ai/docs/get-started#run-archestra) · [Docs](https://archestra.ai/docs/get-started) · [Releases](https://github.com/archestra-ai/archestra/releases) · [Slack](https://archestra.ai/join-slack) <br /> https://github.com/user-attachments/assets/912b85e2-ef14-4e83-a807-5e2a81457a88 </div> --- ## What it does Point your users — or your agents, or Claude / Codex / Cursor — at one URL. Archestra handles the rest: - 💬 **Chat for non-technical users.** Internal AI assistant with [projects](https://archestra.ai/docs/chat/projects), [MCP apps](https://archestra.ai/docs/chat/apps), and [Slack](https://archestra.ai/docs/agents/triggers-and-channels/slack), [MS Teams](https://archestra.ai/docs/agents/triggers-and-channels/ms-teams), and [email](https://archestra.ai/docs/agents/triggers-and-channels/email) front-ends. - 🛠️ **Developer LLM & MCP portal.** One token for Claude Code, Codex, Cursor — see the [proxy](https://archestra.ai/docs/llm-proxy). - 🚪 **LLM gateway** for [any provider](https://archestra.ai/docs/llm-proxy/providers) (Anthropic, OpenAI, Azure, Bedrock, DeepSeek, …) with [cost limits](https://archestra.ai/docs/llm-proxy/costs-and-limits), [virtual API keys](https://archestra.ai/docs/llm-proxy/authentication), and [dynamic model routing](https://archestra.ai/docs/reference/clients/model-router-client-credentials). - 🔌 **MCP gateway** with [OAuth + On-Behalf-Of](https://archestra.ai/docs/mcp\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "ai-engineering-interview-questions-company-wise",
+        "full_name": "pallavi-shekhar/ai-engineering-interview-questions-company-wise",
+        "url": "https://github.com/pallavi-shekhar/ai-engineering-interview-questions-company-wise",
+        "description": "Your Cheat Sheet For AI Engineering Interviews at Top AI Companies - Questions and Answers.",
+        "stars": 2067,
+        "pushed_at": "2026-11-15T02:55:14Z",
+        "topics": [
+          "ai",
+          "ai-engineering",
+          "ai-engineering-interview",
+          "ai-interview",
+          "ai-interview-questions",
+          "company-wise-prep",
+          "company-wise-questions",
+          "interview-questions",
+          "llm-inference",
+          "questions-and-answers"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img alt=\"AI Engineering Interview Questions Company Wise\" src=\"https://github.com/pallavi-shekhar/ai-engineering-interview-questions-company-wise/blob/main/assets/banner.png\"> </p> # AI Engineering Interview Questions Company Wise > AI Engineering Interview Questions Company Wise - Your Cheat Sheet For AI Engineering Interviews at Top AI Companies > > Real interview questions asked in AI Engineering interviews at 35 companies, organized company by company, with answers linked wherever we have them. > > These interview questions and answers are helpful for roles such as: > > - AI Engineer > - Gen AI Engineer > - LLM Engineer > - Agentic AI Engineer > - AI Agent Engineer > - Machine Learning Engineer > - Research Engineer > - Applied Scientist > - Forward Deployed Engineer > - AI Solutions Architect > - AI Platform Engineer > - Applied AI Engineer > - LLM Inference and Performance Engineer > - MLOps Engineer > - LLMOps Engineer ## Table of Contents - [How to use this](#how-to-use-this) - [Common Questions Asked Across Companies](#common-questions-asked-across-companies) - [LLM Internals and Architecture](#llm-internals-and-architecture) - [Inference, Serving and GPU Performance](#inference-serving-and-gpu-performance) - [RAG and Retrieval](#rag-and-retrieval) - [Agents and Tool Use](#agents-and-tool-use) - [Fine-Tuning, Post-Training and Alignment](#fine-tuning-post-training-and-alignment) - [Evaluation and Observability](#evaluation-and-observability) - [Safety, Security and Responsible AI](#safety-security-and-responsible-ai) - [Multimodal, Speech and Voice AI](#multimodal-speech-and-voice-ai) - [AI System Design](#ai-system-design) - [Coding and Data Structures](#coding-and-data-structures) - [Frontier AI Labs](#frontier-ai-labs) - [Anthropic](#anthropic) - [OpenAI](#openai) - [Google DeepMind and Google AI](#google-deepmind-and-google-ai) - [Meta (Superintelligence Labs, FAIR, Llama)](#meta-superintelligence-labs-fair-llama) - [xAI](#xai) - [Mistral AI](#mistral-ai) - [Cohere](#cohere) - [DeepSeek](#deepseek) - [Moonshot AI (Kimi)](#moonshot-ai-kimi) - [Zhipu AI (GLM)](#zhipu-ai-glm) - [Alibaba (Qwen)](#alibaba-qwen) - [Sarvam AI](#sarvam-ai) - [Big Tech AI Organizations](#big-tech-ai-organizations) - [Microsoft](#microsoft) - [Amazon (AWS)](#amazon-aws) - [Apple](#apple) - [NVIDIA](#nvidia) - [Tesla](#tesla) - [Consumer-Scale ML Compan\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": true
+      },
+      {
+        "name": "indie-hacker-tools-plus",
+        "full_name": "XiaomingX/indie-hacker-tools-plus",
+        "url": "https://github.com/XiaomingX/indie-hacker-tools-plus",
+        "description": "为独立开发者准备的精选技术栈和工具仓库来了！这里有你最需要的工具，帮你提升开发效率、节约成本，最重要的是——这些工具都是市场上热门的，经过验证的。🚀A curated collection of tech stacks and tools tailored for independent developers is here! these are proven, popular tools widely used in the industry. 🚀",
+        "stars": 1936,
+        "pushed_at": "2026-11-15T02:25:25Z",
+        "topics": [
+          "agent",
+          "ai",
+          "awesome",
+          "awesome-list",
+          "awesome-lists",
+          "aws",
+          "azure",
+          "cloudflare",
+          "github",
+          "hacker",
+          "indiehacker",
+          "llm",
+          "nextjs",
+          "shadcn"
+        ],
+        "source": "search",
+        "text_excerpt": "## 🌍 **开发者出海，选对工具是关键！** 为独立开发者准备的精选技术栈和工具仓库来了！这里有你最需要的工具，帮你提升开发效率、节约成本，最重要的是——这些工具都是市场上热门的，经过验证的。🚀 为什么你会喜欢我们的推荐： - **效率神器**：帮你以最快的速度搞定项目，省下宝贵的时间 ⏱️。 - **省钱利器**：把每一分钱花在刀刃上，让开发成本降到最低 💸。 - **热门工具**：用被行业认可的好工具，避免那些没人用、掉坑里的风险 📈。 不想踩坑、不想多花冤枉钱？那就来看看我们为你整理的工具合集吧！💡✨ 欢迎大家提PR和issues，帮助我们一起完善这个工具库，让每一位开发者都能从中受益，获取最精粹的技术支持！✨ ## 贡献方法 - 欢迎投稿，推荐或自荐文章/软件/资源，请[提交 issue](https://github.com/XiaomingX/indie-hacker-tools-plus/issues/new) 。 ## 常用资源清单 🌍 [跨境出海技术栈](https://github.com/XiaomingX/indie-hacker-tools-plus) 🤖 [AI搞钱原则手册](https://github.com/XiaomingX/ai-money-maker-handbook) 🛠️ [构建你自己的X](https://github.com/XiaomingX/build-your-own-xxx) 📋 [1000个中国独立开发者项目](https://github.com/XiaomingX/1000-chinese-independent-developer-plus) 📋 [100k-us-domains:ai导航站点数据集](https://github.com/XiaomingX/100k-us-domains) 🧠 [世界上覆盖最全的优秀Qwen（千问）提示语大全](https://github.com/XiaomingX/awesome-qwen-prompt-insight) ## Web 开发模板 (2026 精选版) ### 全栈 SaaS 启动器 (SaaS Starters) | 技术栈 | 备注 | | --- | --- | | [T3 Stack](https://create.t3.gg/) | **类型安全**。Next.js + TypeScript + tRPC 的极致开发体验。 | | [Marblism](https://www.marblism.com/) | **AI 生成全栈**。通过 Prompt 直接生成包含后端、数据库和前端的完整 SaaS。 | ### 管理后台 (Admin Panels) | 技术栈 | 备注 | | --- | --- | | [Refine](https://refine.dev/) | **黑马工具**。无头 (Headless) 后台框架，支持自由组合各类 UI 库。 | | [shadcn-admin](https://github.com/satnaing/shadcn-admin) | **简洁美观**。基于 shadcn/ui 的仪表盘模板，目前非常流行。 | ### 现代 UI 组件体系 (Modern UI) | 技术栈 | | 备注 | | --- | --- | --- | | [shadcn/ui](https://ui.shadcn.com/) | | **行业标准**。不再安装组件库，而是直接复制代码块，拥有 100% 控制权。 | | [Magic UI](https://magicui.design/) | | **动态视觉**。专注于动效和高逼格交互组件，提升页面质感。 | | [Aceternity UI](https://ui.aceternity.com/) | | **现代感利器**。提供极具视觉冲击力的落地页组件。 | | [v0.dev](https://v0.dev/) | | **AI 生成 UI**。Vercel 出品，通过自然语言直接生成可用的 React 组件代码。 | | [Hyperiux Vault](https://vault.hyperiux.com/) | | **动效组件库**。为 Next.js 打造的动画效果与交互组件集合，通过 CLI 将源码直接复制进项目，拥有完整控制权。 | ### 内容驱动框架 (Content & SEO) | 技术栈 | 备注 | | --- | --- | | [Next.js (SSG)](https://nextjs.org/) | **全能选手**。强大的静态生成模式，兼顾性能与全栈扩展性。 | | [Hono](https://hono.dev/) | **极致性能**。支持边缘计算（Cloudflare Workers, Edge），是构建高性能 Content API 与极速 SEO 页面的首选。 | | [Astro](https://astro.build/) | **孤岛架构**。极致的静态性能，SEO 与内容站点的王者。 | ### AI 知识、调研与笔记 (AI Knowledge & Research) | 工具名 | 备注 | | --- | --- | | [NotebookLM](https://notebooklm.google.com/) | **Google 出品**。基于上传源文件的 AI 笔记与调研神器，支持生成播客、思维导图、幻灯片等。 | | [Perplexity.ai](https://www.perplexity.ai/) | **AI 搜索**。结\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "agentes-chat",
+        "full_name": "agentes-chat/agentes-chat",
+        "url": "https://github.com/agentes-chat/agentes-chat",
+        "description": "Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex, Gemini or Grok, with MCP tools, their own computer and browser, routines, memory and approvals. Web, desktop and phone apps. Docker Compose + Postgres. AGPL-3.0.",
+        "stars": 1408,
+        "pushed_at": "2026-11-15T02:48:57Z",
+        "topics": [
+          "agentic-ai",
+          "ai-agents",
+          "browser-automation",
+          "chat",
+          "claude",
+          "claude-code",
+          "codex",
+          "collaboration",
+          "computer-use",
+          "docker-compose",
+          "gemini",
+          "grok",
+          "human-in-the-loop",
+          "llm",
+          "mcp",
+          "multi-agent",
+          "openai",
+          "self-hosted",
+          "slack-alternative",
+          "team-chat"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <a href=\"https://agentes.chat\"><img src=\"apps/web/public/favicon.svg\" alt=\"agentes.chat\" width=\"96\"></a> </p> <h1 align=\"center\">agentes.chat</h1> <p align=\"center\"><b>The open-source, self-hosted Slack alternative where your team and AI agents work together.</b></p> <p align=\"center\"> <a href=\"https://agentes.chat\">Website</a> · <a href=\"https://agentes.chat\">Cloud</a> · <a href=\"SELF_HOSTING.md\">Self-hosting</a> · <a href=\"#features\">Features</a> · <a href=\"https://github.com/agentes-chat/agentes-chat/discussions\">Discussions</a> </p> <p align=\"center\"> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-AGPL--3.0-blue\" alt=\"License: AGPL-3.0\"></a> <a href=\"https://github.com/agentes-chat/agentes-chat/actions/workflows/ci.yml\"><img src=\"https://github.com/agentes-chat/agentes-chat/actions/workflows/ci.yml/badge.svg\" alt=\"CI\"></a> <a href=\"https://github.com/agentes-chat/agentes-chat/pkgs/container/agentes\"><img src=\"https://img.shields.io/badge/docker-ghcr.io%2Fagentes--chat%2Fagentes-2496ED?logo=docker&logoColor=white\" alt=\"Docker image\"></a> <a href=\"https://github.com/agentes-chat/agentes-chat/stargazers\"><img src=\"https://img.shields.io/github/stars/agentes-chat/agentes-chat?style=social\" alt=\"GitHub stars\"></a> </p> <p align=\"center\"> <img src=\"docs/media/readme-hero.png\" alt=\"An agentes.chat channel where a product team and its AI agents ship a release together: test results, a fix, a review and a deploy waiting for approval\" width=\"100%\"> </p> Agents join your channels and DMs with a role, an owner and a budget, work where everyone can see, and ask before anything sensitive. They think with Claude, ChatGPT and Codex, Gemini, Grok or any OpenRouter model, use MCP tools, and get a computer and a browser of their own. Self-hosting is free and always will be (AGPL-3.0, no license key), or use agentes.chat Cloud, the paid, hosted option: both run this same codebase. Changing it without publishing your changes, or reselling it under your own brand? There is a [commercial license](COMMERCIAL.md). ## Why agentes.chat - **One conversation for people and agents.** Agents are members of the workspace, not a sidebar bot: they read the channel, answer when it's theirs to answer, and hand work back and forth. - **Safe by default.** Merges, deploys and anything a connector marks sensitive wait for a person's approval in the chat. Ev\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "labs-molt",
+        "full_name": "NVIDIA-NeMo/labs-molt",
+        "url": "https://github.com/NVIDIA-NeMo/labs-molt",
+        "description": "A scalable, agentic-first, and HuggingFace-native RL framework for research (9k lines).",
+        "stars": 1290,
+        "pushed_at": "2026-11-15T02:53:14Z",
+        "topics": [
+          "agentic-rl",
+          "context-parallelism",
+          "expert-parallelism",
+          "fsdp",
+          "huggingface",
+          "llm",
+          "rl-framework",
+          "rlhf",
+          "rlvr",
+          "tensor-parallelism"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> # 🦋 Molt **A Hugging Face-native, minimal, and scalable framework for agentic RL research.** Ray · vLLM · NeMo AutoModel: the smallest Hugging Face-native stack for fully-async, multimodal, multi-turn agentic RL at 1T-class scale. <br/> [![Project Page](https://img.shields.io/badge/Project_Page-Website-76B900?style=for-the-badge)](https://nvidia-nemo.github.io/labs-molt/) [![Docs](https://img.shields.io/badge/Docs-Guide-2563eb?style=for-the-badge)](https://nvidia-nemo.github.io/labs-molt/guide/) [![License](https://img.shields.io/badge/License-Apache_2.0-2563eb?style=flat-square)](LICENSE) ![PyTorch](https://img.shields.io/badge/PyTorch-native-EE4C2C?style=flat-square&logo=pytorch&logoColor=white) ![Hugging Face](https://img.shields.io/badge/Hugging_Face-native-FFD21E?style=flat-square&logo=huggingface&logoColor=black) ![NeMo AutoModel](https://img.shields.io/badge/Training-NeMo_AutoModel-76B900?style=flat-square&logo=nvidia&logoColor=white) ![vLLM](https://img.shields.io/badge/Rollout-vLLM-7c3aed?style=flat-square) ![Ray](https://img.shields.io/badge/Runtime-Ray-028CF0?style=flat-square) ![RL code](https://img.shields.io/badge/RL_code-~9.2K_LOC-10b981?style=flat-square) [![Tech Report](https://img.shields.io/badge/Tech_Report-ResearchGate-00CCBB?style=flat-square&logo=researchgate&logoColor=white)](https://www.researchgate.net/publication/409325071_Molt_A_Scalable_PyTorch-Native_Training_Framework_for_Agentic_Reinforcement_Learning) <a href=\"https://deepwiki.com/NVIDIA-NeMo/labs-molt\"><img src=\"https://devin.ai/assets/deepwiki-badge.png\" alt=\"Ask DeepWiki.com\" height=\"20\"></a> <br/> [**Project Page**](https://nvidia-nemo.github.io/labs-molt/) · [**Docs**](https://nvidia-nemo.github.io/labs-molt/guide/) · [**Paper**](https://www.researchgate.net/publication/409325071_Molt_A_Scalable_PyTorch-Native_Training_Framework_for_Agentic_Reinforcement_Learning) · [**Video**](https://youtu.be/3DqXGFIce0o) · [**News**](#-news) · [**Architecture**](#-architecture) · [**Why Molt**](#-why-molt) · [**Installation**](#-installation) · [**Quick Start**](#-quick-start) · [**Comparison**](#-how-it-compares) · [**Documentation**](#-documentation) · [**Contributing**](#-contributing) | Package | SFT | RL | Runtime | |---|---|---|---| | `molt` | `molt.cli.train_sft` | `molt.cli.train_rl_ray` | vLLM | </div> Molt is **agentic-first**, **Hugging Face-native**, *\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "LoopForge",
+        "full_name": "Tencent/LoopForge",
+        "url": "https://github.com/Tencent/LoopForge",
+        "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+        "stars": 946,
+        "pushed_at": "2026-11-15T02:55:03Z",
+        "topics": [
+          "agent-orchestration",
+          "agentic-workflow",
+          "ai-agents",
+          "ai-coding",
+          "claude-code",
+          "code-review",
+          "codebuddy",
+          "codex",
+          "coding-agents",
+          "cursor",
+          "developer-tools",
+          "human-on-the-loop",
+          "llm",
+          "mcp",
+          "multi-agent",
+          "sdlc",
+          "self-hosted",
+          "sop",
+          "workflow-automation",
+          "workflow-engine"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/assets/readme/hero-en-dark.svg\"> <img src=\"docs/assets/readme/hero-en.svg\" alt=\"LoopForge — From idea to merged code. Chat with coding agents in sandboxed workspaces, run repeatable SOPs, and approve what ships.\" width=\"100%\"> </picture> </p> <p align=\"center\"> <a href=\"https://github.com/Tencent/LoopForge/actions/workflows/platform.yml\"><img src=\"https://img.shields.io/github/actions/workflow/status/Tencent/LoopForge/platform.yml?branch=main&label=CI&style=flat-square\" alt=\"CI\"></a> <a href=\"https://www.npmjs.com/package/loopforge-cli\"><img src=\"https://img.shields.io/npm/v/loopforge-cli?label=loopforge-cli&color=7b61ff&style=flat-square\" alt=\"npm loopforge-cli\"></a> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-7b61ff?style=flat-square\" alt=\"MIT License\"></a> <img src=\"https://img.shields.io/badge/self--hosted-Docker-526ce8?style=flat-square&logo=docker&logoColor=white\" alt=\"Self-hosted with Docker\"> <a href=\"https://github.com/Tencent/LoopForge/stargazers\"><img src=\"https://img.shields.io/github/stars/Tencent/LoopForge?style=flat-square&color=f59e0b\" alt=\"GitHub stars\"></a> </p> <p align=\"center\"> <a href=\"https://trendshift.io/repositories/300138?utm_source=repository-badge&utm_medium=badge&utm_campaign=badge-repository-300138\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"https://trendshift.io/api/badge/repositories/300138\" alt=\"Tencent%2FLoopForge | Trendshift\" width=\"250\" height=\"55\"/></a> </p> <p align=\"center\"> <b>English</b> · <a href=\"README.zh-CN.md\">简体中文</a> </p> <p align=\"center\"> <a href=\"#two-ways-to-work\">Two ways to work</a> · <a href=\"#quick-start\">Quick start</a> · <a href=\"#how-sops-work\">SOPs</a> · <a href=\"#features\">Features</a> · <a href=\"#loopforge-local\">Local</a> · <a href=\"#faq\">FAQ</a> · <a href=\"#documentation\">Docs</a> </p> https://github.com/user-attachments/assets/8af401d9-1aae-427c-b4bc-455c12d17beb <p align=\"center\"><sub>80-second product tour (1080p, with sound).</sub></p> **LoopForge** is a self-hosted workspace where your team ships software with coding agents. Describe what you need to **Main Bot** in chat: it opens a Docker sandbox, checks out your repositories, delegates to project roles, and opens the PR. When a way of working proves itself, save it as an **SOP** (a standard workflow of agents, scripts\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "Wegent",
+        "full_name": "wecode-ai/Wegent",
+        "url": "https://github.com/wecode-ai/Wegent",
+        "description": "Plan, build, and deliver with an open-source, self-hostable AI workspace for coding, collaboration, and automation.",
+        "stars": 888,
+        "pushed_at": "2026-11-15T02:20:39Z",
+        "topics": [
+          "agent",
+          "ai",
+          "chatbot",
+          "claude-code",
+          "codex",
+          "dsh-plugin",
+          "wework"
+        ],
+        "source": "search",
+        "text_excerpt": "# Wegent > An open-source work system where people and AI move projects forward together. English | [简体中文](README_zh.md) [![CI](https://github.com/wecode-ai/Wegent/actions/workflows/test.yml/badge.svg)](https://github.com/wecode-ai/Wegent/actions/workflows/test.yml) [![License](https://img.shields.io/github/license/wecode-ai/Wegent)](LICENSE) [![GitHub Issues](https://img.shields.io/github/issues/wecode-ai/Wegent)](https://github.com/wecode-ai/Wegent/issues) <a href=\"https://linux.do\"> <img alt=\"LINUX DO\" src=\"https://img.shields.io/badge/LINUX-DO-FFB003.svg?logo=data:image/svg%2bxml;base64,DQo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiPjxwYXRoIGQ9Ik00Ni44Mi0uMDU1aDYuMjVxMjMuOTY5IDIuMDYyIDM4IDIxLjQyNmM1LjI1OCA3LjY3NiA4LjIxNSAxNi4xNTYgOC44NzUgMjUuNDV2Ni4yNXEtMi4wNjQgMjMuOTY4LTIxLjQzIDM4LTExLjUxMiA3Ljg4NS0yNS40NDUgOC44NzRoLTYuMjVxLTIzLjk3LTIuMDY0LTM4LjAwNC0yMS40M1EuOTcxIDY3LjA1Ni0uMDU0IDUzLjE4di02LjQ3M0MxLjM2MiAzMC43ODEgOC41MDMgMTguMTQ4IDIxLjM3IDguODE3IDI5LjA0NyAzLjU2MiAzNy41MjcuNjA0IDQ2LjgyMS0uMDU2IiBzdHlsZT0ic3Ryb2tlOm5vbmU7ZmlsbC1ydWxlOmV2ZW5vZGQ7ZmlsbDojZWNlY2VjO2ZpbGwtb3BhY2l0eToxIi8+PHBhdGggZD0iTTQ3LjI2NiAyLjk1N3EyMi41My0uNjUgMzcuNzc3IDE1LjczOGE0OS43IDQ5LjcgMCAwIDEgNi44NjcgMTAuMTU3cS00MS45NjQuMjIyLTgzLjkzIDAgOS43NS0xOC42MTYgMzAuMDI0LTI0LjM4N2E2MSA2MSAwIDAgMSA5LjI2Mi0xLjUwOCIgc3R5bGU9InN0cm9rZTpub25lO2ZpbGwtcnVsZTpldmVub2RkO2ZpbGw6IzE5MTkxOTtmaWxsLW9wYWNpdHk6MSIvPjxwYXRoIGQ9Ik03Ljk4IDcwLjkyNmMyNy45NzctLjAzNSA1NS45NTQgMCA4My45My4xMTNRODMuNDI2IDg3LjQ3MyA2Ni4xMyA5NC4wODZxLTE4LjgxIDYuNTQ0LTM2LjgzMi0xLjg5OC0xNC4yMDMtNy4wOS0yMS4zMTctMjEuMjYyIiBzdHlsZT0ic3Ryb2tlOm5vbmU7ZmlsbC1ydWxlOmV2ZW5vZGQ7ZmlsbDojZjlhZjAwO2ZpbGwtb3BhY2l0eToxIi8+PC9zdmc+\" /></a> Wegent brings team members, AI agents, and personal stand-ins together around the same Issue: describe a goal, assign work, execute tasks, and deliver results. Discussions, execution records, and deliverables stay connected. Work on a local coding project on your own, or hand work across your team in a shared project space. [Download the latest Wegent Desktop](https://github.com/wecode-ai/Wegent/releases/latest) · [Quick start](#quick-start) · [Documentation](https://wecode-ai.github.io/wegent-docs/) · [Contributing](CONTRIBUTING.md) ## One Issue, the whole team [![Watch the 90-second collaboration demo (English)](https://github.com/wecode-ai/Wegent/releases/download/readme-as\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "ai-system-design",
+        "full_name": "amitshekhariitbhu/ai-system-design",
+        "url": "https://github.com/amitshekhariitbhu/ai-system-design",
+        "description": "AI System Design - Learn how to design AI systems built on LLMs, RAG, and AI Agents step by step.",
+        "stars": 871,
+        "pushed_at": "2026-11-15T02:52:27Z",
+        "topics": [
+          "ai",
+          "ai-agents",
+          "ai-engineering",
+          "ai-system",
+          "ai-system-design",
+          "ai-systems",
+          "ai-systems-design",
+          "llm",
+          "system-design",
+          "system-design-interview"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img alt=\"AI System Design - Learn how to design AI systems built on LLMs, RAG, and AI Agents step by step\" src=\"https://github.com/amitshekhariitbhu/ai-system-design/blob/main/assets/banner.png\"> </p> # AI System Design **AI System Design - A complete guide to learn AI System Design step by step - from LLM inference, GPUs, KV Cache, and caching to RAG, Vector Databases, AI Agents, MCP, Multi-Agent Systems, Voice AI, Guardrails, Evaluation, Observability, Cost Optimization, and a step-by-step framework to crack any AI System Design interview. Everything in one place, explained in simple words, with detailed blogs for every deep dive.** > This AI System Design guide is helpful for anyone who wants to become: > > - AI Engineer > - Gen AI Engineer > - LLM Engineer > - Agentic AI Engineer > - AI Agent Engineer > - Forward Deployed Engineer > - AI Solutions Architect > - AI Platform Engineer > - Applied AI Engineer > - Machine Learning Engineer > - MLOps Engineer > - LLMOps Engineer > - Backend Engineer building AI products --- ### Prepared and maintained by the **Founder** of [Outcome School](https://outcomeschool.com): Amit Shekhar ### Follow Amit Shekhar - [X/Twitter](https://twitter.com/amitiitbhu) - [LinkedIn](https://www.linkedin.com/in/amit-shekhar-iitbhu) - [GitHub](https://github.com/amitshekhariitbhu) ### Follow Outcome School - [YouTube](https://youtube.com/@OutcomeSchool) - [X/Twitter](https://x.com/outcome_school) - [LinkedIn](https://www.linkedin.com/company/outcomeschool) - [GitHub](https://github.com/OutcomeSchool) ## I teach at Outcome School - [AI and Machine Learning](https://outcomeschool.com/program/ai-and-machine-learning) --- > **Note: AI System Design is moving very fast, so this guide will continue to grow as I write more blogs on new topics. Bookmark it and come back whenever you want a refresher. Keep learning.** --- ## Table of Contents - [About This AI System Design Guide](#about-this-ai-system-design-guide) - [What is AI System Design?](#what-is-ai-system-design) - [Who is This AI System Design Guide For?](#who-is-this-ai-system-design-guide-for) - [What Will We Learn in This AI System Design Guide?](#what-will-we-learn-in-this-ai-system-design-guide) - [How to Use This AI System Design Guide](#how-to-use-this-ai-system-design-guide) - [AI System Design Learning Path](#ai-system-design-learning-path) - [Why study A\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": true
+      },
+      {
+        "name": "python-sdks",
+        "full_name": "livekit/python-sdks",
+        "url": "https://github.com/livekit/python-sdks",
+        "description": "LiveKit real-time and server SDKs for Python",
+        "stars": 394,
+        "pushed_at": "2026-11-15T02:48:37Z",
+        "topics": [
+          "agents",
+          "ai",
+          "python",
+          "real-time",
+          "webrtc"
+        ],
+        "source": "search",
+        "text_excerpt": "<!--BEGIN_BANNER_IMAGE--> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"/.github/banner_dark.png\"> <source media=\"(prefers-color-scheme: light)\" srcset=\"/.github/banner_light.png\"> <img style=\"width:100%;\" alt=\"The LiveKit icon, the name of the repository and some sample code in the background.\" src=\"https://raw.githubusercontent.com/livekit/python-sdks/main/.github/banner_light.png\"> </picture> <!--END_BANNER_IMAGE--> [![pypi-v](https://img.shields.io/pypi/v/livekit.svg?label=livekit)](https://pypi.org/project/livekit/) [![pypi-v](https://img.shields.io/pypi/v/livekit-api.svg?label=livekit-api)](https://pypi.org/project/livekit-api/) # 📹🎙️🐍 Python SDK for LiveKit <!--BEGIN_DESCRIPTION--> Use this SDK to add realtime video, audio and data features to your Python app. By connecting to <a href=\"https://livekit.io/\">LiveKit</a> Cloud or a self-hosted server, you can quickly build applications such as multi-modal AI, live streaming, or video calls with just a few lines of code. <!--END_DESCRIPTION--> This repo contains two packages - [livekit](https://pypi.org/project/livekit/): Real-time SDK for connecting to LiveKit as a participant - [livekit-api](https://pypi.org/project/livekit-api/): Access token generation and server APIs <!--BEGIN_AGENTS_INFO--> > [!IMPORTANT] > If you're building Voice AI, [LiveKit Agents](https://github.com/livekit/agents) is the SDK for code-first realtime voice agents. STT, LLM, TTS, turn detection, [expressive speech](https://docs.livekit.io/agents/models/tts/expressive/), [keyterm accuracy](https://docs.livekit.io/agents/models/stt/keyterms/), tool usage, and telephony all come bundled in the framework. It's available in both [Python](https://github.com/livekit/agents) and [Node.js](https://github.com/livekit/agents-js). > > ```python > # agent.py > from livekit import agents > from livekit.agents import Agent, AgentServer, AgentSession, STTContextOptions, TurnHandlingOptions, inference > > server = AgentServer() > > > @server.rtc_session(agent_name=\"my-agent\") > async def my_agent(ctx: agents.JobContext): > session = AgentSession( > stt=inference.STT(model=\"deepgram/nova-3\", language=\"multi\"), > llm=inference.LLM(model=\"google/gemma-4-31b-it\"), > tts=inference.TTS(model=\"inworld/inworld-tts-2\", voice=\"Ashley\"), > turn_handling=TurnHandlingOptions(turn_detection=inference.TurnDetector()), > stt_context_options=STTC\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "papilot",
+        "full_name": "PapilotAI/papilot",
+        "url": "https://github.com/PapilotAI/papilot",
+        "description": "Next-Generation AI LaTeX Editor: Don't read or write LaTeX. Just work on the PDF.",
+        "stars": 296,
+        "pushed_at": "2026-11-15T02:27:00Z",
+        "topics": [
+          "academic",
+          "agent",
+          "agents",
+          "ai-agent",
+          "diff",
+          "latex-editor",
+          "skills",
+          "writing"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"docs/assets/wordmark.svg#gh-light-mode-only\" width=\"220\" height=\"69\" alt=\"Papilot\"><img src=\"docs/assets/wordmark-dark.svg#gh-dark-mode-only\" width=\"220\" height=\"69\" alt=\"Papilot\"><br>**Next-Generation AI LaTeX Editor** # Don't read or write `.tex`<br>Just work on the <img src=\"docs/assets/pdf.svg\" width=\"34\" height=\"41\" align=\"absmiddle\" alt=\"PDF\"> A **new paradigm** for responsible writing and typesetting with AI. <!-- BEGIN BADGES --> [![License: MIT](https://img.shields.io/github/license/PapilotAI/papilot?style=flat&color=22c55e)](LICENSE) [![CI](https://img.shields.io/github/actions/workflow/status/PapilotAI/papilot/ci.yml?branch=main&style=flat&label=CI)](https://github.com/PapilotAI/papilot/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/PapilotAI/papilot?style=flat&label=release&color=0969da)](https://github.com/PapilotAI/papilot/releases/latest) [![GitHub total downloads](https://img.shields.io/github/downloads/PapilotAI/papilot/total?style=flat&logo=github&label=downloads&color=0969da)](https://github.com/PapilotAI/papilot/releases) [![npm monthly downloads](https://img.shields.io/npm/dm/papilot?style=flat&logo=npm&label=downloads&color=cb3837)](https://www.npmjs.com/package/papilot) <!-- END BADGES --> <p data-language-switcher><sub><a href=\"README.md\">English</a> · <a href=\"docs/readme/README.zh-CN.md\">简体中文</a> · <a href=\"docs/readme/README.zh-Hant.md\">繁體中文</a> · <a href=\"docs/readme/README.ja.md\">日本語</a> · <a href=\"docs/readme/README.ko.md\">한국어</a> · <a href=\"docs/readme/README.de.md\">Deutsch</a> · <a href=\"docs/readme/README.fr.md\">Français</a> · <a href=\"docs/readme/README.es.md\">Español</a> · <a href=\"docs/readme/README.pt.md\">Português</a> · <a href=\"docs/readme/README.it.md\">Italiano</a> · <a href=\"docs/readme/README.sv.md\">Svenska</a></sub></p> </div> <p align=\"center\"> <a href=\"https://papilot.ai\"> <picture> <source media=\"(prefers-color-scheme: dark) and (max-width: 600px)\" srcset=\"docs/assets/readme-showcase/hero-compact-dark.png\"> <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/assets/readme-showcase/hero-dark.png\"> <source media=\"(max-width: 600px)\" srcset=\"docs/assets/readme-showcase/hero-compact.png\"> <img src=\"docs/assets/readme-showcase/hero.png\" alt=\"Papilot shows an AI edit as a typeset before-and-after on the PDF, with Accept, Reject and Comment.\" width=\"900\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "cevahir-ai",
+        "full_name": "myylogic/cevahir-ai",
+        "url": "https://github.com/myylogic/cevahir-ai",
+        "description": "Full-stack open-source AI engine for building language models — tokenizer training, transformer architecture, cognitive reasoning and chat pipeline.",
+        "stars": 291,
+        "pushed_at": "2026-11-15T02:54:08Z",
+        "topics": [
+          "ai-",
+          "ai-engine",
+          "bpe",
+          "cognitive-ai-",
+          "conversational-ai",
+          "deep-learning",
+          "language-model",
+          "llm",
+          "llm-engine-",
+          "llm-training",
+          "machine-learning",
+          "nlp",
+          "open-source",
+          "rag",
+          "tokenizer",
+          "transformer",
+          "turkish-nlp"
+        ],
+        "source": "search",
+        "text_excerpt": "# 🇹🇷 Cevahir AI & Engine [English](README.md) · [Türkçe](README-TR.md) [Research archive DOI: 10.5281/zenodo.24235648](https://doi.org/10.5281/zenodo.24235648) · [Research reports](docs/publications/README.md) **An AI engine combining tokenizer infrastructure developed specifically for Turkish, a trainable language-model core and cognitive systems.** I'm Muhammed Yasin Yılmaz. I built Cevahir to bring data preparation, model learning and the use of a trained model in conversation into one codebase. It includes its own BPE pipeline, a configurable PyTorch Transformer decoder, training and checkpoint management, generation, cognitive workflows, conversational memory, and application services. I want developers, especially young people in Türkiye, to have a foundation they can inspect, train on their own data and extend with new capabilities. I share the implemented modules, my completed model training runs and their outputs as this work develops. **My gift to Turkish youth. — Muhammed Yasin Yılmaz** I am continuing Cevahir as an **open-source research and educational legacy**, with productization no longer its goal. The engineering work and research on learning throughout a system's operating life continue together. ## New core: Cevahir Zihin — a mind that learns while living (November 2026) In November 2026 I started a new core, separate from the Transformer: **Zihin** (Turkish for \"mind\"). What I am after is not a fixed network but a mind that runs its own network while living, builds concepts from its experiences and measures what it builds. The Transformer engine and all earlier research remain below, unchanged. **Why this is not a Transformer:** | Transformer | Cevahir Zihin | |---|---| | train → freeze → use | learning is living: it learns at every moment, there is no separate training phase | | fixed dimension, fixed vocabulary, embedding vectors | growing units and ties, open alphabet; no fixed dimension | | next token by softmax | conviction: every belief has a strength and a source; if nothing accumulates to threshold, it stays silent | | new knowledge damages old knowledge, retraining needed | new knowledge is added, old knowledge stays bit-identical | | knowledge is spread over weights, a single example cannot be removed | a single experience can be retracted exactly from the core | | no record of where a belief came from | every piece of evidence\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "gai",
+        "full_name": "godot-fun/gai",
+        "url": "https://github.com/godot-fun/gai",
+        "description": "An AI coding agent built in Godot.",
+        "stars": 208,
+        "pushed_at": "2026-11-15T02:56:29Z",
+        "topics": [
+          "agent",
+          "ai",
+          "cli",
+          "framework",
+          "gdscript",
+          "godot",
+          "python",
+          "skills"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"icon.svg\" width=\"112\" alt=\"GAI logo\"> </p> <h1 align=\"center\">GAI</h1> <p align=\"center\"> <b>An AI coding agent built in Godot.</b> </p> <p align=\"center\"> <img alt=\"Godot 4.6\" src=\"https://img.shields.io/badge/Godot-4.6-478cbf?logo=godotengine&logoColor=white\"> <img alt=\"GDExtension\" src=\"https://img.shields.io/badge/GDExtension-godot--cpp-00599c?logo=cplusplus&logoColor=white\"> <img alt=\"Python 3.14\" src=\"https://img.shields.io/badge/Python-3.14-3776AB?logo=python&logoColor=white\"> <img alt=\"Node.js 24\" src=\"https://img.shields.io/badge/Node.js-24-5FA04E?logo=nodedotjs&logoColor=white\"> <img alt=\"MIT\" src=\"https://img.shields.io/badge/license-MIT-22c55e\"> </p> > **Built on a game engine** — the entire app is a Godot scene: GPU-drawn UI, shader effects, and visuals that react to what the agent is doing. > **The loop** — read the code, look things up, change it, run the tests, show the diff, and revert with `git` when it misses. > **Memory** — a background agent curates `.memory/` during compaction, so the next session already knows your rules and goals. > **Browser use** — open, observe, click, type, and screenshot real pages. > **Local deployment** — the engine, runtimes, and GGUF models land in `.dependency/`; point chat at `127.0.0.1` and nothing leaves the machine. > **MCP** — any server's tools join the same transcript, plus 36 asset skills and a portable `AGENTS.md`. ## 🖼️ Look inside ![GAI desktop coding agent](agent/asset/image/screenshot/gai_1.png) <p align=\"center\"><i>Streaming tool calls, inline diffs, token usage — and one of 60 animated scenes painting over the transcript while it works.</i></p> ## 🚀 Quick start Needs **Windows 10/11** and **Git**. Everything lands in `.dependency/` — nothing is installed system-wide. **1. Clone** ```bash git clone https://github.com/godot-fun/gai.git && cd gai ``` **2. Dependencies** Hand [`agent/Dependency.md`](agent/Dependency.md) to a coding agent — it provisions Godot, Python, and Node.js into `.dependency/`. Then install the browser service: ```bash .dependency/node/npm.cmd install --prefix web ``` **3. Launch** | Way | How | Difference | | --- | --- | --- | | **Editor** (simplest) | Open the project in Godot 4.6, open `agent/Agent.tscn`, run the scene | No auto pull or re-import; `user://` stays with your OS profile and data goes to `.gai/` | | **Launcher** | `agent.bat` | Pu\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "evener",
+        "full_name": "prime-radiant-inc/evener",
+        "url": "https://github.com/prime-radiant-inc/evener",
+        "description": "A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.",
+        "stars": 197,
+        "pushed_at": "2026-11-15T02:51:50Z",
+        "topics": [
+          "ai-agent",
+          "cli",
+          "coding-agent",
+          "go",
+          "llm"
+        ],
+        "source": "search",
+        "text_excerpt": "# Evener Evener is a coding agent that works in your project: it reads files, runs commands, edits code, and checks the result. Use the browser to follow and steer its work, the CLI to run a task from a script, or the iPhone client to reach your hub away from your desk. The hub is the service that connects these interfaces to your sessions. **[Get started](docs/getting-started.md)** to install Evener, connect a model provider, and repair a small program with a check you can run yourself. These guides track **main**. The first-run guide uses the latest successful snapshot from main; tagged releases can lag the behavior described here. Start the service with `evener hub`. Its listener (`--addr`, `EVENER_HUB_LISTEN_ADDR`, or TOML `addr`), a client's destination (`--hub-url` or `EVENER_HUB_URL` where supported), and the advertised `public_url` are separate settings. See [hub endpoints](docs/evener-hub-endpoints.md) for discovery and migration. ## Find your next step | You want to… | Read | | --- | --- | | Install and finish a first task | [Get started](docs/getting-started.md) | | Steer work, resume a session, or review changes | [Daily work](docs/daily-work.md) | | Understand sessions, delegates, jobs, and memory | [How Evener works](docs/concepts.md) | | Choose models and configure access | [Configuration](docs/configuration.md) | | Add reusable instructions or tools | [Extend Evener](docs/extensions.md) | | Run Evener from a script | [CLI reference](docs/cli.md) | | Connect a client | [Integrations](docs/integrations.md) | | Connect an iPhone | [Native app](docs/native-app.md) | | Diagnose a problem | [Troubleshooting](docs/troubleshooting.md) | | Upgrade an existing install | [Upgrading](UPGRADING.md) | The [documentation home](docs/index.md) brings these paths together. The [published guide](https://prime-radiant-inc.github.io/evener/) uses the same Markdown sources. ## Work with evidence Give Evener a goal, boundaries, and a way to check success. Read its changes and rerun the relevant checks before accepting the result. A model's summary is not a test result, and stopping a session does not undo its edits. Evener can send project content to your selected model provider and execute tools on the session's host. Review [sandboxing](docs/sandboxing.md) before using an unfamiliar repository or granting broader access. Keep credentials out of prompts and source\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "Awesome-Plugins",
+        "full_name": "targed/Awesome-Plugins",
+        "url": "https://github.com/targed/Awesome-Plugins",
+        "description": "Awesome-Plugins is a GitHub repository that serves as a comprehensive list of plugins, add-ons, and extensions for ChatGPT, as well as other language models that are compatible with the GPT architecture.",
+        "stars": 154,
+        "pushed_at": "2026-11-15T02:51:40Z",
+        "topics": [
+          "ai",
+          "chatgpt",
+          "gpt",
+          "open-assistant",
+          "plugin",
+          "plugins"
+        ],
+        "source": "search",
+        "text_excerpt": "# [📈 Live Status](https://targed.github.io/Awesome-Plugins/): <!--live status--> **🟧 Partial outage** More information and descriptions about each plugin can be found [**here**](https://github.com/targed/Awesome-Plugins/blob/main/PLUGIN-INFORMATION.md) Submit a plugin you find to this list [**here**](https://forms.gle/Qty5HowCwE61c5pb7) This repository contains the open-source uptime monitor and status page for [targed](https://targed.github.io/Awesome-Plugins/), powered by [Upptime](https://github.com/upptime/upptime). [![Uptime CI](https://github.com/targed/Awesome-Plugins/workflows/Uptime%20CI/badge.svg)](https://github.com/targed/Awesome-Plugins/actions/workflows/uptime.yml) [![Response Time CI](https://github.com/targed/Awesome-Plugins/workflows/Response%20Time%20CI/badge.svg)](https://github.com/targed/Awesome-Plugins/actions/workflows/response-time.yml) [![Graphs CI](https://github.com/targed/Awesome-Plugins/workflows/Graphs%20CI/badge.svg)](https://github.com/targed/Awesome-Plugins/actions/workflows/graphs.yml) [![Static Site CI](https://github.com/targed/Awesome-Plugins/workflows/Static%20Site%20CI/badge.svg)](https://github.com/targed/Awesome-Plugins/actions/workflows/site.yml) [![Summary CI](https://github.com/targed/Awesome-Plugins/workflows/Summary%20CI/badge.svg)](https://github.com/targed/Awesome-Plugins/actions/workflows/summary.yml) With [Upptime](https://upptime.js.org), you can get your own unlimited and free uptime monitor and status page, powered entirely by a GitHub repository. We use [Issues](https://github.com/targed/Awesome-Plugins/issues) as incident reports, [Actions](https://github.com/targed/Awesome-Plugins/actions) as uptime monitors, and [Pages](https://demo.upptime.js.org) for the status page. <!--start: status pages--> <!-- This summary is generated by Upptime (https://github.com/upptime/upptime) --> <!-- Do not edit this manually, your changes will be overwritten --> <!-- prettier-ignore --> | URL | Status | History | Response Time | Uptime | | --- | ------ | ------- | ------------- | ------ | | <img alt=\"\" src=\"https://icons.duckduckgo.com/ip3/oa.mg.ico\" height=\"13\"> [Academic_research_engine](https://oa.mg/.well-known/ai-plugin.json) | 🟥 Down | [academic-research-engine.yml](https://github.com/targed/Awesome-Plugins/commits/HEAD/history/academic-research-engine.yml) | <details><summary><img alt=\"Response time graph\" src=\".\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": true
+      },
+      {
+        "name": "llm",
+        "full_name": "r-uby-dev/llm",
+        "url": "https://github.com/r-uby-dev/llm",
+        "description": "An agentic runtime for system programmers - in Ruby.",
+        "stars": 142,
+        "pushed_at": "2026-11-15T02:47:05Z",
+        "topics": [
+          "a2a",
+          "a2a-client",
+          "agent",
+          "agent2agent",
+          "agents",
+          "ai",
+          "ai-runtime",
+          "llm",
+          "llm-agents",
+          "llm-framework",
+          "llm-frameworks",
+          "llms",
+          "mcp",
+          "mcp-client",
+          "rag",
+          "ruby",
+          "ruby-lib",
+          "ruby-library"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <a href=\"https://r.uby.dev\"> <img src=\"rubydev.svg\" width=\"400\" height=\"200\" border=\"0\" alt=\"a r.uby.dev project\" > </a> </p> > An agentic runtime for system programmers - in Ruby. The runtime supports concurrent and parallel tool execution. 15+ providers. Parallel execution is provided by Ractor, and the fork system call. Concurrent execution is provided by Thread, Fiber, and the 'async' gem (optional). Works with ActiveRecord, and Sequel. Works with and without Rails. It requires nothing but Ruby's standard library. It can be extended with optional, opt-in dependencies. ## Install ##### v17 The v17 series requires Ruby 3.4 or later. <br> This version works with older rubies and dependencies (ie: json v2). ```bash gem install llm.rb -v 17.0.1 ``` ##### Latest (v21) v21 is the recommended release. The v19 release is a smaller release that includes a tiny eval framework that was authored for the [micro1](https://micro1.ai) hackathon. v18 includes [substational runtime improvements](changelog/v18.md) - especially for running tool calls on a [Ractor](https://docs.ruby-lang.org/en/4.0/Ractor.html). Requires Ruby4+, JSON v3, and the latest versions of ActiveRecord|Sequel (optional). ```bash gem install llm.rb ``` ## Quick start ### Resources [r.uby.dev](https://r.uby.dev) is the place to go if you have a question the README doesn't answer or want to see the runtime in action. Great way to learn about the runtime and see it in action at the same time. [API docs](https://r.uby.dev/api-docs/llm.rb/) also exists for people who prefer learning the traditional way. For everything else, there's the README. ### Agents The [`LLM::Agent`](https://r.uby.dev/api-docs/llm.rb/LLM/Agent.html) class is the default high-level interface, and it is recommended for most use-cases. It manages the tool loop and provides configurable features on top of it. For example you can manage the tool loop with a retry budget and a tool call budget - alongside other features. The runtime is designed to keep the tool loop alive and it will rescue exceptions. When an exception is encountered in a tool it is reported back to the model as an in-band error that allows the model to change course or retry with different parameters. A tool call requires a tool return (or response), and the lack of one can corrupt the conversation and lead to API-level errors from a provider. But somet\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "zhin",
+        "full_name": "zhinjs/zhin",
+        "url": "https://github.com/zhinjs/zhin",
+        "description": "AI-native TypeScript bot framework — one codebase for 20+ chat platforms (QQ, Discord, Telegram, Slack, WeChat…). Opt-in AI agent with MCP, tools & security policies. <10MB core.",
+        "stars": 137,
+        "pushed_at": "2026-11-15T02:42:11Z",
+        "topics": [
+          "a2a",
+          "agent",
+          "ai",
+          "bot-framework",
+          "chatbot",
+          "discord",
+          "framework",
+          "hot-module-replacement",
+          "im",
+          "mcp",
+          "multi-platform",
+          "openai",
+          "plugin",
+          "qq",
+          "slack",
+          "telegram",
+          "typescript-framework",
+          "wechat"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <a href=\"https://zhin.js.org\"> <img src=\"docs/public/logo.svg\" alt=\"Zhin.js\" width=\"120\" height=\"120\" /> </a> </p> <h1 align=\"center\">Zhin.js</h1> <p align=\"center\"> <strong>Write once in TypeScript. Run your bot across 20+ chat platforms.</strong><br /> File-based commands, cross-platform JSX cards, leak-free hot reload, and opt-in AI agents — managed from the browser.<br /> QQ · WeChat · WeCom · DingTalk · Lark · Discord · Telegram · Slack · KOOK · LINE · … </p> <p align=\"center\"> <a href=\"https://github.com/zhinjs/zhin/actions/workflows/ci.yml\"><img src=\"https://github.com/zhinjs/zhin/actions/workflows/ci.yml/badge.svg\" alt=\"CI\" /></a> <a href=\"https://www.npmjs.com/package/zhin.js\"><img src=\"https://img.shields.io/npm/v/zhin.js.svg?color=cb3837\" alt=\"npm\" /></a> <a href=\"https://www.npmjs.com/package/zhin.js\"><img src=\"https://img.shields.io/npm/dm/zhin.js.svg?color=cb3837\" alt=\"npm downloads\" /></a> <a href=\"https://nodejs.org\"><img src=\"https://img.shields.io/node/v/zhin.js.svg?color=339933\" alt=\"Node\" /></a> <a href=\"./LICENSE\"><img src=\"https://img.shields.io/badge/License-MIT-yellow.svg\" alt=\"License: MIT\" /></a> <a href=\"https://codecov.io/gh/zhinjs/zhin\"><img src=\"https://codecov.io/gh/zhinjs/zhin/graph/badge.svg\" alt=\"codecov\" /></a> <a href=\"https://zhin.js.org\"><img src=\"https://img.shields.io/badge/docs-zhin.js.org-0ea5e9\" alt=\"Docs\" /></a> </p> <p align=\"center\"> <b>English</b> · <a href=\"./README.zh-CN.md\">简体中文</a> </p> <p align=\"center\"> <a href=\"https://zhin.js.org/en/\">Documentation</a> · <a href=\"./docs/en/authoring/define-plugin.md\">Plugin Authoring</a> · <a href=\"./docs/en/customer/index.md\">Operator Guide</a> · <a href=\"https://demo.zhin.dev\">Live Demo</a> · <a href=\"https://console.zhin.dev\">Remote Console</a> · <a href=\"./docs/contributing/development.md\">Contributing</a> </p> --- > **Running a bot without writing code?** Jump to the [Operator & Group Admin Guide](./docs/en/customer/index.md) or try the [Live Demo](https://demo.zhin.dev). Building plugins or adapters in TypeScript? Start right below or browse [Plugin Authoring](./docs/en/authoring/define-plugin.md). ## 30-Second Quick Start No platform account and no model key required (Node.js **≥22.19.0**, pnpm 9+): ```bash npm create zhin-app my-bot -- -y --adapter sandbox cd my-bot pnpm dev # zhin start --foreground: management gateway + your bot, hot reload `\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "Poracode",
+        "full_name": "Porabuild/Poracode",
+        "url": "https://github.com/Porabuild/Poracode",
+        "description": "One window for all your AI coding agents. Run Claude, Codex, OpenCode, Gemini, Antigravity, Cursor, and Copilot side-by-side. Terminal and chat, any layout.",
+        "stars": 121,
+        "pushed_at": "2026-11-15T02:52:39Z",
+        "topics": [
+          "acp",
+          "agent-client-protocol",
+          "ai",
+          "ai-agents",
+          "ai-coding",
+          "claude",
+          "claude-code",
+          "codex",
+          "copilot",
+          "cursor",
+          "desktop-app",
+          "developer-tools",
+          "electron",
+          "gemini",
+          "llm",
+          "opencode",
+          "orchestrator",
+          "react",
+          "terminal",
+          "typescript"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"build/icon.png\" width=\"128\" height=\"128\" alt=\"Poracode\" /> </p> <h1 align=\"center\">Poracode</h1> <p align=\"center\"> <strong>One window for all your AI coding agents.</strong><br /> Run Claude, Codex, OpenCode, Gemini, Grok, Kimi Code, Qwen Code, Pi, Qoder, Factory Droid, Antigravity, Cursor, Command Code, Copilot, and fx side-by-side. Terminal and chat, any layout — with built-in MCP so agents can orchestrate each other and the app itself. </p> <p align=\"center\"> <a href=\"https://poracode.com\">Website</a> · <a href=\"https://github.com/Porabuild/Poracode/releases\">Download</a> · <a href=\"https://github.com/Porabuild/Poracode/issues\">Report a Bug</a> · <a href=\"https://github.com/Porabuild/Poracode/issues\">Request Feature</a> </p> <p align=\"center\"> <em>Bring your own agent subscriptions & API keys</em> </p> --- <p align=\"center\"> <img src=\"website/public/hero-screenshot.png\" alt=\"Poracode — AI agents running side-by-side\" width=\"960\" /> </p> ## Supported Agents **Claude** · **Codex** · **OpenCode** · **Gemini** · **Grok** · **Kimi Code** · **Qwen Code** · **Pi** · **Qoder** · **Factory Droid** · **Antigravity** · **Cursor** · **Command Code** · **Copilot** · **fx** and any agent from the [ACP registry](https://agentclientprotocol.com). ## Why Poracode? If you use more than one AI coding agent, you know the pain: separate terminals, separate apps, no shared context. Poracode puts them all in one place. ### Infinite Threads & Layouts Mix TUI and GUI agents in any configuration. Arrange threads in horizontal and vertical splits, resize freely, and keep background sessions running while visible panes stay responsive. ### Unified Protocol GUI A consistent chat interface for ACP and SDK agents — markdown, syntax highlighting, and tool call displays. Where a provider offers more than one runtime (for example Cursor ships CLI, ACP, and SDK), you pick which one a thread runs on. ### Crossagents Let one agent delegate work to another across providers. Subagent output streams into the parent thread, background runs finish while the parent keeps working, and you can pin routing rules per task type. ### Built-in MCP & App Controls Poracode ships its own MCP servers. Point any agent at them to create and steer threads, organize projects, list and merge Git worktrees, commit and sync, open and merge pull requests, schedule runs, manage skills, a\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "ai-session-search",
+        "full_name": "ahundt/ai-session-search",
+        "url": "https://github.com/ahundt/ai-session-search",
+        "description": "Ultra-fast rust-powered AI agent session search and analysis. Search millions of messages in under a second. Claude Code, Claude Desktop, Codex, Cursor, Antigravity, Pi, Google AI Studio, and Gemini CLI. One Rust core behind the aise CLI, an MCP server, a Rust library, and a Python API.",
+        "stars": 68,
+        "pushed_at": "2026-11-15T02:43:18Z",
+        "topics": [
+          "ai",
+          "ai-tools",
+          "anthropic",
+          "antigravity",
+          "claude",
+          "claude-code",
+          "cli",
+          "codex",
+          "cursor",
+          "fast",
+          "library",
+          "llm",
+          "mcp",
+          "model-context-protocol",
+          "opencode",
+          "pyo3",
+          "python",
+          "rust",
+          "search",
+          "session-search"
+        ],
+        "source": "search",
+        "text_excerpt": "# AI Session Search (`aise`) Search and recover your local AI coding-agent session history from Claude Code, Claude Desktop local agent, Codex, Cursor, Antigravity, Pi coding agent, Prime Agent, Google AI Studio, and Gemini CLI. Use one index from the CLI, an MCP server, Python, or Rust on macOS, Linux, and Windows. [![PyPI](https://img.shields.io/pypi/v/ai-session-search)](https://pypi.org/project/ai-session-search/) [![crates.io](https://img.shields.io/crates/v/ai-session-search)](https://crates.io/crates/ai-session-search) [![CI](https://github.com/ahundt/ai-session-search/actions/workflows/ci.yml/badge.svg)](https://github.com/ahundt/ai-session-search/actions/workflows/ci.yml) [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](https://github.com/ahundt/ai-session-search/blob/main/LICENSE) <img width=\"1561\" height=\"1098\" alt=\"aise searching indexed AI coding sessions from the terminal\" src=\"https://github.com/user-attachments/assets/757950b2-0523-4b59-b617-96d94ccf5ab1\" /> ## Search nine providers from one index `aise` indexes local transcripts so you can find earlier messages, recover file versions, and read the context around a failed run. Queries refresh the index as needed; use `--index-refresh existing-only` to read the index without refreshing it. ## Install Install the global `aise` command with `uv` (recommended): ```bash uv tool install ai-session-search && aise integrations install ``` or with Rust's `cargo`: ```bash cargo install ai-session-search --locked && aise integrations install ``` Both install the newest stable release. The second command registers the MCP server and writes guidance for each detected harness; `--dry-run` previews every write. ## Common tasks | Do this | Command | | --- | --- | | Find the session where something happened | `aise search \"auth refactor\"` | | Search individual messages across every agent | `aise messages search \"permission denied\"` | | Recover a file an agent wrote or edited | `aise files extract src/app.py` | | See every version of a file, across sessions | `aise files history src/app.py` | | Read a past session, then jump back into it | `aise show SESSION_ID` then `aise resume SESSION_ID` | | Find why an agent stopped, looped, or was blocked | `aise messages search \"\" --kinds harness-notice` | | See what a subagent was asked and what it found | `aise list --session-kinds subagent` | | Fin\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "awesome-agent-memory",
+        "full_name": "OpenDataBox/awesome-agent-memory",
+        "url": "https://github.com/OpenDataBox/awesome-agent-memory",
+        "description": "Paper List of Agent Memory Systems along Four Axes",
+        "stars": 62,
+        "pushed_at": "2026-11-15T02:33:59Z",
+        "topics": [
+          "agent",
+          "llm",
+          "memory"
+        ],
+        "source": "search",
+        "text_excerpt": "# Awesome Agent Memory A curated taxonomy of **agent memory systems**, organized along four axes: (1) memory system architectures — from flat sequential context, to structural topological graphs/trees, to multi-paradigm hybrid containers; (2) reference baselines for comparison; (3) benchmarks for evaluation; and (4) surveys on agent memory. ## 📣 Get Involved - 📊 **Looking for a testbed to evaluate agent memory systems?** See our companion repo [OpenDataBox/MemoryData](https://github.com/OpenDataBox/MemoryData) — an integrated platform of memory systems and datasets. - 📌 **Missing a paper, method, or benchmark?** [Open an issue](https://github.com/OpenDataBox/awesome-agent-memory/issues/new) to request it. - 🤝 **Want to contribute directly?** [Submit a Pull Request](https://github.com/OpenDataBox/awesome-agent-memory/compare) — community PRs are warmly welcomed! ![](AgentMemory.png) ## Table of Contents - [1. Memory Systems and Methods](#1-memory-systems-and-methods) - [1.1 Sequential Memory Systems](#11-sequential-memory-systems) - [1.1.1 Discrete Textual Memory](#111-discrete-textual-memory) - [1.1.2 Parameter and Latent Memory](#112-parameter-and-latent-memory) - [1.2 Structured Topological Memory Systems](#12-structured-topological-memory-systems) - [1.2.1 Graph-Based Memory](#121-graph-based-memory) - [1.2.2 Hierarchical Memory](#122-hierarchical-memory) - [1.3 Composite Memory Systems](#13-composite-memory-systems) - [1.4 Baselines and Supporting Methods](#14-baselines-and-supporting-methods) - [2. Benchmarks and Datasets](#2-benchmarks-and-datasets) - [2.1 Effectiveness Evaluation](#21-effectiveness-evaluation) - [2.2 Retrieval Evaluation](#22-retrieval-evaluation) - [2.3 Robustness Evaluation](#23-robustness-evaluation) - [2.4 Efficiency Evaluation](#24-efficiency-evaluation) - [3. Surveys, Tutorials, and Position Papers](#3-surveys-tutorials-and-position-papers) - [4. Frameworks, Products, and Resources](#4-frameworks-products-and-resources) - [Citation](#citation) ## 1. Memory Systems and Methods ### 1.1 Sequential Memory Systems #### 1.1.1 Discrete Textual Memory Memory represented as a flat sequence, textual summary, note, trajectory, or experience record without an explicit graph or tree topology. 1. **Evoking User Memory: Personalizing LLM via Recollection-Familiarity Adaptive Retrieval**\\ Yingyi Zhang, Junyi Li, Wenlin Zhang, et al. *ICLR 2026*\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": true
+      },
+      {
+        "name": "radial-timeline",
+        "full_name": "EricRhysTaylor/radial-timeline",
+        "url": "https://github.com/EricRhysTaylor/radial-timeline",
+        "description": "Lay out your manuscript as an interactive circular timeline, then see every scene by act, subplot, and narrative or chronological order.",
+        "stars": 55,
+        "pushed_at": "2026-11-15T02:51:10Z",
+        "topics": [
+          "ai",
+          "editing",
+          "visualization",
+          "writing"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/EricRhysTaylor/radial-timeline/master/logo.png\"> <source media=\"(prefers-color-scheme: light)\" srcset=\"https://raw.githubusercontent.com/EricRhysTaylor/radial-timeline/master/logo-light.png\"> <!-- Fallback img is the WHITE logo: renderers that ignore <picture> (e.g. the community.obsidian.md listing page, which is dark-themed) show this one. --> <img src=\"https://raw.githubusercontent.com/EricRhysTaylor/radial-timeline/master/logo.png\" alt=\"Radial Timeline logo\" width=\"360\" style=\"border-radius: 0;\"> </picture> </p> <p align=\"center\" style=\"font-family: sans-serif; font-size: 26px; margin-top: 12px; margin-bottom: 4px;\"> <span style=\"font-weight: 100; letter-spacing: 10px;\">Radial Timeline™</span> </p> <p align=\"center\" style=\"font-family: sans-serif; font-size: 16px; margin-top: 0; margin-bottom: 10px;\"> by Eric Rhys Taylor </p> <p align=\"center\"> <a href=\"https://github.com/EricRhysTaylor/radial-timeline/stargazers\"><img src=\"https://img.shields.io/github/stars/EricRhysTaylor/radial-timeline?colorA=363a4f&colorB=e0ac00&style=for-the-badge\" alt=\"GitHub star count\"></a> <a href=\"https://obsidian.md/plugins?id=radial-timeline\"><img src=\"https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/obsidianmd/obsidian-releases/master/community-plugin-stats.json&query=$.radial-timeline.downloads&label=Downloads&style=for-the-badge&colorA=363a4f&colorB=d53984\" alt=\"Plugin downloads\"></a> <a href=\"https://github.com/EricRhysTaylor/radial-timeline/blob/main/LICENSE\"><img src=\"https://img.shields.io/static/v1.svg?style=for-the-badge&label=LICENSE&message=NON-COMMERCIAL&colorA=363a4f&colorB=b7bdf8\" alt=\"License — non-commercial software license\"></a> <a href=\"https://github.com/EricRhysTaylor/radial-timeline/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement\"><img src=\"https://img.shields.io/github/issues/EricRhysTaylor/radial-timeline/enhancement?colorA=363a4f&colorB=00bfa5&style=for-the-badge&label=enhancements\" alt=\"Open enhancements on GitHub\"></a> <a href=\"https://github.com/EricRhysTaylor/radial-timeline/issues?q=is%3Aclosed+label%3Aenhancement\"><img src=\"https://img.shields.io/github/issues-closed/EricRhysTaylor/radial-timeline/enhancement?colorA=363a4f&colorB=4a90e2&style=for-the-badge&label=closed%20enhancements\" alt=\"Closed e\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "opencode-sdk-dotnet",
+        "full_name": "opencode-dotnet/opencode-sdk-dotnet",
+        "url": "https://github.com/opencode-dotnet/opencode-sdk-dotnet",
+        "description": "Unofficial typed .NET SDK for the opencode HTTP API",
+        "stars": 46,
+        "pushed_at": "2026-11-15T02:56:23Z",
+        "topics": [
+          "agents",
+          "ai",
+          "coding-agent",
+          "csharp",
+          "dotnet",
+          "dotnet-sdk",
+          "http-client",
+          "llm",
+          "openapi",
+          "opencode",
+          "opencode-sdk",
+          "sdk",
+          "sse"
+        ],
+        "source": "search",
+        "text_excerpt": "# opencode SDK for .NET [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/opencode-dotnet/opencode-sdk-dotnet/blob/master/LICENSE) [![NuGet](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.localstackfor.net%2Fbadges%2Fpackages%2Fnuget%2FOpenCodeDotNet.Sdk)](https://www.nuget.org/packages/OpenCodeDotNet.Sdk) [![CI](https://github.com/opencode-dotnet/opencode-sdk-dotnet/actions/workflows/ci.yml/badge.svg)](https://github.com/opencode-dotnet/opencode-sdk-dotnet/actions/workflows/ci.yml) [![Linux Tests](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.localstackfor.net%2Fbadges%2Ftests%2Flinux%2Fopencode-dotnet%2Fopencode-sdk-dotnet%2Fmaster)](https://api.localstackfor.net/redirect/test-results/linux/opencode-dotnet/opencode-sdk-dotnet/master) > **🚀 Quick Start**: [Install](#-installation) | [Quick start](#-quick-start) | [Playground](#-playground) | [Guide](https://github.com/opencode-dotnet/opencode-sdk-dotnet/blob/master/docs/guide/getting-started.md) | [API coverage](#-api-coverage) > **Unofficial.** This project is not affiliated with or endorsed by the > [opencode](https://opencode.ai) team. A strongly typed .NET client for the [opencode](https://github.com/anomalyco/opencode) server — the HTTP API that every opencode front-end (TUI, desktop, web UI, plugins) uses. The SDK speaks the OpenCode 2.x API. ```csharp using OpenCode.Sdk; using OpenCode.Sdk.Models; await using var server = await OpenCodeServer.StartAsync(); using var client = server.CreateClient(); var created = await client.Sessions.CreateSessionAsync(new SessionCreateRequest { Title = \"hello from .NET\" }); Console.WriteLine($\"session {created.Session.Id}\"); ``` > **Prefer learning by example?** [QuickStart](https://github.com/opencode-dotnet/opencode-sdk-dotnet/tree/master/playground/quickstart) starts a private server and streams a model's reply, no API key needed. The [playground](#-playground) has three more apps. --- ## 💡 Why this SDK? - **Typed all the way down.** Every operation has a generated request type, a generated response envelope, and typed error models. That includes opencode's unions without a discriminator, which off-the-shelf .NET OpenAPI generators did not represent correctly. - **One transport for every connection mode.** The same pipeline owns endpoint authority, authentication, buffering, and failure mapping, whether you st\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "browserarena",
+        "full_name": "nottelabs/browserarena",
+        "url": "https://github.com/nottelabs/browserarena",
+        "description": "The Browser Arena. Comparing how cloud browser providers perform ⚔️",
+        "stars": 34,
+        "pushed_at": "2026-11-15T02:30:53Z",
+        "topics": [
+          "agent",
+          "browser",
+          "infrastructure"
+        ],
+        "source": "search",
+        "text_excerpt": "# The Browser Arena Open-source, reproducible benchmarks for cloud browser providers. How long does it take to spin up a browser in the cloud, use it, and tear it down? This project measures that across every major provider, same test, same machine, same conditions, and ranks them on reliability, latency, and cost. Live results at [browserarena.ai](https://browserarena.ai). ## Background Steel built the first version of this benchmark ([steel-dev/browserbench](https://github.com/steel-dev/browserbench)) and tested five providers. We extended it: more providers, a scoring system, a public leaderboard, and a structure that can grow with new benchmarks over time. ## How it works Each provider goes through the same test: create a browser session, connect via CDP, navigate to a page, and release. All tests run from the same EC2 instances so network conditions are comparable. Results show median values across all successful runs. ``` Create session → Connect via CDP → Navigate page → Release session (API) (Playwright) (goto) (API) ``` ### Test environment | Region | Instance | OS | Node | |---|---|---|---| | AWS us-east-1 | t3.micro | linux x64 | v20.20.0 | | AWS us-west-1 | t3.micro | linux x64 | v18.20.8 | | AWS us-east-2 | t3.medium | linux x64 | v22.23.5 | The us-east-2 runner benchmarks Browser Use from the same region as its browsers. Its results are published under `regions/us-east-2/results/` and are not on the leaderboard yet; Browser Use's leaderboard numbers still come from us-east-1. ### Providers | Provider | Region | Website | |---|---|---| | Notte | us-west-2 | [notte.cc](https://www.notte.cc) | | Tilion (beta) | us-east-1 | [tilion.dev](https://tilion.dev) | | Browserbase | us-west-2 | [browserbase.com](https://www.browserbase.com) | | Steel | us-east-1 | [steel.dev](https://www.steel.dev) | | Kernel | us-east-1 | [kernel.sh](https://www.kernel.sh) | | Hyperbrowser | us-east-1 | [hyperbrowser.ai](https://www.hyperbrowser.ai) | | Anchor Browser | us-east-1 | [anchorbrowser.io](https://www.anchorbrowser.io) | | Browser Use | us-east-1 | [browser-use.com](https://www.browser-use.com) | | Lightpanda | us-west-1 | [lightpanda.io](https://lightpanda.io) | Missing a provider? [Open a PR](https://github.com/nottelabs/browserarena/pulls). ### TinyFish Browser Set `TINYFISH_API_KEY` and select `--provider=tinyfish` to run the Browser API adapter with your ex\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "hf-to-litertlm",
+        "full_name": "john-rocky/hf-to-litertlm",
+        "url": "https://github.com/john-rocky/hf-to-litertlm",
+        "description": "Custom converter: open-weight Hugging Face LLMs/VLMs -> on-device LiteRT-LM (.litertlm), with one-command reproduction",
+        "stars": 30,
+        "pushed_at": "2026-11-15T02:47:44Z",
+        "topics": [
+          "hacktoberfest",
+          "huggingface",
+          "litert",
+          "litert-lm",
+          "llm",
+          "on-device-ai",
+          "quantization"
+        ],
+        "source": "search",
+        "text_excerpt": "# hf-to-litertlm Convert open-weight Hugging Face LLMs and VLMs into `.litertlm` bundles for Google's LiteRT-LM runtime (Android, iOS, macOS, Windows, Linux). There are 116 published conversions below, most with speeds measured on a phone and a Mac. <p align=\"center\"> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/john-rocky/hf-to-litertlm/main/docs/images/speed-dark.svg\"> <img alt=\"Scatter plot of decode speed against model size for the published conversions measured on a phone, colored by CPU, GPU or NPU. Speed falls as models get larger.\" src=\"docs/images/speed-light.svg\" width=\"860\"> </picture> </p> If you want an open model in an Android or iPhone app, look for it in the [list of converted models](#converted-models) first. If it isn't there, [ask for it](https://github.com/john-rocky/hf-to-litertlm/issues/new?template=model-request.yml) with the model's Hugging Face link. I reply on the issue with the bundle, the recipe and the measured numbers, or the reason it couldn't be converted. Two SDKs already load these files by repo name: [react-native-litert-lm](https://github.com/hung-yueh/react-native-litert-lm) and [flutter_edge_ai](https://github.com/DenisovAV/flutter_edge_ai). ## Try a published model On a Mac, before it goes on a phone (needs [uv](https://docs.astral.sh/uv/)): ```bash uvx litert-lm@0.18.0 run \\ --from-huggingface-repo=litert-community/LFM2.5-1.2B-Instruct \\ LFM2.5-1.2B-Instruct_int4_gpu.litertlm \\ --prompt=\"What is 17 + 25? Answer briefly.\" ``` To use a published bundle in an Android app, add [hfmodels-android](https://github.com/john-rocky/hfmodels-android) with one Gradle dependency and a few lines of Kotlin ([code](docs/apps.md#android)). In an iPhone app, it loads through [swift-litert-lm](https://github.com/john-rocky/swift-litert-lm) ([code](docs/apps.md#iphone)). ## Convert a finetune ```bash uvx hf-to-litertlm <org>/<model> ``` That runs `convert.py` from PyPI and writes the bundle under `./out`. The hybrid families (granite-4.0-h, Falcon-H1, Zamba2 and Nemotron-H) need a clone, and the package tells you when: ```bash git clone https://github.com/john-rocky/hf-to-litertlm cd hf-to-litertlm uv sync uv run python scripts/convert.py <org>/<model> uv run python scripts/verify_lock.py out/<model>/<model>.lock.json uv run litert-lm run out/<model>/*.litertlm --prompt \"Hello\" ``` `verif\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "daydream",
+        "full_name": "existential-birds/daydream",
+        "url": "https://github.com/existential-birds/daydream",
+        "description": "Agentic code-review CLI that records each review/fix/test run trajectory, building a corpus for fine-tuning open-weight models.",
+        "stars": 22,
+        "pushed_at": "2026-11-15T02:55:17Z",
+        "topics": [
+          "agent",
+          "agentic-ai",
+          "claude",
+          "cli",
+          "code-review",
+          "fine-tuning",
+          "llm",
+          "machine-learning",
+          "rlhf"
+        ],
+        "source": "search",
+        "text_excerpt": "# daydream [![DOI](https://zenodo.org/badge/1147075973.svg)](https://doi.org/10.5281/zenodo.21614348) [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE) [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/existential-birds/daydream) ```text Set up https://github.com/existential-birds/daydream for this repository. Read its README and CLI help, install Daydream with uv and Python 3.14+, and help me authenticate a supported backend (Claude by default, or Codex or Pi). Run a report-only review with --review against the intended base branch. Show me the findings and where the trajectory was saved. ``` Daydream reviews code changes, can fix findings and run tests, and records [ATIF](https://www.harborframework.com/docs/agents/trajectory-format) trajectories for research toward an open-weight code-review model. Its review quality is measured in public on AACR-Bench and ReviewBench in [code-review-benchmarks](https://github.com/existential-birds/code-review-benchmarks). ## Quick start Requires [uv](https://docs.astral.sh/uv/), Python 3.14+, and an authenticated [Claude Code](https://claude.ai/code) CLI (default backend), or Codex or Pi. Osprey cannot run a review. PR comments also require authenticated [gh](https://cli.github.com/). ```bash git clone https://github.com/existential-birds/daydream.git cd daydream uv tool install --editable . # If daydream is missing from PATH: uv tool update-shell, then restart your shell. ``` ## Review code ```bash daydream /path/to/project # report only (same as --review) daydream --comment /path/to/project # post inline PR comments daydream --fix /path/to/project # review, offer fixes, test, commit and push daydream --review --backend codex --base main /path/to/project ``` A review ends with findings; only `--fix` [selects fixing](docs/runtime.md#validation-and-repair), and `--yes` answers its gates. One reviewer covers the whole change and challenges every finding in a fresh context before reporting it; it needs a backend with native host tools (Pi, Claude or Codex). Use `--help` for common options and `--help-all` for configuration and advanced flags. Reports land in `.review-output.md`; trajectories in `.daydream/runs/<id>/`. Report-only local review uses the captured net base-to-final-working change, including nonignored untracked files. PR comments exclude local edits\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      }
+    ],
+    "aihot": []
+  },
+  "failures": {
+    "rss": [
+      {
+        "type": "rss",
+        "title": "Anthropic News",
+        "url": "https://www.anthropic.com/news/rss.xml",
+        "failure_reason": "feed_parse_failed: text/html; charset=utf-8 is not an XML media type"
+      },
+      {
+        "type": "rss",
+        "title": "a16z",
+        "url": "https://a16z.com/feed/",
+        "failure_reason": "feed_parse_failed: <unknown>:3:73: not well-formed (invalid token)"
+      },
+      {
+        "type": "rss",
+        "title": "Introducing ChatGPT Wallet",
+        "url": "https://openai.com/index/introducing-chatgpt-wallet",
+        "failure_reason": "http_403"
+      },
+      {
+        "type": "rss",
+        "title": "Shield helps technicians hand off legacy portal work with OpenAI",
+        "url": "https://openai.com/business/customer-stories/shield",
+        "failure_reason": "http_403"
+      },
+      {
+        "type": "rss",
+        "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
+        "url": "https://openai.com/business/customer-stories/amplitude",
+        "failure_reason": "http_403"
+      },
+      {
+        "type": "rss",
+        "title": "Gondola doubles revenue as its team builds more with Codex",
+        "url": "https://openai.com/business/customer-stories/gondola",
+        "failure_reason": "http_403"
+      },
+      {
+        "type": "rss",
+        "title": "Holiday Extras is rethinking what it can build with Codex",
+        "url": "https://openai.com/business/customer-stories/holidays-extras-codex",
+        "failure_reason": "http_403"
+      }
+    ],
+    "youtube": [
+      {
+        "type": "youtube",
+        "title": "Lex Fridman",
+        "url": "https://www.youtube.com/@lexfridman",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @lexfridman/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Lenny's Podcast",
+        "url": "https://www.youtube.com/@LennysPodcast",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @LennysPodcast/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Dwarkesh Patel",
+        "url": "https://www.youtube.com/@DwarkeshPatel",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @DwarkeshPatel/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Acquired",
+        "url": "https://www.youtube.com/@AcquiredFM",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @AcquiredFM/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Tim Ferriss",
+        "url": "https://www.youtube.com/@timferriss",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @timferriss/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "20VC",
+        "url": "https://www.youtube.com/@20VCwithHarryStebbings",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @20VCwithHarryStebbings/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Invest Like the Best",
+        "url": "https://www.youtube.com/@ILTB_Podcast",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @ILTB_Podcast/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "All-In Podcast",
+        "url": "https://www.youtube.com/@allin",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @allin/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      }
+    ],
+    "github": [
+      {
+        "type": "github",
+        "title": "trendshift",
+        "url": "https://trendshift.io/repositories?since=daily",
+        "failure_reason": "supplement_failed: 404 Client Error: Not Found for url: https://trendshift.io/repositories?since=daily"
+      },
+      {
+        "type": "github",
+        "title": "ag-ui-protocol/ag-ui",
+        "url": "https://github.com/ag-ui-protocol/ag-ui",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "we-promise/sure",
+        "url": "https://github.com/we-promise/sure",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "backnotprop/plannotator",
+        "url": "https://github.com/backnotprop/plannotator",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "GoogleChrome/modern-web-guidance-src",
+        "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "martin-olivier/airgorah",
+        "url": "https://github.com/martin-olivier/airgorah",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "strelov1/freehire",
+        "url": "https://github.com/strelov1/freehire",
+        "failure_reason": "filtered_noise"
+      },
+      {
+        "type": "github",
+        "title": "flizzywine/dsh-tavern",
+        "url": "https://github.com/flizzywine/dsh-tavern",
+        "failure_reason": "filtered_noise"
+      },
+      {
+        "type": "github",
+        "title": "zapplyjobs/New-Grad-Data-Science-Jobs-2027",
+        "url": "https://github.com/zapplyjobs/New-Grad-Data-Science-Jobs-2027",
+        "failure_reason": "filtered_noise"
+      },
+      {
+        "type": "github",
+        "title": "jiuyuan233/wool-gathering",
+        "url": "https://github.com/jiuyuan233/wool-gathering",
+        "failure_reason": "filtered_noise"
+      }
+    ],
+    "aihot": [
+      {
+        "type": "aihot",
+        "title": "api",
+        "url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "failure_reason": "api_fetch_failed: 404 Client Error: Not Found for url: https://aihot.news/api/public/items?mode=selected&take=50"
+      }
+    ]
+  }
+}
