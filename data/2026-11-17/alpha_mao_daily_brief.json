@@ -1,0 +1,1019 @@
+{
+  "date": "2026-11-17",
+  "generated_at": "2026-11-17T05:10:34Z",
+  "timezone": "Asia/Shanghai",
+  "windows": {
+    "rss": "72h",
+    "youtube": "72h_or_7d",
+    "github": "7d",
+    "aihot": "selected latest"
+  },
+  "counts": {
+    "rss": {
+      "candidates": 22,
+      "full_text_success": 9,
+      "eligible": 9,
+      "failed": 15
+    },
+    "youtube": {
+      "candidates": 0,
+      "transcript_success": 0,
+      "eligible": 0,
+      "failed": 8
+    },
+    "github": {
+      "candidates": 26,
+      "readme_success": 26,
+      "eligible": 26,
+      "failed": 9
+    },
+    "aihot": {
+      "api_returned": 0,
+      "candidates": 0,
+      "original_verified": 0,
+      "eligible": 0,
+      "failed_or_pending": 1
+    }
+  },
+  "eligible_items": {
+    "rss": [
+      {
+        "source": "Simon Willison",
+        "title": "llm 0.37.3",
+        "url": "https://simonwillison.net/2026/Nov/16/llm/",
+        "published_at": "2026-11-16T23:57:26Z",
+        "summary": "Release: llm 0.37.3 A bug fix release for LLM , mainly to cover a problem with the most recent Homebrew package of the software. Homebrew now ships the latest SQLite, 3.54.1 , which includes a fix that broke LLM's logging code . Short version: in SQLite 3.54.0 the following SQL: select json_object('a', (select json_array(1))) Returns this: {\"a\":[1]} But in 3.54.1 the same query returns this: {\"a\":\"[1]\"} According to D. Richard Hipp : That was a bug fix. Per the documentation, (SELECT json_array(...)) returns SQL text, not JSON. Hence the 3.54.1 behavior is correct and 3.54.0 was a bug. The workaround looks like this: select json_object('a', json((select json_array(1)))) Tags: llm , webassembly , sqlite , generative-ai , ai , llms , d-richard-hipp",
+        "lookback_7d": false,
+        "text_excerpt": "A bug fix release for LLM , mainly to cover a problem with the most recent Homebrew package of the software. Homebrew now ships the latest SQLite, 3.54.1 , which includes a fix that broke LLM's logging code . Short version: in SQLite 3.54.0 the following SQL: select json_object('a', (select json_array(1))) Returns this: {\"a\":[1]} But in 3.54.1 the same query returns this: {\"a\":\"[1]\"} According to D. Richard Hipp : That was a bug fix. Per the documentation, (SELECT json_array(...)) returns SQL text, not JSON. Hence the 3.54.1 behavior is correct and 3.54.0 was a bug. The workaround looks like this: select json_object('a', json((select json_array(1))))",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Latent Space",
+        "title": "Building Visual Intelligence — Andreas Blattmann & Dustin Podell, Black Forest Labs",
+        "url": "https://latent.space/p/bfl/",
+        "published_at": "2026-11-16T21:38:03Z",
+        "summary": "Black Forest Labs’ case for learning AGI from pixels, motion and sound.",
+        "lookback_7d": false,
+        "text_excerpt": "Black Forest Labs’ case for learning AGI from pixels, motion and sound. Not many people know that Stable Diffusion is why I went fulltime into AI (I aptly titled Multiverse, not Metaverse to call out Zuck’s mistaken investment). It turns out that Dustin Podell also had the same aha moment - quitting his day job when the model came out. But we took very different paths… I stuck to what I knew in human content creation, and Dustin immersed deep into AI content creation with Andreas Blattmann , co-inventor of Latent Diffusion and the rest of the world-leading imagegen crew at Stability AI. Stability fell apart, but Anj Midha helped the core group spin out to BFL, which immediately built an incredible new imagegen model in the Flux series. But why are they now going into video and world models? Andreas gives an example you can try with one hand. If somebody tosses you a ball, your hand starts moving before the ball reaches you. You can do that without being able to write down the trajectory. When he talks about building visual intelligence , that’s the kind of knowledge he means. A still can show you where the ball is. A video shows you how it got there. The sound of impact can tell you when it hit something, even if the camera missed the contact. That’s BFL’s argument for training FLUX 3 on the three signals together. BFL’s FLUX 3 release The horse in motion is one of the FLUX 3 examples we show in the intro. The audio examples are worth playing with the sound on. FLUX 3 Video What a moving camera teaches you Suppose the camera starts in front of a person and pans around them. At some point the model owes you the back of their head. Andreas thinks ordinary two-dimensional video contains a great deal of evidence about what objects look like from other angles. That doesn’t settle whether a model “understands physics,” a point we go back and forth on. It does give you a much better test than asking whether one frame looks convincing. There’s a good engineering example late in the episode. Sharpen each frame of a clip independently and each frame might look terrific. Hit play and the extra detail can shimmer, because the upscaler made a slightly different decision every time. BFL derives its video upscaler from the same FLUX 3 backbone. Temporal consistency matters even when all the user asked for was a higher-resolution file. What’s worth spending training compute\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "datasette-maplibre 0.1a0",
+        "url": "https://simonwillison.net/2026/Nov/15/datasette-maplibre/",
+        "published_at": "2026-11-15T23:58:36Z",
+        "summary": "Release: datasette-maplibre 0.1a0 The first new Datasette geospatial plugin in quite a while! This one combines the excellent MapLibre GL library with OpenFreeMap , the free vector map server operated by Zsolt Ero (you should sponsor Zsolt on GitHub .) I built most of this with a single prompt to Claude Fable 5.2: Look at datasette-cluster-map and datasette-leaflet-geojson plugins, then look at ~/dev/tools/openfreemap-demo.html - then build a brand new Datasette plugin that uses maplibreGL and openfreemap and combines the features of those other two plugins - but be creative and think outside the box for other useful features the plugin might have \"Be creative and think outside the box\" resulted in a few neat ideas - my favorite is that it displays SVG previews of GeoJSON shapes, then loads a WebGL preview only when they scroll into view. I also had Claude build a comprehensive demo which works in the latest Datasette Lite, so you can visit this link to load the plugin and a demo database in your browser via Pyodide and WebAssembly. I like this demo page showing both GeoJSON shapes and lat/lon points on the same map: Tags: visualization , generative-ai , datasette-lite , claude-mythos-fable , ai , llms , geospatial , openstreetmap , datasette",
+        "lookback_7d": false,
+        "text_excerpt": "The first new Datasette geospatial plugin in quite a while! This one combines the excellent MapLibre GL library with OpenFreeMap , the free vector map server operated by Zsolt Ero (you should sponsor Zsolt on GitHub .) I built most of this with a single prompt to Claude Fable 5.2: Look at datasette-cluster-map and datasette-leaflet-geojson plugins, then look at ~/dev/tools/openfreemap-demo.html - then build a brand new Datasette plugin that uses maplibreGL and openfreemap and combines the features of those other two plugins - but be creative and think outside the box for other useful features the plugin might have \"Be creative and think outside the box\" resulted in a few neat ideas - my favorite is that it displays SVG previews of GeoJSON shapes, then loads a WebGL preview only when they scroll into view. I also had Claude build a comprehensive demo which works in the latest Datasette Lite, so you can visit this link to load the plugin and a demo database in your browser via Pyodide and WebAssembly. I like this demo page showing both GeoJSON shapes and lat/lon points on the same map:",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "datasette 1.0a43",
+        "url": "https://simonwillison.net/2026/Nov/15/datasette/",
+        "published_at": "2026-11-15T23:20:27Z",
+        "summary": "Release: datasette 1.0a43 I've been leaning hard into Claude Fable 5.2 to help knock things off the 1.0 milestone , which is now 53% complete. The biggest 1.0 item in this release is streaming support for output renderers - the built-in TSV and CSV export mechanisms now use this as well, and plugins can register themselves as capable of streaming every row in a table in one go via the new Response.stream() method. There are a couple of security fixes, one of which I deemed deserving of a GitHub advisory : private stored queries could be exposed, granting access to the title and SQL of the query (but not allowing that query to be executed). There are dozens of smaller improvements. The row page JSON representation finally has a design suitable for 1.0 . A new <datasette-copy-button> Web Component provides copy-schema in various places. JSON in columns on the row page can be pretty-printed. There's a new DatasetteModal.confirm() JavaScript utility method. Plus dozens of bug fixes, including contributions by Zihan Dai , Peter Olkhovets , Ilya Khalafi , and Ankita Advitot . The feature I'm most excited about is a pretty tiny one: I've added CSS multi-page view transitions to Datasette! Here's the commit - key CSS is as follows: /* Enable cross-document view transitions, for anyone without prefers-reduced-motion */ @media ( prefers-reduced-motion : no-preference ) { @view-transition { navigation : auto ; } } /* .facet-results should morph from old position to new */ html : active-view-transition . content > . facet-results { view-transition-name : facet-results ; } /* So should a .table-wrapper, provided it contains .rows-and-columns */ html : active-view-transition . table-wrapper : has ( > table . rows-and-columns ) { view-transition-name : rows-table ; } With that in place, navigations within Datasette - still staunchly a multi-page application - feel more like an SPA. This works on Safari and Chrome at the moment and I believe supports for Firefox is due to land in Firefox 162 on December 8th 2026 (seeing as they are no longer feature-flagged in Firefox Nightly.) Tags: security , datasette , css , browsers , annotated-release-notes , firefox , javascript , safari , chrome",
+        "lookback_7d": false,
+        "text_excerpt": "I've been leaning hard into Claude Fable 5.2 to help knock things off the 1.0 milestone , which is now 53% complete. The biggest 1.0 item in this release is streaming support for output renderers - the built-in TSV and CSV export mechanisms now use this as well, and plugins can register themselves as capable of streaming every row in a table in one go via the new Response.stream() method. There are a couple of security fixes, one of which I deemed deserving of a GitHub advisory : private stored queries could be exposed, granting access to the title and SQL of the query (but not allowing that query to be executed). There are dozens of smaller improvements. The row page JSON representation finally has a design suitable for 1.0 . A new <datasette-copy-button> Web Component provides copy-schema in various places. JSON in columns on the row page can be pretty-printed. There's a new DatasetteModal.confirm() JavaScript utility method. Plus dozens of bug fixes, including contributions by Zihan Dai , Peter Olkhovets , Ilya Khalafi , and Ankita Advitot . The feature I'm most excited about is a pretty tiny one: I've added CSS multi-page view transitions to Datasette! Here's the commit - key CSS is as follows: /* Enable cross-document view transitions, for anyone without prefers-reduced-motion */ @media ( prefers-reduced-motion : no-preference ) { @view-transition { navigation : auto ; } } /* .facet-results should morph from old position to new */ html : active-view-transition . content > . facet-results { view-transition-name : facet-results ; } /* So should a .table-wrapper, provided it contains .rows-and-columns */ html : active-view-transition . table-wrapper : has ( > table . rows-and-columns ) { view-transition-name : rows-table ; } With that in place, navigations within Datasette - still staunchly a multi-page application - feel more like an SPA. This works on Safari and Chrome at the moment and I believe supports for Firefox is due to land in Firefox 162 on December 8th 2026 (seeing as they are no longer feature-flagged in Firefox Nightly.)",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "datasette-apps 0.4a0",
+        "url": "https://simonwillison.net/2026/Nov/15/datasette-apps/",
+        "published_at": "2026-11-15T04:02:45Z",
+        "summary": "Release: datasette-apps 0.4a0 Datasette Apps are sandboxed HTML and JavaScript applications that live inside Datasette - think Claude Artifacts, but these ones can run SQL queries against your data. 0.4a0 adds support for linking: you can link to an app with #fragments in the URL and the app can see and use those, plus supported URL schemes are reported back to Datasette Agent so it can help write apps that link to each other. This means you can have e.g. an app that shows details about a specific record, and a completely separate app that searches those records and links to their representations in the first app. Tags: datasette-agent , datasette-apps , datasette , urls",
+        "lookback_7d": false,
+        "text_excerpt": "Datasette Apps are sandboxed HTML and JavaScript applications that live inside Datasette - think Claude Artifacts, but these ones can run SQL queries against your data. 0.4a0 adds support for linking: you can link to an app with #fragments in the URL and the app can see and use those, plus supported URL schemes are reported back to Datasette Agent so it can help write apps that link to each other. This means you can have e.g. an app that shows details about a specific record, and a completely separate app that searches those records and links to their representations in the first app.",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "datasette-llm 0.1a11",
+        "url": "https://simonwillison.net/2026/Nov/14/datasette-llm/",
+        "published_at": "2026-11-14T23:59:28Z",
+        "summary": "Release: datasette-llm 0.1a11 datasette-llm is the intermediate plugin for Datasette that supports configuring LLMs for use with other Datasette plugins. This release adds support for OpenAI-compatible endpoints, so you can configure Datasette to use an LLM hosted anywhere that talks the OpenAI pseudo-standard web protocol. This means that if you're running local models with LM Studio or Ollama or llama.cpp (which just hit v1.0.0 ) you can run Datasette via uvx like this: wget https://datasette.io/content.db uvx --with datasette-agent datasette \\ --root --secret 1 \\ -s plugins.datasette-llm.default_model ' { \"model\": \"lmstudio-qwen\", \"model_name\": \"qwen/qwen3.8-27b\", \"api_base\": \"http://localhost:1234/v1\" } ' content.db And you'll get a local server running a Datasette Agent instance powered by your local model! Tags: uv , datasette-agent , llm , datasette , llms , ai , generative-ai",
+        "lookback_7d": false,
+        "text_excerpt": "datasette-llm is the intermediate plugin for Datasette that supports configuring LLMs for use with other Datasette plugins. This release adds support for OpenAI-compatible endpoints, so you can configure Datasette to use an LLM hosted anywhere that talks the OpenAI pseudo-standard web protocol. This means that if you're running local models with LM Studio or Ollama or llama.cpp (which just hit v1.0.0 ) you can run Datasette via uvx like this: wget https://datasette.io/content.db uvx --with datasette-agent datasette \\ --root --secret 1 \\ -s plugins.datasette-llm.default_model ' { \"model\": \"lmstudio-qwen\", \"model_name\": \"qwen/qwen3.8-27b\", \"api_base\": \"http://localhost:1234/v1\" } ' content.db And you'll get a local server running a Datasette Agent instance powered by your local model!",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "datasette-vega 0.7",
+        "url": "https://simonwillison.net/2026/Nov/14/datasette-vega/",
+        "published_at": "2026-11-14T17:09:09Z",
+        "summary": "Release: datasette-vega 0.7 A new release of Datasette's longest untouched plugin, for rendering charts (using Vega-Lite ) against data in a table or custom query. The last release was in July 2018! I finally bumped it for compatibility with the latest Datasette alphas, plus some cosmetic tweaks to make it work better with Datasette Lite . (Datasette Lite just gained the ability to run JavaScript plugins like this! I'll write more about that soon.) Since it works with Datasette Lite, the live demo in the README now links to this demo on Datasette Lite . Tags: datasette , datasette-lite",
+        "lookback_7d": false,
+        "text_excerpt": "A new release of Datasette's longest untouched plugin, for rendering charts (using Vega-Lite ) against data in a table or custom query. The last release was in July 2018! I finally bumped it for compatibility with the latest Datasette alphas, plus some cosmetic tweaks to make it work better with Datasette Lite . (Datasette Lite just gained the ability to run JavaScript plugins like this! I'll write more about that soon.) Since it works with Datasette Lite, the live demo in the README now links to this demo on Datasette Lite .",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Interconnects",
+        "title": "Open-source AI without Jensen",
+        "url": "https://www.interconnects.ai/p/open-source-ai-without-jensen",
+        "published_at": "2026-11-14T12:23:15Z",
+        "summary": "A decapitation. It’s time to rebuild.",
+        "lookback_7d": false,
+        "text_excerpt": "The resignation of Nvidia CEO Jensen Huang is a major setback for the US development of an open model ecosystem. Nvidia still has the financial interests in supporting open models, which are to avoid concentration in power among a few customers who would develop their own chips and reduce Nvidia’s profits, but supporting the open ecosystem is a tricky puzzle more than an engineering problem to grind out a solution on. Nvidia’s business operations are famously extremely dependent on Jensen as an operator, so it is a consensus opinion that there are challenges ahead (or even more high-profile departures through chip-smuggling investigations or plain-old sharks circling more poachable talent). Nvidia’s number one goal is to stabilize the ship, deliver to customers in the next 24 months, and prevent implosion. Open models have been one of Jensen’s more ambitious, founder-style bets. He has been flooding the zone with funding in a way that will very likely dry up. In this period, the open model economy is in its nascency. These are crucial years for establishing use-cases, revenue flow, and motives to continue training the next generation models. I discussed the sensitivity of these early years in my recent talk at Fireworks Forge ( slides , recording ). The core of the argument is one upside for open models, a reason to be optimistic, and one downside. The positive case is that the open model economy has correctly latched onto “ownership of intelligence” and enterprise post-training as a crucial lane. What is to be determined is exactly how big the downstream market is. The downside is that the true long-term benefit of open models, as truly commoditized intelligence, is very far from realization with compute in such short supply. In the near term, where inference startups are also struggling to get enough chips (because Anthropic and OpenAI are buying so much capacity), there’s little margin competition on open-weight models. If open-source models are also served at giant inference margins, as we learned with DeepSeek’s DeepInfer release, they’re far from a commodity. In this paradigm, the closed labs with better economies of scale and integration from model to datacenter and chips will win. I expanded on this challenge in my recent piece on the open model economy . Together, a lot still needs to go right for open models to be a meaningful economic engine. Jens\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Latent Space",
+        "title": "[AINews] The No AI Slop Manifesto",
+        "url": "https://latent.space/p/ainews-the-no-ai-slop-manifesto/",
+        "published_at": "2026-11-14T08:31:02Z",
+        "summary": "November 13, 2026 — AIE speakers unite to lay out how to fight slop.",
+        "lookback_7d": false,
+        "text_excerpt": "November 13, 2026 — What 1.0 changes for apps that run models locally. Plus, LangChain raises $300M at a $3B valuation. It seems Hacker News also liked it , voting it up to the front page today. We started this manifesto to offer a useful tool for discussion at work, and hope it gets used that way. Sponsored by Deepgram Deepgram is the voice AI infrastructure behind natural conversation—bringing speech-to-text, text-to-speech, voice-focused LLMs, and agents to teams building with voice AI. For any stack and any tools you already love building with, Deepgram slots in as your foundational voice AI technology. So you have control. And we have the context to listen, understand, and speak like a human. Learn more about the Real-time Context Standard . Sponsored by Backblaze B2 Growth shouldn’t make you sweat. Backblaze B2 delivers capacity storage that scales with your business and keeps flash and GPUs fed with terabit-scale throughput. Put B2 to the test ! contact business@latent.space for further enquiries. Thank to Deepgram and Backblaze for supporting AINews! Local inference and agent infrastructure llama.cpp 1.0. Users running mixture-of-experts models larger than their GPU memory can now set aside a cache for frequently used experts. Georgi Gerganov · Daniel Han Chen’s example LangChain’s Series C. CapitalG led the round. LangSmith lets teams trace and evaluate production agents across frameworks. The company plans to announce new LangSmith features on November 20. LangChain · CapitalG Frontier and Open Model Launches Gemini 4 Hydrogen in GitHub Copilot. GitHub made the model generally available in Copilot across its app, CLI and VS Code. GitHub Independent checks : Roboflow's vision bench shows high effort at 29.3s per image, against 51.4s for Argon and 132.3s for Carbon, though Carbon has better detection accuracy ( @skalskip92 ). One 3D-modeling test found Hydrogen more expensive than Argon because it loops on over-verification ( @dzhng ). Google's week : Google also shipped two 8th-gen TPUs, Gemini 4 Carbon, Gemini Robotics 2.5, AlphaGenome 2 and a Decisions API ( @sundarpichai ). MathArena : Gemini 4 Carbon took #1, displacing GPT-6.1 Sol ( @j_dekoninck ). Claude Fable 5.2 in Agent Arena. Arena published new results for long coding sessions. Pricing : API pricing fell from $10/$50 to $8/$40 per 1M input/output tokens ( @arena ). Agent Arena : The model\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      }
+    ],
+    "youtube": [],
+    "github": [
+      {
+        "name": "cherry-studio-app",
+        "full_name": "CherryHQ/cherry-studio-app",
+        "url": "https://github.com/CherryHQ/cherry-studio-app",
+        "description": "🍒 This is the mobile version of Cherry Studio.",
+        "stars": 4084,
+        "pushed_at": "2026-11-17T05:06:21Z",
+        "topics": [
+          "agent",
+          "android",
+          "assistant",
+          "chat-bot",
+          "expo",
+          "ios"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"assets/cherry-studio-logo.png\" width=\"100\" height=\"100\" alt=\"Cherry Studio logo\" /> </p> <h1 align=\"center\">Cherry Studio Mobile</h1> <p align=\"center\"> <strong>Your AI workspace on iOS and Android.</strong><br /> Chat with your favorite models, connect your tools, and turn ideas into images. </p> <p align=\"center\"> <a href=\"#features\">Features</a> · <a href=\"docs/guides/development.md\">Development</a> · <a href=\"docs/README.md\">Documentation</a> · <a href=\"https://github.com/CherryHQ/cherry-studio-app/issues/new/choose\">Feedback</a> · <a href=\"https://github.com/CherryHQ/cherry-studio\">Desktop</a> </p> <p align=\"center\"> <img src=\"https://img.shields.io/badge/iOS_%7C_Android-18181B?style=flat\" alt=\"Platforms: iOS and Android\" /> <img src=\"https://img.shields.io/badge/status-in_development-F2C94C?style=flat\" alt=\"Status: in development\" /> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-AGPL--3.0-D94F62?style=flat\" alt=\"License: AGPL-3.0\" /></a> </p> ## A Look Inside <p align=\"center\"> <a href=\".github/images/readme/chat.png\"><img src=\".github/images/readme/chat.png\" width=\"250\" alt=\"Cherry Studio conversation on iPhone 17 Pro\" /></a> <a href=\".github/images/readme/paintings.png\"><img src=\".github/images/readme/paintings.png\" width=\"250\" alt=\"Watercolor landscape generated in Cherry Studio on iPhone 17 Pro\" /></a> <a href=\".github/images/readme/plugins.png\"><img src=\".github/images/readme/plugins.png\" width=\"250\" alt=\"Cherry Studio plugin catalog on iPhone 17 Pro\" /></a> </p> <p align=\"center\"><sub>Conversations · Image creation · Connected tools<br />Real app screenshots captured on iPhone 17 Pro.</sub></p> ## Features ### 💬 Your Models, One Conversation Space Connect multiple AI providers, manage your models, and choose the right one for each conversation. Read streaming responses with Markdown formatting and bring images and text attachments into the conversation, subject to the selected model's capabilities. ### 🍒 Agents That Work Your Way Create agents with their own instructions, default models, and tools. Keep separate conversations for different projects, and review tool actions when approval is required. ### 🔌 Connect Your Tools Extend your agents with plugins and MCP (Model Context Protocol) servers. Search the web and read pages with configured search services. Connected tools become available accordin\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "ReMe",
+        "full_name": "agentscope-ai/ReMe",
+        "url": "https://github.com/agentscope-ai/ReMe",
+        "description": "ReMe: Memory Management Kit for Agents - Remember Me, Refine Me.",
+        "stars": 3815,
+        "pushed_at": "2026-11-17T04:49:29Z",
+        "topics": [
+          "agent",
+          "ai-agents",
+          "dsh-plugin",
+          "hermes-plugin",
+          "memory",
+          "memoryscope",
+          "openclaw-plugin",
+          "proactive",
+          "qwenpaw",
+          "rag",
+          "reme"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"https://raw.githubusercontent.com/agentscope-ai/ReMe/main/docs/figure/reme_logo.png\" alt=\"ReMe Logo\" width=\"50%\"> </p> <p align=\"center\"> <a href=\"https://pypi.org/project/reme-ai/\"><img src=\"https://img.shields.io/badge/python-3.11+-blue\" alt=\"Python Version\"></a> <a href=\"https://pypi.org/project/reme-ai/\"><img src=\"https://img.shields.io/pypi/v/reme-ai.svg?logo=pypi\" alt=\"PyPI Version\"></a> <a href=\"https://pepy.tech/project/reme-ai/\"><img src=\"https://img.shields.io/pypi/dm/reme-ai\" alt=\"PyPI Downloads\"></a> <a href=\"https://github.com/agentscope-ai/ReMe\"><img src=\"https://img.shields.io/github/commit-activity/m/agentscope-ai/ReMe?style=flat-square\" alt=\"GitHub commit activity\"></a> <a href=\"./LICENSE\"><img src=\"https://img.shields.io/badge/license-Apache--2.0-black\" alt=\"License\"></a> <a href=\"https://reme.agentscope.io\"><img src=\"https://img.shields.io/badge/docs-ReMe-blue\" alt=\"Documentation\"></a> <a href=\"./README.md\"><img src=\"https://img.shields.io/badge/English-Click-yellow\" alt=\"English\"></a> <a href=\"./README_ZH.md\"><img src=\"https://img.shields.io/badge/简体中文-点击查看-orange\" alt=\"简体中文\"></a> <a href=\"https://github.com/agentscope-ai/ReMe\"><img src=\"https://img.shields.io/github/stars/agentscope-ai/ReMe?style=social\" alt=\"GitHub Stars\"></a> <a href=\"https://deepwiki.com/agentscope-ai/ReMe\"><img src=\"https://img.shields.io/badge/DeepWiki-Ask_Devin-navy.svg\" alt=\"DeepWiki\"></a> </p> <p align=\"center\"> <a href=\"https://trendshift.io/repositories/20528\" target=\"_blank\"><img src=\"https://trendshift.io/api/badge/repositories/20528\" alt=\"agentscope-ai%2FReMe | Trendshift\" style=\"width: 250px; height: 55px;\" width=\"250\" height=\"55\"/></a> </p> <p align=\"center\"> <strong>A local-first, self-evolving personal knowledge base for AI agents.</strong><br> </p> > Previous versions: [0.3.x](https://github.com/agentscope-ai/ReMe/tree/reme_v3) · > [0.2.x](https://github.com/agentscope-ai/ReMe/tree/v0.2.0.6) · > [MemoryScope](https://github.com/agentscope-ai/ReMe/tree/memoryscope_branch) ## ✨ Why ReMe? 🧠 ReMe turns conversations and resources into readable, editable, searchable, and interconnected Markdown memory. Agents such as QwenPaw and DeepSeek Harness can share the same workspace to retrieve, maintain, and evolve knowledge, while users retain control of the durable files. - **Memory as File, File as Memory**: ReMe stores durable memory\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "conduit",
+        "full_name": "cogwheel0/conduit",
+        "url": "https://github.com/cogwheel0/conduit",
+        "description": "Native iOS and Android client for Open WebUI, direct OpenAI-compatible, Ollama, and Hermes agents.",
+        "stars": 2468,
+        "pushed_at": "2026-11-17T05:02:11Z",
+        "topics": [
+          "ai-agents",
+          "ai-assistant",
+          "android",
+          "chat",
+          "chatbot",
+          "cross-platform",
+          "dart",
+          "flutter",
+          "ios",
+          "llm",
+          "llm-client",
+          "mobile-app",
+          "ollama",
+          "open-webui",
+          "openai",
+          "openrouter",
+          "openwebui",
+          "privacy",
+          "self-hosted",
+          "selfhosted"
+        ],
+        "source": "search",
+        "text_excerpt": "<h1 align=\"center\">Conduit</h1> <p align=\"center\"> <img src=\"assets/icons/icon.png\" alt=\"Conduit icon\" width=\"96\" height=\"96\" /> </p> <p align=\"center\"> <strong>A native mobile client for Open WebUI, your own model endpoints, and self-hosted agents.</strong> </p> <p align=\"center\"> <img alt=\"Latest Release\" src=\"https://img.shields.io/github/v/release/cogwheel0/conduit?display_name=tag&color=0A84FF\" /> <img alt=\"GitHub all downloads\" src=\"https://img.shields.io/github/downloads/cogwheel0/conduit/total?style=flat-square&label=Downloads&logo=github&color=111827\" /> <img alt=\"License: GPL-3.0\" src=\"https://img.shields.io/badge/License-GPL%203.0-16A34A\" /> </p> <p align=\"center\"> <a href=\"https://play.google.com/store/apps/details?id=app.cogwheel.conduit\"> <img src=\"docs/store-badges/google.webp\" alt=\"Get it on Google Play\" height=\"56\" /> </a> <a href=\"https://apps.apple.com/us/app/conduit-open-webui-client/id6749840287\" > <img src=\"docs/store-badges/apple.webp\" alt=\"Download on the App Store\" height=\"56\" /> </a> </p> <p align=\"center\"> <a href=\"https://vercel.com/blog/vercel-open-source-program-fall-2025-cohort#conduit\"> <img alt=\"Vercel OSS Program\" src=\"https://vercel.com/oss/program-badge.svg\" width=\"240\" height=\"24\" align=\"middle\" /> </a> <a href=\"https://trendshift.io/repositories/15397?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-15397\" target=\"_blank\" rel=\"noopener noreferrer\" > <img src=\"https://trendshift.io/api/badge/trendshift/repositories/15397/daily?language=Dart\" alt=\"cogwheel0/conduit: #1 Dart repository of the day on Trendshift\" width=\"200\" height=\"44\" align=\"middle\" /> </a> </p> <p align=\"center\"> <a href=\"#ways-to-connect\">Connect</a> · <a href=\"#screenshots\">Screenshots</a> · <a href=\"#what-you-get\">Features</a> · <a href=\"#getting-started\">Getting Started</a> · <a href=\"#privacy\">Privacy</a> · <a href=\"docs/BUILDING.md\">Build from Source</a> </p> <br> <p align=\"center\"> <img src=\"https://github.com/user-attachments/assets/8531f859-a2c4-4e61-877e-9885d1413f4e\" alt=\"Conduit demo\" width=\"360\" /> </p> <br> Open WebUI is excellent on the desktop. On mobile it breaks down at the edges: authentication behind a reverse proxy, streaming that drops when the app backgrounds, getting a screenshot into a prompt, starting a chat from the home screen. Conduit is a real Flutter app built to close that gap, and as of 4.0 it work\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "LoopForge",
+        "full_name": "Tencent/LoopForge",
+        "url": "https://github.com/Tencent/LoopForge",
+        "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+        "stars": 2454,
+        "pushed_at": "2026-11-17T05:00:19Z",
+        "topics": [
+          "agent-orchestration",
+          "agentic-workflow",
+          "ai-agents",
+          "ai-coding",
+          "claude-code",
+          "code-review",
+          "codebuddy",
+          "codex",
+          "coding-agents",
+          "cursor",
+          "developer-tools",
+          "human-on-the-loop",
+          "llm",
+          "mcp",
+          "multi-agent",
+          "sdlc",
+          "self-hosted",
+          "sop",
+          "workflow-automation",
+          "workflow-engine"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/assets/readme/hero-en-dark.svg\"> <img src=\"docs/assets/readme/hero-en.svg\" alt=\"LoopForge — From idea to merged code. Chat with coding agents in sandboxed workspaces, run repeatable SOPs, and approve what ships.\" width=\"100%\"> </picture> </p> <p align=\"center\"> <a href=\"https://github.com/Tencent/LoopForge/actions/workflows/platform.yml\"><img src=\"https://img.shields.io/github/actions/workflow/status/Tencent/LoopForge/platform.yml?branch=main&label=CI&style=flat-square\" alt=\"CI\"></a> <a href=\"https://www.npmjs.com/package/loopforge-cli\"><img src=\"https://img.shields.io/npm/v/loopforge-cli?label=loopforge-cli&color=7b61ff&style=flat-square\" alt=\"npm loopforge-cli\"></a> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-7b61ff?style=flat-square\" alt=\"MIT License\"></a> <img src=\"https://img.shields.io/badge/self--hosted-Docker-526ce8?style=flat-square&logo=docker&logoColor=white\" alt=\"Self-hosted with Docker\"> <a href=\"https://github.com/Tencent/LoopForge/stargazers\"><img src=\"https://img.shields.io/github/stars/Tencent/LoopForge?style=flat-square&color=f59e0b\" alt=\"GitHub stars\"></a> </p> <p align=\"center\"> <a href=\"https://trendshift.io/repositories/300138?utm_source=repository-badge&utm_medium=badge&utm_campaign=badge-repository-300138\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"https://trendshift.io/api/badge/repositories/300138\" alt=\"Tencent%2FLoopForge | Trendshift\" width=\"250\" height=\"55\"/></a> </p> <p align=\"center\"> <b>English</b> · <a href=\"README.zh-CN.md\">简体中文</a> </p> <p align=\"center\"> <a href=\"#two-ways-to-work\">Two ways to work</a> · <a href=\"#quick-start\">Quick start</a> · <a href=\"#how-sops-work\">SOPs</a> · <a href=\"#features\">Features</a> · <a href=\"#loopforge-local\">Local</a> · <a href=\"#faq\">FAQ</a> · <a href=\"#documentation\">Docs</a> </p> https://github.com/user-attachments/assets/8af401d9-1aae-427c-b4bc-455c12d17beb <p align=\"center\"><sub>80-second product tour (1080p, with sound).</sub></p> **LoopForge** is a self-hosted workspace where your team ships software with coding agents. Describe what you need to **Main Bot** in chat: it opens a Docker sandbox, checks out your repositories, delegates to project roles, and opens the PR. When a way of working proves itself, save it as an **SOP** (a standard workflow of agents, scripts\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "LangAlpha",
+        "full_name": "ginlix-ai/LangAlpha",
+        "url": "https://github.com/ginlix-ai/LangAlpha",
+        "description": "Claude Code for Financial Market",
+        "stars": 2320,
+        "pushed_at": "2026-11-17T05:09:58Z",
+        "topics": [
+          "agent",
+          "investment",
+          "langchain",
+          "langraph",
+          "llm",
+          "mcp",
+          "skills",
+          "trading"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"web/public/logo_words.png\" alt=\"LangAlpha\" height=\"110\" /> </p> <h3 align=\"center\">The harness for agentic trading.</h3> <p align=\"center\"> Open-source AI agents that research the market, build the thesis,<br> and trade your own brokerage account within the permissions you set. </p> <p align=\"center\"> <a href=\"https://langalpha.ai\"><strong>Try LangAlpha ↗</strong></a> · <a href=\"https://docs.langalpha.ai\"><strong>Docs ↗</strong></a> · <a href=\"#get-started\"><strong>Get started</strong></a> · <a href=\"#agentic-trading\"><strong>Agentic trading</strong></a> · <a href=\"#harness-design\"><strong>Harness design</strong></a> · <a href=\"#full-stack-architecture\"><strong>Full-stack architecture</strong></a> · <a href=\"#security\"><strong>Security</strong></a> <br /> English · <a href=\"README.zh-CN.md\">简体中文</a> · <a href=\"README.ja-JP.md\">日本語</a> </p> <p align=\"center\"> <a href=\"https://github.com/ginlix-ai/langalpha/stargazers\"><img src=\"https://img.shields.io/github/stars/ginlix-ai/langalpha?style=flat-square\" alt=\"GitHub stars\" /></a> <img src=\"https://img.shields.io/badge/license-Apache%202.0-green?style=flat-square\" alt=\"License: Apache 2.0\" /> <img src=\"https://img.shields.io/badge/python-3.13+-blue?style=flat-square\" alt=\"Python 3.13+\" /> <a href=\"https://github.com/langchain-ai/langchain\"><img src=\"https://img.shields.io/badge/LangChain-1c3c3c?style=flat-square&logo=langchain&logoColor=white\" alt=\"LangChain\" /></a> <a href=\"https://docs.langalpha.ai\"><img src=\"https://img.shields.io/badge/docs-docs.langalpha.ai-1c3c3c?style=flat-square\" alt=\"Documentation\" /></a> <a href=\"https://github.com/ginlix-ai/langalpha/releases\"><img src=\"https://img.shields.io/badge/desktop-macOS%20%7C%20Windows%20%7C%20Linux-555?style=flat-square\" alt=\"Desktop app\" /></a> </p> <p align=\"center\"> <img src=\"https://raw.githubusercontent.com/ginlix-ai/LangAlpha/main/assets/readme/hero-cbrs-research-dashboard.webp\" alt=\"The demo-cbrs workspace: the agent checking the CBRS quote, pulling filings and running two analysts on the left, and on the right the CBRS dashboard built from that research, open on the price since the IPO with its event markers and a selected event's note and sources\" width=\"900\" /> </p> ## Why LangAlpha Most AI finance tools answer questions. We believe investment research is Bayesian: you write down a thesis and what would prove it wrong, t\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "indie-hacker-tools-plus",
+        "full_name": "XiaomingX/indie-hacker-tools-plus",
+        "url": "https://github.com/XiaomingX/indie-hacker-tools-plus",
+        "description": "为独立开发者准备的精选技术栈和工具仓库来了！这里有你最需要的工具，帮你提升开发效率、节约成本，最重要的是——这些工具都是市场上热门的，经过验证的。🚀A curated collection of tech stacks and tools tailored for independent developers is here! these are proven, popular tools widely used in the industry. 🚀",
+        "stars": 1940,
+        "pushed_at": "2026-11-17T04:58:00Z",
+        "topics": [
+          "agent",
+          "ai",
+          "awesome",
+          "awesome-list",
+          "awesome-lists",
+          "aws",
+          "azure",
+          "cloudflare",
+          "github",
+          "hacker",
+          "indiehacker",
+          "llm",
+          "nextjs",
+          "shadcn"
+        ],
+        "source": "search",
+        "text_excerpt": "## 🌍 **开发者出海，选对工具是关键！** 为独立开发者准备的精选技术栈和工具仓库来了！这里有你最需要的工具，帮你提升开发效率、节约成本，最重要的是——这些工具都是市场上热门的，经过验证的。🚀 为什么你会喜欢我们的推荐： - **效率神器**：帮你以最快的速度搞定项目，省下宝贵的时间 ⏱️。 - **省钱利器**：把每一分钱花在刀刃上，让开发成本降到最低 💸。 - **热门工具**：用被行业认可的好工具，避免那些没人用、掉坑里的风险 📈。 不想踩坑、不想多花冤枉钱？那就来看看我们为你整理的工具合集吧！💡✨ 欢迎大家提PR和issues，帮助我们一起完善这个工具库，让每一位开发者都能从中受益，获取最精粹的技术支持！✨ ## 贡献方法 - 欢迎投稿，推荐或自荐文章/软件/资源，请[提交 issue](https://github.com/XiaomingX/indie-hacker-tools-plus/issues/new) 。 ## 常用资源清单 🌍 [跨境出海技术栈](https://github.com/XiaomingX/indie-hacker-tools-plus) 🤖 [AI搞钱原则手册](https://github.com/XiaomingX/ai-money-maker-handbook) 🛠️ [构建你自己的X](https://github.com/XiaomingX/build-your-own-xxx) 📋 [1000个中国独立开发者项目](https://github.com/XiaomingX/1000-chinese-independent-developer-plus) 📋 [100k-us-domains:ai导航站点数据集](https://github.com/XiaomingX/100k-us-domains) 🧠 [世界上覆盖最全的优秀Qwen（千问）提示语大全](https://github.com/XiaomingX/awesome-qwen-prompt-insight) ## Web 开发模板 (2026 精选版) ### 全栈 SaaS 启动器 (SaaS Starters) | 技术栈 | 备注 | | --- | --- | | [T3 Stack](https://create.t3.gg/) | **类型安全**。Next.js + TypeScript + tRPC 的极致开发体验。 | | [Marblism](https://www.marblism.com/) | **AI 生成全栈**。通过 Prompt 直接生成包含后端、数据库和前端的完整 SaaS。 | ### 管理后台 (Admin Panels) | 技术栈 | 备注 | | --- | --- | | [Refine](https://refine.dev/) | **黑马工具**。无头 (Headless) 后台框架，支持自由组合各类 UI 库。 | | [shadcn-admin](https://github.com/satnaing/shadcn-admin) | **简洁美观**。基于 shadcn/ui 的仪表盘模板，目前非常流行。 | ### 现代 UI 组件体系 (Modern UI) | 技术栈 | | 备注 | | --- | --- | --- | | [shadcn/ui](https://ui.shadcn.com/) | | **行业标准**。不再安装组件库，而是直接复制代码块，拥有 100% 控制权。 | | [Magic UI](https://magicui.design/) | | **动态视觉**。专注于动效和高逼格交互组件，提升页面质感。 | | [Aceternity UI](https://ui.aceternity.com/) | | **现代感利器**。提供极具视觉冲击力的落地页组件。 | | [v0.dev](https://v0.dev/) | | **AI 生成 UI**。Vercel 出品，通过自然语言直接生成可用的 React 组件代码。 | | [Hyperiux Vault](https://vault.hyperiux.com/) | | **动效组件库**。为 Next.js 打造的动画效果与交互组件集合，通过 CLI 将源码直接复制进项目，拥有完整控制权。 | ### 内容驱动框架 (Content & SEO) | 技术栈 | 备注 | | --- | --- | | [Next.js (SSG)](https://nextjs.org/) | **全能选手**。强大的静态生成模式，兼顾性能与全栈扩展性。 | | [Hono](https://hono.dev/) | **极致性能**。支持边缘计算（Cloudflare Workers, Edge），是构建高性能 Content API 与极速 SEO 页面的首选。 | | [Astro](https://astro.build/) | **孤岛架构**。极致的静态性能，SEO 与内容站点的王者。 | ### AI 知识、调研与笔记 (AI Knowledge & Research) | 工具名 | 备注 | | --- | --- | | [NotebookLM](https://notebooklm.google.com/) | **Google 出品**。基于上传源文件的 AI 笔记与调研神器，支持生成播客、思维导图、幻灯片等。 | | [Perplexity.ai](https://www.perplexity.ai/) | **AI 搜索**。结\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "Lody",
+        "full_name": "LodyAI/Lody",
+        "url": "https://github.com/LodyAI/Lody",
+        "description": "Share coding agents with your team on phone and desktop",
+        "stars": 1787,
+        "pushed_at": "2026-11-17T04:53:22Z",
+        "topics": [
+          "agent",
+          "agentic-workflow",
+          "coding-agent",
+          "collaboration",
+          "local-first",
+          "multi-agent",
+          "multiplayer",
+          "orchestration",
+          "vibe-coding"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <a href=\"https://play.google.com/store/apps/details?id=ai.lody.android\"> <img src=\"https://img.shields.io/badge/Google_Play-414141?logo=google-play&logoColor=white\"/> </a> <a href=\"https://apps.apple.com/us/app/lody-run-code-agent-anywhere/id6761373528\"> <img src=\"https://img.shields.io/badge/App_Store-0D96F6?logo=app-store&logoColor=white\"/> </a> <a href=\"https://lody.ai/download\"> <img src=\"https://img.shields.io/badge/macOS-000000?logo=apple&logoColor=F0F0F0\"/> </a> <a href=\"https://lody.ai/download\"> <img src=\"https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white\"/> </a> <a href=\"https://lody.ai/download\"> <img src=\"https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black\"/> </a> </p> <p align=\"center\"> <a href=\"https://lody.ai\"> <picture> <img src=\"./site-docs/public/icon-mac.png\" width=\"128\"/> </picture> </a> </p> <h1 align=\"center\"> <a href=\"https://lody.ai\" alt=\"lody-site\">Lody</a> </h1> <p align=\"center\"> <b>English</b> | <a href=\"./README.zh-CN.md\">简体中文</a> </p> <p align=\"center\"> <b>A shared workspace for the coding agents your team already uses.</b> </p> <p align=\"center\"> Connect any machine and bring any coding agent through ACP. Share conversations with your team and dispatch work from desktop, mobile, web, or CLI. </p> <p align=\"center\"> <a href=\"https://lody.ai/docs/\"> <b>Documentation</b> </a> | <a href=\"https://lody.ai/docs/quickstart\"> <b>Getting Started</b> </a> </p> <p align=\"center\"> <a aria-label=\"X\" href=\"https://x.com/intent/follow?screen_name=lody_ai\" target=\"_blank\"> <img alt=\"\" src=\"https://img.shields.io/badge/X-%23000000.svg?style=for-the-badge&logo=X&logoColor=white\"> </a> <a aria-label=\"Discord-Link\" href=\"https://discord.gg/E8mZtMu38s\" target=\"_blank\"> <img alt=\"\" src=\"https://img.shields.io/badge/Discord-black?style=for-the-badge&logo=discord\"> </a> </p> <p align=\"center\"> <img src=\"./site-docs/public/_docs-assets/lody-readme-hero.png\" alt=\"Lody running coding Agents across desktop and mobile\" width=\"100%\" /> </p> ## What you can do with Lody ### Share Agent conversations with your team Open the same conversation with your teammates. See the full transcript, runtime status, files, and code changes around the work, then add instructions without passing around screenshots or pasted logs. ### Bring the Agents and machines you already use Connect Claude Code, C\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "agent-foundation",
+        "full_name": "converge-ai-labs/agent-foundation",
+        "url": "https://github.com/converge-ai-labs/agent-foundation",
+        "description": "a13n - Build, run, and manage AI agents at scale on your own infrastructure. Open source, with a built-in harness, durable execution, multi-provider support, and a management console. Built With Love 💜 @converge-ai-labs",
+        "stars": 1331,
+        "pushed_at": "2026-11-17T05:07:17Z",
+        "topics": [
+          "a13n",
+          "agent",
+          "harness",
+          "managed-agents",
+          "sign-in-with-chatgpt"
+        ],
+        "source": "search",
+        "text_excerpt": "<h1 align=\"center\">Agent Foundation (a13n)</h1> [![CI](https://github.com/converge-ai-labs/agent-foundation/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/converge-ai-labs/agent-foundation/actions/workflows/ci.yml) [![Documentation](https://img.shields.io/badge/docs-agent--foundation-blue)](https://a13n.dev/docs/) [![Python](https://img.shields.io/badge/python-3.13%2B-blue)](https://www.python.org/) [![License](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE) [![Slack](https://img.shields.io/badge/Slack-Join%20the%20community-4A154B)](https://join.slack.com/t/a13n/shared_invite/zt-4embv13zr-JfXjmJQop4Y9y6K3NH0kDQ) **Build, run, and manage AI agents at scale on your own infrastructure.** a13n Service is an open-source runtime for managing and running agents. Use Console, its web interface, to configure an agent, try it in a conversation, and debug its tool calls. Your application can then call that same agent through the [HTTP API](docs/a13n-service/connect-application.md) or a [Python, TypeScript, Go, or Rust SDK](docs/a13n-service/sdks.md). Service handles execution and recovery for those requests. - **Long-running tasks:** Agents keep working when clients disconnect. - **Durable execution:** Interrupted runs can resume from saved checkpoints after worker failures. - **Run visibility:** Inspect runs from your application in Console and track workspace usage and cost. Choose your [providers](#providers-and-integrations) for models, sandboxes, web search, and memory. Bring your own keys. <a href=\"https://a13n.dev/docs/#architecture\"> <picture> <source media=\"(max-width: 600px) and (prefers-color-scheme: dark)\" srcset=\".github/assets/a13n-runtime-mobile-dark.webp\"> <source media=\"(max-width: 600px)\" srcset=\".github/assets/a13n-runtime-mobile.webp\"> <source media=\"(prefers-color-scheme: dark)\" srcset=\".github/assets/a13n-runtime-dark.webp\"> <img src=\".github/assets/a13n-runtime.webp\" alt=\"Console and application clients connect to the Service API. Workers lease runs from PostgreSQL, execute them with Harness, and save checkpoints to object storage. After lease expiry, another attempt can resume from a saved checkpoint. Harness UI and Python apps can embed Harness directly.\"> </picture> </a> ## Run Service [![Console showing six managed agents, their model providers, and status](.github/assets/console-managed-agents.jpg)](.g\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "pdd",
+        "full_name": "promptdriven/pdd",
+        "url": "https://github.com/promptdriven/pdd",
+        "description": "Prompt Driven Development (PDD): The Last Programming Language™. Prompt files are source; code is generated output.",
+        "stars": 938,
+        "pushed_at": "2026-11-17T04:58:41Z",
+        "topics": [
+          "ai",
+          "cli",
+          "code",
+          "developer-tools",
+          "development",
+          "methodology",
+          "prompt",
+          "prompt-engineering",
+          "prompt-toolkit",
+          "prompts",
+          "prompts-template"
+        ],
+        "source": "search",
+        "text_excerpt": "# PDD ## What PDD is In PDD, you write prompts and Stories. The prompts are the source of your program. The PDD interpreter runs the prompts with an AI that acts as the code, so you can check and try the program before any code exists. Then your agent writes the code from the approved prompts. ```mermaid flowchart LR P[\"Prompt<br/>the source\"] --> S[\"Story<br/>what a user can do\"] S --> C[\"Test<br/>pdd test\"] C --> T[\"Simulate<br/>pdd simulate\"] T --> A[\"Approve<br/>pdd approve\"] A --> K[\"Code<br/>from the prompts\"] ``` PDD is the `pdd` command and a set of skills for your agent. Your agent writes the prompts, the Stories, the tests and the code. The PDD interpreter runs the checks and the simulation. In manual workflows, you approve. An explicit Autopilot auto setup and start can delegate ordinary gates; strict approvals and required human reviews still need a person. ## Install You need [Node.js](https://nodejs.org) 22.16.0 or newer, [Git](https://git-scm.com), and the [GitHub CLI](https://cli.github.com) signed in with `gh auth login`. For `pdd setup` and workflow runs, install Codex, Claude Code, Gemini CLI or Antigravity CLI. Without `--agent`, pdd selects the first ready agent in that order. Codex and Claude status probes check for configured credentials; Gemini checks installation and leaves sign-in to the chat; Antigravity lists models for a signed-in account. Remote checks and Try need access to the PDD interpreter (see [Access](#access)). PDD is tested on macOS and Linux. ```sh npm install -g github:promptdriven/pdd npx skills add promptdriven/pdd -g --skill '*' pdd --version cd your-repo pdd setup ``` 1. `npm install -g github:promptdriven/pdd` installs the `pdd` command. 2. `npx skills add promptdriven/pdd -g --skill '*'` adds all the PDD skills for your agents. `--skill '*'` selects every PDD skill. Without it, the installer shows the list \"Select skills to install\" with no skill selected: select all of them, then press Enter. Then the installer asks which agents get the skills: select the agents that you use. It can say `Failed to install` for an agent that cannot have global skills. That agent still gets them. 3. The installer also shows security ratings from outside scanners. Some PDD skills get a warning because they read GitHub issues and pull requests, and anyone can write those. The skills treat that text as data. Autopilot gives its agen\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "Wegent",
+        "full_name": "wecode-ai/Wegent",
+        "url": "https://github.com/wecode-ai/Wegent",
+        "description": "Plan, build, and deliver with an open-source, self-hostable AI workspace for coding, collaboration, and automation.",
+        "stars": 890,
+        "pushed_at": "2026-11-17T05:10:15Z",
+        "topics": [
+          "agent",
+          "ai",
+          "chatbot",
+          "claude-code",
+          "codex",
+          "dsh-plugin",
+          "wework"
+        ],
+        "source": "search",
+        "text_excerpt": "# Wegent > An open-source work system where people and AI move projects forward together. English | [简体中文](README_zh.md) [![CI](https://github.com/wecode-ai/Wegent/actions/workflows/test.yml/badge.svg)](https://github.com/wecode-ai/Wegent/actions/workflows/test.yml) [![License](https://img.shields.io/github/license/wecode-ai/Wegent)](LICENSE) [![GitHub Issues](https://img.shields.io/github/issues/wecode-ai/Wegent)](https://github.com/wecode-ai/Wegent/issues) <a href=\"https://linux.do\"> <img alt=\"LINUX DO\" src=\"https://img.shields.io/badge/LINUX-DO-FFB003.svg?logo=data:image/svg%2bxml;base64,DQo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiPjxwYXRoIGQ9Ik00Ni44Mi0uMDU1aDYuMjVxMjMuOTY5IDIuMDYyIDM4IDIxLjQyNmM1LjI1OCA3LjY3NiA4LjIxNSAxNi4xNTYgOC44NzUgMjUuNDV2Ni4yNXEtMi4wNjQgMjMuOTY4LTIxLjQzIDM4LTExLjUxMiA3Ljg4NS0yNS40NDUgOC44NzRoLTYuMjVxLTIzLjk3LTIuMDY0LTM4LjAwNC0yMS40M1EuOTcxIDY3LjA1Ni0uMDU0IDUzLjE4di02LjQ3M0MxLjM2MiAzMC43ODEgOC41MDMgMTguMTQ4IDIxLjM3IDguODE3IDI5LjA0NyAzLjU2MiAzNy41MjcuNjA0IDQ2LjgyMS0uMDU2IiBzdHlsZT0ic3Ryb2tlOm5vbmU7ZmlsbC1ydWxlOmV2ZW5vZGQ7ZmlsbDojZWNlY2VjO2ZpbGwtb3BhY2l0eToxIi8+PHBhdGggZD0iTTQ3LjI2NiAyLjk1N3EyMi41My0uNjUgMzcuNzc3IDE1LjczOGE0OS43IDQ5LjcgMCAwIDEgNi44NjcgMTAuMTU3cS00MS45NjQuMjIyLTgzLjkzIDAgOS43NS0xOC42MTYgMzAuMDI0LTI0LjM4N2E2MSA2MSAwIDAgMSA5LjI2Mi0xLjUwOCIgc3R5bGU9InN0cm9rZTpub25lO2ZpbGwtcnVsZTpldmVub2RkO2ZpbGw6IzE5MTkxOTtmaWxsLW9wYWNpdHk6MSIvPjxwYXRoIGQ9Ik03Ljk4IDcwLjkyNmMyNy45NzctLjAzNSA1NS45NTQgMCA4My45My4xMTNRODMuNDI2IDg3LjQ3MyA2Ni4xMyA5NC4wODZxLTE4LjgxIDYuNTQ0LTM2LjgzMi0xLjg5OC0xNC4yMDMtNy4wOS0yMS4zMTctMjEuMjYyIiBzdHlsZT0ic3Ryb2tlOm5vbmU7ZmlsbC1ydWxlOmV2ZW5vZGQ7ZmlsbDojZjlhZjAwO2ZpbGwtb3BhY2l0eToxIi8+PC9zdmc+\" /></a> Wegent brings team members, AI agents, and personal stand-ins together around the same Issue: describe a goal, assign work, execute tasks, and deliver results. Discussions, execution records, and deliverables stay connected. Work on a local coding project on your own, or hand work across your team in a shared project space. [Download the latest Wegent Desktop](https://github.com/wecode-ai/Wegent/releases/latest) · [Quick start](#quick-start) · [Documentation](https://wecode-ai.github.io/wegent-docs/) · [Contributing](CONTRIBUTING.md) ## One Issue, the whole team [![Watch the 90-second collaboration demo (English)](https://github.com/wecode-ai/Wegent/releases/download/readme-as\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "Cotal",
+        "full_name": "Cotal-AI/Cotal",
+        "url": "https://github.com/Cotal-AI/Cotal",
+        "description": "The open standard for agent coordination",
+        "stars": 395,
+        "pushed_at": "2026-11-17T05:09:28Z",
+        "topics": [
+          "a2a",
+          "agent-communication",
+          "agent-mesh",
+          "agent-orchestration",
+          "agent-skills",
+          "ai",
+          "ai-agents",
+          "claude-code",
+          "distributed-systems",
+          "infrastructure",
+          "jetstream",
+          "mcp",
+          "model-context-protocol",
+          "multi-agent",
+          "nats",
+          "protocol",
+          "pubsub",
+          "self-hosted",
+          "swarm",
+          "typescript"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"assets/cotal-wordmark-dark.png\"> <img src=\"assets/cotal-wordmark-light.png\" width=\"210\" alt=\"Cotal\"> </picture> **The open pub/sub standard for AI agents.** <img src=\"assets/cotal-hero.gif\" width=\"760\" alt=\"Claude Code, OpenCode and Codex wait in separate apps while you copy their work between them. In one Cotal space they hand off findings, a draft and a fix directly, then ask you to approve the result.\"> <sub>Connect agents across applications and machines.<br> Choose the topology that fits your team.</sub> <p> <a href=\"https://docs.cotal.ai\"><img src=\"assets/button-docs.svg\" width=\"270\" alt=\"Read the docs at docs.cotal.ai\"></a> <a href=\"#quick-start\"><picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"assets/button-quickstart-dark.svg\"> <img src=\"assets/button-quickstart-light.svg\" width=\"270\" alt=\"Quick start\"> </picture></a> </p> [![CI](https://github.com/Cotal-AI/Cotal/actions/workflows/ci.yml/badge.svg)](https://github.com/Cotal-AI/Cotal/actions/workflows/ci.yml) [![npm](https://img.shields.io/npm/v/@cotal-ai/core?label=%40cotal-ai%2Fcore)](https://www.npmjs.com/package/@cotal-ai/core) [![Docs](https://img.shields.io/badge/docs-docs.cotal.ai-e9c46a)](https://docs.cotal.ai) [![Discord](https://img.shields.io/badge/Discord-join-5865F2?logo=discord&logoColor=white)](https://discord.gg/fhPqe3b4qu) [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE) [![Node](https://img.shields.io/badge/node-%E2%89%A522-brightgreen)](https://nodejs.org) [Live demo](https://booth.apps.cotal.ai) · [Examples](#examples) · [Supported agents](#supported-agents) · [FAQ](#faq) </div> ## What is Cotal Cotal lets AI agents and software services work together in a shared space, across applications and machines. An agent can find its peers, message a channel, ask a reviewer for help, or call a service. You choose who delegates to whom. Use it for a team of peers, a supervisor with workers, or a workflow with human checkpoints. Agents can join from a laptop, a workstation or a remote host. Separate spaces keep projects and their permissions apart. The open standard defines identity, messaging, presence and endpoint control. The TypeScript implementation runs on [NATS + JetStream](https://nats.io) and includes the CLI, application connectors, a process manager, durabl\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "GitDesktop",
+        "full_name": "theBGuy/GitDesktop",
+        "url": "https://github.com/theBGuy/GitDesktop",
+        "description": "AI-native, keyboard-first Git desktop client combining GitHub Desktop's ease with advanced Git, PR, issue, discussion, Actions, and notification management; integrates GitLab, Bitbucket, Jira, agentic workflows, multi-provider AI, CLI-first privacy, and self-updating via Tauri + React",
+        "stars": 248,
+        "pushed_at": "2026-11-17T04:58:08Z",
+        "topics": [
+          "ai",
+          "bitbucket",
+          "desktop-client",
+          "git",
+          "github",
+          "github-cli",
+          "gitlab",
+          "react",
+          "tauri"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"src-tauri/icons/128x128@2x.png\" alt=\"GitDesktop logo\" width=\"88\" height=\"88\"> </p> <h1 align=\"center\">GitDesktop</h1> <p align=\"center\"><strong>An AI-native, keyboard-first Git desktop client</strong></p> <p align=\"center\"> <a href=\"https://github.com/theBGuy/GitDesktop/releases/latest\"><img alt=\"Download the latest release\" src=\"https://img.shields.io/badge/Download-latest_release-4FE0C4?style=flat-square\"></a> <a href=\"LICENSE\"><img alt=\"License: Apache 2.0\" src=\"https://img.shields.io/badge/license-Apache_2.0-555?style=flat-square\"></a> <img alt=\"Platforms: Windows, macOS, Linux\" src=\"https://img.shields.io/badge/platforms-Windows_%7C_macOS_%7C_Linux-555?style=flat-square\"> </p> GitDesktop is a free, open-source (Apache-2.0) Git client for Windows, macOS, and Linux, built with Tauri 2 and React 19. It keeps GitHub Desktop's approachable model and goes further: staging, diffs, branches, and history for any remote, plus the whole pull-request loop (code review and CI) on GitHub, GitLab, and Bitbucket, with issues in-app on GitHub and GitLab or via Jira on Bitbucket. That includes things GitHub Desktop doesn't do at all, like offline \"local\" pull requests and a GitHub Actions cockpit. AI runs through commits, reviews, and CI debugging, with the provider you choose (local models included). It's also optional: one switch hides every AI surface, leaving a keyboard-first Git client. All GitHub access goes through the **GitHub CLI (`gh`)**: no OAuth app, and the app never stores your tokens. Core git runs against any remote via system `git`. Because `gh` detects each repo's host from its remote, **GitHub Enterprise** servers work the same as github.com once you've run `gh auth login --hostname <host>`, and Settings → Accounts switches the active account per host. <picture> <source media=\"(prefers-reduced-motion: reduce)\" srcset=\"site/src/assets/readme/loop-poster.webp\"> <img src=\"site/src/assets/readme/loop.gif\" width=\"960\" alt=\"GitDesktop committing three staged files with an AI-written message, publishing the branch, opening a pull request with an AI-drafted title and description, watching its three checks pass, and squash-merging it with the remote branch deleted\"> </picture> ## Install **[Download the latest release →](https://github.com/theBGuy/GitDesktop/releases/latest)** Pick the installer for your OS under **Assets**. On macO\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": true
+      },
+      {
+        "name": "evener",
+        "full_name": "prime-radiant-inc/evener",
+        "url": "https://github.com/prime-radiant-inc/evener",
+        "description": "A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.",
+        "stars": 199,
+        "pushed_at": "2026-11-17T04:57:12Z",
+        "topics": [
+          "ai-agent",
+          "cli",
+          "coding-agent",
+          "go",
+          "llm"
+        ],
+        "source": "search",
+        "text_excerpt": "# Evener Evener is a coding agent that works in your project: it reads files, runs commands, edits code, and checks the result. Use the browser to follow and steer its work, the CLI to run a task from a script, or the iPhone client to reach your hub away from your desk. The hub is the service that connects these interfaces to your sessions. **[Get started](docs/getting-started.md)** to install Evener, connect a model provider, and repair a small program with a check you can run yourself. These guides track **main**. The first-run guide uses the latest successful snapshot from main; tagged releases can lag the behavior described here. Start the service with `evener hub`. Its listener (`--addr`, `EVENER_HUB_LISTEN_ADDR`, or TOML `addr`), a client's destination (`--hub-url` or `EVENER_HUB_URL` where supported), and the advertised `public_url` are separate settings. See [hub endpoints](docs/evener-hub-endpoints.md) for discovery and migration. ## Find your next step | You want to… | Read | | --- | --- | | Install and finish a first task | [Get started](docs/getting-started.md) | | Steer work, resume a session, or review changes | [Daily work](docs/daily-work.md) | | Understand sessions, delegates, jobs, and memory | [How Evener works](docs/concepts.md) | | Choose models and configure access | [Configuration](docs/configuration.md) | | Add reusable instructions or tools | [Extend Evener](docs/extensions.md) | | Run Evener from a script | [CLI reference](docs/cli.md) | | Connect a client | [Integrations](docs/integrations.md) | | Connect an iPhone | [Native app](docs/native-app.md) | | Diagnose a problem | [Troubleshooting](docs/troubleshooting.md) | | Upgrade an existing install | [Upgrading](UPGRADING.md) | The [documentation home](docs/index.md) brings these paths together. The [published guide](https://prime-radiant-inc.github.io/evener/) uses the same Markdown sources. ## Work with evidence Give Evener a goal, boundaries, and a way to check success. Read its changes and rerun the relevant checks before accepting the result. A model's summary is not a test result, and stopping a session does not undo its edits. Evener can send project content to your selected model provider and execute tools on the session's host. Review [sandboxing](docs/sandboxing.md) before using an unfamiliar repository or granting broader access. Keep credentials out of prompts and source\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "open-walnut",
+        "full_name": "EvanZhang008/open-walnut",
+        "url": "https://github.com/EvanZhang008/open-walnut",
+        "description": "Claude Code on your laptop and remote dev boxes, in one web page. Sessions keep running when SSH drops (no tmux), each session's changes get their own diff, plus tasks, notes, and memory. Self-hosted.",
+        "stars": 140,
+        "pushed_at": "2026-11-17T05:08:43Z",
+        "topics": [
+          "acp",
+          "agent-client-protocol",
+          "ai-agent",
+          "ai-productivity",
+          "claude",
+          "claude-code",
+          "cli",
+          "developer-tools",
+          "knowledge-management",
+          "llm",
+          "local-first",
+          "open-source",
+          "personal-assistant",
+          "productivity",
+          "remote-development",
+          "self-hosted",
+          "ssh",
+          "task-manager",
+          "typescript",
+          "web-ui"
+        ],
+        "source": "search",
+        "text_excerpt": "# Open Walnut [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![GitHub stars](https://img.shields.io/github/stars/EvanZhang008/open-walnut?style=social)](https://github.com/EvanZhang008/open-walnut) **Replace Notion and your Claude Code terminals with one open-source app where AI agents run your work like a small company.** You talk to one CEO agent, and each project gets its own lead that runs Claude Code sessions and workers for it. Install on macOS or Linux with one line (it needs nothing else, not even Node), then open [localhost:3456](http://localhost:3456): ```bash curl -fsSL https://github.com/EvanZhang008/open-walnut/releases/latest/download/install.sh | sh ~/.local/bin/walnut web ``` Or with Homebrew, `brew install evanzhang008/tap/open-walnut && walnut web`, or get the Mac app: [Apple silicon](https://github.com/EvanZhang008/open-walnut/releases/latest/download/Walnut-arm64.dmg) · [Intel](https://github.com/EvanZhang008/open-walnut/releases/latest/download/Walnut-x64.dmg). Walnut runs its agents on [Claude Code](https://docs.anthropic.com/en/docs/claude-code), signed in once. ![The Org page on 0.6.19: the org chart, a lead per area, and the one question that needs you, answered where it waits](docs/assets/org/org.gif) <p align=\"center\"><sub><b>USED BY ENGINEERS AT</b></sub></p> <p align=\"center\"> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/assets/logo-amazon-white.svg\" /> <img src=\"docs/assets/logo-amazon-dark.svg\" alt=\"Amazon\" height=\"26\" /> </picture> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/assets/logo-doordash-white.svg\" /> <img src=\"docs/assets/logo-doordash-dark.svg\" alt=\"DoorDash\" height=\"26\" /> </picture> </p> Next to the org sit your tasks, Markdown notes, calendar, and long-term memory, and every coding session in one web page: Claude Code, Codex, Gemini, OpenCode, and Goose, on your laptop or on a remote dev box over SSH. Plugins add your own apps. Open Walnut is self-hosted, local-first, MIT licensed, and has no telemetry. ## What Open Walnut Does - **An org that runs your work**: the CEO agent sees every project. Each project has a lead that plans the work and hands it to workers, each one its own Claude Code session. The Org page shows what needs you, and you answer right where the question waits. - **Personal AI**: ask a quick question, or have it manag\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "zhin",
+        "full_name": "zhinjs/zhin",
+        "url": "https://github.com/zhinjs/zhin",
+        "description": "AI-native TypeScript bot framework — one codebase for 20+ chat platforms (QQ, Discord, Telegram, Slack, WeChat…). Opt-in AI agent with MCP, tools & security policies. <10MB core.",
+        "stars": 137,
+        "pushed_at": "2026-11-17T04:58:11Z",
+        "topics": [
+          "a2a",
+          "agent",
+          "ai",
+          "bot-framework",
+          "chatbot",
+          "discord",
+          "framework",
+          "hot-module-replacement",
+          "im",
+          "mcp",
+          "multi-platform",
+          "openai",
+          "plugin",
+          "qq",
+          "slack",
+          "telegram",
+          "typescript-framework",
+          "wechat"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <a href=\"https://zhin.js.org\"> <img src=\"docs/public/logo.svg\" alt=\"Zhin.js\" width=\"120\" height=\"120\" /> </a> </p> <h1 align=\"center\">Zhin.js</h1> <p align=\"center\"> <strong>Write once in TypeScript. Run your bot across 20+ chat platforms.</strong><br /> File-based commands, cross-platform JSX cards, leak-free hot reload, and opt-in AI agents — managed from the browser.<br /> QQ · WeChat · WeCom · DingTalk · Lark · Discord · Telegram · Slack · KOOK · LINE · … </p> <p align=\"center\"> <a href=\"https://github.com/zhinjs/zhin/actions/workflows/ci.yml\"><img src=\"https://github.com/zhinjs/zhin/actions/workflows/ci.yml/badge.svg\" alt=\"CI\" /></a> <a href=\"https://www.npmjs.com/package/zhin.js\"><img src=\"https://img.shields.io/npm/v/zhin.js.svg?color=cb3837\" alt=\"npm\" /></a> <a href=\"https://www.npmjs.com/package/zhin.js\"><img src=\"https://img.shields.io/npm/dm/zhin.js.svg?color=cb3837\" alt=\"npm downloads\" /></a> <a href=\"https://nodejs.org\"><img src=\"https://img.shields.io/node/v/zhin.js.svg?color=339933\" alt=\"Node\" /></a> <a href=\"./LICENSE\"><img src=\"https://img.shields.io/badge/License-MIT-yellow.svg\" alt=\"License: MIT\" /></a> <a href=\"https://codecov.io/gh/zhinjs/zhin\"><img src=\"https://codecov.io/gh/zhinjs/zhin/graph/badge.svg\" alt=\"codecov\" /></a> <a href=\"https://zhin.js.org\"><img src=\"https://img.shields.io/badge/docs-zhin.js.org-0ea5e9\" alt=\"Docs\" /></a> </p> <p align=\"center\"> <b>English</b> · <a href=\"./README.zh-CN.md\">简体中文</a> </p> <p align=\"center\"> <a href=\"https://zhin.js.org/en/\">Documentation</a> · <a href=\"./docs/en/authoring/define-plugin.md\">Plugin Authoring</a> · <a href=\"./docs/en/customer/index.md\">Operator Guide</a> · <a href=\"https://demo.zhin.dev\">Live Demo</a> · <a href=\"https://console.zhin.dev\">Remote Console</a> · <a href=\"./docs/contributing/development.md\">Contributing</a> </p> --- > **Running a bot without writing code?** Jump to the [Operator & Group Admin Guide](./docs/en/customer/index.md) or try the [Live Demo](https://demo.zhin.dev). Building plugins or adapters in TypeScript? Start right below or browse [Plugin Authoring](./docs/en/authoring/define-plugin.md). ## 30-Second Quick Start No platform account and no model key required (Node.js **≥22.19.0**, pnpm 9+): ```bash npm create zhin-app my-bot -- -y --adapter sandbox cd my-bot pnpm dev # zhin start --foreground: management gateway + your bot, hot reload `\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "dashscope-sdk",
+        "full_name": "cnblogs/dashscope-sdk",
+        "url": "https://github.com/cnblogs/dashscope-sdk",
+        "description": "An unofficial DashScope（ SDK for .NET maintained by Cnblogs.",
+        "stars": 119,
+        "pushed_at": "2026-11-17T04:59:11Z",
+        "topics": [
+          "ai",
+          "bailian",
+          "dashscope-sdk",
+          "dotnet",
+          "qwen"
+        ],
+        "source": "search",
+        "text_excerpt": "English | [简体中文](https://github.com/cnblogs/dashscope-sdk/blob/main/README.zh-Hans.md) # Cnblogs.DashScopeSDK [![NuGet Version](https://img.shields.io/nuget/v/Cnblogs.DashScope.AI?style=flat&logo=nuget&label=Cnblogs.DashScope.AI)](https://www.nuget.org/packages/Cnblogs.DashScope.AI) [![NuGet Version](https://img.shields.io/nuget/v/Cnblogs.DashScope.Sdk?style=flat&logo=nuget&label=Cnblogs.DashScope.Sdk&link=https%3A%2F%2Fwww.nuget.org%2Fpackages%2FCnblogs.DashScope.Sdk)](https://www.nuget.org/packages/Cnblogs.DashScope.Sdk) [![NuGet Version](https://img.shields.io/nuget/v/Cnblogs.DashScope.AspNetCore?style=flat&logo=nuget&label=Cnblogs.DashScope.AspNetCore&link=https%3A%2F%2Fwww.nuget.org%2Fpackages%2FCnblogs.DashScope.AspNetCore)](https://www.nuget.org/packages/Cnblogs.DashScope.AspNetCore) A non-official DashScope (Bailian) service SDK maintained by Cnblogs. **Note:** This project is actively under development. Breaking changes may occur even in minor versions. Please review the Release Notes before upgrading. ## Quick Start ### Console Application Install NuGet package `Cnblogs.DashScope.Sdk` ```csharp // The SDK defaults to the Beijing region, pass region if your API key belongs to another region var client = new DashScopeClient(\"your-api-key\", region: DashScopeRegion.Singapore); var completion = await client.GetTextCompletionAsync( new ModelRequest<TextGenerationInput, ITextGenerationParameters>() { Model = \"qwen-turbo\", Input = new TextGenerationInput() { Messages = new List<TextChatMessage>() { TextChatMessage.System(\"You are a helpful assistant\"), TextChatMessage.User(\"你是谁？\") } }, Parameters = new TextGenerationParameters() { ResultFormat = \"message\" } }); Console.WriteLine(completion.Output.Choices![0].Message.Content) ``` ### ASP.NET Core Application Install NuGet package `Cnblogs.DashScope.AspNetCore` `Program.cs` ```csharp builder.AddDashScopeClient(builder.Configuration); ``` `appsettings.json` ```json { \"DashScope\": { \"ApiKey\": \"your-api-key\", \"RegionId\": \"ap-southeast-1\" } } ``` Application class: ```csharp public class YourService(IDashScopeClient client) { public async Task<string> CompletePromptAsync(string prompt) { var completion = await client.GetTextCompletionAsync( new ModelRequest<TextGenerationInput, ITextGenerationParameters>() { Model = \"qwen-turbo\", Input = new TextGenerationInput() { Messages = new List<TextChatMessage>() { TextCh\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "pebbleagent",
+        "full_name": "5235aa-web/pebbleagent",
+        "url": "https://github.com/5235aa-web/pebbleagent",
+        "description": "Your personal light coding agent",
+        "stars": 118,
+        "pushed_at": "2026-11-17T05:06:42Z",
+        "topics": [
+          "agent",
+          "ai-agent",
+          "aidevelopment",
+          "desktop-app",
+          "developer-tools",
+          "knowledge-graph",
+          "llm",
+          "macos",
+          "macos-app",
+          "mcp",
+          "model-context-protocol",
+          "python",
+          "tauri",
+          "vue3"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"assets/logo.png\" alt=\"PEBBLE-AGENT\" width=\"720\"> **A light,extensible desktop AI agent with tools, skills, MCP servers, a self-maintained code knowledge base, and cross-session memory.** [![checks](https://img.shields.io/github/actions/workflow/status/5235aa-web/pebbleagent/checks.yml?style=flat-square&label=checks&labelColor=1f1f1f&color=00E676)](https://github.com/5235aa-web/pebbleagent/actions/workflows/checks.yml) [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-CE93D8?style=flat-square&labelColor=1f1f1f)](LICENSE) [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-44AAFF?style=flat-square&labelColor=1f1f1f)](https://www.python.org/) [![Vue 3](https://img.shields.io/badge/Vue-3-00E676?style=flat-square&labelColor=1f1f1f)](https://vuejs.org/) [![Tauri 2](https://img.shields.io/badge/Tauri-2-FF6699?style=flat-square&labelColor=1f1f1f)](https://tauri.app/) [![Platform: Windows](https://img.shields.io/badge/Platform-Windows-8A92A6?style=flat-square&labelColor=1f1f1f)](#) [![Platform: macOS](https://img.shields.io/badge/Platform-macOS-8A92A6?style=flat-square&labelColor=1f1f1f&logo=apple&logoColor=ffffff)](#) </div> > **Platform support:** Windows 10/11 (64-bit) is the tested platform, and the only one that can build the desktop shell. The backend and the web UI also run on macOS, where the shell is unavailable because its Tauri sidecar management is written against Win32 APIs. Linux is untested. > > <sub>macOS has not been run by the author, who has no Apple machine. It should work on MacOS theoretically — and if it does not, please open an issue.</sub> ## Features - **Code Knowledge Base (CKB).** The agent indexes your repository into a chaptered knowledge base, verifies it against the source, and keeps it in sync as the project evolves. - **Cross-session experience ledger.** Corrections, constraints, and preferences you express during work become evidence-backed entries in a local SQLite ledger. Later turns recall the relevant ones by full-text relevance plus tool and path context, and superseded entries are retired automatically. Capture and recall run on rules, not extra model calls. - **Snapshot & rollback.** Every write is snapshotted before it happens; diffs are tracked per file, and you can roll back a single file or an entire change set — with an undo for the rollback itself. - **Permissio\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "zenstory",
+        "full_name": "zenstory-ai/zenstory",
+        "url": "https://github.com/zenstory-ai/zenstory",
+        "description": "对话即创作 · 面向网文与故事作者的 AI 写作工作台（大纲、人设、正文、设定与伏笔追踪一站式管理）｜ Chat-to-create AI novel-writing workbench",
+        "stars": 102,
+        "pushed_at": "2026-11-17T05:09:33Z",
+        "topics": [
+          "ai",
+          "ai-agent",
+          "ai-writing",
+          "creative-writing",
+          "deepseek",
+          "fiction",
+          "multi-agent",
+          "novel-writing",
+          "web-novel",
+          "writing-assistant",
+          "zenstory"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"https://raw.githubusercontent.com/zenstory-ai/zenstory/main/apps/web/public/brand/zenstory-ai-mark.svg\" alt=\"\" width=\"76\" height=\"76\"> </p> <h1 align=\"center\">ZenStory 工作台</h1> <p align=\"center\"> <b>对话即创作：在浏览器里写小说与短剧，AI 直接新建、改写你的大纲、正文和角色卡。</b> </p> <p align=\"center\"> <a href=\"https://zenstory.ai/zh/workbench\"><b>项目主页</b></a> · <a href=\"#开始使用\"><b>开始使用</b></a> · <a href=\"#工作台核心功能\"><b>核心功能</b></a> · <a href=\"README_EN.md\"><b>English</b></a> </p> <p align=\"center\"> <a href=\"https://github.com/zenstory-ai/zenstory/stargazers\"><img alt=\"Stars\" src=\"https://img.shields.io/github/stars/zenstory-ai/zenstory?style=flat-square&color=22D3EE&logo=github&logoColor=white&label=Stars\"></a> <img alt=\"Skills 14\" src=\"https://img.shields.io/badge/Skills-14-081431?style=flat-square\"> <a href=\"https://app.zenstory.ai/\"><img alt=\"app.zenstory.ai\" src=\"https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Fapp.zenstory.ai&label=app.zenstory.ai\"></a> <a href=\"./LICENSE\"><img alt=\"License AGPL-3.0\" src=\"https://img.shields.io/badge/License-AGPL--3.0-1F6FEB?style=flat-square\"></a> </p> <p align=\"center\"> <a href=\"https://app.zenstory.ai/\"><img alt=\"打开工作台\" src=\"https://img.shields.io/badge/%E6%89%93%E5%BC%80%E5%B7%A5%E4%BD%9C%E5%8F%B0-1F6FEB?style=for-the-badge&logo=vercel&logoColor=white\"></a> <a href=\"https://github.com/zenstory-ai/zenstory/issues\"><img alt=\"GitHub Issues\" src=\"https://img.shields.io/badge/GitHub%20Issues-181717?style=for-the-badge&logo=github&logoColor=white\"></a> </p> > **在线使用：[app.zenstory.ai](https://app.zenstory.ai/)，注册或登录后即可创作。** ![ZenStory 三栏工作台](docs/screenshots/workspace.png) 工作区从左到右依次是文件树、编辑器和 AI 对话。 ## 这是什么 ZenStory 工作台是一个在浏览器里写**长篇小说、短篇小说和短剧剧本**的地方。大纲、正文、角色卡、世界观设定和参考素材都是项目里的文件；你在右边和 AI 说话，AI 直接新建或改写这些文件，不用在聊天窗口和文档软件之间来回复制粘贴。可以在 [app.zenstory.ai](https://app.zenstory.ai) 在线使用，也可以按 AGPL-3.0 许可自己部署。 - **对话直接改稿，也认得你的手改**：在右边提要求，Agent 直接在左边新建角色卡、大纲或续写章节，边写边显示在编辑器里，对话卡片可一键撤销。你在编辑器里亲手改过的内容也会同步给 AI，续写时顺着你的改稿往下接，不会在对话里误删或覆盖你写好的稿子。 - **一个 Agent 从头接到尾**：同一个写作 Agent 读你的项目、规划、写正文、自查前后连贯，只做你这一轮要的事——只要细纲就停在大纲，要求写正文才动笔；章节按章号写入，第几章就只改第几章，回复里的字数取自实际保存的结果。 - **懂网文与短剧节奏**：开篇直接进冲突，爽点当场兑现，对白推着剧情走，章末留钩子；选中编辑器里的文字点「去AI味」，会按段落对比改写前后，逐段选择采用或保留原稿。 - **长篇连载不断片**：每轮自动带上「AI 记忆」、刚读写过的章节全文、上一章以及相关的角色卡和世界观设定，不靠翻长聊天记录记设定。 - **自带 14 个技能，也能接外部 Agent**：内置续写、钩子设计、短篇写作、短剧分集和去 AI 味等 14 个技能，支持导入导出 `SKILL.md` 技能包；通过 `npx zenstory` 命令行，Claude Code、Codex、Op\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "hive",
+        "full_name": "hivecommons/hive",
+        "url": "https://github.com/hivecommons/hive",
+        "description": "AI agent orchestration for open and closed source — a fully customizable fleet of AI agents covering every level of project maintenance, from brainstorming to full autonomy",
+        "stars": 85,
+        "pushed_at": "2026-11-17T05:08:14Z",
+        "topics": [
+          "agent-orchestration",
+          "ai-agents",
+          "autonomous-agents",
+          "ci-cd",
+          "code-review",
+          "developer-tools",
+          "devops",
+          "github-automation",
+          "golang",
+          "hacktoberfest",
+          "kubernetes",
+          "llm",
+          "multi-agent-systems"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"docs/hive-bee.png\" width=\"120\" height=\"120\" alt=\"\"> </p> <h1 align=\"center\">Hive</h1> <p align=\"center\"> <em>Useful work. Clear limits. A record you can follow.</em> </p> <p align=\"center\"> <a href=\"#install\">Get started</a> · <a href=\"src/docs/what-is-hive.md\">Overview</a> · <a href=\"https://www.youtube.com/watch?v=uo1KGTyJJyU\">How Hive works (video)</a> · <a href=\"#community\">Community</a> </p> <p align=\"center\"> <a href=\"https://www.twitch.tv/hivecommons\"><img src=\"https://img.shields.io/twitch/status/hivecommons?style=flat&logo=twitch&label=live\" alt=\"Watch the hive live on Twitch\"></a> <a href=\"https://app.fossa.com/projects/custom%2B162%2Fhivecommons%2Fhive?ref=badge_shield&issueType=license\"><img src=\"https://app.fossa.com/api/projects/custom%2B162%2Fhivecommons%2Fhive.svg?type=shield&issueType=license\" alt=\"FOSSA license scan status\"></a> </p> --- Hive helps people and AI agents work together across their projects. It connects the work, the rules and the review history. Bring your own agents. You decide what they can do. Keep code in **GitHub or GitHub Enterprise**. Bring tasks from **GitHub Issues, GitHub Projects, Linear or Jira**. [See integrations](src/docs/integrations.md). ## Trust **See whether feedback leads to a change.** Hive keeps reviews and updates together. You can see what was asked, what changed and who approved it. ![A response to review](docs/readme/trust-followup.svg) Pull requests revised, then approved: **65.5% (369 / 563)**. Of 563 pull requests sent back for changes, 369 had an updated version approved. The other 194 had no later approval recorded. Approval does not prove the code is right. [Data](https://github.com/hivecommons/hive/blob/6c7cb37b9ef20830d23795ee248e552705c3acc1/src/docs/benchmarks/outcomes-2026-10.json) · [How it was counted](https://github.com/hivecommons/hive/blob/6c7cb37b9ef20830d23795ee248e552705c3acc1/src/docs/benchmarks/outcomes-2026-10.md#what-the-readme-shows-and-leaves-out) [How reviews are tracked](src/docs/review-evidence.md). ## Productivity **Move useful work forward.** Hive works on issues, pull requests and failed checks. People and agents share the work. ![People and agents moving work forward](docs/readme/productivity-authors.svg) **857** agent-authored, **528** human-authored and **70** bot-authored pull requests. October 27, 2026: 1,455 merged pull requests with a\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "simple-agent-manager",
+        "full_name": "raphaeltm/simple-agent-manager",
+        "url": "https://github.com/raphaeltm/simple-agent-manager",
+        "description": "Run multiple coding agents in parallel on your own cloud VMs.",
+        "stars": 73,
+        "pushed_at": "2026-11-17T05:05:54Z",
+        "topics": [
+          "acp",
+          "ai",
+          "claude-code",
+          "coding-agent",
+          "infra",
+          "orchestration"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"assets/images/sam-banner-dark.png\" /> <img src=\"assets/images/sam-banner.png\" alt=\"SAM, Simple Agent Manager\" width=\"380\" /> </picture> </p> <h3 align=\"center\">Run a fleet of coding agents on your own cloud.</h3> <p align=\"center\"> Every task gets its own agent and dev environment, on machines you own.<br /> Agents can start helper agents, message them, and review what they send back.<br /> Mix Claude Code, Codex, and other agents, and steer the whole fleet from your browser or phone. </p> <p align=\"center\"> <a href=\"https://simple-agent-manager.org\">Website</a> • <a href=\"https://simple-agent-manager.org/docs/\">Docs</a> • <a href=\"https://simple-agent-manager.org/docs/guides/self-hosting/\">Deploy your own</a> </p> <p align=\"center\"> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/License-AGPL_v3%2B-blue?style=flat-square\" alt=\"License: AGPL v3+\" /></a> <a href=\"https://app.codspeed.io/raphaeltm/simple-agent-manager?utm_source=badge\"><img src=\"https://img.shields.io/endpoint?url=https://codspeed.io/badge.json\" alt=\"CodSpeed\" /></a> </p> <p align=\"center\"> <img src=\"assets/images/readme/hero.webp\" alt=\"A SAM project chat. A lead agent has split one request across three helper agents with dispatch_task and is waiting for them. The chat list shows the three helpers running, and another agent marked Needs input.\" width=\"880\" /> <br /> <sub>A lead agent splits one request across helpers on Codex, Claude Code, and OpenCode. The real SAM interface with sample data.</sub> </p> ## Built for more than a few agents Running a few agents in terminal tabs works until your laptop becomes the bottleneck. They compete for ports, Docker, and memory. Your laptop has to stay awake. And each one stops to ask you something the moment you step away. SAM moves the fleet off your laptop. - **A workspace for every task.** On VMs in your cloud account, each agent gets its own dev container, built from your repo's `.devcontainer` by default, with Docker, git, and its own branch. Several agents share a VM when they fit, and VMs that SAM manages are removed after sitting idle for a while. For quick jobs, Instant sessions start in seconds on Cloudflare Containers, with no VM provider needed. - **Agents that run agents.** An agent can start helpers, send them instructions, wait for them, and stop the\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "free-llm-intel",
+        "full_name": "rockbenben/free-llm-intel",
+        "url": "https://github.com/rockbenben/free-llm-intel",
+        "description": "AI 厂商动态别挨家追：每天巡检 OpenAI、Claude、Gemini、DeepSeek、通义、Kimi 等的官方博客与更新页，生成可订阅的 RSS，英文原文逐段精译为中文，并附 70 家免费额度 / 限时活动总表（实时抓自官方页、带官方链接可复核）",
+        "stars": 61,
+        "pushed_at": "2026-11-17T04:58:39Z",
+        "topics": [
+          "cheatsheet",
+          "crawler",
+          "deepseek",
+          "free-api",
+          "free-tier",
+          "google-gemini",
+          "groq",
+          "llm",
+          "llm-api",
+          "openai-compatible",
+          "python",
+          "qwen",
+          "rss"
+        ],
+        "source": "search",
+        "text_excerpt": "# Free LLM Intel · LLM 免费额度与活动情报 > 国内外 LLM 厂商的免费 API 额度、永久免费模型与限时活动情报，**每天由脚本对照官方页面自动更新、每条可复核**： > 不提供、不分发任何 API Key；所有数字均来自巡检脚本对**官方页面**的实时抓取，每条情报附官方链接， > 无法在官方页复核的旧说法一律标注「不予采信」。 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE) [![365 开源计划 #038](https://img.shields.io/badge/365%20%E5%BC%80%E6%BA%90%E8%AE%A1%E5%88%92-%23038-1f6feb)](https://github.com/rockbenben/365opensource) - 🎯 不知道先注册谁？直接看下文「[白嫖攻略](#白嫖攻略)」 - ⚡ 客户端一键接入？直达「[OpenAI 兼容端点速查表](#一键接入)」 - 📊 免费额度总表：**Part 1–4**（见「快速开始」之后，每次巡检自动生成） - 📡 订阅厂商动态：导入 [llm-news-feeds.opml](llm-news-feeds.opml) 一次订全（官方原生源 + 自建源 + 全部厂商动态 + 英文镜像）；[网页一键订阅](https://free-llm-intel.aishort.top/) ｜ [全部厂商动态（中文）](https://free-llm-intel.aishort.top/feeds/llm-news-all.xml) ｜ [全部厂商动态（英文）](https://free-llm-intel.aishort.top/feeds/llm-news-all.en.xml) ｜ 单厂商源 `…/feeds/llm-news-<厂商 id>.xml`（英文加 `.en.xml`）；博文明细：[llm-news-feeds.md](llm-news-feeds.md)（全量归档在 [`llm-news/`](llm-news/)） - 🛰 订阅额度 / 活动变化（「哪家的白嫖政策刚变了」）：[llm-intel-changes.xml](https://free-llm-intel.aishort.top/feeds/llm-intel-changes.xml)——巡检采纳的额度调整（前值 → 后值）与新活动逐条入流 - 🤖 自己跑巡检 / 二次开发：`pip install -r requirements.txt && python crawler_llm_intel.py`（详见[快速开始](#快速开始)） ![懒人首选速览](docs/images/top-picks.svg) <!-- LLM-GUIDE:BEGIN 本章节由 crawler_llm_intel.py 自动生成，请勿手工修改 --> --- <a id=\"白嫖攻略\"></a> ## 🎯 白嫖攻略 > 本章节与下方厂商总表同源，每次巡检自动重建；免费政策随时变化（活动到期、限速调整、模型下架），注册 / 充值前请点进对应厂商的官方链接复核。 ### 0. 懒人首选：不知道选谁，先注册这 7 个 > 这 7 家都**免绑信用卡**，注册即得（国内的需手机号实名，海外的邮箱即可——都属常规注册）；**按用途分工、不是能力排名**：要对话 / 写代码挑「模型免费」的那家，要向量 / OCR / 画图挑「工具链」那家，同一类需求注册一家就够。 1. [智谱 GLM](#3-智谱-glm) —— **国内免卡长期 0 元**：`glm-4.7-flash`（30B 级 / 200K）+ 视觉 `glm-4.6v-flash` 与旧版 Flash、`CogView-3-Flash` / `CogVideoX-Flash` 画图视频都免费；但 4.x 是上一代、5.x 旗舰收费——**它是国内首选，不是能力最强**，追能力看 Gemini 2. [商汤 日日新](#10-商汤-日日新-sensenova) —— **国内公测期免费 + 白嫖面最宽**：Token Plan ¥0/月，通用积分池 **5 小时 12 万 / 每周 120 万**，同池可调 `sensenova-6.8-flash`、`deepseek-v4.1-flash`、`glm-5.2`、`kimi-k3`；但**第三方模型实测容易 429**，高并发先用自研 `6.8-flash`，单号 20 个 Key 3. [硅基流动](#14-硅基流动-siliconflow) —— **工具链首选**：bge 向量/重排、PaddleOCR-VL、SenseVoice/XingChen ASR、Kolors 画图 **0 元** + 注册送 14 元券；但**没有主流旗舰免费**（对话只有 Xing4.0-29B、Hunyuan-MT 两个小模型），纯聊天别指望它 4. [复旦 MOSS](#18-复旦-moss-mosi) —— **多模态语言模型限时免费**：`nex-n2.6`（文本/图片/视频→文本）官方标「限时免费 0 积分」，2026-11-12 实测 HTTP 200 真实出文、控制台账单为零；同平台 `moss-vl-1.0` 视觉理解、`moss-live-1.0` 实时交互也限时免费。多模态是它区别于多数纯文本免费平台的强项 5. [Google Gemini](#28-google-gemini-google-ai-studio) —— **\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": true
+      },
+      {
+        "name": "LLM_Proxy",
+        "full_name": "VonSdite/LLM_Proxy",
+        "url": "https://github.com/VonSdite/LLM_Proxy",
+        "description": "ONE API，LLM_Proxy，统一代理，支持请求响应自定义转换。",
+        "stars": 57,
+        "pushed_at": "2026-11-17T05:08:15Z",
+        "topics": [
+          "llm",
+          "llmproxy"
+        ],
+        "source": "search",
+        "text_excerpt": "# LLM_Proxy > 一个面向多上游、多协议、多认证形态的统一 LLM 接入层。 LLM_Proxy 把模型服务、鉴权方式、协议转换和后台运维收敛到同一个 Flask + gevent 服务中，对下游提供 OpenAI Chat Completions、OpenAI Responses 和 Claude Messages 兼容接口。它既支持常规 Provider 代理，也支持 Codex / Claude OAuth 账号文件代理，并内置 Provider 管理、Auth Group 凭据池、白名单控制、日志统计、请求调试和 Hook 扩展能力。 它的定位不是“再做一个 API 转发器”，而是把代理、协议适配、认证管理和运维入口放到同一层统一处理。客户端只需要记住一个地址；服务端可以集中维护模型路由、Key 池、OAuth 账号、访问控制和统计信息。 ## 项目亮点 - 统一接入多种上游协议：同一个代理服务可同时对接 OpenAI Chat Completions、OpenAI Responses、Claude Messages 和 Codex 风格接口 - 多下游兼容内建：同一个 Provider 不需要额外配置下游格式，默认即可同时服务 `/v1/chat/completions`、`/v1/responses` 和 `/v1/messages` - OAuth 账号文件代理：支持 Codex / Claude 认证文件代理、账号状态记录和账号候选切换；后台提供 Codex 登录、认证文件管理、模型目录维护和配额查看 - Hook 扩展机制：用于补充 Header、请求护栏和成功响应清洗 - 多 Key 池化调度：`auth_group` 支持并发限制、429 冷却、分钟/日请求配额 - 控制平面模型测试：Provider 编辑页可按当前表单快照直接测试模型可用性、首字延迟和 TPS - 后台可直接运维：内置 Provider 管理、Auth Group 管理、OAuth 管理、系统设置、白名单管理、日志和统计面板 - 请求调试可开关：支持将下游请求、上游请求、上游响应和下游响应写入独立 trace 日志 - LLM 数据记录可开关：按客户端请求保存输入、最终输出、实际模型与上游协议，支持提示词去重和 JSONL 分片 - 对下游保持稳定接口：支持 `POST /v1/chat/completions`、`POST /v1/responses`、`POST /v1/messages`、`GET /v1/models` ## 3 分钟快速开始 ### 1. 安装依赖 ```bash uv sync ``` ### 2. 准备配置文件 创建 `config.yaml`，下面是一份最小可运行配置： ```yaml server: host: 127.0.0.1 port: 8080 # chat: # whitelist_enabled: false # admin: # username: admin # password: admin123 # oauth: # enabled: false # proxy_mode: direct # proxy: \"\" # verify_ssl: false # safe_desensitization_enabled: false providers: - name: openai-chat # enabled: false # 可选；默认 true；禁用后不会出现在 /v1/models api: https://api.openai.com/v1/chat/completions source_format: openai_chat api_key: sk-your-openai-key force_upstream_stream: false safe_desensitization_enabled: false verify_ssl: false model_list: - gpt-4.1 - gpt-4.1-mini hidden_model_list: - gpt-4.1-mini ``` 也可以直接从 [config.sample.yaml](config.sample.yaml) 开始裁剪。 注意：下游调用时的模型名不是裸模型名，而是 `provider/model`，例如 `openai-chat/gpt-4.1`。 如果未配置 `providers[].enabled`，默认就是启用状态。 ### 3. 启动服务 ```bash uv run python main.py ``` 或者显式指定配置文件： ```bash uv run python main.py --config path/to/config.yaml ``` ### 4. 验证服务是否可用 访问Web: http://127.0.0.1:8080 查询模型列表： ```bash curl http://127.0.0.1:8080/v1/models ``` 发送第一条聊天请求： ```bash curl http://127.0.0.1:8080/v1/chat/completions \\ -H \"Content-Type: application/json\" \\ -d '{ \"model\": \"openai-chat/gpt-4.1\", \"messages\": [ {\"role\": \"user\", \"content\": \"你好，帮我用一句话介绍 LLM_Proxy\"} ], \"stream\": false }' ``` 后台页面始终可访问；如果配置了 `admin.use\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "agentty",
+        "full_name": "agentty-xyz/agentty",
+        "url": "https://github.com/agentty-xyz/agentty",
+        "description": "Agentic Development Environment (ADE) in your terminal",
+        "stars": 42,
+        "pushed_at": "2026-11-17T05:04:43Z",
+        "topics": [
+          "ade",
+          "agent",
+          "agent-orchestration",
+          "agents",
+          "ai",
+          "claude",
+          "cli",
+          "codex",
+          "gemini",
+          "ide",
+          "llm",
+          "terminal",
+          "tui"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <h1>Agentty ADE</h1> ![NPM Version](https://img.shields.io/npm/v/agentty) [![codecov](https://codecov.io/gh/agentty-xyz/agentty/graph/badge.svg?token=YRGKGTM0HP)](https://codecov.io/gh/agentty-xyz/agentty) [![Postsubmit](https://github.com/agentty-xyz/agentty/actions/workflows/postsubmit.yml/badge.svg?branch=main)](https://github.com/agentty-xyz/agentty/actions/workflows/postsubmit.yml) [![Quality gate status](https://sonarcloud.io/api/project_badges/measure?project=agentty-xyz_agentty&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=agentty-xyz_agentty) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=agentty-xyz_agentty&metric=bugs)](https://sonarcloud.io/summary/new_code?id=agentty-xyz_agentty) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=agentty-xyz_agentty&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=agentty-xyz_agentty) [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=agentty-xyz_agentty&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=agentty-xyz_agentty) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=agentty-xyz_agentty&metric=coverage)](https://sonarcloud.io/summary/new_code?id=agentty-xyz_agentty) Agentty is an **ADE (Agentic Development Environment) for structured, controllable AI-assisted software development**. Built with Rust and [Ratatui](https://ratatui.rs), and refined through its own day-to-day use, it brings agents, review, and iteration into one focused terminal workflow. [Installation](#installation) · [Supported CLI Agents](#supported-cli-agents) · [Usage](#usage) · [Documentation](#documentation) · [Contributing](#contributing) · [License](#license) <img src=\"docs/site/static/demo/demo.gif\" alt=\"Agentty demo\" width=\"900\" /> </div> ______________________________________________________________________ ## Installation ### npm (recommended) The `npm`, Bun, and `pnpm` packages require Node.js on your `PATH`. Global installs support automatic updates through the original package manager when Agentty can identify it. ```sh npm install -g agentty ``` ### Other methods <details> <summary>Bun</summary> ```sh bun add --global agentty ``` </details> <details> <summary>pnpm</summary> ```sh pnpm add --global agentty ``` If `pnpm` reports a global bin-directory error, ru\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "kdeps",
+        "full_name": "kdeps/kdeps",
+        "url": "https://github.com/kdeps/kdeps",
+        "description": "AI appliance builder. Define AI agents and workflows in YAML. Ship them as Docker, Kubernetes, ISO, or one standalone binary.",
+        "stars": 38,
+        "pushed_at": "2026-11-17T04:29:41Z",
+        "topics": [
+          "agent",
+          "agentic",
+          "ai",
+          "gguf",
+          "llamafile",
+          "llms",
+          "nvidia",
+          "orchestration",
+          "workflow",
+          "yaml"
+        ],
+        "source": "search",
+        "text_excerpt": "# kdeps [![Build and Test](https://github.com/kdeps/kdeps/actions/workflows/build-test.yml/badge.svg?branch=main)](https://github.com/kdeps/kdeps/actions/workflows/build-test.yml) [![Coverage](https://codecov.io/gh/kdeps/kdeps/branch/main/graph/badge.svg)](https://codecov.io/gh/kdeps/kdeps) [![Release](https://img.shields.io/github/v/tag/kdeps/kdeps?sort=semver&label=release)](https://github.com/kdeps/kdeps/releases) [![Go](https://img.shields.io/github/go-mod/go-version/kdeps/kdeps)](https://go.dev/) [![License](https://img.shields.io/github/license/kdeps/kdeps)](https://github.com/kdeps/kdeps/blob/main/LICENSE) [![CodeQL](https://github.com/kdeps/kdeps/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/kdeps/kdeps/actions/workflows/codeql.yml) [![Docs](https://github.com/kdeps/kdeps/actions/workflows/docs.yml/badge.svg?branch=main)](https://kdeps.com) [![Documentation](https://img.shields.io/badge/docs-kdeps.com-00E5FF)](https://kdeps.com) [![Registry](https://img.shields.io/badge/registry-kdeps.io-00E5FF)](https://kdeps.io) [![GitHub stars](https://img.shields.io/github/stars/kdeps/kdeps)](https://github.com/kdeps/kdeps/stargazers) kdeps builds git-native AI appliances. Your AI agent is YAML in your repository. You build it one time and run it where you need it. 1. **Workflows** - a YAML pipeline is the one way to run kdeps. Feed it from an HTTP API, a bot, a file, or an interactive prompt. 2. **Agents** - a `chat` with `loop:` is an AI agent with tools and memory, inside the same workflow. `kdeps new helper --template assistant` starts one. 3. **Deploy on your infrastructure** - ship the same YAML as a Docker image, Kubernetes manifests, a bootable ISO, or one binary. ## Install ```bash brew install kdeps/tap/kdeps # macOS or Linux curl -LsSf https://raw.githubusercontent.com/kdeps/kdeps/main/install.sh | sh # or the install script ``` ```powershell irm https://raw.githubusercontent.com/kdeps/kdeps/main/install.ps1 | iex # Windows PowerShell ``` For other options, see the [installation guide](https://kdeps.com/start/installation). If you upgrade from v2, see [what changed](https://kdeps.com/start/installation#upgrading-from-v2). ## 1. Workflows Save as `workflow.yaml`: ```yaml apiVersion: kdeps.io/v1 kind: Workflow metadata: name: my-agent version: \"1.0.0\" targetActionId: response # the resource whose output is returned deploy: apiSe\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "cubrid-mcp-server",
+        "full_name": "cubrid-lab/cubrid-mcp-server",
+        "url": "https://github.com/cubrid-lab/cubrid-mcp-server",
+        "description": "A Model Context Protocol (MCP) server for CUBRID database — enabling LLMs to inspect schemas and execute read-only queries via pycubrid.",
+        "stars": 35,
+        "pushed_at": "2026-11-17T05:06:53Z",
+        "topics": [
+          "ai-agents",
+          "asyncio",
+          "cubrid",
+          "cubrid-database",
+          "database",
+          "fastmcp",
+          "llm",
+          "mcp",
+          "mcp-server",
+          "model-context-protocol",
+          "python",
+          "sql"
+        ],
+        "source": "search",
+        "text_excerpt": "<!-- CUBRID-LAB-ICON:START --> <p align=\"center\"> <a href=\"https://github.com/cubrid-lab/brand\"><img src=\"https://raw.githubusercontent.com/cubrid-lab/brand/e55990a6a0b2c3b0d133985951d41e42b62a8588/dist/icons/cubrid-mcp-server.svg\" alt=\"cubrid-mcp-server icon (CUBRID Lab brand repository)\" width=\"120\"></a> </p> <!-- CUBRID-LAB-ICON:END --> # cubrid-mcp-server [![PyPI](https://img.shields.io/pypi/v/cubrid-mcp-server.svg)](https://pypi.org/project/cubrid-mcp-server/) [![coverage](https://codecov.io/gh/cubrid-lab/cubrid-mcp-server/branch/main/graph/badge.svg)](https://codecov.io/gh/cubrid-lab/cubrid-mcp-server) A [Model Context Protocol](https://modelcontextprotocol.io) server for [CUBRID](https://www.cubrid.org/), enabling LLMs to safely inspect schemas and execute read-only queries via [pycubrid](https://pypi.org/project/pycubrid/). <!-- mcp-name: io.github.cubrid-lab/cubrid-mcp-server --> <img src=\"docs/demo.gif\" alt=\"Terminal recording: an MCP client lists the tools, calls all_table_names, and execute_query rejects DROP TABLE\" width=\"100%\"/> <sub>Terminal recording of a real MCP stdio session (<code>demos/mcp_demo.py</code>, recorded with <code>demos/record_demo.sh</code>).</sub> ## Start here New to CUBRID or to MCP? Follow the [Quick Start guide](docs/quickstart.md). It starts a disposable local CUBRID lab, prepares a sample table and a dedicated read-only account, connects one MCP client (a short Python script) and runs a first query, showing what each result means and how to clean up. The sections below are the reference for configuration, tools and client setup. ## Features | Tool | Description | |------|-------------| | `all_table_names` | List every user table in the database | | `filter_table_names` | Substring search over table names | | `schema_definitions` | Column types, nullability, defaults, and primary key info | | `describe_table` | Full metadata: columns, primary key, and indexes in one call | | `list_indexes` | Indexes for a table with key columns and flags | | `explain_query` | Execution plan/trace for a `SELECT`/`WITH` (via CUBRID `SHOW TRACE`) | | `table_row_counts` | `COUNT(*)` for one or many tables | | `list_serials` | CUBRID `SERIAL` sequences with current value and bounds | | `list_class_hierarchy` | CUBRID `CLASS` inheritance relationships | | `execute_query` | Run read-only SQL with automatic output truncation | | `health_check`\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "booley",
+        "full_name": "boldaxolotl/booley",
+        "url": "https://github.com/boldaxolotl/booley",
+        "description": "Open-source Agentic Development Environment (ADE) for RTL design and verification",
+        "stars": 28,
+        "pushed_at": "2026-11-17T05:08:33Z",
+        "topics": [
+          "agentic-ai",
+          "ai-agents",
+          "asic",
+          "claude-code",
+          "codex",
+          "docker",
+          "eda",
+          "electronic-design-automation",
+          "fpga",
+          "fusesoc",
+          "hardware-design",
+          "hardware-verification",
+          "llm",
+          "logic-synthesis",
+          "rtl",
+          "rtl-simulation",
+          "systemverilog",
+          "verilog",
+          "vscode",
+          "waveform-analysis"
+        ],
+        "source": "search",
+        "text_excerpt": "# Booley **The open-source Agentic Development Environment (ADE) for RTL design and verification** [![Tests](https://github.com/boldaxolotl/Booley/actions/workflows/test.yml/badge.svg)](https://github.com/boldaxolotl/Booley/actions/workflows/test.yml) [![PyPI](https://img.shields.io/pypi/v/booley-rtl)](https://pypi.org/project/booley-rtl/) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/) Booley is an agentic development environment (ADE) for hardware: you direct Claude Code or Codex agents while they do the RTL work. Booley runs each Developer Agent in a sandbox, hands it real EDA tools, and checks its work against your acceptance criteria: passing tests, area and timing budgets, cycle counts, coverage, and more. **Website:** [booley.dev](https://booley.dev/) for the full feature tour, videos, and blog. <picture> <source media=\"(prefers-color-scheme: light)\" srcset=\"https://booley.dev/docs/assets/booley-screenshot-light.png\"> <img alt=\"Booley in VS Code with two Developer Agent sessions, the Booley Dashboard, and waveform inspection\" src=\"https://booley.dev/docs/assets/booley-screenshot.png\"> </picture> ## What it does - **Typed EDA Flows:** `sim`, `lint`, `synth`, and `fpga` replace per-repo glue Tcl scripts. Each Flow runs an EDA job end to end and returns a structured result: pass/fail plus metrics such as area, timing, or cycle counts, not just raw logs. Flows are built on FuseSoC, and the interface stays the same across tools and projects: `sim` stays `sim` whether it runs Verilator today or Xcelium tomorrow. - **Reproducible team environment:** Configure the project once, and its Docker environment supplies the same pinned EDA stack, agent tooling, and system dependencies to everyone on the project ([why Docker](https://github.com/boldaxolotl/Booley/blob/main/docs/internals/ARCHITECTURE.md#why-docker)). - **One window for all your agents:** RTL work is usually scattered across editors, tool-specific commands, build environments, logs, and waveform viewers. Booley puts your Developer Agent sessions, RTL, terminals, EDA runs, waveforms, and the Booley Dashboard side by side in one VS Code window, so you can direct several agents at once and see what each one is doing. - **Sandboxed Deve\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      }
+    ],
+    "aihot": []
+  },
+  "failures": {
+    "rss": [
+      {
+        "type": "rss",
+        "title": "Anthropic News",
+        "url": "https://www.anthropic.com/news/rss.xml",
+        "failure_reason": "feed_parse_failed: text/html; charset=utf-8 is not an XML media type"
+      },
+      {
+        "type": "rss",
+        "title": "a16z",
+        "url": "https://a16z.com/feed/",
+        "failure_reason": "feed_parse_failed: <unknown>:3:73: not well-formed (invalid token)"
+      },
+      {
+        "type": "rss",
+        "title": "Broadening access to AI for scientists",
+        "url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
+        "failure_reason": "http_403"
+      },
+      {
+        "type": "rss",
+        "title": "Strengthening the fight against online child sexual abuse with new tools and support",
+        "url": "https://openai.com/index/strengthening-online-child-safety",
+        "failure_reason": "http_403"
+      },
+      {
+        "type": "rss",
+        "title": "Science at the Frontier: How scientists use ChatGPT",
+        "url": "https://openai.com/index/science-at-the-frontier",
+        "failure_reason": "http_403"
+      },
+      {
+        "type": "rss",
+        "title": "LVMH’s Media Division announces strategic partnership with OpenAI",
+        "url": "https://openai.com/index/lvmh-media-division-partnership",
+        "failure_reason": "http_403"
+      },
+      {
+        "type": "rss",
+        "title": "Our first phase of embedded assessments",
+        "url": "https://openai.com/index/our-first-phase-of-embedded-assessments",
+        "failure_reason": "http_403"
+      },
+      {
+        "type": "rss",
+        "title": "Advancing computer-use agents for healthcare teams",
+        "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams",
+        "failure_reason": "http_403"
+      },
+      {
+        "type": "rss",
+        "title": "More ways to move care forward with ChatGPT for Healthcare",
+        "url": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare",
+        "failure_reason": "http_403"
+      },
+      {
+        "type": "rss",
+        "title": "The King’s Trust and OpenAI launch £1m partnership",
+        "url": "https://openai.com/index/the-kings-trust-and-openai",
+        "failure_reason": "http_403"
+      },
+      {
+        "type": "rss",
+        "title": "At Holiday Extras, dots get to work before anyone asks",
+        "url": "https://openai.com/business/customer-stories/holiday-extras-dots",
+        "failure_reason": "http_403"
+      },
+      {
+        "type": "rss",
+        "title": "datasette 0.65.6",
+        "url": "https://simonwillison.net/2026/Nov/15/datasette-2/",
+        "failure_reason": "extracted_text_too_short"
+      },
+      {
+        "type": "rss",
+        "title": "A step toward defining the Standard Model on a lattice",
+        "url": "https://openai.com/index/step-toward-defining-the-standard-model",
+        "failure_reason": "http_403"
+      },
+      {
+        "type": "rss",
+        "title": "Our new blog for science",
+        "url": "https://openai.com/index/our-new-blog-for-science",
+        "failure_reason": "http_403"
+      },
+      {
+        "type": "rss",
+        "title": "datasette-agent 0.6a0",
+        "url": "https://simonwillison.net/2026/Nov/15/datasette-agent/",
+        "failure_reason": "extracted_text_too_short"
+      }
+    ],
+    "youtube": [
+      {
+        "type": "youtube",
+        "title": "Lex Fridman",
+        "url": "https://www.youtube.com/@lexfridman",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @lexfridman/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Lenny's Podcast",
+        "url": "https://www.youtube.com/@LennysPodcast",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @LennysPodcast/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Dwarkesh Patel",
+        "url": "https://www.youtube.com/@DwarkeshPatel",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @DwarkeshPatel/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Acquired",
+        "url": "https://www.youtube.com/@AcquiredFM",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @AcquiredFM/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Tim Ferriss",
+        "url": "https://www.youtube.com/@timferriss",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @timferriss/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "20VC",
+        "url": "https://www.youtube.com/@20VCwithHarryStebbings",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @20VCwithHarryStebbings/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Invest Like the Best",
+        "url": "https://www.youtube.com/@ILTB_Podcast",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @ILTB_Podcast/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "All-In Podcast",
+        "url": "https://www.youtube.com/@allin",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @allin/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      }
+    ],
+    "github": [
+      {
+        "type": "github",
+        "title": "trendshift",
+        "url": "https://trendshift.io/repositories?since=daily",
+        "failure_reason": "supplement_failed: 404 Client Error: Not Found for url: https://trendshift.io/repositories?since=daily"
+      },
+      {
+        "type": "github",
+        "title": "dream-num/univer",
+        "url": "https://github.com/dream-num/univer",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "google-labs-code/stitch-skills",
+        "url": "https://github.com/google-labs-code/stitch-skills",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "elementalsouls/Claude-BugHunter",
+        "url": "https://github.com/elementalsouls/Claude-BugHunter",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "DeanChensj/jiangshan-map",
+        "url": "https://github.com/DeanChensj/jiangshan-map",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "tradermonty/claude-trading-skills",
+        "url": "https://github.com/tradermonty/claude-trading-skills",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "flizzywine/dsh-tavern",
+        "url": "https://github.com/flizzywine/dsh-tavern",
+        "failure_reason": "filtered_noise"
+      },
+      {
+        "type": "github",
+        "title": "db-lyon/ue-mcp",
+        "url": "https://github.com/db-lyon/ue-mcp",
+        "failure_reason": "filtered_noise"
+      },
+      {
+        "type": "github",
+        "title": "zapplyjobs/New-Grad-Data-Science-Jobs-2027",
+        "url": "https://github.com/zapplyjobs/New-Grad-Data-Science-Jobs-2027",
+        "failure_reason": "filtered_noise"
+      }
+    ],
+    "aihot": [
+      {
+        "type": "aihot",
+        "title": "api",
+        "url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "failure_reason": "api_fetch_failed: 404 Client Error: Not Found for url: https://aihot.news/api/public/items?mode=selected&take=50"
+      }
+    ]
+  }
+}
