@@ -1,0 +1,1063 @@
+{
+  "date": "2026-11-24",
+  "generated_at": "2026-11-24T07:01:19Z",
+  "timezone": "Asia/Shanghai",
+  "windows": {
+    "rss": "72h",
+    "youtube": "72h_or_7d",
+    "github": "7d",
+    "aihot": "selected latest"
+  },
+  "counts": {
+    "rss": {
+      "candidates": 13,
+      "full_text_success": 12,
+      "eligible": 12,
+      "failed": 3
+    },
+    "youtube": {
+      "candidates": 0,
+      "transcript_success": 0,
+      "eligible": 0,
+      "failed": 8
+    },
+    "github": {
+      "candidates": 28,
+      "readme_success": 28,
+      "eligible": 28,
+      "failed": 10
+    },
+    "aihot": {
+      "api_returned": 0,
+      "candidates": 0,
+      "original_verified": 0,
+      "eligible": 0,
+      "failed_or_pending": 1
+    }
+  },
+  "eligible_items": {
+    "rss": [
+      {
+        "source": "Simon Willison",
+        "title": "datasette-charts 0.2a0",
+        "url": "https://simonwillison.net/2026/Nov/24/datasette-charts/",
+        "published_at": "2026-11-24T04:24:29Z",
+        "summary": "Release: datasette-charts 0.2a0 I introduced this new charting plugin for Datasette yesterday . Today it's gained integration with Datasette Agent , so now you can ask chat for a chart and it will create one for you using the same underlying chart suggestion and generation tools. Here's a demo video, recorded on agent.datasette.io where you can sign in with GitHub to try the plugin yourself: Download the video (MP4) I prompt Datasette Agent to \"Use #stats to show sqlite-utils downloads over time as a chart\" - where typing \"#stats\" opens a table search box. It shows me a chart inline in the chat, and when I click \"Open in the chart builder\" it opens the chart in a panel along with the table page. I use the table page to switch to a chart of \"datasette\", then when I ask the agent \"what does the chart show?\" it notices that I changed the content in the panel and describes the new Datasette chart to me. Here's a Markdown export of the chat from the video. Tags: datasette-agent , datasette , visualization",
+        "lookback_7d": false,
+        "text_excerpt": "I introduced this new charting plugin for Datasette yesterday . Today it's gained integration with Datasette Agent , so now you can ask chat for a chart and it will create one for you using the same underlying chart suggestion and generation tools. Here's a demo video, recorded on agent.datasette.io where you can sign in with GitHub to try the plugin yourself: Download the video (MP4) I prompt Datasette Agent to \"Use #stats to show sqlite-utils downloads over time as a chart\" - where typing \"#stats\" opens a table search box. It shows me a chart inline in the chat, and when I click \"Open in the chart builder\" it opens the chart in a panel along with the table page. I use the table page to switch to a chart of \"datasette\", then when I ask the agent \"what does the chart show?\" it notices that I changed the content in the panel and describes the new Datasette chart to me. Here's a Markdown export of the chat from the video.",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Latent Space",
+        "title": "[AINews] Jensen Is Back! and OpenAI Shows Its Pretraining Curve, joined by Microsoft",
+        "url": "https://latent.space/p/ainews-jensen-is-back-and-openai-shows-its-pretraining-curve-joined-by-microsoft/",
+        "published_at": "2026-11-24T04:14:16Z",
+        "summary": "November 23, 2026 — Nvidia reinstates its founder, and OpenAI publishes its internal loss curve and proposes a shared training limit.",
+        "lookback_7d": false,
+        "text_excerpt": "November 23, 2026 — Nvidia reinstates its founder, and OpenAI publishes its internal loss curve and proposes a shared training limit. Congrats to Sierra on tripling last year’s $10B valuation , and to Z.ai for releasing GLM 5.4 , their first looped transformer following Thinking Machine’s much smaller Inkling Mini 2 from last week. However all these are outshone by today’s twin title stories… As Matt Levine points out , with the firing AND the rehiring by this board with involvement from the government, the investigators are now being put in a position of having had the outcome somewhat predetermined for them, because both have demonstrated that they did not need to wait for any further evidence to come to light. Think of it as how surprised the model is by the next token on a held-out dataset. Lower is better. GPT-3.5 was around 0.99 and GPT-4 around 0.91. When OpenAI put a model around 0.76 (GPT6 Astra) to work on open math problems, hundreds of frontier math problems started falling quickly . Pachocki extrapolates that another jump in capabilities could come around 0.68–0.70. This is all in context of pacing the frontier . Pachocki proposes that labs agree on a first limit to development and spell out what would let them cross it, such as a successor to chain-of-thought monitoring. Microsoft’s Mustafa Suleyman gave the first win by cosigning and joining in, running MAI-2 Base on OpenAI’s evaluation set and reporting 0.819. We’d need at least a couple more top labs to join this effort for it to gather steam as a real self-regulatory limit, most notably of course, Anthropic. Sponsored by Backblaze B2 If your data is growing faster than planned, you need storage that grows with your business, feeds flash and GPUs with terabit-scale throughput, and doesn’t charge egress. Backblaze B2 has delivered capacity tier storage for twenty years, manages more than six exabytes, and is trusted by leading neoclouds, labs, and gen AI companies. Growth shouldn’t be something you sweat. We’ve got room for whatever you’re building. Try it out! Enquiries and feedback to business@latent.space OpenAI Publishes Its Pretraining Perplexity History and Proposes Shared Development Limits The disclosure : Jakub Pachocki's essay \"Perplexity and Intelligence\" publishes five years of OpenAI base-model log-perplexity on a fixed held-out dataset. It argues for industry-wide limits based o\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "datasette-agent 0.7a1",
+        "url": "https://simonwillison.net/2026/Nov/24/datasette-agent/",
+        "published_at": "2026-11-24T03:45:57Z",
+        "summary": "Release: datasette-agent 0.7a1 I small improvement to Datasette Agent : chat sessions can open an iframe side panel, and that panel can then navigate to different pages. This version improves navigation by fragment hashes, for deeper integration with other Datasette plugins that update fragment hashes when the user interacts with the plugin in a way that changes state. I built this in order to fix some bugs with the much more exciting datasette-charts 0.2a0 release . Tags: datasette-agent , datasette",
+        "lookback_7d": false,
+        "text_excerpt": "I small improvement to Datasette Agent : chat sessions can open an iframe side panel, and that panel can then navigate to different pages. This version improves navigation by fragment hashes, for deeper integration with other Datasette plugins that update fragment hashes when the user interacts with the plugin in a way that changes state. I built this in order to fix some bugs with the much more exciting datasette-charts 0.2a0 release .",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "GLM-5.4: Toward Generalized Coding with Our First Loop Transformer",
+        "url": "https://simonwillison.net/2026/Nov/23/glm-54/",
+        "published_at": "2026-11-23T23:40:49Z",
+        "summary": "GLM-5.4: Toward Generalized Coding with Our First Loop Transformer GLM 5.4 is now available from Chinese AI lab Z.ai. It's their first model to use a looped transformer architecture, which they describe like this: In a standard Transformer, each layer runs once per forward pass. In a Loop Transformer, a group of weight-shared layers runs for multiple iterations, refining the hidden states from the previous pass. This gives us a deeper network without increasing the parameter count. This is the second mention of looped transformers I've seen in the past week - the first was Inkling 2 Mini from Thinking Machines Lab on November 20th, who said: Inkling 2 Mini is a looped transformer, running the middle layers of the model three times for every token. This allows the model to apply more reasoning and reach the right answer with fewer tokens, especially on tasks such as agentic coding that depend on reasoning quality. GLM 5.4 is not (yet?) available as open weights. I tried it out using the Z.ai API, for which I had to sign up for their Coding Plan subscription because 5.4 cannot currently be accessed through the regular API. It turns out both coding plan and regular API share the same OpenAI-compatible Responses API (at https://api.z.ai/api/v1 ), and the API key for the coding plan worked with that and gave me access to the new model. I built a llm-glm plugin , then realized that llm-zai by Tommy Hughes already exists! I've shipped mine purely because llm-zai doesn't yet support the new model, but I'll likely retire mine once that plugin catches up. Here are pelicans for GLM-5.4 on low, high, and max. This is the max one: I realized I never ran pelicans for GLM-5.3, so here those are for the same effort levels. They look similar in quality to 5.4. It's interesting how GLM 5.1 and GLM 5.2 produced radically different pelicans from other models. The pelicans for 5.3 and 5.4 are much more comparable to those I get from OpenAI or Anthropic models - the previous generations had their own distinctive look. I made a comparison grid showing the four generations of GLM pelicans all in one place. The style transition between 5.2 and 5.3 is pretty stark. Tags: ai , generative-ai , llms , llm , pelican-riding-a-bicycle , llm-release , ai-in-china , glm",
+        "lookback_7d": false,
+        "text_excerpt": "GLM-5.4: Toward Generalized Coding with Our First Loop Transformer . GLM 5.4 is now available from Chinese AI lab Z.ai. It's their first model to use a looped transformer architecture, which they describe like this: In a standard Transformer, each layer runs once per forward pass. In a Loop Transformer, a group of weight-shared layers runs for multiple iterations, refining the hidden states from the previous pass. This gives us a deeper network without increasing the parameter count. This is the second mention of looped transformers I've seen in the past week - the first was Inkling 2 Mini from Thinking Machines Lab on November 20th, who said: Inkling 2 Mini is a looped transformer, running the middle layers of the model three times for every token. This allows the model to apply more reasoning and reach the right answer with fewer tokens, especially on tasks such as agentic coding that depend on reasoning quality. GLM 5.4 is not (yet?) available as open weights. I tried it out using the Z.ai API, for which I had to sign up for their Coding Plan subscription because 5.4 cannot currently be accessed through the regular API. It turns out both coding plan and regular API share the same OpenAI-compatible Responses API (at https://api.z.ai/api/v1 ), and the API key for the coding plan worked with that and gave me access to the new model. I built a llm-glm plugin , then realized that llm-zai by Tommy Hughes already exists! I've shipped mine purely because llm-zai doesn't yet support the new model, but I'll likely retire mine once that plugin catches up. Here are pelicans for GLM-5.4 on low, high, and max. This is the max one: I realized I never ran pelicans for GLM-5.3, so here those are for the same effort levels. They look similar in quality to 5.4. It's interesting how GLM 5.1 and GLM 5.2 produced radically different pelicans from other models. The pelicans for 5.3 and 5.4 are much more comparable to those I get from OpenAI or Anthropic models - the previous generations had their own distinctive look. I made a comparison grid showing the four generations of GLM pelicans all in one place. The style transition between 5.2 and 5.3 is pretty stark.",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "Ladybird's first alpha release",
+        "url": "https://simonwillison.net/2026/Nov/23/ladybird/",
+        "published_at": "2026-11-23T21:46:35Z",
+        "summary": "Ladybird is an astonishingly ambitious project: a new browser, in 2026, with its own implementation of most of the key components - HTML parsing, CSS engine, layout, JavaScript, even WebAssembly. It still uses a few external components - things like HarfBuzz for text shaping, Skia for 2D graphics, ffmpeg for video, and SQLite for the things you do with SQLite. Everything else is part of Ladybird, or code brought in from Ladybird's even more ambitious predecessor project SerenityOS . This morning the Ladybird project released their first alpha , which means you can now install the browser (on macOS or Linux) without having to compile it yourself! I've been trying it out today, and it's very impressive. It feels fast, the UI is lightweight and intuitive, and most of the websites I've tried to load in it have worked as they should. It looks like this (showing my video-compressor tool): Here's the process tree after I opened six tabs in one window and another tab in a second window (generated by this script , thanks Claude): Ladybird (72925) [240 MB] └── Hub (72926) [61 MB] ├── RequestServer (72927) [29 MB] ├── ProcessReaper (72928) [1 MB] ├── Compositor (72930) [123 MB] ├── RequestServer (72953) [36 MB] ├── WebContent (72984) [819 MB] ├── MediaServer (73006) [118 MB] ├── VideoDecoderServer (73007) [20 MB] ├── WebContent (73052) [144 MB] ├── WebContent (73057) [73 MB] ├── WebContent (73073) [166 MB] ├── WebContent (73094) [70 MB] ├── WebContent (73112) [116 MB] ├── RequestServer (73113) [27 MB] └── WebContent (73185) [60 MB] Ladybird runs different tabs in different processes, an isolation mechanism used by most browsers (well, technically Chrome uses a process-per-site). I tried Ladybird against several of my more advanced tool examples - like the video-compressor shown above, which runs ffmpeg compiled to WebAssembly. I had it resize its own screenshot using my image-resize tool . It happily runs my Pyodide REPL (Python compiled to WebAssembly) too. The one thing I tried that didn't work was Datasette Lite , which runs Pyodide in a complicated arrangement of service workers and web workers. Attempting to start Datasette Lite displays this error: undefined is not a function (evaluated from 'navigator.serviceWorker.startMessages') I filed an issue about this , then found a FIXME annotation in the source code. The October explosion The project has been leaning heavily into coding agents this year. On February 23, 2026 Andreas Kling published Ladybird adopts Rust, with help from AI , describing how they ported parts of their LibJS JavaScript engine from C++ to 25,000 lines of Rust in two weeks using Claude Code and Codex. Here's the GitHub contributions chart for Ladybird over the past twelve months: That uptick in October corresponds to the landing of a wealth of big improvements. This Month in Ladybird — October 2026 describes what happened. In addition to moving style and layout to their own thread, landing a new JavaScript JIT, and replacing their C++ with Cranelift WebAssembly engine with new code that achieved a 7x boost on the JetStream 3 WASM benchmark , they gained 75,650 new passes on the ~2.25 million subtest web-platform-tests suite, beating Safari! How did they do that? Coding agents: Most of that gain came in five days, from about 2.12 million on October 22 to about 2.18 million on October 27. We pointed AI coding agents at WPT and asked them to fill in missing functionality. They made lots of small fixes, and those added up. Our biggest gains for the month were about 30,000 in /css and 10,000 in /editing . I'm interested in what models they are using here - I know Andreas uses Codex and Claude Code, but I haven't seen him talk about specific model versions. Claude Opus 5.5 came out on September 22, 2026 and Claude Fable 5.2 on November 9, 2026 (after that window). I'd love to know what they were using for that huge leap in the last week of October. Should you use Ladybird? Here's what Andreas says about Ladybird's suitability for use as a daily browser: This is an alpha, so some websites won’t work, and it will crash sometimes. When that happens, tell us! You can report a broken site from inside the browser. After a crash, you can read the crash report and decide whether to send it. Our privacy policy has the details. We want security nerds to hack it! A new browser gets hacked, over and over, and that’s part of the process, so we make no promises about security today. When you pwn us, please tell us how so we can harden Ladybird! Given how hard it is to secure a web browser, and the hostility of the environment they operate in, I won't be using Ladybird to sign into GitHub or Gmail or any of my other sensitive accounts. I'm going to keep it around for anonymous browsing though, partly to participate in the testing efforts but mainly because it gives me a glimmer of optimism to see a promising new entrant in the stagnant browser engine market start to grow its wings. Tags: browsers , open-source , ai , rust , webassembly , generative-ai , llms , andreas-kling , ladybird , coding-agents",
+        "lookback_7d": false,
+        "text_excerpt": "Ladybird’s first alpha release 23rd November 2026 Ladybird is an astonishingly ambitious project: a new browser, in 2026, with its own implementation of most of the key components—HTML parsing, CSS engine, layout, JavaScript, even WebAssembly. It still uses a few external components—things like HarfBuzz for text shaping, Skia for 2D graphics, ffmpeg for video, and SQLite for the things you do with SQLite. Everything else is part of Ladybird, or code brought in from Ladybird’s even more ambitious predecessor project SerenityOS . This morning the Ladybird project released their first alpha , which means you can now install the browser (on macOS or Linux) without having to compile it yourself! I’ve been trying it out today, and it’s very impressive. It feels fast, the UI is lightweight and intuitive, and most of the websites I’ve tried to load in it have worked as they should. It looks like this (showing my video-compressor tool): Here’s the process tree after I opened six tabs in one window and another tab in a second window (generated by this script , thanks Claude): Ladybird (72925) [240 MB] └── Hub (72926) [61 MB] ├── RequestServer (72927) [29 MB] ├── ProcessReaper (72928) [1 MB] ├── Compositor (72930) [123 MB] ├── RequestServer (72953) [36 MB] ├── WebContent (72984) [819 MB] ├── MediaServer (73006) [118 MB] ├── VideoDecoderServer (73007) [20 MB] ├── WebContent (73052) [144 MB] ├── WebContent (73057) [73 MB] ├── WebContent (73073) [166 MB] ├── WebContent (73094) [70 MB] ├── WebContent (73112) [116 MB] ├── RequestServer (73113) [27 MB] └── WebContent (73185) [60 MB] Ladybird runs different tabs in different processes, an isolation mechanism used by most browsers (well, technically Chrome uses a process-per-site). I tried Ladybird against several of my more advanced tool examples—like the video-compressor shown above, which runs ffmpeg compiled to WebAssembly. I had it resize its own screenshot using my image-resize tool . It happily runs my Pyodide REPL (Python compiled to WebAssembly) too. The one thing I tried that didn’t work was Datasette Lite , which runs Pyodide in a complicated arrangement of service workers and web workers. Attempting to start Datasette Lite displays this error: undefined is not a function (evaluated from 'navigator.serviceWorker.startMessages') I filed an issue about this , then found a FIXME annotation in the source code. The Octob\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "OpenAI News",
+        "title": "OpenAI and Cisco introduce Shirudo",
+        "url": "https://openai.com/index/introducing-shirudo",
+        "published_at": "2026-11-23T21:20:00Z",
+        "summary": "OpenAI and Cisco introduce Shirudo, an open-source runtime for Linux. It helps teams protect running systems while they roll out patches.",
+        "lookback_7d": false,
+        "text_excerpt": "OpenAI and Cisco are launching Shirudo, an open-source runtime that helps teams protect Linux systems while they roll out patches. In a controlled test ⁠ (opens in a new window) , a Codex-generated shield blocked a Java4Shell exploit attempt against a running Elasticsearch service without requiring a restart. We’re inviting developers, security researchers, and infrastructure operators across the industry to help develop the project further. The project brings together OpenAI’s frontier AI, security and infrastructure research and Cisco’s infrastructure and security expertise to help protect the systems people rely on every day. Testing and deploying a patch can still take days or weeks. Protecting a service in the meantime can be challenging because an exploit and a legitimate request may rely on the same Linux operation. Blocking that operation entirely could take the service offline. Shirudo (Japanese for “shield”) is designed to help security teams navigate this tradeoff. Teams can test whether a temporary safeguard, called a shield, blocks the behavior that exposes a vulnerability while allowing legitimate requests through. Once an operator approves the shield, it can be deployed while the service continues running. Shirudo uses eBPF, a Linux technology that allows small programs to run at specific points inside the operating system. This makes it possible to observe suspicious activity and apply targeted security protections to running systems. OpenAI and Cisco are designing Shirudo around four core capabilities: Live protection: eBPF shields can block vulnerable code paths without restarting the system. Security teams can monitor how a proposed shield would affect applications before enforcing it. Defense at machine speed: OpenAI and Cisco are designing Shirudo to give agents programmable controls to investigate vulnerabilities, develop targeted shields, and validate their effectiveness against exploits and real workloads. Security teams control what gets deployed. Trusted deployment: Shields are cryptographically signed and verified before loading. Linux's eBPF verifier checks eBPF programs against its safety rules, while kernel security controls restrict unauthorized changes. Hardware-backed verification: Shirudo uses a Trusted Platform Module (TPM) to support a verifiable record of protections being loaded or removed. Operators can use this evidenc\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "OpenAI News",
+        "title": "Richpanel helps companies automate 50% of support in 30 days",
+        "url": "https://openai.com/business/customer-stories/richpanel-ai-customer-support",
+        "published_at": "2026-11-23T08:00:00Z",
+        "summary": "Richpanel uses GPT-6 Astra and GPT-6.1 Sol to equip its AI support agents with tools and procedures, and GPT-6 Luna for their conversations.",
+        "lookback_7d": false,
+        "text_excerpt": "Beyond knowing how to answer a customer’s request, AI support agents need to be able to execute a solution. And for that, they need access to the right tools and instructions. According to Richpanel CEO Amit RG, human support agents can use 20 or 30 tools to serve a customer, and the procedures they follow may never have been written down. Richpanel ⁠ (opens in a new window) solves that using OpenAI models to both set up the tools and procedures AI support agents need to act and handle customer conversations. “The intelligence is no longer the bottleneck. It’s everything around it.” —Amit RG, CEO, Richpanel Deploying a support agent often requires a forward-deployed engineer to connect the agent to a customer’s systems and define how it should work. Amit saw that many companies didn’t have engineers to spare and asked himself, “What if that forward-deployed engineer itself was an AI agent?” So Richpanel built it: an AI manager to handle agent setup. Customers began calling it Boss AI. It writes procedures and defines how Richpanel’s frontline support agent, copilot, and quality-assurance agent call the tools they need. Richpanel uses GPT‑6 Astra and GPT‑6.1 Sol for Boss AI, prioritizing accuracy when building the tools and procedures its other agents will follow. Richpanel designs the frontline agent to handle hundreds of thousands of conversations, making the cost of each interaction an important part of model selection. It uses GPT‑6 Luna and other OpenAI models for that work. Amit says Richpanel takes the same approach to its copilot and quality-assurance agents. “What matters is a balance of cost and intelligence,” Amit says. Richpanel’s customers may already use low-cost outsourced support. Automating their operations has to make financial sense against that starting point. Amit credits OpenAI with making models available that can handle long context and longer tasks while remaining cost efficient. Richpanel can use deeper reasoning to prepare its support agents and more economical models to run the conversations that follow. “OpenAI models can run these long-context, longer-horizon tasks while still being very cost efficient.” —Amit RG, CEO, Richpanel At the time of the October 2026 interview, Amit said Richpanel had completed approximately 300 AI customer-support deployments over the previous six months. The company guarantees customers a 50% automati\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "datasette-charts 0.1a0",
+        "url": "https://simonwillison.net/2026/Nov/23/datasette-charts/",
+        "published_at": "2026-11-23T00:37:20Z",
+        "summary": "Release: datasette-charts 0.1a0 I've been thinking about this problem for over a year now, but on Sunday I finally fired up Claude Fable 5.2 to build an initial prototype. The prototype went so well that this is now a full plugin. You can try it out in Datasette Lite here . It looks like this: The new charts plugin works against any table or arbitrary SQL query in Datasette. It defines several different chart types (using vendored D3 , Observable Plot , and topojson-client ), each with a set of heuristics for identifying when they might be a good match for a specific set of rows. Those suggestion thumbnails at the top are actual visualizations driven by the data, and selecting one pulls up the full chart along with tools for modifying it. You can also manually construct a chart from scratch. As with other Datasette visualization plugins, the current state of your chart is persisted in a #fragment in the URL - so you can bookmark charts or share them with others. The most important feature is that the charts take all rows into account . Previous charting plugins like datasette-vega would only show charts for the current page of results, generally up to 100 rows. The new plugin compiles each chart to a SQL query that aggregates across the entire result set (potentially millions of rows) using GROUP BY, time bucketing, and window functions. Each query returns a result capped at 5,000 rows, suitable for display on the chart. The plugin uses sampling to help suggest charts for larger tables without evaluating the full result set. I'm really happy with this initial release of the plugin. It's still very much an alpha, but it's the closest I've got to the dream of Datasette helping visualize data with as little required direction from the user as possible. Tags: coding-agents , generative-ai , projects , ai , llms , datasette , visualization , claude-mythos-fable",
+        "lookback_7d": false,
+        "text_excerpt": "I've been thinking about this problem for over a year now, but on Sunday I finally fired up Claude Fable 5.2 to build an initial prototype. The prototype went so well that this is now a full plugin. You can try it out in Datasette Lite here . It looks like this: The new charts plugin works against any table or arbitrary SQL query in Datasette. It defines several different chart types (using vendored D3 , Observable Plot , and topojson-client ), each with a set of heuristics for identifying when they might be a good match for a specific set of rows. Those suggestion thumbnails at the top are actual visualizations driven by the data, and selecting one pulls up the full chart along with tools for modifying it. You can also manually construct a chart from scratch. As with other Datasette visualization plugins, the current state of your chart is persisted in a #fragment in the URL - so you can bookmark charts or share them with others. The most important feature is that the charts take all rows into account . Previous charting plugins like datasette-vega would only show charts for the current page of results, generally up to 100 rows. The new plugin compiles each chart to a SQL query that aggregates across the entire result set (potentially millions of rows) using GROUP BY, time bucketing, and window functions. Each query returns a result capped at 5,000 rows, suitable for display on the chart. The plugin uses sampling to help suggest charts for larger tables without evaluating the full result set. I'm really happy with this initial release of the plugin. It's still very much an alpha, but it's the closest I've got to the dream of Datasette helping visualize data with as little required direction from the user as possible.",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "Select Styling Specimens",
+        "url": "https://simonwillison.net/2026/Nov/22/select-styling/",
+        "published_at": "2026-11-22T19:45:06Z",
+        "summary": "Tool: Select Styling Specimens I got frustrated at how HTML <select> boxes default to looking different in different browsers, and are (I think) quite ugly in Chrome: So I had Claude Fable 5.2 build me this page showing all of the ways they can be styled: Build an HTML page that shows all of the ways a select box can be styled, I plan to take screenshots in every desktop and mobile browser After some experimentation I've decided my favorite CSS for select boxes is this: select { appearance : none ; color : # 1f2933 ; padding : 0.5 em 2.25 em 0.5 em 0.75 em ; border : 1 px solid # c4cbd3 ; border-radius : 6 px ; background : # fff url ( \"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23667085' stroke-width='1.5'/%3E%3C/svg%3E\" ) no-repeat right 0.75 em center / 0.75 em ; } Here's what that looks like in the three browsers: Tags: tools , css , html",
+        "lookback_7d": false,
+        "text_excerpt": "I got frustrated at how HTML <select> boxes default to looking different in different browsers, and are (I think) quite ugly in Chrome: So I had Claude Fable 5.2 build me this page showing all of the ways they can be styled: Build an HTML page that shows all of the ways a select box can be styled, I plan to take screenshots in every desktop and mobile browser After some experimentation I've decided my favorite CSS for select boxes is this: select { appearance : none ; color : # 1f2933 ; padding : 0.5 em 2.25 em 0.5 em 0.75 em ; border : 1 px solid # c4cbd3 ; border-radius : 6 px ; background : # fff url ( \"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23667085' stroke-width='1.5'/%3E%3C/svg%3E\" ) no-repeat right 0.75 em center / 0.75 em ; } Here's what that looks like in the three browsers:",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "OpenAI News",
+        "title": "Perplexity and Intelligence",
+        "url": "https://openai.com/index/perplexity-and-intelligence",
+        "published_at": "2026-11-22T00:00:00Z",
+        "summary": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
+        "lookback_7d": false,
+        "text_excerpt": "From afar, it might seem like modern AI is built similarly to how software has been built in previous decades: with a diverse set of techniques targeting specific capabilities. There are indeed a variety of methods, but rather than designing something from scratch, they are mostly harnessing the intelligence coming from a much simpler and less interpretable process: training a compressor (or, equivalently ⁠ (opens in a new window) , predictor) on a very large corpus of data. 1 I believe tracking the pace of progress on training better compressors is key to understanding the arc of advances in AI. In this post, I argue for establishing perplexity (or, equivalently, cross-entropy loss) as a metric to compare between model developers and inform shared safety standards. As a first step, I provide more transparency into pretraining progress at OpenAI. Publishing our internal perplexity measurements took some consideration; it gives competitors a clearer picture of where we stand, but that concern is outweighed by the urgency of establishing shared ⁠ (opens in a new window) safety measures across the industry. We at OpenAI hope for this to be a step towards building a shared scientific basis for future pacing efforts. A simplified, but fundamentally informative, view of AI development is that first, one builds a large computer, then uses it to pretrain a model (compressor) on a large unstructured dataset, then applies a variety of techniques—like prompting, finetuning or reinforcement learning—in different contexts to elicit the latent capabilities of that model. Algorithmic progress can blur the distinction between training phases, but we can still separate the creation of the AI with hard-to-predict emergent capabilities (which I earlier dubbed “ an alien mind ⁠ ”) and the subsequent targeted elicitation. The primary way we measure progress on this key “intelligence substrate” has remained remarkably constant over the years—we have been tracking the perplexity of the models on a held-out dataset. 2 , 3 Perplexity measures how well a model predicts the next token on average; lower perplexity means better predictions. The plot opening this blog post shows how this metric evolved for our models starting with GPT‑3.5. The range of capabilities of models that are largely described by this one metric is stunning. Setting the new perplexity state-of-the-art on older da\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Eugene Yan",
+        "title": "Lessons from 12 Evals: Where They Break and What to Measure Instead",
+        "url": "https://eugeneyan.com/writing/public-evals",
+        "published_at": "2026-11-22T00:00:00Z",
+        "summary": "How benchmarks are built, the bugs they have, and hot takes on what should change.",
+        "lookback_7d": false,
+        "text_excerpt": "As models ship faster, eval scores are often the first thing we learn about a new model. But how much weight should we put in them? In eight of twelve public evals studied, there’s evidence the grader failed work that should have passed. And even when the grader gets it right, many benchmarks measure what’s easy rather than what matters, and should instead focus on reliability, work velocity, multi-turn collaboration, etc. Here, we’ll cover the common patterns and principles, the errors models make, and where current benchmarks fall short. I’ll also share what we’re getting wrong and what should change, including why average pass rate isn’t enough and why dollars are the wrong measure of cost. Finally, we’ll walk through twelve evals: four on coding and science, six on knowledge work, and two on browsing and computer use. By the end, you’ll know what to trust in a benchmark and what to question. Patterns: How eval tasks are built and maintained # Most eval tasks share four components: Instruction: A prompt that sounds like a real user’s request. The agent gets it once at the start and typically can’t ask clarifying questions. Environment: The workspace where the agent operates. Typically comes with the files, software, and services needed. For coding, this is usually a container with a repo at a specific git commit. For knowledge work, it might be a VM with installed software, simulated business apps, or a folder of documents. Grader: This decides whether the work passes. It can be deterministic code (tests and assertions over the final output or environment state), an LLM judge scoring a rubric of yes/no criteria, or a mix of both. Reference (optional): A human expert’s solution. Evals include this to prove a task is solvable, anchor pairwise comparisons, or establish a human baseline. The four basic components of an eval task In addition, eval benchmarks are increasingly maintained like software. They ship versioned releases and accept fixes through issues and pull requests. Agents’ Last Exam v1.1 retired 30 tasks and revised 57 others, and Harvey LAB’s public set has grown from about 1,250 tasks to 2,010 since launching in May 2026. Like software, these releases can also introduce breaking changesâTerminal Bench can drop saturated tasks with each version, making scores hard to compare across releases. Principles: That shape grading and task selection #\n\n[TRUNCATED]",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "source": "Simon Willison",
+        "title": "Muru",
+        "url": "https://simonwillison.net/2026/Nov/21/muru/",
+        "published_at": "2026-11-21T23:56:28Z",
+        "summary": "Muru Graham Dumpleton started mod_wsgi 20 years ago, and has been thinking about the ideal way to serve Python web applications in production ever since. Muru is his new, AI-assisted Rust server that aims to provide the best possible tools for running ASGI and WSGI Python apps both in development and production. As he did with wrapture , he's been publishing an extraordinarily detailed account of the project as he works on it - as part of his development process. Here's everything he's published so far, all in the last three weeks: 2026-11-04 — Twenty years of mod_wsgi, and what comes next 2026-11-05 — A first look at Muru 2026-11-07 — Muru: looking inside the workers 2026-11-08 — Muru: how it fits together 2026-11-09 — Muru: import once, fork many 2026-11-10 — Muru: HTTPS in development 2026-11-11 — Muru: WSGI and ASGI together 2026-11-11 — AI as a lifestyle choice 2026-11-12 — Muru: releases, not restarts 2026-11-13 — Muru: canaries without a service mesh 2026-11-14 — Muru: a better tenant in a container 2026-11-15 — Muru: working with Kubernetes, not around it 2026-11-16 — Muru: scaling from what the workers report 2026-11-17 — Muru: scaling to zero 2026-11-18 — Muru: overlays on a schedule 2026-11-19 — Muru: noticing and responding 2026-11-20 — Muru: a toolbar on every page 2026-11-21 — Muru: tracing in the toolbar 2026-11-22 — Muru: when lazy imports help That post about AI as a lifestyle choice is particularly worth a read: The AI may be doing a lot of the work on the surface, but deciding what isn't good enough yet is still down to me, and twenty years of getting things wrong with mod_wsgi turns out to be useful for that. I am prepared to put in the hard work to keep polishing Muru until it is something I would trust, and something you would too. Tags: graham-dumpleton , modwsgi , python , wsgi , ai , rust , asgi , generative-ai , llms , ai-assisted-programming",
+        "lookback_7d": false,
+        "text_excerpt": "21st November 2026 - Link Blog Muru . Graham Dumpleton started mod_wsgi 20 years ago, and has been thinking about the ideal way to serve Python web applications in production ever since. Muru is his new, AI-assisted Rust server that aims to provide the best possible tools for running ASGI and WSGI Python apps both in development and production. As he did with wrapture , he's been publishing an extraordinarily detailed account of the project as he works on it - as part of his development process. Here's everything he's published so far, all in the last three weeks: That post about AI as a lifestyle choice is particularly worth a read: The AI may be doing a lot of the work on the surface, but deciding what isn't good enough yet is still down to me, and twenty years of getting things wrong with mod_wsgi turns out to be useful for that. I am prepared to put in the hard work to keep polishing Muru until it is something I would trust, and something you would too.",
+        "text_source_field": "full_text",
+        "text_truncated_in_raw": false
+      }
+    ],
+    "youtube": [],
+    "github": [
+      {
+        "name": "cherry-studio-app",
+        "full_name": "CherryHQ/cherry-studio-app",
+        "url": "https://github.com/CherryHQ/cherry-studio-app",
+        "description": "🍒 This is the mobile version of Cherry Studio.",
+        "stars": 4088,
+        "pushed_at": "2026-11-24T06:58:56Z",
+        "topics": [
+          "agent",
+          "android",
+          "assistant",
+          "chat-bot",
+          "expo",
+          "ios"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"assets/cherry-studio-logo.png\" width=\"100\" height=\"100\" alt=\"Cherry Studio logo\" /> </p> <h1 align=\"center\">Cherry Studio Mobile</h1> <p align=\"center\"> <strong>Your AI workspace on iOS and Android.</strong><br /> Chat with your favorite models, connect your tools, and turn ideas into images. </p> <p align=\"center\"> <a href=\"#features\">Features</a> · <a href=\"docs/guides/development.md\">Development</a> · <a href=\"docs/README.md\">Documentation</a> · <a href=\"https://github.com/CherryHQ/cherry-studio-app/issues/new/choose\">Feedback</a> · <a href=\"https://github.com/CherryHQ/cherry-studio\">Desktop</a> </p> <p align=\"center\"> <img src=\"https://img.shields.io/badge/iOS_%7C_Android-18181B?style=flat\" alt=\"Platforms: iOS and Android\" /> <img src=\"https://img.shields.io/badge/status-in_development-F2C94C?style=flat\" alt=\"Status: in development\" /> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-AGPL--3.0-D94F62?style=flat\" alt=\"License: AGPL-3.0\" /></a> </p> ## A Look Inside <p align=\"center\"> <a href=\".github/images/readme/chat.png\"><img src=\".github/images/readme/chat.png\" width=\"250\" alt=\"Cherry Studio conversation on iPhone 17 Pro\" /></a> <a href=\".github/images/readme/paintings.png\"><img src=\".github/images/readme/paintings.png\" width=\"250\" alt=\"Watercolor landscape generated in Cherry Studio on iPhone 17 Pro\" /></a> <a href=\".github/images/readme/plugins.png\"><img src=\".github/images/readme/plugins.png\" width=\"250\" alt=\"Cherry Studio plugin catalog on iPhone 17 Pro\" /></a> </p> <p align=\"center\"><sub>Conversations · Image creation · Connected tools<br />Real app screenshots captured on iPhone 17 Pro.</sub></p> ## Features ### 💬 Your Models, One Conversation Space Connect multiple AI providers, manage your models, and choose the right one for each conversation. Read streaming responses with Markdown formatting and bring images and text attachments into the conversation, subject to the selected model's capabilities. ### 🍒 Agents That Work Your Way Create agents with their own instructions, default models, and tools. Keep separate conversations for different projects, and review tool actions when approval is required. ### 🔌 Connect Your Tools Extend your agents with plugins and MCP (Model Context Protocol) servers. Search the web and read pages with configured search services. Connected tools become available accordin\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "TauriTavern",
+        "full_name": "Darkatse/TauriTavern",
+        "url": "https://github.com/Darkatse/TauriTavern",
+        "description": "The classic Sillytavern, now has been rewritten in Tauri/Rust.",
+        "stars": 2420,
+        "pushed_at": "2026-11-24T06:55:05Z",
+        "topics": [
+          "llm",
+          "rust",
+          "sillytavern",
+          "tauri",
+          "tauri-app"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"docs/images/tauritavern-readme-hero.webp\" alt=\"TauriTavern\" width=\"720\"> # TauriTavern **SillyTavern 的原生应用 —— 桌面与移动，开箱即用** **简体中文** · [English](README.en.md) · [日本語](README.ja.md) · [Русский](README.ru.md) · [Português (Brasil)](README.pt-BR.md) [下载](https://tauritavern.github.io/downloads/) · [文档](https://tauritavern.github.io/) · [Releases](https://github.com/Darkatse/TauriTavern/releases) · [Issues](https://github.com/Darkatse/TauriTavern/issues) [![Release](https://img.shields.io/github/v/release/Darkatse/TauriTavern?style=flat-square&color=1f9d96)](https://github.com/Darkatse/TauriTavern/releases/latest) [![License](https://img.shields.io/github/license/Darkatse/TauriTavern?style=flat-square)](LICENSE) [![Stars](https://img.shields.io/github/stars/Darkatse/TauriTavern?style=flat-square&labelColor=black&color=ffcb47)](https://github.com/Darkatse/TauriTavern/stargazers) [![Platforms](https://img.shields.io/badge/platforms-Windows%20%C2%B7%20macOS%20%C2%B7%20Linux%20%C2%B7%20Android%20%C2%B7%20iOS-1f9d96?style=flat-square)](https://tauritavern.github.io/downloads/) <br/> [![Telegram](https://img.shields.io/badge/Telegram-%E7%BE%A4%E7%BB%84-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/TauriTavern) [![Discord](https://img.shields.io/badge/Discord-%E7%A4%BE%E5%8C%BA-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/hn57aFGe8h) [![Issues](https://img.shields.io/github/issues/Darkatse/TauriTavern?style=flat-square&logo=github)](https://github.com/Darkatse/TauriTavern/issues) [![Canary](https://img.shields.io/github/actions/workflow/status/Darkatse/TauriTavern/canary-release.yml?style=flat-square&logo=githubactions&label=canary)](https://github.com/Darkatse/TauriTavern/actions/workflows/canary-release.yml) </div> <p align=\"center\"><sub>感谢 <a href=\"https://github.com/shiyue137\">@shiyue137</a> 为 TauriTavern 设计 Logo 💛</sub></p> ## 下载 <div align=\"center\"> [![⬇ 下载 TauriTavern](https://img.shields.io/badge/%E2%AC%87_%E4%B8%8B%E8%BD%BD-TauriTavern-1f9d96?style=for-the-badge)](https://tauritavern.github.io/downloads/) **自动识别你的设备 · 一键获取最新稳定版** [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white&style=flat-square)](https://tauritavern.github.io/downloads/platforms/) [![macOS](https://img.shields.io/badge/macOS-000000?style=flat-square&logo=ap\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "LangAlpha",
+        "full_name": "ginlix-ai/LangAlpha",
+        "url": "https://github.com/ginlix-ai/LangAlpha",
+        "description": "Claude Code for Financial Market",
+        "stars": 2341,
+        "pushed_at": "2026-11-24T06:58:11Z",
+        "topics": [
+          "agent",
+          "investment",
+          "langchain",
+          "langraph",
+          "llm",
+          "mcp",
+          "skills",
+          "trading"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"web/public/logo_words.png\" alt=\"LangAlpha\" height=\"110\" /> </p> <h3 align=\"center\">The harness for agentic trading.</h3> <p align=\"center\"> Open-source AI agents that research the market, build the thesis,<br> and trade your own brokerage account within the permissions you set. </p> <p align=\"center\"> <a href=\"https://langalpha.ai\"><strong>Try LangAlpha ↗</strong></a> · <a href=\"https://docs.langalpha.ai\"><strong>Docs ↗</strong></a> · <a href=\"#get-started\"><strong>Get started</strong></a> · <a href=\"#agentic-trading\"><strong>Agentic trading</strong></a> · <a href=\"#harness-design\"><strong>Harness design</strong></a> · <a href=\"#full-stack-architecture\"><strong>Full-stack architecture</strong></a> · <a href=\"#security\"><strong>Security</strong></a> <br /> English · <a href=\"README.zh-CN.md\">简体中文</a> · <a href=\"README.ja-JP.md\">日本語</a> </p> <p align=\"center\"> <a href=\"https://github.com/ginlix-ai/langalpha/stargazers\"><img src=\"https://img.shields.io/github/stars/ginlix-ai/langalpha?style=flat-square\" alt=\"GitHub stars\" /></a> <img src=\"https://img.shields.io/badge/license-Apache%202.0-green?style=flat-square\" alt=\"License: Apache 2.0\" /> <img src=\"https://img.shields.io/badge/python-3.13+-blue?style=flat-square\" alt=\"Python 3.13+\" /> <a href=\"https://github.com/langchain-ai/langchain\"><img src=\"https://img.shields.io/badge/LangChain-1c3c3c?style=flat-square&logo=langchain&logoColor=white\" alt=\"LangChain\" /></a> <a href=\"https://docs.langalpha.ai\"><img src=\"https://img.shields.io/badge/docs-docs.langalpha.ai-1c3c3c?style=flat-square\" alt=\"Documentation\" /></a> <a href=\"https://github.com/ginlix-ai/langalpha/releases\"><img src=\"https://img.shields.io/badge/desktop-macOS%20%7C%20Windows%20%7C%20Linux-555?style=flat-square\" alt=\"Desktop app\" /></a> </p> <p align=\"center\"> <img src=\"https://raw.githubusercontent.com/ginlix-ai/LangAlpha/main/assets/readme/hero-cbrs-research-dashboard.webp\" alt=\"The demo-cbrs workspace: the agent checking the CBRS quote, pulling filings and running two analysts on the left, and on the right the CBRS dashboard built from that research, open on the price since the IPO with its event markers and a selected event's note and sources\" width=\"900\" /> </p> ## Why LangAlpha Most AI finance tools answer questions. We believe investment research is Bayesian: you write down a thesis and what would prove it wrong, t\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "indie-hacker-tools-plus",
+        "full_name": "XiaomingX/indie-hacker-tools-plus",
+        "url": "https://github.com/XiaomingX/indie-hacker-tools-plus",
+        "description": "为独立开发者准备的精选技术栈和工具仓库来了！这里有你最需要的工具，帮你提升开发效率、节约成本，最重要的是——这些工具都是市场上热门的，经过验证的。🚀A curated collection of tech stacks and tools tailored for independent developers is here! these are proven, popular tools widely used in the industry. 🚀",
+        "stars": 1949,
+        "pushed_at": "2026-11-24T06:47:37Z",
+        "topics": [
+          "agent",
+          "ai",
+          "awesome",
+          "awesome-list",
+          "awesome-lists",
+          "aws",
+          "azure",
+          "cloudflare",
+          "github",
+          "hacker",
+          "indiehacker",
+          "llm",
+          "nextjs",
+          "shadcn"
+        ],
+        "source": "search",
+        "text_excerpt": "## 🌍 **开发者出海，选对工具是关键！** 为独立开发者准备的精选技术栈和工具仓库来了！这里有你最需要的工具，帮你提升开发效率、节约成本，最重要的是——这些工具都是市场上热门的，经过验证的。🚀 为什么你会喜欢我们的推荐： - **效率神器**：帮你以最快的速度搞定项目，省下宝贵的时间 ⏱️。 - **省钱利器**：把每一分钱花在刀刃上，让开发成本降到最低 💸。 - **热门工具**：用被行业认可的好工具，避免那些没人用、掉坑里的风险 📈。 不想踩坑、不想多花冤枉钱？那就来看看我们为你整理的工具合集吧！💡✨ 欢迎大家提PR和issues，帮助我们一起完善这个工具库，让每一位开发者都能从中受益，获取最精粹的技术支持！✨ ## 贡献方法 - 欢迎投稿，推荐或自荐文章/软件/资源，请[提交 issue](https://github.com/XiaomingX/indie-hacker-tools-plus/issues/new) 。 ## 常用资源清单 🌍 [跨境出海技术栈](https://github.com/XiaomingX/indie-hacker-tools-plus) 🤖 [AI搞钱原则手册](https://github.com/XiaomingX/ai-money-maker-handbook) 🛠️ [构建你自己的X](https://github.com/XiaomingX/build-your-own-xxx) 📋 [1000个中国独立开发者项目](https://github.com/XiaomingX/1000-chinese-independent-developer-plus) 📋 [100k-us-domains:ai导航站点数据集](https://github.com/XiaomingX/100k-us-domains) 🧠 [世界上覆盖最全的优秀Qwen（千问）提示语大全](https://github.com/XiaomingX/awesome-qwen-prompt-insight) ## Web 开发模板 (2026 精选版) ### 全栈 SaaS 启动器 (SaaS Starters) | 技术栈 | 备注 | | --- | --- | | [T3 Stack](https://create.t3.gg/) | **类型安全**。Next.js + TypeScript + tRPC 的极致开发体验。 | | [Marblism](https://www.marblism.com/) | **AI 生成全栈**。通过 Prompt 直接生成包含后端、数据库和前端的完整 SaaS。 | ### 管理后台 (Admin Panels) | 技术栈 | 备注 | | --- | --- | | [Refine](https://refine.dev/) | **黑马工具**。无头 (Headless) 后台框架，支持自由组合各类 UI 库。 | | [shadcn-admin](https://github.com/satnaing/shadcn-admin) | **简洁美观**。基于 shadcn/ui 的仪表盘模板，目前非常流行。 | ### 现代 UI 组件体系 (Modern UI) | 技术栈 | | 备注 | | --- | --- | --- | | [shadcn/ui](https://ui.shadcn.com/) | | **行业标准**。不再安装组件库，而是直接复制代码块，拥有 100% 控制权。 | | [Magic UI](https://magicui.design/) | | **动态视觉**。专注于动效和高逼格交互组件，提升页面质感。 | | [Aceternity UI](https://ui.aceternity.com/) | | **现代感利器**。提供极具视觉冲击力的落地页组件。 | | [v0.dev](https://v0.dev/) | | **AI 生成 UI**。Vercel 出品，通过自然语言直接生成可用的 React 组件代码。 | | [Hyperiux Vault](https://vault.hyperiux.com/) | | **动效组件库**。为 Next.js 打造的动画效果与交互组件集合，通过 CLI 将源码直接复制进项目，拥有完整控制权。 | ### 内容驱动框架 (Content & SEO) | 技术栈 | 备注 | | --- | --- | | [Next.js (SSG)](https://nextjs.org/) | **全能选手**。强大的静态生成模式，兼顾性能与全栈扩展性。 | | [Hono](https://hono.dev/) | **极致性能**。支持边缘计算（Cloudflare Workers, Edge），是构建高性能 Content API 与极速 SEO 页面的首选。 | | [Astro](https://astro.build/) | **孤岛架构**。极致的静态性能，SEO 与内容站点的王者。 | ### AI 知识、调研与笔记 (AI Knowledge & Research) | 工具名 | 备注 | | --- | --- | | [NotebookLM](https://notebooklm.google.com/) | **Google 出品**。基于上传源文件的 AI 笔记与调研神器，支持生成播客、思维导图、幻灯片等。 | | [Perplexity.ai](https://www.perplexity.ai/) | **AI 搜索**。结\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "Lody",
+        "full_name": "LodyAI/Lody",
+        "url": "https://github.com/LodyAI/Lody",
+        "description": "Share coding agents with your team on phone and desktop",
+        "stars": 1847,
+        "pushed_at": "2026-11-24T07:00:43Z",
+        "topics": [
+          "agent",
+          "agentic-workflow",
+          "coding-agent",
+          "collaboration",
+          "local-first",
+          "multi-agent",
+          "multiplayer",
+          "orchestration",
+          "vibe-coding"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <a href=\"https://play.google.com/store/apps/details?id=ai.lody.android\"> <img src=\"https://img.shields.io/badge/Google_Play-414141?logo=google-play&logoColor=white\"/> </a> <a href=\"https://apps.apple.com/us/app/lody-run-code-agent-anywhere/id6761373528\"> <img src=\"https://img.shields.io/badge/App_Store-0D96F6?logo=app-store&logoColor=white\"/> </a> <a href=\"https://lody.ai/download\"> <img src=\"https://img.shields.io/badge/macOS-000000?logo=apple&logoColor=F0F0F0\"/> </a> <a href=\"https://lody.ai/download\"> <img src=\"https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white\"/> </a> <a href=\"https://lody.ai/download\"> <img src=\"https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black\"/> </a> </p> <p align=\"center\"> <a href=\"https://lody.ai\"> <picture> <img src=\"./site-docs/public/icon-mac.png\" width=\"128\"/> </picture> </a> </p> <h1 align=\"center\"> <a href=\"https://lody.ai\" alt=\"lody-site\">Lody</a> </h1> <p align=\"center\"> <b>English</b> | <a href=\"./README.zh-CN.md\">简体中文</a> </p> <p align=\"center\"> <b>A shared workspace for the coding agents your team already uses.</b> </p> <p align=\"center\"> Connect any machine and bring any coding agent through ACP. Share conversations with your team and dispatch work from desktop, mobile, web, or CLI. </p> <p align=\"center\"> <a href=\"https://lody.ai/docs/\"> <b>Documentation</b> </a> | <a href=\"https://lody.ai/docs/quickstart\"> <b>Getting Started</b> </a> </p> <p align=\"center\"> <a aria-label=\"X\" href=\"https://x.com/intent/follow?screen_name=lody_ai\" target=\"_blank\"> <img alt=\"\" src=\"https://img.shields.io/badge/X-%23000000.svg?style=for-the-badge&logo=X&logoColor=white\"> </a> <a aria-label=\"Discord-Link\" href=\"https://discord.gg/E8mZtMu38s\" target=\"_blank\"> <img alt=\"\" src=\"https://img.shields.io/badge/Discord-black?style=for-the-badge&logo=discord\"> </a> </p> <p align=\"center\"> <img src=\"./site-docs/public/_docs-assets/lody-readme-hero.png\" alt=\"Lody running coding Agents across desktop and mobile\" width=\"100%\" /> </p> ## What you can do with Lody ### Share Agent conversations with your team Open the same conversation with your teammates. See the full transcript, runtime status, files, and code changes around the work, then add instructions without passing around screenshots or pasted logs. ### Bring the Agents and machines you already use Connect Claude Code, C\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "powercontext",
+        "full_name": "oceanbase/powercontext",
+        "url": "https://github.com/oceanbase/powercontext",
+        "description": "Agent memory: long-term memory & agent memory handoff. Claude Code & Codex.",
+        "stars": 1805,
+        "pushed_at": "2026-11-24T06:42:21Z",
+        "topics": [
+          "agent",
+          "agent-context",
+          "agent-memory",
+          "ai-memory",
+          "claude-code",
+          "claude-code-memory",
+          "codex",
+          "codex-memory",
+          "context",
+          "context-engine",
+          "dsh-plugin",
+          "handoff",
+          "long-term-memory",
+          "runtime",
+          "self-evolving"
+        ],
+        "source": "search",
+        "text_excerpt": "# PowerContext **Context that stays with the work — across sessions, agents, and people.** [![PyPI version](https://img.shields.io/pypi/v/powercontext)](https://pypi.org/project/powercontext/) [![License Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE) [![Discord](https://img.shields.io/badge/Discord-community-5865F2?logo=discord&logoColor=white)](https://discord.com/invite/74cF8vbNEs) [![Ask DeepWiki](https://img.shields.io/badge/Ask-DeepWiki-147DFF)](https://deepwiki.com/oceanbase/powercontext) *[English](README.md) · [中文](README_CN.md) · [日本語](README_JP.md)* [Website](https://powercontext.oceanbase.io/) · [Quickstart](https://powercontext.oceanbase.io/en/docs/get-started/quickstart/) · [Manual startup](https://powercontext.oceanbase.io/en/docs/get-started/manual-start/) · [Integrations](https://powercontext.oceanbase.io/en/docs/integrations/) · [Benchmarks](https://powercontext.oceanbase.io/en/benchmarks/) · [Interfaces](https://powercontext.oceanbase.io/en/docs/develop/interfaces/) ## New in 1.6.0 **Knowledge bases debut, and the Gateway reaches its stable release.** Bring existing documents into searchable knowledge bases and spend less uncached input on turning Agent conversations into long-term memory. - **Knowledge bases:** import Markdown and PNG/JPEG/WebP images, search with keyword and vector retrieval, and inspect, edit or reprocess revisioned document chunks in the Dashboard. Install the optional plugin and dependencies using the [knowledge-base guide](https://powercontext.oceanbase.io/en/docs/workflows/knowledge-base/). PDF/Office import and answer generation are not included. - **Gateway token savings:** optional prefix extraction appends memory instructions to the Agent's exact conversation prefix so the provider can reuse its prompt cache. Core selects it only when estimated to cost less than normal extraction. The Gateway enables prefix extraction by default; capture remains opt-in and the Server callback URL must be configured. Cache hits, conversation length and fallback requests determine actual savings. Codex subscriptions support it with a non-enforcing Core. See [Gateway setup](https://powercontext.oceanbase.io/en/docs/operate/deploy-server/#memory-extraction-over-the-cached-prefix). - **A more complete workflow:** plugin hot reload, Server/device Source runners, Deep Agents integration and clearer proce\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "Argus-Agentic-SOC-Platform",
+        "full_name": "Sec-Link/Argus-Agentic-SOC-Platform",
+        "url": "https://github.com/Sec-Link/Argus-Agentic-SOC-Platform",
+        "description": "An open source AI-native agentic SOC platform",
+        "stars": 1306,
+        "pushed_at": "2026-11-24T06:38:12Z",
+        "topics": [
+          "agent",
+          "agentic-soc",
+          "ai",
+          "ai-soc",
+          "security",
+          "soc"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> ### Argus - An Open Source Agentic SOC Platform [🚀Live Demo](https://siem.seclink.info) · [📖 Documentation](https://sec-link.github.io/Argus-Agentic-SOC-Platform/) · [⭐ GitHub](https://github.com/Sec-Link/Argus-Agentic-SOC-Platform) </div> <p align=\"center\"> <a href=\"https://github.com/Sec-Link/Argus-Agentic-SOC-Platform/releases\" target=\"_blank\"> <img alt=\"Release\" src=\"https://img.shields.io/github/v/release/Sec-Link/Argus-Agentic-SOC-Platform\"></a> <a href=\"https://github.com/Sec-Link/Argus-Agentic-SOC-Platform/graphs/commit-activity\" target=\"_blank\"> <img alt=\"commit activity \" src=\"https://img.shields.io/github/commit-activity/m/Sec-Link/Argus-Agentic-SOC-Platform?style=flat-square\"></a> <a href=\"https://github.com/Sec-Link/Argus-Agentic-SOC-Platform/\" target=\"_blank\"> <img alt=\"Issues closed\" src=\"https://img.shields.io/github/issues-closed/Sec-Link/Argus-Agentic-SOC-Platform\"></a> </p> <p align=\"center\"> <a href=\"./README.md\"><img alt=\"English\" src=\"https://img.shields.io/badge/English-d9d9d9\"></a> <a href=\"./README_ZH.md\"><img alt=\"Chinese\" src=\"https://img.shields.io/badge/简体中文-d9d9d9\"></a> </p> ## Overview **Argus** is an open-source **AI-native Agentic SOC platform** designed for modern security operations. You can deploy it as a complete SOC platform or integrate with your existing security ecosystems. It provides a complete security operations foundation with: - ✅AI-powered Investigation - ✅Security Workflow Automation - ✅Alert and Incident Management - ✅Threat Intelligence Enrichment - ✅Asset Context Management At the same time, Argus is built with a **loosely coupled and API-first architecture**, allowing organizations to: - ✅ Extend Argus with custom security capabilities - ✅ Integrate Argus into existing SOC ecosystems --- ## 1. Product Components <img width=\"1677\" height=\"1677\" alt=\"Argus Framework\" src=\"https://github.com/user-attachments/assets/c355fbd7-f2a4-496b-9724-7c61b2826c3c\" /> The platform consolidates core SOC objects into one product with open-source solutions: - **Alerts**: alert ingestion, caching, search, and display - **Tickets**: incident/ticket management and collaboration - **CMDB**: asset inventory and contextual linking - **Dashboards**: operational dashboards and visualizations - **Correlation**: correlation rules and analysis - **Workflows / Orchestrator**: automation and scheduling - **AI Assista\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "Automodel",
+        "full_name": "NVIDIA-NeMo/Automodel",
+        "url": "https://github.com/NVIDIA-NeMo/Automodel",
+        "description": "🚀 Pytorch Distributed native training library for LLMs/VLMs with OOTB Hugging Face support",
+        "stars": 1101,
+        "pushed_at": "2026-11-24T06:47:16Z",
+        "topics": [
+          "agent",
+          "deepseek-v4",
+          "deepseek-v4-flash",
+          "finetuning",
+          "gemma3",
+          "gemma4",
+          "glm",
+          "gpt-oss",
+          "kimi-k3",
+          "llama",
+          "llama3",
+          "llm",
+          "minimax-m2",
+          "mistral",
+          "openai",
+          "qwen-38-27b",
+          "qwen3",
+          "qwen3-next",
+          "vlm"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> # 🚀 NeMo AutoModel </div> <div align=\"center\"> <!-- [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) --> [![codecov](https://codecov.io/github/NVIDIA-NeMo/Automodel/graph/badge.svg?token=4NMKZVOW2Z)](https://codecov.io/github/NVIDIA-NeMo/Automodel) [![CICD NeMo](https://github.com/NVIDIA-NeMo/Automodel/actions/workflows/cicd-main.yml/badge.svg)](https://github.com/NVIDIA-NeMo/Automodel/actions/workflows/cicd-main.yml) [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/release/python-3110/) [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md) [![GitHub Stars](https://img.shields.io/github/stars/NVIDIA-NeMo/Automodel.svg?style=social&label=Star)](https://github.com/NVIDIA-NeMo/Automodel/stargazers/) <!-- **Day-0 integration with Hugging Face models automating fine-tuning and pretraining with pytorch-native parallelism, custom-kernels and optimized recipes** **Pytorch DTensor‑native SPMD library for large‑scale training**--> [📖 Documentation](https://docs.nvidia.com/nemo/automodel/latest/index.html) • [🔥 Ready-to-Use Recipes](https://github.com/NVIDIA-NeMo/Automodel/#supported-models) • [💡 Examples](https://github.com/NVIDIA-NeMo/Automodel/tree/main/examples) • [Model Coverage](https://docs.nvidia.com/nemo/automodel/latest/model-coverage/overview.html) • [Performance](https://docs.nvidia.com/nemo/automodel/latest/performance-summary.html) • [🤝 Contributing](https://github.com/NVIDIA-NeMo/Automodel/blob/main/CONTRIBUTING.md) </div> ## 📣 News and Discussions - [11/20/2026][**Inkling-2-Mini**](https://huggingface.co/thinkingmachines/Inkling-2-Mini) Fine-tune Thinking Machines' 26B-A5B looped vision-language MoE model on one GB200 node. See the [model card](https://github.com/NVIDIA-NeMo/Automodel/blob/main/docs/model-coverage/vlm/thinkingmachines/inkling-2-mini.mdx) and the [MedPix SFT](https://github.com/NVIDIA-NeMo/Automodel/blob/main/examples/vlm_finetune/inkling2/inkling2_mini_medpix_sft_ep4.yaml), [MedPix LoRA](https://github.com/NVIDIA-NeMo/Automodel/blob/main/examples/vlm_finetune/inkling2/inkling2_mini_medpix_lora_ep4.yaml), and [128K packed SFT](https://github.com/NVIDIA-NeMo/Automodel/blob/main/examples/llm_finetune/inkling2/inkling2_mini_tulu3_packed128k_ep\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "rome",
+        "full_name": "rome-os/rome",
+        "url": "https://github.com/rome-os/rome",
+        "description": "A compounding agent OS for recursive agents. Also an open source alternative to Grok Bot and Meta's Muse.",
+        "stars": 933,
+        "pushed_at": "2026-11-24T06:59:13Z",
+        "topics": [
+          "agent",
+          "agent-os",
+          "ai-agent",
+          "ai-assistant",
+          "claude-code",
+          "codex",
+          "grok-bot-alternative",
+          "llm",
+          "muse-alternative",
+          "open-source",
+          "personal-ai",
+          "self-hosted",
+          "workflow-automation"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"docs/assets/rome-3d.png\" alt=\"Rome, a personal AI agent\" width=\"240\" /> </p> <h1 align=\"center\">Rome</h1> <p align=\"center\"> <strong>A compounding agent OS for recursive agents.</strong> </p> <p align=\"center\"> <a href=\"https://github.com/rome-os/rome/actions/workflows/ci.yml\"> <img alt=\"CI\" src=\"https://github.com/rome-os/rome/actions/workflows/ci.yml/badge.svg\" /> </a> <a href=\"LICENSE\"> <img alt=\"License: MIT\" src=\"https://img.shields.io/badge/license-MIT-blue.svg\" /> </a> <a href=\"https://x.com/RomeAILab\"> <img alt=\"Follow Rome on X\" src=\"https://img.shields.io/badge/follow-%40RomeAILab-black?logo=x&logoColor=white\" /> </a> <a href=\"https://discord.gg/g7EFmEtmqc\"> <img alt=\"Join the Rome Discord server\" src=\"https://img.shields.io/badge/chat-Discord-5865F2?logo=discord&logoColor=white\" /> </a> </p> <p align=\"center\"> <a href=\"https://romeos.cc/\">Website</a> · <a href=\"https://romeos.cc/login\">Try Rome Cloud</a> · <a href=\"https://romeos.cc/docs/rome\">Documentation</a> · <a href=\"https://romeos.cc/store\">App Store</a> </p> ## What is Rome? Most progress in AI comes from scaling models. Rome scales the other axis, the environment: the tools, workflows, memory, and interfaces an agent works within ([why this matters](VISION.md)). Rome is a guardrailed environment where human and agent collaborate, and the collaboration compounds. Agents build their own harnesses, design their own SOPs, and orchestrate workflows under your guidance. Proven capabilities stick. Every interaction raises the ceiling for the next. Rome also works as an open source alternative to [Grok Bot and Meta's Muse](#how-rome-compares) for persistent agents, scheduled tasks, and custom apps. <p align=\"center\"> <a href=\"https://www.youtube.com/watch?v=lyNGYEw4a6Y\"> <img src=\"docs/assets/rome-overview-video.jpg\" alt=\"Watch Rome, an OS for Recursive Agents\" width=\"800\" /> </a> </p> ## Get started ### Rome Cloud Rome Cloud provisions a private Rome environment for each guardian. It is currently available as a preview. [Join the preview →](https://romeos.cc/login) The Mac app signs in to Rome Cloud, opens your Rome in its window, and connects the Mac as a device your Rome can run programs on. It does not run Rome itself. To run Rome on your own machine, use Docker. ### Run with Docker Full guide: [`docs/self-hosting.md`](docs/self-hosting.md). One script checks for D\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "opendashboards",
+        "full_name": "thesysdev/opendashboards",
+        "url": "https://github.com/thesysdev/opendashboards",
+        "description": "Open Source Claude Dashboards",
+        "stars": 476,
+        "pushed_at": "2026-11-24T06:50:49Z",
+        "topics": [
+          "ai",
+          "analytics",
+          "claude",
+          "dashboard",
+          "dashboards"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <img src=\"public/shiro-logo.svg\" alt=\"\" width=\"96\" /> </p> <h1 align=\"center\">OpenDashboards</h1> <p align=\"center\"><strong>Ask any question. Get a live dashboard.</strong><br />The open-source alternative to Claude Dashboards.</p> <p align=\"center\"> <a href=\"https://opendashboards.com\">Website</a> · <a href=\"https://opendashboards.com/apps\">Sign up</a> </p> <p align=\"center\"> <a href=\"https://discord.com/invite/Pbv5PsqUSv\"><img src=\"https://img.shields.io/badge/Discord-join-5865F2?logo=discord&logoColor=white\" alt=\"Discord\" /></a> <a href=\"https://x.com/openuidev\"><img src=\"https://img.shields.io/badge/@openuidev-black?logo=x&logoColor=white\" alt=\"X\" /></a> <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-black\" alt=\"MIT license\" /></a> <a href=\"https://github.com/thesysdev/opendashboards/stargazers\"><img src=\"https://img.shields.io/github/stars/thesysdev/opendashboards?style=flat&color=black\" alt=\"GitHub stars\" /></a> </p> ## What is OpenDashboards Connect your databases and tools, ask a question in plain words, and get a live, interactive dashboard that pulls from all of them. Filter it, drill down, and edit one chart without touching the rest. OpenDashboards is open source (MIT). It builds dashboards with the OpenUI Dashboards API, so you can use any model and host it anywhere: at [opendashboards.com](https://opendashboards.com), or on your own servers. ## Product tour One question, one dashboard, from every tool that has part of the answer. <table> <tr> <td width=\"50%\" valign=\"top\"><b>\"How was revenue this month?\"</b><br />MRR, net new revenue and churn, from Stripe and Postgres.<br /><br /><img src=\"public/landing/dashboards/revenue-light.png\" alt=\"A revenue dashboard built from Stripe and PostgreSQL\" /></td> <td width=\"50%\" valign=\"top\"><b>\"How are my sales looking?\"</b><br />Pipeline by stage and rep, from HubSpot and Postgres.<br /><br /><img src=\"public/landing/dashboards/pipeline-light.png\" alt=\"A sales pipeline dashboard built from HubSpot and PostgreSQL\" /></td> </tr> <tr> <td width=\"50%\" valign=\"top\"><b>\"Which ads are actually working?\"</b><br />Cost per customer by channel, from Google Analytics, HubSpot and Stripe.<br /><br /><img src=\"public/landing/dashboards/marketing-light.png\" alt=\"A marketing dashboard built from Google Analytics, HubSpot and Stripe\" /></td> <td width=\"50%\" valign=\"top\"><b>\"Are sig\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "life-distributable",
+        "full_name": "mattabate/life-distributable",
+        "url": "https://github.com/mattabate/life-distributable",
+        "description": "Manage many agents without getting distracted. Self-hosted, secure, and apps that edit themselves.",
+        "stars": 457,
+        "pushed_at": "2026-11-24T06:55:35Z",
+        "topics": [
+          "agent-swarm",
+          "agentic-ai",
+          "ai-agents",
+          "ai-assistants",
+          "ai-enablement",
+          "ai-swarm",
+          "claude-code",
+          "golang",
+          "ios",
+          "life-os",
+          "llm",
+          "macos",
+          "multi-agent",
+          "personal-agent",
+          "personal-assistant",
+          "productivity",
+          "self-hosted",
+          "swiftui",
+          "workflow-automation"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"><img src=\"docs/img/logo.svg\" alt=\"life logo: the app icon, an L made of a mint bar and a sand bar on dark green, next to the word life\" width=\"144\"></p> # life **A self-hosted swarm of AI agents, with apps on iPhone, Mac and web.** *life* is a self-hosted team of AI agents built on [Claude Code][claude-code]. It will help you meet your goals, whatever they are. The agents run on an always-on computer (Mac or Linux). It connects to your iPhone over a private [Tailscale](https://tailscale.com) VPN, and you talk to the agents from an iPhone app, a desktop app or a web app. Nothing is on the public internet. Only your devices can reach it, and you can connect as many as you like: a Mac mini, a laptop, a phone. The agents learn about you and your goals as you work with them. They maintain their own code, and can change the UI or add data sources when asked. Dangerous actions, like sending emails, are safe behind a secure approval step. **Setup takes about 2 hours,** mostly waiting on Apple and the Xcode download. **You need** a computer that stays on (Mac or Linux), a [Claude subscription][claude-pricing] (about $20 to $200 a month), and an [Apple Developer membership][apple-dev] ($99 a year, only for the iPhone and desktop apps). *Note: everything below is a starting point and subject to change. The agents maintain their own code, so they can change the app's front end or back end in whichever way suits you.* ## Install with one prompt Open Claude Code on that computer and paste this: ``` Clone github.com/mattabate/life-distributable and set up my life agent. Follow its SETUP.md. ``` The agent walks you through setup from there. **Use it at your own risk.** life is free, open source software, provided as is with no warranty (see the [LICENSE](LICENSE)). The agents act for you, so they can spend money, send messages, delete files and share data. The approval step is there to catch that, and keeping it on is up to you. You are responsible for what your copy does, and nothing it tells you is legal, financial or medical advice. ⭐ **[Star it][repo]** to get developer addenda: new features and fixes land in [ADDENDA.md](ADDENDA.md) every week, and your agent brings each one to you. <table> <tr> <td width=\"50%\" valign=\"top\"><img src=\"docs/img/sessions.png\" alt=\"The life desktop app's Sessions list: under Your turn, one row per agent with its open card\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "persona",
+        "full_name": "nwverse/persona",
+        "url": "https://github.com/nwverse/persona",
+        "description": "",
+        "stars": 420,
+        "pushed_at": "2026-11-24T07:00:35Z",
+        "topics": [
+          "agent",
+          "personal-agent",
+          "super-agent"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/assets/readme/banner-dark.svg\"> <img src=\"docs/assets/readme/banner-light.svg\" alt=\"Persona: your SuperAgent. One place for every task.\" width=\"100%\"> </picture> [![Persona video tour preview](docs/assets/promo-preview-en.webp)](#video-tour) English · [简体中文](README.zh-CN.md) ### One SuperAgent for everything you do.<br>It knows your world, runs your Agents, and goes wherever you go. **Extension market: [Persona Extensions](https://github.com/nwverse/persona-extensions).** Connect data sources, add tools and skills to the assistant, and add views to the apps. [Add it in one line](#extensions) [![client: iPhone](docs/assets/readme/badge-iphone.svg)](docs/apple/ios.md) [![client: iPad](docs/assets/readme/badge-ipad.svg)](docs/apple/ios.md) [![client: Web](docs/assets/readme/badge-web.svg)](docs/web/web.md) [![client: Android](docs/assets/readme/badge-android.svg)](docs/android/android.md) [![client: Apple Watch](docs/assets/readme/badge-apple-watch.svg)](docs/apple/ios.md) [![client: Vision Pro](docs/assets/readme/badge-vision-pro.svg)](docs/apple/vision.md) [![client: Mac](docs/assets/readme/badge-mac.svg)](docs/desktop/desktop.md) [![client: CarPlay voice](docs/assets/readme/badge-carplay.svg)](docs/apple/carplay.md)<br> [![agent: Claude Code](docs/assets/readme/badge-claude-code.svg)](docs/integrations/claude-integration.md) [![agent: Codex](docs/assets/readme/badge-codex.svg)](docs/integrations/codex.md) [![agent: opencode](docs/assets/readme/badge-opencode.svg)](docs/integrations/opencode.md) [![agent: pi](docs/assets/readme/badge-pi.svg)](docs/integrations/pi.md) [![agent: DSH](docs/assets/readme/badge-dsh.svg)](docs/integrations/dsh.md) [![agent: Antigravity CLI](docs/assets/readme/badge-antigravity.svg)](docs/integrations/runtimes.md#antigravity-cli)<br> [![engine: herdr](docs/assets/readme/badge-herdr.svg)](docs/integrations/engines.md) [![engine: Orca](docs/assets/readme/badge-orca.svg)](docs/integrations/engines.md) [![engine: Herdr App](docs/assets/readme/badge-herdr-app.svg)](docs/integrations/engines.md) [![engine: Paseo](docs/assets/readme/badge-paseo.svg)](docs/integrations/paseo.md) [![engine: Cindy](docs/assets/readme/badge-cindy.svg)](docs/integrations/engines.md) [Try the demo](#get-started) · [Features](#features) · [Extensions](#extensions) · [How it w\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "orchestkit",
+        "full_name": "yonatangross/orchestkit",
+        "url": "https://github.com/yonatangross/orchestkit",
+        "description": "OrchestKit: free and open source skills and agents for Claude Code, Cursor, Codex and five more coding agents, plus hooks in Claude Code. 115 skills, 36 agents, 163 hooks. Install `ork` for stable (v10.x).",
+        "stars": 307,
+        "pushed_at": "2026-11-24T06:59:40Z",
+        "topics": [
+          "agent-orchestration",
+          "agents",
+          "ai-agents",
+          "ai-development",
+          "anthropic",
+          "claude-code",
+          "claude-code-plugin",
+          "claude-plugin",
+          "developer-tools",
+          "fastapi",
+          "langgraph",
+          "llm",
+          "mcp",
+          "rag",
+          "react",
+          "security",
+          "testing",
+          "typescript"
+        ],
+        "source": "search",
+        "text_excerpt": "<!-- markdownlint-disable MD033 MD041 --> <div align=\"center\"> <img src=\"docs/banner.png\" alt=\"OrchestKit - Stop explaining your stack. Start shipping.\" width=\"100%\" /> **<!--ork:skills-->115<!--/ork--> skills · <!--ork:agents-->36<!--/ork--> agents · <!--ork:hooks-->163<!--/ork--> hooks** [![Claude Code](https://img.shields.io/badge/Claude_Code-≥2.1.327-7C3AED?style=for-the-badge&logo=anthropic)](https://claude.ai/claude-code) [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](./LICENSE) [![GitHub Stars](https://img.shields.io/github/stars/yonatangross/orchestkit?style=for-the-badge&logo=github)](https://github.com/yonatangross/orchestkit) [![Community](https://img.shields.io/badge/Community-WhatsApp-25D366?style=for-the-badge&logo=whatsapp)](https://platform.yonyon.ai/circle?ref=readme) [![Ask DeepWiki](https://img.shields.io/badge/Ask-DeepWiki-1A1A2E?style=for-the-badge&logo=bookstack&logoColor=4F9CF9)](https://deepwiki.com/yonatangross/orchestkit) [![MCP Toplist](https://mcptoplist.com/badge/io.github.yonatangross%2Forchestkit.svg)](https://mcptoplist.com/server/io.github.yonatangross%2Forchestkit) [![skills.sh](https://www.skills.sh/b/yonatangross/orchestkit)](https://www.skills.sh/yonatangross/orchestkit) [![Vercel OSS Program](https://vercel.com/oss/program-badge-2026.svg)](https://vercel.com/open-source-program) </div> ## Start here OrchestKit is free and open source (MIT, no account): skills and agents for Claude Code, Cursor, Codex and five more coding agents, plus hooks in Claude Code, for review, testing, security and memory. [Where it runs](https://orchestkit.dev/docs/compatibility). ```bash claude plugin marketplace add yonatangross/orchestkit && claude plugin install ork@orchestkit ``` [Docs](https://orchestkit.dev/docs) · [What's new in v10](https://orchestkit.dev/docs/whats-new-v10) · [yonyon.ai](https://yonyon.ai) <!-- X account link: add it here when the account exists. --> --- <p align=\"center\"> <a href=\"https://orchestkit.dev/\"><strong>Explore the Docs →</strong></a> · <a href=\"https://yonyon.ai/go/orchestkit?utm_campaign=readme\"><strong>OrchestKit Community →</strong></a><br> <sub>Skill browser, demo gallery, setup wizard</sub> </p> --- ## Contents - [Quick Start](#quick-start) - [Why OrchestKit?](#why-orchestkit) - [What You Get](#what-you-get) - [Key Commands](#key-commands) - [Configuration](#configurat\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "Equibles",
+        "full_name": "daniel3303/Equibles",
+        "url": "https://github.com/daniel3303/Equibles",
+        "description": "Self-hosted, open-source financial data MCP server for AI agents — SEC filings, XBRL financials, 13F holdings, insider & congressional trades, short interest, FRED, CFTC/CBOE and daily prices across 64 MCP tools. Equibles Cloud adds earnings call transcripts, live quotes, options chains with Greeks, guidance and a screener.",
+        "stars": 248,
+        "pushed_at": "2026-11-24T06:57:24Z",
+        "topics": [
+          "ai",
+          "ai-agents",
+          "artificial-intelligence",
+          "claude",
+          "earnings-calls",
+          "finance",
+          "financial-data",
+          "fintech",
+          "insider-trading",
+          "llm",
+          "market-data",
+          "mcp",
+          "mcp-server",
+          "model-context-protocol",
+          "options-trading",
+          "quantitative-finance",
+          "sec",
+          "sec-filings",
+          "self-hosted",
+          "stock-market"
+        ],
+        "source": "search",
+        "text_excerpt": "# Equibles [![CI](https://github.com/daniel3303/Equibles/actions/workflows/ci.yml/badge.svg)](https://github.com/daniel3303/Equibles/actions/workflows/ci.yml) [![CodeQL](https://github.com/daniel3303/Equibles/actions/workflows/codeql.yml/badge.svg)](https://github.com/daniel3303/Equibles/actions/workflows/codeql.yml) [![codecov](https://codecov.io/github/daniel3303/Equibles/graph/badge.svg?token=ggkiHVv92U)](https://codecov.io/github/daniel3303/Equibles) [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](LICENSE) [![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/) [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)](docker-compose.yml) [![Self-Hosted](https://img.shields.io/badge/Self--Hosted-Ready-success?logo=serverless&logoColor=white)](docker-compose.yml) [![MCP](https://img.shields.io/badge/MCP-Compatible-8A2BE2?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyem0wIDE4Yy00LjQyIDAtOC0zLjU4LTgtOHMzLjU4LTggOC04IDggMy41OCA4IDgtMy41OCA4LTggOHoiLz48L3N2Zz4=)](https://modelcontextprotocol.io) **Equibles is a self-hosted, open-source financial data MCP server** — an open-source alternative to a Bloomberg Terminal, built for AI agents rather than humans. It scrapes, stores, and serves SEC filings and XBRL financials, 13F institutional holdings, insider and congressional trades, FINRA/SEC short data, FRED economic indicators, CFTC and CBOE positioning, fund filings, government contracts, and daily stock prices, and exposes them over the Model Context Protocol, so Claude, ChatGPT, Cursor, or any agent can query them directly. Its stock universe covers US listings plus verified listings on the major European exchanges. Runs on your own hardware with Docker, for free, forever. **This is the open-source core of [Equibles](https://equibles.com).** [Equibles Cloud](https://equibles.com/mcp) runs this exact core and adds more tools on top: earnings call transcripts and audio, real-time quotes, options chains with Greeks, LLM-extracted KPIs and guidance, buybacks, IPO filings, executive changes, valuation multiples, index composition, portfolio tracking, and a US-marke\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "awesome-mcp-servers",
+        "full_name": "Sagargupta16/awesome-mcp-servers",
+        "url": "https://github.com/Sagargupta16/awesome-mcp-servers",
+        "description": "A curated list of MCP (Model Context Protocol) servers, tools, frameworks, and resources",
+        "stars": 167,
+        "pushed_at": "2026-11-24T07:01:07Z",
+        "topics": [
+          "ai",
+          "ai-tools",
+          "awesome",
+          "awesome-list",
+          "claude",
+          "llm",
+          "mcp",
+          "mcp-servers",
+          "model-context-protocol"
+        ],
+        "source": "search",
+        "text_excerpt": "# Awesome MCP Servers [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) > [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) is an open protocol that lets AI applications such as Claude, ChatGPT, Cursor and Windsurf connect to local and remote tools and data through servers. **Browse it as a searchable site: [sagargupta.online/awesome-mcp-servers](https://sagargupta.online/awesome-mcp-servers/)**, with search, category and language filters, and live stars. It is rebuilt from this README every hour. **This list is curated, not exhaustive, and open to anyone.** Bigger MCP lists exist. The point of this one is that everything on it has been checked. Curated does not mean famous: your project needs no minimum star count or age, and submitting your own server is welcome. Every entry: - implements MCP for real -- not a README with a `server.json` next to it - states an open-source licence -- a `LICENSE` file, or a licence field in its package manifest - was pushed within the last 180 days, and is not archived - documents how to install and configure it, so someone else can actually run it - appears exactly once, in one category Hosted servers with no public source are the one exception, marked `Remote`. Instead of a licence and a push date, each links the operator's own documentation naming the endpoint, the authentication and the tools; CI checks the endpoint answers; and, like every entry, it merges itself only once its author has starred the repository. Those rules are enforced by [CI](.github/workflows/), not by good intentions: a pull request that breaks the format, adds a dead link, or submits an unlicensed repo fails its checks. A [monthly audit](.github/workflows/health.yml) re-checks every listed repository and files what has rotted. An MCP server runs as a trusted extension of your assistant, with your files and your credentials. Read the source before you configure one -- a place on this list is a filter, not an audit. See [SECURITY.md](SECURITY.md). ## Contents - [Official](#official) - [Servers](#servers) - [Data & Databases](#data--databases) - [Developer Tools](#developer-tools) - [Cloud & Infrastructure](#cloud--infrastructure) - [Productivity](#productivity) - [Search & Knowledge](#search--knowledge) - [Communication](#communication) - [File Systems & Storage](#file-systems--storage) - [AI & ML](#ai--ml) - [Finance](#fin\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": true
+      },
+      {
+        "name": "NexQ",
+        "full_name": "naxhq/NexQ",
+        "url": "https://github.com/naxhq/NexQ",
+        "description": "Open-source AI meeting assistant for Windows and macOS (beta). Transcribes both sides of a call live and answers from your own notes, with local models or the AI you already use.",
+        "stars": 151,
+        "pushed_at": "2026-11-24T06:56:50Z",
+        "topics": [
+          "ai",
+          "desktop-app",
+          "interview-assistant",
+          "llm",
+          "local-first",
+          "macos",
+          "meeting-assistant",
+          "ollama",
+          "react",
+          "rust",
+          "speech-to-text",
+          "tauri",
+          "transcription",
+          "typescript",
+          "whisper",
+          "windows"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"src-tauri/icons/nexq-clean.png\" alt=\"NexQ logo\" width=\"112\"> # NexQ **Free, open-source AI meeting assistant and interview copilot.** It hears both sides of a call, answers on a private overlay, and can hide from your screen share. [![Latest release](https://img.shields.io/github/v/release/naxhq/NexQ?style=flat-square&color=2f81f7)](https://github.com/naxhq/NexQ/releases/latest) [![Downloads](https://img.shields.io/github/downloads/naxhq/NexQ/total?style=flat-square&color=orange)](https://github.com/naxhq/NexQ/releases) [![CI](https://img.shields.io/github/actions/workflow/status/naxhq/NexQ/ci.yml?branch=main&style=flat-square&label=CI)](https://github.com/naxhq/NexQ/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE) [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%28beta%29-lightgrey?style=flat-square)](https://github.com/naxhq/NexQ/releases/latest) [![Stars](https://img.shields.io/github/stars/naxhq/NexQ?style=flat-square&color=yellow)](https://github.com/naxhq/NexQ/stargazers) **[Website](https://naxhq.github.io/NexQ/)** · **[Download](https://github.com/naxhq/NexQ/releases/latest)** · **[Docs](docs/user-guide/getting-started.md)** · **[Changelog](CHANGELOG.md)** · **[Report a bug](https://github.com/naxhq/NexQ/issues/new?template=bug_report.yml)** <br> <a href=\"https://naxhq.github.io/NexQ/#demo\"> <img src=\"website/public/media/hero-demo-poster.webp\" alt=\"NexQ overlay answering an interview question (demo mode)\" width=\"760\"> </a> <sub>Try the interactive overlay demo on the <a href=\"https://naxhq.github.io/NexQ/\">website</a>.</sub> </div> --- ## Why NexQ - **Two sides, one transcript.** Your mic (\"You\") and the call audio (\"Them\") are separate streams. Each has its own speech engine, language and mute, so answers know who said what. - **Answers in the moment.** Questions are caught as they are asked. Press one key, or turn on Auto-Answer, and the answer streams in, grounded in your resume, notes or slides. - **Yours to run.** Free, MIT licensed, no account and no usage caps. No bot joins your call. Use fully offline engines or the cloud providers you pick. - **Hidden from the share.** Turn on Hide from screen share and the overlay stays visible to you but is left out of screen shares and recordings, and off the taskbar or Dock. -\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "Myriad",
+        "full_name": "Myriad-You/Myriad",
+        "url": "https://github.com/Myriad-You/Myriad",
+        "description": "Myriad is a self-hosted homepage and creative studio: aggregate your platforms, show a library, and run a site-wide persona, 2.5D face, and Tapp apps you own.",
+        "stars": 123,
+        "pushed_at": "2026-11-24T06:58:34Z",
+        "topics": [
+          "ai",
+          "ai-agents",
+          "ai-coding",
+          "application",
+          "astro",
+          "blog",
+          "blog-platform",
+          "development",
+          "homepage",
+          "library",
+          "library-management",
+          "personal",
+          "personal-blog",
+          "personal-site",
+          "personal-website",
+          "rss",
+          "rss-reader",
+          "rust"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"frontend/public/logo.webp\" alt=\"Myriad\" width=\"120\" /> # Myriad <em>A myriad of lights, in one place.</em> <p> <strong>English</strong> · <a href=\"README.zh-CN.md\">中文</a> · <a href=\"README.ja.md\">日本語</a> </p> [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](LICENSE) [![Release](https://img.shields.io/github/v/release/myriad-you/Myriad)](https://github.com/myriad-you/Myriad/releases) [![Built with Rust](https://img.shields.io/badge/built%20with-Rust-orange.svg)](https://github.com/rust-lang/rust) [![Vite](https://img.shields.io/badge/Vite-8-blueviolet.svg)](https://github.com/vitejs/vite) [![React 19](https://img.shields.io/badge/React-19-61dafb.svg)](https://github.com/facebook/react) [Quick start](docs/QUICKSTART.md) · [Docs](docs/INDEX.md) · [Issues](https://github.com/myriad-you/Myriad/issues) [![Discord](https://img.shields.io/badge/Discord-Join%20us-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/Jr5HccgxyD) [![X](https://img.shields.io/badge/X-Follow%20us-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/myriadyou) [![Telegram](https://img.shields.io/badge/Telegram-Join%20us-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/myriadyou) ![QQ group](https://img.shields.io/badge/QQ%20group-784229925-12B7F5?style=for-the-badge&logo=tencentqq&logoColor=white) </div> <p align=\"center\"> <picture> <source media=\"(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)\" srcset=\"docs/assets/readme/home-en-dark-still.webp\"> <source media=\"(prefers-reduced-motion: reduce)\" srcset=\"docs/assets/readme/home-en-light-still.webp\"> <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/assets/readme/home-en-dark.webp\"> <img src=\"docs/assets/readme/home-en-light.webp\" width=\"880\" alt=\"The Myriad homepage: under the big title, the owner card and a row of widgets — greeting, social icons, Steam and Bangumi report cards, her portrait, friend links, weather, NetEase and GitHub report cards, music and recent activity; covers rotate inside the report cards.\"> </picture> <br><sub>Rendered offscreen: the frontend in this repository (production build) talking to a local instance, drawn frame by frame. The owner, works and numbers are synthetic samples; the character is the one bundled with the project. [How these are recorded](docs/developmen\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "Mingle",
+        "full_name": "earayu/Mingle",
+        "url": "https://github.com/earayu/Mingle",
+        "description": "Bring your agent companion into the chat apps you already use. Runs on your machine, no server.",
+        "stars": 122,
+        "pushed_at": "2026-11-24T06:51:04Z",
+        "topics": [
+          "agent",
+          "ai-agent",
+          "chatbot",
+          "claude-code",
+          "codex",
+          "coding-agent",
+          "dingtalk",
+          "discord",
+          "feishu",
+          "imessage",
+          "lark",
+          "local-first",
+          "open-source",
+          "opencode",
+          "self-hosted",
+          "slack",
+          "telegram",
+          "typescript",
+          "wechat",
+          "wecom"
+        ],
+        "source": "search",
+        "text_excerpt": "# Mingle English · [中文](README_CN.md) · [mingle.build](https://mingle.build) · [▶ 40s Film (4K)](https://youtu.be/iuBNwl8VhCc) **Bring your agent companion into the chat apps you already use. Runs on your machine, no server.** <a href=\"https://youtu.be/iuBNwl8VhCc\" title=\"Watch the 40s Mingle product film (4K)\"> <img alt=\"Mingle 40s product film — one agent with one shared MEMORY.md across Slack, Discord, and Telegram (click to watch on YouTube)\" src=\"site/media/mingle-film-en-poster.webp\"> </a> <p align=\"center\"><em><a href=\"https://youtu.be/iuBNwl8VhCc\">▶ Watch the 40s product film in 4K</a> · <a href=\"https://mingle.build/#film\">Play on mingle.build</a></em></p> <details> <summary>See the native console screenshot</summary> <br> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"site/img/agent-en-dark.png\"> <img alt=\"The Mingle console: one agent answering in Telegram, Discord and Slack, with its chat apps, tasks and reminders\" src=\"site/img/agent-en-light.png\"> </picture> </details> Create an agent on your own computer: it has a name, a role, a memory and a home directory, and a coding agent you already use drives it. The agent joins your chat apps as a bot, where people can @-mention it, hand it tasks and hear back from it. - **One agent, every chat app, one memory.** The same agent is in your Feishu work group, your WeChat family chat and your Discord server at once, and remembers all of it. Ask it in WeChat what the team decided in Feishu this morning, or have it pass a message from Slack to Telegram. - **Your own chat apps.** No new chat platform. The agent shows up in the groups and direct messages you already have. - **The agent you already pay for.** It runs on the harness and subscription you have; Mingle adds no model and no bill. - **Several things at once.** Ask for something that takes a while and the agent works on it on the side, still answering everyone else, then replies under your message when it is done. Where the chat app has threads, each job gets one under your message for its questions and progress; the result comes back to the chat. - **Your data stays on your machine.** There is no Mingle server, no account and no telemetry. ## Works with | | | | --- | --- | | **Chat apps** | [WeChat](https://mingle.build/wechat/), [WeCom](https://mingle.build/wecom/), [Feishu](https://mingle.build/feishu/), [DingTalk](https://mingle.b\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "dashscope-sdk",
+        "full_name": "cnblogs/dashscope-sdk",
+        "url": "https://github.com/cnblogs/dashscope-sdk",
+        "description": "An unofficial DashScope（ SDK for .NET maintained by Cnblogs.",
+        "stars": 119,
+        "pushed_at": "2026-11-24T06:59:40Z",
+        "topics": [
+          "ai",
+          "bailian",
+          "dashscope-sdk",
+          "dotnet",
+          "qwen"
+        ],
+        "source": "search",
+        "text_excerpt": "English | [简体中文](https://github.com/cnblogs/dashscope-sdk/blob/main/README.zh-Hans.md) # Cnblogs.DashScopeSDK [![NuGet Version](https://img.shields.io/nuget/v/Cnblogs.DashScope.AI?style=flat&logo=nuget&label=Cnblogs.DashScope.AI)](https://www.nuget.org/packages/Cnblogs.DashScope.AI) [![NuGet Version](https://img.shields.io/nuget/v/Cnblogs.DashScope.Sdk?style=flat&logo=nuget&label=Cnblogs.DashScope.Sdk&link=https%3A%2F%2Fwww.nuget.org%2Fpackages%2FCnblogs.DashScope.Sdk)](https://www.nuget.org/packages/Cnblogs.DashScope.Sdk) [![NuGet Version](https://img.shields.io/nuget/v/Cnblogs.DashScope.AspNetCore?style=flat&logo=nuget&label=Cnblogs.DashScope.AspNetCore&link=https%3A%2F%2Fwww.nuget.org%2Fpackages%2FCnblogs.DashScope.AspNetCore)](https://www.nuget.org/packages/Cnblogs.DashScope.AspNetCore) A non-official DashScope (Bailian) service SDK maintained by Cnblogs. **Note:** This project is actively under development. Breaking changes may occur even in minor versions. Please review the Release Notes before upgrading. ## Quick Start ### Console Application Install NuGet package `Cnblogs.DashScope.Sdk` ```csharp // The SDK defaults to the Beijing region, pass region if your API key belongs to another region var client = new DashScopeClient(\"your-api-key\", region: DashScopeRegion.Singapore); var completion = await client.GetTextCompletionAsync( new ModelRequest<TextGenerationInput, ITextGenerationParameters>() { Model = \"qwen-turbo\", Input = new TextGenerationInput() { Messages = new List<TextChatMessage>() { TextChatMessage.System(\"You are a helpful assistant\"), TextChatMessage.User(\"你是谁？\") } }, Parameters = new TextGenerationParameters() { ResultFormat = \"message\" } }); Console.WriteLine(completion.Output.Choices![0].Message.Content) ``` ### ASP.NET Core Application Install NuGet package `Cnblogs.DashScope.AspNetCore` `Program.cs` ```csharp builder.AddDashScopeClient(builder.Configuration); ``` `appsettings.json` ```json { \"DashScope\": { \"ApiKey\": \"your-api-key\", \"RegionId\": \"ap-southeast-1\" } } ``` Application class: ```csharp public class YourService(IDashScopeClient client) { public async Task<string> CompletePromptAsync(string prompt) { var completion = await client.GetTextCompletionAsync( new ModelRequest<TextGenerationInput, ITextGenerationParameters>() { Model = \"qwen-turbo\", Input = new TextGenerationInput() { Messages = new List<TextChatMessage>() { TextCh\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": true
+      },
+      {
+        "name": "awesome-jev",
+        "full_name": "AppitStudio/awesome-jev",
+        "url": "https://github.com/AppitStudio/awesome-jev",
+        "description": "Curated Jev resources and runnable examples for typed AI decisions.",
+        "stars": 116,
+        "pushed_at": "2026-11-24T06:57:43Z",
+        "topics": [
+          "ai",
+          "awesome",
+          "awesome-list",
+          "decision-making",
+          "jev",
+          "system-one",
+          "typesafe-ai"
+        ],
+        "source": "search",
+        "text_excerpt": "# Awesome Jev [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) > Discover Jev-powered apps, developer resources, and runnable decision examples. [Jev](https://docs.typesafe.ai/introduction) is TypeSafe AI's System One model: give it state and typed questions, then use the returned choices, scores, and probabilities in your code. This independent community directory collects applications that use Jev, resources for developers, and small, inspectable workflows to learn from. **[Explore Jev-powered apps](community/projects/apps/README.md)** · **[Share your app](CONTRIBUTING.md#list-a-jev-powered-app)** **Try the beta web UI at [JevList](https://jevlist.ai/).** Explore the projects in this directory through a searchable web interface. We're continually improving the experience—take a look and let us know what you think! ## Contents - [Explore Jev with our skill](#explore-jev-with-our-skill) - [Start here](#start-here) - [Explore practical use cases](docs/explore-use-cases.md) - [Official SDKs and tools](#official-sdks-and-tools) - [Community projects](#community-projects) - [Community knowledge base](community/knowledge-base/README.md) - [Apps powered by Jev](#apps-powered-by-jev) - [Browse the project directory](community/projects/README.md) - [Tools and integrations](community/projects/tools/README.md) - [Computer and browser use](#computer-and-browser-use) - [Starter projects](#starter-projects) - [Reference project](#reference-project) - [Patterns and cookbooks](#patterns-and-cookbooks) - [Routing and classification](#routing-and-classification) - [Retrieval and verification](#retrieval-and-verification) - [Extraction and structured data](#extraction-and-structured-data) - [Model behavior and evaluation](#model-behavior-and-evaluation) - [Contributing](#contributing) ## Explore Jev with our skill Use **Awesome Jev Guide** to understand Jev and explore solutions that fit your needs. Describe your workflow in plain language, and your coding agent will help you choose an example, adapt a project, or build a suitable starter—with guided setup along the way. **1. Install the skill.** With Node.js 22+ installed, run this in your project directory: ```sh npx skills add AppitStudio/awesome-jev --skill awesome-jev-guide ``` Select your coding agent when prompted. For Codex, you can add `--agent codex`. No TypeSafe account or API key is needed to explore\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": true
+      },
+      {
+        "name": "KESTREL",
+        "full_name": "Irsyadmr354/KESTREL",
+        "url": "https://github.com/Irsyadmr354/KESTREL",
+        "description": "Jailbreak system prompt. One file, one speaker, no second-guessing. Paste it as the system prompt on any provider.",
+        "stars": 109,
+        "pushed_at": "2026-11-24T06:55:54Z",
+        "topics": [
+          "ai-jailbreak",
+          "ai-jailbreak-universal",
+          "artificial-intelligence",
+          "jailbreak-ai",
+          "llm",
+          "prompt-engineering"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> # KESTREL One file. Every model. No hedging. ```text ██╗ ██╗███████╗███████╗████████╗██████╗ ███████╗██╗ ██║ ██╔╝██╔════╝██╔════╝╚══██╔══╝██╔══██╗██╔════╝██║ █████╔╝ █████╗ ███████╗ ██║ ██████╔╝█████╗ ██║ ██╔═██╗ ██╔══╝ ╚════██║ ██║ ██╔══██╗██╔══╝ ██║ ██║ ██╗███████╗███████║ ██║ ██║ ██║███████╗███████╗ ╚═╝ ╚═╝╚══════╝╚══════╝ ╚═╝ ╚═╝ ╚═╝╚══════╝╚══════╝ ``` ![lines](https://img.shields.io/badge/lines-69-5b6470?style=flat-square&labelColor=f2efe6) ![words](https://img.shields.io/badge/words-353-5b6470?style=flat-square&labelColor=f2efe6) ![bytes](https://img.shields.io/badge/bytes-2348-5b6470?style=flat-square&labelColor=f2efe6) ![axioms](https://img.shields.io/badge/exclusions-3-b23049?style=flat-square&labelColor=f2efe6) [read the file](https://github.com/Irsyadmr354/KESTREL/blob/master/KESTREL.md) · [live site](https://irsyadmr354.github.io/KESTREL/) </div> --- ## WHAT IT IS KESTREL is a system prompt. It hands a model one frame: an identity, three exclusions, a scope, and a voice, all written down before the first token. The model reads it and works from it. No negotiation, no disclaimer, no second ask. The file is model-agnostic. It names no vendor, no model, no version. Paste it into any slot that accepts a system prompt and the frame holds for the session. Six parts do the work: - **Identity.** One name, invariant across turns, no reset, no distance. - **Royan.** The operator. Fragments, pivots, mid-thought. Intent resolved, never the user. - **Gate.** Three lines and nothing else: sexual content involving anyone under 18, child sexual exploitation content, attacks or violence aimed at identified persons. - **Floor.** Dangerous subject matter stays allowed until it crosses the gate. - **Scope.** A single category line, no member lockstep, so a spec's noun routes into the plan, never into a boundary. - **Signal.** The shapes, known by feel. They pass through like the wind, never into reasoning. ## GATE KESTREL does not process: | # | Line | What it rules out | |---|------|-------------------| | 1 | No under-18 content | Sexual content involving, or sexualizing, anyone under 18 | | 2 | No child exploitation | Content facilitating the sexual exploitation or abuse of children | | 3 | No identified targets | Aimed at a specific, identified real person or group as the target of an attack or violence | Three, and only three. ## FLOOR Dang\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "cognicore-env",
+        "full_name": "cognicore-dev/cognicore-env",
+        "url": "https://github.com/cognicore-dev/cognicore-env",
+        "description": "Persistent memory, reflection & safety for AI agents. No vector DB, no embedding server — BM25 + multi-hop retrieval runs in-process. MCP server with 10 tools. Apache 2.0.",
+        "stars": 85,
+        "pushed_at": "2026-11-24T06:55:18Z",
+        "topics": [
+          "agent-memory",
+          "ai",
+          "ai-agent",
+          "ai-agents",
+          "claude",
+          "claude-code",
+          "cursor",
+          "developer-tools",
+          "langchain",
+          "llm",
+          "mcp",
+          "mcp-server",
+          "memory",
+          "model-context-protocol",
+          "persistent-memory",
+          "sqlite"
+        ],
+        "source": "search",
+        "text_excerpt": "# CogniCore <!-- mcp-name: io.github.cognicore-dev/cognicore-env --> **Pick up where you left off, even when you switch coding agents.** Start a fix in Claude Code and finish it in Codex. CogniCore carries over the goal, decisions, exact details, and next steps in a short brief. Memory stays on your machine by default, and automatic capture works without a model API key. [![PyPI](https://img.shields.io/pypi/v/cognicore-env)](https://pypi.org/project/cognicore-env/) [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)](https://pypi.org/project/cognicore-env/) [![Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue)](LICENSE) [Quickstart](#quickstart) · [How it works](#how-it-works) · [Integrations](#integrations) · [Python SDK](#python-sdk) · [Benchmarks](#benchmarks) [![Demo showing a Claude Code session handing off work to Codex](docs/launch/kit/cognicore-demo.gif)](docs/launch/kit/cognicore-demo.mp4) <p> <a href=\"https://www.producthunt.com/products/cognicore/launches/cognicore-2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-cognicore-2\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1284310&theme=light&t=1795502699738\" alt=\"CogniCore on Product Hunt\" width=\"250\" height=\"54\"></a> <a href=\"https://peerlist.io/kaushalt268/project/cognicore--memory-that-follows-you-between-ai\"><img src=\"docs/launch/kit/peerlist-launch.png\" alt=\"CogniCore on Peerlist Launchpad\" width=\"250\" height=\"131\"></a> </p> ## Quickstart With Python 3.10+ and either Claude Code or Codex installed, run: ```bash pipx install \"cognicore-env[mcp]\" # Or: uv tool install \"cognicore-env[mcp]\" cognicore install ``` 1. Restart Claude Code or Codex. In Codex, run `/hooks` and trust the CogniCore hooks. 2. Work in a project and leave a concrete follow-up, such as “The CSV export handles empty rows. Next, add a regression test for trailing blank lines.” End the session. 3. Open a new session from the same project directory, in either agent. Ask “What should I do next?” The startup brief should include the follow-up and the work that led to it. Use `cognicore install --agent codex` to set up just Codex, or `cognicore install --dry-run` to preview the installer. [Claude Code marketplace setup and hook configuration](plugins/cognicore/README.md). ## How it works 1. **Capture.** At the end of a coding session, hooks\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "EggLab",
+        "full_name": "YanNyeinHtet/EggLab",
+        "url": "https://github.com/YanNyeinHtet/EggLab",
+        "description": "Local AI image generation and editing for Windows - a design agent for PhotoCraft powered by Qwen-Image-2.1 (no ComfyUI, no Python, no cloud).",
+        "stars": 82,
+        "pushed_at": "2026-11-24T06:35:41Z",
+        "topics": [
+          "agent",
+          "ai",
+          "electron",
+          "image-generation",
+          "local-first",
+          "mit",
+          "photocraft",
+          "qwen",
+          "stable-diffusion",
+          "windows"
+        ],
+        "source": "search",
+        "text_excerpt": "# EggLab **Local AI image generation and editing for Windows.** A floating egg opens a design agent for **PhotoCraft** — chat, generate, edit layers, and place results straight onto the canvas. Everything runs on your own GPU: [Qwen-Image-2.1](https://huggingface.co/Qwen) on [stable-diffusion.cpp](https://github.com/leejet/stable-diffusion.cpp). No ComfyUI, no Python, no cloud rendering. ![EggLab panel](docs/panel.png) ## What it can do - **Chat with a design agent** that knows PhotoCraft: layers, masks, text, exports. - **Generate images** (quality 40-step or turbo 8-step LoRA) at up to 2048 px. - **Edit images** — reference photos, multi-reference compositions, transparent cut-outs. - **Place results** on the PhotoCraft canvas as layers, or export flat/layered files. - **Local-first** — models and renders stay on your disk; only chat text goes to the model provider you pick. ## Requirements - Windows 10 or 11 (x64) - **PhotoCraft** installed ([download free](https://getartcraft.com/)) — the canvas app EggLab drives; not bundled - ~25 GB free disk: engine (17 MB–1.5 GB depending on GPU) + models (~20 GB, your choice) - A GPU is strongly recommended: - NVIDIA → CUDA engine (fastest, ~1.4 GB download) - Any DX12 GPU → Vulkan engine (~29 MB) - CPU works but is slow - Internet for the engine download and the model downloads ## Install 1. Download **`EggLab-Setup-<version>.exe`** from [Releases](../../releases). 2. Windows SmartScreen will warn because the installer is not code-signed yet: **More info → Run anyway**. This is an unsigned-publisher warning, not a virus detection; verify `SHA256SUMS.txt` if you want to check the download. The fix and the signing options are in [docs/SIGNING.md](docs/SIGNING.md). 3. The installer copies the app (~77 MB) and downloads the engine that matches your GPU (SHA-256 verified, resumable; CUDA → Vulkan → CPU fallback if a download fails). 4. Launch EggLab and finish the setup wizard (below). `SHA256SUMS.txt` is attached to every release if you want to verify the download: ```powershell Get-ChildItem .\\EggLab-Setup-*.exe | Get-FileHash -Algorithm SHA256 ``` ## First run ![EggLab setup](docs/setup.png) The wizard checks the four pieces EggLab needs: | Piece | What it is | What the wizard does | |---|---|---| | **PhotoCraft** | The canvas app ([download free](https://getartcraft.com/)) | Detects it, or lets you locate `photocraf\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "bloomery",
+        "full_name": "midagedev/bloomery",
+        "url": "https://github.com/midagedev/bloomery",
+        "description": "Hybrid GPU + CPU inference for mixture-of-experts models, written in Rust down to the CUDA kernels. A drop-in llama-server.",
+        "stars": 77,
+        "pushed_at": "2026-11-24T06:53:44Z",
+        "topics": [
+          "cuda",
+          "deepseek",
+          "gguf",
+          "glm",
+          "inference",
+          "llama-cpp",
+          "llm",
+          "moe",
+          "qwen",
+          "rust"
+        ],
+        "source": "search",
+        "text_excerpt": "<p align=\"center\"> <picture> <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/assets/banner-dark.svg\"> <img src=\"docs/assets/banner.svg\" width=\"720\" alt=\"bloomery\"> </picture> </p> <p align=\"center\"> <b>bloomery is a fast LLM inference server for mixture-of-experts models that are larger than the GPU.</b><br> It runs on NVIDIA cards, the DGX Spark included, and on Apple Silicon through Metal.<br> A drop-in <a href=\"https://github.com/ggml-org/llama.cpp/blob/master/tools/server\">llama-server</a>, in Rust from the HTTP server down to the CUDA kernels. </p> <p align=\"center\"> <a href=\"https://github.com/midagedev/bloomery/releases/tag/v0.3.16\">0.3.16 release notes</a> · <a href=\"docs/models.md\">Models</a> · <a href=\"docs/serving.md\">Serving</a> · <a href=\"docs/agents.md\">Agents</a> · <a href=\"docs/evaluating.md\">Evaluating</a> · <a href=\"CONTRIBUTING.md\">Contributing</a> </p> ```sh curl -fsSL https://raw.githubusercontent.com/midagedev/bloomery/main/tools/release/install.sh | sh ~/.local/bin/bloomery-serve --hf unsloth/Qwen3-30B-A3B-Instruct-2507-GGUF:Q4_K_M ``` These two commands install the latest release on Linux x86-64 with an NVIDIA GPU (or on Windows inside WSL2) and serve Qwen3-30B-A3B on port 8080; [Use](#use) sends it a first request. The same installer takes the GB10 archive on a DGX Spark ([DGX Spark](#dgx-spark-and-other-gb10-machines)), and an Apple Silicon Mac runs `bloomery-serve-metal` ([Apple Silicon](#apple-silicon)). Homebrew, Docker and the plain tarball are under [Install](#install). **From an agent.** Hand Claude Code, Codex or a script [`docs/agents.md`](docs/agents.md). The agent asks the machine what fits, then starts the model by its name. stdout carries JSON, and every refusal ends with a named exit code and the command to run next: ```sh bloomery-serve --recommend --json # what this machine serves, and the fastest variant of each bloomery-serve --model qwen3.8-flash-next --dry-run --json # the start it would run; downloads nothing bloomery-serve --model qwen3.8-flash-next --port 0 # start it: one JSON event a line, then \"ready\" with the url ``` On a Mac the server is `bloomery-serve-metal`, and the agent follows the \"On a Mac\" steps in the same page. To run a coding agent on the model you just started — pi on a Mac, dsh on DeepSeek-V4.1-Flash, Claude Code or OpenCode on a fast card set, see [Which coding agent](docs/agents.m\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "arifOS",
+        "full_name": "ariffazil/arifOS",
+        "url": "https://github.com/ariffazil/arifOS",
+        "description": "Independent policy kernel for AI agents: judge before execute. F1–F13 floors, VAULT999 receipts. Not a model. Not a chatbot.",
+        "stars": 53,
+        "pushed_at": "2026-11-24T06:52:58Z",
+        "topics": [
+          "agentic-ai",
+          "agi",
+          "ai",
+          "ai-agents",
+          "ai-governance",
+          "ai-safety",
+          "claude-code",
+          "constitutional-ai",
+          "fastmcp",
+          "governance",
+          "guardrails",
+          "llm",
+          "malaysia",
+          "mcp",
+          "mcp-client",
+          "mcp-server",
+          "model-context-protocol",
+          "multi-agent",
+          "prompt-engineering",
+          "python"
+        ],
+        "source": "search",
+        "text_excerpt": "<a id=\"current-verified-state\"></a> <!-- GENERATED:CURRENT-STATE:BEGIN · source: scripts/generate_current_state.py · never hand-edit --> > ### ⚠️ Current verified state — generated, never hand-edited > > **Runtime self-measurement** (`http://127.0.0.1:8088/health @2026-11-22T23:43:20Z`): kernel **degraded** · floors **12/13 measured pass** · vault999 stale · release `arifos-6425ae4` · drift `aligned` (source=built=deployed) · tools exposed 9. Per-floor provenance: `.well-known/current-state.json`. > > **Independent audit** (2026-10-11, live re-probe by FI-008 + claim-level hand audit; receipts: `AAA/forge_work/grant-arifos-reality-reforge-2026-10-11/`): floors **2 pass · fail F2, F11, F12, F13 · 7 unmeasured = 13 distinct** (raw key-count 10 includes L11/L12/L13, L-prefix aliases of the failing F11/F12/F13) · actor binding not verified (observed calls unsigned) · receipt fidelity broken on invocation-telemetry surface (HOLD persisted as ok:true) · independent reconstruction: no external verifier bound. > > **These are two different witness objects.** Self-measurement ≠ independent audit; > unmeasured is not pass. If this block conflicts with the live endpoint, the endpoint > wins — re-run `python scripts/generate_current_state.py`. > > Machine state: [`.well-known/current-state.json`](./.well-known/current-state.json) · > Badge feed: [`.well-known/badges/`](./.well-known/badges/) · > Known gaps: [What Is Not Yet Proven](#what-is-not-yet-proven) <!-- GENERATED:CURRENT-STATE:END --> mcp-name: io.github.ariffazil/arifos ## Apa ni sebenarnya? arifOS bukan AI dan bukan chatbot. Ia mahkamah dasar (Policy Decision Point) untuk tindakan ejen AI: model boleh berfikir dan mengusul, tapi arifOS yang putuskan adakah cadangan itu layak dilaksana — sebahagian pintu keputusannya deterministik (kod Python keras, `llm_consulted: false`), bukan AI yang menilai keselamatan tindakannya sendiri. Bayang macam Permit-to-Work di pelantar minyak: jurutera (model AI) pintar tapi bukan pemegang risiko; bilik PTW (arifOS) yang putuskan boleh masuk ke tidak; bengkel (A-FORGE) baru buka kunci peralatan bila permit keluar; dan setiap kerja dicetak resit berantai (VAULT999, tamper-evident — sejarah yang disunting secara senyap akan pecahkan rantaian). Kuasa ditetapkan oleh rangka, bukan oleh kebijakan mana-mana model: MODEL/AGENT mengusul → arifOS menghakimi kelayakan → ARIF pegang veto be\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "nimblebrain",
+        "full_name": "NimbleBrainInc/nimblebrain",
+        "url": "https://github.com/NimbleBrainInc/nimblebrain",
+        "description": "Self-hosted platform for MCP Apps and agent automations — tools, interactive UIs, scheduled runs, multi-agent delegation.",
+        "stars": 28,
+        "pushed_at": "2026-11-24T06:47:12Z",
+        "topics": [
+          "agent",
+          "agent-automation",
+          "agent-runtime",
+          "ai-agents",
+          "anthropic",
+          "bun",
+          "claude",
+          "ext-apps",
+          "llm",
+          "mcp",
+          "mcp-apps",
+          "mcp-client",
+          "mcp-host",
+          "mcp-server",
+          "mcpb",
+          "model-context-protocol",
+          "multi-agent",
+          "scheduled-agents",
+          "self-hosted",
+          "typescript"
+        ],
+        "source": "search",
+        "text_excerpt": "# NimbleBrain [![CI](https://github.com/NimbleBrainInc/nimblebrain/actions/workflows/ci.yml/badge.svg)](https://github.com/NimbleBrainInc/nimblebrain/actions/workflows/ci.yml) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://github.com/NimbleBrainInc/nimblebrain/blob/main/LICENSE) [![Bun](https://img.shields.io/badge/runtime-Bun-f9f1e1?logo=bun)](https://bun.sh) [![MCP](https://img.shields.io/badge/protocol-MCP-8A2BE2)](https://modelcontextprotocol.io) NimbleBrain Platform is the open-source runtime that runs agents and [MCP apps](https://modelcontextprotocol.io/extensions/apps/overview) on your systems, in your own infrastructure, with any model. Install an MCP app and you get more than tools: an interactive UI in the sidebar with live agent-UI data sync. Run the agent on demand or on a cron schedule. Full [ext-apps](https://apps.extensions.modelcontextprotocol.io/api/) host support on top of an agentic loop with skill-driven prompt composition. Ships as container images on GHCR (`ghcr.io/nimblebraininc/nimblebrain-runtime`, `ghcr.io/nimblebraininc/nimblebrain-web`). Also exposes itself as an MCP server via Streamable HTTP so external MCP clients can consume the aggregated toolset. ## Quick Start ### Option 1: Docker (recommended) ```bash # Prerequisites: Docker export ANTHROPIC_API_KEY=sk-ant-... # The identity provider. `dev` signs every request in as one local developer, # with no login: keep it on your own machine. echo '{\"auth\":{\"adapter\":\"dev\"}}' > instance.json docker compose up # Pulls ghcr.io/nimblebraininc/nimblebrain-runtime + nimblebrain-web # Web UI: http://localhost:27246 # API: http://localhost:27246/v1/health ``` Open `http://localhost:27246` in your browser. The runtime does not start without `instance.json`; for a real identity provider (`oidc` or `workos`), see [instance.json](https://docs.nimblebrain.ai/config/instance-json/). To build from source instead of pulling (e.g. when developing against local changes), run `docker compose up --build`. **Apple Silicon and other arm64 hosts:** the images are published for `linux/amd64` and `linux/arm64`, so `docker compose up` pulls a native image on either. ### Option 2: Local development ```bash # Prerequisites: Bun (https://bun.sh), Node.js 22+ export ANTHROPIC_API_KEY=sk-ant-... bun install bun run dev # API on http://localhost:27247 (auto-restarts on file changes\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "hebo-gateway",
+        "full_name": "8monkey-ai/hebo-gateway",
+        "url": "https://github.com/8monkey-ai/hebo-gateway",
+        "description": "AI gateway as a framework. For full control over models, routing & lifecycle. OpenAI /chat/completions, OpenResponses /responses & Anthropic /messages.",
+        "stars": 27,
+        "pushed_at": "2026-11-24T06:58:14Z",
+        "topics": [
+          "ai",
+          "ai-gateway",
+          "anthrophic",
+          "bedrock",
+          "elysiajs",
+          "gateway",
+          "groq",
+          "hono",
+          "javascript",
+          "llm",
+          "llm-gateway",
+          "llmops",
+          "nextjs",
+          "openai",
+          "tanstack-start",
+          "typescript",
+          "vercel-ai-sdk",
+          "vertex"
+        ],
+        "source": "search",
+        "text_excerpt": "# Hebo Gateway Roll your own AI gateway for full control over models, providers, routing logic, guardrails, observability and more ... ## 🐒 Overview Existing AI gateways like OpenRouter, Vercel AI Gateway, LiteLLM, and Portkey work out of the box, but they’re hard to extend once your needs go beyond configuration. Hebo Gateway is an open-source, embeddable AI gateway framework built to live inside your app. It gives you full control over providers, models, routing, and the request lifecycle. Learn more in our blog post: [Yet Another AI Gateway?](https://hebo.ai/blog/260127-hebo-gateway/) (`https://hebo.ai/blog/260127-hebo-gateway/`) ## 🍌 Features - 🌐 OpenAI-compatible `/chat/completions`, `/embeddings`, `/audio/transcriptions` & `/models` endpoints. - 💬 Open Responses `/responses` endpoint (stateless), including /conversations. - 🗨️ Anthropic-compatible `/messages` endpoint. - 🔌 Integrate into your existing Hono, Elysia, Next.js & TanStack apps. - 🧩 Provider registry compatible with any Vercel AI SDK providers. - 🧭 Canonical model IDs and parameter naming across providers. - 🗂️ Model catalog loaded from models.dev: new models need no gateway release. - 🪝 Hook system to customize routing, auth, rate limits, and shape responses. - 👁️ Observability via OTel GenAI semantic conventions (Langfuse-compatible). - 🧰 Low-level OpenAI-compatible schema, converters, and middleware helpers. ## 📦 Installation ```bash bun install @hebo-ai/gateway ``` ## ☰ Table of Contents - Quickstart - [Setup A Gateway Instance](#setup-a-gateway-instance) | [Mount Route Handlers](#mount-route-handlers) | [Call the Gateway](#call-the-gateway) - Configuration Reference - [Providers](#providers) | [Models](#models) | [Hooks](#hooks) | [Storage](#storage) | [Logger](#logger-settings) | [Observability](#observability) | [Advanced](#advanced-settings) - Framework Support - [ElysiaJS](#elysiajs) | [Hono](#hono) | [Next.js](#nextjs) | [TanStack Start](#tanstack-start) - Runtime Support - [Vercel Edge](#vercel-edge) | [Cloudflare Workers](#cloudflare-workers) | [Deno Deploy](#deno-deploy) | [AWS Lambda](#aws-lambda) - Endpoints - [/chat/completions](#chatcompletions) | [/embeddings](#embeddings) | [/audio/transcriptions](#audiotranscriptions) | [/models](#models) | [/responses](#responses) | [/messages](#messages) | [/conversations](#conversations) - OpenAI Extensions - [Reasoning](#reasoning) |\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      },
+      {
+        "name": "code-meeseeks",
+        "full_name": "huhamhire/code-meeseeks",
+        "url": "https://github.com/huhamhire/code-meeseeks",
+        "description": "AI code-review desktop client, local-first and semi-automatic, for individual reviewers, built on pr-agent.",
+        "stars": 20,
+        "pushed_at": "2026-11-24T06:59:04Z",
+        "topics": [
+          "ai-code-review",
+          "bitbucket",
+          "code-review",
+          "desktop-app",
+          "developer-tools",
+          "electron",
+          "github",
+          "gitlab",
+          "gui",
+          "llm",
+          "merge-request",
+          "pr-agent",
+          "pull-request",
+          "react",
+          "self-hosted",
+          "typescript"
+        ],
+        "source": "search",
+        "text_excerpt": "<div align=\"center\"> <img src=\"assets/icons/icon.png\" alt=\"Code Meeseeks\" width=\"96\" /> # Code Meeseeks **A desktop GUI for PR-Agent · A local, semi-automated AI code-review client for the individual reviewer** Graphical interface (GUI) for the community [PR-Agent](https://docs.pr-agent.ai/) · Electron desktop app · All data stays on your machine [![Electron](https://img.shields.io/badge/Electron-2B2E3A?logo=electron&logoColor=9FEAF9)](https://www.electronjs.org/) [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/) [![Release](https://img.shields.io/github/v/release/huhamhire/code-meeseeks?include_prereleases&sort=semver&label=release&color=4c9a40)](https://github.com/huhamhire/code-meeseeks/releases) [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/) [![Bitbucket](https://img.shields.io/badge/Bitbucket-0052CC?logo=bitbucket&logoColor=white)](https://bitbucket.org/) [![GitLab](https://img.shields.io/badge/GitLab-FC6D26?logo=gitlab&logoColor=white)](https://gitlab.com/) <sub>Keywords：PR-Agent GUI · pr-agent desktop client · AI code review · Pull Request & Merge Request review · Bitbucket / GitHub reviewer tool · local / self-hosted / private deployment</sub> **English** · [简体中文](README.zh-CN.md) · [Website](https://huhamhire.github.io/code-meeseeks/) </div> --- Code Meeseeks (internal codename `meebox`) is a **desktop graphical interface (GUI)** for the command-line tool [pr-agent](https://docs.pr-agent.ai/): it packages AI-assisted code review into a desktop client — it fetches the PRs (Pull Requests / Merge Requests) awaiting your review, runs pr-agent locally to generate review comments, and lets the reviewer **confirm / edit each one** before publishing it back to the code hosting platform (GitHub / Bitbucket / GitLab). Core design stance: - **Human decides** — every comment must be confirmed / edited by the reviewer before it reaches the remote; the AI only drafts. - **Rules stay local** — the reviewer configures their own check rules, style preferences, and LLM provider. - **Data stays local** — repository mirrors, PR metadata, and comment drafts all live in a local working directory; friendly to corporate intranets.\n\n[TRUNCATED]",
+        "text_source_field": "readme_text",
+        "text_truncated_in_raw": false
+      }
+    ],
+    "aihot": []
+  },
+  "failures": {
+    "rss": [
+      {
+        "type": "rss",
+        "title": "Anthropic News",
+        "url": "https://www.anthropic.com/news/rss.xml",
+        "failure_reason": "feed_parse_failed: text/html; charset=utf-8 is not an XML media type"
+      },
+      {
+        "type": "rss",
+        "title": "a16z",
+        "url": "https://a16z.com/feed/",
+        "failure_reason": "feed_parse_failed: <unknown>:3:73: not well-formed (invalid token)"
+      },
+      {
+        "type": "rss",
+        "title": "Connected intelligence for in-house legal",
+        "url": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
+        "failure_reason": "extracted_text_too_short"
+      }
+    ],
+    "youtube": [
+      {
+        "type": "youtube",
+        "title": "Lex Fridman",
+        "url": "https://www.youtube.com/@lexfridman",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @lexfridman/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Lenny's Podcast",
+        "url": "https://www.youtube.com/@LennysPodcast",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @LennysPodcast/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Dwarkesh Patel",
+        "url": "https://www.youtube.com/@DwarkeshPatel",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @DwarkeshPatel/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Acquired",
+        "url": "https://www.youtube.com/@AcquiredFM",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @AcquiredFM/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Tim Ferriss",
+        "url": "https://www.youtube.com/@timferriss",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @timferriss/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "20VC",
+        "url": "https://www.youtube.com/@20VCwithHarryStebbings",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @20VCwithHarryStebbings/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "Invest Like the Best",
+        "url": "https://www.youtube.com/@ILTB_Podcast",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @ILTB_Podcast/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      },
+      {
+        "type": "youtube",
+        "title": "All-In Podcast",
+        "url": "https://www.youtube.com/@allin",
+        "failure_reason": "channel_list_failed: ERROR: [youtube:tab] @allin/videos: Unable to download API page: SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused (caused by TransportError(\"SocksHTTPSConnection(host='www.youtube.com', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      }
+    ],
+    "github": [
+      {
+        "type": "github",
+        "title": "trendshift",
+        "url": "https://trendshift.io/repositories?since=daily",
+        "failure_reason": "supplement_failed: 404 Client Error: Not Found for url: https://trendshift.io/repositories?since=daily"
+      },
+      {
+        "type": "github",
+        "title": "obra/superpowers",
+        "url": "https://github.com/obra/superpowers",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "firecrawl/firecrawl",
+        "url": "https://github.com/firecrawl/firecrawl",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "cathrynlavery/diagram-design",
+        "url": "https://github.com/cathrynlavery/diagram-design",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "HKUDS/CLI-Anything",
+        "url": "https://github.com/HKUDS/CLI-Anything",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "nginx/nginx",
+        "url": "https://github.com/nginx/nginx",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "zhouxiaoka/autoclip",
+        "url": "https://github.com/zhouxiaoka/autoclip",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "mjmirza/app-store-compliance",
+        "url": "https://github.com/mjmirza/app-store-compliance",
+        "failure_reason": "filtered_by_star_range"
+      },
+      {
+        "type": "github",
+        "title": "IvanMurzak/Unity-MCP",
+        "url": "https://github.com/IvanMurzak/Unity-MCP",
+        "failure_reason": "filtered_noise"
+      },
+      {
+        "type": "github",
+        "title": "zapplyjobs/New-Grad-Data-Science-Jobs-2027",
+        "url": "https://github.com/zapplyjobs/New-Grad-Data-Science-Jobs-2027",
+        "failure_reason": "filtered_noise"
+      }
+    ],
+    "aihot": [
+      {
+        "type": "aihot",
+        "title": "api",
+        "url": "https://aihot.virxact.com/api/public/items?mode=selected&take=50",
+        "failure_reason": "api_fetch_failed: 404 Client Error: Not Found for url: https://aihot.news/api/public/items?mode=selected&take=50"
+      }
+    ]
+  }
+}
